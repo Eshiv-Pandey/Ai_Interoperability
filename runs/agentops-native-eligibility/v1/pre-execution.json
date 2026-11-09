@@ -1,0 +1,123 @@
+{
+  "schema_version": "agentops-native-preparation/1",
+  "prepared_at_utc": "2026-10-25T00:47:09.695580+00:00",
+  "source_ingestion": {
+    "path": "docs/research/source-evidence/agentops-local-archive-v1/ingestion.json",
+    "bytes": 228911,
+    "sha256": "f42b50d396c7e889b758aeec9d13b24c887fbceb530676d538bd0d3d67d99ecd"
+  },
+  "source_files_before": [
+    {
+      "path": "external/agentops-c806b7f1/AGENTS.md",
+      "bytes": 20085,
+      "sha256": "060ba47c881a38821e8c0bae604fca522be70266e107fa08a85efc4c527ac792"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/LICENSE",
+      "bytes": 1082,
+      "sha256": "b20626e1f04ad0cfd44fced6cccbebaca919619a2336d7a6d785f0293f2de8d0"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/incidents.db",
+      "bytes": 40960,
+      "sha256": "957ae8da4e1d174b9ff349acfca7ce4c204020a572fbeb7245783285d49d455b"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/pyproject.toml",
+      "bytes": 9017,
+      "sha256": "a629868a86661e6590fa816abf92af38a5896b750813a854032576258a28290b"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/uv.lock",
+      "bytes": 403629,
+      "sha256": "f6ed9a8b5140460424749f61adf01d8c424acaa3c354c0659e34cca3c2088ccd"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/tests/conftest.py",
+      "bytes": 1489,
+      "sha256": "0939b4bd0a5bc8fc1cf162c96c662b1f5365c8abf079c1bb1b17344a26adf9d4"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/tests/test_server.py",
+      "bytes": 39480,
+      "sha256": "8257f7267d516d12f656ff886f5796bb58178051cc13d3c582dc9eefbd78b270"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+      "bytes": 8641,
+      "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+      "bytes": 25051,
+      "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/server.py",
+      "bytes": 27389,
+      "sha256": "578bd65522c3edcfd49d831b96b42a4990e1aaa4f39c0e52612e1dbe667680d8"
+    }
+  ],
+  "commands": [
+    {
+      "id": "bootstrap",
+      "argv": [
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "install",
+        "--no-cache-dir",
+        "--disable-pip-version-check",
+        "--retries",
+        "0",
+        "--timeout",
+        "15",
+        "--only-binary=:all:",
+        "--target",
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\external\\runtime-agentops-v1\\bootstrap",
+        "uv==0.12.0"
+      ],
+      "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+      "timeout_seconds": 180
+    },
+    {
+      "id": "locked-sync",
+      "argv": [
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\.venv\\Scripts\\python.exe",
+        "-m",
+        "uv",
+        "sync",
+        "--locked",
+        "--project",
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\external\\agentops-c806b7f1\\agents\\python",
+        "--python",
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\.venv\\Scripts\\python.exe"
+      ],
+      "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+      "timeout_seconds": 900
+    },
+    {
+      "id": "upstream-confirmation",
+      "argv": [
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\external\\runtime-agentops-v1\\venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "--basetemp",
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\external\\runtime-agentops-v1\\test-temp",
+        "-o",
+        "cache_dir=P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\external\\runtime-agentops-v1\\pytest-cache",
+        "tests/test_server.py::test_a2a_confirmation_response_resumes_the_guarded_action_with_audit_identity"
+      ],
+      "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\external\\agentops-c806b7f1\\agents\\python",
+      "timeout_seconds": 300
+    }
+  ],
+  "sequence_stops_on_any_failure": true,
+  "dependency_tool_pin_source": "external/agentops-c806b7f1/mise.toml: aqua:astral-sh/uv=0.12.0",
+  "isolated_runtime": "external/runtime-agentops-v1",
+  "source_changes_authorized": false,
+  "source_symlinks_not_materialized": true,
+  "test_scope": "Single unchanged upstream offline test; not root maintainer/full coverage gate, real-pipe HTTP trace, independent gold or domain qualification.",
+  "model_double": "Upstream _ConfirmationLlm; conftest clears provider/runtime variables and disables telemetry",
+  "study_inference_authorized_or_planned": false
+}

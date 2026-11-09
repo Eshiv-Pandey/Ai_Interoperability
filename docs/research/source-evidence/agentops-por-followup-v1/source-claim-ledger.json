@@ -1,0 +1,133 @@
+{
+  "schema_version": "source-followup-claim-ledger/1",
+  "date_local": "2026-10-25",
+  "retrieval_pairs": 11,
+  "decision": "web-pin-and-native-source-revalidated; generic-POR-overlap; no-C1-step",
+  "source": {
+    "repository": "https://github.com/MLOps-Courses/agentops-open-course",
+    "release": "v0.11.0",
+    "resolved_web_commit": "c806b7f1cd0042c9817c0a4c46d80a9a95a24293",
+    "local_git_pin_verified": false,
+    "original_source_bytes_acquired": false,
+    "application_version": "0.11.0",
+    "python": "==3.13.*",
+    "a2a_sdk_lock": "1.1.5",
+    "google_adk_lock": "2.10.0",
+    "reference_license": "MIT"
+  },
+  "retained_local_inputs": [
+    "docs/research/source-evidence/agentops-screen-v1/decision.md",
+    "docs/research/source-evidence/agentops-screen-v1/source-claim-ledger.json",
+    "docs/research/source-evidence/agentops-screen-v1/native-eligibility-preparation.md",
+    "docs/research/source-evidence/agentops-screen-v1/git-pin-probe-v1.json",
+    "docs/research/source-evidence/agentops-screen-v1/manifest.json",
+    "docs/research/source-evidence/agentops-screen-v1-verification.json",
+    "docs/research/source-evidence/action-observation-closure-screen-v1/decision.md",
+    "docs/research/source-evidence/action-observation-closure-screen-v1/closure-obligations.json",
+    "docs/research/source-evidence/action-observation-closure-screen-v1/manifest.json",
+    "docs/research/source-evidence/action-observation-closure-screen-v1-verification.json"
+  ],
+  "claims": [
+    {
+      "id": "F1",
+      "claim": "v0.11.0 is web-resolved to a full commit; exact A2A/ADK package lock versions are located.",
+      "evidence": [
+        "03-pinned-license-and-dependencies-tool-response.json",
+        "08-test-data-lock-and-por-tool-response.json",
+        "11-por-completeness-and-application-factory-tool-response.json"
+      ],
+      "limit": "No local Git object, original source bytes, complete lock capture or installation."
+    },
+    {
+      "id": "F2",
+      "claim": "Pinned upstream deterministic confirmation test asserts same-task/context completion plus service and attributed audit effects.",
+      "evidence": [
+        "09-confirmation-roundtrip-and-transactions-tool-response.json"
+      ],
+      "limit": "Not run; latest audit row only, no complete state-preservation assertion or human task validation."
+    },
+    {
+      "id": "F3",
+      "claim": "Pinned guarded actions/data revalidate confirmation and atomic local mutation/audit/idempotency source.",
+      "evidence": [
+        "09-confirmation-roundtrip-and-transactions-tool-response.json",
+        "10-transaction-boundaries-and-por-tool-response.json",
+        "11-por-completeness-and-application-factory-tool-response.json"
+      ],
+      "limit": "Local simulated infrastructure; concurrency, crash behavior and real deployment are not executed."
+    },
+    {
+      "id": "F4",
+      "claim": "Pinned fixture/factory source supplies isolated state, deterministic model injection and maintained ADK conversion/runtime.",
+      "evidence": [
+        "06-pin-and-por-definitions-tool-response.json",
+        "09-confirmation-roundtrip-and-transactions-tool-response.json",
+        "10-transaction-boundaries-and-por-tool-response.json",
+        "11-por-completeness-and-application-factory-tool-response.json"
+      ],
+      "limit": "Installed dependency conversion, actual serialized card/version/binding and bridge eligibility unverified."
+    },
+    {
+      "id": "F5",
+      "claim": "Release discloses Eval waiver; pinned instructions retain immutable seed and full contributor gates.",
+      "evidence": [
+        "03-pinned-license-and-dependencies-tool-response.json",
+        "04-pinned-config-and-por-followup-tool-response.json",
+        "07-lock-and-confirmation-finds-tool-response.json"
+      ],
+      "limit": "Release narrative is not our evaluation; no contributor gate ran or was bypassed."
+    },
+    {
+      "id": "F6",
+      "claim": "Primary POR v2 already has symbolic dependency/persistent/sleep/conditional-collapse steps and numbered completeness/soundness results.",
+      "evidence": [
+        "05-pinned-server-actions-and-tests-tool-response.json",
+        "06-pin-and-por-definitions-tool-response.json",
+        "09-confirmation-roundtrip-and-transactions-tool-response.json",
+        "10-transaction-boundaries-and-por-tool-response.json",
+        "11-por-completeness-and-application-factory-tool-response.json"
+      ],
+      "limit": "Equivalence/final-bad-state property is not automatically bounded safe may-completion or winning-policy preservation."
+    },
+    {
+      "id": "F7",
+      "claim": "No extra C1 step is established by generic POR; augmented semantics and full comparative cost remain obligations.",
+      "evidence": [
+        "por-comparator-screen.md",
+        "../action-observation-closure-screen-v1/decision.md"
+      ],
+      "limit": "Root analytical assessment, not independent AI/human review or global absence proof."
+    },
+    {
+      "id": "F8",
+      "claim": "Retrieval failures and unsuccessful browser acquisition are retained without absence/runtime claims.",
+      "evidence": [
+        "retrieval-limitations.json",
+        "browser-acquisition-failure-receipt.json",
+        "02-agentops-pin-and-por-tool-response.json",
+        "04-pinned-config-and-por-followup-tool-response.json",
+        "06-pin-and-por-definitions-tool-response.json",
+        "09-confirmation-roundtrip-and-transactions-tool-response.json",
+        "10-transaction-boundaries-and-por-tool-response.json",
+        "11-por-completeness-and-application-factory-tool-response.json"
+      ],
+      "limit": "Browser receipt recovered from handoff, not byte-exact raw tool archive. No retries in this continuation."
+    }
+  ],
+  "execution": {
+    "application_requests": 0,
+    "model_calls": 0,
+    "installations": 0,
+    "software_tests": 0,
+    "archive_replays": 0,
+    "solver_runs": 0,
+    "candidate_performance_trials": 0,
+    "new_git_probes": 0
+  },
+  "progress_percent": 5,
+  "novelty_demonstrated": false,
+  "qualified_second_domain": false,
+  "human_review_completed": false,
+  "contribution_route_changed": false,
+  "may_completion_target_preserved": true
+}

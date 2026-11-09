@@ -1,0 +1,105 @@
+{
+  "schema_version": "agentops-admission-manual-resource-plan/1",
+  "created_at_utc": "2026-10-29T02:22:14.697261+00:00",
+  "stage_output": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\agentops-admission-execution\\v5",
+  "reuse_root": "/var/tmp/agentops-research-v7-gs9r5her",
+  "stage_argv": [
+    "C:\\Python313\\python.exe",
+    "-B",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\scripts\\stage_agentops_admission_v3.py",
+    "--output",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\agentops-admission-execution\\v5",
+    "--reuse-root",
+    "/var/tmp/agentops-research-v7-gs9r5her"
+  ],
+  "reviewed_sources": [
+    {
+      "path": "scripts/stage_agentops_admission_v3.py",
+      "sha256": "fc317b08512491f56a9ade0c5c681f73fbc8fe738b5467da941f23409855841b"
+    },
+    {
+      "path": "scripts/extract_agentops_admission_stage_v1.py",
+      "sha256": "ac32702cc92d2d3919ecf574cd7230195eb85697dde16bb22e12106dab88e6f1"
+    },
+    {
+      "path": "scripts/run_agentops_admission_chain_v3.py",
+      "sha256": "9681b31c3093b007142ffd8c511a3dfdc52f2f128fcfd275792b69872cc237eb"
+    },
+    {
+      "path": "scripts/execute_agentops_admission_phase_v3.py",
+      "sha256": "a034a90375a8cc3c2a6928849a7648a50cbf0cbb1528065fedb9d4269355e70d"
+    },
+    {
+      "path": "scripts/agentops_admission_live_plan_v3.py",
+      "sha256": "8213bf78048138cae395ca9553788033c4b7b01044be43db84890d42d6f6b58a"
+    },
+    {
+      "path": "scripts/agentops_admission_control_v3.py",
+      "sha256": "692636ce8f0951de3fd48bd49c728cb5ab42019ff41f7baba977a330c673d47f"
+    },
+    {
+      "path": "scripts/export_agentops_admission_v3.py",
+      "sha256": "069d2daac920b9ed9983a81698cb17c7da7a94d2417fcb7b9a7ac341b771fab3"
+    },
+    {
+      "path": "scripts/check_agentops_interpreter_exit_v2.py",
+      "sha256": "5f8b1a3796634af134aef029cdbccabec2352d35877e75f6d8e3115ff143c656"
+    },
+    {
+      "path": "scripts/check_agentops_startup_v1.py",
+      "sha256": "7fecd23a8cd5dad5cce048577788e2f87e7f610af0f0367143fe71dda90fa693"
+    },
+    {
+      "path": "scripts/agentops_startup_diagnostics_v1.py",
+      "sha256": "606a51d0bb2f0468430c25dfb54cc7580599debf1ac15a005c652bdc81e95104"
+    },
+    {
+      "path": "scripts/serve_agentops_bridge_diagnostic_v4.py",
+      "sha256": "c93360877a0de2f68a409d410d1a3f157e3ede68d2004b35c26dfba63c6be569"
+    }
+  ],
+  "wslconfig_sha256": "9974fe54da5586ac09b9f352a7d4580df98138b3a81d35342f25b4dfb1756cf1",
+  "maximum_attempts_per_phase": 1,
+  "execution_order": [
+    "stage",
+    "software",
+    "prepare",
+    "preflight",
+    "resource_gate",
+    "launch",
+    "after",
+    "export"
+  ],
+  "resource_gate": {
+    "api": "GlobalMemoryStatusEx",
+    "available_physical_minimum_bytes": 1073741824,
+    "available_commit_minimum_bytes": 2147483648,
+    "samples_per_checkpoint": 2,
+    "spacing_seconds": 10,
+    "checkpoints": [
+      "before_stage",
+      "after_preflight_before_launch"
+    ],
+    "linux_mem_available_minimum_kib": 1048576,
+    "record_linux_swap_free_separately": true,
+    "meaning": "Prospective stop rules, not validated safe thresholds or a diagnosis"
+  },
+  "preserved_rules": {
+    "readiness_seconds": 65,
+    "admission_budget": 100000,
+    "admission_timeout_seconds": 30,
+    "native_N11_before_admitted_B7": true,
+    "original_application_fixture_and_sources": true,
+    "required_effect_task_and_cleanup_checks": true
+  },
+  "stopping_rules": [
+    "No launch after any source/runtime/software/preparation/preflight/resource failure",
+    "After-inspection follows every launch outcome",
+    "Export only terminal selected phases; missing live records remain missing",
+    "No source/host configuration or unrelated service mutations",
+    "No retry of any consumed allocation"
+  ],
+  "application_success": "Requires actual exported native/admitted task, effect, admission and lifecycle evidence",
+  "reason_for_fresh_attempt": "Material host resource improvement observed; no assumed causal memory repair",
+  "review": "Independent AI resource and pipeline source assessment, not human approval"
+}

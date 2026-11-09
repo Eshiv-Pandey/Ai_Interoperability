@@ -1,0 +1,158 @@
+{
+  "schema_version": "direct-comparison-focused-software-receipt/1",
+  "recorded_at_utc": "2026-10-28T22:03:12.120706+00:00",
+  "evidence_kind": "tool-output transcription",
+  "provenance": "Commands, return codes, unittest counts/durations and excerpts are transcribed from the existing tool outputs in this conversation. No test was rerun for this receipt.",
+  "working_directory": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+  "shell": "PowerShell",
+  "python_executable": "C:\\Python313\\python.exe",
+  "raw_transcript_file": null,
+  "execution_start_finish_utc": null,
+  "timestamp_limit": "Original execution UTC timestamps were not captured; recorded_at_utc is receipt creation only.",
+  "records": [
+    {
+      "id": "goal-pruned-comparator-focused",
+      "command": "& 'C:\\Python313\\python.exe' -B -m unittest discover -s tests -p test_direct_goal_pruned_v2.py -v",
+      "returncode": 0,
+      "tests_run": 15,
+      "failures": 0,
+      "errors": 0,
+      "reported_unittest_seconds": 0.581,
+      "tool_output_chunk_ids": [
+        "f913b4",
+        "abdce7"
+      ],
+      "tool_session_id": 45991,
+      "output_excerpt": [
+        "Ran 15 tests in 0.581s",
+        "OK"
+      ],
+      "scope": "Small authored fixtures, including eleven existing development profiles; no generated 66-profile matrix.",
+      "source_sha256": {
+        "src/interoperability/direct_goal_pruned_v2.py": "1fba2d0bd747f965056279bbda40b9c28f50f1200b7e9a6869f343ab6f64de51",
+        "tests/test_direct_goal_pruned_v2.py": "6b4a4f431fbd87a7e589c9ee7849f1d0bd411824412e9d871766fe007754d7b1"
+      },
+      "coverage": [
+        "dead-relation pruning and unchanged edge charges",
+        "first feasible goal tuple short-circuit",
+        "explicit new negative kind and old-checker incompatibility",
+        "independent closure checker without solver calls",
+        "relevant and contracted uncertainty retained",
+        "off-goal relation uncertainty irrelevant",
+        "horizon bounds, freshness, coverage and budget exhaustion",
+        "relation memoization and complete frames",
+        "forged/missing/duplicate cut frames and newly feasible goals rejected",
+        "small legacy decision/certificate compatibility"
+      ]
+    },
+    {
+      "id": "comparison-entrypoint-focused",
+      "command": "& 'C:\\Python313\\python.exe' -B -m unittest discover -s tests -p test_direct_comparison_v2.py -v",
+      "returncode": 0,
+      "tests_run": 6,
+      "failures": 0,
+      "errors": 0,
+      "reported_unittest_seconds": 17.562,
+      "tool_output_chunk_ids": [
+        "9f9b0f",
+        "1d9613"
+      ],
+      "tool_session_id": 36528,
+      "output_excerpt": [
+        "Ran 6 tests in 17.562s",
+        "OK"
+      ],
+      "scope": "Two authored profiles run and replayed in temporary test bundles; no generated 66-profile matrix.",
+      "source_sha256": {
+        "src/interoperability/direct_comparison_v2.py": "610c082233dcf44b58bb0b0bf68bfc4ca7fec307e380be21699ec3db39e60eb9",
+        "tests/test_direct_comparison_v2.py": "22027db530a463c45d8695473f3d3206c6b1b14909005a059dc34202298aee70"
+      },
+      "temporary_test_bundles_retained": false,
+      "coverage": [
+        "all three method/checker dispatches captured",
+        "14 attempted worker invocations and six certificate jobs in the two-profile run",
+        "old path/product/prefix proofs and new negative cuts accepted by intended checker",
+        "entrypoint/checker source captured",
+        "adapter restored after successful and failing runs",
+        "existing allocations refused without mutation",
+        "captured-package replay re-registers checker and preserves decisions/certificates",
+        "read-only verification and original bundle immutability"
+      ]
+    }
+  ],
+  "total_tests_across_two_separate_runs": 21,
+  "single_combined_run_performed": false,
+  "current_source_inventory": [
+    {
+      "path": "src/interoperability/direct_goal_pruned_v2.py",
+      "bytes": 10620,
+      "sha256": "1fba2d0bd747f965056279bbda40b9c28f50f1200b7e9a6869f343ab6f64de51"
+    },
+    {
+      "path": "src/interoperability/direct_comparison_v2.py",
+      "bytes": 9565,
+      "sha256": "610c082233dcf44b58bb0b0bf68bfc4ca7fec307e380be21699ec3db39e60eb9"
+    },
+    {
+      "path": "tests/test_direct_goal_pruned_v2.py",
+      "bytes": 11627,
+      "sha256": "6b4a4f431fbd87a7e589c9ee7849f1d0bd411824412e9d871766fe007754d7b1"
+    },
+    {
+      "path": "tests/test_direct_comparison_v2.py",
+      "bytes": 7119,
+      "sha256": "22027db530a463c45d8695473f3d3206c6b1b14909005a059dc34202298aee70"
+    },
+    {
+      "path": "docs/research/direct-goal-pruning-fairness-v2.md",
+      "bytes": 2972,
+      "sha256": "85ea7a752dfe3da4dd186b1d64fa679e1de25abe78a3d8d1f80d9acb947adec1"
+    }
+  ],
+  "current_legacy_sources_equal_v1_capture": [
+    {
+      "path": "src/interoperability/benchmark.py",
+      "bytes": 34981,
+      "sha256": "38b6cb4e6fd9ff4a48b0a9d45ca44156c8e714663f6c4a73060f44259a9c3a7e"
+    },
+    {
+      "path": "src/interoperability/refinement.py",
+      "bytes": 18566,
+      "sha256": "11175edcb99dbec231390ae767ba97dce2e919810844ed544a1ddd109f4b5b3b"
+    },
+    {
+      "path": "src/interoperability/refinement_oracle.py",
+      "bytes": 25050,
+      "sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e"
+    },
+    {
+      "path": "src/interoperability/manifest.py",
+      "bytes": 7117,
+      "sha256": "defc6e9bbc4ea66806beefc9def967d94db8a3856cc121cee13c45ebda70debb"
+    },
+    {
+      "path": "src/interoperability/oracle.py",
+      "bytes": 16255,
+      "sha256": "da29829a077da1ef44c2ffc0a6d5dbcd8e4c579b308b49085ea1af077e601b7f"
+    },
+    {
+      "path": "src/interoperability/__main__.py",
+      "bytes": 49,
+      "sha256": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7"
+    },
+    {
+      "path": "src/interoperability/cli.py",
+      "bytes": 4935,
+      "sha256": "1c3113908d036099b42b8adf939e701c8a21a082b2bc614479aaefadc214e0f1"
+    }
+  ],
+  "tests_rerun_for_receipt": false,
+  "source_edits_for_receipt": false,
+  "matrix_runs_performed_for_receipt": 0,
+  "raw_matrix_results_created": false,
+  "limits": [
+    "Test durations are unittest-reported, not complete tool wall time.",
+    "This receipt is not raw stdout/stderr or authenticated execution provenance.",
+    "Focused tests and source review do not establish novelty, hardware speed advantage or application-domain qualification."
+  ]
+}

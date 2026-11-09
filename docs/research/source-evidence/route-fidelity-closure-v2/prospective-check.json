@@ -1,0 +1,35 @@
+{
+  "schema_version": "push-family-prospective-check/1",
+  "status": "source-derived proposal; not executed or independently reviewed",
+  "hypothesis": "Typed create is client-rejected; typed delete reaches the frozen false-capability server; direct raw config calls are version-rejected. No origin callback is installed or sent.",
+  "fixed_profile": {
+    "bridge": "mgcrea c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5; unchanged installed SDK1.3.0 and built CLI",
+    "origin": "Original official-handler B4 profile; SDK1.1.0; singleton JSONRPC1.0 card; pushNotifications=false",
+    "executor": "Unchanged disclosed CarolReferenceExecutor; fresh isolated in-memory store",
+    "retries": 0,
+    "source_or_card_changes": false,
+    "caller_evidence": "One public pending original task/context and warmed authentic origin card",
+    "goal": "Authoritative original task/context completion; mirror completion does not qualify"
+  },
+  "cases": [
+    {"id": "P1", "action": "a2a_set_push_notification_config", "origin_config_rpc_count": 0, "expected_boundary": "SDK client PushNotificationNotSupportedError", "qualification": "Card discovery may have its own separate GET; count configuration RPCs only"},
+    {"id": "P2", "action": "a2a_delete_push_notification_config with confirm=true", "origin_config_rpc_count": 1, "expected_boundary": "Version1.0 accepted, server PushNotificationNotSupportedError", "qualification": "Delete client has no capability precheck; count failed RPC as caller action and remote request"},
+    {"id": "P3", "action": "a2a_request CreateTaskPushNotificationConfig", "origin_config_rpc_count": 1, "expected_boundary": "Absent version header rejected before config dispatcher"},
+    {"id": "P4", "action": "a2a_request DeleteTaskPushNotificationConfig", "origin_config_rpc_count": 1, "expected_boundary": "Absent version header rejected before config dispatcher"}
+  ],
+  "required_receipts": [
+    "Prospectively sealed specification, observer, original-source hashes, installed dependencies and process configuration",
+    "Exact MCP input/output and origin ingress headers/body for each action, including all errors",
+    "Warm-card discovery separated from action RPC costs",
+    "No callback egress observed by a passive loopback receiver; observation interval explicit",
+    "Private before/after original task/context/status and executor invocation/completion counters",
+    "All attempts retained, no overwrite/replacement retries, process closure and unchanged archive bytes"
+  ],
+  "interpretation_limits": [
+    "Finite absence of callback traffic only supports the observed interval; source guard supplies the conditional structural argument",
+    "No result alone proves closure over arbitrary peer URLs, external forwarding or environment changes",
+    "Software fidelity control, not a candidate advantage experiment, new theorem or human review"
+  ],
+  "application_requests_executed": 0,
+  "checkpoint_credit_added": 0
+}

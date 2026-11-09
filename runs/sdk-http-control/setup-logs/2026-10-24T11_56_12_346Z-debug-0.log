@@ -1,0 +1,54 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.13.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\external\sdk-http-control-v1\.npmrc
+5 silly config load:file:C:\Users\Lenovo\.npmrc
+6 silly config load:file:C:\Users\Lenovo\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install" "--ignore-scripts" "--install-links" "--no-audit" "--fund" "false" "--omit" "optional" "--fetch-retries" "0" "--fetch-timeout" "15000" "--cache" "../../runs/sdk-http-control/setup-cache" "--logs-dir" "../../runs/sdk-http-control/setup-logs"
+9 verbose logfile logs-max:10 dir:P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\sdk-http-control\setup-logs\2026-10-24T11_56_12_346Z-
+10 verbose logfile P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\sdk-http-control\setup-logs\2026-10-24T11_56_12_346Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with ECONNREFUSED
+13 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+14 silly idealTree buildDeps
+15 silly fetch manifest @a2a-js/sdk@file:vendor/sdk
+16 silly fetch manifest @bufbuild/protobuf@^2.10.2
+17 silly packumentCache full:https://registry.npmjs.org/@bufbuild%2fprotobuf cache-miss
+18 silly fetch manifest @grpc/grpc-js@^1.11.0
+19 silly packumentCache full:https://registry.npmjs.org/@grpc%2fgrpc-js cache-miss
+20 silly fetch manifest express@5.2.1
+21 silly packumentCache full:https://registry.npmjs.org/express cache-miss
+22 silly fetch manifest express@^4.21.2 || ^5.1.0
+23 silly packumentCache full:https://registry.npmjs.org/express cache-miss
+24 silly fetch manifest express@5.2.1
+25 silly packumentCache full:https://registry.npmjs.org/express cache-miss
+26 silly fetch manifest jose@file:vendor/jose
+27 silly placeDep ROOT @a2a-js/sdk@1.1.0 OK for: local-sdk-http-fidelity-control@1.0.0 want: file:vendor/sdk
+28 silly placeDep ROOT express@ OK for: local-sdk-http-fidelity-control@1.0.0 want: 5.2.1
+29 silly placeDep ROOT jose@6.2.12 OK for: local-sdk-http-fidelity-control@1.0.0 want: file:vendor/jose
+30 silly fetch manifest jose@^6.2.3
+31 silly packumentCache full:https://registry.npmjs.org/jose cache-miss
+32 verbose stack Error: request to https://registry.npmjs.org/express failed: cache mode is 'only-if-cached' but no cached response is available.
+32 verbose stack     at cacheFetch (C:\Program Files\nodejs\node_modules\npm\node_modules\make-fetch-happen\lib\cache\index.js:12:13)
+32 verbose stack     at async fetch (C:\Program Files\nodejs\node_modules\npm\node_modules\make-fetch-happen\lib\fetch.js:98:7)
+32 verbose stack     at async RegistryFetcher.packument (C:\Program Files\nodejs\node_modules\npm\node_modules\pacote\lib\registry.js:90:19)
+32 verbose stack     at async RegistryFetcher.manifest (C:\Program Files\nodejs\node_modules\npm\node_modules\pacote\lib\registry.js:128:23)
+32 verbose stack     at async #fetchManifest (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1202:20)
+32 verbose stack     at async #nodeFromEdge (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:1040:19)
+32 verbose stack     at async #buildDepStep (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:904:11)
+32 verbose stack     at async Arborist.buildIdealTree (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\build-ideal-tree.js:181:7)
+32 verbose stack     at async Promise.all (index 1)
+32 verbose stack     at async Arborist.reify (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\arborist\reify.js:131:5)
+33 error code ENOTCACHED
+34 error request to https://registry.npmjs.org/express failed: cache mode is 'only-if-cached' but no cached response is available.
+35 silly unfinished npm timer reify 1792842973701
+36 silly unfinished npm timer reify:loadTrees 1792842973702
+37 verbose cwd P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\external\sdk-http-control-v1
+38 verbose os Windows_NT 10.0.26300
+39 verbose node v22.13.0
+40 verbose npm  v10.9.2
+41 verbose exit 1
+42 verbose code 1
+43 error A complete log of this run can be found in: P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\sdk-http-control\setup-logs\2026-10-24T11_56_12_346Z-debug-0.log

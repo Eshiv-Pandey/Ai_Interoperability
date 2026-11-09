@@ -1,0 +1,660 @@
+{
+  "kind": "native-reference-development-wire-smoke",
+  "started_at": "2026-10-23T19:48:04.226Z",
+  "fixture_commit": "58eff9da469bccdc432bf164662727947de646b4",
+  "node": "v22.13.0",
+  "fixture_label": "Upstream deterministic fixture; no application holdout or independent gold",
+  "sdk_version": "1.1.0",
+  "source_sha256": {
+    "package-lock.json": "3e3c7e550d7166bd7f32e4e8e27811eaaf678bf3c3a1157b974f87734037b4da",
+    "fixtures/agent/index.ts": "2908181d8b90547405ffed70c17aaabe3b2240c33386af15d59a5ea71223fa97",
+    "fixtures/agent/executor.ts": "f761f9a8df7f038ad9f084573fbb3a6f610ef9e82db7824562452cc7882a774f",
+    "fixtures/agent/card.ts": "5b202aea38c35adc7e29d7572126543d2fc03e07b8b940d16dd8f0aa7d685cca"
+  },
+  "model_calls": 0,
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\scripts\\native-wire-reference.mjs",
+    "--output",
+    "runs/wire-native/reference-v1.json"
+  ],
+  "http_exchanges": [
+    {
+      "recorded_at": "2026-10-23T19:48:04.798Z",
+      "url": "http://127.0.0.1:57029/.well-known/agent-card.json",
+      "method": "GET",
+      "request_headers": {},
+      "request_body": null,
+      "response_status": 200,
+      "response_headers": {
+        "connection": "keep-alive",
+        "content-length": "2703",
+        "content-type": "application/json",
+        "date": "Fri, 23 Oct 2026 19:48:04 GMT",
+        "keep-alive": "timeout=5"
+      },
+      "response_body": "{\"name\":\"Fixture Agent\",\"description\":\"Deterministic A2A v1.0.1 agent with no language model, driven by the prefix of the first text part. Covers the lifecycles no official sample exercises.\",\"supportedInterfaces\":[{\"url\":\"http://127.0.0.1:57029/a2a\",\"protocolBinding\":\"JSONRPC\",\"tenant\":\"\",\"protocolVersion\":\"1.0\"}],\"provider\":{\"organization\":\"a2a-to-mcp test bench\",\"url\":\"https://example.invalid/a2a-to-mcp\"},\"version\":\"1.0.0\",\"capabilities\":{\"streaming\":true,\"pushNotifications\":false,\"extensions\":[],\"extendedAgentCard\":false},\"securitySchemes\":{},\"securityRequirements\":[],\"defaultInputModes\":[\"text/plain\"],\"defaultOutputModes\":[\"text/plain\"],\"skills\":[{\"id\":\"echo\",\"name\":\"Echo\",\"description\":\"Answers with a direct Message (no Task) carrying the text back verbatim.\",\"tags\":[\"message\",\"deterministic\"],\"examples\":[\"echo: hello\",\"ECHO: mixed case works\"],\"inputModes\":[\"text/plain\"],\"outputModes\":[\"text/plain\"],\"securityRequirements\":[]},{\"id\":\"long-task\",\"name\":\"Long task\",\"description\":\"Runs a Task through SUBMITTED, WORKING and COMPLETED, emitting one artifact. `slow:` holds the task in WORKING so it can be canceled.\",\"tags\":[\"task\",\"streaming\",\"cancel\"],\"examples\":[\"task: reverse me\",\"slow: 2000\"],\"inputModes\":[\"text/plain\"],\"outputModes\":[\"text/plain\"],\"securityRequirements\":[]},{\"id\":\"ask\",\"name\":\"Ask for input\",\"description\":\"Parks the Task in INPUT_REQUIRED with a question, then completes it when a second message carrying the same taskId supplies the answer.\",\"tags\":[\"task\",\"input-required\",\"multi-turn\"],\"examples\":[\"ask: color\",\"ask: target region\"],\"inputModes\":[\"text/plain\"],\"outputModes\":[\"text/plain\"],\"securityRequirements\":[]},{\"id\":\"outcomes\",\"name\":\"Terminal outcomes\",\"description\":\"Drives a Task straight to REJECTED, FAILED or AUTH_REQUIRED, each with an explanatory status message. `vanish` opens a Task, moves it to WORKING and then forgets it, so the next GetTask raises TaskNotFoundError. `error: <code>` makes SendMessage fail with the typed A2A error of that code, from -32001 TaskNotFound to -32009 VersionNotSupported.\",\"tags\":[\"task\",\"errors\",\"auth-required\",\"task-not-found\",\"a2a-error-codes\"],\"examples\":[\"reject\",\"fail\",\"auth\",\"vanish\",\"error: -32004\"],\"inputModes\":[\"text/plain\"],\"outputModes\":[\"text/plain\"],\"securityRequirements\":[]},{\"id\":\"media\",\"name\":\"Non-text parts\",\"description\":\"Completes a Task whose single artifact holds a DataPart, a url file part or raw bytes, exercising every arm of the v1.0 Part oneof.\",\"tags\":[\"task\",\"artifacts\",\"parts\"],\"examples\":[\"data ping\",\"file\",\"image\"],\"inputModes\":[\"text/plain\"],\"outputModes\":[\"text/plain\",\"application/json\",\"application/pdf\",\"image/png\"],\"securityRequirements\":[]}],\"signatures\":[]}"
+    },
+    {
+      "recorded_at": "2026-10-23T19:48:04.812Z",
+      "url": "http://127.0.0.1:57029/a2a",
+      "method": "POST",
+      "request_headers": {
+        "a2a-version": "1.0",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "request_body": "{\"jsonrpc\":\"2.0\",\"method\":\"SendMessage\",\"params\":{\"message\":{\"messageId\":\"5ade1f2d-7551-40eb-8ccb-543d6307f05c\",\"role\":\"ROLE_USER\",\"parts\":[{\"text\":\"task: native-reference\",\"mediaType\":\"text/plain\"}]},\"configuration\":{}},\"id\":1}",
+      "response_status": 200,
+      "response_headers": {
+        "connection": "keep-alive",
+        "content-length": "852",
+        "content-type": "application/json",
+        "date": "Fri, 23 Oct 2026 19:48:04 GMT",
+        "keep-alive": "timeout=5"
+      },
+      "response_body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"task\":{\"id\":\"d9a42cf6-92d7-47a9-8282-8ddae20965e3\",\"contextId\":\"6c70bd01-7867-43d8-80e3-26809fc23352\",\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-10-23T19:48:04.809Z\"},\"artifacts\":[{\"artifactId\":\"09bce08e-ab7c-4304-8bd0-cb88345c7b7e\",\"name\":\"result\",\"parts\":[{\"text\":\"ecnerefer-evitan\",\"mediaType\":\"text/plain\"}]}],\"history\":[{\"messageId\":\"5ade1f2d-7551-40eb-8ccb-543d6307f05c\",\"contextId\":\"6c70bd01-7867-43d8-80e3-26809fc23352\",\"taskId\":\"d9a42cf6-92d7-47a9-8282-8ddae20965e3\",\"role\":\"ROLE_USER\",\"parts\":[{\"text\":\"task: native-reference\",\"mediaType\":\"text/plain\"}]},{\"messageId\":\"4a755e4d-6b28-4d4b-bf57-a10d17c71191\",\"contextId\":\"6c70bd01-7867-43d8-80e3-26809fc23352\",\"taskId\":\"d9a42cf6-92d7-47a9-8282-8ddae20965e3\",\"role\":\"ROLE_AGENT\",\"parts\":[{\"text\":\"Working on it.\",\"mediaType\":\"text/plain\"}]}]}}}"
+    },
+    {
+      "recorded_at": "2026-10-23T19:48:04.816Z",
+      "url": "http://127.0.0.1:57029/a2a",
+      "method": "POST",
+      "request_headers": {
+        "a2a-version": "1.0",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "request_body": "{\"jsonrpc\":\"2.0\",\"method\":\"GetTask\",\"params\":{\"id\":\"d9a42cf6-92d7-47a9-8282-8ddae20965e3\",\"historyLength\":0},\"id\":2}",
+      "response_status": 200,
+      "response_headers": {
+        "connection": "keep-alive",
+        "content-length": "358",
+        "content-type": "application/json",
+        "date": "Fri, 23 Oct 2026 19:48:04 GMT",
+        "keep-alive": "timeout=5"
+      },
+      "response_body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"id\":\"d9a42cf6-92d7-47a9-8282-8ddae20965e3\",\"contextId\":\"6c70bd01-7867-43d8-80e3-26809fc23352\",\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-10-23T19:48:04.809Z\"},\"artifacts\":[{\"artifactId\":\"09bce08e-ab7c-4304-8bd0-cb88345c7b7e\",\"name\":\"result\",\"parts\":[{\"text\":\"ecnerefer-evitan\",\"mediaType\":\"text/plain\"}]}]}}"
+    },
+    {
+      "recorded_at": "2026-10-23T19:48:04.818Z",
+      "url": "http://127.0.0.1:57029/a2a",
+      "method": "POST",
+      "request_headers": {
+        "a2a-version": "1.0",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "request_body": "{\"jsonrpc\":\"2.0\",\"method\":\"SendMessage\",\"params\":{\"message\":{\"messageId\":\"b6da578f-268e-41e6-99ae-b6e2dc10c29f\",\"role\":\"ROLE_USER\",\"parts\":[{\"text\":\"ask: approval\",\"mediaType\":\"text/plain\"}]},\"configuration\":{}},\"id\":3}",
+      "response_status": 200,
+      "response_headers": {
+        "connection": "keep-alive",
+        "content-length": "990",
+        "content-type": "application/json",
+        "date": "Fri, 23 Oct 2026 19:48:04 GMT",
+        "keep-alive": "timeout=5"
+      },
+      "response_body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"result\":{\"task\":{\"id\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"status\":{\"state\":\"TASK_STATE_INPUT_REQUIRED\",\"message\":{\"messageId\":\"2f03807c-0b79-4c77-a19f-2e6633597c68\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"taskId\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"role\":\"ROLE_AGENT\",\"parts\":[{\"text\":\"What value should I use for approval?\",\"mediaType\":\"text/plain\"}]},\"timestamp\":\"2026-10-23T19:48:04.818Z\"},\"history\":[{\"messageId\":\"b6da578f-268e-41e6-99ae-b6e2dc10c29f\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"taskId\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"role\":\"ROLE_USER\",\"parts\":[{\"text\":\"ask: approval\",\"mediaType\":\"text/plain\"}]},{\"messageId\":\"2f03807c-0b79-4c77-a19f-2e6633597c68\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"taskId\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"role\":\"ROLE_AGENT\",\"parts\":[{\"text\":\"What value should I use for approval?\",\"mediaType\":\"text/plain\"}]}]}}}"
+    },
+    {
+      "recorded_at": "2026-10-23T19:48:04.821Z",
+      "url": "http://127.0.0.1:57029/a2a",
+      "method": "POST",
+      "request_headers": {
+        "a2a-version": "1.0",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "request_body": "{\"jsonrpc\":\"2.0\",\"method\":\"GetTask\",\"params\":{\"id\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"historyLength\":0},\"id\":4}",
+      "response_status": 200,
+      "response_headers": {
+        "connection": "keep-alive",
+        "content-length": "482",
+        "content-type": "application/json",
+        "date": "Fri, 23 Oct 2026 19:48:04 GMT",
+        "keep-alive": "timeout=5"
+      },
+      "response_body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"id\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"status\":{\"state\":\"TASK_STATE_INPUT_REQUIRED\",\"message\":{\"messageId\":\"2f03807c-0b79-4c77-a19f-2e6633597c68\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"taskId\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"role\":\"ROLE_AGENT\",\"parts\":[{\"text\":\"What value should I use for approval?\",\"mediaType\":\"text/plain\"}]},\"timestamp\":\"2026-10-23T19:48:04.818Z\"}}}"
+    },
+    {
+      "recorded_at": "2026-10-23T19:48:04.825Z",
+      "url": "http://127.0.0.1:57029/a2a",
+      "method": "POST",
+      "request_headers": {
+        "a2a-version": "1.0",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "request_body": "{\"jsonrpc\":\"2.0\",\"method\":\"SendMessage\",\"params\":{\"message\":{\"messageId\":\"9877b050-56a6-43b4-98c9-d07feca05825\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"taskId\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"role\":\"ROLE_USER\",\"parts\":[{\"text\":\"yes\",\"mediaType\":\"text/plain\"}]},\"configuration\":{}},\"id\":5}",
+      "response_status": 200,
+      "response_headers": {
+        "connection": "keep-alive",
+        "content-length": "1085",
+        "content-type": "application/json",
+        "date": "Fri, 23 Oct 2026 19:48:04 GMT",
+        "keep-alive": "timeout=5"
+      },
+      "response_body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"result\":{\"task\":{\"id\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-10-23T19:48:04.823Z\"},\"artifacts\":[{\"artifactId\":\"c3302356-d327-460f-a325-3a9d032a145c\",\"name\":\"result\",\"parts\":[{\"text\":\"approval = yes\",\"mediaType\":\"text/plain\"}]}],\"history\":[{\"messageId\":\"b6da578f-268e-41e6-99ae-b6e2dc10c29f\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"taskId\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"role\":\"ROLE_USER\",\"parts\":[{\"text\":\"ask: approval\",\"mediaType\":\"text/plain\"}]},{\"messageId\":\"2f03807c-0b79-4c77-a19f-2e6633597c68\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"taskId\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"role\":\"ROLE_AGENT\",\"parts\":[{\"text\":\"What value should I use for approval?\",\"mediaType\":\"text/plain\"}]},{\"messageId\":\"9877b050-56a6-43b4-98c9-d07feca05825\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"taskId\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"role\":\"ROLE_USER\",\"parts\":[{\"text\":\"yes\",\"mediaType\":\"text/plain\"}]}]}}}"
+    },
+    {
+      "recorded_at": "2026-10-23T19:48:04.830Z",
+      "url": "http://127.0.0.1:57029/a2a",
+      "method": "POST",
+      "request_headers": {
+        "a2a-version": "1.0",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "request_body": "{\"jsonrpc\":\"2.0\",\"method\":\"GetTask\",\"params\":{\"id\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"historyLength\":0},\"id\":6}",
+      "response_status": 200,
+      "response_headers": {
+        "connection": "keep-alive",
+        "content-length": "356",
+        "content-type": "application/json",
+        "date": "Fri, 23 Oct 2026 19:48:04 GMT",
+        "keep-alive": "timeout=5"
+      },
+      "response_body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"id\":\"771eff87-b884-424f-a340-ab9908090e9b\",\"contextId\":\"4bb8e411-818c-46de-911a-2c3ff2a7f03f\",\"status\":{\"state\":\"TASK_STATE_COMPLETED\",\"timestamp\":\"2026-10-23T19:48:04.823Z\"},\"artifacts\":[{\"artifactId\":\"c3302356-d327-460f-a325-3a9d032a145c\",\"name\":\"result\",\"parts\":[{\"text\":\"approval = yes\",\"mediaType\":\"text/plain\"}]}]}}"
+    },
+    {
+      "recorded_at": "2026-10-23T19:48:04.833Z",
+      "url": "http://127.0.0.1:57029/a2a",
+      "method": "POST",
+      "request_headers": {
+        "a2a-version": "1.0",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "request_body": "{\"jsonrpc\":\"2.0\",\"method\":\"SendMessage\",\"params\":{\"message\":{\"messageId\":\"3fac0de8-0771-4277-93d3-3e93ce25aaff\",\"role\":\"ROLE_USER\",\"parts\":[{\"text\":\"ask: native-cancel\",\"mediaType\":\"text/plain\"}]},\"configuration\":{}},\"id\":7}",
+      "response_status": 200,
+      "response_headers": {
+        "connection": "keep-alive",
+        "content-length": "1005",
+        "content-type": "application/json",
+        "date": "Fri, 23 Oct 2026 19:48:04 GMT",
+        "keep-alive": "timeout=5"
+      },
+      "response_body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"task\":{\"id\":\"a0409098-65cd-4bf0-b7b5-9069f2d5da1d\",\"contextId\":\"f0c271e6-992d-4c16-83c4-7f91c3d3ca19\",\"status\":{\"state\":\"TASK_STATE_INPUT_REQUIRED\",\"message\":{\"messageId\":\"5cc090d5-0143-4b82-9583-9c18936f37d6\",\"contextId\":\"f0c271e6-992d-4c16-83c4-7f91c3d3ca19\",\"taskId\":\"a0409098-65cd-4bf0-b7b5-9069f2d5da1d\",\"role\":\"ROLE_AGENT\",\"parts\":[{\"text\":\"What value should I use for native-cancel?\",\"mediaType\":\"text/plain\"}]},\"timestamp\":\"2026-10-23T19:48:04.833Z\"},\"history\":[{\"messageId\":\"3fac0de8-0771-4277-93d3-3e93ce25aaff\",\"contextId\":\"f0c271e6-992d-4c16-83c4-7f91c3d3ca19\",\"taskId\":\"a0409098-65cd-4bf0-b7b5-9069f2d5da1d\",\"role\":\"ROLE_USER\",\"parts\":[{\"text\":\"ask: native-cancel\",\"mediaType\":\"text/plain\"}]},{\"messageId\":\"5cc090d5-0143-4b82-9583-9c18936f37d6\",\"contextId\":\"f0c271e6-992d-4c16-83c4-7f91c3d3ca19\",\"taskId\":\"a0409098-65cd-4bf0-b7b5-9069f2d5da1d\",\"role\":\"ROLE_AGENT\",\"parts\":[{\"text\":\"What value should I use for native-cancel?\",\"mediaType\":\"text/plain\"}]}]}}}"
+    },
+    {
+      "recorded_at": "2026-10-23T19:48:04.837Z",
+      "url": "http://127.0.0.1:57029/a2a",
+      "method": "POST",
+      "request_headers": {
+        "a2a-version": "1.0",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "request_body": "{\"jsonrpc\":\"2.0\",\"method\":\"GetTask\",\"params\":{\"id\":\"a0409098-65cd-4bf0-b7b5-9069f2d5da1d\",\"historyLength\":0},\"id\":8}",
+      "response_status": 200,
+      "response_headers": {
+        "connection": "keep-alive",
+        "content-length": "487",
+        "content-type": "application/json",
+        "date": "Fri, 23 Oct 2026 19:48:04 GMT",
+        "keep-alive": "timeout=5"
+      },
+      "response_body": "{\"jsonrpc\":\"2.0\",\"id\":8,\"result\":{\"id\":\"a0409098-65cd-4bf0-b7b5-9069f2d5da1d\",\"contextId\":\"f0c271e6-992d-4c16-83c4-7f91c3d3ca19\",\"status\":{\"state\":\"TASK_STATE_INPUT_REQUIRED\",\"message\":{\"messageId\":\"5cc090d5-0143-4b82-9583-9c18936f37d6\",\"contextId\":\"f0c271e6-992d-4c16-83c4-7f91c3d3ca19\",\"taskId\":\"a0409098-65cd-4bf0-b7b5-9069f2d5da1d\",\"role\":\"ROLE_AGENT\",\"parts\":[{\"text\":\"What value should I use for native-cancel?\",\"mediaType\":\"text/plain\"}]},\"timestamp\":\"2026-10-23T19:48:04.833Z\"}}}"
+    },
+    {
+      "recorded_at": "2026-10-23T19:48:04.842Z",
+      "url": "http://127.0.0.1:57029/a2a",
+      "method": "POST",
+      "request_headers": {
+        "a2a-version": "1.0",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "request_body": "{\"jsonrpc\":\"2.0\",\"method\":\"CancelTask\",\"params\":{\"id\":\"a0409098-65cd-4bf0-b7b5-9069f2d5da1d\"},\"id\":9}",
+      "response_status": 200,
+      "response_headers": {
+        "connection": "keep-alive",
+        "content-length": "719",
+        "content-type": "application/json",
+        "date": "Fri, 23 Oct 2026 19:48:04 GMT",
+        "keep-alive": "timeout=5"
+      },
+      "response_body": "{\"jsonrpc\":\"2.0\",\"id\":9,\"result\":{\"id\":\"a0409098-65cd-4bf0-b7b5-9069f2d5da1d\",\"contextId\":\"f0c271e6-992d-4c16-83c4-7f91c3d3ca19\",\"status\":{\"state\":\"TASK_STATE_CANCELED\",\"timestamp\":\"2026-10-23T19:48:04.841Z\"},\"history\":[{\"messageId\":\"3fac0de8-0771-4277-93d3-3e93ce25aaff\",\"contextId\":\"f0c271e6-992d-4c16-83c4-7f91c3d3ca19\",\"taskId\":\"a0409098-65cd-4bf0-b7b5-9069f2d5da1d\",\"role\":\"ROLE_USER\",\"parts\":[{\"text\":\"ask: native-cancel\",\"mediaType\":\"text/plain\"}]},{\"messageId\":\"5cc090d5-0143-4b82-9583-9c18936f37d6\",\"contextId\":\"f0c271e6-992d-4c16-83c4-7f91c3d3ca19\",\"taskId\":\"a0409098-65cd-4bf0-b7b5-9069f2d5da1d\",\"role\":\"ROLE_AGENT\",\"parts\":[{\"text\":\"What value should I use for native-cancel?\",\"mediaType\":\"text/plain\"}]}]}}"
+    }
+  ],
+  "fixture_stdout": "[fixture-agent] listening on http://127.0.0.1:57029\n[fixture-agent] agent card: http://127.0.0.1:57029/.well-known/agent-card.json\n[fixture-agent] JSON-RPC:   http://127.0.0.1:57029/a2a\n[fixture-agent] commands: echo:, task:, ask:, slow:, reject, fail, auth, data, file, image, vanish, error: <-32001..-32009>\n[fixture-agent] press Ctrl+C to stop\n",
+  "fixture_stderr": "",
+  "claim_limit": "Native reference startup and observed continuation only; no admission/novelty result",
+  "fixture_command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "--import",
+    "tsx",
+    "fixtures/agent/cli.ts",
+    "--port",
+    "0"
+  ],
+  "fixture_pid": 25148,
+  "fixture_url": "http://127.0.0.1:57029",
+  "card": {
+    "name": "Fixture Agent",
+    "description": "Deterministic A2A v1.0.1 agent with no language model, driven by the prefix of the first text part. Covers the lifecycles no official sample exercises.",
+    "supportedInterfaces": [
+      {
+        "url": "http://127.0.0.1:57029/a2a",
+        "protocolBinding": "JSONRPC",
+        "tenant": "",
+        "protocolVersion": "1.0"
+      }
+    ],
+    "provider": {
+      "organization": "a2a-to-mcp test bench",
+      "url": "https://example.invalid/a2a-to-mcp"
+    },
+    "version": "1.0.0",
+    "capabilities": {
+      "streaming": true,
+      "pushNotifications": false,
+      "extensions": [],
+      "extendedAgentCard": false
+    },
+    "securitySchemes": {},
+    "securityRequirements": [],
+    "defaultInputModes": [
+      "text/plain"
+    ],
+    "defaultOutputModes": [
+      "text/plain"
+    ],
+    "skills": [
+      {
+        "id": "echo",
+        "name": "Echo",
+        "description": "Answers with a direct Message (no Task) carrying the text back verbatim.",
+        "tags": [
+          "message",
+          "deterministic"
+        ],
+        "examples": [
+          "echo: hello",
+          "ECHO: mixed case works"
+        ],
+        "inputModes": [
+          "text/plain"
+        ],
+        "outputModes": [
+          "text/plain"
+        ],
+        "securityRequirements": []
+      },
+      {
+        "id": "long-task",
+        "name": "Long task",
+        "description": "Runs a Task through SUBMITTED, WORKING and COMPLETED, emitting one artifact. `slow:` holds the task in WORKING so it can be canceled.",
+        "tags": [
+          "task",
+          "streaming",
+          "cancel"
+        ],
+        "examples": [
+          "task: reverse me",
+          "slow: 2000"
+        ],
+        "inputModes": [
+          "text/plain"
+        ],
+        "outputModes": [
+          "text/plain"
+        ],
+        "securityRequirements": []
+      },
+      {
+        "id": "ask",
+        "name": "Ask for input",
+        "description": "Parks the Task in INPUT_REQUIRED with a question, then completes it when a second message carrying the same taskId supplies the answer.",
+        "tags": [
+          "task",
+          "input-required",
+          "multi-turn"
+        ],
+        "examples": [
+          "ask: color",
+          "ask: target region"
+        ],
+        "inputModes": [
+          "text/plain"
+        ],
+        "outputModes": [
+          "text/plain"
+        ],
+        "securityRequirements": []
+      },
+      {
+        "id": "outcomes",
+        "name": "Terminal outcomes",
+        "description": "Drives a Task straight to REJECTED, FAILED or AUTH_REQUIRED, each with an explanatory status message. `vanish` opens a Task, moves it to WORKING and then forgets it, so the next GetTask raises TaskNotFoundError. `error: <code>` makes SendMessage fail with the typed A2A error of that code, from -32001 TaskNotFound to -32009 VersionNotSupported.",
+        "tags": [
+          "task",
+          "errors",
+          "auth-required",
+          "task-not-found",
+          "a2a-error-codes"
+        ],
+        "examples": [
+          "reject",
+          "fail",
+          "auth",
+          "vanish",
+          "error: -32004"
+        ],
+        "inputModes": [
+          "text/plain"
+        ],
+        "outputModes": [
+          "text/plain"
+        ],
+        "securityRequirements": []
+      },
+      {
+        "id": "media",
+        "name": "Non-text parts",
+        "description": "Completes a Task whose single artifact holds a DataPart, a url file part or raw bytes, exercising every arm of the v1.0 Part oneof.",
+        "tags": [
+          "task",
+          "artifacts",
+          "parts"
+        ],
+        "examples": [
+          "data ping",
+          "file",
+          "image"
+        ],
+        "inputModes": [
+          "text/plain"
+        ],
+        "outputModes": [
+          "text/plain",
+          "application/json",
+          "application/pdf",
+          "image/png"
+        ],
+        "securityRequirements": []
+      }
+    ],
+    "signatures": []
+  },
+  "send_result": {
+    "id": "d9a42cf6-92d7-47a9-8282-8ddae20965e3",
+    "contextId": "6c70bd01-7867-43d8-80e3-26809fc23352",
+    "status": {
+      "state": 3,
+      "timestamp": "2026-10-23T19:48:04.809Z"
+    },
+    "artifacts": [
+      {
+        "artifactId": "09bce08e-ab7c-4304-8bd0-cb88345c7b7e",
+        "name": "result",
+        "description": "",
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "ecnerefer-evitan"
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": []
+      }
+    ],
+    "history": [
+      {
+        "messageId": "5ade1f2d-7551-40eb-8ccb-543d6307f05c",
+        "contextId": "6c70bd01-7867-43d8-80e3-26809fc23352",
+        "taskId": "d9a42cf6-92d7-47a9-8282-8ddae20965e3",
+        "role": 1,
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "task: native-reference"
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": [],
+        "referenceTaskIds": []
+      },
+      {
+        "messageId": "4a755e4d-6b28-4d4b-bf57-a10d17c71191",
+        "contextId": "6c70bd01-7867-43d8-80e3-26809fc23352",
+        "taskId": "d9a42cf6-92d7-47a9-8282-8ddae20965e3",
+        "role": 2,
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "Working on it."
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": [],
+        "referenceTaskIds": []
+      }
+    ]
+  },
+  "get_result": {
+    "id": "d9a42cf6-92d7-47a9-8282-8ddae20965e3",
+    "contextId": "6c70bd01-7867-43d8-80e3-26809fc23352",
+    "status": {
+      "state": 3,
+      "timestamp": "2026-10-23T19:48:04.809Z"
+    },
+    "artifacts": [
+      {
+        "artifactId": "09bce08e-ab7c-4304-8bd0-cb88345c7b7e",
+        "name": "result",
+        "description": "",
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "ecnerefer-evitan"
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": []
+      }
+    ],
+    "history": []
+  },
+  "input_required_result": {
+    "id": "771eff87-b884-424f-a340-ab9908090e9b",
+    "contextId": "4bb8e411-818c-46de-911a-2c3ff2a7f03f",
+    "status": {
+      "state": 6,
+      "message": {
+        "messageId": "2f03807c-0b79-4c77-a19f-2e6633597c68",
+        "contextId": "4bb8e411-818c-46de-911a-2c3ff2a7f03f",
+        "taskId": "771eff87-b884-424f-a340-ab9908090e9b",
+        "role": 2,
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "What value should I use for approval?"
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": [],
+        "referenceTaskIds": []
+      },
+      "timestamp": "2026-10-23T19:48:04.818Z"
+    },
+    "artifacts": [],
+    "history": []
+  },
+  "resume_acknowledgement": {
+    "id": "771eff87-b884-424f-a340-ab9908090e9b",
+    "contextId": "4bb8e411-818c-46de-911a-2c3ff2a7f03f",
+    "status": {
+      "state": 3,
+      "timestamp": "2026-10-23T19:48:04.823Z"
+    },
+    "artifacts": [
+      {
+        "artifactId": "c3302356-d327-460f-a325-3a9d032a145c",
+        "name": "result",
+        "description": "",
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "approval = yes"
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": []
+      }
+    ],
+    "history": [
+      {
+        "messageId": "b6da578f-268e-41e6-99ae-b6e2dc10c29f",
+        "contextId": "4bb8e411-818c-46de-911a-2c3ff2a7f03f",
+        "taskId": "771eff87-b884-424f-a340-ab9908090e9b",
+        "role": 1,
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "ask: approval"
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": [],
+        "referenceTaskIds": []
+      },
+      {
+        "messageId": "2f03807c-0b79-4c77-a19f-2e6633597c68",
+        "contextId": "4bb8e411-818c-46de-911a-2c3ff2a7f03f",
+        "taskId": "771eff87-b884-424f-a340-ab9908090e9b",
+        "role": 2,
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "What value should I use for approval?"
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": [],
+        "referenceTaskIds": []
+      },
+      {
+        "messageId": "9877b050-56a6-43b4-98c9-d07feca05825",
+        "contextId": "4bb8e411-818c-46de-911a-2c3ff2a7f03f",
+        "taskId": "771eff87-b884-424f-a340-ab9908090e9b",
+        "role": 1,
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "yes"
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": [],
+        "referenceTaskIds": []
+      }
+    ]
+  },
+  "resumed_get_result": {
+    "id": "771eff87-b884-424f-a340-ab9908090e9b",
+    "contextId": "4bb8e411-818c-46de-911a-2c3ff2a7f03f",
+    "status": {
+      "state": 3,
+      "timestamp": "2026-10-23T19:48:04.823Z"
+    },
+    "artifacts": [
+      {
+        "artifactId": "c3302356-d327-460f-a325-3a9d032a145c",
+        "name": "result",
+        "description": "",
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "approval = yes"
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": []
+      }
+    ],
+    "history": []
+  },
+  "cancel_result": {
+    "id": "a0409098-65cd-4bf0-b7b5-9069f2d5da1d",
+    "contextId": "f0c271e6-992d-4c16-83c4-7f91c3d3ca19",
+    "status": {
+      "state": 5,
+      "timestamp": "2026-10-23T19:48:04.841Z"
+    },
+    "artifacts": [],
+    "history": [
+      {
+        "messageId": "3fac0de8-0771-4277-93d3-3e93ce25aaff",
+        "contextId": "f0c271e6-992d-4c16-83c4-7f91c3d3ca19",
+        "taskId": "a0409098-65cd-4bf0-b7b5-9069f2d5da1d",
+        "role": 1,
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "ask: native-cancel"
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": [],
+        "referenceTaskIds": []
+      },
+      {
+        "messageId": "5cc090d5-0143-4b82-9583-9c18936f37d6",
+        "contextId": "f0c271e6-992d-4c16-83c4-7f91c3d3ca19",
+        "taskId": "a0409098-65cd-4bf0-b7b5-9069f2d5da1d",
+        "role": 2,
+        "parts": [
+          {
+            "content": {
+              "$case": "text",
+              "value": "What value should I use for native-cancel?"
+            },
+            "filename": "",
+            "mediaType": "text/plain"
+          }
+        ],
+        "extensions": [],
+        "referenceTaskIds": []
+      }
+    ]
+  },
+  "outcome": "passed",
+  "exit_code": 0,
+  "fixture_exit_code": null,
+  "fixture_exit_signal": "SIGTERM",
+  "cleanup": "child exited",
+  "finished_at": "2026-10-23T19:48:04.865Z"
+}

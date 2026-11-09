@@ -1,0 +1,104 @@
+{
+  "schema_version": "pending-admission-software/1",
+  "status": "passed",
+  "finished_at_utc": "2026-10-28T19:28:14.103839+00:00",
+  "inputs_unchanged": true,
+  "captured_inputs_unchanged": true,
+  "stages": [
+    {
+      "name": "python",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_pending_admission",
+        "test_refinement"
+      ],
+      "returncode": 0,
+      "tests": 57,
+      "streams": [
+        {
+          "path": "runs/pending-admission-software/v1/python.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "runs/pending-admission-software/v1/python.stderr.bin",
+          "bytes": 9657,
+          "sha256": "65c18a345a002e76bb5efa1c309e20f50d7a52cf18b39c87cc4cbeb01876c4b0"
+        }
+      ]
+    },
+    {
+      "name": "node",
+      "argv": [
+        "node",
+        "--test",
+        "tests/test_agentops_admission_controller_v1.mjs"
+      ],
+      "returncode": 0,
+      "tests": 26,
+      "streams": [
+        {
+          "path": "runs/pending-admission-software/v1/node.stdout.bin",
+          "bytes": 5643,
+          "sha256": "d1158bffb9fb845fcbed273b3297eb8766ed60f081f2f47e4fed88ab39f94d58"
+        },
+        {
+          "path": "runs/pending-admission-software/v1/node.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "controller-syntax",
+      "argv": [
+        "node",
+        "--check",
+        "scripts/agentops_admission_controller_v1.mjs"
+      ],
+      "returncode": 0,
+      "tests": null,
+      "streams": [
+        {
+          "path": "runs/pending-admission-software/v1/controller-syntax.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "runs/pending-admission-software/v1/controller-syntax.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "client-syntax",
+      "argv": [
+        "node",
+        "--check",
+        "scripts/agentops_admission_client_v1.mjs"
+      ],
+      "returncode": 0,
+      "tests": null,
+      "streams": [
+        {
+          "path": "runs/pending-admission-software/v1/client-syntax.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "runs/pending-admission-software/v1/client-syntax.stderr.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "real_application_runs": 0,
+  "real_bridge_runs": 0,
+  "live_model_calls": 0
+}

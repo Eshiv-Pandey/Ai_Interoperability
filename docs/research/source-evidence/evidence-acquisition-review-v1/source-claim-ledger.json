@@ -1,0 +1,240 @@
+{
+  "schema_version": "research-source-claim-ledger/1",
+  "local_research_date": "2026-10-24",
+  "prepared_at_utc": "2026-10-23T22:29:54.842136+00:00",
+  "reviewer": "Independent AI research agent; not human supervisor",
+  "decision": "no-justified-C1-distinction",
+  "candidate_technical_steps_identified": 0,
+  "new_source_grounded_application_witnesses": 0,
+  "primary_sources": [
+    {
+      "id": "ec2",
+      "title": "Near-Optimal Bayesian Active Learning with Noisy Observations",
+      "identity_as_primary_source": "Golovin, Krause, Ray; NIPS2010",
+      "url": "https://papers.nips.cc/paper_files/paper/2010/file/1e6e0a04d20f50967c64dac2d639a577-Paper.pdf",
+      "response_sha256": "83deda5dec1255ccc2a5f852edac8dd9fcb86baa59628e34a8f8f1821e302721",
+      "location": "Sections2-4",
+      "review_boundary": "Primary PDF passages inspected; modeled correlated noise and nonuniform costs; Bayesian assumption retained"
+    },
+    {
+      "id": "hec",
+      "title": "Near Optimal Bayesian Active Learning for Decision Making",
+      "identity_as_primary_source": "Javdani et al.; AISTATS2014",
+      "url": "https://proceedings.mlr.press/v33/javdani14.pdf",
+      "response_sha256": "f7e025e4d3f3ec6cd617d84466a45c2e0352b5cc93866bc4ff749229bac82299",
+      "location": "Sections2-3",
+      "review_boundary": "Primary PDF passages inspected; overlapping regions and valid stopping without identifying every hypothesis"
+    },
+    {
+      "id": "direct",
+      "title": "Submodular Surrogates for Value of Information",
+      "identity_as_primary_source": "Chen et al.; AAAI2015",
+      "url": "https://cdn.aaai.org/ojs/9694/9694-13-13222-1-2-20201228.pdf",
+      "response_sha256": "354fcf5d558c404287797ffa08b0f4ce9868f3a14073cd49748d4adbe8832df0",
+      "location": "Background and Problem Statement; contribution paragraphs",
+      "review_boundary": "Primary PDF passages inspected; known joint prior and regret/utility objective, not exact admission by default"
+    },
+    {
+      "id": "bisect",
+      "title": "Near-Optimal Edge Evaluation in Explicit Generalized Binomial Graphs",
+      "identity_as_primary_source": "Choudhury, Javdani, Srinivasa, Scherer; NeurIPS2017",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2017/file/e139c454239bfde741e893edb46a06cc-Paper.pdf",
+      "response_sha256": "e84139c9f4c58a2a62df267283e4ee73665c5221fec51eec58612e13ab61ee96",
+      "location": "Sections1,2.1,2.2",
+      "review_boundary": "Primary PDF passages inspected; shared edges across paths; independent Bernoulli prior; candidate library scope and positive-path identification"
+    },
+    {
+      "id": "self-adjusting",
+      "title": "An Experimental Analysis of Self-Adjusting Computation",
+      "identity_as_primary_source": "Acar, Blelloch, Blume, Tangwongsan; PLDI2006",
+      "url": "https://www.cs.cmu.edu/~guyb/papers/ABBT06.pdf",
+      "response_sha256": "986e6c3be2fc83f731c61adc275af0c09da38c1ddbfb729097e7572ec5dd4f3a",
+      "location": "Sections1,3",
+      "review_boundary": "Primary PDF passages inspected; dependency graphs/memoization/change propagation on visible changed inputs; no remote freshness guarantee"
+    },
+    {
+      "id": "atms-general-labeling",
+      "title": "A General Labeling Algorithm for Assumption-Based Truth Maintenance",
+      "identity_as_primary_source": "Johan de Kleer; AAAI1988",
+      "url": "https://cdn.aaai.org/AAAI/1988/AAAI88-034.pdf",
+      "response_sha256": "9bb1c9a5947b0bc233180875f31ebb02bc3474d14b8252e94f2ef2a9740c8867",
+      "location": "Section2.2 and label definitions",
+      "review_boundary": "Primary PDF passages inspected; incremental inference, alternative minimal supporting environments; receipt validity is an adaptation assumption"
+    },
+    {
+      "id": "contingent-planning",
+      "title": "Width and Complexity of Belief Tracking in Non-Deterministic Conformant and Contingent Planning",
+      "identity_as_primary_source": "Bonet, Geffner; AAAI2012",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/download/8365/8224",
+      "response_sha256": "e84e3f3a0c34d9c8684d451ad89ed15d06ea9690aca62bea57651a9c9deed5c4",
+      "location": "Contingent Planning pp1757; Factored Belief Tracking pp1759-1760",
+      "review_boundary": "Primary PDF passages inspected; policy over beliefs, AND outcomes, relevance and factored representation"
+    },
+    {
+      "id": "pc2",
+      "title": "Proof-Carrying Contracts: Commitments AI Agents Cannot Break",
+      "identity_as_primary_source": "Ciliberto, Rudi, Tassi; arXiv2610.28484v1, preprint",
+      "url": "https://arxiv.org/html/2610.28484v1",
+      "response_sha256": "83dc189e81af20cd881666f71c3ccf753ff8b2cb5c9896cee184654338ca6b82",
+      "location": "Sections3.1,3.3-3.4 and AppendixA",
+      "review_boundary": "Primary HTML passages inspected; source-combining view, universal enabledness/preservation over compatible states and modeled control steps; no quantifier equivalence to existential completion"
+    },
+    {
+      "id": "agentthread",
+      "title": "Formal Security Analysis of Agent Protocol Composition",
+      "identity_as_primary_source": "Zheng et al.; arXiv2606.28690v1, preprint",
+      "url": "https://arxiv.org/html/2606.28690v1",
+      "response_sha256": "1abdbee5f3bdd81af52df047230e99416509abbe58f0a436e652759c79413cfd",
+      "location": "Sections4.2-4.5",
+      "review_boundary": "Primary HTML passages inspected; source-linked IR/composition contracts and counterexample SDK replay; no executed acquisition optimizer claim"
+    },
+    {
+      "id": "pacti",
+      "title": "Pacti: Scaling Assume-Guarantee Reasoning for System Analysis and Design",
+      "identity_as_primary_source": "Incer et al.; arXiv2303.17751v1",
+      "url": "https://arxiv.org/html/2303.17751v1",
+      "response_sha256": "e105a91c799351a3b00cde2380b063224884615d96dd99bb57f20e8a295d8bad",
+      "location": "Sections2-4 in existing primary-revalidation ledger",
+      "review_boundary": "Primary response bytes refreshed; mechanism basis is explicitly reused prior source review, not a newly repeated implementation audit"
+    },
+    {
+      "id": "contract-quotient",
+      "title": "Quotient for Assume-Guarantee Contracts",
+      "identity_as_primary_source": "Incer Romeo et al.; MEMOCODE2018",
+      "url": "https://eskang.github.io/assets/papers/memocode18.pdf",
+      "response_sha256": "71523bde56a6cafb438128dd96d0d0e348cabc6b901c5bacd41f86d755655afe",
+      "location": "Introduction and Section3 in existing primary-revalidation ledger",
+      "review_boundary": "Primary response bytes refreshed; mechanism basis is explicitly reused prior source review"
+    }
+  ],
+  "reused_local_inputs": [
+    {
+      "path": "docs/research/candidate-query-feasibility.md",
+      "sha256": "22154795166c3f2be5e4f09d892d070daa9798049700af11c1c057f835ba1610",
+      "use": "Existing source/contract record reused; no application source-screen rerun"
+    },
+    {
+      "path": "docs/research/source-evidence/query-feasibility/mechanism-lineage.md",
+      "sha256": "d360e57256e087e5ee00144185d78383f6b2d2ed81dc7802b05cd8f3c7e8b305",
+      "use": "Existing source/contract record reused; no application source-screen rerun"
+    },
+    {
+      "path": "docs/research/source-evidence/query-feasibility/source-index.json",
+      "sha256": "fad9811ba6ba91cf0790541369bc05956f6dced0e31fe988ae612e605f1e5e7a",
+      "use": "Existing source/contract record reused; no application source-screen rerun"
+    },
+    {
+      "path": "docs/research/source-evidence/2026-10-24-primary-revalidation.md",
+      "sha256": "ce2c99ccfc5c1846c81f3738610efba46c6130a002a7232889790458a505b25d",
+      "use": "Existing source/contract record reused; no application source-screen rerun"
+    },
+    {
+      "path": "docs/research/implementation-novelty-gate.md",
+      "sha256": "dee9b27e4c693460b1919b4ebc6167b0367de1d7cea0c5197bfb04808ac41a6c",
+      "use": "Existing source/contract record reused; no application source-screen rerun"
+    },
+    {
+      "path": "docs/research/reference-bridge-results-v1.md",
+      "sha256": "2539ecb6cccca8d747ade38926207b2b6aa79c88475613748a97ce7172fc0551",
+      "use": "Existing source/contract record reused; no application source-screen rerun"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "kind": "analytical structural reduction, not novelty theorem",
+      "claim": "Finite joint query acquisition with explicit dynamics and common terminal/certificate/coverage predicate is an ordinary bounded AND/OR policy problem. Induction on remaining horizon gives the exact min-max attaining baseline within that input model.",
+      "assumptions": [
+        "Finite compatible histories and allowed queries/outcomes",
+        "Explicit valid-receipt/binding context and dynamics; no hidden future schedule",
+        "Same terminal certificates, unknown decisions and coverage as practical comparator",
+        "Costs include each full query bundle plus construction/update/proof/check overhead"
+      ],
+      "sources": [
+        "contingent-planning",
+        "ec2",
+        "hec"
+      ],
+      "limitations": [
+        "Exact policy may be expensive; no practical efficiency result measured",
+        "This does not establish source/model fidelity or native leases"
+      ]
+    },
+    {
+      "id": "C2",
+      "kind": "prior-art overlap",
+      "claim": "Choosing a shared test across many candidate certificates and stopping in an overlapping successful region is established; a test may return an entire real multi-field bundle.",
+      "sources": [
+        "hec",
+        "direct",
+        "bisect"
+      ],
+      "limitations": [
+        "BISECT restricts independent Bernoulli outcomes and candidate path library; positive-path formulation does not inherit no-path/unknown coverage",
+        "DIRECT utility/regret and Bayesian guarantees do not automatically match exact runtime admission"
+      ]
+    },
+    {
+      "id": "C3",
+      "kind": "prior-art overlap with explicit adaptation boundary",
+      "claim": "Maintain alternative supporting premise sets; invalidate affected justifications after visible premise changes; preserve a decision when an independent valid justification survives.",
+      "sources": [
+        "atms-general-labeling",
+        "self-adjusting"
+      ],
+      "limitations": [
+        "Assumption support/change propagation does not discover invisible external changes",
+        "Freshness/expiry/profile revision must be supplied by actual source evidence or explicitly declared model, not fabricated"
+      ]
+    },
+    {
+      "id": "C4",
+      "kind": "source-scope finding based on preserved pinned bundle index",
+      "claim": "Actual task/card/profile/inventory bundles may be shared across contracts; existing records do not establish a common cross-peer atomic snapshot, lease or invalidation feed.",
+      "sources": [
+        "local query-feasibility source-index",
+        "pc2",
+        "agentthread"
+      ],
+      "limitations": [
+        "Unknown remote evolution remains unknown",
+        "mg raw access retains authored-port versioning/default limitation",
+        "No new multi-contract application witness was found or executed in this audit"
+      ]
+    },
+    {
+      "id": "C5",
+      "kind": "unexecuted discrimination condition",
+      "claim": "A future source-grounded multi-contract/shared-dependency witness must compare joint bundle-aware exact planning, applicable decision-region methods, alternative-support caching and PC2/AgentThread adaptations at identical decisions/coverage, including changed shared premise and surviving certificate.",
+      "sources": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "limitations": [
+        "Not a frozen performance experiment, candidate implementation or execution authorization",
+        "Do not split GetTask into fake probes, weaken baseline invalidation or give a prior/schedule only to candidate"
+      ]
+    },
+    {
+      "id": "C6",
+      "kind": "negative research decision",
+      "claim": "No precise extra technical step beyond these mechanisms is justified. Continue bounded screening only; no scaling, novelty claim, applied fallback or human-review substitution.",
+      "sources": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "limitations": [
+        "Not a proof that no new method can exist",
+        "Mandatory novelty/human gates remain open; progress stays5%"
+      ]
+    }
+  ],
+  "model_calls": 0,
+  "new_protocol_captures": 0,
+  "candidate_implementations_or_experiments": 0
+}

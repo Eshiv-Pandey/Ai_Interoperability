@@ -1,0 +1,73 @@
+{
+  "schema_version": "runtime-wire-observation/1",
+  "run_id": "amirk_a2a_to_mcp-2026-10-23T20-00-06-836Z-33464",
+  "route_id": "amirk_a2a_to_mcp",
+  "protocol": {
+    "mcp": "2026-07-28",
+    "mcp_transport": "loopback HTTP modern per-request envelope",
+    "extension": "io.modelcontextprotocol/tasks",
+    "a2a": "1.0 JSONRPC and streaming JSONRPC"
+  },
+  "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+  "started_at_utc": "2026-10-23T20:00:06.852Z",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\scripts\\capture-amirk-observation.mjs"
+  ],
+  "node": "v22.13.0",
+  "exchanges": [],
+  "receipts": [],
+  "provenance": {
+    "kind": "wire-derived-development",
+    "fixture": {
+      "repository": "AmirK-S/a2a-to-mcp",
+      "commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "label": "Original upstream deterministic fixture; shared between routes, no model inference or independent gold",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "fixtures/agent/cli.ts",
+        "--port",
+        "0"
+      ]
+    },
+    "instrumentation": {
+      "native_http": "Read-only global fetch wrapper in original bridge child; no replacement transport, request mutation, correlation header, injected faults or delays",
+      "overhead": "Wrapper stamps and hashes, clones response bodies asynchronously, and appends native records synchronously. Scheduling, memory and file-I/O overhead is measured as part of elapsed time; no uninstrumented latency claim.",
+      "raw_mcp": "Exact application JSON-RPC bytes on genuine loopback HTTP or child-process stdio, with paired matching IDs",
+      "native_bytes": "Fetch-visible request input and response entity body, not TLS/TCP framing or implicit HTTP request headers"
+    },
+    "model_calls": 0,
+    "held_out": false,
+    "evidence_complete": false,
+    "source_sha256": {
+      "external/source-lock.json": "93075b3e0a9fe293d33595d23749218c8a206f9788efe620e16dd49a9dae5efe",
+      "scripts/log-local-http.mjs": "570f6c3d826d53235af43a5ede4e6d1b1937275de89fb3fb6e58ae9aac0166d4",
+      "scripts/capture-amirk-observation.mjs": "6334e2e85289c163fa2eb5d30552f5f6a9001aa05996d90c4e2d7bf8c8c4e562"
+    }
+  },
+  "namespaces": {
+    "task": "AmirK-S bridge opaque tk_ MCP task handle; native task ID is not revealed by this projection",
+    "context": "AmirK-S bridge opaque cx_ context handle; native context ID is private sidecar data",
+    "principal": "unidentified unauthenticated local development caller; no authority grant inferred",
+    "scope": "loopback fixture",
+    "credential_epoch": "not applicable; no credentials supplied",
+    "policy_epoch": "not observed",
+    "validity_interval": "not established; no service freshness lease inferred"
+  },
+  "outcome": "failed",
+  "exit_code": 1,
+  "error": "Error: Bridge exited 1 before startup\n    at ChildProcess.<anonymous> (file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/capture-amirk-observation.mjs:59:70)\n    at Object.onceWrapper (node:events:639:26)\n    at ChildProcess.emit (node:events:524:28)\n    at ChildProcess._handle.onexit (node:internal/child_process:293:12)",
+  "completed_at_utc": "2026-10-23T20:00:07.999Z",
+  "costs": {
+    "mcp_rpc_requests": 0,
+    "mcp_notifications_sent": 0,
+    "request_bytes": 0,
+    "response_bytes": 0
+  },
+  "private_sidecars": {
+    "native_http": "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-00-06-836Z-33464/private-native-http.jsonl",
+    "native_capture_available": true,
+    "diagnostics": "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-00-06-836Z-33464/private-process-diagnostics.json"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "schema_version": "source-screen-claim-ledger/1",
+  "date_local": "2026-10-25",
+  "decision": "unqualified-framework-lead; native-substantive-original-task-continuation-unestablished",
+  "retrieval_pairs": 6,
+  "source": {
+    "repository": "https://github.com/aiperceivable/apcore-a2a-python",
+    "shared_spec_repository": "https://github.com/aiperceivable/apcore-a2a",
+    "tag": "python/v0.8.4",
+    "commit": "c8b5ae5c15ae7e848cdfb45c2f063293d172061d",
+    "pin_kind": "Web-resolved release commit link; no local checkout",
+    "license": "Apache-2.0, inspected commit-pinned LICENSE excerpt",
+    "declared_dependencies": {
+      "python": ">=3.11",
+      "apcore": ">=0.32.2",
+      "apcore-toolkit": ">=0.14.0",
+      "a2a-sdk[http-server]": ">=1.0.0"
+    }
+  },
+  "retained_local_inputs": [
+    "docs/research/source-evidence/diagnostic-method-screen-v1/02-primary-scope-query.json",
+    "docs/research/source-evidence/diagnostic-method-screen-v1/02-primary-scope-tool-response.json"
+  ],
+  "claims": [
+    {
+      "id": "A1",
+      "kind": "primary provenance",
+      "claim": "Shared spec/conformance repo points to separate Python implementation; Python release resolves to the stated commit and pinned license.",
+      "evidence": [
+        "02-release-and-behavior-tool-response.json",
+        "03-python-implementation-tool-response.json",
+        "04-pin-and-executor-tool-response.json",
+        "05-pinned-contracts-tool-response.json"
+      ],
+      "limit": "Formatted source excerpts, no exact remote source bytes, local Git receipts or installation."
+    },
+    {
+      "id": "A2",
+      "kind": "commit-pinned source scope",
+      "claim": "Executor requires skillId, executes converted inputs, and maps APPROVAL_PENDING to text INPUT_REQUIRED on supplied task/context.",
+      "evidence": [
+        "06-commit-pinned-execution-tool-response.json"
+      ],
+      "limit": "No actual wire demonstration of native approval consumption/original-task completion; underlying apcore approval state uninspected."
+    },
+    {
+      "id": "A3",
+      "kind": "commit-pinned input scope",
+      "claim": "Exactly-one-part object TextPart JSON parsing and DataPart support prevent a blanket structured-input omission claim.",
+      "evidence": [
+        "05-pinned-contracts-tool-response.json"
+      ],
+      "limit": "Source support only; actual schema, card and bridge profile unexecuted."
+    },
+    {
+      "id": "A4",
+      "kind": "inspected test boundary",
+      "claim": "Inspected approval test raises a coded exception using AsyncMock and checks INPUT_REQUIRED.",
+      "evidence": [
+        "05-pinned-contracts-tool-response.json"
+      ],
+      "limit": "Test not run; no real module/effect/approval/resume reference case."
+    },
+    {
+      "id": "A5",
+      "kind": "commit-pinned transport scope",
+      "claim": "Factory uses SDK DefaultRequestHandler/REST/JSONRPC routes and explicitly enables v0.3 compatibility with owner-scoped context.",
+      "evidence": [
+        "06-commit-pinned-execution-tool-response.json"
+      ],
+      "limit": "Cannot transplant strict JS B4 missing-header outcome. Actual serialized card/accepted binding/runtime unknown."
+    },
+    {
+      "id": "A6",
+      "kind": "eligibility judgement",
+      "claim": "The inspected framework alone does not establish a substantive second resettable continuation application.",
+      "evidence": [
+        "decision.md"
+      ],
+      "limit": "No global absence/non-support claim; licensed real module/native continuation and independent task validity remain required."
+    }
+  ],
+  "scope": {
+    "web_records_are_original_source_bytes": false,
+    "original_remote_source_snapshots": 0,
+    "model_calls": 0,
+    "application_requests": 0,
+    "candidate_implementations_or_performance_trials": 0,
+    "qualified_second_domain": false,
+    "novelty_demonstrated": false,
+    "human_review_completed": false,
+    "progress_percent": 5
+  }
+}

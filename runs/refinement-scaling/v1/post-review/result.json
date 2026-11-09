@@ -1,0 +1,1355 @@
+{
+  "schema_version": "recipe-scaling-matrix-review/1",
+  "started_at_utc": "2026-10-28T20:57:15.944262+00:00",
+  "status": "verified",
+  "reviewer": "AI result reconciliation; not human review",
+  "plan": {
+    "path": "plan-v2.json",
+    "bytes": 20550,
+    "sha256": "06956c0d45f79b69dbb1114fc6f7ea98143ce4e743a5f9b43eeb7a5aace793c9"
+  },
+  "matrix_result": {
+    "path": "result.json",
+    "bytes": 615749,
+    "sha256": "7ab81edb1f8448bb5a301078ab81b9cc9d25d03fa62c72e83ac8dd999c81c73e"
+  },
+  "benchmarks_rerun": 0,
+  "failures": [],
+  "budgets": {
+    "32": {
+      "manifest": {
+        "path": "budget-32/manifest.json",
+        "bytes": 213375,
+        "sha256": "830be847a839c0c910ee5395cd05fbafcdef3a469dc3ac2b7aa7a01744c78e6a"
+      },
+      "jobs": 234,
+      "algorithms": {
+        "baseline": {
+          "supported": 8,
+          "unsupported": 4,
+          "unknown": 54,
+          "certificates_valid": 12,
+          "certified_coverage": 0.18181818181818182,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 0,
+          "certificate_cost": {
+            "calls": 12,
+            "function_ns": 5563200,
+            "worker_wall_ns": 2432000400
+          }
+        },
+        "candidate": {
+          "supported": 16,
+          "unsupported": 8,
+          "unknown": 42,
+          "certificates_valid": 24,
+          "certified_coverage": 0.36363636363636365,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "conclusive_on_reference_unknown": 12,
+          "abstained_on_reference_decided": 0,
+          "certificate_cost": {
+            "calls": 24,
+            "function_ns": 11024800,
+            "worker_wall_ns": 5639269300
+          }
+        }
+      },
+      "families": {
+        "argument_product": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "supported": 6,
+              "unsupported": 2,
+              "unknown": 8
+            },
+            "reasons": {
+              "concrete_recipe_path": 6,
+              "complete_relational_product_exhausted": 2,
+              "indeterminate_observables_or_relations": 3,
+              "work_budget_exhausted": 5
+            },
+            "certificate_valid": 8,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 53,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 163,
+              "graph_edges": 80,
+              "product_states": 16,
+              "state_expansions": 80,
+              "work_units": 376
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 6,
+              "unsupported": 2,
+              "unknown": 8
+            },
+            "reasons": {
+              "public_recipe_witness": 6,
+              "certified_refinement_exhaustion": 2,
+              "unresolved_relation_or_recipe": 3,
+              "work_budget_exhausted": 5
+            },
+            "certificate_valid": 8,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 32,
+              "abstract_paths": 16,
+              "abstract_state_visits": 64,
+              "expression_evaluations": 176,
+              "refinement_edges": 2,
+              "refinement_lookups": 16,
+              "refinements": 2,
+              "relation_checks": 50,
+              "work_units": 356
+            }
+          }
+        },
+        "layered_reconvergence": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "unknown": 16
+            },
+            "reasons": {
+              "work_budget_exhausted": 16
+            },
+            "certificate_valid": 0,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 11,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 11,
+              "graph_edges": 403,
+              "product_states": 7,
+              "state_expansions": 87,
+              "work_units": 512
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 1,
+              "unknown": 15
+            },
+            "reasons": {
+              "public_recipe_witness": 1,
+              "work_budget_exhausted": 15
+            },
+            "certificate_valid": 1,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 296,
+              "abstract_paths": 6,
+              "abstract_state_visits": 128,
+              "expression_evaluations": 13,
+              "refinement_edges": 3,
+              "refinement_lookups": 50,
+              "refinements": 2,
+              "relation_checks": 9,
+              "work_units": 505
+            }
+          }
+        },
+        "correlated_frames": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "unknown": 16
+            },
+            "reasons": {
+              "work_budget_exhausted": 16
+            },
+            "certificate_valid": 0,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 16,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 36,
+              "graph_edges": 324,
+              "product_states": 16,
+              "state_expansions": 136,
+              "work_units": 512
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 1,
+              "unknown": 15
+            },
+            "reasons": {
+              "public_recipe_witness": 1,
+              "work_budget_exhausted": 15
+            },
+            "certificate_valid": 1,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 196,
+              "abstract_paths": 9,
+              "abstract_state_visits": 161,
+              "expression_evaluations": 49,
+              "refinement_edges": 4,
+              "refinement_lookups": 77,
+              "refinements": 2,
+              "relation_checks": 14,
+              "work_units": 510
+            }
+          }
+        },
+        "horizon_boundary": {
+          "baseline": {
+            "cases": 6,
+            "decisions": {
+              "unsupported": 1,
+              "supported": 2,
+              "unknown": 3
+            },
+            "reasons": {
+              "complete_relational_product_exhausted": 1,
+              "concrete_recipe_path": 2,
+              "work_budget_exhausted": 3
+            },
+            "certificate_valid": 3,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 6
+            },
+            "stats_totals": {
+              "argument_assignments": 9,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 9,
+              "graph_edges": 80,
+              "product_states": 13,
+              "state_expansions": 57,
+              "work_units": 155
+            }
+          },
+          "candidate": {
+            "cases": 6,
+            "decisions": {
+              "unsupported": 2,
+              "supported": 4
+            },
+            "reasons": {
+              "certified_refinement_exhaustion": 2,
+              "public_recipe_witness": 4
+            },
+            "certificate_valid": 6,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 6
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 32,
+              "abstract_paths": 4,
+              "abstract_state_visits": 44,
+              "expression_evaluations": 12,
+              "refinement_edges": 0,
+              "refinement_lookups": 16,
+              "refinements": 0,
+              "relation_checks": 12,
+              "work_units": 120
+            }
+          }
+        },
+        "off_goal_load": {
+          "baseline": {
+            "cases": 12,
+            "decisions": {
+              "unknown": 11,
+              "unsupported": 1
+            },
+            "reasons": {
+              "work_budget_exhausted": 11,
+              "complete_relational_product_exhausted": 1
+            },
+            "certificate_valid": 1,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 12
+            },
+            "stats_totals": {
+              "argument_assignments": 42,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 71,
+              "graph_edges": 175,
+              "product_states": 12,
+              "state_expansions": 96,
+              "work_units": 384
+            }
+          },
+          "candidate": {
+            "cases": 12,
+            "decisions": {
+              "supported": 4,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "public_recipe_witness": 4,
+              "certified_refinement_exhaustion": 4,
+              "work_budget_exhausted": 4
+            },
+            "certificate_valid": 8,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 12
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 96,
+              "abstract_paths": 12,
+              "abstract_state_visits": 120,
+              "expression_evaluations": 28,
+              "refinement_edges": 4,
+              "refinement_lookups": 48,
+              "refinements": 8,
+              "relation_checks": 12,
+              "work_units": 320
+            }
+          }
+        }
+      }
+    },
+    "256": {
+      "manifest": {
+        "path": "budget-256/manifest.json",
+        "bytes": 272948,
+        "sha256": "1073c025d43bde15fd853dcaa9a863dc803e2a73a153da71928327ceb103f7f2"
+      },
+      "jobs": 300,
+      "algorithms": {
+        "baseline": {
+          "supported": 27,
+          "unsupported": 25,
+          "unknown": 14,
+          "certificates_valid": 52,
+          "certified_coverage": 0.7878787878787878,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 0,
+          "certificate_cost": {
+            "calls": 52,
+            "function_ns": 29651100,
+            "worker_wall_ns": 10683745300
+          }
+        },
+        "candidate": {
+          "supported": 27,
+          "unsupported": 23,
+          "unknown": 16,
+          "certificates_valid": 50,
+          "certified_coverage": 0.7575757575757576,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "conclusive_on_reference_unknown": 2,
+          "abstained_on_reference_decided": 4,
+          "certificate_cost": {
+            "calls": 50,
+            "function_ns": 22392900,
+            "worker_wall_ns": 10081331800
+          }
+        }
+      },
+      "families": {
+        "argument_product": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "concrete_recipe_path": 8,
+              "complete_relational_product_exhausted": 4,
+              "indeterminate_observables_or_relations": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 82,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 320,
+              "graph_edges": 80,
+              "product_states": 16,
+              "state_expansions": 80,
+              "work_units": 562
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "public_recipe_witness": 8,
+              "certified_refinement_exhaustion": 4,
+              "unresolved_relation_or_recipe": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 32,
+              "abstract_paths": 16,
+              "abstract_state_visits": 64,
+              "expression_evaluations": 376,
+              "refinement_edges": 4,
+              "refinement_lookups": 16,
+              "refinements": 4,
+              "relation_checks": 82,
+              "work_units": 590
+            }
+          }
+        },
+        "layered_reconvergence": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "supported": 4,
+              "unsupported": 8,
+              "unknown": 4
+            },
+            "reasons": {
+              "concrete_recipe_path": 4,
+              "complete_relational_product_exhausted": 8,
+              "indeterminate_observables_or_relations": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 112,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 160,
+              "graph_edges": 688,
+              "product_states": 40,
+              "state_expansions": 168,
+              "work_units": 1128
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 3,
+              "unsupported": 5,
+              "unknown": 8
+            },
+            "reasons": {
+              "public_recipe_witness": 3,
+              "certified_refinement_exhaustion": 5,
+              "unresolved_relation_or_recipe": 3,
+              "work_budget_exhausted": 5
+            },
+            "certificate_valid": 8,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 992,
+              "abstract_paths": 77,
+              "abstract_state_visits": 421,
+              "expression_evaluations": 274,
+              "refinement_edges": 84,
+              "refinement_lookups": 403,
+              "refinements": 37,
+              "relation_checks": 200,
+              "work_units": 2451
+            }
+          }
+        },
+        "correlated_frames": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "concrete_recipe_path": 8,
+              "complete_relational_product_exhausted": 4,
+              "indeterminate_observables_or_relations": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 136,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 368,
+              "graph_edges": 456,
+              "product_states": 104,
+              "state_expansions": 232,
+              "work_units": 1192
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "public_recipe_witness": 8,
+              "certified_refinement_exhaustion": 4,
+              "unresolved_relation_or_recipe": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 224,
+              "abstract_paths": 40,
+              "abstract_state_visits": 216,
+              "expression_evaluations": 368,
+              "refinement_edges": 60,
+              "refinement_lookups": 136,
+              "refinements": 20,
+              "relation_checks": 120,
+              "work_units": 1164
+            }
+          }
+        },
+        "horizon_boundary": {
+          "baseline": {
+            "cases": 6,
+            "decisions": {
+              "unsupported": 2,
+              "supported": 4
+            },
+            "reasons": {
+              "complete_relational_product_exhausted": 2,
+              "concrete_recipe_path": 4
+            },
+            "certificate_valid": 6,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 6
+            },
+            "stats_totals": {
+              "argument_assignments": 16,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 16,
+              "graph_edges": 84,
+              "product_states": 18,
+              "state_expansions": 62,
+              "work_units": 178
+            }
+          },
+          "candidate": {
+            "cases": 6,
+            "decisions": {
+              "unsupported": 2,
+              "supported": 4
+            },
+            "reasons": {
+              "certified_refinement_exhaustion": 2,
+              "public_recipe_witness": 4
+            },
+            "certificate_valid": 6,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 6
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 32,
+              "abstract_paths": 4,
+              "abstract_state_visits": 44,
+              "expression_evaluations": 12,
+              "refinement_edges": 0,
+              "refinement_lookups": 16,
+              "refinements": 0,
+              "relation_checks": 12,
+              "work_units": 120
+            }
+          }
+        },
+        "off_goal_load": {
+          "baseline": {
+            "cases": 12,
+            "decisions": {
+              "supported": 3,
+              "unsupported": 7,
+              "unknown": 2
+            },
+            "reasons": {
+              "concrete_recipe_path": 3,
+              "complete_relational_product_exhausted": 7,
+              "work_budget_exhausted": 2
+            },
+            "certificate_valid": 10,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 12
+            },
+            "stats_totals": {
+              "argument_assignments": 272,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 584,
+              "graph_edges": 202,
+              "product_states": 20,
+              "state_expansions": 104,
+              "work_units": 1162
+            }
+          },
+          "candidate": {
+            "cases": 12,
+            "decisions": {
+              "supported": 4,
+              "unsupported": 8
+            },
+            "reasons": {
+              "public_recipe_witness": 4,
+              "certified_refinement_exhaustion": 8
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 12
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 96,
+              "abstract_paths": 12,
+              "abstract_state_visits": 120,
+              "expression_evaluations": 28,
+              "refinement_edges": 8,
+              "refinement_lookups": 48,
+              "refinements": 8,
+              "relation_checks": 12,
+              "work_units": 324
+            }
+          }
+        }
+      }
+    },
+    "4096": {
+      "manifest": {
+        "path": "budget-4096/manifest.json",
+        "bytes": 277467,
+        "sha256": "48820fb60778eaf39799f3bb2a9e13f60af6a927de10060d38301c4e53a9dc5e"
+      },
+      "jobs": 305,
+      "algorithms": {
+        "baseline": {
+          "supported": 28,
+          "unsupported": 26,
+          "unknown": 12,
+          "certificates_valid": 54,
+          "certified_coverage": 0.8181818181818182,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 0,
+          "certificate_cost": {
+            "calls": 54,
+            "function_ns": 28372300,
+            "worker_wall_ns": 9705050700
+          }
+        },
+        "candidate": {
+          "supported": 28,
+          "unsupported": 25,
+          "unknown": 13,
+          "certificates_valid": 53,
+          "certified_coverage": 0.803030303030303,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 1,
+          "certificate_cost": {
+            "calls": 53,
+            "function_ns": 22983900,
+            "worker_wall_ns": 9611661600
+          }
+        }
+      },
+      "families": {
+        "argument_product": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "concrete_recipe_path": 8,
+              "complete_relational_product_exhausted": 4,
+              "indeterminate_observables_or_relations": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 82,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 320,
+              "graph_edges": 80,
+              "product_states": 16,
+              "state_expansions": 80,
+              "work_units": 562
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "public_recipe_witness": 8,
+              "certified_refinement_exhaustion": 4,
+              "unresolved_relation_or_recipe": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 32,
+              "abstract_paths": 16,
+              "abstract_state_visits": 64,
+              "expression_evaluations": 376,
+              "refinement_edges": 4,
+              "refinement_lookups": 16,
+              "refinements": 4,
+              "relation_checks": 82,
+              "work_units": 590
+            }
+          }
+        },
+        "layered_reconvergence": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "supported": 4,
+              "unsupported": 8,
+              "unknown": 4
+            },
+            "reasons": {
+              "concrete_recipe_path": 4,
+              "complete_relational_product_exhausted": 8,
+              "indeterminate_observables_or_relations": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 112,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 160,
+              "graph_edges": 688,
+              "product_states": 40,
+              "state_expansions": 168,
+              "work_units": 1128
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 4,
+              "unsupported": 7,
+              "unknown": 5
+            },
+            "reasons": {
+              "public_recipe_witness": 4,
+              "certified_refinement_exhaustion": 7,
+              "unresolved_relation_or_recipe": 4,
+              "work_budget_exhausted": 1
+            },
+            "certificate_valid": 11,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 1728,
+              "abstract_paths": 526,
+              "abstract_state_visits": 1302,
+              "expression_evaluations": 2438,
+              "refinement_edges": 840,
+              "refinement_lookups": 2035,
+              "refinements": 229,
+              "relation_checks": 1981,
+              "work_units": 10850
+            }
+          }
+        },
+        "correlated_frames": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "concrete_recipe_path": 8,
+              "complete_relational_product_exhausted": 4,
+              "indeterminate_observables_or_relations": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 136,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 368,
+              "graph_edges": 456,
+              "product_states": 104,
+              "state_expansions": 232,
+              "work_units": 1192
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "public_recipe_witness": 8,
+              "certified_refinement_exhaustion": 4,
+              "unresolved_relation_or_recipe": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 224,
+              "abstract_paths": 40,
+              "abstract_state_visits": 216,
+              "expression_evaluations": 368,
+              "refinement_edges": 60,
+              "refinement_lookups": 136,
+              "refinements": 20,
+              "relation_checks": 120,
+              "work_units": 1164
+            }
+          }
+        },
+        "horizon_boundary": {
+          "baseline": {
+            "cases": 6,
+            "decisions": {
+              "unsupported": 2,
+              "supported": 4
+            },
+            "reasons": {
+              "complete_relational_product_exhausted": 2,
+              "concrete_recipe_path": 4
+            },
+            "certificate_valid": 6,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 6
+            },
+            "stats_totals": {
+              "argument_assignments": 16,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 16,
+              "graph_edges": 84,
+              "product_states": 18,
+              "state_expansions": 62,
+              "work_units": 178
+            }
+          },
+          "candidate": {
+            "cases": 6,
+            "decisions": {
+              "unsupported": 2,
+              "supported": 4
+            },
+            "reasons": {
+              "certified_refinement_exhaustion": 2,
+              "public_recipe_witness": 4
+            },
+            "certificate_valid": 6,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 6
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 32,
+              "abstract_paths": 4,
+              "abstract_state_visits": 44,
+              "expression_evaluations": 12,
+              "refinement_edges": 0,
+              "refinement_lookups": 16,
+              "refinements": 0,
+              "relation_checks": 12,
+              "work_units": 120
+            }
+          }
+        },
+        "off_goal_load": {
+          "baseline": {
+            "cases": 12,
+            "decisions": {
+              "supported": 4,
+              "unsupported": 8
+            },
+            "reasons": {
+              "concrete_recipe_path": 4,
+              "complete_relational_product_exhausted": 8
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 12
+            },
+            "stats_totals": {
+              "argument_assignments": 288,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 632,
+              "graph_edges": 204,
+              "product_states": 24,
+              "state_expansions": 108,
+              "work_units": 1232
+            }
+          },
+          "candidate": {
+            "cases": 12,
+            "decisions": {
+              "supported": 4,
+              "unsupported": 8
+            },
+            "reasons": {
+              "public_recipe_witness": 4,
+              "certified_refinement_exhaustion": 8
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 12
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 96,
+              "abstract_paths": 12,
+              "abstract_state_visits": 120,
+              "expression_evaluations": 28,
+              "refinement_edges": 8,
+              "refinement_lookups": 48,
+              "refinements": 8,
+              "relation_checks": 12,
+              "work_units": 324
+            }
+          }
+        }
+      }
+    },
+    "100000": {
+      "manifest": {
+        "path": "budget-100000/manifest.json",
+        "bytes": 278374,
+        "sha256": "a92106b34b258a7ed341e3ab13d2885650d538f82d1f4e9a39afd30c893d61a8"
+      },
+      "jobs": 306,
+      "algorithms": {
+        "baseline": {
+          "supported": 28,
+          "unsupported": 26,
+          "unknown": 12,
+          "certificates_valid": 54,
+          "certified_coverage": 0.8181818181818182,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 0,
+          "certificate_cost": {
+            "calls": 54,
+            "function_ns": 29586600,
+            "worker_wall_ns": 9456332600
+          }
+        },
+        "candidate": {
+          "supported": 28,
+          "unsupported": 26,
+          "unknown": 12,
+          "certificates_valid": 54,
+          "certified_coverage": 0.8181818181818182,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 0,
+          "certificate_cost": {
+            "calls": 54,
+            "function_ns": 70129700,
+            "worker_wall_ns": 9590763100
+          }
+        }
+      },
+      "families": {
+        "argument_product": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "concrete_recipe_path": 8,
+              "complete_relational_product_exhausted": 4,
+              "indeterminate_observables_or_relations": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 82,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 320,
+              "graph_edges": 80,
+              "product_states": 16,
+              "state_expansions": 80,
+              "work_units": 562
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "public_recipe_witness": 8,
+              "certified_refinement_exhaustion": 4,
+              "unresolved_relation_or_recipe": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 32,
+              "abstract_paths": 16,
+              "abstract_state_visits": 64,
+              "expression_evaluations": 376,
+              "refinement_edges": 4,
+              "refinement_lookups": 16,
+              "refinements": 4,
+              "relation_checks": 82,
+              "work_units": 590
+            }
+          }
+        },
+        "layered_reconvergence": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "supported": 4,
+              "unsupported": 8,
+              "unknown": 4
+            },
+            "reasons": {
+              "concrete_recipe_path": 4,
+              "complete_relational_product_exhausted": 8,
+              "indeterminate_observables_or_relations": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 112,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 160,
+              "graph_edges": 688,
+              "product_states": 40,
+              "state_expansions": 168,
+              "work_units": 1128
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 4,
+              "unsupported": 8,
+              "unknown": 4
+            },
+            "reasons": {
+              "public_recipe_witness": 4,
+              "certified_refinement_exhaustion": 8,
+              "unresolved_relation_or_recipe": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 1728,
+              "abstract_paths": 600,
+              "abstract_state_visits": 1376,
+              "expression_evaluations": 2888,
+              "refinement_edges": 1140,
+              "refinement_lookups": 2308,
+              "refinements": 304,
+              "relation_checks": 2280,
+              "work_units": 12320
+            }
+          }
+        },
+        "correlated_frames": {
+          "baseline": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "concrete_recipe_path": 8,
+              "complete_relational_product_exhausted": 4,
+              "indeterminate_observables_or_relations": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "argument_assignments": 136,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 368,
+              "graph_edges": 456,
+              "product_states": 104,
+              "state_expansions": 232,
+              "work_units": 1192
+            }
+          },
+          "candidate": {
+            "cases": 16,
+            "decisions": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 4
+            },
+            "reasons": {
+              "public_recipe_witness": 8,
+              "certified_refinement_exhaustion": 4,
+              "unresolved_relation_or_recipe": 4
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 16
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 224,
+              "abstract_paths": 40,
+              "abstract_state_visits": 216,
+              "expression_evaluations": 368,
+              "refinement_edges": 60,
+              "refinement_lookups": 136,
+              "refinements": 20,
+              "relation_checks": 120,
+              "work_units": 1164
+            }
+          }
+        },
+        "horizon_boundary": {
+          "baseline": {
+            "cases": 6,
+            "decisions": {
+              "unsupported": 2,
+              "supported": 4
+            },
+            "reasons": {
+              "complete_relational_product_exhausted": 2,
+              "concrete_recipe_path": 4
+            },
+            "certificate_valid": 6,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 6
+            },
+            "stats_totals": {
+              "argument_assignments": 16,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 16,
+              "graph_edges": 84,
+              "product_states": 18,
+              "state_expansions": 62,
+              "work_units": 178
+            }
+          },
+          "candidate": {
+            "cases": 6,
+            "decisions": {
+              "unsupported": 2,
+              "supported": 4
+            },
+            "reasons": {
+              "certified_refinement_exhaustion": 2,
+              "public_recipe_witness": 4
+            },
+            "certificate_valid": 6,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 6
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 32,
+              "abstract_paths": 4,
+              "abstract_state_visits": 44,
+              "expression_evaluations": 12,
+              "refinement_edges": 0,
+              "refinement_lookups": 16,
+              "refinements": 0,
+              "relation_checks": 12,
+              "work_units": 120
+            }
+          }
+        },
+        "off_goal_load": {
+          "baseline": {
+            "cases": 12,
+            "decisions": {
+              "supported": 4,
+              "unsupported": 8
+            },
+            "reasons": {
+              "concrete_recipe_path": 4,
+              "complete_relational_product_exhausted": 8
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 12
+            },
+            "stats_totals": {
+              "argument_assignments": 288,
+              "cached_relation_outcomes": 0,
+              "certificate_checks": 0,
+              "expression_evaluations": 632,
+              "graph_edges": 204,
+              "product_states": 24,
+              "state_expansions": 108,
+              "work_units": 1232
+            }
+          },
+          "candidate": {
+            "cases": 12,
+            "decisions": {
+              "supported": 4,
+              "unsupported": 8
+            },
+            "reasons": {
+              "public_recipe_witness": 4,
+              "certified_refinement_exhaustion": 8
+            },
+            "certificate_valid": 12,
+            "certificate_invalid": 0,
+            "execution_statuses": {
+              "returned": 12
+            },
+            "stats_totals": {
+              "abstract_edge_checks": 96,
+              "abstract_paths": 12,
+              "abstract_state_visits": 120,
+              "expression_evaluations": 28,
+              "refinement_edges": 8,
+              "refinement_lookups": 48,
+              "refinements": 8,
+              "relation_checks": 12,
+              "work_units": 324
+            }
+          }
+        }
+      }
+    }
+  },
+  "worker_jobs": 1145,
+  "certificate_checks": 353,
+  "certificate_rejections": 0,
+  "checker_errors_or_exhaustions": 0,
+  "nonempty_worker_stderr_files": 0,
+  "authored_expectation_contradictions": [],
+  "authored_sufficient_budget_expectations": {
+    "supported": 28,
+    "unsupported": 26,
+    "unknown": 12
+  },
+  "measured_artifacts_unchanged": true,
+  "finished_at_utc": "2026-10-28T20:57:22.024239+00:00"
+}

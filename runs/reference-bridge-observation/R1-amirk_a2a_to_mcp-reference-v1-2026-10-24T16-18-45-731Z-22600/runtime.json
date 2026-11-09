@@ -1,0 +1,151 @@
+{
+  "schema_version": "runtime-wire-observation/1",
+  "run_id": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-24T16-18-45-731Z-22600",
+  "route_id": "amirk_a2a_to_mcp",
+  "variant_id": "R1",
+  "protocol": {
+    "mcp": "2026-07-28",
+    "mcp_transport": "loopback HTTP modern per-request envelope",
+    "extension": "not declared by this route",
+    "a2a": "1.0-only official SDK1.1.0 JSONRPC HTTP handler; default context builder; no legacy compatibility"
+  },
+  "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+  "started_at_utc": "2026-10-24T16:18:45.747Z",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\scripts\\capture-official-handler-bridge-v1.mjs",
+    "B1"
+  ],
+  "node": "v22.13.0",
+  "parent_pid": 22600,
+  "exchanges": [],
+  "receipts": [],
+  "outcome": "failed",
+  "exit_code": 1,
+  "namespaces": {
+    "task": "Amir opaque tk_ handle; native IDs are public only if a captured MCP content metadata/history path reveals them",
+    "context": "Amir opaque cx_ handle; public native metadata/history paths separately recorded",
+    "principal": "Unauthenticated local development caller",
+    "scope": "Isolated official-handler loopback service with unchanged disclosed authored executor",
+    "credential_epoch": "No credentials",
+    "policy_epoch": null,
+    "validity_interval": null
+  },
+  "provenance": {
+    "kind": "official-handler-bridge-fidelity-control",
+    "fixture": {
+      "kind": "Separate authored A2A1.0 port of official Carol application",
+      "repository": "a2aproject/a2a-samples",
+      "commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3",
+      "file": "scripts/fixtures/carol-reference-v1.mjs",
+      "sha256": "b6b6492ee5c27cf5db0474054b0f18a8feafe0859d9faaa4fd67946c7768626d"
+    },
+    "model_calls": 0,
+    "held_out": false,
+    "evidence_complete": false,
+    "instrumentation": {
+      "native_http": "Read-only preload wraps original bridge fetch; captures exact supplied request/body and cloned response entity bytes; does not alter headers, parameters or transport.",
+      "overhead": "Cloned response body is logged before original response is delivered; capture file I/O and scheduling overhead included, no latency or efficiency claim.",
+      "native_bytes": "Fetch-visible application entity bytes, excludes TCP framing and implicit HTTP headers.",
+      "cleanup": "Specific recorded children only; preload IPC emits unchanged original CLI SIGTERM shutdown handler and awaits actual exit; Carol IPC invokes server.close.",
+      "inherited_preload_labels": "Logger uses historical authored-port labels. Actual service is the official Express handler, not the earlier custom HTTP wrapper."
+    }
+  },
+  "configuration": {
+    "tasks_extension": false,
+    "elicitation": false,
+    "agent_alias": "carol",
+    "mcp_revision": "2026-07-28"
+  },
+  "bounds": {
+    "startup_ms": 10000,
+    "request_ms": 10000,
+    "initial_observation_ms": 5000,
+    "polling_interval_ms": 50,
+    "answer_attempts": 1,
+    "final_authoritative_reads": 1
+  },
+  "claim_limit": "Bounded official-handler bridge fidelity using disclosed authored executor; no C1 novelty, second domain, natural failure prevalence, inverse mapping or human scientific review.",
+  "experiment_id": "official-handler-bridge-fidelity/1",
+  "official_variant": "B1",
+  "official_service": {
+    "sdk_version": "1.1.0",
+    "default_context_builder": true,
+    "legacy_compatibility": false,
+    "custom_http_wrapper_started": false,
+    "handler_mount": "/a2a",
+    "card_mount": "/.well-known/agent-card.json",
+    "cleanup_started": {
+      "utc": "2026-10-24T16:18:45.828Z",
+      "monotonic_ns": "4423662989700"
+    },
+    "server_listening": false,
+    "closed": {
+      "utc": "2026-10-24T16:18:45.828Z",
+      "monotonic_ns": "4423663001500"
+    }
+  },
+  "native_controls": [
+    {
+      "case_id": "N1",
+      "executed": false,
+      "reason": "Prior setup/control exception retained: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nnull !== 0\n\n    at freezeBeforeStartup (file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/log-reference-http.mjs:82:10)\n    at file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/capture-official-handler-bridge-v1.mjs:89:3"
+    },
+    {
+      "case_id": "N2",
+      "executed": false,
+      "reason": "Prior setup/control exception retained: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nnull !== 0\n\n    at freezeBeforeStartup (file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/log-reference-http.mjs:82:10)\n    at file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/capture-official-handler-bridge-v1.mjs:89:3"
+    },
+    {
+      "case_id": "N3",
+      "executed": false,
+      "reason": "Prior setup/control exception retained: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nnull !== 0\n\n    at freezeBeforeStartup (file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/log-reference-http.mjs:82:10)\n    at file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/capture-official-handler-bridge-v1.mjs:89:3"
+    }
+  ],
+  "ingress": [],
+  "model_calls": 0,
+  "remote_network_requests": 0,
+  "native_control_plan": [
+    "N1",
+    "N2",
+    "N3"
+  ],
+  "origin_diagnostic_plan": "E1",
+  "native_eligible": false,
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nnull !== 0\n\n    at freezeBeforeStartup (file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/log-reference-http.mjs:82:10)\n    at file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/capture-official-handler-bridge-v1.mjs:89:3",
+  "origin_diagnostic": {
+    "case_id": "E1",
+    "executed": false,
+    "reason": "Prior setup/bridge exception retained: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nnull !== 0\n\n    at freezeBeforeStartup (file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/log-reference-http.mjs:82:10)\n    at file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/capture-official-handler-bridge-v1.mjs:89:3"
+  },
+  "cleanup": [],
+  "official_post_trees": [],
+  "official_post_bridge_trees": [],
+  "executor_task_contexts": [],
+  "control_costs": {
+    "native_control_requests": 0,
+    "evaluator_only_requests": 0,
+    "server_ingress_requests": 0,
+    "bridge_children_started": 0,
+    "model_calls": 0,
+    "remote_network_requests": 0
+  },
+  "completed_at_utc": "2026-10-24T16:18:45.829Z",
+  "costs": {
+    "mcp_rpc_requests": 0,
+    "mcp_notifications_sent": 0,
+    "request_bytes": 0,
+    "response_bytes": 0,
+    "setup_ms": null,
+    "native_cost_source": "Every native request/reply entity retained separately in private-native-http.jsonl; independent sidecar check may derive aggregate counts/bytes"
+  },
+  "private_sidecars": {
+    "native_http": null,
+    "native_capture_available": false,
+    "diagnostics": "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-24T16-18-45-731Z-22600/private-process-diagnostics.json",
+    "process_lifecycle": "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-24T16-18-45-731Z-22600/process-lifecycle.jsonl"
+  },
+  "post_source_sha256": {},
+  "post_source_errors": [],
+  "post_source_changes": []
+}

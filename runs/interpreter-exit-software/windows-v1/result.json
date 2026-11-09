@@ -1,0 +1,163 @@
+{
+  "schema_version": "interpreter-exit-windows-software-receipt/1",
+  "recorded_at_utc": "2026-10-28T21:04:32.095731+00:00",
+  "working_directory": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+  "shell": "PowerShell",
+  "python_executable": "C:\\Python313\\python.exe",
+  "evidence_kind": "tool-output-derived summary",
+  "provenance": "Commands, return codes, unittest counts/durations and excerpts transcribed from tool results retained in this conversation. These ad hoc invocations did not capture a raw stdout/stderr file.",
+  "raw_transcript_file": null,
+  "execution_timestamps_utc": null,
+  "timestamp_limit": "Only receipt creation time is recorded here; the original command start/finish UTC times were not captured.",
+  "reruns_performed_for_receipt": false,
+  "application_launches_performed_for_receipt": 0,
+  "records": [
+    {
+      "id": "earlier-36-pass",
+      "command": "@'\nimport sys,unittest\nsys.path.insert(0,'tests')\nsuite=unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromName(name) for name in (\n 'test_agentops_interpreter_exit_diagnostics_v1',\n 'test_check_agentops_interpreter_exit_v1',\n 'test_agentops_shutdown_diagnostics_v2'))\nresult=unittest.TextTestRunner(verbosity=2).run(suite)\nraise SystemExit(not result.wasSuccessful())\n'@ | & 'C:\\Python313\\python.exe' -B -",
+      "returncode": 0,
+      "tests_run": 36,
+      "passed": 36,
+      "failures": 0,
+      "errors": 0,
+      "reported_unittest_seconds": 4.914,
+      "counts_by_module": {
+        "test_agentops_interpreter_exit_diagnostics_v1": 12,
+        "test_check_agentops_interpreter_exit_v1": 14,
+        "test_agentops_shutdown_diagnostics_v2": 10
+      },
+      "source_sha256_observed_after_run": {
+        "scripts/agentops_interpreter_exit_diagnostics_v1.py": "5c568635484b59046476cf426d5e6fa4a381d6229189614ed8ddac355fb3e2ea",
+        "scripts/serve_agentops_bridge_diagnostic_v3.py": "c527f8c731eff8899f9b0a969b4f2aff84757b40c816ca6be9afc0414776c746",
+        "scripts/check_agentops_interpreter_exit_v1.py": "3a69d902778305c8f5de4622f5d0db76fddcf2839c2f235ecc96e439e4e4b756",
+        "tests/test_agentops_interpreter_exit_diagnostics_v1.py": "5aba550796164c3071a64979015318d24263af7f21ba8d2186e693080b3294bb",
+        "tests/test_check_agentops_interpreter_exit_v1.py": "5b21314e6c321a35e0a7e9a03c1b602d777ae2ae7cb33f60c2bd83e66fca5df8"
+      },
+      "tool_output_chunk_ids": [
+        "b171dc"
+      ],
+      "output_excerpt": [
+        "Ran 36 tests in 4.914s",
+        "OK"
+      ],
+      "scope": "Earlier source revision before the final group-signal/snapshot checker tightening."
+    },
+    {
+      "id": "broader-40-with-preserved-v2-failure",
+      "command": "@'\nimport sys,unittest\nsys.path.insert(0,'tests')\nsuite=unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromName(name) for name in (\n 'test_agentops_interpreter_exit_diagnostics_v1',\n 'test_check_agentops_interpreter_exit_v1',\n 'test_agentops_shutdown_diagnostics_v2'))\nresult=unittest.TextTestRunner(verbosity=2).run(suite)\nraise SystemExit(not result.wasSuccessful())\n'@ | & 'C:\\Python313\\python.exe' -B -",
+      "returncode": 1,
+      "tests_run": 40,
+      "passed": 39,
+      "failures": 1,
+      "errors": 0,
+      "reported_unittest_seconds": 8.273,
+      "counts_by_module": {
+        "test_agentops_interpreter_exit_diagnostics_v1": 12,
+        "test_check_agentops_interpreter_exit_v1": 18,
+        "test_agentops_shutdown_diagnostics_v2": 10
+      },
+      "source_sha256_observed_after_run": {
+        "scripts/agentops_interpreter_exit_diagnostics_v1.py": "5c568635484b59046476cf426d5e6fa4a381d6229189614ed8ddac355fb3e2ea",
+        "scripts/serve_agentops_bridge_diagnostic_v3.py": "c527f8c731eff8899f9b0a969b4f2aff84757b40c816ca6be9afc0414776c746",
+        "scripts/check_agentops_interpreter_exit_v1.py": "c17f4607e9fac45ede79973f7854fb7bfbf2a9c368575f9d95a4d1d5748e803e",
+        "tests/test_agentops_interpreter_exit_diagnostics_v1.py": "5aba550796164c3071a64979015318d24263af7f21ba8d2186e693080b3294bb",
+        "tests/test_check_agentops_interpreter_exit_v1.py": "3379347219ce243301d72b9eba71650293463f2a732ebf9dd4cff8f9b61bf1cf"
+      },
+      "tool_output_chunk_ids": [
+        "bad93b",
+        "048317"
+      ],
+      "tool_session_id": 88150,
+      "failure": {
+        "test": "test_agentops_shutdown_diagnostics_v2.ShutdownDiagnosticV2Tests.test_return_and_normal_pending_task_cancellation_are_preserved",
+        "file": "tests/test_agentops_shutdown_diagnostics_v2.py",
+        "line": 47,
+        "assertion": "self.assertTrue(any(not row['current'] for row in observed['tasks']))",
+        "message": "AssertionError: False is not true",
+        "associated_warning": "Task was destroyed but it is pending!",
+        "interpretation": "The unchanged fixture creates a pending task without retaining a strong reference. Garbage collection before its snapshot is a plausible explanation; no isolated reproduction or cause proof was performed.",
+        "real_application_shutdown_cause_established": false
+      },
+      "output_excerpt": [
+        "Ran 40 tests in 8.273s",
+        "FAILED (failures=1)"
+      ],
+      "scope": "All 30 new tests passed; one of the 10 preserved-v2 tests failed. This run must not be described as 40 passed."
+    },
+    {
+      "id": "final-30-new-pass",
+      "command": "@'\nimport sys,unittest\nsys.path.insert(0,'tests')\nsuite=unittest.TestSuite(unittest.defaultTestLoader.loadTestsFromName(name) for name in (\n 'test_agentops_interpreter_exit_diagnostics_v1',\n 'test_check_agentops_interpreter_exit_v1'))\nresult=unittest.TextTestRunner(verbosity=2).run(suite)\nraise SystemExit(not result.wasSuccessful())\n'@ | & 'C:\\Python313\\python.exe' -B -",
+      "returncode": 0,
+      "tests_run": 30,
+      "passed": 30,
+      "failures": 0,
+      "errors": 0,
+      "reported_unittest_seconds": 4.258,
+      "counts_by_module": {
+        "test_agentops_interpreter_exit_diagnostics_v1": 12,
+        "test_check_agentops_interpreter_exit_v1": 18
+      },
+      "source_sha256_observed_after_run": {
+        "scripts/agentops_interpreter_exit_diagnostics_v1.py": "5c568635484b59046476cf426d5e6fa4a381d6229189614ed8ddac355fb3e2ea",
+        "scripts/serve_agentops_bridge_diagnostic_v3.py": "c527f8c731eff8899f9b0a969b4f2aff84757b40c816ca6be9afc0414776c746",
+        "scripts/check_agentops_interpreter_exit_v1.py": "c17f4607e9fac45ede79973f7854fb7bfbf2a9c368575f9d95a4d1d5748e803e",
+        "tests/test_agentops_interpreter_exit_diagnostics_v1.py": "5aba550796164c3071a64979015318d24263af7f21ba8d2186e693080b3294bb",
+        "tests/test_check_agentops_interpreter_exit_v1.py": "3379347219ce243301d72b9eba71650293463f2a732ebf9dd4cff8f9b61bf1cf"
+      },
+      "tool_output_chunk_ids": [
+        "f77090"
+      ],
+      "output_excerpt": [
+        "Ran 30 tests in 4.258s",
+        "OK"
+      ],
+      "scope": "Final observer and independent checker tests only; this does not erase or reclassify the broader run failure."
+    }
+  ],
+  "current_source_inventory": [
+    {
+      "path": "scripts/agentops_interpreter_exit_diagnostics_v1.py",
+      "bytes": 6460,
+      "sha256": "5c568635484b59046476cf426d5e6fa4a381d6229189614ed8ddac355fb3e2ea"
+    },
+    {
+      "path": "scripts/serve_agentops_bridge_diagnostic_v3.py",
+      "bytes": 1831,
+      "sha256": "c527f8c731eff8899f9b0a969b4f2aff84757b40c816ca6be9afc0414776c746"
+    },
+    {
+      "path": "scripts/check_agentops_interpreter_exit_v1.py",
+      "bytes": 17107,
+      "sha256": "c17f4607e9fac45ede79973f7854fb7bfbf2a9c368575f9d95a4d1d5748e803e"
+    },
+    {
+      "path": "tests/test_agentops_interpreter_exit_diagnostics_v1.py",
+      "bytes": 11769,
+      "sha256": "5aba550796164c3071a64979015318d24263af7f21ba8d2186e693080b3294bb"
+    },
+    {
+      "path": "tests/test_check_agentops_interpreter_exit_v1.py",
+      "bytes": 12608,
+      "sha256": "3379347219ce243301d72b9eba71650293463f2a732ebf9dd4cff8f9b61bf1cf"
+    },
+    {
+      "path": "scripts/agentops_shutdown_diagnostics_v2.py",
+      "bytes": 4196,
+      "sha256": "eb27070a6d94d6a74c3d5bdde529c6302f9defc731b6066854431a3397fbd968"
+    },
+    {
+      "path": "scripts/serve_agentops_bridge_diagnostic_v2.py",
+      "bytes": 688,
+      "sha256": "48ab26444bce154852e5a55a6fb42bc0821b0fe38fe8a1acbc9a63435492ecc9"
+    },
+    {
+      "path": "tests/test_agentops_shutdown_diagnostics_v2.py",
+      "bytes": 8233,
+      "sha256": "0029c1cc4e30491f49ccc7022917b6c7f4430fad9a8bbff351896990c122d603"
+    }
+  ],
+  "current_sources_match_reported_final_hashes": true,
+  "source_inventory_limit": "Current source files were freshly hashed when making this receipt. The earlier intermediate hashes are from the earlier post-run tool output; intermediate source bytes were not copied here. The preserved-v2 test hash is current-only because no earlier hash was captured in those command outputs.",
+  "source_files_edited_for_receipt": false,
+  "overall_statement": "Final 30 new tests passed; broader 40-test run retained one unchanged-v2 fixture failure. No overall all-tests-pass claim."
+}

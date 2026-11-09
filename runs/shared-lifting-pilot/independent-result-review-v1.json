@@ -1,0 +1,781 @@
+{
+  "allocation_files_preserved": 1989,
+  "audited_allocation": "runs\\shared-lifting-pilot\\v1",
+  "budgets": [
+    {
+      "budget": 32,
+      "cases": 12,
+      "certificate_jobs": 18,
+      "methods": {
+        "baseline": {
+          "accepted": 6,
+          "rejected": 0,
+          "supported": 3,
+          "unknown": 6,
+          "unsupported": 3
+        },
+        "candidate": {
+          "accepted": 6,
+          "rejected": 0,
+          "supported": 3,
+          "unknown": 6,
+          "unsupported": 3
+        },
+        "direct_pruned": {
+          "accepted": 6,
+          "rejected": 0,
+          "supported": 3,
+          "unknown": 6,
+          "unsupported": 3
+        },
+        "shared_lift": {
+          "accepted": 0,
+          "rejected": 0,
+          "supported": 0,
+          "unknown": 12,
+          "unsupported": 0
+        }
+      },
+      "resources": {
+        "missing": 0,
+        "observed": 78
+      },
+      "worker_jobs": 78
+    },
+    {
+      "budget": 256,
+      "cases": 12,
+      "certificate_jobs": 29,
+      "methods": {
+        "baseline": {
+          "accepted": 8,
+          "rejected": 0,
+          "supported": 4,
+          "unknown": 4,
+          "unsupported": 4
+        },
+        "candidate": {
+          "accepted": 7,
+          "rejected": 0,
+          "supported": 4,
+          "unknown": 5,
+          "unsupported": 3
+        },
+        "direct_pruned": {
+          "accepted": 8,
+          "rejected": 0,
+          "supported": 4,
+          "unknown": 4,
+          "unsupported": 4
+        },
+        "shared_lift": {
+          "accepted": 6,
+          "rejected": 0,
+          "supported": 3,
+          "unknown": 6,
+          "unsupported": 3
+        }
+      },
+      "resources": {
+        "missing": 0,
+        "observed": 89
+      },
+      "worker_jobs": 89
+    },
+    {
+      "budget": 4096,
+      "cases": 12,
+      "certificate_jobs": 30,
+      "methods": {
+        "baseline": {
+          "accepted": 8,
+          "rejected": 0,
+          "supported": 4,
+          "unknown": 4,
+          "unsupported": 4
+        },
+        "candidate": {
+          "accepted": 7,
+          "rejected": 0,
+          "supported": 4,
+          "unknown": 5,
+          "unsupported": 3
+        },
+        "direct_pruned": {
+          "accepted": 8,
+          "rejected": 0,
+          "supported": 4,
+          "unknown": 4,
+          "unsupported": 4
+        },
+        "shared_lift": {
+          "accepted": 7,
+          "rejected": 0,
+          "supported": 4,
+          "unknown": 5,
+          "unsupported": 3
+        }
+      },
+      "resources": {
+        "missing": 0,
+        "observed": 90
+      },
+      "worker_jobs": 90
+    },
+    {
+      "budget": 100000,
+      "cases": 12,
+      "certificate_jobs": 32,
+      "methods": {
+        "baseline": {
+          "accepted": 8,
+          "rejected": 0,
+          "supported": 4,
+          "unknown": 4,
+          "unsupported": 4
+        },
+        "candidate": {
+          "accepted": 8,
+          "rejected": 0,
+          "supported": 4,
+          "unknown": 4,
+          "unsupported": 4
+        },
+        "direct_pruned": {
+          "accepted": 8,
+          "rejected": 0,
+          "supported": 4,
+          "unknown": 4,
+          "unsupported": 4
+        },
+        "shared_lift": {
+          "accepted": 8,
+          "rejected": 0,
+          "supported": 4,
+          "unknown": 4,
+          "unsupported": 4
+        }
+      },
+      "resources": {
+        "missing": 0,
+        "observed": 92
+      },
+      "worker_jobs": 92
+    }
+  ],
+  "checker_executions_by_reviewer": 0,
+  "command_receipts_bound": 8,
+  "completed_at": "2026-10-29T00:34:50.814970+00:00",
+  "counts": {
+    "case_budget_rows": 48,
+    "certificate_jobs": 109,
+    "evaluation_jobs": 240,
+    "manifest_files": 1897,
+    "worker_jobs": 349
+  },
+  "human_approval_established": false,
+  "limits": [
+    "Recorded checker acceptance reconciled, not independently re-executed.",
+    "Local byte consistency is not authenticated invocation provenance.",
+    "All 11 authored demo cases and one deliberately selected motivating stress case; no held-out, representative or independent workload claim.",
+    "Equal integer budgets count method-specific operations; process timings may be contended and process peaks include interpreter/import/input overhead.",
+    "No superiority, novelty, application/domain qualification, supervisor acceptance or project percentage follows."
+  ],
+  "manifests": [
+    {
+      "bytes": 73926,
+      "path": "runs\\shared-lifting-pilot\\v1\\budget-32\\manifest.json",
+      "sha256": "d5b6780b11594f301302cfc2949c3e0aae8390af695aee89e79bc49f9a11fd6c",
+      "verified_files": 428
+    },
+    {
+      "bytes": 83963,
+      "path": "runs\\shared-lifting-pilot\\v1\\budget-256\\manifest.json",
+      "sha256": "613816c543910837b87ae59225ba17ac132aba2417eb79bfd4ec7249744e7d70",
+      "verified_files": 483
+    },
+    {
+      "bytes": 84877,
+      "path": "runs\\shared-lifting-pilot\\v1\\budget-4096\\manifest.json",
+      "sha256": "306a8b5e4416b6184b2476260560e6e18799d5938a3a52c41950562f56111bed",
+      "verified_files": 488
+    },
+    {
+      "bytes": 86699,
+      "path": "runs\\shared-lifting-pilot\\v1\\budget-100000\\manifest.json",
+      "sha256": "5411feb3afc7a720ab65d830a326da54d078b8333bae8ac03eab31a749af3346",
+      "verified_files": 498
+    }
+  ],
+  "measured_files_unchanged": true,
+  "original_hash_records_checked": 51,
+  "plan": {
+    "bytes": 31268,
+    "sha256": "8c66caa0467f09588a533019526df2401f1ac526cd53b7aa364961bffe612265"
+  },
+  "resource_observation_counts": {
+    "missing": 0,
+    "observed": 349
+  },
+  "result": {
+    "bytes": 936302,
+    "sha256": "cf2e13771cb3bf0e7967aa835fb907641f2f9d96548155d12be3261b333f370a"
+  },
+  "reviewer": "/root/refinement_final_review",
+  "runner": {
+    "bytes": 24446,
+    "sha256": "c64858281add369478ff32a4f2ed5e1fe41f15d39fb07cec2da4d134f866bae0"
+  },
+  "schema_version": "shared-lifting-pilot-independent-result-review/1",
+  "scope": "Saved byte/record reconciliation only; no project imports or algorithm execution",
+  "snapshot_hash_records_checked": 51,
+  "solver_executions_by_reviewer": 0,
+  "source_hashes": {
+    "source/interoperability/__init__.py": {
+      "bytes": 172,
+      "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+    },
+    "source/interoperability/__main__.py": {
+      "bytes": 49,
+      "sha256": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7"
+    },
+    "source/interoperability/admission_cli.py": {
+      "bytes": 5703,
+      "sha256": "4c4a01e177bf7d3a326a2da422981d2607906b82fb5074add092079bb550727b"
+    },
+    "source/interoperability/baseline.py": {
+      "bytes": 3268,
+      "sha256": "c26f4c7db7f89f00f2c781e346aec20a589a862316e34c38a2edd7760407206f"
+    },
+    "source/interoperability/benchmark.py": {
+      "bytes": 34981,
+      "sha256": "38b6cb4e6fd9ff4a48b0a9d45ca44156c8e714663f6c4a73060f44259a9c3a7e"
+    },
+    "source/interoperability/benchmark_resources_v1.py": {
+      "bytes": 8044,
+      "sha256": "b58eaec738a7cd69a54dbd105465c1544390e3de51a3737a0eeea1ee6575fdf9"
+    },
+    "source/interoperability/cli.py": {
+      "bytes": 4935,
+      "sha256": "1c3113908d036099b42b8adf939e701c8a21a082b2bc614479aaefadc214e0f1"
+    },
+    "source/interoperability/direct_comparison_v2.py": {
+      "bytes": 9565,
+      "sha256": "610c082233dcf44b58bb0b0bf68bfc4ca7fec307e380be21699ec3db39e60eb9"
+    },
+    "source/interoperability/direct_goal_pruned_v2.py": {
+      "bytes": 10620,
+      "sha256": "1fba2d0bd747f965056279bbda40b9c28f50f1200b7e9a6869f343ab6f64de51"
+    },
+    "source/interoperability/manifest.py": {
+      "bytes": 7117,
+      "sha256": "defc6e9bbc4ea66806beefc9def967d94db8a3856cc121cee13c45ebda70debb"
+    },
+    "source/interoperability/oracle.py": {
+      "bytes": 16255,
+      "sha256": "da29829a077da1ef44c2ffc0a6d5dbcd8e4c579b308b49085ea1af077e601b7f"
+    },
+    "source/interoperability/pending_admission.py": {
+      "bytes": 22633,
+      "sha256": "4adb8f4cfb4b4a517053bbd49e3b9a14a03dda7eba33d66808a832fcb25a2132"
+    },
+    "source/interoperability/projection_checker.py": {
+      "bytes": 41904,
+      "sha256": "5bc96d27428e7fce01b12a8e5ccc946db8e7dc77bbced033e60423e4e769a103"
+    },
+    "source/interoperability/reference_checker.py": {
+      "bytes": 17484,
+      "sha256": "87ca2690fcf296961cea024d66da6323031b5306ef54222d48a7ccfdaf662371"
+    },
+    "source/interoperability/refinement.py": {
+      "bytes": 18566,
+      "sha256": "11175edcb99dbec231390ae767ba97dce2e919810844ed544a1ddd109f4b5b3b"
+    },
+    "source/interoperability/refinement_oracle.py": {
+      "bytes": 25050,
+      "sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e"
+    },
+    "source/interoperability/refinement_shared_lift_v2.py": {
+      "bytes": 15366,
+      "sha256": "927538f7ddcb21120913c6c4257754b65a45703db384eec8cd6a28ba9e9b280b"
+    },
+    "source/interoperability/shared_lifting_comparison_v3.py": {
+      "bytes": 13342,
+      "sha256": "d5175683cedecd7f901136086b3294f972d9a19524e4bcd4e416b9120542e100"
+    },
+    "source/interoperability/status_projection.py": {
+      "bytes": 21038,
+      "sha256": "648e18cb6f1e2cbf3ff31f3dab70a29b473701d10df3f1758065bd5d4da8debf"
+    },
+    "source/interoperability/status_projection_checker.py": {
+      "bytes": 37950,
+      "sha256": "3bb82daa320fbb40ac96391c19460e3730a10aef3b0da8c2b39d467cf89d6dea"
+    },
+    "source/interoperability/wire_projection.py": {
+      "bytes": 18564,
+      "sha256": "88223761710725959157607f4a86829fe1d7aa3e85bfe3ccc53af52c063df89e"
+    }
+  },
+  "status": "passed",
+  "stress_scale_0031": [
+    {
+      "budget": 32,
+      "certificate_evaluation_ns": null,
+      "certificate_peak_resident_bytes": null,
+      "certificate_valid": null,
+      "certificate_worker_wall_ns": null,
+      "decision": "unknown",
+      "evaluation_ns": 306900,
+      "method": "baseline",
+      "peak_resident_bytes": 22822912,
+      "solver_stats": {
+        "argument_assignments": 0,
+        "budget": 32,
+        "cached_relation_outcomes": 0,
+        "certificate_checks": 0,
+        "expression_evaluations": 0,
+        "graph_edges": 28,
+        "product_states": 0,
+        "state_expansions": 4,
+        "work_units": 32
+      },
+      "worker_wall_ns": 199867600
+    },
+    {
+      "budget": 32,
+      "certificate_evaluation_ns": null,
+      "certificate_peak_resident_bytes": null,
+      "certificate_valid": null,
+      "certificate_worker_wall_ns": null,
+      "decision": "unknown",
+      "evaluation_ns": 231800,
+      "method": "direct_pruned",
+      "peak_resident_bytes": 22601728,
+      "solver_stats": {
+        "argument_assignments": 0,
+        "budget": 32,
+        "cached_relation_outcomes": 0,
+        "certificate_checks": 0,
+        "expression_evaluations": 0,
+        "goal_pruned_edges": 0,
+        "graph_edges": 28,
+        "product_states": 0,
+        "state_expansions": 4,
+        "work_units": 32
+      },
+      "worker_wall_ns": 193810500
+    },
+    {
+      "budget": 32,
+      "certificate_evaluation_ns": null,
+      "certificate_peak_resident_bytes": null,
+      "certificate_valid": null,
+      "certificate_worker_wall_ns": null,
+      "decision": "unknown",
+      "evaluation_ns": 375900,
+      "method": "candidate",
+      "peak_resident_bytes": 21848064,
+      "solver_stats": {
+        "abstract_edge_checks": 24,
+        "abstract_paths": 0,
+        "abstract_state_visits": 7,
+        "budget": 32,
+        "elapsed_ns": 368000,
+        "expression_evaluations": 0,
+        "peak_frames": 1,
+        "refinement_edges": 0,
+        "refinement_lookups": 1,
+        "refinements": 0,
+        "relation_checks": 0,
+        "work_units": 32
+      },
+      "worker_wall_ns": 198443200
+    },
+    {
+      "budget": 32,
+      "certificate_evaluation_ns": null,
+      "certificate_peak_resident_bytes": null,
+      "certificate_valid": null,
+      "certificate_worker_wall_ns": null,
+      "decision": "unknown",
+      "evaluation_ns": 397900,
+      "method": "shared_lift",
+      "peak_resident_bytes": 21954560,
+      "solver_stats": {
+        "abstract_edge_checks": 24,
+        "abstract_paths": 0,
+        "abstract_state_visits": 7,
+        "budget": 32,
+        "cache_insertions": 0,
+        "cache_key_nodes": 0,
+        "cache_lookups": 0,
+        "cache_payload_nodes": 0,
+        "cache_status_checks": 0,
+        "cached_prefix_frames": 0,
+        "cached_relation_outcomes": 0,
+        "elapsed_ns": 385000,
+        "expression_evaluations": 0,
+        "history_nodes": 0,
+        "peak_cached_frames": 0,
+        "peak_frames": 1,
+        "prefix_cache_entries": 0,
+        "prefix_cache_hits": 0,
+        "refinement_edges": 0,
+        "refinement_lookups": 1,
+        "refinements": 0,
+        "relation_cache_entries": 0,
+        "relation_cache_hits": 0,
+        "relation_checks": 0,
+        "witness_nodes": 0,
+        "work_units": 32
+      },
+      "worker_wall_ns": 243326700
+    },
+    {
+      "budget": 256,
+      "certificate_evaluation_ns": 1024200,
+      "certificate_peak_resident_bytes": 22712320,
+      "certificate_valid": true,
+      "certificate_worker_wall_ns": 252407300,
+      "decision": "unsupported",
+      "evaluation_ns": 1256900,
+      "method": "baseline",
+      "peak_resident_bytes": 22745088,
+      "solver_stats": {
+        "argument_assignments": 16,
+        "budget": 256,
+        "cached_relation_outcomes": 0,
+        "certificate_checks": 0,
+        "expression_evaluations": 24,
+        "graph_edges": 80,
+        "product_states": 4,
+        "state_expansions": 14,
+        "work_units": 134
+      },
+      "worker_wall_ns": 279238900
+    },
+    {
+      "budget": 256,
+      "certificate_evaluation_ns": 601300,
+      "certificate_peak_resident_bytes": 22745088,
+      "certificate_valid": true,
+      "certificate_worker_wall_ns": 228916000,
+      "decision": "unsupported",
+      "evaluation_ns": 938000,
+      "method": "direct_pruned",
+      "peak_resident_bytes": 22728704,
+      "solver_stats": {
+        "argument_assignments": 16,
+        "budget": 256,
+        "cached_relation_outcomes": 0,
+        "certificate_checks": 0,
+        "expression_evaluations": 24,
+        "goal_pruned_edges": 0,
+        "graph_edges": 80,
+        "product_states": 4,
+        "state_expansions": 14,
+        "work_units": 134
+      },
+      "worker_wall_ns": 223530900
+    },
+    {
+      "budget": 256,
+      "certificate_evaluation_ns": null,
+      "certificate_peak_resident_bytes": null,
+      "certificate_valid": null,
+      "certificate_worker_wall_ns": null,
+      "decision": "unknown",
+      "evaluation_ns": 691200,
+      "method": "candidate",
+      "peak_resident_bytes": 21966848,
+      "solver_stats": {
+        "abstract_edge_checks": 172,
+        "abstract_paths": 0,
+        "abstract_state_visits": 45,
+        "budget": 256,
+        "elapsed_ns": 376700,
+        "expression_evaluations": 0,
+        "peak_frames": 1,
+        "refinement_edges": 0,
+        "refinement_lookups": 39,
+        "refinements": 0,
+        "relation_checks": 0,
+        "work_units": 256
+      },
+      "worker_wall_ns": 189531100
+    },
+    {
+      "budget": 256,
+      "certificate_evaluation_ns": null,
+      "certificate_peak_resident_bytes": null,
+      "certificate_valid": null,
+      "certificate_worker_wall_ns": null,
+      "decision": "unknown",
+      "evaluation_ns": 478600,
+      "method": "shared_lift",
+      "peak_resident_bytes": 22155264,
+      "solver_stats": {
+        "abstract_edge_checks": 172,
+        "abstract_paths": 0,
+        "abstract_state_visits": 45,
+        "budget": 256,
+        "cache_insertions": 0,
+        "cache_key_nodes": 0,
+        "cache_lookups": 0,
+        "cache_payload_nodes": 0,
+        "cache_status_checks": 0,
+        "cached_prefix_frames": 0,
+        "cached_relation_outcomes": 0,
+        "elapsed_ns": 463700,
+        "expression_evaluations": 0,
+        "history_nodes": 0,
+        "peak_cached_frames": 0,
+        "peak_frames": 1,
+        "prefix_cache_entries": 0,
+        "prefix_cache_hits": 0,
+        "refinement_edges": 0,
+        "refinement_lookups": 39,
+        "refinements": 0,
+        "relation_cache_entries": 0,
+        "relation_cache_hits": 0,
+        "relation_checks": 0,
+        "witness_nodes": 0,
+        "work_units": 256
+      },
+      "worker_wall_ns": 206031800
+    },
+    {
+      "budget": 4096,
+      "certificate_evaluation_ns": 2978000,
+      "certificate_peak_resident_bytes": 21487616,
+      "certificate_valid": true,
+      "certificate_worker_wall_ns": 496913300,
+      "decision": "unsupported",
+      "evaluation_ns": 2008300,
+      "method": "baseline",
+      "peak_resident_bytes": 21311488,
+      "solver_stats": {
+        "argument_assignments": 16,
+        "budget": 4096,
+        "cached_relation_outcomes": 0,
+        "certificate_checks": 0,
+        "expression_evaluations": 24,
+        "graph_edges": 80,
+        "product_states": 4,
+        "state_expansions": 14,
+        "work_units": 134
+      },
+      "worker_wall_ns": 433073200
+    },
+    {
+      "budget": 4096,
+      "certificate_evaluation_ns": 1370900,
+      "certificate_peak_resident_bytes": 22052864,
+      "certificate_valid": true,
+      "certificate_worker_wall_ns": 1099778000,
+      "decision": "unsupported",
+      "evaluation_ns": 2443200,
+      "method": "direct_pruned",
+      "peak_resident_bytes": 19910656,
+      "solver_stats": {
+        "argument_assignments": 16,
+        "budget": 4096,
+        "cached_relation_outcomes": 0,
+        "certificate_checks": 0,
+        "expression_evaluations": 24,
+        "goal_pruned_edges": 0,
+        "graph_edges": 80,
+        "product_states": 4,
+        "state_expansions": 14,
+        "work_units": 134
+      },
+      "worker_wall_ns": 965279000
+    },
+    {
+      "budget": 4096,
+      "certificate_evaluation_ns": null,
+      "certificate_peak_resident_bytes": null,
+      "certificate_valid": null,
+      "certificate_worker_wall_ns": null,
+      "decision": "unknown",
+      "evaluation_ns": 8107200,
+      "method": "candidate",
+      "peak_resident_bytes": 21778432,
+      "solver_stats": {
+        "abstract_edge_checks": 356,
+        "abstract_paths": 182,
+        "abstract_state_visits": 272,
+        "budget": 4096,
+        "elapsed_ns": 8055200,
+        "expression_evaluations": 1086,
+        "peak_frames": 1,
+        "refinement_edges": 724,
+        "refinement_lookups": 751,
+        "refinements": 181,
+        "relation_checks": 725,
+        "work_units": 4096
+      },
+      "worker_wall_ns": 264343100
+    },
+    {
+      "budget": 4096,
+      "certificate_evaluation_ns": null,
+      "certificate_peak_resident_bytes": null,
+      "certificate_valid": null,
+      "certificate_worker_wall_ns": null,
+      "decision": "unknown",
+      "evaluation_ns": 3207200,
+      "method": "shared_lift",
+      "peak_resident_bytes": 21471232,
+      "solver_stats": {
+        "abstract_edge_checks": 356,
+        "abstract_paths": 63,
+        "abstract_state_visits": 153,
+        "budget": 4096,
+        "cache_insertions": 98,
+        "cache_key_nodes": 1216,
+        "cache_lookups": 261,
+        "cache_payload_nodes": 1124,
+        "cache_status_checks": 133,
+        "cached_prefix_frames": 62,
+        "cached_relation_outcomes": 12,
+        "elapsed_ns": 3166200,
+        "expression_evaluations": 21,
+        "history_nodes": 21,
+        "peak_cached_frames": 31,
+        "peak_frames": 1,
+        "prefix_cache_entries": 84,
+        "prefix_cache_hits": 62,
+        "refinement_edges": 248,
+        "refinement_lookups": 315,
+        "refinements": 62,
+        "relation_cache_entries": 13,
+        "relation_cache_hits": 71,
+        "relation_checks": 13,
+        "witness_nodes": 0,
+        "work_units": 4096
+      },
+      "worker_wall_ns": 271881500
+    },
+    {
+      "budget": 100000,
+      "certificate_evaluation_ns": 1558900,
+      "certificate_peak_resident_bytes": 22417408,
+      "certificate_valid": true,
+      "certificate_worker_wall_ns": 328909500,
+      "decision": "unsupported",
+      "evaluation_ns": 12408200,
+      "method": "baseline",
+      "peak_resident_bytes": 22609920,
+      "solver_stats": {
+        "argument_assignments": 16,
+        "budget": 100000,
+        "cached_relation_outcomes": 0,
+        "certificate_checks": 0,
+        "expression_evaluations": 24,
+        "graph_edges": 80,
+        "product_states": 4,
+        "state_expansions": 14,
+        "work_units": 134
+      },
+      "worker_wall_ns": 426876500
+    },
+    {
+      "budget": 100000,
+      "certificate_evaluation_ns": 1067000,
+      "certificate_peak_resident_bytes": 21684224,
+      "certificate_valid": true,
+      "certificate_worker_wall_ns": 403643900,
+      "decision": "unsupported",
+      "evaluation_ns": 1010000,
+      "method": "direct_pruned",
+      "peak_resident_bytes": 22687744,
+      "solver_stats": {
+        "argument_assignments": 16,
+        "budget": 100000,
+        "cached_relation_outcomes": 0,
+        "certificate_checks": 0,
+        "expression_evaluations": 24,
+        "goal_pruned_edges": 0,
+        "graph_edges": 80,
+        "product_states": 4,
+        "state_expansions": 14,
+        "work_units": 134
+      },
+      "worker_wall_ns": 285598200
+    },
+    {
+      "budget": 100000,
+      "certificate_evaluation_ns": 34905500,
+      "certificate_peak_resident_bytes": 22859776,
+      "certificate_valid": true,
+      "certificate_worker_wall_ns": 476989400,
+      "decision": "unsupported",
+      "evaluation_ns": 7602300,
+      "method": "candidate",
+      "peak_resident_bytes": 21606400,
+      "solver_stats": {
+        "abstract_edge_checks": 356,
+        "abstract_paths": 256,
+        "abstract_state_visits": 346,
+        "budget": 100000,
+        "elapsed_ns": 7549900,
+        "expression_evaluations": 1536,
+        "peak_frames": 1,
+        "refinement_edges": 1024,
+        "refinement_lookups": 1024,
+        "refinements": 256,
+        "relation_checks": 1024,
+        "work_units": 5566
+      },
+      "worker_wall_ns": 289956800
+    },
+    {
+      "budget": 100000,
+      "certificate_evaluation_ns": 24368600,
+      "certificate_peak_resident_bytes": 22736896,
+      "certificate_valid": true,
+      "certificate_worker_wall_ns": 252150400,
+      "decision": "unsupported",
+      "evaluation_ns": 11046500,
+      "method": "shared_lift",
+      "peak_resident_bytes": 21872640,
+      "solver_stats": {
+        "abstract_edge_checks": 356,
+        "abstract_paths": 256,
+        "abstract_state_visits": 346,
+        "budget": 100000,
+        "cache_insertions": 357,
+        "cache_key_nodes": 4901,
+        "cache_lookups": 1032,
+        "cache_payload_nodes": 4447,
+        "cache_status_checks": 579,
+        "cached_prefix_frames": 255,
+        "cached_relation_outcomes": 72,
+        "elapsed_ns": 10955500,
+        "expression_evaluations": 24,
+        "history_nodes": 84,
+        "peak_cached_frames": 97,
+        "peak_frames": 1,
+        "prefix_cache_entries": 341,
+        "prefix_cache_hits": 255,
+        "refinement_edges": 1024,
+        "refinement_lookups": 1024,
+        "refinements": 256,
+        "relation_cache_entries": 16,
+        "relation_cache_hits": 324,
+        "relation_checks": 16,
+        "witness_nodes": 0,
+        "work_units": 14773
+      },
+      "worker_wall_ns": 291945200
+    }
+  ],
+  "test_or_replay_executions_by_reviewer": 0,
+  "validation_errors": [],
+  "worker_errors": 0,
+  "worker_statuses": {
+    "returned": 349
+  },
+  "worker_stderr_nonempty": 0
+}

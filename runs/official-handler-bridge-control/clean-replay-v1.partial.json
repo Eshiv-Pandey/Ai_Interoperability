@@ -1,0 +1,86 @@
+{
+  "schema_version": "official-handler-bridge-archive-replay/1",
+  "valid": false,
+  "checked_at": "2026-10-24T17:19:21.791891+00:00",
+  "archive_files": 5,
+  "archive_unchanged": true,
+  "worker_exit_code": 1,
+  "worker_stderr": "",
+  "worker_stdout": null,
+  "result": {
+    "schema_version": "official-handler-bridge-check/1",
+    "valid": true,
+    "complete": false,
+    "partial": true,
+    "expected_outcome_observed": false,
+    "validation_errors": [],
+    "expectation_deviations": [
+      {
+        "path": "outcome",
+        "reason": "Attempt retained a setup/caller/cleanup failure"
+      },
+      {
+        "path": "pre_execution",
+        "reason": "Setup did not establish complete frozen runtime"
+      },
+      {
+        "path": "native_controls",
+        "reason": "Header-positive native eligibility did not succeed"
+      },
+      {
+        "path": "typed_answer",
+        "reason": "Typed selected answer did not receive transport-positive reply"
+      },
+      {
+        "path": "caller",
+        "reason": "Prospective attempt is partial/unexecuted"
+      }
+    ],
+    "observations": {
+      "native_eligible": false,
+      "native_control_task_id": null,
+      "bridge_original_task_id": null,
+      "bridge_original_context_id": null,
+      "evaluator_original_state": null,
+      "selected_answer_attempts": 0,
+      "final_bridge_read_attempts": 0,
+      "complete_planned_attempt": false,
+      "paired_ingress": 0,
+      "derived_costs": {
+        "mcp_rpc_requests": 0,
+        "mcp_notifications_sent": 0,
+        "request_bytes": 0,
+        "response_bytes": 0,
+        "setup_ms": null,
+        "bridge_native_requests": 0,
+        "native_control_requests": 0,
+        "evaluator_only_requests": 0,
+        "server_ingress_requests": 0,
+        "bridge_children_started": 0,
+        "model_calls": 0,
+        "remote_network_requests": 0
+      }
+    },
+    "checked_entity_count": 0,
+    "official_variant": "B1",
+    "claim_limit": "Archive/software fidelity validation only; no service rerun, scientific novelty credit, second domain or human review",
+    "archive": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\official-handler-bridge-control\\clean-replay-v1.partial.sources",
+    "report_path": "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-24T16-18-45-731Z-22600/runtime.json",
+    "report_sha256": "981d5627bc347a375ba8525dac1c71aed6b0bdb4e5a6275f8847f4d90190ada6",
+    "mutation_checks": [
+      {
+        "name": "mutations-not-run",
+        "claim_rejected": false,
+        "reason": "Retained attempt does not validate the planned claim; no favorable service replacement"
+      }
+    ],
+    "mutation_claims_rejected": false,
+    "checker_imported": true,
+    "sdk_imported": false,
+    "bridge_started": false,
+    "service_requests": 0,
+    "model_calls": 0
+  },
+  "replay_driver_sha256": "ae0d2b1e98ed0e68c25b1e8f138bd043e57d5699b9d8ce2c80e4411bf0f6f7d8",
+  "claim_limit": "Replay of retained control only; no service rerun, new scientific trial, novelty or human review"
+}

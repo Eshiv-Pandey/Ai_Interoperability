@@ -1,0 +1,5656 @@
+{
+  "schema_version": "recipe-scaling-independent-audit/2",
+  "status": "verified",
+  "reviewer": "Separately assigned AI; independent standard-library byte and record reconciliation, not human review",
+  "started_at_utc": "2026-10-28T22:06:41.131558+00:00",
+  "finished_at_utc": "2026-10-28T22:08:51.748145+00:00",
+  "run": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\refinement-scaling\\v1",
+  "plan": {
+    "path": "plan-v2.json",
+    "bytes": 20550,
+    "sha256": "06956c0d45f79b69dbb1114fc6f7ea98143ce4e743a5f9b43eeb7a5aace793c9"
+  },
+  "auditor": {
+    "path": "runs/refinement-scaling/v2/independent-review/audit_saved_matrix.py",
+    "bytes": 24643,
+    "sha256": "a49ce4095ba04de340216c52af011561fbfc0ed8d592645a0dc6c5f3dc537521"
+  },
+  "files_inspected": 6218,
+  "inventory_sha256": "cf9ba6b61914264c0112ab89340390c42cdca9404d32b35e415fd0e8429b6af3",
+  "measured_artifacts_unchanged": true,
+  "originally_pinned_current_source_files_unchanged": true,
+  "solver_reruns": 0,
+  "certificate_checker_reruns": 0,
+  "application_runs": 0,
+  "worker_jobs_reconciled": 1145,
+  "recorded_worker_statuses": {
+    "returned": 1145
+  },
+  "recorded_returncodes": {
+    "0": 1145
+  },
+  "recorded_certificate_checks": 353,
+  "recorded_certificate_rejections": 0,
+  "nonempty_worker_stderr": [],
+  "profile_count": 66,
+  "external_authored_expectations": {
+    "supported": 28,
+    "unsupported": 26,
+    "unknown": 12
+  },
+  "family_counts": {
+    "argument_product": 16,
+    "layered_reconvergence": 16,
+    "correlated_frames": 16,
+    "horizon_boundary": 6,
+    "off_goal_load": 12
+  },
+  "expectation_contradictions": [],
+  "legacy_v1_differences": [],
+  "budgets": {
+    "32": {
+      "cases": 66,
+      "jobs": 234,
+      "certificate_checks": 36,
+      "manifest_files_verified": 1257,
+      "manifest_bytes_verified": 2262233,
+      "methods": {
+        "baseline": {
+          "supported": 8,
+          "decision_agreements": 66,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 0,
+          "false_support": 0,
+          "false_refusal": 0,
+          "conclusive": 12,
+          "certificates_valid": 12,
+          "certificates_invalid": 0,
+          "unsupported": 4,
+          "unknown": 54,
+          "reasons": {
+            "concrete_recipe_path": 8,
+            "complete_relational_product_exhausted": 4,
+            "indeterminate_observables_or_relations": 3,
+            "work_budget_exhausted": 51
+          },
+          "certified_coverage": 0.18181818181818182
+        },
+        "candidate": {
+          "supported": 16,
+          "decision_agreements": 54,
+          "conclusive_on_reference_unknown": 12,
+          "abstained_on_reference_decided": 0,
+          "false_support": 0,
+          "false_refusal": 0,
+          "conclusive": 24,
+          "certificates_valid": 24,
+          "certificates_invalid": 0,
+          "unsupported": 8,
+          "unknown": 42,
+          "reasons": {
+            "public_recipe_witness": 16,
+            "certified_refinement_exhaustion": 8,
+            "unresolved_relation_or_recipe": 3,
+            "work_budget_exhausted": 39
+          },
+          "certified_coverage": 0.36363636363636365
+        }
+      },
+      "reference_decisions": {
+        "supported": 8,
+        "unsupported": 4,
+        "unknown": 54
+      },
+      "reference_reasons": {
+        "concrete_recipe_path": 8,
+        "complete_relational_product_exhausted": 4,
+        "indeterminate_observables_or_relations": 3,
+        "work_budget_exhausted": 51
+      },
+      "candidate_by_pruned_decision": {},
+      "family_decisions": {
+        "argument_product": {
+          "baseline": {
+            "supported": 6,
+            "unsupported": 2,
+            "unknown": 8
+          },
+          "candidate": {
+            "supported": 6,
+            "unsupported": 2,
+            "unknown": 8
+          }
+        },
+        "layered_reconvergence": {
+          "baseline": {
+            "unknown": 16
+          },
+          "candidate": {
+            "supported": 1,
+            "unknown": 15
+          }
+        },
+        "correlated_frames": {
+          "baseline": {
+            "unknown": 16
+          },
+          "candidate": {
+            "supported": 1,
+            "unknown": 15
+          }
+        },
+        "horizon_boundary": {
+          "baseline": {
+            "unsupported": 1,
+            "supported": 2,
+            "unknown": 3
+          },
+          "candidate": {
+            "unsupported": 2,
+            "supported": 4
+          }
+        },
+        "off_goal_load": {
+          "baseline": {
+            "unknown": 11,
+            "unsupported": 1
+          },
+          "candidate": {
+            "supported": 4,
+            "unsupported": 4,
+            "unknown": 4
+          }
+        }
+      },
+      "case_comparisons": [
+        {
+          "case_id": "scale-0001",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0002",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0003",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0004",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0005",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0006",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0007",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0008",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0009",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0010",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0011",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0012",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0013",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0014",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0015",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0016",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0017",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0018",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0019",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0020",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0021",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0022",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0023",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0024",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0025",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0026",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0027",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0028",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0029",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0030",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0031",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0032",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0033",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0034",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0035",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0036",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0037",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0038",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0039",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0040",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0041",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0042",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0043",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0044",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0045",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0046",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0047",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0048",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0049",
+          "family": "horizon_boundary",
+          "scenario": "slack_-1",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0050",
+          "family": "horizon_boundary",
+          "scenario": "slack_0",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0051",
+          "family": "horizon_boundary",
+          "scenario": "slack_1",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0052",
+          "family": "horizon_boundary",
+          "scenario": "slack_-1",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0053",
+          "family": "horizon_boundary",
+          "scenario": "slack_0",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0054",
+          "family": "horizon_boundary",
+          "scenario": "slack_1",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0055",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0056",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0057",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0058",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0059",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0060",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0061",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0062",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0063",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0064",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0065",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0066",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        }
+      ]
+    },
+    "256": {
+      "cases": 66,
+      "jobs": 300,
+      "certificate_checks": 102,
+      "manifest_files_verified": 1587,
+      "manifest_bytes_verified": 2917414,
+      "methods": {
+        "baseline": {
+          "supported": 27,
+          "decision_agreements": 66,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 0,
+          "false_support": 0,
+          "false_refusal": 0,
+          "conclusive": 52,
+          "certificates_valid": 52,
+          "certificates_invalid": 0,
+          "unsupported": 25,
+          "unknown": 14,
+          "reasons": {
+            "concrete_recipe_path": 27,
+            "complete_relational_product_exhausted": 25,
+            "indeterminate_observables_or_relations": 12,
+            "work_budget_exhausted": 2
+          },
+          "certified_coverage": 0.7878787878787878
+        },
+        "candidate": {
+          "supported": 27,
+          "decision_agreements": 60,
+          "conclusive_on_reference_unknown": 2,
+          "abstained_on_reference_decided": 4,
+          "false_support": 0,
+          "false_refusal": 0,
+          "conclusive": 50,
+          "certificates_valid": 50,
+          "certificates_invalid": 0,
+          "unsupported": 23,
+          "unknown": 16,
+          "reasons": {
+            "public_recipe_witness": 27,
+            "certified_refinement_exhaustion": 23,
+            "unresolved_relation_or_recipe": 11,
+            "work_budget_exhausted": 5
+          },
+          "certified_coverage": 0.7575757575757576
+        }
+      },
+      "reference_decisions": {
+        "supported": 27,
+        "unsupported": 25,
+        "unknown": 14
+      },
+      "reference_reasons": {
+        "concrete_recipe_path": 27,
+        "complete_relational_product_exhausted": 25,
+        "indeterminate_observables_or_relations": 12,
+        "work_budget_exhausted": 2
+      },
+      "candidate_by_pruned_decision": {},
+      "family_decisions": {
+        "argument_product": {
+          "baseline": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          },
+          "candidate": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          }
+        },
+        "layered_reconvergence": {
+          "baseline": {
+            "supported": 4,
+            "unsupported": 8,
+            "unknown": 4
+          },
+          "candidate": {
+            "supported": 3,
+            "unsupported": 5,
+            "unknown": 8
+          }
+        },
+        "correlated_frames": {
+          "baseline": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          },
+          "candidate": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          }
+        },
+        "horizon_boundary": {
+          "baseline": {
+            "unsupported": 2,
+            "supported": 4
+          },
+          "candidate": {
+            "unsupported": 2,
+            "supported": 4
+          }
+        },
+        "off_goal_load": {
+          "baseline": {
+            "supported": 3,
+            "unsupported": 7,
+            "unknown": 2
+          },
+          "candidate": {
+            "supported": 4,
+            "unsupported": 8
+          }
+        }
+      },
+      "case_comparisons": [
+        {
+          "case_id": "scale-0001",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0002",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0003",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0004",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0005",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0006",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0007",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0008",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0009",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0010",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0011",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0012",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0013",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0014",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0015",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0016",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0017",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0018",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0019",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0020",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0021",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0022",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0023",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0024",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0025",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0026",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0027",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0028",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0029",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0030",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0031",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0032",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0033",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0034",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0035",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0036",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0037",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0038",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0039",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0040",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0041",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0042",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0043",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0044",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0045",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0046",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0047",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0048",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0049",
+          "family": "horizon_boundary",
+          "scenario": "slack_-1",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0050",
+          "family": "horizon_boundary",
+          "scenario": "slack_0",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0051",
+          "family": "horizon_boundary",
+          "scenario": "slack_1",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0052",
+          "family": "horizon_boundary",
+          "scenario": "slack_-1",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0053",
+          "family": "horizon_boundary",
+          "scenario": "slack_0",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0054",
+          "family": "horizon_boundary",
+          "scenario": "slack_1",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0055",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0056",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0057",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0058",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0059",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0060",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0061",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0062",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0063",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0064",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0065",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0066",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        }
+      ]
+    },
+    "4096": {
+      "cases": 66,
+      "jobs": 305,
+      "certificate_checks": 107,
+      "manifest_files_verified": 1612,
+      "manifest_bytes_verified": 2981645,
+      "methods": {
+        "baseline": {
+          "supported": 28,
+          "decision_agreements": 66,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 0,
+          "false_support": 0,
+          "false_refusal": 0,
+          "conclusive": 54,
+          "certificates_valid": 54,
+          "certificates_invalid": 0,
+          "unsupported": 26,
+          "unknown": 12,
+          "reasons": {
+            "concrete_recipe_path": 28,
+            "complete_relational_product_exhausted": 26,
+            "indeterminate_observables_or_relations": 12
+          },
+          "certified_coverage": 0.8181818181818182
+        },
+        "candidate": {
+          "supported": 28,
+          "decision_agreements": 65,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 1,
+          "false_support": 0,
+          "false_refusal": 0,
+          "conclusive": 53,
+          "certificates_valid": 53,
+          "certificates_invalid": 0,
+          "unsupported": 25,
+          "unknown": 13,
+          "reasons": {
+            "public_recipe_witness": 28,
+            "certified_refinement_exhaustion": 25,
+            "unresolved_relation_or_recipe": 12,
+            "work_budget_exhausted": 1
+          },
+          "certified_coverage": 0.803030303030303
+        }
+      },
+      "reference_decisions": {
+        "supported": 28,
+        "unsupported": 26,
+        "unknown": 12
+      },
+      "reference_reasons": {
+        "concrete_recipe_path": 28,
+        "complete_relational_product_exhausted": 26,
+        "indeterminate_observables_or_relations": 12
+      },
+      "candidate_by_pruned_decision": {},
+      "family_decisions": {
+        "argument_product": {
+          "baseline": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          },
+          "candidate": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          }
+        },
+        "layered_reconvergence": {
+          "baseline": {
+            "supported": 4,
+            "unsupported": 8,
+            "unknown": 4
+          },
+          "candidate": {
+            "supported": 4,
+            "unsupported": 7,
+            "unknown": 5
+          }
+        },
+        "correlated_frames": {
+          "baseline": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          },
+          "candidate": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          }
+        },
+        "horizon_boundary": {
+          "baseline": {
+            "unsupported": 2,
+            "supported": 4
+          },
+          "candidate": {
+            "unsupported": 2,
+            "supported": 4
+          }
+        },
+        "off_goal_load": {
+          "baseline": {
+            "supported": 4,
+            "unsupported": 8
+          },
+          "candidate": {
+            "supported": 4,
+            "unsupported": 8
+          }
+        }
+      },
+      "case_comparisons": [
+        {
+          "case_id": "scale-0001",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0002",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0003",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0004",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0005",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0006",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0007",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0008",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0009",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0010",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0011",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0012",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0013",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0014",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0015",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0016",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0017",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0018",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0019",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0020",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0021",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0022",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0023",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0024",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0025",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0026",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0027",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0028",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0029",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0030",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0031",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "work_budget_exhausted",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0032",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0033",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0034",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0035",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0036",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0037",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0038",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0039",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0040",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0041",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0042",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0043",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0044",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0045",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0046",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0047",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0048",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0049",
+          "family": "horizon_boundary",
+          "scenario": "slack_-1",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0050",
+          "family": "horizon_boundary",
+          "scenario": "slack_0",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0051",
+          "family": "horizon_boundary",
+          "scenario": "slack_1",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0052",
+          "family": "horizon_boundary",
+          "scenario": "slack_-1",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0053",
+          "family": "horizon_boundary",
+          "scenario": "slack_0",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0054",
+          "family": "horizon_boundary",
+          "scenario": "slack_1",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0055",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0056",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0057",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0058",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0059",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0060",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0061",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0062",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0063",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0064",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0065",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0066",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        }
+      ]
+    },
+    "100000": {
+      "cases": 66,
+      "jobs": 306,
+      "certificate_checks": 108,
+      "manifest_files_verified": 1617,
+      "manifest_bytes_verified": 3057495,
+      "methods": {
+        "baseline": {
+          "supported": 28,
+          "decision_agreements": 66,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 0,
+          "false_support": 0,
+          "false_refusal": 0,
+          "conclusive": 54,
+          "certificates_valid": 54,
+          "certificates_invalid": 0,
+          "unsupported": 26,
+          "unknown": 12,
+          "reasons": {
+            "concrete_recipe_path": 28,
+            "complete_relational_product_exhausted": 26,
+            "indeterminate_observables_or_relations": 12
+          },
+          "certified_coverage": 0.8181818181818182
+        },
+        "candidate": {
+          "supported": 28,
+          "decision_agreements": 66,
+          "conclusive_on_reference_unknown": 0,
+          "abstained_on_reference_decided": 0,
+          "false_support": 0,
+          "false_refusal": 0,
+          "conclusive": 54,
+          "certificates_valid": 54,
+          "certificates_invalid": 0,
+          "unsupported": 26,
+          "unknown": 12,
+          "reasons": {
+            "public_recipe_witness": 28,
+            "certified_refinement_exhaustion": 26,
+            "unresolved_relation_or_recipe": 12
+          },
+          "certified_coverage": 0.8181818181818182
+        }
+      },
+      "reference_decisions": {
+        "supported": 28,
+        "unsupported": 26,
+        "unknown": 12
+      },
+      "reference_reasons": {
+        "concrete_recipe_path": 28,
+        "complete_relational_product_exhausted": 26,
+        "indeterminate_observables_or_relations": 12
+      },
+      "candidate_by_pruned_decision": {},
+      "family_decisions": {
+        "argument_product": {
+          "baseline": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          },
+          "candidate": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          }
+        },
+        "layered_reconvergence": {
+          "baseline": {
+            "supported": 4,
+            "unsupported": 8,
+            "unknown": 4
+          },
+          "candidate": {
+            "supported": 4,
+            "unsupported": 8,
+            "unknown": 4
+          }
+        },
+        "correlated_frames": {
+          "baseline": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          },
+          "candidate": {
+            "supported": 8,
+            "unsupported": 4,
+            "unknown": 4
+          }
+        },
+        "horizon_boundary": {
+          "baseline": {
+            "unsupported": 2,
+            "supported": 4
+          },
+          "candidate": {
+            "unsupported": 2,
+            "supported": 4
+          }
+        },
+        "off_goal_load": {
+          "baseline": {
+            "supported": 4,
+            "unsupported": 8
+          },
+          "candidate": {
+            "supported": 4,
+            "unsupported": 8
+          }
+        }
+      },
+      "case_comparisons": [
+        {
+          "case_id": "scale-0001",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0002",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0003",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0004",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0005",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0006",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0007",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0008",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0009",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0010",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0011",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0012",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0013",
+          "family": "argument_product",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0014",
+          "family": "argument_product",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0015",
+          "family": "argument_product",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0016",
+          "family": "argument_product",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0017",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0018",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0019",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0020",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0021",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0022",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0023",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0024",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0025",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0026",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0027",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0028",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0029",
+          "family": "layered_reconvergence",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0030",
+          "family": "layered_reconvergence",
+          "scenario": "early_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0031",
+          "family": "layered_reconvergence",
+          "scenario": "late_refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0032",
+          "family": "layered_reconvergence",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0033",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0034",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0035",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0036",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0037",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0038",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0039",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0040",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0041",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0042",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0043",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0044",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0045",
+          "family": "correlated_frames",
+          "scenario": "first_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0046",
+          "family": "correlated_frames",
+          "scenario": "last_witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0047",
+          "family": "correlated_frames",
+          "scenario": "unmatched_pair",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0048",
+          "family": "correlated_frames",
+          "scenario": "opaque",
+          "external_authored_expectation": "unknown",
+          "reference": "unknown",
+          "methods": {
+            "baseline": {
+              "decision": "unknown",
+              "reason": "indeterminate_observables_or_relations",
+              "certificate_valid": null
+            },
+            "candidate": {
+              "decision": "unknown",
+              "reason": "unresolved_relation_or_recipe",
+              "certificate_valid": null
+            }
+          }
+        },
+        {
+          "case_id": "scale-0049",
+          "family": "horizon_boundary",
+          "scenario": "slack_-1",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0050",
+          "family": "horizon_boundary",
+          "scenario": "slack_0",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0051",
+          "family": "horizon_boundary",
+          "scenario": "slack_1",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0052",
+          "family": "horizon_boundary",
+          "scenario": "slack_-1",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0053",
+          "family": "horizon_boundary",
+          "scenario": "slack_0",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0054",
+          "family": "horizon_boundary",
+          "scenario": "slack_1",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0055",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0056",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0057",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0058",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0059",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0060",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0061",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0062",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0063",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0064",
+          "family": "off_goal_load",
+          "scenario": "witness",
+          "external_authored_expectation": "supported",
+          "reference": "supported",
+          "methods": {
+            "baseline": {
+              "decision": "supported",
+              "reason": "concrete_recipe_path",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "supported",
+              "reason": "public_recipe_witness",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0065",
+          "family": "off_goal_load",
+          "scenario": "refutation",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        },
+        {
+          "case_id": "scale-0066",
+          "family": "off_goal_load",
+          "scenario": "irrelevant_opaque",
+          "external_authored_expectation": "unsupported",
+          "reference": "unsupported",
+          "methods": {
+            "baseline": {
+              "decision": "unsupported",
+              "reason": "complete_relational_product_exhausted",
+              "certificate_valid": true
+            },
+            "candidate": {
+              "decision": "unsupported",
+              "reason": "certified_refinement_exhaustion",
+              "certificate_valid": true
+            }
+          }
+        }
+      ]
+    }
+  },
+  "evidence": [
+    {
+      "path": "plan-v2.json",
+      "bytes": 20550,
+      "sha256": "06956c0d45f79b69dbb1114fc6f7ea98143ce4e743a5f9b43eeb7a5aace793c9"
+    },
+    {
+      "path": "execution.json",
+      "bytes": 565,
+      "sha256": "d240c43016829f5dc82a88b62714690ae2b13b0496ba6b1b6d04ada96143a3dc"
+    },
+    {
+      "path": "result.json",
+      "bytes": 615749,
+      "sha256": "7ab81edb1f8448bb5a301078ab81b9cc9d25d03fa62c72e83ac8dd999c81c73e"
+    },
+    {
+      "path": "inputs/manifest.json",
+      "bytes": 58089,
+      "sha256": "73dca6c030e709da2707969c15f5f590eec7b1c35fe0bcb3ef5829fa5a87933e"
+    },
+    {
+      "path": "budget-32/manifest.json",
+      "bytes": 213375,
+      "sha256": "830be847a839c0c910ee5395cd05fbafcdef3a469dc3ac2b7aa7a01744c78e6a"
+    },
+    {
+      "path": "budget-32/execution.json",
+      "bytes": 14520,
+      "sha256": "fb5ed90a4cdff9c8230a9934f89edb61fbaca6fe1dc55127654d2932f9929a31"
+    },
+    {
+      "path": "budget-32/summary.json",
+      "bytes": 41186,
+      "sha256": "4053c0a1e44174923705912d7d614246d9a1f60b0673c6ef5a19e8c0723ef0ac"
+    },
+    {
+      "path": "budget-32/results.jsonl",
+      "bytes": 327926,
+      "sha256": "ddb0e2b089bbc48eb5cc809f6c7dfbc14578bcbb2717b659b21132fc41f74322"
+    },
+    {
+      "path": "budget-256/manifest.json",
+      "bytes": 272948,
+      "sha256": "1073c025d43bde15fd853dcaa9a863dc803e2a73a153da71928327ceb103f7f2"
+    },
+    {
+      "path": "budget-256/execution.json",
+      "bytes": 14521,
+      "sha256": "af23fa356fe6e782b9e1754fe912ef7fe3d784e9492d37a63052cb3c8f623349"
+    },
+    {
+      "path": "budget-256/summary.json",
+      "bytes": 53305,
+      "sha256": "3ac585ce6c7b202daadb20b610c7b8872549996eb0a033f7e437142980c1d785"
+    },
+    {
+      "path": "budget-256/results.jsonl",
+      "bytes": 429823,
+      "sha256": "0c9a8e25946e8874ebd6cbfcc8732f8ef4bc5025d992da3d44f78285ad503bc2"
+    },
+    {
+      "path": "budget-4096/manifest.json",
+      "bytes": 277467,
+      "sha256": "48820fb60778eaf39799f3bb2a9e13f60af6a927de10060d38301c4e53a9dc5e"
+    },
+    {
+      "path": "budget-4096/execution.json",
+      "bytes": 14522,
+      "sha256": "b45ac453b7c9232feeeb7dfc649fbd20f1e4354f86741325e0aefa9a04b0d8b2"
+    },
+    {
+      "path": "budget-4096/summary.json",
+      "bytes": 54203,
+      "sha256": "9af82f9628f9c660fc071d4a58660fa93daf0ae613f69dd2816a912859d31658"
+    },
+    {
+      "path": "budget-4096/results.jsonl",
+      "bytes": 437844,
+      "sha256": "eb4b5a483ed9d0ec65a0f358cc329630c33a905205b29a590356793514346f28"
+    },
+    {
+      "path": "budget-100000/manifest.json",
+      "bytes": 278374,
+      "sha256": "a92106b34b258a7ed341e3ab13d2885650d538f82d1f4e9a39afd30c893d61a8"
+    },
+    {
+      "path": "budget-100000/execution.json",
+      "bytes": 14524,
+      "sha256": "8c7b5f8a07db76391477794e12cc3f14a44dfc04ad307d6657053a6588bec176"
+    },
+    {
+      "path": "budget-100000/summary.json",
+      "bytes": 54353,
+      "sha256": "213b6e6043a2b1634a98a6d05bdd41e9f7edafa5b23bb3d595caf1970143b921"
+    },
+    {
+      "path": "budget-100000/results.jsonl",
+      "bytes": 450222,
+      "sha256": "baac15f5e9efe7cedb5e619c1057ccda19d54b6b5e59b5cb2484f1d8dd90fce3"
+    }
+  ],
+  "validation_errors": [],
+  "limits": [
+    "Recorded worker and certificate-check results reconciled; no solver or checker was re-executed.",
+    "External authored expectations are development labels, not independent application ground truth.",
+    "The 66 profiles are related parameterized variants, not independent held-out templates.",
+    "Reference and baseline share the legacy oracle; a reference unknown is not a semantic error.",
+    "Equal integer budgets count method-specific operations, not identical primitive work.",
+    "Timings may be contended and one execution per budget proves no speed or reliability advantage.",
+    "No scientific novelty, domain qualification, human acceptance, or project percentage follows."
+  ]
+}

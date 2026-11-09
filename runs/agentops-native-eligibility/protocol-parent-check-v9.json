@@ -1,0 +1,115 @@
+{
+  "schema_version": "agentops-protocol-export-check/1",
+  "status": "artifact_integrity_and_semantics_verified",
+  "files_checked": 1247,
+  "cases": {
+    "sync": {
+      "schema_version": "agentops-protocol-check/1",
+      "status": "passed",
+      "case": "sync",
+      "task_id": "07331f98-b1f4-48ee-bf9d-7255f1a72a61",
+      "context_id": "ecb8d55b-46a0-4f6b-820f-a0b4168602ab",
+      "new_audit_rows": 1,
+      "cards_equal": true,
+      "card_protocol_versions": {
+        "card-default": "0.3",
+        "card-v1": "0.3"
+      },
+      "omitted_header_results": {
+        "get-default": {
+          "http_status": 200,
+          "error": {
+            "code": -32009,
+            "message": "A2A version '0.3' is not supported by this handler. Expected version '1.0'.",
+            "data": [
+              {
+                "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+                "reason": "VERSION_NOT_SUPPORTED",
+                "domain": "a2a-protocol.org",
+                "metadata": {}
+              }
+            ]
+          }
+        },
+        "resume-default": {
+          "http_status": 200,
+          "error": {
+            "code": -32009,
+            "message": "A2A version '0.3' is not supported by this handler. Expected version '1.0'.",
+            "data": [
+              {
+                "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+                "reason": "VERSION_NOT_SUPPORTED",
+                "domain": "a2a-protocol.org",
+                "metadata": {}
+              }
+            ]
+          }
+        }
+      },
+      "socket_policy": {
+        "status": "passed",
+        "blocked_capability_probes": 1,
+        "listener_binds": 1
+      },
+      "bridge_qualification": false,
+      "scientific_gate_credit_added": 0
+    },
+    "stream": {
+      "schema_version": "agentops-protocol-check/1",
+      "status": "passed",
+      "case": "stream",
+      "task_id": "08c42b61-7aef-4737-894d-1a150b360ef6",
+      "context_id": "b93d948c-9991-41b7-ad14-b164fe25fbcd",
+      "new_audit_rows": 1,
+      "cards_equal": true,
+      "card_protocol_versions": {
+        "card-default": "0.3",
+        "card-v1": "0.3"
+      },
+      "omitted_header_results": {
+        "get-default": {
+          "http_status": 200,
+          "error": {
+            "code": -32009,
+            "message": "A2A version '0.3' is not supported by this handler. Expected version '1.0'.",
+            "data": [
+              {
+                "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+                "reason": "VERSION_NOT_SUPPORTED",
+                "domain": "a2a-protocol.org",
+                "metadata": {}
+              }
+            ]
+          }
+        },
+        "resume-default": {
+          "http_status": 200,
+          "error": {
+            "code": -32009,
+            "message": "A2A version '0.3' is not supported by this handler. Expected version '1.0'.",
+            "data": [
+              {
+                "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+                "reason": "VERSION_NOT_SUPPORTED",
+                "domain": "a2a-protocol.org",
+                "metadata": {}
+              }
+            ]
+          }
+        }
+      },
+      "socket_policy": {
+        "status": "passed",
+        "blocked_capability_probes": 1,
+        "listener_binds": 1
+      },
+      "bridge_qualification": false,
+      "scientific_gate_credit_added": 0
+    }
+  },
+  "fresh_experiment": false,
+  "qualified_second_domain": false,
+  "scientific_gate_credit_added": 0,
+  "limitation": "Retained evidence consistency, not capture authenticity, full runtime authentication or scientific review"
+}

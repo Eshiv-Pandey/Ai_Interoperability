@@ -1,0 +1,53 @@
+{
+  "schema_version": "shared-lifting-pilot-prospective-source-review/1",
+  "reviewer": "/root/refinement_final_review",
+  "review_date": "2026-10-29",
+  "status": "no_blocking_source_findings",
+  "reviewed_files": [
+    {
+      "path": "runs/shared-lifting-pilot/v1/run_pilot.py",
+      "sha256": "c64858281add369478ff32a4f2ed5e1fe41f15d39fb07cec2da4d134f866bae0"
+    },
+    {
+      "path": "runs/shared-lifting-pilot/v1/plan.json",
+      "sha256": "8c66caa0467f09588a533019526df2401f1ac526cd53b7aa364961bffe612265"
+    },
+    {
+      "path": "runs/shared-lifting-pilot/v1/plan-seal.json",
+      "sha256": "8b4908cc96eb9dbe13ea1bf657ed65f3e7ea14da6501a8c6a158b00d481b2cfb"
+    }
+  ],
+  "independent_read_only_checks": {
+    "mechanism": "PowerShell file reads, JSON parsing, byte lengths, SHA256 and set/order comparisons; no project code imported or executed.",
+    "original_records_checked": 51,
+    "snapshot_records_checked": 51,
+    "hash_discrepancies": [],
+    "snapshot_inventory_discrepancies": [],
+    "plan_seal_matches": true,
+    "recipe_manifest_case_count": 11,
+    "recipe_pilot_case_count": 11,
+    "recipe_id_path_size_hash_discrepancies": [],
+    "combined_suite_order_path_family_discrepancies": [],
+    "additional_case": "scale-0031",
+    "total_planned_cases": 12,
+    "started_json_existed_at_inspection": false,
+    "commands_directory_existed_at_inspection": false,
+    "result_json_existed_at_inspection": false
+  },
+  "source_review_observations": [
+    "Preparation validates both focused-test prerequisite receipts and both independent algorithm/harness source reviews against current source hashes, then snapshots the package, inputs and prerequisite receipts before writing the prospective plan and seal.",
+    "The entire 11-case authored recipe suite is bound to examples/refinement-development/manifest.json by exact membership, IDs, byte sizes and hashes. scale-0031 is separately bound to its retained scaling manifest and explicitly labeled a deliberately selected motivating case.",
+    "The plan dispatches baseline, corrected direct, original candidate and shared-lift candidate through the reviewed four-arm entrypoint at budgets 32, 256, 4096 and 100000. Each run is followed by its versioned verifier; commands are sequential and use captured source, one clock and 30-second worker timeouts.",
+    "Execution refuses consumed allocations, checks original/snapshot inventories and hashes before launching, records started.json, and repeats guards around each command. It does not overwrite prior outputs. No outer coordinator timeout is specified, avoiding an intentional timeout that kills a coordinator while its worker remains active.",
+    "Command stdout, stderr, process status and guards are retained. Failed commands do not silently remove subsequent planned denominators. Reports preserve missing/unexpected cases, malformed records, errors and unavailable observations; overall success requires all eight commands to return zero and all four case inventories to reconcile.",
+    "Per-case solver work and evaluation/checker observations are retained. End-to-end algorithm cost is explicitly solver worker wall plus required checker worker wall, with reference and coordinator time separated. Process memory is an OS process high-water mark with interpreter/import/input overhead, not solver-only allocation; sequential peaks are not summed.",
+    "The pilot explicitly excludes a full 66-case matrix, replay and live/WSL execution. Its selected authored cases establish no held-out representativeness, novelty, domain qualification or comparative speed advantage."
+  ],
+  "blocking_findings": [],
+  "scope_limits": [
+    "Prospective source/plan review and independent file/record reconciliation only; the pilot was not executed by this reviewer.",
+    "No tests, solvers, checkers, benchmarks, replays, applications or WSL processes were executed for this review.",
+    "This record is outside the pilot's frozen v1 source/input/receipt inventories and does not alter them.",
+    "A no-blocker source review does not establish future execution success, authenticated provenance, supervisor acceptance or project percentage."
+  ]
+}

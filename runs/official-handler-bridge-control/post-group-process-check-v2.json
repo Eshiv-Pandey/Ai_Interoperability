@@ -1,0 +1,28 @@
+{
+  "observed_at": "2026-10-24T18:22:20.634525+00:00",
+  "command": [
+    "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "-NoProfile",
+    "-Command",
+    "ConvertTo-Json -Compress -InputObject @(Get-Process -Id 17648,23916,19188,2256,21276,23884,25464,20860,9912,20988,17740,7844 -ErrorAction SilentlyContinue | Select-Object Id,ProcessName,StartTime)"
+  ],
+  "exit_code": 0,
+  "stdout": "[]\n",
+  "stderr": "",
+  "recorded_pids": [
+    17648,
+    23916,
+    19188,
+    2256,
+    21276,
+    23884,
+    25464,
+    20860,
+    9912,
+    20988,
+    17740,
+    7844
+  ],
+  "present": [],
+  "action": "Read-only current PID inventory; no process stopped"
+}

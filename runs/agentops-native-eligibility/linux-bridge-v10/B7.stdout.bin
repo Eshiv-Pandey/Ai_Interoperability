@@ -1,0 +1,162 @@
+{
+  "schema_version": "agentops-bridge-case-result/1",
+  "case_id": "B7",
+  "kind": "bridge",
+  "status": "failed",
+  "started_at_utc": "2026-10-27T13:09:36.003166+00:00",
+  "cleanup_errors": [
+    "after_sigterm: PID 2926 has unknown argv"
+  ],
+  "live_model_calls": 0,
+  "research_gate_credit_added": 0,
+  "client_returncode": 0,
+  "client_timed_out": false,
+  "client_forced_kill": false,
+  "client_group_cleanup": {
+    "schema_version": "agentops-owned-process-group/1",
+    "pgid": 3347,
+    "initially_empty": true,
+    "final_empty": true,
+    "forced_cleanup": false,
+    "members": [],
+    "final_members": [],
+    "snapshots": [
+      {
+        "phase": "initial",
+        "monotonic_ns": 542919334565,
+        "members": [],
+        "errors": []
+      }
+    ],
+    "signals": [],
+    "errors": []
+  },
+  "bridge_clean_exit": true,
+  "bridge_forced_kill": false,
+  "bridge_exit": {
+    "code": 0,
+    "signal": null,
+    "at_utc": "2026-10-27T13:10:04.376Z"
+  },
+  "evaluator_query": {
+    "executed": true,
+    "task_id": "0beee415-237f-4def-b2af-c148d0e182b7",
+    "context_id": "7d92e1aa-677a-4ad0-8790-90b41002e392",
+    "grader_only": true,
+    "available_to_client": false,
+    "source_sequence": 2
+  },
+  "forced_service_stop": true,
+  "service_group_cleanup": {
+    "schema_version": "agentops-owned-process-group/1",
+    "pgid": 2926,
+    "initially_empty": false,
+    "final_empty": false,
+    "forced_cleanup": true,
+    "members": [
+      {
+        "pid": 2926,
+        "state": "R",
+        "pgrp": 2926,
+        "session": 2926,
+        "starttick": 51713,
+        "argv": [
+          "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+          "-B",
+          "/var/tmp/agentops-research-v7-gs9r5her/scripts/serve_agentops_bridge_v1.py",
+          "--output",
+          "/var/tmp/agentops-research-v7-gs9r5her/runs/agentops-http-control/bridge-v1-B7/service",
+          "--port",
+          "18764"
+        ]
+      }
+    ],
+    "final_members": [
+      {
+        "pid": 2926,
+        "state": "R",
+        "pgrp": 2926,
+        "session": 2926,
+        "starttick": 51713,
+        "argv": []
+      }
+    ],
+    "snapshots": [
+      {
+        "phase": "initial",
+        "monotonic_ns": 563646842314,
+        "members": [
+          {
+            "pid": 2926,
+            "state": "R",
+            "pgrp": 2926,
+            "session": 2926,
+            "starttick": 51713,
+            "argv": [
+              "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+              "-B",
+              "/var/tmp/agentops-research-v7-gs9r5her/scripts/serve_agentops_bridge_v1.py",
+              "--output",
+              "/var/tmp/agentops-research-v7-gs9r5her/runs/agentops-http-control/bridge-v1-B7/service",
+              "--port",
+              "18764"
+            ]
+          }
+        ],
+        "errors": []
+      },
+      {
+        "phase": "before_sigterm",
+        "monotonic_ns": 563649693311,
+        "members": [
+          {
+            "pid": 2926,
+            "state": "R",
+            "pgrp": 2926,
+            "session": 2926,
+            "starttick": 51713,
+            "argv": [
+              "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+              "-B",
+              "/var/tmp/agentops-research-v7-gs9r5her/scripts/serve_agentops_bridge_v1.py",
+              "--output",
+              "/var/tmp/agentops-research-v7-gs9r5her/runs/agentops-http-control/bridge-v1-B7/service",
+              "--port",
+              "18764"
+            ]
+          }
+        ],
+        "errors": []
+      },
+      {
+        "phase": "after_sigterm",
+        "monotonic_ns": 563824703349,
+        "members": [
+          {
+            "pid": 2926,
+            "state": "R",
+            "pgrp": 2926,
+            "session": 2926,
+            "starttick": 51713,
+            "argv": []
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "signals": [
+      {
+        "signal": "SIGTERM",
+        "monotonic_ns": 563649966898,
+        "sent": true
+      }
+    ],
+    "errors": [
+      "after_sigterm: PID 2926 has unknown argv"
+    ]
+  },
+  "service_returncode": -15,
+  "source_unchanged_after": true,
+  "service_strict_success": false,
+  "finished_at_utc": "2026-10-27T13:10:39.510048+00:00"
+}

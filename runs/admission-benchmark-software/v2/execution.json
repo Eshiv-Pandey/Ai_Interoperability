@@ -1,0 +1,81 @@
+{
+  "schema_version": "admission-benchmark-software/1",
+  "status": "failed",
+  "started_at_utc": "2026-10-28T18:22:40.280488+00:00",
+  "inputs": [
+    {
+      "path": "src/interoperability/benchmark.py",
+      "bytes": 33411,
+      "sha256": "3ddb421b334f568ba997987fc6214f109bc8cc49df38fdec67a6842f22aa4813"
+    },
+    {
+      "path": "tests/test_benchmark.py",
+      "bytes": 13244,
+      "sha256": "eaaf00c55057f24b18b6c9e038f1dadb6c7fb98565eabdb0e481b42088e673eb"
+    },
+    {
+      "path": "examples/benchmark-development/suite.json",
+      "bytes": 530,
+      "sha256": "9c5bddb4525591a607bb344d06080efbc9f2766f3a0e4845a10be9b42f201e82"
+    },
+    {
+      "path": "examples/benchmark-development/README.md",
+      "bytes": 5000,
+      "sha256": "d5a39b853dce12fa8cd95a21041e2d68ee24ef81d0346ee278039dc3d54ce3c7"
+    },
+    {
+      "path": "src/interoperability/manifest.py",
+      "bytes": 7117,
+      "sha256": "defc6e9bbc4ea66806beefc9def967d94db8a3856cc121cee13c45ebda70debb"
+    },
+    {
+      "path": "src/interoperability/baseline.py",
+      "bytes": 3268,
+      "sha256": "c26f4c7db7f89f00f2c781e346aec20a589a862316e34c38a2edd7760407206f"
+    },
+    {
+      "path": "src/interoperability/oracle.py",
+      "bytes": 16255,
+      "sha256": "da29829a077da1ef44c2ffc0a6d5dbcd8e4c579b308b49085ea1af077e601b7f"
+    },
+    {
+      "path": "src/interoperability/refinement.py",
+      "bytes": 18196,
+      "sha256": "c7a316f002ffcbda6b9d8e8057bd7afdd6c4e082a1895922fe2d286e599082f6"
+    },
+    {
+      "path": "src/interoperability/refinement_oracle.py",
+      "bytes": 24610,
+      "sha256": "b15f63f8e2f82264ee91a92326a763fff90dbc840d0000b1d73f84cd281c0540"
+    },
+    {
+      "path": "tests/test_baseline.py",
+      "bytes": 5506,
+      "sha256": "310c9306197b69b50d7372c1de8e3e1234c25f685da28d041aa0bb7d3f1f28de"
+    }
+  ],
+  "argv": [
+    "C:\\Python313\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_benchmark.py",
+    "-v"
+  ],
+  "application_requests": 0,
+  "live_model_calls": 0,
+  "prior_receipt": {
+    "path": "runs/admission-benchmark-software/v1/result.json",
+    "bytes": 2831,
+    "sha256": "569001c3368fcf3667ad132f9a0a8e627c29a61c2cf41c006ddecf978ab101d5"
+  },
+  "changes": [
+    "Bind exact copied-suite membership, order, families, algorithms and input paths",
+    "Reject deleted adverse case even with recomputed metrics and hashes",
+    "Name reference comparison decision_agreement_rate instead of accuracy"
+  ]
+}

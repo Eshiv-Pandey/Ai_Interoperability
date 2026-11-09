@@ -1,0 +1,22 @@
+{
+  "schema_version": "agentops-observer-preparation-notes/1",
+  "date": "2026-10-26",
+  "capture_type": "Narrative transcribed from tool results; not raw subprocess capture",
+  "initial_software_test": {
+    "command": "python -B -m unittest discover -s tests -p test_agentops_socket_policy_v1.py -v",
+    "result": "5 tests run, 1 failure",
+    "error": "ModuleNotFoundError: No module named 'urllib3.util.timeout'",
+    "correction": "Added inert timeout constants to the authored stub package; pinned connection source and observer policy unchanged"
+  },
+  "managed_shell_probe": {
+    "command": "wsl.exe --distribution Ubuntu --exec sh -c 'test -d /var/tmp/agentops-research-v7-gs9r5her && ps -eo pid,comm,args | head -n 18'",
+    "returncode": 1,
+    "result": "Access is denied. Error code: Wsl/Service/E_ACCESSDENIED",
+    "linux_process_status": "Not observable through this denied probe",
+    "v8_application_execution_started": false
+  },
+  "syntax_checks": {
+    "powershell_v8_launcher": "passed parser without execution",
+    "python": "new controller, observer, checker and test files parsed without executing application code"
+  }
+}

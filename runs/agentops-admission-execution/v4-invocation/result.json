@@ -1,0 +1,79 @@
+{
+  "schema_version": "agentops-admission-windows-invocation/3",
+  "finished_at_utc": "2026-10-28T23:32:01.446449+00:00",
+  "status": "recorded",
+  "invocations": [
+    {
+      "name": "stage",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-B",
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\scripts\\stage_agentops_admission_v3.py",
+        "--output",
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\agentops-admission-execution\\v4",
+        "--reuse-root",
+        "/var/tmp/agentops-research-v7-gs9r5her"
+      ],
+      "started_at_utc": "2026-10-28T22:59:38.858565+00:00",
+      "returncode": 0,
+      "pid": 24772,
+      "finished_at_utc": "2026-10-28T23:01:03.590698+00:00",
+      "streams": [
+        {
+          "path": "stage.stdout.bin",
+          "sha256": "7964071eaf176cd75ad3b936434d5c14078cfa2213ec7cad4bef8d993b72484d"
+        },
+        {
+          "path": "stage.stderr.bin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "chain",
+      "argv": [
+        "wsl.exe",
+        "-d",
+        "Ubuntu",
+        "--",
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "/var/tmp/agentops-admission-live-v1-7d775396bb624173/scripts/run_agentops_admission_chain_v3.py",
+        "--workspace",
+        "/var/tmp/agentops-admission-live-v1-7d775396bb624173",
+        "--export-output",
+        "/mnt/p/JUNKK/Also Junk/sem_7/Ai_Interoperability/runs/agentops-admission-execution/v4/export"
+      ],
+      "started_at_utc": "2026-10-28T23:01:08.179325+00:00",
+      "returncode": 0,
+      "pid": 2164,
+      "finished_at_utc": "2026-10-28T23:31:53.650581+00:00",
+      "streams": [
+        {
+          "path": "chain.stdout.bin",
+          "sha256": "901eed78336c11b3721fd0203e87024e2a3c363ece97e6a5ed2727d075a8795f"
+        },
+        {
+          "path": "chain.stderr.bin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "memory_after": {
+    "length": 64,
+    "load": 99,
+    "total_physical": 6287331328,
+    "available_physical": 2453504,
+    "total_commit": 23157788672,
+    "available_commit": 1057239040,
+    "total_virtual": 140737488224256,
+    "available_virtual": 140733073616896,
+    "available_extended": 0
+  },
+  "host_configuration_mutations": 0,
+  "wslconfig_unchanged": true,
+  "reviewed_sources_unchanged": true,
+  "application_success": "Read exported attempt/result.json; parent or phase success is not admission acceptance."
+}

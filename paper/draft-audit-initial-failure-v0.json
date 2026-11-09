@@ -1,0 +1,13 @@
+{
+  "schema_version": "working-paper-audit-development-failure/1",
+  "command": ".venv/Scripts/python.exe scripts/audit_paper_draft_v0.py",
+  "exit_code": 1,
+  "failed_source_snapshot": "paper/draft-audit-initial-source-v0.txt",
+  "error": "AssertionError at the B4 answer_rpc_error check",
+  "cause": "The draft auditor compared the recorded RPC error object directly with -32009. The actual retained record has code=-32009 inside that object and HTTP status500.",
+  "correction": "Read and check the code field of the existing error object; do not alter the group, runtime or replay records.",
+  "passing_audit_record_created_by_failed_attempt": false,
+  "service_requests": 0,
+  "model_calls": 0,
+  "claim_limit": "Auditor development error; not a bridge outcome or scientific trial. This is a recorded observation summary, not a raw tool-output transport archive."
+}

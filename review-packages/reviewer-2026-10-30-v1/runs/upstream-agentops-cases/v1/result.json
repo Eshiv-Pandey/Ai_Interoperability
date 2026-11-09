@@ -1,0 +1,234 @@
+{
+  "application_imports": 0,
+  "application_inputs": "application/cases.json",
+  "application_requests": 0,
+  "captured_outputs_unchanged": true,
+  "case_count": 21,
+  "cases_by_source": {
+    "agentops_agent_core": 15,
+    "agentops_agent_structured_report": 3,
+    "agentops_incident_workflow": 3
+  },
+  "evaluator_expectations": "evaluator/expectations.json",
+  "files": [
+    {
+      "bytes": 15366,
+      "path": "application/cases.json",
+      "sha256": "3b58d64163533a9ddec2a68438b22a9fc1c43e7d5e50e8579fd7d766270bc146"
+    },
+    {
+      "bytes": 228911,
+      "path": "capture/ingestion.json",
+      "sha256": "f42b50d396c7e889b758aeec9d13b24c887fbceb530676d538bd0d3d67d99ecd"
+    },
+    {
+      "bytes": 24809,
+      "path": "evaluator/expectations.json",
+      "sha256": "8eb1fb24858bdd491319544973f9197a9fcbc436d82c8a017d96d3fdbaaa478f"
+    },
+    {
+      "bytes": 1127,
+      "path": "plan.json",
+      "sha256": "589044cc6b173358715080064221d00bfbd2fbc9db0c7c74f4a9105f54908b5f"
+    },
+    {
+      "bytes": 40960,
+      "path": "source/agents/data/incidents.db",
+      "sha256": "957ae8da4e1d174b9ff349acfca7ce4c204020a572fbeb7245783285d49d455b"
+    },
+    {
+      "bytes": 3314,
+      "path": "source/agents/data/sql/schema.sql",
+      "sha256": "8da41c51fb79c46846060f5b801eb21f2ac989fd8283b18607b4f35136dc632c"
+    },
+    {
+      "bytes": 4259,
+      "path": "source/agents/data/sql/seed.sql",
+      "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58"
+    },
+    {
+      "bytes": 1082,
+      "path": "source/agents/LICENSE",
+      "sha256": "b20626e1f04ad0cfd44fced6cccbebaca919619a2336d7a6d785f0293f2de8d0"
+    },
+    {
+      "bytes": 21920,
+      "path": "source/agents/python/evals/ops.evalset.json",
+      "sha256": "57bff5579802a6de540d2465bf4714da8e7b70846e0321076d448becd0703a29"
+    },
+    {
+      "bytes": 4996,
+      "path": "source/agents/python/evals/triage-report.evalset.json",
+      "sha256": "b489a862e10d42933c40bb6aaed4e37fd2c47a87e0dedd6bfc35efa81242854a"
+    },
+    {
+      "bytes": 5172,
+      "path": "source/agents/python/evals/workflow.evalset.json",
+      "sha256": "5ccb6e221368be143291cdfd2ab606e2cb1a9b34324f477025d40a93706c3e88"
+    },
+    {
+      "bytes": 847,
+      "path": "source-sets.json",
+      "sha256": "770b90efa6278e3258d58834f79c83fbf6b320691905067ae1cf046441e7464e"
+    }
+  ],
+  "finished_at_utc": "2026-10-29T06:08:09.713923+00:00",
+  "graded_task_outcomes": 0,
+  "interpretation": "Public upstream expected responses and tool trajectories; not hidden gold, observed application results, admission certificates or independently reviewed held-out tasks.",
+  "model_calls": 0,
+  "observed_source_inputs_unchanged": true,
+  "provenance": {
+    "commit_label": "c806b7f1cd0042c9817c0a4c46d80a9a95a24293",
+    "held_out": false,
+    "independent_git_object_authentication": false,
+    "independent_human_review": false,
+    "kind": "public-source-derived-development",
+    "overlap": "Cases reuse incidents, tools and decision structures across all three upstream sets; case count is not an independent-template count."
+  },
+  "schema_version": "upstream-agentops-export/1",
+  "source_checks": [
+    {
+      "actual": {
+        "bytes": 21920,
+        "path": "source/agents/python/evals/ops.evalset.json",
+        "sha256": "57bff5579802a6de540d2465bf4714da8e7b70846e0321076d448becd0703a29"
+      },
+      "expected": {
+        "bytes": 21920,
+        "path": "external/agentops-c806b7f1/agents/python/evals/ops.evalset.json",
+        "sha256": "57bff5579802a6de540d2465bf4714da8e7b70846e0321076d448becd0703a29"
+      },
+      "matched": true,
+      "source": "agents/python/evals/ops.evalset.json"
+    },
+    {
+      "actual": {
+        "bytes": 4996,
+        "path": "source/agents/python/evals/triage-report.evalset.json",
+        "sha256": "b489a862e10d42933c40bb6aaed4e37fd2c47a87e0dedd6bfc35efa81242854a"
+      },
+      "expected": {
+        "bytes": 4996,
+        "path": "external/agentops-c806b7f1/agents/python/evals/triage-report.evalset.json",
+        "sha256": "b489a862e10d42933c40bb6aaed4e37fd2c47a87e0dedd6bfc35efa81242854a"
+      },
+      "matched": true,
+      "source": "agents/python/evals/triage-report.evalset.json"
+    },
+    {
+      "actual": {
+        "bytes": 5172,
+        "path": "source/agents/python/evals/workflow.evalset.json",
+        "sha256": "5ccb6e221368be143291cdfd2ab606e2cb1a9b34324f477025d40a93706c3e88"
+      },
+      "expected": {
+        "bytes": 5172,
+        "path": "external/agentops-c806b7f1/agents/python/evals/workflow.evalset.json",
+        "sha256": "5ccb6e221368be143291cdfd2ab606e2cb1a9b34324f477025d40a93706c3e88"
+      },
+      "matched": true,
+      "source": "agents/python/evals/workflow.evalset.json"
+    },
+    {
+      "actual": {
+        "bytes": 1082,
+        "path": "source/agents/LICENSE",
+        "sha256": "b20626e1f04ad0cfd44fced6cccbebaca919619a2336d7a6d785f0293f2de8d0"
+      },
+      "expected": {
+        "bytes": 1082,
+        "path": "external/agentops-c806b7f1/agents/LICENSE",
+        "sha256": "b20626e1f04ad0cfd44fced6cccbebaca919619a2336d7a6d785f0293f2de8d0"
+      },
+      "matched": true,
+      "source": "agents/LICENSE"
+    },
+    {
+      "actual": {
+        "bytes": 40960,
+        "path": "source/agents/data/incidents.db",
+        "sha256": "957ae8da4e1d174b9ff349acfca7ce4c204020a572fbeb7245783285d49d455b"
+      },
+      "expected": {
+        "bytes": 40960,
+        "path": "external/agentops-c806b7f1/agents/data/incidents.db",
+        "sha256": "957ae8da4e1d174b9ff349acfca7ce4c204020a572fbeb7245783285d49d455b"
+      },
+      "matched": true,
+      "source": "agents/data/incidents.db"
+    },
+    {
+      "actual": {
+        "bytes": 3314,
+        "path": "source/agents/data/sql/schema.sql",
+        "sha256": "8da41c51fb79c46846060f5b801eb21f2ac989fd8283b18607b4f35136dc632c"
+      },
+      "expected": {
+        "bytes": 3314,
+        "path": "external/agentops-c806b7f1/agents/data/sql/schema.sql",
+        "sha256": "8da41c51fb79c46846060f5b801eb21f2ac989fd8283b18607b4f35136dc632c"
+      },
+      "matched": true,
+      "source": "agents/data/sql/schema.sql"
+    },
+    {
+      "actual": {
+        "bytes": 4259,
+        "path": "source/agents/data/sql/seed.sql",
+        "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58"
+      },
+      "expected": {
+        "bytes": 4259,
+        "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+        "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58"
+      },
+      "matched": true,
+      "source": "agents/data/sql/seed.sql"
+    }
+  ],
+  "source_inputs_after": [
+    {
+      "bytes": 228911,
+      "path": "capture/ingestion.json",
+      "sha256": "f42b50d396c7e889b758aeec9d13b24c887fbceb530676d538bd0d3d67d99ecd"
+    },
+    {
+      "bytes": 21920,
+      "path": "source/agents/python/evals/ops.evalset.json",
+      "sha256": "57bff5579802a6de540d2465bf4714da8e7b70846e0321076d448becd0703a29"
+    },
+    {
+      "bytes": 4996,
+      "path": "source/agents/python/evals/triage-report.evalset.json",
+      "sha256": "b489a862e10d42933c40bb6aaed4e37fd2c47a87e0dedd6bfc35efa81242854a"
+    },
+    {
+      "bytes": 5172,
+      "path": "source/agents/python/evals/workflow.evalset.json",
+      "sha256": "5ccb6e221368be143291cdfd2ab606e2cb1a9b34324f477025d40a93706c3e88"
+    },
+    {
+      "bytes": 1082,
+      "path": "source/agents/LICENSE",
+      "sha256": "b20626e1f04ad0cfd44fced6cccbebaca919619a2336d7a6d785f0293f2de8d0"
+    },
+    {
+      "bytes": 40960,
+      "path": "source/agents/data/incidents.db",
+      "sha256": "957ae8da4e1d174b9ff349acfca7ce4c204020a572fbeb7245783285d49d455b"
+    },
+    {
+      "bytes": 3314,
+      "path": "source/agents/data/sql/schema.sql",
+      "sha256": "8da41c51fb79c46846060f5b801eb21f2ac989fd8283b18607b4f35136dc632c"
+    },
+    {
+      "bytes": 4259,
+      "path": "source/agents/data/sql/seed.sql",
+      "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58"
+    }
+  ],
+  "source_inputs_unchanged": true,
+  "status": "passed",
+  "turn_count": 22
+}

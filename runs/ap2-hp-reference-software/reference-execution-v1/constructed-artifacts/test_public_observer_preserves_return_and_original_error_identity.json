@@ -1,0 +1,44 @@
+{
+  "test": "_ap2_injected_execution_tests.ReferenceExecutionTests.test_public_observer_preserves_return_and_original_error_identity",
+  "constructed_artifacts": [
+    [
+      {
+        "sequence": 0,
+        "call": 0,
+        "endpoint": "http://localhost:8001/a2a/merchant_agent",
+        "operation": "send_a2a_message",
+        "boundary": "attempt",
+        "public_value": {
+          "kind": "message"
+        }
+      },
+      {
+        "sequence": 1,
+        "call": 0,
+        "endpoint": "http://localhost:8001/a2a/merchant_agent",
+        "operation": "send_a2a_message",
+        "boundary": "returned",
+        "public_value": {
+          "kind": "task"
+        }
+      },
+      {
+        "sequence": 2,
+        "call": 1,
+        "endpoint": "http://localhost:8001/a2a/merchant_agent",
+        "operation": "send_a2a_message",
+        "boundary": "attempt",
+        "public_value": {
+          "kind": "message"
+        }
+      },
+      {
+        "sequence": 3,
+        "call": 1,
+        "endpoint": "http://localhost:8001/a2a/merchant_agent",
+        "operation": "send_a2a_message",
+        "boundary": "error"
+      }
+    ]
+  ]
+}

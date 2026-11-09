@@ -1,0 +1,282 @@
+{
+  "schema_version": "shared-admission-rehearsal-independent-review/1",
+  "status": "passed",
+  "finished_at_utc": "2026-10-29T02:15:48.4321554+00:00",
+  "reviewer": "independent AI read-only source and result review",
+  "human_approval_established": false,
+  "allocation": "runs/admission-demo/shared-rehearsal-1",
+  "terminal_observation": {
+    "source": "Root relayed authoritative write_stdin result before final audit",
+    "handle": 48957,
+    "exit_code": 0
+  },
+  "allocation_files_unchanged": 975,
+  "original_inputs_verified": 35,
+  "frozen_inputs_verified": 35,
+  "manifest_files_verified": 906,
+  "manifests": [
+    {
+      "name": "benchmark",
+      "files": 453,
+      "sha256": "6b2ccee3ac531301dc49f2cec4bef0dae6533c6132e227c780ffbb8bd1140ff2"
+    },
+    {
+      "name": "replay",
+      "files": 453,
+      "sha256": "9041f0ad8eaba21e14f09612edc8dbe7cc75c56481dfd1c9c8252d5b1a435359"
+    }
+  ],
+  "commands": [
+    {
+      "name": "supported",
+      "status": "passed",
+      "returncode": 0,
+      "stdout_sha256": "6509d33866225f2a3b6c8a7c36f722e41ccb79f4473a54f31e8c9890494149c1",
+      "stderr_bytes": 0,
+      "command_sha256": "3cc657b1c28d1b3f3b9dea144b567a3518c24da077291b80f3560daada2c72e5"
+    },
+    {
+      "name": "unsupported",
+      "status": "passed",
+      "returncode": 0,
+      "stdout_sha256": "83e161312544fe0db4a457f398b0cd6aa9343734cfcd9641e01206943a27cf0e",
+      "stderr_bytes": 0,
+      "command_sha256": "47d0019d8b86008f25fdda0a3bd9a0555d48e69d3c75139d99684f58dff616b2"
+    },
+    {
+      "name": "unknown",
+      "status": "passed",
+      "returncode": 0,
+      "stdout_sha256": "f9d0b449c7f2ae31ba2c33b44558095cd7fdbab5d0101c573fce4a3ac8c34764",
+      "stderr_bytes": 0,
+      "command_sha256": "c8bdd9d1d9d6b5e73f531ddb4adddc688d599664795fddc4e1dc6fc455f305ee"
+    },
+    {
+      "name": "budget-unknown",
+      "status": "passed",
+      "returncode": 0,
+      "stdout_sha256": "0a7e65818a9c511946cc48c68e96d0f9ed7972800387ccba58822f8271b74684",
+      "stderr_bytes": 0,
+      "command_sha256": "a70b07af2b766c48e379fd50f5b1b4f75cbd7e751bb2cab6403074e25a0fee03"
+    },
+    {
+      "name": "benchmark",
+      "status": "passed",
+      "returncode": 0,
+      "stdout_sha256": "fa0f900e3f1697ff1a7f0afb673c64df1321101bd8fca70a95767f33510ac3d5",
+      "stderr_bytes": 0,
+      "command_sha256": "75f0c798cd4d31b13c1b06e791c4f40c442fb7249837970ba8892ac6ab784d1b"
+    },
+    {
+      "name": "verify",
+      "status": "passed",
+      "returncode": 0,
+      "stdout_sha256": "ca83c472727ddc6d824b00db0fbcc77603d5b5de88f748ce88e2a18323ec0191",
+      "stderr_bytes": 0,
+      "command_sha256": "63ff242035efe6e553623cc97b517bd478089d84178645e17fde66d184934d4a"
+    },
+    {
+      "name": "replay",
+      "status": "passed",
+      "returncode": 0,
+      "stdout_sha256": "f4d4b471f0786bab3cbfca2be62640952c83dbc3b595c1ae50e3b9735fc278f6",
+      "stderr_bytes": 0,
+      "command_sha256": "71db547f4675be3ec9ce43e165c5ae7c8a50a4005e785650e9765077c202a1ab"
+    },
+    {
+      "name": "verify-replay",
+      "status": "passed",
+      "returncode": 0,
+      "stdout_sha256": "415059b48228b51cb45e6e5f35b24e239d5439ef49692fba5a2814a470182e0f",
+      "stderr_bytes": 0,
+      "command_sha256": "d1d668c9d10b2c411e44fed14663e6fed4f0aa66c650f46bf113c40d0af13445"
+    }
+  ],
+  "standalone_examples": [
+    {
+      "name": "supported",
+      "decision": "supported",
+      "reason": "public_recipe_witness",
+      "budget": 100000,
+      "certificate_valid": true,
+      "checker_invoked": true
+    },
+    {
+      "name": "unsupported",
+      "decision": "unsupported",
+      "reason": "certified_refinement_exhaustion",
+      "budget": 100000,
+      "certificate_valid": true,
+      "checker_invoked": true
+    },
+    {
+      "name": "unknown",
+      "decision": "unknown",
+      "reason": "unresolved_relation_or_recipe",
+      "budget": 100000,
+      "certificate_valid": null,
+      "checker_invoked": false
+    },
+    {
+      "name": "budget-unknown",
+      "decision": "unknown",
+      "reason": "work_budget_exhausted",
+      "budget": 1,
+      "certificate_valid": null,
+      "checker_invoked": false
+    }
+  ],
+  "bundles": [
+    {
+      "name": "benchmark",
+      "cases": 11,
+      "workers": 83,
+      "evaluation_workers": 55,
+      "accepted_certificate_checks": 28,
+      "worker_errors": 0,
+      "rejected_certificate_checks": 0,
+      "memory_observations": 83,
+      "missing_memory_observations": 0,
+      "algorithms": {
+        "direct_pruned": {
+          "supported": 4,
+          "unsupported": 3,
+          "unknown": 4,
+          "conclusive": 7,
+          "certificates_valid": 7,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "errors": 0,
+          "decision_agreements": 11
+        },
+        "candidate": {
+          "supported": 4,
+          "unsupported": 3,
+          "unknown": 4,
+          "conclusive": 7,
+          "certificates_valid": 7,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "errors": 0,
+          "decision_agreements": 11
+        },
+        "baseline": {
+          "supported": 4,
+          "unsupported": 3,
+          "unknown": 4,
+          "conclusive": 7,
+          "certificates_valid": 7,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "errors": 0,
+          "decision_agreements": 11
+        },
+        "shared_lift": {
+          "supported": 4,
+          "unsupported": 3,
+          "unknown": 4,
+          "conclusive": 7,
+          "certificates_valid": 7,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "errors": 0,
+          "decision_agreements": 11
+        }
+      }
+    },
+    {
+      "name": "replay",
+      "cases": 11,
+      "workers": 83,
+      "evaluation_workers": 55,
+      "accepted_certificate_checks": 28,
+      "worker_errors": 0,
+      "rejected_certificate_checks": 0,
+      "memory_observations": 83,
+      "missing_memory_observations": 0,
+      "algorithms": {
+        "direct_pruned": {
+          "supported": 4,
+          "unsupported": 3,
+          "unknown": 4,
+          "conclusive": 7,
+          "certificates_valid": 7,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "errors": 0,
+          "decision_agreements": 11
+        },
+        "candidate": {
+          "supported": 4,
+          "unsupported": 3,
+          "unknown": 4,
+          "conclusive": 7,
+          "certificates_valid": 7,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "errors": 0,
+          "decision_agreements": 11
+        },
+        "baseline": {
+          "supported": 4,
+          "unsupported": 3,
+          "unknown": 4,
+          "conclusive": 7,
+          "certificates_valid": 7,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "errors": 0,
+          "decision_agreements": 11
+        },
+        "shared_lift": {
+          "supported": 4,
+          "unsupported": 3,
+          "unknown": 4,
+          "conclusive": 7,
+          "certificates_valid": 7,
+          "certificates_invalid": 0,
+          "certificate_check_errors": 0,
+          "errors": 0,
+          "decision_agreements": 11
+        }
+      }
+    }
+  ],
+  "replay": {
+    "status": "passed",
+    "cases": 11,
+    "algorithm_results_compared": 44,
+    "reference_results_compared": 11,
+    "checker_acceptance_compared": true,
+    "standalone_benchmark_examples_compared": 3,
+    "excluded_result_fields": [
+      "stats.elapsed_ns"
+    ],
+    "inspection_matches_raw_replies": true
+  },
+  "checks": [
+    "Every manifest-listed file matched its retained byte length and SHA256.",
+    "All 35 plan inputs matched both current original and frozen copies; main before/after inventories matched.",
+    "Eight command records matched prospective argv, frozen source selection, working directory and final main receipt; stdout outcomes reconciled and stderr was empty.",
+    "Standalone module, explicit budget and clock, input/source hashes, decisions and certificate outcomes matched retained evidence.",
+    "Every worker argv, job kind/module/entrypoint, model, budget, raw reply and process record matched its results row; all raw worker stdout/stderr logs were empty.",
+    "Conclusive algorithm results had independently implemented checker jobs with returned exact true; unknowns had neither certificates nor checker jobs.",
+    "Counts derived from retained replies matched each bundle summary; all four methods used all eleven identical input profiles.",
+    "Captured benchmark and replay sources matched their parent capture; replay full result/certificate semantics agreed, excluding only stats.elapsed_ns.",
+    "Inspection examples matched raw benchmark/checker replies; three standalone results agreed with benchmark after elapsed-time exclusion.",
+    "All 975 allocation files remained byte-identical across final audit."
+  ],
+  "discrepancies": [],
+  "reviewer_execution": {
+    "project_imports": 0,
+    "solver_runs": 0,
+    "checker_runs": 0,
+    "tests": 0,
+    "benchmarks": 0,
+    "live_applications": 0,
+    "wsl_runtime_launches": 0
+  },
+  "result_sha256": "f892f2f7bf29d4d65582d18a24a8a2ce613154e00bdc5f134d2d92f1a347135c",
+  "plan_sha256": "ce7751906c8ed9d5c42913300794aeacc3808f69a26e74a2701eb340fb9e9bf6",
+  "claim_limit": "Read-only hashes and JSON source/input/command/reply reconciliation. Certificate acceptance is verified from retained checker replies, not a fresh checker execution or independent mathematical proof. No live task/effect, novelty, speed, completion-percentage or human-approval claim."
+}

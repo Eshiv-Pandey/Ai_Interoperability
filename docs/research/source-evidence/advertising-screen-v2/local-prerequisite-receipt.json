@@ -1,0 +1,12 @@
+{
+  "schema_version": "local-prerequisite-observation/1",
+  "command": "& '.\\.venv\\Scripts\\python.exe' -c \"import sys, importlib.metadata as m; names=['a2a-sdk','adcp','sqlalchemy','flask']; versions={}; exec('for name in names:\\n try: versions[name]=m.version(name)\\n except m.PackageNotFoundError: versions[name]=None'); print({'python':sys.version,'distributions':versions})\"; Get-Command uv,docker -ErrorAction SilentlyContinue | Select-Object Name,Source",
+  "tool_return": {
+    "chunk_id": "946a0d",
+    "wall_time_seconds": 1.3043545,
+    "exit_code": 1,
+    "original_token_count": 98,
+    "output": "{'python': '3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]', 'distributions': {'a2a-sdk': None, 'adcp': None, 'sqlalchemy': None, 'flask': None}}\r\n\r\nName       Source                                                 \r\n----       ------                                                 \r\ndocker.exe C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe\r\n\r\n\r\n"
+  },
+  "interpretation": "Read-only package/command discovery. Python ran; four named distributions were absent. docker.exe was discovered, uv was not discovered, and the aggregate shell command exited 1. No Docker daemon, database, SDK import or service execution was checked."
+}

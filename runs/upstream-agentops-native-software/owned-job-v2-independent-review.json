@@ -1,0 +1,354 @@
+{
+  "audit_limits": {
+    "audit_kind": "read-only retained file and receipt audit; no test child rerun",
+    "captured_file_bytes": 1048576,
+    "captured_total_bytes": 4194304,
+    "excluded_claims": [
+      "native application qualification",
+      "benchmark grades",
+      "source authentication",
+      "real Windows Job validation",
+      "model access"
+    ],
+    "manifest_members": 100,
+    "receipt_json_bytes": 1048576
+  },
+  "audited_allocation": "runs/upstream-agentops-native-software/owned-job-v2",
+  "audited_result": {
+    "bytes": 3263,
+    "sha256": "018500d1fd421cd7e02665443c615f5ec06f1debb4d15e47677f7d98f2075115"
+  },
+  "benchmark_grading_performed": false,
+  "capture_command": [
+    "C:\\Python313\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-c",
+    "\nimport json\nfrom pathlib import Path\nimport runpy\nimport sys\nimport types\nimport unittest\n\nroot = Path(sys.argv[1]).resolve()\ntests = json.loads(sys.argv[2])\nexecution_path = Path(sys.argv[3])\nsys.path.insert(0, str(root / \"scripts\"))\nsys.path.insert(0, str(root / \"src\"))\nsys.argv = [\"captured_upstream_agentops_validation\"]\nloader = unittest.TestLoader()\nsuite = unittest.TestSuite()\nfor index, relative in enumerate(tests):\n    module_name = \"captured_validation_test_\" + str(index)\n    values = runpy.run_path(str(root / relative), run_name=module_name)\n    module = types.ModuleType(module_name)\n    module.__dict__.update(values)\n    sys.modules[module_name] = module\n    suite.addTests(loader.loadTestsFromModule(module))\nresult = unittest.TextTestRunner(verbosity=2).run(suite)\nrecord = {\"tests_run\": result.testsRun, \"failures\": len(result.failures), \"errors\": len(result.errors),\n          \"skips\": len(result.skipped), \"expected_failures\": len(result.expectedFailures),\n          \"unexpected_successes\": len(result.unexpectedSuccesses), \"successful\": result.wasSuccessful(),\n          \"isolated_python\": sys.flags.isolated == 1, \"site_disabled\": sys.flags.no_site == 1,\n          \"bytecode_disabled\": sys.dont_write_bytecode, \"executed_test_files\": tests}\nwith execution_path.open(\"x\", encoding=\"utf-8\") as stream:\n    json.dump(record, stream, sort_keys=True, indent=2)\n    stream.write(\"\\n\")\nraise SystemExit(0 if result.wasSuccessful() else 1)\n",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\upstream-agentops-native-software\\owned-job-v2\\workspace",
+    "[\"tests/test_windows_owned_job_v1.py\"]",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\upstream-agentops-native-software\\owned-job-v2\\execution.json"
+  ],
+  "capture_test_files": [
+    "tests/test_windows_owned_job_v1.py"
+  ],
+  "captured_driver": {
+    "bytes": 13576,
+    "sha256": "4921d00724838700de62464881e161ce589763ca0dc235ea9136a918fee58f15"
+  },
+  "captured_timeout_seconds": 120,
+  "checks": [
+    {
+      "name": "passed status",
+      "passed": true
+    },
+    {
+      "name": "owned-job suite",
+      "passed": true
+    },
+    {
+      "name": "result tests_run",
+      "passed": true
+    },
+    {
+      "name": "result failures",
+      "passed": true
+    },
+    {
+      "name": "result errors",
+      "passed": true
+    },
+    {
+      "name": "result skips",
+      "passed": true
+    },
+    {
+      "name": "result expected_failures",
+      "passed": true
+    },
+    {
+      "name": "result unexpected_successes",
+      "passed": true
+    },
+    {
+      "name": "result exit_code",
+      "passed": true
+    },
+    {
+      "name": "original_sources_unchanged",
+      "passed": true
+    },
+    {
+      "name": "captured_sources_unchanged",
+      "passed": true
+    },
+    {
+      "name": "captured_files_unchanged",
+      "passed": true
+    },
+    {
+      "name": "driver_unchanged",
+      "passed": true
+    },
+    {
+      "name": "execution tests_run",
+      "passed": true
+    },
+    {
+      "name": "execution failures",
+      "passed": true
+    },
+    {
+      "name": "execution errors",
+      "passed": true
+    },
+    {
+      "name": "execution skips",
+      "passed": true
+    },
+    {
+      "name": "execution expected_failures",
+      "passed": true
+    },
+    {
+      "name": "execution unexpected_successes",
+      "passed": true
+    },
+    {
+      "name": "execution isolated_python",
+      "passed": true
+    },
+    {
+      "name": "execution site_disabled",
+      "passed": true
+    },
+    {
+      "name": "execution bytecode_disabled",
+      "passed": true
+    },
+    {
+      "name": "execution successful",
+      "passed": true
+    },
+    {
+      "name": "execution receipt exact",
+      "passed": true
+    },
+    {
+      "name": "unique captured manifest",
+      "passed": true
+    },
+    {
+      "name": "exact terminal file membership",
+      "passed": true
+    },
+    {
+      "name": "captured execution.json",
+      "passed": true
+    },
+    {
+      "name": "captured plan.json",
+      "passed": true
+    },
+    {
+      "name": "captured source/capture_upstream_agentops_validation_v1.py",
+      "passed": true
+    },
+    {
+      "name": "captured stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "captured stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "captured workspace/src/interoperability/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "captured workspace/src/interoperability/windows_owned_job_v1.py",
+      "passed": true
+    },
+    {
+      "name": "captured workspace/tests/test_windows_owned_job_v1.py",
+      "passed": true
+    },
+    {
+      "name": "plan source identities exact",
+      "passed": true
+    },
+    {
+      "name": "current original src/interoperability/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "frozen original src/interoperability/__init__.py",
+      "passed": true
+    },
+    {
+      "name": "current original src/interoperability/windows_owned_job_v1.py",
+      "passed": true
+    },
+    {
+      "name": "frozen original src/interoperability/windows_owned_job_v1.py",
+      "passed": true
+    },
+    {
+      "name": "current original tests/test_windows_owned_job_v1.py",
+      "passed": true
+    },
+    {
+      "name": "frozen original tests/test_windows_owned_job_v1.py",
+      "passed": true
+    },
+    {
+      "name": "current driver identity",
+      "passed": true
+    },
+    {
+      "name": "captured driver identity",
+      "passed": true
+    },
+    {
+      "name": "stdout identity",
+      "passed": true
+    },
+    {
+      "name": "stderr identity",
+      "passed": true
+    },
+    {
+      "name": "independent unittest summary",
+      "passed": true
+    },
+    {
+      "name": "exact test selection",
+      "passed": true
+    },
+    {
+      "name": "no native or grade claim",
+      "passed": true
+    }
+  ],
+  "checks_passed": 48,
+  "consumed_input_allocations_modified": false,
+  "declared_manifest_excluding_result": {
+    "execution.json": {
+      "bytes": 314,
+      "sha256": "7c3412c9943f812e451604d65f31a68306b9a53c884d8fd90c489d843a08013f"
+    },
+    "plan.json": {
+      "bytes": 3264,
+      "sha256": "0c83be1cfbd203c9b337f897efdd6ffa7d3922bbb0e2e27da4a59ac8927c9037"
+    },
+    "source/capture_upstream_agentops_validation_v1.py": {
+      "bytes": 13576,
+      "sha256": "4921d00724838700de62464881e161ce589763ca0dc235ea9136a918fee58f15"
+    },
+    "stderr.txt": {
+      "bytes": 4485,
+      "sha256": "d63e061a05a827d42f353010e1cc8bf6d1468cca594b145d2cd8a8b33dd819c1"
+    },
+    "stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "workspace/src/interoperability/__init__.py": {
+      "bytes": 172,
+      "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+    },
+    "workspace/src/interoperability/windows_owned_job_v1.py": {
+      "bytes": 16588,
+      "sha256": "67b5dc8190aee3a75b3c1954a530d0bba3edeb3bc64dc2770dd815173ecbd53a"
+    },
+    "workspace/tests/test_windows_owned_job_v1.py": {
+      "bytes": 20200,
+      "sha256": "144c4138089fe258175dac499b42c16cfe9e97b73ee9b1e135ff1894f049c04f"
+    }
+  },
+  "earlier_owned_job_capture_is_preserved_intermediate": "runs/upstream-agentops-native-software/owned-job-v1",
+  "execution": {
+    "bytecode_disabled": true,
+    "errors": 0,
+    "executed_test_files": [
+      "tests/test_windows_owned_job_v1.py"
+    ],
+    "expected_failures": 0,
+    "failures": 0,
+    "isolated_python": true,
+    "site_disabled": true,
+    "skips": 0,
+    "successful": true,
+    "tests_run": 23,
+    "unexpected_successes": 0
+  },
+  "exporters_or_comparators_run_by_audit": 0,
+  "finished_at_utc": "2026-10-29T16:41:33.694535+00:00",
+  "manifest_files_excluding_result": 8,
+  "model_calls_by_audit": 0,
+  "native_processes_launched_by_audit": 0,
+  "native_qualification_established": false,
+  "observed_files_including_result": {
+    "execution.json": {
+      "bytes": 314,
+      "sha256": "7c3412c9943f812e451604d65f31a68306b9a53c884d8fd90c489d843a08013f"
+    },
+    "plan.json": {
+      "bytes": 3264,
+      "sha256": "0c83be1cfbd203c9b337f897efdd6ffa7d3922bbb0e2e27da4a59ac8927c9037"
+    },
+    "result.json": {
+      "bytes": 3263,
+      "sha256": "018500d1fd421cd7e02665443c615f5ec06f1debb4d15e47677f7d98f2075115"
+    },
+    "source/capture_upstream_agentops_validation_v1.py": {
+      "bytes": 13576,
+      "sha256": "4921d00724838700de62464881e161ce589763ca0dc235ea9136a918fee58f15"
+    },
+    "stderr.txt": {
+      "bytes": 4485,
+      "sha256": "d63e061a05a827d42f353010e1cc8bf6d1468cca594b145d2cd8a8b33dd819c1"
+    },
+    "stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "workspace/src/interoperability/__init__.py": {
+      "bytes": 172,
+      "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+    },
+    "workspace/src/interoperability/windows_owned_job_v1.py": {
+      "bytes": 16588,
+      "sha256": "67b5dc8190aee3a75b3c1954a530d0bba3edeb3bc64dc2770dd815173ecbd53a"
+    },
+    "workspace/tests/test_windows_owned_job_v1.py": {
+      "bytes": 20200,
+      "sha256": "144c4138089fe258175dac499b42c16cfe9e97b73ee9b1e135ff1894f049c04f"
+    }
+  },
+  "real_owned_process_cleanup_validated": false,
+  "schema_version": "upstream-agentops-software-independent-review/1",
+  "scope": "Retained mocked owned-job software validation file hashes, exact membership, sources, flags, machine counts and unittest summary. No real Windows Job/process validation or test child execution by this audit.",
+  "sdk_imports_by_audit": 0,
+  "source_files": {
+    "src/interoperability/__init__.py": {
+      "bytes": 172,
+      "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+    },
+    "src/interoperability/windows_owned_job_v1.py": {
+      "bytes": 16588,
+      "sha256": "67b5dc8190aee3a75b3c1954a530d0bba3edeb3bc64dc2770dd815173ecbd53a"
+    },
+    "tests/test_windows_owned_job_v1.py": {
+      "bytes": 20200,
+      "sha256": "144c4138089fe258175dac499b42c16cfe9e97b73ee9b1e135ff1894f049c04f"
+    }
+  },
+  "started_at_utc": "2026-10-29T16:41:33.679646+00:00",
+  "status": "passed",
+  "suite": "owned-job",
+  "tests_run_by_audit": 0,
+  "total_files": 9
+}

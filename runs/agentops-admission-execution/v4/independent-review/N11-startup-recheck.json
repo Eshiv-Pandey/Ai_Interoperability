@@ -1,0 +1,109 @@
+{
+  "schema_version": "agentops-startup-check/1",
+  "valid": true,
+  "complete": false,
+  "validation_errors": [],
+  "completion_blockers": [
+    "Matching service readiness was not observed",
+    "Startup monitor did not stop on readiness"
+  ],
+  "files": [
+    {
+      "path": "service-process.json",
+      "bytes": 790,
+      "sha256": "3ddd747e22679c52e134cfb8dc7abb1287cef568a87371bfb59994472d7ff0f9"
+    },
+    {
+      "path": "result.json",
+      "bytes": 5554,
+      "sha256": "c40e04d677abf709984c1b710ee2363a55929b606ac4c30bca7f9f00542caa4f"
+    },
+    {
+      "path": "service/startup-diagnostics/lifecycle.jsonl",
+      "bytes": 8277,
+      "sha256": "c09a993fbfff7694ed1949ffb566a370bfddf908f95579d23def731d1beba9e0"
+    },
+    {
+      "path": "service/startup-diagnostics/startup-stacks.txt",
+      "bytes": 139750,
+      "sha256": "55a2ad0a00c4423496d397951b286236eef5169a192510e8e1ac34f96a4b23a8"
+    },
+    {
+      "path": "service/interpreter-exit-diagnostics/lifecycle.jsonl",
+      "bytes": 248,
+      "sha256": "dcf603c01fe14fe92710daadd1bf277f0820faf44b56c548844ba0b611015c1e"
+    },
+    {
+      "path": "service/shutdown-diagnostics/lifecycle.jsonl",
+      "bytes": 209,
+      "sha256": "761396e8151b9714f1c4c0efcd800c45791ad2e3f8d3ad19290f11189e5954e6"
+    }
+  ],
+  "phases": [
+    "startup_observer_armed",
+    "startup_monitor_started",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed",
+    "startup_stack_capture_started",
+    "startup_stack_capture_completed"
+  ],
+  "root_cause_established": false,
+  "application_success_established": false,
+  "scientific_gate_credit_added": 0,
+  "claim_limit": "Passive process-bound startup locations; daemon scheduling and GIL availability limit sampling. Missing samples do not prove absence of a stall.",
+  "pid": 3101,
+  "captures_started": 16,
+  "captures_completed": 16,
+  "trace_bytes": 139750,
+  "readiness_observed": false,
+  "observer_stopped": false,
+  "diagnostic_errors": [],
+  "launch": {
+    "pid": 3101,
+    "argv": [
+      "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+      "-B",
+      "/var/tmp/agentops-admission-live-v1-7d775396bb624173/scripts/serve_agentops_bridge_diagnostic_v4.py",
+      "--output",
+      "/var/tmp/agentops-admission-live-v1-7d775396bb624173/runs/agentops-http-control/admission-live-v1-N11/service",
+      "--port",
+      "18764",
+      "--exit-watchdog-seconds",
+      "5.0",
+      "--startup-stack-seconds",
+      "5.0"
+    ],
+    "service_output": "/var/tmp/agentops-admission-live-v1-7d775396bb624173/runs/agentops-http-control/admission-live-v1-N11/service",
+    "port": 18764,
+    "exit_seconds": 5.0,
+    "startup_seconds": 5.0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "bibliography-auditor-development-failure/1",
+  "command": ".venv/Scripts/python.exe scripts/audit_paper_bibliography_v1.py",
+  "exit_code": 1,
+  "failure_location": "scripts/audit_paper_bibliography_v1.py:46",
+  "failure": "AssertionError comparing reference blocks after trailing-whitespace normalization",
+  "record_type": "Structured transcription of the tool-reported development failure; not original terminal bytes",
+  "second_source": "paper/bibliography-audit-second-source-v1.txt",
+  "affected_draft_snapshot": "paper/snapshots/working-draft-v0-before-unicode-correction.txt",
+  "diagnosis": "The earlier PowerShell Get-Content read omitted -Encoding UTF8. Accented names and page-range dashes in the inserted manuscript block became mojibake. The first record's trailing-whitespace explanation was incomplete.",
+  "correction": "Replace manuscript reference entries from references-v1.md using explicit Python UTF-8 reads and writes. Keep trailing-whitespace normalization only for terminal blank lines.",
+  "inspection_failure": "A separate diagnostic command copied the initial auditor successfully, then failed to read a UTF-8 file with Python's default cp1252 encoding. Subsequent diagnostic reads use encoding='utf-8'.",
+  "bibliography_output_written_by_failed_auditor": false,
+  "new_model_calls": 0,
+  "new_service_requests": 0,
+  "scientific_result": false
+}

@@ -1,0 +1,141 @@
+"""Check current citations against retained primary metadata, without network."""
+import hashlib
+import json
+import re
+import sys
+from datetime import UTC, datetime
+from pathlib import Path
+
+from build_paper_bibliography_v1 import authors, plain
+
+ROOT = Path(__file__).resolve().parents[1]
+OUTPUT = (Path(sys.argv[sys.argv.index('--output') + 1]).resolve()
+          if '--output' in sys.argv else ROOT / 'paper/bibliography-audit-v1.json')
+if not OUTPUT.is_relative_to(ROOT) or OUTPUT.exists():
+    raise SystemExit('Output must be a new file within this workspace.')
+
+
+def read(path):
+    return json.loads((ROOT / path).read_text(encoding='utf-8'))
+
+
+def receipt(path):
+    data = path.read_bytes()
+    return {'path':path.relative_to(ROOT).as_posix(), 'bytes':len(data),
+            'sha256':hashlib.sha256(data).hexdigest()}
+
+
+def canonical(value):
+    value = re.sub(r'【\d+†([^】]+)】', r'\1', plain(value))
+    return re.sub(r'\s+', '', value)
+
+
+data = read('paper/references-v1.json')
+assert data['human_metadata_review_completed'] is False
+assert data['complete_final_publication_bibliography'] is False
+entries = data['entries']
+assert [item['number'] for item in entries] == list(range(1, 16))
+assert len({item['key'] for item in entries}) == 15
+draft = (ROOT / data['draft']).read_text(encoding='utf-8')
+body, reference_block = draft.split('## References\n', 1)
+expected_urls = {url for item in entries for url in item['manuscript_urls']}
+actual_urls = {url for url in re.findall(r'\]\(([^)]+)\)', body)
+               if url.startswith(('https://', 'http://'))}
+assert actual_urls == expected_urls, (actual_urls - expected_urls, expected_urls - actual_urls)
+readable = (ROOT / 'paper/references-v1.md').read_text(encoding='utf-8')
+assert reference_block.rstrip().endswith(readable.split('<!-- reference-entries -->\n\n', 1)[1].rstrip())
+bib = (ROOT / 'paper/references-v1.bib').read_text(encoding='utf-8')
+assert re.findall(r'^@\w+\{([^,]+),', bib, re.M) == [item['key'] for item in entries]
+
+sources = read('docs/research/source-evidence/retrieval-manifest.json')['sources']
+metadata = {source['requested_url']:source.get('citation_metadata', {}) for source in sources}
+files = {ROOT / 'paper/references-v1.json', ROOT / 'paper/references-v1.bib',
+         ROOT / 'paper/references-v1.md', ROOT / data['draft'],
+         ROOT / 'paper/claim-ledger-v0.json', ROOT / 'paper/draft-status-v0.json',
+         Path(__file__).resolve(), ROOT / 'scripts/build_paper_bibliography_v1.py',
+         ROOT / 'docs/research/source-evidence/bibliography-refresh-v1/decision.md',
+         ROOT / 'paper/draft-audit-v0.1.json',
+         ROOT / 'paper/bibliography-audit-initial-source-v1.txt',
+         ROOT / 'paper/bibliography-audit-initial-failure-v1.json'}
+checks = []
+for item in entries:
+    fields = item['fields']
+    for url in item['manuscript_urls']:
+        assert '](' + url + ') [' + str(item['number']) + ']' in body, item['key']
+    for evidence in item['evidence']:
+        path = (ROOT / evidence['path']).resolve()
+        assert path.is_relative_to(ROOT) and path.is_file()
+        files.add(path)
+    if item['number'] <= 13:
+        web_evidence = next(e for e in item['evidence'] if 'tool-response.json' in e['path'])
+        response = read(web_evidence['path'])
+        text = canonical('\n'.join(c.get('text', '') for c in response['content']))
+        assert canonical(fields['title']) in text, item['key']
+        cursor = 0
+        for name in authors(fields['author']).split(', '):
+            position = text.find(canonical(name), cursor)
+            assert position >= cursor, (item['key'], name)
+            cursor = position + len(canonical(name))
+        method = 'Title and full ordered author names checked in retained primary-page/PDF tool excerpt'
+        old_url = ('https://arxiv.org/abs/' + fields['eprint'].split('v')[0]
+                   if 'eprint' in fields else fields['url'])
+        old = metadata.get(old_url)
+        if old:
+            assert canonical(fields['title']) == canonical(old['citation_title'][0])
+            expected = []
+            for name in old['citation_author']:
+                expected.append(authors(name))
+            assert canonical(authors(fields['author'])) == canonical(', '.join(expected))
+            method += '; also agrees with retained extracted primary metadata'
+    else:
+        lock = read('external/source-lock.json')
+        source = next(s for s in lock['sources'] if s['repository'] + '/tree/' + s['commit'] == fields['url'])
+        assert source['commit'] in fields['howpublished']
+        assert fields['year'] == source['commit_date'][:4]
+        assert source['license']['spdx'] in fields['note']
+        method = 'Exact software pin/year/license checked against retained local source lock'
+    checks.append({'number':item['number'], 'key':item['key'], 'metadata_check':method,
+                   'limits_retained':item['limits']})
+
+assert entries[3]['fields']['author'].count('Chen, Xi') == 2
+assert entries[8]['fields']['eprint'] == '1606.09035v7' and entries[8]['fields']['year'] == '2019'
+assert entries[9]['fields']['eprint'] == '2303.17751v1' and 'doi' not in entries[9]['fields']
+assert entries[4]['type'] == 'inproceedings' and entries[12]['type'] == 'inproceedings'
+assert 'doi' not in entries[2]['fields']
+archive = ROOT / 'docs/research/source-evidence/bibliography-refresh-v1'
+queries = sorted(archive.glob('*-query.json'))
+responses = sorted(archive.glob('*-tool-response.json'))
+assert len(queries) == len(responses) == 4
+for path in queries + responses:
+    read(path.relative_to(ROOT).as_posix())
+    files.add(path)
+assert 'Internal Error' in (archive / '04-quotient-and-ec2-tool-response.json').read_text(encoding='utf-8')
+
+old = {item['path']:item['sha256'] for item in read('paper/draft-audit-v0.1.json')['files']}
+snapshot_checks = []
+for stem, suffix in [('working-draft-v0','md'), ('claim-ledger-v0','json'), ('draft-status-v0','json')]:
+    path = ROOT / ('paper/snapshots/' + stem + '-before-bibliography.txt')
+    item = receipt(path)
+    expected = old['paper/' + stem + '.' + suffix]
+    assert item['sha256'] == expected
+    files.add(path)
+    snapshot_checks.append({'original_path':'paper/' + stem + '.' + suffix,
+                            'snapshot_path':item['path'], 'sha256':expected, 'matches':True})
+
+status = read('paper/draft-status-v0.json')
+assert status['bibliography']['entries'] == 15 and status['complete_paper'] is False
+checkpoint = read('docs/research/checkpoint-status.json')
+assert checkpoint['progress_percent'] == 5 and checkpoint['human_review_completed'] is False
+files.add(ROOT / 'docs/research/checkpoint-status.json')
+report = {'schema_version':'working-paper-bibliography-audit/1',
+          'checked_at_utc':datetime.now(UTC).isoformat(), 'status':'passed',
+          'current_draft_references':15, 'literature_references':13, 'pinned_software_references':2,
+          'web_query_result_pairs':4, 'metadata_checks':checks, 'pre_edit_snapshots':snapshot_checks,
+          'files':[receipt(path) for path in sorted(files)],
+          'new_model_calls':0, 'new_service_requests':0, 'prior_results_reproduced':False,
+          'human_review_completed':False, 'bibtex_typesetting_executed':False,
+          'scope':'Citation coverage, primary title/ordered-author checks, version distinctions and retained-input hashes. Optional metadata gaps disclosed; no full literature search, typesetting, source authenticity proof, experiment or human review.'}
+with OUTPUT.open('x', encoding='utf-8', newline='\n') as stream:
+    json.dump(report, stream, indent=2)
+    stream.write('\n')
+print(json.dumps({k:v for k,v in report.items() if k not in ['files','metadata_checks','pre_edit_snapshots']}, indent=2))

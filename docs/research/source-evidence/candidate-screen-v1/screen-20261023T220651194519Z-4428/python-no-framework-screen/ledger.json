@@ -1,0 +1,335 @@
+{
+  "schema_version": "bounded-candidate-source-screen/1",
+  "kind": "source-only-unexecuted",
+  "scope": "One Python no-framework lead; no application/dependency/model execution",
+  "sources": [
+    {
+      "repository": "https://github.com/a2aproject/a2a-samples",
+      "commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3",
+      "source_path": "samples/python/agents/a2a-mcp-without-framework/README.md",
+      "url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/python/agents/a2a-mcp-without-framework/README.md",
+      "started_at_utc": "2026-10-23T22:08:34.681872+00:00",
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "2944",
+        "Cache-Control": "max-age=300",
+        "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "Content-Type": "text/plain; charset=utf-8",
+        "ETag": "\"c2a5347317fb3cf9613205f6925ca50b09901c7507210d5f1a51c9a02a3f6010\"",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny",
+        "X-XSS-Protection": "1; mode=block",
+        "X-GitHub-Request-Id": "EA58:26E4A5:71E3D:9AB16:6ADBDAE3",
+        "x-github-edge-region": "centralindia",
+        "Accept-Ranges": "bytes",
+        "Date": "Fri, 23 Oct 2026 22:08:36 GMT",
+        "Via": "1.1 varnish",
+        "X-Served-By": "cache-del-vibw2260036-DEL",
+        "X-Cache": "MISS",
+        "X-Cache-Hits": "0",
+        "X-Timer": "S1792793316.854384,VS0,VE277",
+        "Vary": "Authorization,Accept-Encoding",
+        "Access-Control-Allow-Origin": "*",
+        "Cross-Origin-Resource-Policy": "cross-origin",
+        "X-Fastly-Request-ID": "b5e425468b6a722e523c4fdfbf804255c0ce1605",
+        "Expires": "Fri, 23 Oct 2026 22:13:36 GMT",
+        "Source-Age": "0"
+      },
+      "sha256": "1cf3eb566294cd6ea6835b9cc5ed2566dea63cb6d86fdb59195c8b927d1f80f2",
+      "bytes": 2944,
+      "local_path": "docs/research/source-evidence/candidate-screen-v1/screen-20261023T220651194519Z-4428/python-no-framework-screen/samples__python__agents__a2a-mcp-without-framework__README.md",
+      "excerpts": [
+        {
+          "line": 1,
+          "text": "# Example: Using a2a-python SDK Without an LLM Framework"
+        },
+        {
+          "line": 3,
+          "text": "This repository demonstrates how to set up and use the [a2a-python SDK](https://github.com/google/a2a-python) to create a simple server and client, without relying on any agent framework."
+        },
+        {
+          "line": 7,
+          "text": "- **A2A (Agent-to-Agent):** A protocol and SDK for communication with AI Agents."
+        },
+        {
+          "line": 14,
+          "text": "- An API key for Gemini (set as `GEMINI_API_KEY`)"
+        },
+        {
+          "line": 34,
+          "text": "   export GEMINI_API_KEY=your-gemini-api-key"
+        },
+        {
+          "line": 40,
+          "text": "   GEMINI_API_KEY=your-gemini-api-key"
+        },
+        {
+          "line": 48,
+          "text": "uv run --env-file .env python -m src.no_llm_framework.server.__main__"
+        },
+        {
+          "line": 58,
+          "text": "uv run --env-file .env python -m src.no_llm_framework.client --question \"What is A2A protocol?\""
+        },
+        {
+          "line": 69,
+          "text": "- `src/no_llm_framework/server/`: Server implementation."
+        },
+        {
+          "line": 70,
+          "text": "- `src/no_llm_framework/client/`: Client implementation."
+        },
+        {
+          "line": 76,
+          "text": "- **API key errors:** Ensure `GEMINI_API_KEY` is set correctly."
+        },
+        {
+          "line": 81,
+          "text": "Important: The sample code provided is for demonstration purposes and illustrates the mechanics of the Agent-to-Agent (A2A) protocol. When building production applications, it is critical to treat any agent operating outside of your direct control as a potentially untrusted entity."
+        },
+        {
+          "line": 83,
+          "text": "All data received from an external agent\u2014including but not limited to its AgentCard, messages, artifacts, and task statuses\u2014should be handled as untrusted input. For example, a malicious agent could provide an AgentCard containing crafted data in its fields (e.g., description, name, skills.description). If this data is used without sanitization to construct prompts for a Large Language Model (LLM), it could expose your application to prompt injection attacks.  Failure to properly validate and sanitize this data before use can introduce security vulnerabilities into your application."
+        }
+      ],
+      "completed_at_utc": "2026-10-23T22:08:35.072121+00:00"
+    },
+    {
+      "repository": "https://github.com/a2aproject/a2a-samples",
+      "commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3",
+      "source_path": "samples/python/agents/a2a-mcp-without-framework/pyproject.toml",
+      "url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/python/agents/a2a-mcp-without-framework/pyproject.toml",
+      "started_at_utc": "2026-10-23T22:08:34.682870+00:00",
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "582",
+        "Cache-Control": "max-age=300",
+        "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "Content-Type": "text/plain; charset=utf-8",
+        "ETag": "\"438e30fe3ac697867a3786266f3979d5dab437d4b4650304691272a9cb224b79\"",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny",
+        "X-XSS-Protection": "1; mode=block",
+        "X-GitHub-Request-Id": "2402:1B802C:6E7C2:97370:6ADBDAE2",
+        "x-github-edge-region": "centralindia",
+        "Accept-Ranges": "bytes",
+        "Date": "Fri, 23 Oct 2026 22:08:36 GMT",
+        "Via": "1.1 varnish",
+        "X-Served-By": "cache-del-vibw2260032-DEL",
+        "X-Cache": "MISS",
+        "X-Cache-Hits": "0",
+        "X-Timer": "S1792793316.849129,VS0,VE325",
+        "Vary": "Authorization,Accept-Encoding",
+        "Access-Control-Allow-Origin": "*",
+        "Cross-Origin-Resource-Policy": "cross-origin",
+        "X-Fastly-Request-ID": "73ff6e383ec0b08953c78104cbd2e0f3ff424d28",
+        "Expires": "Fri, 23 Oct 2026 22:13:36 GMT",
+        "Source-Age": "0"
+      },
+      "sha256": "10b4c91c82a5bc0c610b8ecbed6930895f7c1962088aef8e5d2e2895bb722f2d",
+      "bytes": 582,
+      "local_path": "docs/research/source-evidence/candidate-screen-v1/screen-20261023T220651194519Z-4428/python-no-framework-screen/samples__python__agents__a2a-mcp-without-framework__pyproject.toml",
+      "excerpts": [
+        {
+          "line": 2,
+          "text": "name = \"no-llm-framework\""
+        },
+        {
+          "line": 9,
+          "text": "    \"a2a-sdk>=1.0.0a1\","
+        },
+        {
+          "line": 13,
+          "text": "    \"google-genai\","
+        },
+        {
+          "line": 22,
+          "text": "a2a-server = \"no_llm_framework.server.__main__:main\""
+        },
+        {
+          "line": 23,
+          "text": "a2a-client = \"no_llm_framework.client.__main__:main\""
+        }
+      ],
+      "completed_at_utc": "2026-10-23T22:08:35.118998+00:00"
+    },
+    {
+      "repository": "https://github.com/a2aproject/a2a-samples",
+      "commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3",
+      "source_path": "samples/python/agents/a2a-mcp-without-framework/src/no_llm_framework/server/agent.py",
+      "url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/python/agents/a2a-mcp-without-framework/src/no_llm_framework/server/agent.py",
+      "started_at_utc": "2026-10-23T22:08:34.683876+00:00",
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "5741",
+        "Cache-Control": "max-age=300",
+        "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "Content-Type": "text/plain; charset=utf-8",
+        "ETag": "\"727b3dcb735730f32368a42d1a73f96b1c46bccfa7992c302e0427a83d1650a6\"",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny",
+        "X-XSS-Protection": "1; mode=block",
+        "X-GitHub-Request-Id": "AF00:2D565F:724A3:9B072:6ADBDAE3",
+        "x-github-edge-region": "centralindia",
+        "Accept-Ranges": "bytes",
+        "Date": "Fri, 23 Oct 2026 22:08:36 GMT",
+        "Via": "1.1 varnish",
+        "X-Served-By": "cache-del-vibw2260039-DEL",
+        "X-Cache": "MISS",
+        "X-Cache-Hits": "0",
+        "X-Timer": "S1792793316.852741,VS0,VE302",
+        "Vary": "Authorization,Accept-Encoding",
+        "Access-Control-Allow-Origin": "*",
+        "Cross-Origin-Resource-Policy": "cross-origin",
+        "X-Fastly-Request-ID": "bf31c0b3f1785d28c42d827c9312670e8d9ccb65",
+        "Expires": "Fri, 23 Oct 2026 22:13:36 GMT",
+        "Source-Age": "0"
+      },
+      "sha256": "01f9e436d6c1da5ced402f599a5933065afbc508a78e156d84884f42235e568d",
+      "bytes": 5741,
+      "local_path": "docs/research/source-evidence/candidate-screen-v1/screen-20261023T220651194519Z-4428/python-no-framework-screen/samples__python__agents__a2a-mcp-without-framework__src__no_llm_framework__server__agent.py",
+      "excerpts": [
+        {
+          "line": 9,
+          "text": "from google import genai"
+        },
+        {
+          "line": 13,
+          "text": "from no_llm_framework.server.constant import GOOGLE_API_KEY"
+        },
+        {
+          "line": 14,
+          "text": "from no_llm_framework.server.mcp import call_mcp_tool, get_mcp_tool_prompt"
+        },
+        {
+          "line": 29,
+          "text": "def stream_llm(prompt: str) -> Generator[str, None]:"
+        },
+        {
+          "line": 30,
+          "text": "    \"\"\"Stream LLM response."
+        },
+        {
+          "line": 33,
+          "text": "        prompt (str): The prompt to send to the LLM."
+        },
+        {
+          "line": 36,
+          "text": "        Generator[str, None, None]: A generator of the LLM response."
+        },
+        {
+          "line": 38,
+          "text": "    client = genai.Client(vertexai=False, api_key=GOOGLE_API_KEY)"
+        },
+        {
+          "line": 40,
+          "text": "        model='gemini-2.5-flash-lite',"
+        },
+        {
+          "line": 47,
+          "text": "    \"\"\"Agent for interacting with the Google Gemini LLM in different modes.\"\"\""
+        },
+        {
+          "line": 59,
+          "text": "    def call_llm(self, prompt: str) -> Generator[str, None]:"
+        },
+        {
+          "line": 60,
+          "text": "        \"\"\"Call the LLM with the given prompt and return a generator of responses."
+        },
+        {
+          "line": 63,
+          "text": "            prompt (str): The prompt to send to the LLM."
+        },
+        {
+          "line": 66,
+          "text": "            Generator[str, None]: A generator yielding the LLM's response."
+        },
+        {
+          "line": 68,
+          "text": "        return stream_llm(prompt)"
+        },
+        {
+          "line": 80,
+          "text": "            return self.call_llm(question)"
+        },
+        {
+          "line": 94,
+          "text": "        return self.call_llm(prompt)"
+        },
+        {
+          "line": 100,
+          "text": "            response (str): The response from the LLM."
+        },
+        {
+          "line": 179,
+          "text": "        mcp_url='https://gitmcp.io/google/A2A',"
+        },
+        {
+          "line": 184,
+          "text": "        async for chunk in agent.stream('What is A2A Protocol?'):"
+        }
+      ],
+      "completed_at_utc": "2026-10-23T22:08:35.097468+00:00"
+    },
+    {
+      "repository": "https://github.com/a2aproject/a2a-samples",
+      "commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3",
+      "source_path": "samples/python/agents/a2a-mcp-without-framework/src/no_llm_framework/server/agent_executor.py",
+      "url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/python/agents/a2a-mcp-without-framework/src/no_llm_framework/server/agent_executor.py",
+      "started_at_utc": "2026-10-23T22:08:34.683876+00:00",
+      "status": 200,
+      "headers": {
+        "Connection": "close",
+        "Content-Length": "4131",
+        "Cache-Control": "max-age=300",
+        "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "Content-Type": "text/plain; charset=utf-8",
+        "ETag": "\"2a2b744d72fc59ff255004c575e732b4ba15bb0c2912ba7df1b04652d99970c2\"",
+        "Strict-Transport-Security": "max-age=31536000",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny",
+        "X-XSS-Protection": "1; mode=block",
+        "X-GitHub-Request-Id": "251A:1D68CC:688C8:91377:6ADBDAE2",
+        "x-github-edge-region": "centralindia",
+        "Accept-Ranges": "bytes",
+        "Date": "Fri, 23 Oct 2026 22:08:36 GMT",
+        "Via": "1.1 varnish",
+        "X-Served-By": "cache-del-vibw2260035-DEL",
+        "X-Cache": "MISS",
+        "X-Cache-Hits": "0",
+        "X-Timer": "S1792793316.855314,VS0,VE306",
+        "Vary": "Authorization,Accept-Encoding",
+        "Access-Control-Allow-Origin": "*",
+        "Cross-Origin-Resource-Policy": "cross-origin",
+        "X-Fastly-Request-ID": "6ef249b2fa8332f48d584722beceefe01e796a27",
+        "Expires": "Fri, 23 Oct 2026 22:13:36 GMT",
+        "Source-Age": "0"
+      },
+      "sha256": "9552ec378b2fbedfbaadc452e880fb1e81e4044a0c45da14af88604b0521229d",
+      "bytes": 4131,
+      "local_path": "docs/research/source-evidence/candidate-screen-v1/screen-20261023T220651194519Z-4428/python-no-framework-screen/samples__python__agents__a2a-mcp-without-framework__src__no_llm_framework__server__agent_executor.py",
+      "excerpts": [
+        {
+          "line": 17,
+          "text": "from no_llm_framework.server.agent import Agent"
+        },
+        {
+          "line": 27,
+          "text": "            mcp_url='https://gitmcp.io/google/A2A',"
+        },
+        {
+          "line": 76,
+          "text": "                            state=TaskState.TASK_STATE_INPUT_REQUIRED,"
+        }
+      ],
+      "completed_at_utc": "2026-10-23T22:08:35.101270+00:00"
+    }
+  ]
+}

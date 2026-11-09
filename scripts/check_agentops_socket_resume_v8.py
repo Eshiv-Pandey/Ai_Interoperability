@@ -1,0 +1,468 @@
+"""Read-only parent verification of socket-resume-v8 exports; never execute archived code.
+
+Reuses the original effect/wire checkers and trusted native/HTTP gate code.
+Linux command operands are checked before rebasing the three receipt reads needed
+by the native gate. Hashes always cover the original unmodified bytes.
+"""
+from __future__ import annotations
+
+import argparse
+import base64
+import csv
+from datetime import datetime
+import json
+import io
+from pathlib import Path, PurePosixPath
+from types import SimpleNamespace
+import tomllib
+
+import agentops_native_probe_v7 as native
+from check_agentops_effect_v3 import seed_snapshot
+from check_agentops_http_v2 import check as check_wire
+from check_agentops_linux_workspace_v5 import (
+    ROOT, require, load, zero, verify_rows, linux_relative, trusted_module,
+    stage_receipt, record, relative_file, referenced_records,
+)
+from inspect_agentops_runtime_v5 import CRITICAL
+
+SEAL = ROOT / "docs/research/source-evidence/agentops-socket-policy-v1/manifest.json"
+VERIFIER_SEAL = ROOT / "docs/research/source-evidence/agentops-socket-export-check-v8/manifest.json"
+PRIOR = ROOT / "runs/agentops-native-eligibility/linux-persistent-v7"
+NATIVE = "runs/agentops-native-eligibility/native-probe-v7"
+HTTP = "runs/agentops-http-control/native-http-linux-v5"
+SETUP = "runs/agentops-native-eligibility/dependencies-linux-v7"
+RUNTIME = "external/runtime-agentops-linux-v7/venv/bin/python"
+INSPECTOR = "scripts/inspect_agentops_runtime_v6.py"
+
+
+def linux_path(root, relative):
+    return str(PurePosixPath(root) / relative)
+
+
+def interval(receipt):
+    start, end = (datetime.fromisoformat(receipt[key])
+                  for key in ("started_at_utc", "finished_at_utc"))
+    require(start.tzinfo is not None and end.tzinfo is not None and start <= end,
+            "Invalid capture interval")
+    return start, end
+
+
+def capture_receipt(exported, directory, label, argv, cwd):
+    receipt = load(exported / directory / (label + ".json"))
+    require(receipt.get("argv") == argv and receipt.get("cwd") == cwd,
+            "Unexpected captured command/workspace")
+    require(zero(receipt.get("returncode")) and receipt.get("timed_out") is False,
+            "Capture did not complete successfully")
+    interval(receipt)
+    for suffix in ("stdout", "stderr"):
+        expected = record(exported / directory / f"{label}.{suffix}.bin", exported)
+        require(receipt.get(suffix) == expected, "Capture stream binding differs")
+    return receipt
+
+
+def package_integrity(run, expected_inputs, prior=PRIOR):
+    execution, result, manifest = (load(run / name) for name in
+                                  ("execution.json", "result.json", "export-manifest.json"))
+    exported = run / "workspace"
+    require(execution.get("schema_version") == result.get("schema_version") ==
+            "agentops-linux-socket-resume/8", "Unexpected resume schema")
+    require(execution["inputs"] == expected_inputs, "Resume inputs differ from their seal")
+    require(result.get("parent_inputs_unchanged") is True, "Parent input integrity failed")
+    require(result.get("export_reference_failures") == [] and manifest["reference_failures"] == [],
+            "Export references failed")
+    linux_root = result["linux_workspace"]
+    require(PurePosixPath(linux_root).is_absolute() and ".." not in PurePosixPath(linux_root).parts,
+            "Invalid original Linux root")
+    require(execution["linux_workspace"] == manifest["original_linux_root"] == linux_root
+            and load(run / "linux-workspace.json")["path"] == linux_root, "Inconsistent Linux roots")
+    prior_result, prior_manifest = load(prior / "result.json"), load(prior / "export-manifest.json")
+    require(prior_result["status"] == "failed" and prior_result["native_result"] == "failed"
+            and prior_result["http_result"] == "not_run", "Unexpected original attempt")
+    require(prior_result["linux_workspace"] == prior_manifest["original_linux_root"] == linux_root,
+            "Resume changed the original workspace identity")
+    require(execution["prior_attempt"] == result["prior_attempt"] == record(prior / "result.json", ROOT)
+            and execution["prior_export"] == record(prior / "export-manifest.json", ROOT),
+            "Resume is not bound to the retained original failure")
+    require(execution.get("launch_seal") == record(SEAL, ROOT), "Wrong launch seal binding")
+    for field in ("installations", "live_model_calls", "research_gate_credit_added"):
+        require(zero(result.get(field)), f"Unexpected {field}")
+    require(result.get("qualified_second_domain") is False, "Unestablished domain qualification")
+    interval(result)
+    names = verify_rows(exported, manifest["files"], [row["path"] for row in expected_inputs])
+    verify_rows(exported, expected_inputs)
+    verify_rows(exported, prior_manifest["files"])
+    actual = set()
+    for path in exported.rglob("*"):
+        require(not path.is_symlink() and not getattr(path, "is_junction", lambda: False)(),
+                "Materialized export link")
+        if path.is_file():
+            actual.add(path.relative_to(exported).as_posix())
+    require(names == actual, "Export contains undeclared files")
+    require(type(result["exported_files"]) is int and result["exported_files"] == len(names),
+            "Export file count differs")
+    require(type(manifest["bytes"]) is int and manifest["bytes"] ==
+            sum(row["bytes"] for row in manifest["files"]), "Export byte count differs")
+    for link in manifest.get("inert_symlinks", []):
+        target = relative_file(exported, link["path"])
+        require(link["path"] not in names and not target.exists(), "Inert link was materialized")
+    return exported, result, manifest
+
+
+def validators_for(exported, expected_inputs, linux_root):
+    """Load trusted local validators; normalize only verified receipt operands."""
+    sources = [row for row in expected_inputs if row["path"].startswith("external/agentops-c806b7f1/")]
+    require(len(sources) == 421, "Expected original 421-file application source")
+
+    def digest(path):
+        path = Path(path).resolve()
+        if not path.is_relative_to(exported.resolve()):
+            require(path.is_relative_to(ROOT), "Validator path outside known roots")
+            path = exported / path.relative_to(ROOT)
+        return record(path, exported)
+
+    def read(path):
+        value = load(path)
+        path = Path(path)
+        commands = setup_commands(linux_root)
+        for label, argv in commands.items():
+            if path == exported / SETUP / (label + '.json'):
+                require(value.get('argv') == argv, 'Wrong original setup command: ' + label)
+                replacements = {linux_path(linux_root, name): str(exported / name) for name in (
+                    RUNTIME, INSPECTOR, 'external/runtime-agentops-linux-v7/uv',
+                    'external/agentops-c806b7f1/agents/python', SETUP + '/managed-capability')}
+                value['argv'] = [replacements.get(arg, arg) for arg in argv]
+        return value
+
+    reader = SimpleNamespace(load_json=read, digest=digest, within=native.original.within,
+        SOURCE=exported / "external/agentops-c806b7f1",
+        PROJECT=exported / "external/agentops-c806b7f1/agents/python", NODEID=native.original.NODEID,
+        PLUGIN=exported / "scripts/agentops_native_probe_v3_plugin.py",
+        CHECKER=exported / "scripts/check_agentops_effect_v3.py",
+        SPEC=exported / "docs/research/source-evidence/agentops-native-probe-v2/protocol.md",
+        __file__=str(ROOT / "scripts/agentops_native_probe_v2.py"), source_inventory=lambda: sources)
+    rebased = trusted_module("parent_native_socket_v8_check", "agentops_native_probe_v7.py")
+    rebased.ROOT, rebased.RUNS = exported, exported / "runs/agentops-native-eligibility"
+    rebased.RUNTIME, rebased.INSPECTOR = exported / RUNTIME, exported / INSPECTOR
+    rebased.original = reader
+    http = trusted_module("parent_http_socket_v8_check", "agentops_http_control_v5.py")
+    http.ROOT, http.PREREQUISITE = exported, exported / NATIVE
+    http.native, http.evidence = rebased, reader
+    return http, sources
+
+
+def verify_runtime(exported, linux_root):
+    inventory = load(exported / SETUP / "installed-runtime.stdout.bin")
+    native.validate_inventory(inventory)
+    prefix = "external/runtime-agentops-linux-v7/venv"
+    require(inventory["python"] == [3, 13, 1] and all(type(v) is int for v in inventory["python"]),
+            "Unexpected selected Python version")
+    require(linux_relative(inventory["runtime_prefix"], linux_root) == prefix, "Wrong runtime prefix")
+    executable = linux_relative(inventory["executable"], linux_root)
+    require(PurePosixPath(executable).is_relative_to("external/runtime-agentops-linux-v7"),
+            "Interpreter outside selected runtime")
+    require(inventory["agentops_direct_url"] == {
+        "url": (PurePosixPath(linux_root) / "external/agentops-c806b7f1/agents/python").as_uri(),
+        "dir_info": {"editable": True}}, "Wrong original editable source URL")
+    lock_path = exported / "external/agentops-c806b7f1/agents/python/uv.lock"
+    require(inventory["lock"] == record(lock_path, exported), "Wrong original lock binding")
+    lock = tomllib.loads(lock_path.read_text(encoding="utf-8"))
+    pins = {(row["name"], row["version"]) for row in lock["package"]}
+    versions = {}
+    for package in inventory["packages"]:
+        require(package["name"] not in versions and (package["name"], package["version"]) in pins,
+                "Duplicate or unlocked runtime distribution")
+        versions[package["name"]] = package["version"]
+        relative_file(exported, package["location"])
+        require(PurePosixPath(package["location"]).is_relative_to(prefix),
+                "Distribution outside isolated runtime")
+        for row in package["metadata_files"]:
+            require(PurePosixPath(row["path"]).is_relative_to(prefix), "Metadata outside runtime")
+    require(set(inventory["critical_locked_versions"]) == CRITICAL, "Critical package requirements omitted")
+    for name, version in inventory["critical_locked_versions"].items():
+        require(versions.get(name) == version and (name, version) in pins, "Missing critical package")
+    site = next(row["location"] for row in inventory["packages"] if row["name"] == "google-adk")
+    selected = [site + "/" + name for name in (
+        "_pytest/tmpdir.py", "a2a/server/request_handlers/default_request_handler.py",
+        "google/adk/a2a/executor/a2a_agent_executor.py", "starlette/testclient.py", "httpx/_client.py")]
+    require([row["path"] for row in inventory["selected_sources"]] == selected,
+            "Required installed boundary source inventory differs")
+    for row in referenced_records(inventory):
+        verify_rows(exported, [row])
+    provider = inventory["fcntl_native"]
+    providers = provider["provider_files"]
+    require(provider["module"] == "fcntl" and providers and provider["provider_file"] == providers[0],
+            "Missing native fcntl provider binding")
+    verify_rows(exported, providers)
+    for row in providers:
+        require(PurePosixPath(row["path"]).is_relative_to("external/runtime-agentops-linux-v7"),
+                "Native provider outside selected runtime")
+    if provider["kind"] == "builtin":
+        require(provider["origin"] == "built-in" and providers[0]["path"] == executable,
+                "Built-in provider does not identify the recorded interpreter")
+    else:
+        require(provider["kind"] == "extension" and providers[0]["path"] ==
+                linux_relative(provider["origin"], linux_root), "Wrong native extension binding")
+    verify_boundary_sources(exported, inventory, inventory['selected_sources'])
+    return inventory
+
+
+def verify_boundary_sources(exported, inventory, files):
+    """Bind selected installed module bytes to the retained distribution RECORDs."""
+    wanted = {row['path']: row for row in files}
+    owners = {name: [] for name in wanted}
+    for package in inventory['packages']:
+        records = [row for row in package['metadata_files'] if PurePosixPath(row['path']).name == 'RECORD']
+        for record_row in records:
+            entries = list(csv.reader(io.StringIO(relative_file(exported, record_row['path']).read_text(encoding='utf-8'))))
+            for name, source in wanted.items():
+                try:
+                    relative = PurePosixPath(name).relative_to(package['location']).as_posix()
+                except ValueError:
+                    continue
+                matches = [row for row in entries if row and row[0] == relative]
+                if not matches:
+                    continue
+                require(len(matches) == 1 and len(matches[0]) == 3, 'Ambiguous distribution RECORD source entry')
+                expected_hash = 'sha256=' + base64.urlsafe_b64encode(bytes.fromhex(source['sha256'])).decode().rstrip('=')
+                require(matches[0][1:] == [expected_hash, str(source['bytes'])], 'Boundary source differs from installed RECORD: ' + name)
+                require(record(relative_file(exported, name), exported) == source, 'Boundary source bytes changed')
+                owners[name].append(package['name'])
+    require(all(len(value) == 1 for value in owners.values()), 'Boundary source lacks a unique installed RECORD owner')
+
+
+def setup_commands(linux_root):
+    from setup_agentops_linux_v7 import CAPABILITY_CODE
+    return {
+        'installed-runtime': [linux_path(linux_root, RUNTIME), '-I', linux_path(linux_root, INSPECTOR)],
+        'locked-sync': [linux_path(linux_root, 'external/runtime-agentops-linux-v7/uv'),
+            'sync', '--locked', '--project', linux_path(linux_root, 'external/agentops-c806b7f1/agents/python'),
+            '--python', '3.13.1', '--python-preference', 'only-managed'],
+        'managed-capability': [linux_path(linux_root, RUNTIME), '-I', '-c', CAPABILITY_CODE,
+                              linux_path(linux_root, SETUP + '/managed-capability')],
+    }
+
+
+def verify_setup(exported, linux_root, http):
+    binding = http.native.validate_setup()
+    previous_end = None
+    # Setup receipts omit cwd; inspect their exact original command operands.
+    for label in ('locked-sync', 'installed-runtime', 'managed-capability'):
+        receipt = load(exported / SETUP / (label + '.json'))
+        require(receipt['argv'] == setup_commands(linux_root)[label], 'Original setup command differs')
+        require(zero(receipt.get('returncode')) and receipt.get('timed_out') is False
+                and receipt.get('error') is None, 'Setup capture did not pass')
+        start, end = interval(receipt)
+        if previous_end is not None:
+            require(previous_end <= start, 'Original setup stages overlap or are out of order')
+        previous_end = end
+        for suffix in ('stdout', 'stderr'):
+            require(receipt[suffix] == record(exported / SETUP / f'{label}.{suffix}.bin', exported),
+                    'Original setup stream differs')
+    return binding, verify_runtime(exported, linux_root)
+
+
+def ordered_stages(run, linux_root, stages):
+    receipts = [stage_receipt(run, label, arguments, linux_root) for label, arguments in stages]
+    for before, after in zip(receipts, receipts[1:]):
+        require(interval(before)[1] <= interval(after)[0], "Controller stages overlap or are out of order")
+    return receipts
+
+
+def inspection_captures(exported, directory, linux_root):
+    for label in ("prepared-runtime", "execution-runtime"):
+        capture_receipt(exported, directory, label,
+            [linux_path(linux_root, RUNTIME), "-I", linux_path(linux_root, INSPECTOR)], linux_root)
+
+
+def native_process_captures(exported, linux_root, bootstrap):
+    inspection_captures(exported, NATIVE, linux_root)
+    project = linux_path(linux_root, "external/agentops-c806b7f1/agents/python")
+    directory = linux_path(linux_root, NATIVE)
+    capture_receipt(exported, NATIVE, "upstream-confirmation", [linux_path(linux_root, RUNTIME),
+        "-B", "-m", "pytest", "-c", project + "/pyproject.toml", "-p", "agentops_native_probe_v3_plugin",
+        "--basetemp", directory + "/pytest-temp", "-o", "cache_dir=" + directory + "/pytest-cache",
+        "--junitxml", directory + "/junit.xml", native.original.NODEID], project)
+    capture_receipt(exported, NATIVE, "independent-effect-check", [bootstrap, "-B",
+        linux_path(linux_root, "scripts/check_agentops_effect_v3.py"), "--profile", directory + "/passive-profile.json",
+        "--seed-db", linux_path(linux_root, "external/agentops-c806b7f1/agents/data/incidents.db"),
+        "--output", directory + "/effect-check.json"], linux_root)
+
+
+def contains(outer, inner):
+    a, b = interval(outer)
+    c, d = interval(inner)
+    require(a <= c <= d <= b, "Nested capture lies outside its owning stage")
+
+
+def timeline(run, exported, result, stages):
+    rows = {label: load(run / (label + '.json')) for label, _ in stages}
+    setup_end = interval(load(exported / SETUP / 'managed-capability.json'))[1]
+    require(setup_end <= interval(rows['native-prepare'])[0], "Native preparation predates successful setup")
+    require(len({row['argv'][0] for row in rows.values()}) == 1, "Controller interpreter changed between stages")
+    for row in rows.values():
+        contains(result, row)
+    for stage, folder, labels in (
+        ('native-prepare', NATIVE, ('prepared-runtime',)),
+        ('native-control', NATIVE, ('execution-runtime', 'upstream-confirmation', 'independent-effect-check')),
+        ('http-prepare', HTTP, ('prepared-runtime',)),
+        ('http-control', HTTP, ('execution-runtime', 'wire-check')),
+    ):
+        if stage in rows:
+            for label in labels:
+                contains(rows[stage], load(exported / folder / (label + '.json')))
+    test = load(exported / NATIVE / 'upstream-confirmation.json')
+    start, end = interval(test)
+    profile = load(exported / NATIVE / 'passive-profile.json')
+    for event in profile['observations']:
+        require(start <= datetime.fromisoformat(event['observed_at_utc']) <= end,
+                "Native observation outside captured pytest interval")
+    inspection_end = interval(load(exported / NATIVE / 'execution-runtime.json'))[1]
+    effect_start = interval(load(exported / NATIVE / 'independent-effect-check.json'))[0]
+    require(inspection_end <= start <= end <= effect_start, "Native capture/check ordering differs")
+
+
+def service_provenance(exported, linux_root, outer):
+    directory = exported / HTTP
+    plan = load(directory / 'plan.json')
+    process = load(directory / 'service-process.json')
+    require(type(process['pid']) is int and process['pid'] > 0, "Invalid owned service process")
+    require(process['argv'] == [linux_path(linux_root, RUNTIME), '-B',
+            linux_path(linux_root, 'scripts/serve_agentops_http_v2.py'), '--output',
+            linux_path(linux_root, HTTP), '--port', str(plan['port'])], "HTTP service command differs")
+    ready = load(directory / 'service-ready.json')
+    require(ready['port'] == plan['port'] and ready['state_dir'] == linux_path(linux_root, HTTP + '/state')
+            and ready['source_factory'] == linux_path(linux_root, 'external/agentops-c806b7f1/agents/python/src/agent/server.py'),
+            "HTTP readiness source/path binding differs")
+    service = load(directory / 'service-result.json')
+    begin, end = interval(outer)
+    launched = datetime.fromisoformat(process['started_at_utc'])
+    prepared = datetime.fromisoformat(ready['started_at_utc'])
+    stopped = datetime.fromisoformat(load(directory / 'stop-requested.json')['requested_at_utc'])
+    finished = datetime.fromisoformat(service['finished_at_utc'])
+    snapshots = load(directory / 'boundaries.json')
+    first, last = [datetime.fromisoformat(row['observed_at_utc']) for row in (snapshots[0], snapshots[-1])]
+    check_start = interval(load(directory / 'wire-check.json'))[0]
+    require(begin <= launched <= prepared <= first <= last <= stopped <= finished <= check_start <= end,
+            "HTTP service, boundary or checker ordering differs")
+    require(service['socket_policy']['capability_source']['installed_path'] ==
+            linux_path(linux_root, 'external/runtime-agentops-linux-v7/venv/lib/python3.13/site-packages/urllib3/util/connection.py'),
+            "HTTP capability-source runtime binding differs")
+
+
+def check(run):
+    expected = load(SEAL)["replica_inputs"]
+    verify_rows(ROOT, expected)  # Verify the immutable launch inputs.
+    verify_rows(ROOT, load(VERIFIER_SEAL)["files"])
+    exported, result, manifest = package_integrity(run, expected)
+    report = {"status": "artifact_integrity_verified", "recorded_attempt_status": result["status"],
+        "files_checked": len(manifest["files"]), "runtime_setup": "not_rechecked",
+        "native_semantics": "not_rechecked", "http_semantics": "not_rechecked",
+        "fresh_experiment": False, "independent_semantic_oracle": False, "scientific_gate_credit_added": 0,
+        "limitation": "Retained evidence consistency; not capture authenticity, full runtime authentication or scientific review"}
+    passed_native = result["native_result"] == "upstream_and_boundary_effect_check_passed"
+    passed_http = result["http_result"] == "wire_and_effect_check_passed"
+    for field, folder in (("native_result", NATIVE), ("http_result", HTTP)):
+        inner = exported / folder / "result.json"
+        require(result[field] == (load(inner)["status"] if inner.exists() else "not_run"),
+                "Outer outcome differs from retained inner result")
+    require(not passed_http or passed_native, "HTTP success without native success")
+    require(result["status"] != "native_and_http_controls_passed" or (passed_native and passed_http),
+            "False overall success")
+    setup = load(exported / SETUP / 'result.json')
+    require(setup.get('status') == 'dependencies_ready', 'Retained setup is not successful')
+    http, sources = validators_for(exported, expected, result['linux_workspace'])
+    _, inventory = verify_setup(exported, result['linux_workspace'], http)
+    report['runtime_setup'] = 'verified_with_native_provider_bytes'
+    if not passed_native:
+        require(not (exported / HTTP / 'execution.json').exists(), 'HTTP attempted without native success')
+        return report
+    stages = [('native-prepare', ['scripts/agentops_native_probe_v7.py', 'prepare']),
+              ('native-control', ['scripts/agentops_native_probe_v7.py', 'run'])]
+    stage_rows = ordered_stages(run, result["linux_workspace"], stages)
+    native_process_captures(exported, result["linux_workspace"], stage_rows[-1]["argv"][0])
+    native_binding = http.validate_native(sources)  # Recomputes original effect semantics.
+    native_plan = load(exported / NATIVE / 'plan.json')
+    installed_prefix = 'external/runtime-agentops-linux-v7/venv/'
+    verify_boundary_sources(exported, inventory,
+        [row for row in native_plan['harness_files'] if row['path'].startswith(installed_prefix)])
+    execution = load(exported / NATIVE / 'execution.json')
+    require(execution.get('schema_version') == 'agentops-native-execution/7'
+            and execution.get('runtime_python') == linux_path(result['linux_workspace'], RUNTIME),
+            "Native execution runtime identity differs")
+    profile = load(exported / NATIVE / 'passive-profile.json')
+    require(profile['socket_policy']['capability_source']['installed_path'] ==
+            linux_path(result['linux_workspace'], 'external/runtime-agentops-linux-v7/venv/lib/python3.13/site-packages/urllib3/util/connection.py'),
+            "Native capability-source runtime binding differs")
+    timeline(run, exported, result, stages)
+    native_result = load(exported / NATIVE / "result.json")
+    require(zero(native_result.get("pytest_returncode")) and zero(native_result.get("live_model_calls")),
+            "Invalid native result counters")
+    report["native_semantics"] = "rechecked_with_existing_effect_checker"
+    if not passed_http:
+        return report
+    stages.extend([("http-prepare", ["scripts/agentops_http_control_v5.py", "prepare"]),
+                   ("http-control", ["scripts/agentops_http_control_v5.py", "run"])])
+    stage_rows = ordered_stages(run, result["linux_workspace"], stages)
+    timeline(run, exported, result, stages)
+    directory = exported / HTTP
+    outcome = load(directory / "result.json")
+    require(outcome.get("schema_version") == "agentops-http-result/5" and zero(outcome.get("live_model_calls"))
+            and outcome.get("status") == "wire_and_effect_check_passed"
+            and outcome.get("source_unchanged_after") is True, "Unexpected HTTP result")
+    require(outcome.get("forced_service_stop") is False and not outcome.get("cleanup_errors")
+            and zero(outcome.get("service_returncode")), "HTTP service cleanup failed")
+    verify_rows(exported, outcome["files"], [HTTP + "/" + name for name in (
+        "plan.json", "preparation-result.json", "execution.json", "prepared-runtime.stdout.bin",
+        "execution-runtime.stdout.bin", "check.json", "service-result.json")])
+    plan = load(directory / "plan.json")
+    require(plan.get("schema_version") == "agentops-http-plan/1"
+            and plan.get("controller_version") == "agentops-http-control/5"
+            and plan["source_files"] == sources and plan["harness_files"] == http.harness(inventory),
+            "HTTP controller/source/harness differs")
+    verify_boundary_sources(exported, inventory,
+        [row for row in plan['harness_files'] if row['path'].startswith(installed_prefix)])
+    require(plan["native_prerequisite"] == native_binding
+            and plan["runtime_inventory"] == record(directory / "prepared-runtime.stdout.bin", exported),
+            "HTTP prerequisite/runtime binding differs")
+    require(load(directory / "prepared-runtime.stdout.bin") == inventory
+            and load(directory / "execution-runtime.stdout.bin") == inventory, "HTTP runtime changed")
+    inspection_captures(exported, HTTP, result["linux_workspace"])
+    require(load(directory / "preparation-result.json").get("status") == "prepared_not_executed",
+            "HTTP preparation did not pass")
+    execution = load(directory / "execution.json")
+    require(execution.get("schema_version") == "agentops-http-execution/5"
+            and execution["plan"] == record(directory / "plan.json", exported)
+            and execution["native_prerequisite"] == native_binding, "HTTP execution binding differs")
+    linux_directory = linux_path(result["linux_workspace"], HTTP)
+    capture_receipt(exported, HTTP, "wire-check", [stage_rows[-1]["argv"][0], "-B",
+        linux_path(result["linux_workspace"], "scripts/check_agentops_http_v2.py"),
+        "--run", linux_directory, "--output", linux_directory + "/check.json"], result["linux_workspace"])
+    semantic = check_wire(directory, seed_snapshot(exported / "external/agentops-c806b7f1/agents/data/incidents.db"))
+    service_provenance(exported, result['linux_workspace'], stage_rows[-1])
+    recorded = load(directory / "check.json")
+    require(recorded.get("schema_version") == "agentops-http-check/2"
+            and all(recorded.get(key) == value for key, value in semantic.items()), "Stored HTTP semantic report differs")
+    for row in recorded["inputs"]:
+        if row["path"] not in {"wire-check.stdout.bin", "wire-check.stderr.bin"}:
+            require(record(relative_file(directory, row["path"]), directory)["sha256"] == row["sha256"],
+                    "Stable HTTP checker input changed")
+    report.update(status="artifact_integrity_and_semantics_verified", http_semantics=semantic,
+        checker_stream_limit="Stored checker input hashes predate its stdout; terminal file hashes are checked")
+    return report
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--run", type=Path, default=ROOT / "runs/agentops-native-eligibility/linux-socket-resume-v8")
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    require(not args.output.exists(), "Never overwrite an earlier audit")
+    report = {"schema_version": "agentops-socket-resume-recheck/8", "status": "failed"}
+    try:
+        report.update(check(args.run.resolve()))
+    except Exception as error:
+        report["error"] = f"{type(error).__name__}: {error}"
+    with args.output.open("x", encoding="utf-8") as stream:
+        json.dump(report, stream, indent=2)
+    print(json.dumps(report, indent=2))
+    raise SystemExit(1 if report["status"] == "failed" else 0)

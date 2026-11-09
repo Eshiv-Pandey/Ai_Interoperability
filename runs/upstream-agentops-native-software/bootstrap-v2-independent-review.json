@@ -1,0 +1,325 @@
+{
+  "audit_limits": {
+    "audit_kind": "read-only retained file and receipt audit; no test child rerun",
+    "captured_file_bytes": 1048576,
+    "captured_total_bytes": 4194304,
+    "excluded_claims": [
+      "native application qualification",
+      "benchmark grades",
+      "source authentication",
+      "real Windows Job validation",
+      "complete event stream",
+      "model access"
+    ],
+    "manifest_members": 100,
+    "receipt_json_bytes": 1048576
+  },
+  "audited_allocation": "runs/upstream-agentops-native-software/bootstrap-v2",
+  "audited_result": {
+    "bytes": 2971,
+    "sha256": "d6235141148a4ff21581980b475c77efde7193e0979d9bb097062e375a365dc4"
+  },
+  "benchmark_grading_performed": false,
+  "capture_command": [
+    "C:\\Python313\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-c",
+    "\nimport json\nfrom pathlib import Path\nimport runpy\nimport sys\nimport types\nimport unittest\n\nroot = Path(sys.argv[1]).resolve()\ntests = json.loads(sys.argv[2])\nexecution_path = Path(sys.argv[3])\nsys.path.insert(0, str(root / \"scripts\"))\nsys.path.insert(0, str(root / \"src\"))\nsys.argv = [\"captured_upstream_agentops_validation\"]\nloader = unittest.TestLoader()\nsuite = unittest.TestSuite()\nfor index, relative in enumerate(tests):\n    module_name = \"captured_validation_test_\" + str(index)\n    values = runpy.run_path(str(root / relative), run_name=module_name)\n    module = types.ModuleType(module_name)\n    module.__dict__.update(values)\n    sys.modules[module_name] = module\n    suite.addTests(loader.loadTestsFromModule(module))\nresult = unittest.TextTestRunner(verbosity=2).run(suite)\nrecord = {\"tests_run\": result.testsRun, \"failures\": len(result.failures), \"errors\": len(result.errors),\n          \"skips\": len(result.skipped), \"expected_failures\": len(result.expectedFailures),\n          \"unexpected_successes\": len(result.unexpectedSuccesses), \"successful\": result.wasSuccessful(),\n          \"isolated_python\": sys.flags.isolated == 1, \"site_disabled\": sys.flags.no_site == 1,\n          \"bytecode_disabled\": sys.dont_write_bytecode, \"executed_test_files\": tests}\nwith execution_path.open(\"x\", encoding=\"utf-8\") as stream:\n    json.dump(record, stream, sort_keys=True, indent=2)\n    stream.write(\"\\n\")\nraise SystemExit(0 if result.wasSuccessful() else 1)\n",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\upstream-agentops-native-software\\bootstrap-v2\\workspace",
+    "[\"tests/test_serve_upstream_agentops_cases_v1.py\"]",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\upstream-agentops-native-software\\bootstrap-v2\\execution.json"
+  ],
+  "capture_test_files": [
+    "tests/test_serve_upstream_agentops_cases_v1.py"
+  ],
+  "captured_driver": {
+    "bytes": 13576,
+    "sha256": "4921d00724838700de62464881e161ce589763ca0dc235ea9136a918fee58f15"
+  },
+  "captured_timeout_seconds": 120,
+  "checks": [
+    {
+      "name": "passed bootstrap",
+      "passed": true
+    },
+    {
+      "name": "result tests_run",
+      "passed": true
+    },
+    {
+      "name": "result failures",
+      "passed": true
+    },
+    {
+      "name": "result errors",
+      "passed": true
+    },
+    {
+      "name": "result skips",
+      "passed": true
+    },
+    {
+      "name": "result expected_failures",
+      "passed": true
+    },
+    {
+      "name": "result unexpected_successes",
+      "passed": true
+    },
+    {
+      "name": "result exit_code",
+      "passed": true
+    },
+    {
+      "name": "original_sources_unchanged",
+      "passed": true
+    },
+    {
+      "name": "captured_sources_unchanged",
+      "passed": true
+    },
+    {
+      "name": "captured_files_unchanged",
+      "passed": true
+    },
+    {
+      "name": "driver_unchanged",
+      "passed": true
+    },
+    {
+      "name": "execution tests_run",
+      "passed": true
+    },
+    {
+      "name": "execution failures",
+      "passed": true
+    },
+    {
+      "name": "execution errors",
+      "passed": true
+    },
+    {
+      "name": "execution skips",
+      "passed": true
+    },
+    {
+      "name": "execution expected_failures",
+      "passed": true
+    },
+    {
+      "name": "execution unexpected_successes",
+      "passed": true
+    },
+    {
+      "name": "execution isolated_python",
+      "passed": true
+    },
+    {
+      "name": "execution site_disabled",
+      "passed": true
+    },
+    {
+      "name": "execution bytecode_disabled",
+      "passed": true
+    },
+    {
+      "name": "execution successful",
+      "passed": true
+    },
+    {
+      "name": "execution receipt exact",
+      "passed": true
+    },
+    {
+      "name": "unique captured manifest",
+      "passed": true
+    },
+    {
+      "name": "exact terminal file membership",
+      "passed": true
+    },
+    {
+      "name": "captured execution.json",
+      "passed": true
+    },
+    {
+      "name": "captured plan.json",
+      "passed": true
+    },
+    {
+      "name": "captured source/capture_upstream_agentops_validation_v1.py",
+      "passed": true
+    },
+    {
+      "name": "captured stderr.txt",
+      "passed": true
+    },
+    {
+      "name": "captured stdout.txt",
+      "passed": true
+    },
+    {
+      "name": "captured workspace/scripts/serve_upstream_agentops_cases_v1.py",
+      "passed": true
+    },
+    {
+      "name": "captured workspace/tests/test_serve_upstream_agentops_cases_v1.py",
+      "passed": true
+    },
+    {
+      "name": "plan source identities exact",
+      "passed": true
+    },
+    {
+      "name": "current original scripts/serve_upstream_agentops_cases_v1.py",
+      "passed": true
+    },
+    {
+      "name": "frozen original scripts/serve_upstream_agentops_cases_v1.py",
+      "passed": true
+    },
+    {
+      "name": "current original tests/test_serve_upstream_agentops_cases_v1.py",
+      "passed": true
+    },
+    {
+      "name": "frozen original tests/test_serve_upstream_agentops_cases_v1.py",
+      "passed": true
+    },
+    {
+      "name": "current driver identity",
+      "passed": true
+    },
+    {
+      "name": "captured driver identity",
+      "passed": true
+    },
+    {
+      "name": "stdout identity",
+      "passed": true
+    },
+    {
+      "name": "stderr identity",
+      "passed": true
+    },
+    {
+      "name": "independent unittest summary",
+      "passed": true
+    },
+    {
+      "name": "exact test selection",
+      "passed": true
+    },
+    {
+      "name": "no native or grade claim",
+      "passed": true
+    }
+  ],
+  "checks_passed": 44,
+  "consumed_input_allocations_modified": false,
+  "declared_manifest_excluding_result": {
+    "execution.json": {
+      "bytes": 326,
+      "sha256": "1c14de10235852c0fc1d86b03fb2f256255c0a0b68bf1fd4128170c4941616a6"
+    },
+    "plan.json": {
+      "bytes": 3118,
+      "sha256": "1f4a8512320bff31ec0749fdc4e8920f84d97fe3e39f176739114242d5803b35"
+    },
+    "source/capture_upstream_agentops_validation_v1.py": {
+      "bytes": 13576,
+      "sha256": "4921d00724838700de62464881e161ce589763ca0dc235ea9136a918fee58f15"
+    },
+    "stderr.txt": {
+      "bytes": 12780,
+      "sha256": "b3e79fc8d3baa6c7d7f2d7618d8a896b12005d1ff8923e6012c77bc2ca230cc7"
+    },
+    "stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "workspace/scripts/serve_upstream_agentops_cases_v1.py": {
+      "bytes": 27562,
+      "sha256": "23cea2ba7c30fb3c80684faceb1f5af044a9fa95f40864cc705ad1b4294395d6"
+    },
+    "workspace/tests/test_serve_upstream_agentops_cases_v1.py": {
+      "bytes": 44325,
+      "sha256": "9a5e20ccf24b6d6daf64528581949b97dfdae430a3d146395aca3924d0fc6784"
+    }
+  },
+  "execution": {
+    "bytecode_disabled": true,
+    "errors": 0,
+    "executed_test_files": [
+      "tests/test_serve_upstream_agentops_cases_v1.py"
+    ],
+    "expected_failures": 0,
+    "failures": 0,
+    "isolated_python": true,
+    "site_disabled": true,
+    "skips": 0,
+    "successful": true,
+    "tests_run": 51,
+    "unexpected_successes": 0
+  },
+  "exporters_or_comparators_run_by_audit": 0,
+  "finished_at_utc": "2026-10-29T16:22:34.286512+00:00",
+  "manifest_files_excluding_result": 7,
+  "model_calls_by_audit": 0,
+  "native_processes_launched_by_audit": 0,
+  "native_qualification_established": false,
+  "observed_files_including_result": {
+    "execution.json": {
+      "bytes": 326,
+      "sha256": "1c14de10235852c0fc1d86b03fb2f256255c0a0b68bf1fd4128170c4941616a6"
+    },
+    "plan.json": {
+      "bytes": 3118,
+      "sha256": "1f4a8512320bff31ec0749fdc4e8920f84d97fe3e39f176739114242d5803b35"
+    },
+    "result.json": {
+      "bytes": 2971,
+      "sha256": "d6235141148a4ff21581980b475c77efde7193e0979d9bb097062e375a365dc4"
+    },
+    "source/capture_upstream_agentops_validation_v1.py": {
+      "bytes": 13576,
+      "sha256": "4921d00724838700de62464881e161ce589763ca0dc235ea9136a918fee58f15"
+    },
+    "stderr.txt": {
+      "bytes": 12780,
+      "sha256": "b3e79fc8d3baa6c7d7f2d7618d8a896b12005d1ff8923e6012c77bc2ca230cc7"
+    },
+    "stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "workspace/scripts/serve_upstream_agentops_cases_v1.py": {
+      "bytes": 27562,
+      "sha256": "23cea2ba7c30fb3c80684faceb1f5af044a9fa95f40864cc705ad1b4294395d6"
+    },
+    "workspace/tests/test_serve_upstream_agentops_cases_v1.py": {
+      "bytes": 44325,
+      "sha256": "9a5e20ccf24b6d6daf64528581949b97dfdae430a3d146395aca3924d0fc6784"
+    }
+  },
+  "schema_version": "upstream-agentops-software-independent-review/1",
+  "scope": "Retained software validation file hashes, exact membership, sources, flags, machine counts and unittest summary. No test child execution by this audit.",
+  "sdk_imports_by_audit": 0,
+  "source_files": {
+    "scripts/serve_upstream_agentops_cases_v1.py": {
+      "bytes": 27562,
+      "sha256": "23cea2ba7c30fb3c80684faceb1f5af044a9fa95f40864cc705ad1b4294395d6"
+    },
+    "tests/test_serve_upstream_agentops_cases_v1.py": {
+      "bytes": 44325,
+      "sha256": "9a5e20ccf24b6d6daf64528581949b97dfdae430a3d146395aca3924d0fc6784"
+    }
+  },
+  "started_at_utc": "2026-10-29T16:22:34.268893+00:00",
+  "status": "passed",
+  "suite": "bootstrap",
+  "tests_run_by_audit": 0,
+  "total_files": 8
+}

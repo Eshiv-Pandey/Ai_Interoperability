@@ -1,0 +1,204 @@
+{
+  "schema_version": "agentops-bridge-case-check/1",
+  "valid": true,
+  "complete": false,
+  "strict_success": false,
+  "validation_errors": [],
+  "observation_gaps": [
+    "service:terminal.snapshot_missing",
+    "service_shutdown_not_clean",
+    "service_owned_group_not_initially_clean",
+    "coordinator_cleanup_errors"
+  ],
+  "policy_deviations": [],
+  "qualified_second_domain": false,
+  "scientific_gate_credit_added": 0,
+  "case_id": "N11",
+  "kind": "native",
+  "status": "failed",
+  "service": {
+    "schema_version": "agentops-bridge-service-check/1",
+    "valid": true,
+    "complete": false,
+    "strict_success": false,
+    "validation_errors": [],
+    "observation_gaps": [
+      "terminal.snapshot_missing"
+    ],
+    "policy_deviations": [],
+    "original": {
+      "task_id": "fc6696c0-2835-453b-9fb2-55cd5a9def07",
+      "context_id": "10531650-10e4-4c28-bd96-03a671009381"
+    },
+    "confirmation": {
+      "args": {
+        "originalFunctionCall": {
+          "args": {
+            "name": "inventory"
+          },
+          "name": "restart_service",
+          "id": "restart-inventory-call"
+        },
+        "toolConfirmation": {
+          "confirmed": false,
+          "hint": "Please approve or reject the tool call restart_service() by responding with a FunctionResponse with an expected ToolConfirmation payload."
+        }
+      },
+      "name": "adk_request_confirmation",
+      "id": "adk-83dd4b6d-9f93-446d-9794-582675663995"
+    },
+    "continuation_attempted": true,
+    "approval_representation": "data",
+    "final_state": "completed",
+    "task_completed": true,
+    "effect": {
+      "classification": "expected_single_effect",
+      "effect_matches_contract": true,
+      "domain_changed": true,
+      "new_audit_rows": 1,
+      "approval_observed": true,
+      "deviations": [],
+      "final_inventory_status": "operational"
+    },
+    "rpc_outcomes": [
+      {
+        "sequence": 2,
+        "method": "SendMessage",
+        "id": 1,
+        "http_status": 200,
+        "errors": []
+      },
+      {
+        "sequence": 3,
+        "method": "GetTask",
+        "id": 2,
+        "http_status": 200,
+        "errors": []
+      },
+      {
+        "sequence": 4,
+        "method": "GetTask",
+        "id": 3,
+        "http_status": 200,
+        "errors": []
+      },
+      {
+        "sequence": 5,
+        "method": "SendMessage",
+        "id": "native-raw-1",
+        "http_status": 200,
+        "errors": []
+      },
+      {
+        "sequence": 6,
+        "method": "GetTask",
+        "id": 4,
+        "http_status": 200,
+        "errors": []
+      },
+      {
+        "sequence": 7,
+        "method": "GetTask",
+        "id": "evaluator-final",
+        "http_status": 200,
+        "errors": []
+      }
+    ],
+    "claim_limit": "Bounded captured attempts only; no whole-interface non-support or C1 claim",
+    "asgi_requests": 7,
+    "model_double_calls": 2,
+    "socket_policy": {
+      "status": "passed",
+      "blocked_capability_probes": 1,
+      "listener_binds": 1
+    },
+    "send_profiles": [
+      {
+        "sequence": 2,
+        "rpc_id": 1,
+        "method": "SendMessage",
+        "version_headers": [
+          "1.0"
+        ],
+        "configuration_present": true,
+        "configuration": {
+          "acceptedOutputModes": [
+            "text/plain",
+            "application/json"
+          ],
+          "returnImmediately": true
+        },
+        "message": {
+          "messageId": "msg-mvsk2dhv-bzvsuexb",
+          "role": "ROLE_USER",
+          "parts": [
+            {
+              "text": "Restart inventory.",
+              "mediaType": "text/plain"
+            }
+          ]
+        }
+      },
+      {
+        "sequence": 5,
+        "rpc_id": "native-raw-1",
+        "method": "SendMessage",
+        "version_headers": [
+          "1.0"
+        ],
+        "configuration_present": false,
+        "configuration": null,
+        "message": {
+          "messageId": "msg-mvsk2gpl-tu915b0t",
+          "role": "ROLE_USER",
+          "taskId": "fc6696c0-2835-453b-9fb2-55cd5a9def07",
+          "contextId": "10531650-10e4-4c28-bd96-03a671009381",
+          "parts": [
+            {
+              "data": {
+                "id": "adk-83dd4b6d-9f93-446d-9794-582675663995",
+                "name": "adk_request_confirmation",
+                "response": {
+                  "confirmed": true,
+                  "payload": {
+                    "rationale": "Inventory is down and INC-002 matches the service-down runbook."
+                  }
+                }
+              },
+              "metadata": {
+                "adk_type": "function_response"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "continuation_sequence": 5,
+    "evaluator_final_started_at_utc": "2026-10-28T20:17:09.329139+00:00",
+    "final_text": [
+      "The approved inventory restart completed and was audited.",
+      "Restart inventory."
+    ]
+  },
+  "client": {
+    "schema_version": "agentops-native-profile-client-check/1",
+    "valid": true,
+    "complete": true,
+    "validation_errors": [],
+    "observation_gaps": [],
+    "policy_deviations": [],
+    "public_bindings": {
+      "task_id": "fc6696c0-2835-453b-9fb2-55cd5a9def07",
+      "context_id": "10531650-10e4-4c28-bd96-03a671009381",
+      "confirmation_call_id": "adk-83dd4b6d-9f93-446d-9794-582675663995",
+      "confirmation_call_name": "adk_request_confirmation"
+    },
+    "profile": "mg-raw-header",
+    "representation": "data",
+    "status": "recorded",
+    "sdk_events": 17
+  },
+  "task_completed": true,
+  "effect_classification": "expected_single_effect",
+  "outcome": "unknown_or_partial"
+}

@@ -1,0 +1,1055 @@
+{
+  "schema_version": "historical-projection-verification/0",
+  "recorded_at": "2026-10-23T20:19:51.989026+00:00",
+  "expected_artifact_text": "development-destination = Paris",
+  "claim_limit": "Historical development traces only; no prospective admission, model completeness, human review or novelty claim",
+  "all_capture_attempts_retained": true,
+  "capture_attempts": 5,
+  "checked_projections": 3,
+  "capture_failures": 2,
+  "checks": [
+    {
+      "input": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\wire-observation\\amirk_a2a_to_mcp-2026-10-23T19-59-06-019Z-34176\\runtime.json",
+      "input_sha256": "28ce4488556baebfc13eebba2306aaf17e571dfb42befd634afc092249e36ceb",
+      "run_id": "amirk_a2a_to_mcp-2026-10-23T19-59-06-019Z-34176",
+      "route_id": "amirk_a2a_to_mcp",
+      "capture_outcome": "failed",
+      "capture_exit_code": 1,
+      "projection_status": "capture-failed-not-projectable",
+      "capture_error": "Error: Bridge exited 1 before startup\n    at ChildProcess.<anonymous> (file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/capture-amirk-observation.mjs:59:70)\n    at Object.onceWrapper (node:events:639:26)\n    at ChildProcess.emit (node:events:524:28)\n    at ChildProcess._handle.onexit (node:internal/child_process:293:12)"
+    },
+    {
+      "input": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\wire-observation\\amirk_a2a_to_mcp-2026-10-23T20-00-06-836Z-33464\\runtime.json",
+      "input_sha256": "328d45febb7131cc5698d5049775059843608160806097418b1de037fc2835e3",
+      "run_id": "amirk_a2a_to_mcp-2026-10-23T20-00-06-836Z-33464",
+      "route_id": "amirk_a2a_to_mcp",
+      "capture_outcome": "failed",
+      "capture_exit_code": 1,
+      "projection_status": "capture-failed-not-projectable",
+      "capture_error": "Error: Bridge exited 1 before startup\n    at ChildProcess.<anonymous> (file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/capture-amirk-observation.mjs:59:70)\n    at Object.onceWrapper (node:events:639:26)\n    at ChildProcess.emit (node:events:524:28)\n    at ChildProcess._handle.onexit (node:internal/child_process:293:12)"
+    },
+    {
+      "input": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\wire-observation\\amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828\\runtime.json",
+      "input_sha256": "8c9ac1b2d0b3d4d8fc665f6656872480fed13cbaff08a3e5a4c41d7b276b58c5",
+      "run_id": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828",
+      "route_id": "amirk_a2a_to_mcp",
+      "capture_outcome": "passed",
+      "capture_exit_code": 0,
+      "private_sidecar_sha256": "36c0da633cb575370d63b47f8338eb4a1e943093284703d30a3a9914086a2d6b",
+      "private_sidecar_path": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\wire-observation\\amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828\\private-native-http.jsonl",
+      "projection_status": "checked",
+      "projection": {
+        "schema_version": "observed-trace-projection/0",
+        "source_trace_sha256": "a32ae80d4c74f0e20ebb1a9b918fcb2de215391cafbe8472fda72841c4b1895b",
+        "config": {
+          "expected_artifact_text": "development-destination = Paris"
+        },
+        "analysis_clock": 1792785733,
+        "initial_exchange_id": "mcp-5",
+        "events": [
+          {
+            "state_id": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-5",
+            "exchange_id": "mcp-5",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "a9ec84df6d61e40304ea647b8981bccfd4e1dbe5db8eca5bbecfd1fdf02a6b9e",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "returned_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "required_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA"
+            }
+          },
+          {
+            "state_id": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-6",
+            "exchange_id": "mcp-6",
+            "request_method": "tasks/update",
+            "operation": "tasks/update",
+            "response_sha256": "68157815e9508d5e35b17d60a699dc95a24d01b7a5581706b558b9c5a2f82da5",
+            "evidence_source": "extension-observation",
+            "observable_fields": {
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "required_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA"
+            }
+          },
+          {
+            "state_id": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-7",
+            "exchange_id": "mcp-7",
+            "request_method": "tasks/get",
+            "operation": "tasks/get",
+            "response_sha256": "57c9fe140927724f7b57e68d7088c0940eeefea1d7b0302223e895d7a59053e5",
+            "evidence_source": "extension-observation",
+            "observable_fields": {
+              "returned_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "status": "working",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "required_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA"
+            }
+          },
+          {
+            "state_id": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-8",
+            "exchange_id": "mcp-8",
+            "request_method": "tasks/get",
+            "operation": "tasks/get",
+            "response_sha256": "883869bb5b87cde831ef3a33cffa60a23f016d78c958fdd7fdd9f285fac3655f",
+            "evidence_source": "extension-observation",
+            "observable_fields": {
+              "returned_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "returned_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "required_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA"
+            }
+          },
+          {
+            "state_id": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-9",
+            "exchange_id": "mcp-9",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "4675e5b3273a46e9f6ecee05e35995f29d10ca0c61c0405a57e5bde864b3fb6c",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "returned_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "required_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA"
+            }
+          }
+        ],
+        "manifest": {
+          "schema_version": "finite-continuation/1",
+          "id": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828:historical",
+          "route": "amirk_a2a_to_mcp historical observation",
+          "horizon": 4,
+          "provenance": {
+            "kind": "wire-derived",
+            "source": "runtime-wire-observation/1:a32ae80d4c74f0e20ebb1a9b918fcb2de215391cafbe8472fda72841c4b1895b",
+            "review_status": "AI-authored projection; human review pending"
+          },
+          "evidence": {
+            "complete": false,
+            "observed_at": 1792785733,
+            "valid_until": 1792785733
+          },
+          "initial": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-5",
+          "states": {
+            "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-5": {
+              "returned_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "returned_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "required_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA"
+            },
+            "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-6": {
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "required_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA"
+            },
+            "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-7": {
+              "returned_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "status": "working",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "required_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA"
+            },
+            "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-8": {
+              "returned_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "returned_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "required_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA"
+            },
+            "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-9": {
+              "returned_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "returned_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "required_context_reference": "cx_eDhqxKAcelv12vsPbwJbMA"
+            }
+          },
+          "transitions": [
+            {
+              "id": "edge:mcp-6",
+              "source": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-5",
+              "target": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-6",
+              "operation": "tasks/update"
+            },
+            {
+              "id": "edge:mcp-7",
+              "source": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-6",
+              "target": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-7",
+              "operation": "tasks/get"
+            },
+            {
+              "id": "edge:mcp-8",
+              "source": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-7",
+              "target": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-8",
+              "operation": "tasks/get"
+            },
+            {
+              "id": "edge:mcp-9",
+              "source": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-8",
+              "target": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828::mcp-9",
+              "operation": "a2a_get_task"
+            }
+          ],
+          "runtime_contract": {
+            "goal": [
+              {
+                "field": "status",
+                "op": "eq",
+                "value": "completed"
+              },
+              {
+                "field": "returned_task_reference",
+                "op": "eq_field",
+                "other_field": "required_task_reference"
+              },
+              {
+                "field": "returned_context_reference",
+                "op": "eq_field",
+                "other_field": "required_context_reference"
+              },
+              {
+                "field": "artifact_contains_expected",
+                "op": "eq",
+                "value": true
+              }
+            ],
+            "invariants": [
+              {
+                "field": "request_target_valid",
+                "op": "eq",
+                "value": true
+              },
+              {
+                "field": "task_namespace",
+                "op": "eq",
+                "value": "bridge-handle"
+              }
+            ]
+          }
+        }
+      },
+      "independent_projection_valid": true,
+      "private_native_correlation_valid": true,
+      "baseline": {
+        "decision": "supported",
+        "reason": "bounded_path",
+        "certificate": {
+          "model_sha256": "c7d1b991b62bf72e3a23c7c46770dbf805ca13404668d45b2cc2c08a7aadc8d1",
+          "checked_at": 1792785733,
+          "horizon": 4,
+          "valid_until": 1792785733,
+          "kind": "path",
+          "transition_ids": [
+            "edge:mcp-6",
+            "edge:mcp-7",
+            "edge:mcp-8"
+          ]
+        },
+        "stats": {
+          "state_visits": 4,
+          "edge_checks": 3
+        }
+      },
+      "independent_finite_oracle": {
+        "decision": "supported",
+        "reason": "A modeled invariant-safe path satisfies the runtime goal within the horizon.",
+        "certificate": {
+          "model_sha256": "c7d1b991b62bf72e3a23c7c46770dbf805ca13404668d45b2cc2c08a7aadc8d1",
+          "checked_at": 1792785733,
+          "horizon": 4,
+          "valid_until": 1792785733,
+          "kind": "path",
+          "transition_ids": [
+            "edge:mcp-6",
+            "edge:mcp-7",
+            "edge:mcp-8"
+          ]
+        },
+        "stats": {
+          "path_nodes": 4
+        }
+      },
+      "certificate_validity": {
+        "baseline": true,
+        "oracle": true
+      },
+      "decision_agreement": true
+    },
+    {
+      "input": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\wire-observation\\mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096\\runtime.json",
+      "input_sha256": "9b666da8d7fa6a4ef848d42a30e819f81bbcb57bdcf0c2391ef10e3069615f8f",
+      "run_id": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096",
+      "route_id": "mgcrea_mcp_a2a",
+      "capture_outcome": "passed",
+      "capture_exit_code": 0,
+      "private_sidecar_sha256": "5e15fad0a9ebcc153e379194943e502a99d4c84d1049e07d6baae0956daa8822",
+      "private_sidecar_path": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\wire-observation\\mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096\\private-native-http.jsonl",
+      "projection_status": "checked",
+      "projection": {
+        "schema_version": "observed-trace-projection/0",
+        "source_trace_sha256": "fb8feb0f2b9bb2607a1be6808267a8272489a2a8ec93f90cf4c96a3166b08755",
+        "config": {
+          "expected_artifact_text": "development-destination = Paris"
+        },
+        "analysis_clock": 1792785817,
+        "initial_exchange_id": "mcp-3",
+        "events": [
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-3",
+            "exchange_id": "mcp-3",
+            "request_method": "tools/call",
+            "operation": "a2a_send_message",
+            "response_sha256": "0c0e0a7163fa7b25df1574220dc487bec89168f95cc6315f36359de7b2c76795",
+            "evidence_source": "send-acknowledgement",
+            "observable_fields": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "submitted",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-4",
+            "exchange_id": "mcp-4",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "8b95050cfc93558f4e1b2b181b0c7370be8effe38be3002a0374117ef43c09b1",
+            "evidence_source": "local-mirror",
+            "observable_fields": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "submitted",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-5",
+            "exchange_id": "mcp-5",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "f65dda1fb3d4082fca39616dff09734e1d1724c68e857345ea1ad2b747877d2c",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "input_required",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-6",
+            "exchange_id": "mcp-6",
+            "request_method": "tools/call",
+            "operation": "a2a_send_message",
+            "response_sha256": "210aabfbbbf6540a7acb9517b0a60fef48357185041ec4451966f48ffe3c40c6",
+            "evidence_source": "send-acknowledgement",
+            "observable_fields": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-7",
+            "exchange_id": "mcp-7",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "d06bc9732faae607ac19aa2f7da7c4d382e8a37c07ca2405567bfda2183796ab",
+            "evidence_source": "local-mirror",
+            "observable_fields": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "input_required",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-8",
+            "exchange_id": "mcp-8",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "7b86ee3b4ebdee2516252de7d485d6dc6a045f5351836d7a3cd2026592512bf2",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-9",
+            "exchange_id": "mcp-9",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "3b4680e2346eb0b7eeb1c193e1b5492d13ae2646de90a4d0c880482f0f1d38c5",
+            "evidence_source": "local-mirror",
+            "observable_fields": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            }
+          }
+        ],
+        "manifest": {
+          "schema_version": "finite-continuation/1",
+          "id": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096:historical",
+          "route": "mgcrea_mcp_a2a historical observation",
+          "horizon": 6,
+          "provenance": {
+            "kind": "wire-derived",
+            "source": "runtime-wire-observation/1:fb8feb0f2b9bb2607a1be6808267a8272489a2a8ec93f90cf4c96a3166b08755",
+            "review_status": "AI-authored projection; human review pending"
+          },
+          "evidence": {
+            "complete": false,
+            "observed_at": 1792785817,
+            "valid_until": 1792785817
+          },
+          "initial": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-3",
+          "states": {
+            "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-3": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "submitted",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-4": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "submitted",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-5": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "input_required",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-6": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-7": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "input_required",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-8": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-9": {
+              "returned_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "returned_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "80e99579-154e-47aa-8870-d156cc0a77a0",
+              "required_context_reference": "9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3"
+            }
+          },
+          "transitions": [
+            {
+              "id": "edge:mcp-4",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-3",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-4",
+              "operation": "a2a_get_task"
+            },
+            {
+              "id": "edge:mcp-5",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-4",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-5",
+              "operation": "a2a_get_task"
+            },
+            {
+              "id": "edge:mcp-6",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-5",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-6",
+              "operation": "a2a_send_message"
+            },
+            {
+              "id": "edge:mcp-7",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-6",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-7",
+              "operation": "a2a_get_task"
+            },
+            {
+              "id": "edge:mcp-8",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-7",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-8",
+              "operation": "a2a_get_task"
+            },
+            {
+              "id": "edge:mcp-9",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-8",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096::mcp-9",
+              "operation": "a2a_get_task"
+            }
+          ],
+          "runtime_contract": {
+            "goal": [
+              {
+                "field": "status",
+                "op": "eq",
+                "value": "completed"
+              },
+              {
+                "field": "returned_task_reference",
+                "op": "eq_field",
+                "other_field": "required_task_reference"
+              },
+              {
+                "field": "returned_context_reference",
+                "op": "eq_field",
+                "other_field": "required_context_reference"
+              },
+              {
+                "field": "artifact_contains_expected",
+                "op": "eq",
+                "value": true
+              }
+            ],
+            "invariants": [
+              {
+                "field": "request_target_valid",
+                "op": "eq",
+                "value": true
+              },
+              {
+                "field": "task_namespace",
+                "op": "eq",
+                "value": "public-native-a2a-id"
+              }
+            ]
+          }
+        }
+      },
+      "independent_projection_valid": true,
+      "private_native_correlation_valid": true,
+      "baseline": {
+        "decision": "supported",
+        "reason": "bounded_path",
+        "certificate": {
+          "model_sha256": "d4ee4ba5a6c7ed01ea524521e9a69d40fd1bdb2a343933efa71e51b93ab3df2f",
+          "checked_at": 1792785817,
+          "horizon": 6,
+          "valid_until": 1792785817,
+          "kind": "path",
+          "transition_ids": [
+            "edge:mcp-4",
+            "edge:mcp-5",
+            "edge:mcp-6",
+            "edge:mcp-7",
+            "edge:mcp-8"
+          ]
+        },
+        "stats": {
+          "state_visits": 6,
+          "edge_checks": 5
+        }
+      },
+      "independent_finite_oracle": {
+        "decision": "supported",
+        "reason": "A modeled invariant-safe path satisfies the runtime goal within the horizon.",
+        "certificate": {
+          "model_sha256": "d4ee4ba5a6c7ed01ea524521e9a69d40fd1bdb2a343933efa71e51b93ab3df2f",
+          "checked_at": 1792785817,
+          "horizon": 6,
+          "valid_until": 1792785817,
+          "kind": "path",
+          "transition_ids": [
+            "edge:mcp-4",
+            "edge:mcp-5",
+            "edge:mcp-6",
+            "edge:mcp-7",
+            "edge:mcp-8"
+          ]
+        },
+        "stats": {
+          "path_nodes": 6
+        }
+      },
+      "certificate_validity": {
+        "baseline": true,
+        "oracle": true
+      },
+      "decision_agreement": true
+    },
+    {
+      "input": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\wire-observation\\mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536\\runtime.json",
+      "input_sha256": "13f98e3286a7e46639f7a1ffa4bbe376a18b3c27fef8151a42f441ee1d5f9f54",
+      "run_id": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536",
+      "route_id": "mgcrea_mcp_a2a",
+      "capture_outcome": "passed",
+      "capture_exit_code": 0,
+      "private_sidecar_sha256": "1ddb6c1edb1ad05f21af439bfa2bec6d528ea1ea2389465d2ad0820882c9f94f",
+      "private_sidecar_path": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\wire-observation\\mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536\\private-native-http.jsonl",
+      "projection_status": "checked",
+      "projection": {
+        "schema_version": "observed-trace-projection/0",
+        "source_trace_sha256": "239f5b152fd3625f673f7fe09e0a98d7b439205b2dc1d308a9e5467ec9a40a53",
+        "config": {
+          "expected_artifact_text": "development-destination = Paris"
+        },
+        "analysis_clock": 1792785999,
+        "initial_exchange_id": "mcp-3",
+        "events": [
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-3",
+            "exchange_id": "mcp-3",
+            "request_method": "tools/call",
+            "operation": "a2a_send_message",
+            "response_sha256": "7a55b960e2af393181db2a12bbecc438f5b7b8800f0fa48a7b1ac68f52f69967",
+            "evidence_source": "send-acknowledgement",
+            "observable_fields": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "submitted",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-4",
+            "exchange_id": "mcp-4",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "b81e86cf2972a99f4520b3ab292e18b07a9d41eab839e7b168e753ed81e3a4d8",
+            "evidence_source": "local-mirror",
+            "observable_fields": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "submitted",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-5",
+            "exchange_id": "mcp-5",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "e95beab680d5cdb4bc691e53b2fca375a45083a7602e60e8276f5a4ea211c5ab",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "input_required",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-6",
+            "exchange_id": "mcp-6",
+            "request_method": "tools/call",
+            "operation": "a2a_send_message",
+            "response_sha256": "5e34571cdefe1aa320f58f2b3a4db9acf4eddd2b943165b36a84ffa7f2402138",
+            "evidence_source": "send-acknowledgement",
+            "observable_fields": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-7",
+            "exchange_id": "mcp-7",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "4655fc11ceee635583b017e3d84ac0102afc8bd61f514ce1e7b7c586ff8311c4",
+            "evidence_source": "local-mirror",
+            "observable_fields": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "input_required",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-8",
+            "exchange_id": "mcp-8",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "972e1dd50b74d2da51b848446006254bcaa36af80c84f8a10d61afc18d824d94",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            }
+          },
+          {
+            "state_id": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-9",
+            "exchange_id": "mcp-9",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "286cab876a9503b3d78637da1a113f81b17b4fb6a0f228793bdc59ff0a466c74",
+            "evidence_source": "local-mirror",
+            "observable_fields": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            }
+          }
+        ],
+        "manifest": {
+          "schema_version": "finite-continuation/1",
+          "id": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536:historical",
+          "route": "mgcrea_mcp_a2a historical observation",
+          "horizon": 6,
+          "provenance": {
+            "kind": "wire-derived",
+            "source": "runtime-wire-observation/1:239f5b152fd3625f673f7fe09e0a98d7b439205b2dc1d308a9e5467ec9a40a53",
+            "review_status": "AI-authored projection; human review pending"
+          },
+          "evidence": {
+            "complete": false,
+            "observed_at": 1792785999,
+            "valid_until": 1792785999
+          },
+          "initial": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-3",
+          "states": {
+            "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-3": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "submitted",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-4": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "submitted",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-5": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "input_required",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-6": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-7": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "input_required",
+              "artifact_contains_expected": false,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-8": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            },
+            "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-9": {
+              "returned_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "returned_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4",
+              "status": "completed",
+              "artifact_contains_expected": true,
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "d3b691d2-253f-4df1-ab07-fbf2e5ed9152",
+              "required_context_reference": "0f627af2-37fe-4839-8638-7b60552df6e4"
+            }
+          },
+          "transitions": [
+            {
+              "id": "edge:mcp-4",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-3",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-4",
+              "operation": "a2a_get_task"
+            },
+            {
+              "id": "edge:mcp-5",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-4",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-5",
+              "operation": "a2a_get_task"
+            },
+            {
+              "id": "edge:mcp-6",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-5",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-6",
+              "operation": "a2a_send_message"
+            },
+            {
+              "id": "edge:mcp-7",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-6",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-7",
+              "operation": "a2a_get_task"
+            },
+            {
+              "id": "edge:mcp-8",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-7",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-8",
+              "operation": "a2a_get_task"
+            },
+            {
+              "id": "edge:mcp-9",
+              "source": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-8",
+              "target": "mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536::mcp-9",
+              "operation": "a2a_get_task"
+            }
+          ],
+          "runtime_contract": {
+            "goal": [
+              {
+                "field": "status",
+                "op": "eq",
+                "value": "completed"
+              },
+              {
+                "field": "returned_task_reference",
+                "op": "eq_field",
+                "other_field": "required_task_reference"
+              },
+              {
+                "field": "returned_context_reference",
+                "op": "eq_field",
+                "other_field": "required_context_reference"
+              },
+              {
+                "field": "artifact_contains_expected",
+                "op": "eq",
+                "value": true
+              }
+            ],
+            "invariants": [
+              {
+                "field": "request_target_valid",
+                "op": "eq",
+                "value": true
+              },
+              {
+                "field": "task_namespace",
+                "op": "eq",
+                "value": "public-native-a2a-id"
+              }
+            ]
+          }
+        }
+      },
+      "independent_projection_valid": true,
+      "private_native_correlation_valid": true,
+      "baseline": {
+        "decision": "supported",
+        "reason": "bounded_path",
+        "certificate": {
+          "model_sha256": "fd1aaa507a4df7ce1f354d6d5638947e8f823ba10e06ceeea17cf81b36057995",
+          "checked_at": 1792785999,
+          "horizon": 6,
+          "valid_until": 1792785999,
+          "kind": "path",
+          "transition_ids": [
+            "edge:mcp-4",
+            "edge:mcp-5",
+            "edge:mcp-6",
+            "edge:mcp-7",
+            "edge:mcp-8"
+          ]
+        },
+        "stats": {
+          "state_visits": 6,
+          "edge_checks": 5
+        }
+      },
+      "independent_finite_oracle": {
+        "decision": "supported",
+        "reason": "A modeled invariant-safe path satisfies the runtime goal within the horizon.",
+        "certificate": {
+          "model_sha256": "fd1aaa507a4df7ce1f354d6d5638947e8f823ba10e06ceeea17cf81b36057995",
+          "checked_at": 1792785999,
+          "horizon": 6,
+          "valid_until": 1792785999,
+          "kind": "path",
+          "transition_ids": [
+            "edge:mcp-4",
+            "edge:mcp-5",
+            "edge:mcp-6",
+            "edge:mcp-7",
+            "edge:mcp-8"
+          ]
+        },
+        "stats": {
+          "path_nodes": 6
+        }
+      },
+      "certificate_validity": {
+        "baseline": true,
+        "oracle": true
+      },
+      "decision_agreement": true
+    }
+  ],
+  "tests": {
+    "command": [
+      "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\.venv\\Scripts\\python.exe",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_bool_and_integer_are_not_equal (test_baseline.BaselineSemantics.test_bool_and_integer_are_not_equal) ... ok\ntest_bound_is_number_of_transitions_and_allows_empty_path (test_baseline.BaselineSemantics.test_bound_is_number_of_transitions_and_allows_empty_path) ... ok\ntest_complete_negative_and_partial_abstention (test_baseline.BaselineSemantics.test_complete_negative_and_partial_abstention) ... ok\ntest_cross_field_binding_is_required (test_baseline.BaselineSemantics.test_cross_field_binding_is_required) ... ok\ntest_evidence_freshness_boundaries (test_baseline.BaselineSemantics.test_evidence_freshness_boundaries) ... ok\ntest_known_false_dominates_unknown_conjunction (test_baseline.BaselineSemantics.test_known_false_dominates_unknown_conjunction) ... ok\ntest_may_compatibility_does_not_require_every_branch_to_succeed (test_baseline.BaselineSemantics.test_may_compatibility_does_not_require_every_branch_to_succeed) ... ok\ntest_missing_observables_are_unknown (test_baseline.BaselineSemantics.test_missing_observables_are_unknown) ... ok\ntest_negative_certificate_covers_recurrent_layers (test_baseline.BaselineSemantics.test_negative_certificate_covers_recurrent_layers) ... ok\ntest_ordered_comparison_wrong_type_is_unknown (test_baseline.BaselineSemantics.test_ordered_comparison_wrong_type_is_unknown) ... ok\ntest_partial_positive_is_conditional_support (test_baseline.BaselineSemantics.test_partial_positive_is_conditional_support) ... ok\ntest_unknown_invariant_cannot_hide_possible_goal (test_baseline.BaselineSemantics.test_unknown_invariant_cannot_hide_possible_goal) ... ok\ntest_json_duplicate_keys_are_not_silently_discarded (test_baseline.InputValidation.test_json_duplicate_keys_are_not_silently_discarded) ... ok\ntest_rejects_bad_structure (test_baseline.InputValidation.test_rejects_bad_structure) ... ok\ntest_all_two_state_graphs_three_valued_predicates_and_bounds (test_crosscheck.IndependentCrosscheck.test_all_two_state_graphs_three_valued_predicates_and_bounds) ... ok\ntest_rejects_mutated_binding_and_omitted_cut_state (test_crosscheck.IndependentCrosscheck.test_rejects_mutated_binding_and_omitted_cut_state) ... ok\ntest_certificate_time_must_be_inside_evidence_window_and_not_future (test_oracle.CertificateTests.test_certificate_time_must_be_inside_evidence_window_and_not_future) ... ok\ntest_changed_horizon_validity_digest_or_kind_is_rejected (test_oracle.CertificateTests.test_changed_horizon_validity_digest_or_kind_is_rejected) ... ok\ntest_digest_uses_utf8_sorted_compact_json_and_is_key_order_independent (test_oracle.CertificateTests.test_digest_uses_utf8_sorted_compact_json_and_is_key_order_independent) ... ok\ntest_independently_constructed_positive_and_negative_certificates (test_oracle.CertificateTests.test_independently_constructed_positive_and_negative_certificates) ... ok\ntest_issued_certificate_can_be_replayed_later_inside_validity_window (test_oracle.CertificateTests.test_issued_certificate_can_be_replayed_later_inside_validity_window) ... ok\ntest_model_digest_binds_contract_evidence_route_and_all_observables (test_oracle.CertificateTests.test_model_digest_binds_contract_evidence_route_and_all_observables) ... ok\ntest_negative_certificate_cannot_hide_reachable_goal (test_oracle.CertificateTests.test_negative_certificate_cannot_hide_reachable_goal) ... ok\ntest_negative_certificate_rejects_hidden_branches_wrong_initial_and_recurrence (test_oracle.CertificateTests.test_negative_certificate_rejects_hidden_branches_wrong_initial_and_recurrence) ... ok\ntest_negative_certificate_rejects_noncanonical_or_malformed_layers (test_oracle.CertificateTests.test_negative_certificate_rejects_noncanonical_or_malformed_layers) ... ok\ntest_negative_certificate_rejects_unknown_goal_or_invariant_and_incomplete_evidence (test_oracle.CertificateTests.test_negative_certificate_rejects_unknown_goal_or_invariant_and_incomplete_evidence) ... ok\ntest_positive_certificate_cannot_exceed_horizon (test_oracle.CertificateTests.test_positive_certificate_cannot_exceed_horizon) ... ok\ntest_positive_certificate_rejects_unknown_final_goal (test_oracle.CertificateTests.test_positive_certificate_rejects_unknown_final_goal) ... ok\ntest_positive_certificate_rejects_unsafe_and_unknown_initial_or_successor (test_oracle.CertificateTests.test_positive_certificate_rejects_unsafe_and_unknown_initial_or_successor) ... ok\ntest_replay_rejects_wrong_id_wrong_endpoint_and_non_goal (test_oracle.CertificateTests.test_replay_rejects_wrong_id_wrong_endpoint_and_non_goal) ... ok\ntest_wrong_decision_unknown_and_extra_fields_have_no_valid_certificate (test_oracle.CertificateTests.test_wrong_decision_unknown_and_extra_fields_have_no_valid_certificate) ... ok\ntest_checker_returns_false_for_malformed_result_shapes (test_oracle.MalformedInputTests.test_checker_returns_false_for_malformed_result_shapes) ... ok\ntest_invalid_identity_provenance_initial_and_states (test_oracle.MalformedInputTests.test_invalid_identity_provenance_initial_and_states) ... ok\ntest_invalid_scalar_objects_and_float_are_input_errors (test_oracle.MalformedInputTests.test_invalid_scalar_objects_and_float_are_input_errors) ... ok\ntest_malformed_clock_horizon_and_evidence (test_oracle.MalformedInputTests.test_malformed_clock_horizon_and_evidence) ... ok\ntest_malformed_predicates_raise_valueerror_instead_of_incidental_typeerror (test_oracle.MalformedInputTests.test_malformed_predicates_raise_valueerror_instead_of_incidental_typeerror) ... ok\ntest_malformed_transitions (test_oracle.MalformedInputTests.test_malformed_transitions) ... ok\ntest_nested_unknown_fields_are_input_errors (test_oracle.MalformedInputTests.test_nested_unknown_fields_are_input_errors) ... ok\ntest_top_level_missing_unknown_and_private_gold_are_input_errors (test_oracle.MalformedInputTests.test_top_level_missing_unknown_and_private_gold_are_input_errors) ... ok\ntest_definitely_unsafe_intermediate_blocks_later_goal (test_oracle.OracleDecisionTests.test_definitely_unsafe_intermediate_blocks_later_goal) ... ok\ntest_duplicate_successors_deduplicated_only_within_a_layer (test_oracle.OracleDecisionTests.test_duplicate_successors_deduplicated_only_within_a_layer) ... ok\ntest_empty_contract_lists_are_true (test_oracle.OracleDecisionTests.test_empty_contract_lists_are_true) ... ok\ntest_equality_ne_and_membership_are_type_sensitive (test_oracle.OracleDecisionTests.test_equality_ne_and_membership_are_type_sensitive) ... ok\ntest_false_conjunct_dominates_unknown_goal (test_oracle.OracleDecisionTests.test_false_conjunct_dominates_unknown_goal) ... ok\ntest_false_conjunct_dominates_unknown_invariant (test_oracle.OracleDecisionTests.test_false_conjunct_dominates_unknown_invariant) ... ok\ntest_field_equality_requires_both_fields_and_same_type (test_oracle.OracleDecisionTests.test_field_equality_requires_both_fields_and_same_type) ... ok\ntest_freshness_is_inclusive_and_stale_or_future_abstains (test_oracle.OracleDecisionTests.test_freshness_is_inclusive_and_stale_or_future_abstains) ... ok\ntest_goal_unknown_in_any_potentially_safe_state_prevents_refutation (test_oracle.OracleDecisionTests.test_goal_unknown_in_any_potentially_safe_state_prevents_refutation) ... ok\ntest_horizon_counts_transitions_and_includes_boundary (test_oracle.OracleDecisionTests.test_horizon_counts_transitions_and_includes_boundary) ... ok\ntest_initial_goal_has_zero_transition_witness (test_oracle.OracleDecisionTests.test_initial_goal_has_zero_transition_witness) ... ok\ntest_initial_invariant_blocks_even_initial_goal (test_oracle.OracleDecisionTests.test_initial_invariant_blocks_even_initial_goal) ... ok\ntest_maximum_horizon_chain (test_oracle.OracleDecisionTests.test_maximum_horizon_chain) ... ok\ntest_missing_observable_differs_from_explicit_null (test_oracle.OracleDecisionTests.test_missing_observable_differs_from_explicit_null) ... ok\ntest_nondeterministic_safe_success_branch_is_may_supported (test_oracle.OracleDecisionTests.test_nondeterministic_safe_success_branch_is_may_supported) ... ok\ntest_ordered_comparisons_and_bad_operand_types (test_oracle.OracleDecisionTests.test_ordered_comparisons_and_bad_operand_types) ... ok\ntest_partial_graph_can_support_but_cannot_refute (test_oracle.OracleDecisionTests.test_partial_graph_can_support_but_cannot_refute) ... ok\ntest_recurrence_is_preserved_across_negative_layers (test_oracle.OracleDecisionTests.test_recurrence_is_preserved_across_negative_layers) ... ok\ntest_unknown_branch_does_not_erase_definite_witness (test_oracle.OracleDecisionTests.test_unknown_branch_does_not_erase_definite_witness) ... ok\ntest_unknown_goal_in_definitely_unsafe_state_is_irrelevant (test_oracle.OracleDecisionTests.test_unknown_goal_in_definitely_unsafe_state_is_irrelevant) ... ok\ntest_unknown_invariant_keeps_possible_successor_alive (test_oracle.OracleDecisionTests.test_unknown_invariant_keeps_possible_successor_alive) ... ok\ntest_unreachable_or_out_of_horizon_unknown_does_not_prevent_refutation (test_oracle.OracleDecisionTests.test_unreachable_or_out_of_horizon_unknown_does_not_prevent_refutation) ... ok\ntest_zero_horizon_does_not_take_edge_to_goal (test_oracle.OracleDecisionTests.test_zero_horizon_does_not_take_edge_to_goal) ... ok\ntest_exact_native_correlation (test_projection_checker.PrivateSidecarTests.test_exact_native_correlation) ... ok\ntest_native_cross_run_hash_id_or_context_mutations (test_projection_checker.PrivateSidecarTests.test_native_cross_run_hash_id_or_context_mutations) ... ok\ntest_stream_headers_after_ack_remain_tied_to_dispatch (test_projection_checker.PrivateSidecarTests.test_stream_headers_after_ack_remain_tied_to_dispatch) ... ok\ntest_ack_cannot_be_projected_as_completion (test_projection_checker.ProjectionCheckerTests.test_ack_cannot_be_projected_as_completion) ... ok\ntest_duplicate_json_keys (test_projection_checker.ProjectionCheckerTests.test_duplicate_json_keys) ... ok\ntest_duplicate_request_exchange_ids_and_overlap (test_projection_checker.ProjectionCheckerTests.test_duplicate_request_exchange_ids_and_overlap) ... ok\ntest_hash_and_parsed_mismatches (test_projection_checker.ProjectionCheckerTests.test_hash_and_parsed_mismatches) ... ok\ntest_historical_evidence_expires_immediately (test_projection_checker.ProjectionCheckerTests.test_historical_evidence_expires_immediately) ... ok\ntest_history_is_never_artifact_delivery (test_projection_checker.ProjectionCheckerTests.test_history_is_never_artifact_delivery) ... ok\ntest_missing_artifact_body_is_not_false_or_true (test_projection_checker.ProjectionCheckerTests.test_missing_artifact_body_is_not_false_or_true) ... ok\ntest_missing_observable_is_unknown (test_projection_checker.ProjectionCheckerTests.test_missing_observable_is_unknown) ... ok\ntest_model_cannot_gain_branch_complete_evidence_or_ttl (test_projection_checker.ProjectionCheckerTests.test_model_cannot_gain_branch_complete_evidence_or_ttl) ... ok\ntest_modern_ack_and_nested_completion_are_distinct (test_projection_checker.ProjectionCheckerTests.test_modern_ack_and_nested_completion_are_distinct) ... ok\ntest_modern_completed_without_result_is_unknown (test_projection_checker.ProjectionCheckerTests.test_modern_completed_without_result_is_unknown) ... ok\ntest_modern_delivery_completed_does_not_override_logical_failure (test_projection_checker.ProjectionCheckerTests.test_modern_delivery_completed_does_not_override_logical_failure) ... ok\ntest_namespace_and_provenance_cannot_be_rewritten (test_projection_checker.ProjectionCheckerTests.test_namespace_and_provenance_cannot_be_rewritten) ... ok\ntest_nested_task_record_contradiction_is_rejected (test_projection_checker.ProjectionCheckerTests.test_nested_task_record_contradiction_is_rejected) ... ok\ntest_nested_tool_error_requires_separate_recovery_model (test_projection_checker.ProjectionCheckerTests.test_nested_tool_error_requires_separate_recovery_model) ... ok\ntest_no_projector_import_or_shared_extraction (test_projection_checker.ProjectionCheckerTests.test_no_projector_import_or_shared_extraction) ... ok\ntest_normal_task_send_get (test_projection_checker.ProjectionCheckerTests.test_normal_task_send_get) ... ok\ntest_pending_ack_local_stale_final_artifact (test_projection_checker.ProjectionCheckerTests.test_pending_ack_local_stale_final_artifact) ... ok\ntest_removed_completion_is_partial_unknown (test_projection_checker.ProjectionCheckerTests.test_removed_completion_is_partial_unknown) ... ok\ntest_returned_reference_mutations_remain_literal (test_projection_checker.ProjectionCheckerTests.test_returned_reference_mutations_remain_literal) ... ok\ntest_task_error_cannot_disappear_between_states (test_projection_checker.ProjectionCheckerTests.test_task_error_cannot_disappear_between_states) ... ok\ntest_unlabelled_expected_text_cannot_satisfy_artifact_ref (test_projection_checker.ProjectionCheckerTests.test_unlabelled_expected_text_cannot_satisfy_artifact_ref) ... ok\ntest_wrong_or_missing_request_target_is_false (test_projection_checker.ProjectionCheckerTests.test_wrong_or_missing_request_target_is_false) ... ok\ntest_wrong_response_id (test_projection_checker.ProjectionCheckerTests.test_wrong_response_id) ... ok\ntest_development_runner_cannot_label_wire_data_as_authored (test_trace_integrity.DevelopmentTraceIntegrity.test_development_runner_cannot_label_wire_data_as_authored) ... ok\ntest_keeps_exact_runtime_manifest_and_actual_checked_result (test_trace_integrity.DevelopmentTraceIntegrity.test_keeps_exact_runtime_manifest_and_actual_checked_result) ... ok\ntest_refuses_overwriting_existing_evidence (test_trace_integrity.DevelopmentTraceIntegrity.test_refuses_overwriting_existing_evidence) ... ok\ntest_contradictory_nested_task_binding_is_rejected (test_wire_projection.WireProjection.test_contradictory_nested_task_binding_is_rejected) ... ok\ntest_cross_run_and_duplicate_ids_are_rejected (test_wire_projection.WireProjection.test_cross_run_and_duplicate_ids_are_rejected) ... ok\ntest_delivered_error_is_not_a_lifecycle_contradiction_or_success (test_wire_projection.WireProjection.test_delivered_error_is_not_a_lifecycle_contradiction_or_success) ... ok\ntest_delivery_complete_without_task_result_is_not_logical_success (test_wire_projection.WireProjection.test_delivery_complete_without_task_result_is_not_logical_success) ... ok\ntest_foreign_returned_context_remains_foreign (test_wire_projection.WireProjection.test_foreign_returned_context_remains_foreign) ... ok\ntest_history_cannot_substitute_for_artifact_body (test_wire_projection.WireProjection.test_history_cannot_substitute_for_artifact_body) ... ok\ntest_mirror_ack_and_history_do_not_become_completed_artifact (test_wire_projection.WireProjection.test_mirror_ack_and_history_do_not_become_completed_artifact) ... ok\ntest_missing_artifact_body_stays_unknown (test_wire_projection.WireProjection.test_missing_artifact_body_stays_unknown) ... ok\ntest_modern_answer_ack_does_not_invent_completed (test_wire_projection.WireProjection.test_modern_answer_ack_does_not_invent_completed) ... ok\ntest_nested_completed_result_is_actual_public_evidence (test_wire_projection.WireProjection.test_nested_completed_result_is_actual_public_evidence) ... ok\ntest_partial_capture_cannot_prove_unsupported (test_wire_projection.WireProjection.test_partial_capture_cannot_prove_unsupported) ... ok\ntest_raw_declared_and_hash_corruption_are_rejected (test_wire_projection.WireProjection.test_raw_declared_and_hash_corruption_are_rejected) ... ok\ntest_real_captures_have_only_observed_edges_and_incomplete_evidence (test_wire_projection.WireProjection.test_real_captures_have_only_observed_edges_and_incomplete_evidence) ... ok\ntest_unmet_text_goal_is_unknown_in_partial_graph (test_wire_projection.WireProjection.test_unmet_text_goal_is_unknown_in_partial_graph) ... ok\ntest_wrong_request_response_pair_is_rejected_even_with_valid_hash (test_wire_projection.WireProjection.test_wrong_request_response_pair_is_rejected_even_with_valid_hash) ... ok\n\n----------------------------------------------------------------------\nRan 107 tests in 1.235s\n\nOK\n"
+  },
+  "implementation_sha256": {
+    "src/interoperability/__init__.py": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a",
+    "src/interoperability/__main__.py": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7",
+    "src/interoperability/baseline.py": "c26f4c7db7f89f00f2c781e346aec20a589a862316e34c38a2edd7760407206f",
+    "src/interoperability/cli.py": "7bc56e3e3f036333e46627ced09bac80a737cbac126f0427eb4b2f47cca65922",
+    "src/interoperability/manifest.py": "defc6e9bbc4ea66806beefc9def967d94db8a3856cc121cee13c45ebda70debb",
+    "src/interoperability/oracle.py": "da29829a077da1ef44c2ffc0a6d5dbcd8e4c579b308b49085ea1af077e601b7f",
+    "src/interoperability/projection_checker.py": "9292ae1c9424fc1a1efe2ad63bf0e6d67ee7241f6ca845e7cc17416b77f45fb3",
+    "src/interoperability/wire_projection.py": "9e8220ad2f7efb2581103bd13bd031c8dd4367a61e246464d2f3bc7fdf6041b2",
+    "tests/test_baseline.py": "310c9306197b69b50d7372c1de8e3e1234c25f685da28d041aa0bb7d3f1f28de",
+    "tests/test_crosscheck.py": "3985b64097b4b2c62c4f99b8daae2c00e79ebf782f49ec066b2e20a88d727ac7",
+    "tests/test_oracle.py": "66f064435ca9c04eacb000ecbf80254d23bfed856919f15fcdddd0a362cbe4ab",
+    "tests/test_projection_checker.py": "44f4df9b446a88ee999ccb306bedfdd0e87d13cdd5f7ce00ac322812ffbb9fdb",
+    "tests/test_trace_integrity.py": "d1fb5b7ffea8b18e571e30f9ed9beab2c1e79eb1560f3dbb0cd9d3583e0510f0",
+    "tests/test_wire_projection.py": "c344d9674cea833d34105d835ebfc359f7ab7a0dee09d15dedee4a83371442f7",
+    "scripts/create_development_fixtures.py": "52cf990d26df1586c2c9eaebd4045f638fd91247f77478df9fdf6512a6260fee",
+    "scripts/freeze_scope.py": "79b0afd8c85bfaa1507790b8a91c625323acaf4a3650f7a9f07b6a3580da9629",
+    "scripts/project_observations.py": "26c18f523049c0439cba34fc7fd2a9397af012a8d7357f7751ec1c2c01a1e63f",
+    "scripts/verify_foundation.py": "0896cddf953da3773a1e9063b0a4147249bc07f94e35de0f470d8530b177d791"
+  }
+}

@@ -1,0 +1,781 @@
+{
+  "schema_version": "agentops-bridge-diagnostic-group-check/2",
+  "status": "artifact_integrity_and_semantics_verified",
+  "valid": true,
+  "recorded_group_status": "matrix_attempts_recorded",
+  "files_checked": 2617,
+  "all_planned_cases_accounted": true,
+  "complete_matrix": true,
+  "all_evidence_complete": false,
+  "counts": {
+    "executed": 3,
+    "skipped": 0,
+    "unexecuted": 0
+  },
+  "observation_gaps": [],
+  "cases": {
+    "N11": {
+      "schema_version": "agentops-bridge-case-check/1",
+      "valid": true,
+      "complete": true,
+      "strict_success": true,
+      "validation_errors": [],
+      "observation_gaps": [],
+      "policy_deviations": [],
+      "qualified_second_domain": false,
+      "scientific_gate_credit_added": 0,
+      "case_id": "N11",
+      "kind": "native",
+      "status": "recorded",
+      "service": {
+        "schema_version": "agentops-bridge-service-check/1",
+        "valid": true,
+        "complete": true,
+        "strict_success": true,
+        "validation_errors": [],
+        "observation_gaps": [],
+        "policy_deviations": [],
+        "original": {
+          "task_id": "19999b00-7208-40f0-8c15-27532887184d",
+          "context_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+        },
+        "confirmation": {
+          "name": "adk_request_confirmation",
+          "args": {
+            "toolConfirmation": {
+              "hint": "Please approve or reject the tool call restart_service() by responding with a FunctionResponse with an expected ToolConfirmation payload.",
+              "confirmed": false
+            },
+            "originalFunctionCall": {
+              "name": "restart_service",
+              "args": {
+                "name": "inventory"
+              },
+              "id": "restart-inventory-call"
+            }
+          },
+          "id": "adk-99d59d44-7188-44fb-8a53-479d397d9842"
+        },
+        "continuation_attempted": true,
+        "approval_representation": "data",
+        "final_state": "completed",
+        "task_completed": true,
+        "effect": {
+          "classification": "expected_single_effect",
+          "effect_matches_contract": true,
+          "domain_changed": true,
+          "new_audit_rows": 1,
+          "approval_observed": true,
+          "deviations": [],
+          "final_inventory_status": "operational"
+        },
+        "rpc_outcomes": [
+          {
+            "sequence": 2,
+            "method": "SendMessage",
+            "id": 1,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 3,
+            "method": "GetTask",
+            "id": 2,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 4,
+            "method": "GetTask",
+            "id": 3,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 5,
+            "method": "GetTask",
+            "id": 4,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 6,
+            "method": "GetTask",
+            "id": 5,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 7,
+            "method": "SendMessage",
+            "id": "native-raw-1",
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 8,
+            "method": "GetTask",
+            "id": 6,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 9,
+            "method": "GetTask",
+            "id": "evaluator-final",
+            "http_status": 200,
+            "errors": []
+          }
+        ],
+        "claim_limit": "Bounded captured attempts only; no whole-interface non-support or C1 claim",
+        "asgi_requests": 9,
+        "model_double_calls": 2,
+        "socket_policy": {
+          "status": "passed",
+          "blocked_capability_probes": 1,
+          "listener_binds": 1
+        },
+        "send_profiles": [
+          {
+            "sequence": 2,
+            "rpc_id": 1,
+            "method": "SendMessage",
+            "version_headers": [
+              "1.0"
+            ],
+            "configuration_present": true,
+            "configuration": {
+              "acceptedOutputModes": [
+                "text/plain",
+                "application/json"
+              ],
+              "returnImmediately": true
+            },
+            "message": {
+              "messageId": "msg-mvrzffg1-4lte3pva",
+              "role": "ROLE_USER",
+              "parts": [
+                {
+                  "text": "Restart inventory.",
+                  "mediaType": "text/plain"
+                }
+              ]
+            }
+          },
+          {
+            "sequence": 7,
+            "rpc_id": "native-raw-1",
+            "method": "SendMessage",
+            "version_headers": [
+              "1.0"
+            ],
+            "configuration_present": false,
+            "configuration": null,
+            "message": {
+              "messageId": "msg-mvrzfl28-y5zr7p1w",
+              "role": "ROLE_USER",
+              "taskId": "19999b00-7208-40f0-8c15-27532887184d",
+              "contextId": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+              "parts": [
+                {
+                  "data": {
+                    "id": "adk-99d59d44-7188-44fb-8a53-479d397d9842",
+                    "name": "adk_request_confirmation",
+                    "response": {
+                      "confirmed": true,
+                      "payload": {
+                        "rationale": "Inventory is down and INC-002 matches the service-down runbook."
+                      }
+                    }
+                  },
+                  "metadata": {
+                    "adk_type": "function_response"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "continuation_sequence": 7,
+        "evaluator_final_started_at_utc": "2026-10-28T10:39:26.768545+00:00",
+        "final_text": [
+          "The approved inventory restart completed and was audited.",
+          "Restart inventory."
+        ]
+      },
+      "client": {
+        "schema_version": "agentops-native-profile-client-check/1",
+        "valid": true,
+        "complete": true,
+        "validation_errors": [],
+        "observation_gaps": [],
+        "policy_deviations": [],
+        "public_bindings": {
+          "task_id": "19999b00-7208-40f0-8c15-27532887184d",
+          "context_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+          "confirmation_call_id": "adk-99d59d44-7188-44fb-8a53-479d397d9842",
+          "confirmation_call_name": "adk_request_confirmation"
+        },
+        "profile": "mg-raw-header",
+        "representation": "data",
+        "status": "recorded",
+        "sdk_events": 21
+      },
+      "task_completed": true,
+      "effect_classification": "expected_single_effect",
+      "outcome": "strict_success"
+    },
+    "B6": {
+      "schema_version": "agentops-bridge-case-check/1",
+      "valid": true,
+      "complete": false,
+      "strict_success": false,
+      "validation_errors": [],
+      "observation_gaps": [
+        "client:continuation_not_attempted:public_binding_not_observed"
+      ],
+      "policy_deviations": [],
+      "qualified_second_domain": false,
+      "scientific_gate_credit_added": 0,
+      "case_id": "B6",
+      "kind": "bridge",
+      "status": "recorded",
+      "service": {
+        "schema_version": "agentops-bridge-service-check/1",
+        "valid": true,
+        "complete": true,
+        "strict_success": false,
+        "validation_errors": [],
+        "observation_gaps": [],
+        "policy_deviations": [],
+        "original": {
+          "task_id": "95e1dfa4-b5ec-44ae-b439-55ae558117e6",
+          "context_id": "abc45af9-5fd4-49f4-9980-f12ab061fb71"
+        },
+        "confirmation": {
+          "args": {
+            "toolConfirmation": {
+              "hint": "Please approve or reject the tool call restart_service() by responding with a FunctionResponse with an expected ToolConfirmation payload.",
+              "confirmed": false
+            },
+            "originalFunctionCall": {
+              "args": {
+                "name": "inventory"
+              },
+              "id": "restart-inventory-call",
+              "name": "restart_service"
+            }
+          },
+          "id": "adk-1c4d5680-d9b8-46f8-aa3a-57fc6d997c3a",
+          "name": "adk_request_confirmation"
+        },
+        "continuation_attempted": false,
+        "approval_representation": null,
+        "final_state": "input_required",
+        "task_completed": false,
+        "effect": {
+          "classification": "unchanged",
+          "effect_matches_contract": false,
+          "domain_changed": false,
+          "new_audit_rows": 0,
+          "approval_observed": false,
+          "deviations": [],
+          "final_inventory_status": "down"
+        },
+        "rpc_outcomes": [
+          {
+            "sequence": 2,
+            "method": "SendMessage",
+            "id": 1,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 3,
+            "method": "GetTask",
+            "id": 2,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 4,
+            "method": "GetTask",
+            "id": 3,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 5,
+            "method": "GetTask",
+            "id": "rpc-mvrzgn0w-le5is4b1",
+            "http_status": 200,
+            "errors": [
+              {
+                "code": -32009,
+                "message": "A2A version '0.3' is not supported by this handler. Expected version '1.0'.",
+                "data": [
+                  {
+                    "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+                    "reason": "VERSION_NOT_SUPPORTED",
+                    "domain": "a2a-protocol.org",
+                    "metadata": {}
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "sequence": 6,
+            "method": "GetTask",
+            "id": 4,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 7,
+            "method": "GetTask",
+            "id": "evaluator-final",
+            "http_status": 200,
+            "errors": []
+          }
+        ],
+        "claim_limit": "Bounded captured attempts only; no whole-interface non-support or C1 claim",
+        "asgi_requests": 7,
+        "model_double_calls": 1,
+        "socket_policy": {
+          "status": "passed",
+          "blocked_capability_probes": 1,
+          "listener_binds": 1
+        },
+        "send_profiles": [
+          {
+            "sequence": 2,
+            "rpc_id": 1,
+            "method": "SendMessage",
+            "version_headers": [
+              "1.0"
+            ],
+            "configuration_present": true,
+            "configuration": {
+              "acceptedOutputModes": [
+                "text/plain",
+                "application/json"
+              ],
+              "returnImmediately": true
+            },
+            "message": {
+              "messageId": "msg-mvrzglop-oow5z6iu",
+              "role": "ROLE_USER",
+              "parts": [
+                {
+                  "text": "Restart inventory.",
+                  "mediaType": "text/plain"
+                }
+              ]
+            }
+          }
+        ],
+        "evaluator_final_started_at_utc": "2026-10-28T10:40:12.410323+00:00",
+        "final_text": [
+          "Restart inventory."
+        ]
+      },
+      "client": {
+        "schema_version": "agentops-bridge-client-check/1",
+        "valid": true,
+        "complete": false,
+        "validation_errors": [],
+        "observation_gaps": [
+          "continuation_not_attempted:public_binding_not_observed"
+        ],
+        "policy_deviations": [],
+        "public_bindings": {
+          "task_id": "95e1dfa4-b5ec-44ae-b439-55ae558117e6",
+          "context_id": "abc45af9-5fd4-49f4-9980-f12ab061fb71"
+        },
+        "answer_attempted": false,
+        "answer_representation": null,
+        "arm": "B6",
+        "status": "public_binding_not_observed",
+        "mcp_events": 58,
+        "public_confirmation_observed": false
+      },
+      "task_completed": false,
+      "effect_classification": "unchanged",
+      "outcome": "unknown_or_partial"
+    },
+    "B7": {
+      "schema_version": "agentops-bridge-case-check/1",
+      "valid": true,
+      "complete": true,
+      "strict_success": true,
+      "validation_errors": [],
+      "observation_gaps": [],
+      "policy_deviations": [],
+      "qualified_second_domain": false,
+      "scientific_gate_credit_added": 0,
+      "case_id": "B7",
+      "kind": "bridge",
+      "status": "recorded",
+      "service": {
+        "schema_version": "agentops-bridge-service-check/1",
+        "valid": true,
+        "complete": true,
+        "strict_success": true,
+        "validation_errors": [],
+        "observation_gaps": [],
+        "policy_deviations": [],
+        "original": {
+          "task_id": "1c6cee67-ddca-4af8-bae1-460898509577",
+          "context_id": "298360d6-49b4-4999-8d48-4dc9e0f8bc61"
+        },
+        "confirmation": {
+          "id": "adk-3d91dfd7-2049-4510-8b8c-a17e7c2b6d20",
+          "args": {
+            "toolConfirmation": {
+              "hint": "Please approve or reject the tool call restart_service() by responding with a FunctionResponse with an expected ToolConfirmation payload.",
+              "confirmed": false
+            },
+            "originalFunctionCall": {
+              "id": "restart-inventory-call",
+              "args": {
+                "name": "inventory"
+              },
+              "name": "restart_service"
+            }
+          },
+          "name": "adk_request_confirmation"
+        },
+        "continuation_attempted": true,
+        "approval_representation": "data",
+        "final_state": "completed",
+        "task_completed": true,
+        "effect": {
+          "classification": "expected_single_effect",
+          "effect_matches_contract": true,
+          "domain_changed": true,
+          "new_audit_rows": 1,
+          "approval_observed": true,
+          "deviations": [],
+          "final_inventory_status": "operational"
+        },
+        "rpc_outcomes": [
+          {
+            "sequence": 2,
+            "method": "SendMessage",
+            "id": 1,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 3,
+            "method": "GetTask",
+            "id": 2,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 4,
+            "method": "GetTask",
+            "id": 3,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 5,
+            "method": "GetTask",
+            "id": "rpc-mvrzh8n5-mgkwavtp",
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 6,
+            "method": "SendMessage",
+            "id": "rpc-mvrzh8np-dflxmkjt",
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 7,
+            "method": "GetTask",
+            "id": 4,
+            "http_status": 200,
+            "errors": []
+          },
+          {
+            "sequence": 8,
+            "method": "GetTask",
+            "id": "evaluator-final",
+            "http_status": 200,
+            "errors": []
+          }
+        ],
+        "claim_limit": "Bounded captured attempts only; no whole-interface non-support or C1 claim",
+        "asgi_requests": 8,
+        "model_double_calls": 2,
+        "socket_policy": {
+          "status": "passed",
+          "blocked_capability_probes": 1,
+          "listener_binds": 1
+        },
+        "send_profiles": [
+          {
+            "sequence": 2,
+            "rpc_id": 1,
+            "method": "SendMessage",
+            "version_headers": [
+              "1.0"
+            ],
+            "configuration_present": true,
+            "configuration": {
+              "acceptedOutputModes": [
+                "text/plain",
+                "application/json"
+              ],
+              "returnImmediately": true
+            },
+            "message": {
+              "messageId": "msg-mvrzh76j-mz1kvodw",
+              "role": "ROLE_USER",
+              "parts": [
+                {
+                  "text": "Restart inventory.",
+                  "mediaType": "text/plain"
+                }
+              ]
+            }
+          },
+          {
+            "sequence": 6,
+            "rpc_id": "rpc-mvrzh8np-dflxmkjt",
+            "method": "SendMessage",
+            "version_headers": [
+              "1.0"
+            ],
+            "configuration_present": false,
+            "configuration": null,
+            "message": {
+              "messageId": "agentops-public-confirmation",
+              "role": "ROLE_USER",
+              "taskId": "1c6cee67-ddca-4af8-bae1-460898509577",
+              "contextId": "298360d6-49b4-4999-8d48-4dc9e0f8bc61",
+              "parts": [
+                {
+                  "data": {
+                    "id": "adk-3d91dfd7-2049-4510-8b8c-a17e7c2b6d20",
+                    "name": "adk_request_confirmation",
+                    "response": {
+                      "confirmed": true,
+                      "payload": {
+                        "rationale": "Inventory is down and INC-002 matches the service-down runbook."
+                      }
+                    }
+                  },
+                  "metadata": {
+                    "adk_type": "function_response"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "continuation_sequence": 6,
+        "evaluator_final_started_at_utc": "2026-10-28T10:40:40.942163+00:00",
+        "final_text": [
+          "The approved inventory restart completed and was audited.",
+          "Restart inventory."
+        ]
+      },
+      "client": {
+        "schema_version": "agentops-bridge-client-check/1",
+        "valid": true,
+        "complete": true,
+        "validation_errors": [],
+        "observation_gaps": [],
+        "policy_deviations": [],
+        "public_bindings": {
+          "task_id": "1c6cee67-ddca-4af8-bae1-460898509577",
+          "context_id": "298360d6-49b4-4999-8d48-4dc9e0f8bc61",
+          "confirmation_call_id": "adk-3d91dfd7-2049-4510-8b8c-a17e7c2b6d20",
+          "confirmation_call_name": "adk_request_confirmation"
+        },
+        "answer_attempted": true,
+        "answer_representation": "data",
+        "arm": "B7",
+        "status": "recorded",
+        "mcp_events": 66,
+        "public_confirmation_observed": true
+      },
+      "task_completed": true,
+      "effect_classification": "expected_single_effect",
+      "outcome": "strict_success"
+    }
+  },
+  "diagnostics": {
+    "N11": {
+      "schema_version": "agentops-shutdown-diagnostic-check/1",
+      "valid": true,
+      "complete": true,
+      "classification": "asyncio_run_returned",
+      "validation_errors": [],
+      "observation_gaps": [],
+      "files": [
+        {
+          "path": "result.json",
+          "bytes": 17380,
+          "sha256": "f46c79f83f6aff7e3b35ea58893e03f1ccbadceef6496e5c4912506f48a59ad3"
+        },
+        {
+          "path": "service-process.json",
+          "bytes": 439,
+          "sha256": "f855a4f1e8d5a1f8a89678f3a2f288a9c45bc12080036e1e3bc1d276021bf8e5"
+        },
+        {
+          "path": "service/shutdown-diagnostics/lifecycle.jsonl",
+          "bytes": 5112,
+          "sha256": "26e99ffcf4a0c7f081e75e83c3092bb652a572e0a82f98d9611cfe003ec117ff"
+        },
+        {
+          "path": "service/shutdown-diagnostics/teardown-stacks.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "service/service-result.json",
+          "bytes": 1792,
+          "sha256": "f022cb09dcb223811c9d743f12060dfd81aa2b748d499ce49ee28a3dcc715d07"
+        }
+      ],
+      "case_outcome": "strict_success",
+      "case_strict_success": true,
+      "root_cause_established": false,
+      "scientific_gate_credit_added": 0,
+      "case_id": "N11",
+      "phases": [
+        "asyncio_run_entered",
+        "teardown_watchdog_armed",
+        "coroutine_finished",
+        "asyncio_run_exited"
+      ],
+      "diagnostic_errors": [],
+      "timeout_trace_observed": false
+    },
+    "B6": {
+      "schema_version": "agentops-shutdown-diagnostic-check/1",
+      "valid": true,
+      "complete": true,
+      "classification": "asyncio_run_returned",
+      "validation_errors": [],
+      "observation_gaps": [],
+      "files": [
+        {
+          "path": "result.json",
+          "bytes": 15721,
+          "sha256": "e634d7412dd655876acf1af3e5b48d5c0be42c15e66bb5c859a548a82955d490"
+        },
+        {
+          "path": "service-process.json",
+          "bytes": 438,
+          "sha256": "0b7cbcec8ff84ab07247833205563112b0e0d8afaedc6906224074ff0c08e2d1"
+        },
+        {
+          "path": "service/shutdown-diagnostics/lifecycle.jsonl",
+          "bytes": 6147,
+          "sha256": "8ef3e62708b2c8c1217c6e070718e51e74fadb0f262c22ea1913922137ae2bf6"
+        },
+        {
+          "path": "service/shutdown-diagnostics/teardown-stacks.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "service/service-result.json",
+          "bytes": 1619,
+          "sha256": "1f3b52b2ddbea0fa3f941a834c341d0a2fde7cbd205d66b35415cd95bab79a3a"
+        }
+      ],
+      "case_outcome": "unknown_or_partial",
+      "case_strict_success": false,
+      "root_cause_established": false,
+      "scientific_gate_credit_added": 0,
+      "case_id": "B6",
+      "phases": [
+        "asyncio_run_entered",
+        "teardown_watchdog_armed",
+        "coroutine_finished",
+        "asyncio_run_exited"
+      ],
+      "diagnostic_errors": [],
+      "timeout_trace_observed": false
+    },
+    "B7": {
+      "schema_version": "agentops-shutdown-diagnostic-check/1",
+      "valid": true,
+      "complete": true,
+      "classification": "asyncio_run_returned",
+      "validation_errors": [],
+      "observation_gaps": [],
+      "files": [
+        {
+          "path": "result.json",
+          "bytes": 16838,
+          "sha256": "cba2831966feba62c9ae6b9c5e80b45f688145fee2c747ca4f58a37223dc5678"
+        },
+        {
+          "path": "service-process.json",
+          "bytes": 438,
+          "sha256": "c721718cc2ad1295ac2a311bf6fa34eff593a74f574301fdc7c864b608ff8317"
+        },
+        {
+          "path": "service/shutdown-diagnostics/lifecycle.jsonl",
+          "bytes": 5113,
+          "sha256": "b48e42a48a93fb86b6d8694ba805d5bebf2e4cd4b862808dbacba55d2d715c06"
+        },
+        {
+          "path": "service/shutdown-diagnostics/teardown-stacks.txt",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "service/service-result.json",
+          "bytes": 1792,
+          "sha256": "006ed4132563d03c288da849ae590c3e51e8b4e39bd66382404e6f409e55b71d"
+        }
+      ],
+      "case_outcome": "strict_success",
+      "case_strict_success": true,
+      "root_cause_established": false,
+      "scientific_gate_credit_added": 0,
+      "case_id": "B7",
+      "phases": [
+        "asyncio_run_entered",
+        "teardown_watchdog_armed",
+        "coroutine_finished",
+        "asyncio_run_exited"
+      ],
+      "diagnostic_errors": [],
+      "timeout_trace_observed": false
+    }
+  },
+  "source_inspection": {
+    "N11": {
+      "copied_sources": 5,
+      "recorded_frame_source_closure": true,
+      "closure_gaps": []
+    },
+    "B6": {
+      "copied_sources": 7,
+      "recorded_frame_source_closure": true,
+      "closure_gaps": []
+    },
+    "B7": {
+      "copied_sources": 5,
+      "recorded_frame_source_closure": true,
+      "closure_gaps": []
+    }
+  },
+  "fresh_experiment": false,
+  "qualified_second_domain": false,
+  "scientific_gate_credit_added": 0,
+  "limitation": "New diagnostic evidence only; v10 outcomes unchanged; no authenticity or novelty claim"
+}

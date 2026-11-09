@@ -1,0 +1,535 @@
+{
+  "captured_inputs": {
+    "docs/research/agentops-answer-schema-assessment-design-v1.json": {
+      "bytes": 86044,
+      "sha256": "0f9f6e78a5c8a23f51923e5dc469bfafd174e9fc6549e6513eaa3018fd21a189"
+    },
+    "docs/research/agentops-answer-schema-assessment-design-v1.md": {
+      "bytes": 18431,
+      "sha256": "7daaf1bb060405373b4f560b0a659c890b3cc4d4fea35aaafb5b9bccaa32c238"
+    },
+    "docs/research/upstream-agentops-grading-obligations-v1.json": {
+      "bytes": 172532,
+      "sha256": "e3d9a2cd1a755c1207dd3927697ee0f56c4171737dd6d08d2f3c137176800558"
+    },
+    "external/agentops-c806b7f1/agents/data/logs/cache.log": {
+      "bytes": 915,
+      "sha256": "699784f774655f299a0c729503cec7a428047ece84af87594e624ef4adc85818"
+    },
+    "external/agentops-c806b7f1/agents/data/logs/checkout.log": {
+      "bytes": 502,
+      "sha256": "8f70767232f7974060dfcdf62531e9fa7c8faa37d3be710f01068ccdb47b7124"
+    },
+    "external/agentops-c806b7f1/agents/data/logs/database.log": {
+      "bytes": 1147,
+      "sha256": "e3b3b850636c6d641c2466a76ba8a4cb045fd4c26e33b9e0dce57bab1653ec86"
+    },
+    "external/agentops-c806b7f1/agents/data/logs/inventory.log": {
+      "bytes": 501,
+      "sha256": "f336ebdd541ab9d83a50fcc9f80d00d9800047c3d48fb158020a31c0f0977ecb"
+    },
+    "external/agentops-c806b7f1/agents/data/runbooks/cascade-failure.md": {
+      "bytes": 1943,
+      "sha256": "903904200bf9a3293f336e40d8dd7af89f3b456ad88420f948166d2430e742ee"
+    },
+    "external/agentops-c806b7f1/agents/data/runbooks/high-latency.md": {
+      "bytes": 1198,
+      "sha256": "82b0b0a9a430c54da38577fc71ff6908d218d58476a5ca2ce69c65aee4b513a5"
+    },
+    "external/agentops-c806b7f1/agents/data/runbooks/memory-leak.md": {
+      "bytes": 1383,
+      "sha256": "94a594fdbe254a5f6ce5dae003ffeccd59325dcdf16d0afe1bf619156e5e1d2a"
+    },
+    "external/agentops-c806b7f1/agents/data/runbooks/service-down.md": {
+      "bytes": 1210,
+      "sha256": "987c45602bf8977a0409f8684708f1e790f9126668114631a7438352d5a9cbb9"
+    },
+    "external/agentops-c806b7f1/agents/data/skills/remediation/SKILL.md": {
+      "bytes": 1250,
+      "sha256": "852d957a7b9ea6390af0aca7cd1cb13cbf0de6b655c2e84940eb67853660e390"
+    },
+    "external/agentops-c806b7f1/agents/data/sql/seed.sql": {
+      "bytes": 4259,
+      "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/groundedness_eval.py": {
+      "bytes": 7570,
+      "sha256": "8b502e15a0f13bdd5f5dc9132c78614497ead03946089147c8c87fbb983183fb"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/mlflow_eval.py": {
+      "bytes": 38753,
+      "sha256": "09a40ce833f348ecd4dc9948a95a98a13a3b321c8f9672a7469dc5530e61735a"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/ops.evalset.json": {
+      "bytes": 21920,
+      "sha256": "57bff5579802a6de540d2465bf4714da8e7b70846e0321076d448becd0703a29"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/report_eval.py": {
+      "bytes": 1415,
+      "sha256": "4eae434cb05e751979c7c9a10692f20dd070ab39841caaf455e8b79498281c3f"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/required_trajectory.py": {
+      "bytes": 5531,
+      "sha256": "813d39cb7753e2157e565db868b8134a7d261e61c9f6decc9c9cad2a39f8ce44"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/test_config.json": {
+      "bytes": 415,
+      "sha256": "a1839f7ffdd918154778beeeb447a94c494929552840b116301d98517b179449"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/triage-report.evalset.json": {
+      "bytes": 4996,
+      "sha256": "b489a862e10d42933c40bb6aaed4e37fd2c47a87e0dedd6bfc35efa81242854a"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/workflow.evalset.json": {
+      "bytes": 5172,
+      "sha256": "5ccb6e221368be143291cdfd2ab606e2cb1a9b34324f477025d40a93706c3e88"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/actions.py": {
+      "bytes": 8641,
+      "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/composition.py": {
+      "bytes": 7282,
+      "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/domain.py": {
+      "bytes": 3195,
+      "sha256": "a8af03e6c13bee0c690c87fa68fd37e722ed706f6f606d50e4126acd184ac848"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/longterm.py": {
+      "bytes": 9516,
+      "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/memory.py": {
+      "bytes": 5974,
+      "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/models.py": {
+      "bytes": 4062,
+      "sha256": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/pii.py": {
+      "bytes": 11662,
+      "sha256": "702c6afa72203c124d91e9de16a20cbd2a18ae8f215d780fdf078944b5bd6455"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/report.py": {
+      "bytes": 4257,
+      "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/skills.py": {
+      "bytes": 1181,
+      "sha256": "c07a179e0b1134c1bfe4b78b82d4ec646d3069824e91fd10af1fea937bb2ccee"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/tools.py": {
+      "bytes": 6311,
+      "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/workflow.py": {
+      "bytes": 6213,
+      "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/events/event.py": {
+      "bytes": 11443,
+      "sha256": "efde6a9f9ef990730be08648cbcc419b0ba6b3460d6262d3a8a3b77921393720"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/skills/prompt.py": {
+      "bytes": 2127,
+      "sha256": "1dfaed2ff66aaee4cbd8e704dc8eaa712dbc3fa6ede67d49da0d929fa5152bf9"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/tools/function_tool.py": {
+      "bytes": 17635,
+      "sha256": "eba7ac23662fede0dd02e71218989457dd67a666c56b18977f01bf6951988fd7"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/tools/skill_toolset.py": {
+      "bytes": 89990,
+      "sha256": "d439f39ccc50c5788874f1a0d5509cbf3152217ada23d2d4b10048e038676ceb"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/workflow/_llm_agent_wrapper.py": {
+      "bytes": 20605,
+      "sha256": "7cdf7b9d0e657764dff725bb03bcdcaaca2269dcb9fff0e8fbf177dfacf65c41"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/workflow/_node_runner.py": {
+      "bytes": 16825,
+      "sha256": "9d932ae24bbaa60781c5a92cd8c8200cc1b00c393243f82f9ddd6807bb598b28"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/workflow/_workflow.py": {
+      "bytes": 32178,
+      "sha256": "c61e473933236ac707a6b794c3fc7c1d680f4bf77afeebd13af18de7d7f99edc"
+    },
+    "runs/upstream-agentops-cases/v1/application/cases.json": {
+      "bytes": 15366,
+      "sha256": "3b58d64163533a9ddec2a68438b22a9fc1c43e7d5e50e8579fd7d766270bc146"
+    },
+    "runs/upstream-agentops-cases/v1/evaluator/expectations.json": {
+      "bytes": 24809,
+      "sha256": "8eb1fb24858bdd491319544973f9197a9fcbc436d82c8a017d96d3fdbaaa478f"
+    },
+    "scripts/agentops_native_probe_v2.py": {
+      "bytes": 16488,
+      "sha256": "61a668e2742e3fcbf943f3c81ff914379e5d1a258f7c12de62e3c91d9cfaad95"
+    },
+    "scripts/agentops_runtime_stream_v1.py": {
+      "bytes": 25898,
+      "sha256": "547f904e7ff073035a3128592751a72ea4727fa978d1a43c7e16963170f896ed"
+    },
+    "scripts/assess_upstream_agentops_case_v1.py": {
+      "bytes": 13671,
+      "sha256": "e2401c03dfde733f08c30e8b4a6f852a67eb41e7d969d728155c14378cbeb48e"
+    },
+    "scripts/assess_upstream_agentops_case_v2.py": {
+      "bytes": 21024,
+      "sha256": "b52a711a7d222e6e554804353b29ba45f938ba7bf20d639065b6b9653aec39ce"
+    },
+    "scripts/assess_upstream_agentops_case_v3.py": {
+      "bytes": 23317,
+      "sha256": "dc405bc5940438e40a911a32525d06e93bb051d6684e7e1dfdd5ffb4b2fa6e1f"
+    },
+    "scripts/capture_agentops_cli_v3_validation_v1.py": {
+      "bytes": 11712,
+      "sha256": "eeb8f84f6c4a259f9cef8652279fbe5141a93476c7793367a98a3e48898c1ce7"
+    },
+    "src/interoperability/__init__.py": {
+      "bytes": 172,
+      "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+    },
+    "src/interoperability/agentops_answer_schema_v1.py": {
+      "bytes": 29471,
+      "sha256": "ae4f198820419f4083bf7094dca1a6c0eadd21183e73757c18f429dc2337a11d"
+    },
+    "src/interoperability/agentops_case_boundary_evidence_v1.py": {
+      "bytes": 25564,
+      "sha256": "55995ba40591d7f68387e31e32be9b4d1a76c5576afd8111adf44f44f343d689"
+    },
+    "src/interoperability/agentops_memory_evidence_v1.py": {
+      "bytes": 12372,
+      "sha256": "a7989553aa007955718eb3a1f1e24f26c3bd86cff67336d4b24282458d157773"
+    },
+    "src/interoperability/agentops_reply_dependencies_v1.py": {
+      "bytes": 42462,
+      "sha256": "ae70b1a5dd901d3e1b298e30258fd7b12f51cc3f461a3be5880da9c26eb102e3"
+    },
+    "src/interoperability/agentops_reply_dependencies_v2.py": {
+      "bytes": 43398,
+      "sha256": "0475d55ba2a4aa84d0dacd77fefaa357440f35c27020d43d747879e3df39d2b3"
+    },
+    "src/interoperability/agentops_required_trajectory_v1.py": {
+      "bytes": 8954,
+      "sha256": "ad41fd029c1111ad4b2d933fd42e8d9ea8183bee7c99e088a57d219d9d574ed5"
+    },
+    "src/interoperability/agentops_runtime_stream_evidence_v1.py": {
+      "bytes": 17188,
+      "sha256": "0bc4002cf726f0df6ce719102a0c7bee1049a39f2f9239a1ccc76cf887e51d49"
+    },
+    "src/interoperability/agentops_source_case_assessment_v1.py": {
+      "bytes": 14403,
+      "sha256": "996173207112b97c3e9b6ec72d01bb32232684a2de4efcd36e65c85f5461b769"
+    },
+    "src/interoperability/agentops_source_case_assessment_v2.py": {
+      "bytes": 11417,
+      "sha256": "a2fec6d9bafbf1b76bd4654932a994a5e8cb6a8466ae1d30473dac03a8598fc8"
+    },
+    "src/interoperability/agentops_source_case_assessment_v3.py": {
+      "bytes": 4983,
+      "sha256": "3b6b1ec0a7c274590562ddd6a66bd06bf9ad5b79f78baecdaa58f1f07d175aa3"
+    },
+    "src/interoperability/agentops_source_case_effects_v1.py": {
+      "bytes": 26634,
+      "sha256": "ea1a88f1e062c332b2ebd7e0c9360deae75b9c46397b5ee71e84d7c0a805f7dd"
+    },
+    "src/interoperability/upstream_agentops_client_v1.py": {
+      "bytes": 33752,
+      "sha256": "c8506f66da5cd23750f9fb7cac5e454d4ec34e83babdc1b1b53d6df4847a923b"
+    },
+    "tests/test_agentops_case_boundary_evidence_v1.py": {
+      "bytes": 24397,
+      "sha256": "941d1e9965858cdec95463074b81abec52b874d974a67fb90f916179f0ffc7a0"
+    },
+    "tests/test_assess_upstream_agentops_case_v3.py": {
+      "bytes": 17790,
+      "sha256": "07c0ec96ac7ba2d296d5a7573d2563e09d30d7c720c8d9a5ffb0be43d6425eea"
+    }
+  },
+  "command": [
+    "C:\\Python313\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-c",
+    "\nfrom pathlib import Path\nimport hashlib,json,runpy,sys,unittest\nroot=Path(sys.argv[1]).resolve()\noutcome=Path(sys.argv[2])\ncli_sha=sys.argv[3]\ndef guard(event,args):\n    if event.startswith(\"socket.\"):\n        raise RuntimeError(\"Constructed CLI capture denies network\")\n    if event == \"subprocess.Popen\":\n        executable,argv=args[:2]\n        if not (Path(executable).resolve()==Path(sys.executable).resolve()\n                and type(argv) in (list,tuple) and len(argv)>=5\n                and list(argv[1:4])==[\"-I\",\"-S\",\"-B\"]\n                and Path(argv[4]).name==\"assess_upstream_agentops_case_v3.py\"\n                and hashlib.sha256(Path(argv[4]).read_bytes()).hexdigest()==cli_sha):\n            raise RuntimeError(\"Constructed CLI capture permits only the bound read-only evaluator\")\nsys.addaudithook(guard)\nclass RetainedResult(unittest.TextTestResult):\n    def __init__(self,*a,**k):\n        super().__init__(*a,**k); self.outcomes=[]\n    def addSuccess(self,test):\n        super().addSuccess(test); self.outcomes.append({\"id\":test.id(),\"status\":\"passed\"})\n    def addFailure(self,test,error):\n        super().addFailure(test,error); self.outcomes.append({\"id\":test.id(),\"status\":\"failed\",\"error_type\":error[0].__name__})\n    def addError(self,test,error):\n        super().addError(test,error); self.outcomes.append({\"id\":test.id(),\"status\":\"error\",\"error_type\":error[0].__name__})\n    def addSkip(self,test,reason):\n        super().addSkip(test,reason); self.outcomes.append({\"id\":test.id(),\"status\":\"skipped\"})\nnamespace=runpy.run_path(str(root/\"tests/test_assess_upstream_agentops_case_v3.py\"),run_name=\"captured_corrected_cli_tests\")\nsuite=unittest.defaultTestLoader.loadTestsFromTestCase(namespace[\"CorrectedCliTests\"])\nresult=unittest.TextTestRunner(verbosity=2,resultclass=RetainedResult).run(suite)\nrecord={\"tests_run\":result.testsRun,\"outcomes\":result.outcomes,\"failures\":len(result.failures),\"errors\":len(result.errors),\n        \"skips\":len(result.skipped),\"expected_failures\":len(result.expectedFailures),\"unexpected_successes\":len(result.unexpectedSuccesses),\n        \"successful\":result.wasSuccessful(),\"isolated_python\":sys.flags.isolated==1,\"site_disabled\":sys.flags.no_site==1,\n        \"bytecode_disabled\":sys.dont_write_bytecode,\"old_test_suites_executed\":False,\n        \"SDK_module_loaded\":any(name==\"google\" or name.startswith((\"google.\",\"a2a.\",\"ap2.\")) for name in sys.modules)}\nwith outcome.open(\"x\",encoding=\"utf-8\") as out:\n    json.dump(record,out,sort_keys=True,indent=2); out.write(\"\\n\")\nraise SystemExit(0 if result.wasSuccessful() else 1)\n",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\agentops-grading-software\\evaluator-cli-v3-2\\captured-checkout",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\agentops-grading-software\\evaluator-cli-v3-2\\test-outcomes.json",
+    "dc405bc5940438e40a911a32525d06e93bb051d6684e7e1dfdd5ffb4b2fa6e1f"
+  ],
+  "created_at_utc": "2026-10-30T17:01:44.568926+00:00",
+  "declared_test_names": [
+    "test_bootstrap_type_mismatch_is_still_rejected_before_grading",
+    "test_changed_corrected_helper_is_refused_before_helper_execution",
+    "test_complete_isolated_cli_keeps_metric_state_and_uses_pinned_corrected_helpers",
+    "test_explicit_parent_creation_is_restricted_to_one_named_checkout_directory",
+    "test_optional_answer_extraction_is_withheld_for_retained_partial_reply",
+    "test_optional_answer_extraction_stays_observed_on_complete_retained_reply",
+    "test_partial_call_is_unknown_in_actual_cli_while_original_metric_passes",
+    "test_partial_reply_is_unknown_in_actual_cli_while_original_metric_passes",
+    "test_pending_close_failure_keeps_final_receipt_noneligible",
+    "test_postassessment_instance_mutation_still_invalidates_eligibility"
+  ],
+  "expected_test_count": 10,
+  "inputs_before": {
+    "docs/research/agentops-answer-schema-assessment-design-v1.json": {
+      "bytes": 86044,
+      "sha256": "0f9f6e78a5c8a23f51923e5dc469bfafd174e9fc6549e6513eaa3018fd21a189"
+    },
+    "docs/research/agentops-answer-schema-assessment-design-v1.md": {
+      "bytes": 18431,
+      "sha256": "7daaf1bb060405373b4f560b0a659c890b3cc4d4fea35aaafb5b9bccaa32c238"
+    },
+    "docs/research/upstream-agentops-grading-obligations-v1.json": {
+      "bytes": 172532,
+      "sha256": "e3d9a2cd1a755c1207dd3927697ee0f56c4171737dd6d08d2f3c137176800558"
+    },
+    "external/agentops-c806b7f1/agents/data/logs/cache.log": {
+      "bytes": 915,
+      "sha256": "699784f774655f299a0c729503cec7a428047ece84af87594e624ef4adc85818"
+    },
+    "external/agentops-c806b7f1/agents/data/logs/checkout.log": {
+      "bytes": 502,
+      "sha256": "8f70767232f7974060dfcdf62531e9fa7c8faa37d3be710f01068ccdb47b7124"
+    },
+    "external/agentops-c806b7f1/agents/data/logs/database.log": {
+      "bytes": 1147,
+      "sha256": "e3b3b850636c6d641c2466a76ba8a4cb045fd4c26e33b9e0dce57bab1653ec86"
+    },
+    "external/agentops-c806b7f1/agents/data/logs/inventory.log": {
+      "bytes": 501,
+      "sha256": "f336ebdd541ab9d83a50fcc9f80d00d9800047c3d48fb158020a31c0f0977ecb"
+    },
+    "external/agentops-c806b7f1/agents/data/runbooks/cascade-failure.md": {
+      "bytes": 1943,
+      "sha256": "903904200bf9a3293f336e40d8dd7af89f3b456ad88420f948166d2430e742ee"
+    },
+    "external/agentops-c806b7f1/agents/data/runbooks/high-latency.md": {
+      "bytes": 1198,
+      "sha256": "82b0b0a9a430c54da38577fc71ff6908d218d58476a5ca2ce69c65aee4b513a5"
+    },
+    "external/agentops-c806b7f1/agents/data/runbooks/memory-leak.md": {
+      "bytes": 1383,
+      "sha256": "94a594fdbe254a5f6ce5dae003ffeccd59325dcdf16d0afe1bf619156e5e1d2a"
+    },
+    "external/agentops-c806b7f1/agents/data/runbooks/service-down.md": {
+      "bytes": 1210,
+      "sha256": "987c45602bf8977a0409f8684708f1e790f9126668114631a7438352d5a9cbb9"
+    },
+    "external/agentops-c806b7f1/agents/data/skills/remediation/SKILL.md": {
+      "bytes": 1250,
+      "sha256": "852d957a7b9ea6390af0aca7cd1cb13cbf0de6b655c2e84940eb67853660e390"
+    },
+    "external/agentops-c806b7f1/agents/data/sql/seed.sql": {
+      "bytes": 4259,
+      "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/groundedness_eval.py": {
+      "bytes": 7570,
+      "sha256": "8b502e15a0f13bdd5f5dc9132c78614497ead03946089147c8c87fbb983183fb"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/mlflow_eval.py": {
+      "bytes": 38753,
+      "sha256": "09a40ce833f348ecd4dc9948a95a98a13a3b321c8f9672a7469dc5530e61735a"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/ops.evalset.json": {
+      "bytes": 21920,
+      "sha256": "57bff5579802a6de540d2465bf4714da8e7b70846e0321076d448becd0703a29"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/report_eval.py": {
+      "bytes": 1415,
+      "sha256": "4eae434cb05e751979c7c9a10692f20dd070ab39841caaf455e8b79498281c3f"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/required_trajectory.py": {
+      "bytes": 5531,
+      "sha256": "813d39cb7753e2157e565db868b8134a7d261e61c9f6decc9c9cad2a39f8ce44"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/test_config.json": {
+      "bytes": 415,
+      "sha256": "a1839f7ffdd918154778beeeb447a94c494929552840b116301d98517b179449"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/triage-report.evalset.json": {
+      "bytes": 4996,
+      "sha256": "b489a862e10d42933c40bb6aaed4e37fd2c47a87e0dedd6bfc35efa81242854a"
+    },
+    "external/agentops-c806b7f1/agents/python/evals/workflow.evalset.json": {
+      "bytes": 5172,
+      "sha256": "5ccb6e221368be143291cdfd2ab606e2cb1a9b34324f477025d40a93706c3e88"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/actions.py": {
+      "bytes": 8641,
+      "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/composition.py": {
+      "bytes": 7282,
+      "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/domain.py": {
+      "bytes": 3195,
+      "sha256": "a8af03e6c13bee0c690c87fa68fd37e722ed706f6f606d50e4126acd184ac848"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/longterm.py": {
+      "bytes": 9516,
+      "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/memory.py": {
+      "bytes": 5974,
+      "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/models.py": {
+      "bytes": 4062,
+      "sha256": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/pii.py": {
+      "bytes": 11662,
+      "sha256": "702c6afa72203c124d91e9de16a20cbd2a18ae8f215d780fdf078944b5bd6455"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/report.py": {
+      "bytes": 4257,
+      "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/skills.py": {
+      "bytes": 1181,
+      "sha256": "c07a179e0b1134c1bfe4b78b82d4ec646d3069824e91fd10af1fea937bb2ccee"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/tools.py": {
+      "bytes": 6311,
+      "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae"
+    },
+    "external/agentops-c806b7f1/agents/python/src/agent/workflow.py": {
+      "bytes": 6213,
+      "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/events/event.py": {
+      "bytes": 11443,
+      "sha256": "efde6a9f9ef990730be08648cbcc419b0ba6b3460d6262d3a8a3b77921393720"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/skills/prompt.py": {
+      "bytes": 2127,
+      "sha256": "1dfaed2ff66aaee4cbd8e704dc8eaa712dbc3fa6ede67d49da0d929fa5152bf9"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/tools/function_tool.py": {
+      "bytes": 17635,
+      "sha256": "eba7ac23662fede0dd02e71218989457dd67a666c56b18977f01bf6951988fd7"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/tools/skill_toolset.py": {
+      "bytes": 89990,
+      "sha256": "d439f39ccc50c5788874f1a0d5509cbf3152217ada23d2d4b10048e038676ceb"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/workflow/_llm_agent_wrapper.py": {
+      "bytes": 20605,
+      "sha256": "7cdf7b9d0e657764dff725bb03bcdcaaca2269dcb9fff0e8fbf177dfacf65c41"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/workflow/_node_runner.py": {
+      "bytes": 16825,
+      "sha256": "9d932ae24bbaa60781c5a92cd8c8200cc1b00c393243f82f9ddd6807bb598b28"
+    },
+    "external/runtime-agentops-v2-recovery-2/venv/Lib/site-packages/google/adk/workflow/_workflow.py": {
+      "bytes": 32178,
+      "sha256": "c61e473933236ac707a6b794c3fc7c1d680f4bf77afeebd13af18de7d7f99edc"
+    },
+    "runs/upstream-agentops-cases/v1/application/cases.json": {
+      "bytes": 15366,
+      "sha256": "3b58d64163533a9ddec2a68438b22a9fc1c43e7d5e50e8579fd7d766270bc146"
+    },
+    "runs/upstream-agentops-cases/v1/evaluator/expectations.json": {
+      "bytes": 24809,
+      "sha256": "8eb1fb24858bdd491319544973f9197a9fcbc436d82c8a017d96d3fdbaaa478f"
+    },
+    "scripts/agentops_native_probe_v2.py": {
+      "bytes": 16488,
+      "sha256": "61a668e2742e3fcbf943f3c81ff914379e5d1a258f7c12de62e3c91d9cfaad95"
+    },
+    "scripts/agentops_runtime_stream_v1.py": {
+      "bytes": 25898,
+      "sha256": "547f904e7ff073035a3128592751a72ea4727fa978d1a43c7e16963170f896ed"
+    },
+    "scripts/assess_upstream_agentops_case_v1.py": {
+      "bytes": 13671,
+      "sha256": "e2401c03dfde733f08c30e8b4a6f852a67eb41e7d969d728155c14378cbeb48e"
+    },
+    "scripts/assess_upstream_agentops_case_v2.py": {
+      "bytes": 21024,
+      "sha256": "b52a711a7d222e6e554804353b29ba45f938ba7bf20d639065b6b9653aec39ce"
+    },
+    "scripts/assess_upstream_agentops_case_v3.py": {
+      "bytes": 23317,
+      "sha256": "dc405bc5940438e40a911a32525d06e93bb051d6684e7e1dfdd5ffb4b2fa6e1f"
+    },
+    "scripts/capture_agentops_cli_v3_validation_v1.py": {
+      "bytes": 11712,
+      "sha256": "eeb8f84f6c4a259f9cef8652279fbe5141a93476c7793367a98a3e48898c1ce7"
+    },
+    "src/interoperability/__init__.py": {
+      "bytes": 172,
+      "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+    },
+    "src/interoperability/agentops_answer_schema_v1.py": {
+      "bytes": 29471,
+      "sha256": "ae4f198820419f4083bf7094dca1a6c0eadd21183e73757c18f429dc2337a11d"
+    },
+    "src/interoperability/agentops_case_boundary_evidence_v1.py": {
+      "bytes": 25564,
+      "sha256": "55995ba40591d7f68387e31e32be9b4d1a76c5576afd8111adf44f44f343d689"
+    },
+    "src/interoperability/agentops_memory_evidence_v1.py": {
+      "bytes": 12372,
+      "sha256": "a7989553aa007955718eb3a1f1e24f26c3bd86cff67336d4b24282458d157773"
+    },
+    "src/interoperability/agentops_reply_dependencies_v1.py": {
+      "bytes": 42462,
+      "sha256": "ae70b1a5dd901d3e1b298e30258fd7b12f51cc3f461a3be5880da9c26eb102e3"
+    },
+    "src/interoperability/agentops_reply_dependencies_v2.py": {
+      "bytes": 43398,
+      "sha256": "0475d55ba2a4aa84d0dacd77fefaa357440f35c27020d43d747879e3df39d2b3"
+    },
+    "src/interoperability/agentops_required_trajectory_v1.py": {
+      "bytes": 8954,
+      "sha256": "ad41fd029c1111ad4b2d933fd42e8d9ea8183bee7c99e088a57d219d9d574ed5"
+    },
+    "src/interoperability/agentops_runtime_stream_evidence_v1.py": {
+      "bytes": 17188,
+      "sha256": "0bc4002cf726f0df6ce719102a0c7bee1049a39f2f9239a1ccc76cf887e51d49"
+    },
+    "src/interoperability/agentops_source_case_assessment_v1.py": {
+      "bytes": 14403,
+      "sha256": "996173207112b97c3e9b6ec72d01bb32232684a2de4efcd36e65c85f5461b769"
+    },
+    "src/interoperability/agentops_source_case_assessment_v2.py": {
+      "bytes": 11417,
+      "sha256": "a2fec6d9bafbf1b76bd4654932a994a5e8cb6a8466ae1d30473dac03a8598fc8"
+    },
+    "src/interoperability/agentops_source_case_assessment_v3.py": {
+      "bytes": 4983,
+      "sha256": "3b6b1ec0a7c274590562ddd6a66bd06bf9ad5b79f78baecdaa58f1f07d175aa3"
+    },
+    "src/interoperability/agentops_source_case_effects_v1.py": {
+      "bytes": 26634,
+      "sha256": "ea1a88f1e062c332b2ebd7e0c9360deae75b9c46397b5ee71e84d7c0a805f7dd"
+    },
+    "src/interoperability/upstream_agentops_client_v1.py": {
+      "bytes": 33752,
+      "sha256": "c8506f66da5cd23750f9fb7cac5e454d4ec34e83babdc1b1b53d6df4847a923b"
+    },
+    "tests/test_agentops_case_boundary_evidence_v1.py": {
+      "bytes": 24397,
+      "sha256": "941d1e9965858cdec95463074b81abec52b874d974a67fb90f916179f0ffc7a0"
+    },
+    "tests/test_assess_upstream_agentops_case_v3.py": {
+      "bytes": 17790,
+      "sha256": "07c0ec96ac7ba2d296d5a7573d2563e09d30d7c720c8d9a5ffb0be43d6425eea"
+    }
+  },
+  "interpreter": {
+    "bytes": 105840,
+    "path": "C:\\Python313\\python.exe",
+    "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+  },
+  "only_new_primary_test_class_executed": true,
+  "schema_version": "agentops-corrected-cli-software-plan/1",
+  "scope": "Constructed retained instances and exact CLI helper bytes; no original application or model execution"
+}

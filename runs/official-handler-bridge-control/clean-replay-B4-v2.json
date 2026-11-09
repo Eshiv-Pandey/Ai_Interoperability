@@ -1,0 +1,69 @@
+{
+  "schema_version": "official-handler-bridge-archive-replay/2",
+  "valid": false,
+  "checked_at": "2026-10-24T18:10:45.118059+00:00",
+  "archive_files": 2635,
+  "archive_unchanged": true,
+  "worker_exit_code": 1,
+  "worker_stderr": "",
+  "worker_stdout": null,
+  "result": {
+    "schema_version": "official-handler-bridge-check/2",
+    "valid": false,
+    "complete": false,
+    "partial": false,
+    "expected_outcome_observed": false,
+    "validation_errors": [
+      {
+        "path": "checker",
+        "reason": "AttributeError: 'NoneType' object has no attribute 'get'"
+      }
+    ],
+    "expectation_deviations": [
+      {
+        "path": "native_initial",
+        "reason": "Bridge initial source condition differs"
+      }
+    ],
+    "observations": {
+      "source_snapshot_count": 24,
+      "complete_tree_snapshot_count": 11,
+      "native_eligible": true,
+      "native_control_task_id": "090d9bde-776e-44e3-8777-e2aa0973d2a6",
+      "bridge_original_task_id": "1f7e21b8-815b-4746-8f19-d00f1b68d4cb",
+      "bridge_original_context_id": "bcbc31ed-bd19-468a-8bbd-12fe5a70a158",
+      "evaluator_original_state": "TASK_STATE_INPUT_REQUIRED",
+      "selected_answer_attempts": 1,
+      "final_bridge_read_attempts": 1,
+      "complete_planned_attempt": true,
+      "paired_ingress": 9,
+      "process_boundary_complete": true,
+      "actual_stdin_bytes": 1451,
+      "actual_stdout_bytes": 19123,
+      "actual_stderr_bytes": 772,
+      "actual_stdin_operations": 7,
+      "actual_pipe_pairs": 11
+    },
+    "checked_entity_count": 93,
+    "official_variant": "B4",
+    "claim_limit": "Archive/software fidelity validation only; no service rerun, scientific novelty credit, second domain or human review",
+    "archive": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\official-handler-bridge-control\\clean-replay-B4-v2.sources",
+    "report_path": "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-24T18-05-16-225Z-7844/runtime.json",
+    "report_sha256": "b3c2014bf2be48c6894bd59499d1db48398184e105f450ead78c9e2ed1ca8570",
+    "mutation_checks": [
+      {
+        "name": "mutations-not-run",
+        "claim_rejected": false,
+        "reason": "Retained attempt does not validate the planned claim; no favorable service replacement"
+      }
+    ],
+    "mutation_claims_rejected": false,
+    "checker_imported": true,
+    "sdk_imported": false,
+    "bridge_started": false,
+    "service_requests": 0,
+    "model_calls": 0
+  },
+  "replay_driver_sha256": "4447b34b7b99e067c807fffe79dda7174b302d15283eaf3fdd286e0f004b0e5c",
+  "claim_limit": "Replay of retained control only; no service rerun, new scientific trial, novelty or human review"
+}

@@ -1,0 +1,54 @@
+{
+  "application_processes_launched": 0,
+  "command": [
+    "C:\\Python313\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-c",
+    "\nimport json\nfrom pathlib import Path\nimport runpy\nimport sys\nimport types\nimport unittest\n\nroot = Path(sys.argv[1]).resolve()\ntests = json.loads(sys.argv[2])\nexecution_path = Path(sys.argv[3])\nsys.path.insert(0, str(root / \"scripts\"))\nsys.path.insert(0, str(root / \"src\"))\nsys.argv = [\"captured_upstream_agentops_validation\"]\nloader = unittest.TestLoader()\nsuite = unittest.TestSuite()\nfor index, relative in enumerate(tests):\n    module_name = \"captured_validation_test_\" + str(index)\n    values = runpy.run_path(str(root / relative), run_name=module_name)\n    module = types.ModuleType(module_name)\n    module.__dict__.update(values)\n    sys.modules[module_name] = module\n    suite.addTests(loader.loadTestsFromModule(module))\nresult = unittest.TextTestRunner(verbosity=2).run(suite)\nrecord = {\"tests_run\": result.testsRun, \"failures\": len(result.failures), \"errors\": len(result.errors),\n          \"skips\": len(result.skipped), \"expected_failures\": len(result.expectedFailures),\n          \"unexpected_successes\": len(result.unexpectedSuccesses), \"successful\": result.wasSuccessful(),\n          \"isolated_python\": sys.flags.isolated == 1, \"site_disabled\": sys.flags.no_site == 1,\n          \"bytecode_disabled\": sys.dont_write_bytecode, \"executed_test_files\": tests}\nwith execution_path.open(\"x\", encoding=\"utf-8\") as stream:\n    json.dump(record, stream, sort_keys=True, indent=2)\n    stream.write(\"\\n\")\nraise SystemExit(0 if result.wasSuccessful() else 1)\n",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\upstream-agentops-native-software\\client-v1\\workspace",
+    "[\"tests/test_upstream_agentops_client_v1.py\"]",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\upstream-agentops-native-software\\client-v1\\execution.json"
+  ],
+  "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\upstream-agentops-native-software\\client-v1\\workspace",
+  "direct_model_calls": 0,
+  "driver_digest": {
+    "bytes": 13576,
+    "sha256": "4921d00724838700de62464881e161ce589763ca0dc235ea9136a918fee58f15"
+  },
+  "no_site_packages": true,
+  "original_archives_exported": 0,
+  "schema_version": "upstream-agentops-validation-plan/1",
+  "source_files": {
+    "runs/upstream-agentops-cases/v1/application/cases.json": {
+      "bytes": 15366,
+      "sha256": "3b58d64163533a9ddec2a68438b22a9fc1c43e7d5e50e8579fd7d766270bc146"
+    },
+    "src/interoperability/__init__.py": {
+      "bytes": 172,
+      "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+    },
+    "src/interoperability/upstream_agentops_client_v1.py": {
+      "bytes": 33752,
+      "sha256": "c8506f66da5cd23750f9fb7cac5e454d4ec34e83babdc1b1b53d6df4847a923b"
+    },
+    "tests/test_upstream_agentops_client_v1.py": {
+      "bytes": 34008,
+      "sha256": "65be1f515f75dde7d378329b825f030f49694910dc649ff516dbc736d873024a"
+    }
+  },
+  "source_inputs_and_tests_are_software_evidence_only": true,
+  "source_membership": [
+    "src/interoperability/__init__.py",
+    "src/interoperability/upstream_agentops_client_v1.py",
+    "tests/test_upstream_agentops_client_v1.py",
+    "runs/upstream-agentops-cases/v1/application/cases.json"
+  ],
+  "started_at_utc": "2026-10-29T16:12:20.109141+00:00",
+  "suite": "client",
+  "test_files": [
+    "tests/test_upstream_agentops_client_v1.py"
+  ],
+  "timeout_seconds": 120
+}

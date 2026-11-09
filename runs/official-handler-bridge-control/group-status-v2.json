@@ -1,0 +1,471 @@
+{
+  "schema_version": "official-handler-bridge-group-status/2",
+  "observed_at": "2026-10-24T18:22:20.636163+00:00",
+  "ordered_variants": [
+    "B1",
+    "B2",
+    "B3",
+    "B4"
+  ],
+  "cases": [
+    {
+      "variant": "B1",
+      "attempts": 1,
+      "report": {
+        "path": "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-24T18-02-06-000Z-19188/runtime.json",
+        "bytes": 670391,
+        "sha256": "d02cc87f609a7e7416cad9a70d5caa1713b348d1892f1d376d5c672412f7eae8"
+      },
+      "supervisor": {
+        "path": "runs/official-handler-bridge-control/supervisor-v2-B1-20261024T180205421966Z-17648/supervisor-report.json",
+        "bytes": 2463,
+        "sha256": "31cb5d44b2e32a8cbc5b0873a35a934174583b11eb30be25fe7355c1748d4bde"
+      },
+      "initial_native_state": "TASK_STATE_INPUT_REQUIRED",
+      "native_eligible": true,
+      "answer_version_header": "1.0",
+      "answer_reference_task_ids": [],
+      "answer_http_status": 200,
+      "answer_rpc_error": null,
+      "bridge_goal_achieved": false,
+      "evaluator_original_state": "TASK_STATE_INPUT_REQUIRED",
+      "original_check_valid": true,
+      "original_check_complete": true,
+      "original_expectation_deviations": [],
+      "original_validation_errors": [],
+      "original_replay_valid": false,
+      "original_replay_archive_unchanged": true,
+      "original_mutation_setup_errors": [
+        {
+          "name": "changed-outgoing-version",
+          "claim_rejected": false,
+          "mutation_setup_error": "'NoneType' object has no attribute 'get'"
+        },
+        {
+          "name": "changed-serialized-answer-reference",
+          "claim_rejected": false,
+          "mutation_setup_error": "'NoneType' object has no attribute 'get'"
+        },
+        {
+          "name": "changed-delivered-http-status",
+          "claim_rejected": false,
+          "mutation_setup_error": "'NoneType' object has no attribute 'get'"
+        }
+      ],
+      "corrected_check_valid": true,
+      "corrected_replay_valid": true,
+      "corrected_archive_files": 1778,
+      "corrected_archive_unchanged": true,
+      "mutations_rejected": 26,
+      "derived_costs": {
+        "mcp_rpc_requests": 6,
+        "mcp_notifications_sent": 0,
+        "request_bytes": 2174,
+        "response_bytes": 8642,
+        "setup_ms": 6483.6118,
+        "bridge_native_requests": 5,
+        "native_control_requests": 3,
+        "evaluator_only_requests": 1,
+        "server_ingress_requests": 9,
+        "bridge_children_started": 1,
+        "model_calls": 0,
+        "remote_network_requests": 0
+      },
+      "process_boundary": {
+        "process_boundary_complete": true,
+        "actual_stdin_bytes": 0,
+        "actual_stdout_bytes": 224,
+        "actual_stderr_bytes": 0,
+        "actual_stdin_operations": 0,
+        "actual_pipe_pairs": 4
+      }
+    },
+    {
+      "variant": "B2",
+      "attempts": 1,
+      "report": {
+        "path": "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-24T18-03-51-242Z-23884/runtime.json",
+        "bytes": 681118,
+        "sha256": "307d1e4d524adb458c10cc42bf5d315a32f3f24c323692baca496a3fc271da08"
+      },
+      "supervisor": {
+        "path": "runs/official-handler-bridge-control/supervisor-v2-B2-20261024T180350697770Z-2256/supervisor-report.json",
+        "bytes": 2473,
+        "sha256": "f653d00bf624c15559f8239fc1e206cea9c873dc1b642c3baaf3bc677c4207b9"
+      },
+      "initial_native_state": "TASK_STATE_SUBMITTED",
+      "native_eligible": true,
+      "answer_version_header": "1.0",
+      "answer_reference_task_ids": [],
+      "answer_http_status": 200,
+      "answer_rpc_error": null,
+      "bridge_goal_achieved": false,
+      "evaluator_original_state": "TASK_STATE_INPUT_REQUIRED",
+      "original_check_valid": true,
+      "original_check_complete": true,
+      "original_expectation_deviations": [
+        {
+          "path": "native_initial",
+          "reason": "Bridge initial source condition differs"
+        }
+      ],
+      "original_validation_errors": [],
+      "original_replay_valid": false,
+      "original_replay_archive_unchanged": true,
+      "original_mutation_setup_errors": [],
+      "corrected_check_valid": true,
+      "corrected_replay_valid": true,
+      "corrected_archive_files": 1778,
+      "corrected_archive_unchanged": true,
+      "mutations_rejected": 27,
+      "derived_costs": {
+        "mcp_rpc_requests": 8,
+        "mcp_notifications_sent": 0,
+        "request_bytes": 3144,
+        "response_bytes": 8904,
+        "setup_ms": 1213.6819,
+        "bridge_native_requests": 8,
+        "native_control_requests": 3,
+        "evaluator_only_requests": 1,
+        "server_ingress_requests": 12,
+        "bridge_children_started": 1,
+        "model_calls": 0,
+        "remote_network_requests": 0
+      },
+      "process_boundary": {
+        "process_boundary_complete": true,
+        "actual_stdin_bytes": 0,
+        "actual_stdout_bytes": 224,
+        "actual_stderr_bytes": 0,
+        "actual_stdin_operations": 0,
+        "actual_pipe_pairs": 3
+      }
+    },
+    {
+      "variant": "B3",
+      "attempts": 1,
+      "report": {
+        "path": "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-24T18-04-13-453Z-9912/runtime.json",
+        "bytes": 1056050,
+        "sha256": "1018679de97be0a288e8f505e3aae003cd8158aa807c647ad9886b0370ea506f"
+      },
+      "supervisor": {
+        "path": "runs/official-handler-bridge-control/supervisor-v2-B3-20261024T180412902113Z-25464/supervisor-report.json",
+        "bytes": 2611,
+        "sha256": "5cd7a20d376243f0d08f2d05c5d7f4ed3282f79985b1eb9e6cbdd7808a79933a"
+      },
+      "initial_native_state": "TASK_STATE_SUBMITTED",
+      "native_eligible": true,
+      "answer_version_header": "1.0",
+      "answer_reference_task_ids": [],
+      "answer_http_status": 200,
+      "answer_rpc_error": null,
+      "bridge_goal_achieved": false,
+      "evaluator_original_state": "TASK_STATE_INPUT_REQUIRED",
+      "original_check_valid": false,
+      "original_check_complete": false,
+      "original_expectation_deviations": [
+        {
+          "path": "native_initial",
+          "reason": "Bridge initial source condition differs"
+        }
+      ],
+      "original_validation_errors": [
+        {
+          "path": "checker",
+          "reason": "AttributeError: 'NoneType' object has no attribute 'get'"
+        }
+      ],
+      "original_replay_valid": false,
+      "original_replay_archive_unchanged": true,
+      "original_mutation_setup_errors": [],
+      "corrected_check_valid": true,
+      "corrected_replay_valid": true,
+      "corrected_archive_files": 2639,
+      "corrected_archive_unchanged": true,
+      "mutations_rejected": 28,
+      "derived_costs": {
+        "mcp_rpc_requests": 6,
+        "mcp_notifications_sent": 1,
+        "request_bytes": 1125,
+        "response_bytes": 19515,
+        "setup_ms": 12284.4551,
+        "bridge_native_requests": 5,
+        "native_control_requests": 3,
+        "evaluator_only_requests": 1,
+        "server_ingress_requests": 9,
+        "bridge_children_started": 1,
+        "model_calls": 0,
+        "remote_network_requests": 0
+      },
+      "process_boundary": {
+        "process_boundary_complete": true,
+        "actual_stdin_bytes": 1125,
+        "actual_stdout_bytes": 19515,
+        "actual_stderr_bytes": 772,
+        "actual_stdin_operations": 7,
+        "actual_pipe_pairs": 11
+      }
+    },
+    {
+      "variant": "B4",
+      "attempts": 1,
+      "report": {
+        "path": "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-24T18-05-16-225Z-7844/runtime.json",
+        "bytes": 1055596,
+        "sha256": "b3c2014bf2be48c6894bd59499d1db48398184e105f450ead78c9e2ed1ca8570"
+      },
+      "supervisor": {
+        "path": "runs/official-handler-bridge-control/supervisor-v2-B4-20261024T180515535803Z-20988/supervisor-report.json",
+        "bytes": 2520,
+        "sha256": "d32e5b7bf2f564d51d8293e28922f7e7cc949c6b779f204f43326c1b80bbac5c"
+      },
+      "initial_native_state": "TASK_STATE_SUBMITTED",
+      "native_eligible": true,
+      "answer_version_header": null,
+      "answer_reference_task_ids": [
+        "1f7e21b8-815b-4746-8f19-d00f1b68d4cb"
+      ],
+      "answer_http_status": 500,
+      "answer_rpc_error": {
+        "code": -32009,
+        "message": "The requested A2A protocol version '0.3' is not supported. Supported versions: 1.0",
+        "data": [
+          {
+            "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+            "reason": "VERSION_NOT_SUPPORTED",
+            "domain": "a2a-protocol.org"
+          }
+        ]
+      },
+      "bridge_goal_achieved": false,
+      "evaluator_original_state": "TASK_STATE_INPUT_REQUIRED",
+      "original_check_valid": false,
+      "original_check_complete": false,
+      "original_expectation_deviations": [
+        {
+          "path": "native_initial",
+          "reason": "Bridge initial source condition differs"
+        }
+      ],
+      "original_validation_errors": [
+        {
+          "path": "checker",
+          "reason": "AttributeError: 'NoneType' object has no attribute 'get'"
+        }
+      ],
+      "original_replay_valid": false,
+      "original_replay_archive_unchanged": true,
+      "original_mutation_setup_errors": [],
+      "corrected_check_valid": true,
+      "corrected_replay_valid": true,
+      "corrected_archive_files": 2639,
+      "corrected_archive_unchanged": true,
+      "mutations_rejected": 28,
+      "derived_costs": {
+        "mcp_rpc_requests": 6,
+        "mcp_notifications_sent": 1,
+        "request_bytes": 1451,
+        "response_bytes": 19123,
+        "setup_ms": 2003.5769,
+        "bridge_native_requests": 5,
+        "native_control_requests": 3,
+        "evaluator_only_requests": 1,
+        "server_ingress_requests": 9,
+        "bridge_children_started": 1,
+        "model_calls": 0,
+        "remote_network_requests": 0
+      },
+      "process_boundary": {
+        "process_boundary_complete": true,
+        "actual_stdin_bytes": 1451,
+        "actual_stdout_bytes": 19123,
+        "actual_stderr_bytes": 772,
+        "actual_stdin_operations": 7,
+        "actual_pipe_pairs": 11
+      }
+    }
+  ],
+  "service_cases_executed_once": 4,
+  "native_control_requests": 12,
+  "evaluator_only_requests": 4,
+  "bridge_native_requests": 23,
+  "server_ingress_requests": 39,
+  "mcp_rpc_requests": 26,
+  "mcp_notifications": 2,
+  "corrected_mutations_rejected": 109,
+  "corrected_archive_files": 8834,
+  "group_sources_unchanged": true,
+  "current_group_source_files": [
+    {
+      "path": "docs/research/official-handler-bridge-probe-v2.md",
+      "bytes": 7106,
+      "sha256": "5ff074a787867cda58e9af730563498d820b24fb73546a2719ebeb022842edc5"
+    },
+    {
+      "path": "scripts/capture-official-handler-bridge-v2.mjs",
+      "bytes": 15546,
+      "sha256": "fd2bf7d05f4c9fe456d81d65868a6467280ed96b747a529792b6edd88496acf3"
+    },
+    {
+      "path": "scripts/official-session-freeze-v2.mjs",
+      "bytes": 7287,
+      "sha256": "6cb43a8b567fb24d09f6712ce28d106aaa4d9cbe6c1bad9d15c271cf148e3d11"
+    },
+    {
+      "path": "scripts/official-process-relay-v2.mjs",
+      "bytes": 5936,
+      "sha256": "56188569b726585a755cf323b99fe5398105502e14be61aae6c4e749ff9930d0"
+    },
+    {
+      "path": "scripts/official-bridge-preload-v2.mjs",
+      "bytes": 1248,
+      "sha256": "544f097694f6951cab6fefa5082930fa2087482ffe4bb92970d34766d850d222"
+    },
+    {
+      "path": "scripts/supervise_official_bridge_v2.py",
+      "bytes": 12414,
+      "sha256": "b169528393bffd7bbd5c9d382b1c1faf5c8b3aecc37da4123811c2fd324f67d5"
+    },
+    {
+      "path": "scripts/check_official_handler_bridge_v2.py",
+      "bytes": 99315,
+      "sha256": "d61867766b94f922ee79e0bbb95413cfd5912f588382484e47dd67480a2317d0"
+    },
+    {
+      "path": "scripts/replay_official_handler_bridge_v2.py",
+      "bytes": 13065,
+      "sha256": "4447b34b7b99e067c807fffe79dda7174b302d15283eaf3fdd286e0f004b0e5c"
+    },
+    {
+      "path": "scripts/prepare_official_bridge_group_v2.py",
+      "bytes": 3483,
+      "sha256": "564c0619d38b6dad97b38440a7f6ebae35f449831d97439499e7817c31a6e0fd"
+    },
+    {
+      "path": "scripts/official-handler-amir-v1.mjs",
+      "bytes": 13106,
+      "sha256": "d827b1031b99550cc2a4a83719016162e399f59a6b7192fc38890ecfdbeabf74"
+    },
+    {
+      "path": "scripts/reference-mgcrea-v1.mjs",
+      "bytes": 16662,
+      "sha256": "85f6224a0c49c65072adcc3cc464536e5684fc2dbd39763249bc861f84ca589c"
+    },
+    {
+      "path": "scripts/log-reference-http.mjs",
+      "bytes": 29454,
+      "sha256": "c274b60dbd3dedc67f4df9d37dde14a8c4150ee4b5e06304e0e104e595fbf1eb"
+    },
+    {
+      "path": "scripts/fixtures/carol-reference-v1.mjs",
+      "bytes": 11074,
+      "sha256": "b6b6492ee5c27cf5db0474054b0f18a8feafe0859d9faaa4fd67946c7768626d"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "runs/official-handler-bridge-control/pre-execution-group-v2.json",
+      "bytes": 4342,
+      "sha256": "4199edf2b52ce3b3c3961eea93a4d9b816d553337a4f2aa5f7500f8c5f8dbc3a"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/post-capture-checker-correction-v2.1.json",
+      "bytes": 2599,
+      "sha256": "e42f96d5ea467d3db09b11a728c26659a5c7cfea4a125e28ec4590bcc265fbe2"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/check-B1-v2.json",
+      "bytes": 1884,
+      "sha256": "3495669bbb517648dba81aacc4fe4a5c258dfc05978fc9290395e8968f5c6b72"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/check-B1-v2.1.json",
+      "bytes": 2302,
+      "sha256": "992bb3217896db92a5a878c8a400228952adff154776d43325c63b945abf4b54"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/clean-replay-B1-v2.json",
+      "bytes": 13823,
+      "sha256": "cfbd772de7c5d939c5816ff302df0bb7cdc7605b74c9f00c684871488c7cec87"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/clean-replay-B1-v2.1.json",
+      "bytes": 15088,
+      "sha256": "9c5d0dbac3637db58d291e7464eeca0a287edeb82f92ddff2043e85f6d0e9b10"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/check-B2-v2.json",
+      "bytes": 1997,
+      "sha256": "924ac2eeaf3c2651e7f5ae5e3fa7ae4467825d3d651823765dbcb30e2c44e5df"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/check-B2-v2.1.json",
+      "bytes": 2299,
+      "sha256": "d1ea36cdaf7e67f689b1579025803736f574c21368f18543fcc10d60177b32b4"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/clean-replay-B2-v2.json",
+      "bytes": 3082,
+      "sha256": "acf2b9e13a27f1e8fd80d07e4b03aa128ccee9e01327ce8f1988cd904812e381"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/clean-replay-B2-v2.1.json",
+      "bytes": 15428,
+      "sha256": "1c466e8ed289792a670477875c8865474423ac1f89e1ebf6f314e4bd3c111272"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/check-B3-v2.json",
+      "bytes": 1689,
+      "sha256": "06a3a89b565ea59b11e2e9ba3fcd03b1b0f0ffe6b9055cda503df6fc804c7c27"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/check-B3-v2.1.json",
+      "bytes": 2305,
+      "sha256": "c1a1b1e5ceb13d949612762b547c757031b43b643ae5d00a6e675f356eb47de1"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/clean-replay-B3-v2.json",
+      "bytes": 2756,
+      "sha256": "6c88a428e856d4f79c61c3ca27b6aed8009f6b908234719efa54c679d79ec3b6"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/clean-replay-B3-v2.1.json",
+      "bytes": 16440,
+      "sha256": "cd1ebe1a34dd8aa07e6486761e3e18bc96d62441c276cae7028de3de67078be1"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/check-B4-v2.json",
+      "bytes": 1689,
+      "sha256": "05972c6360ff936b7263f9ac7e44b740ca2733b1a5aff9258c784992d8be2123"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/check-B4-v2.1.json",
+      "bytes": 2304,
+      "sha256": "494cc878bfa0d267773813fb0b63d39d67c4925c5ef5dd2467dcb619bfae0e98"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/clean-replay-B4-v2.json",
+      "bytes": 2756,
+      "sha256": "6083938aa5fcc5954b6b8e306a2e44976a3e631eb4bb439101c0a141ac09dd6e"
+    },
+    {
+      "path": "runs/official-handler-bridge-control/clean-replay-B4-v2.1.json",
+      "bytes": 16607,
+      "sha256": "3cdbb6c3fc32eae250a9c699176147bdc4e130610218ac48747d63c769b9653a"
+    }
+  ],
+  "process_check": {
+    "path": "runs/official-handler-bridge-control/post-group-process-check-v2.json",
+    "bytes": 701,
+    "sha256": "d111f76c9095e4d15f5589b4e4f50d732e6fde32e99f81d947aff2b5b37d4b50"
+  },
+  "service_reruns": 0,
+  "model_calls": 0,
+  "remote_network_requests": 0,
+  "checkpoint_progress_percent": 5,
+  "cp2_status": "in_progress",
+  "checker_correction_disclosed": true,
+  "independent_human_review_completed": false,
+  "claim_limit": "Bounded official-handler control with authored executor; no C1 novelty, second domain or scientific gate credit"
+}

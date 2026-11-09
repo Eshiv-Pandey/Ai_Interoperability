@@ -1,0 +1,44 @@
+{
+  "schema_version": "agentops-shutdown-diagnostic-check/1",
+  "valid": true,
+  "complete": false,
+  "classification": "incomplete_before_supported_boundary",
+  "validation_errors": [],
+  "observation_gaps": [
+    "phase_missing:teardown_watchdog_armed",
+    "phase_missing:coroutine_finished",
+    "phase_missing:asyncio_run_exited"
+  ],
+  "files": [
+    {
+      "path": "result.json",
+      "bytes": 5000,
+      "sha256": "e2679dd9ef8b7da228eff63337fb0ccc731d852b3cfe43bad9d483df527b895e"
+    },
+    {
+      "path": "service-process.json",
+      "bytes": 705,
+      "sha256": "46eef24e20dbc4fdf23eb874036cf1a42176060970f54cc48b9b943fb2835ad6"
+    },
+    {
+      "path": "service/shutdown-diagnostics/lifecycle.jsonl",
+      "bytes": 208,
+      "sha256": "a79494f8350a8f66ca57b74bb992eb281ce60021b75593b02f6a78a36a038a1b"
+    },
+    {
+      "path": "service/shutdown-diagnostics/teardown-stacks.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "case_outcome": "unknown_or_partial",
+  "case_strict_success": false,
+  "root_cause_established": false,
+  "scientific_gate_credit_added": 0,
+  "case_id": "N11",
+  "phases": [
+    "asyncio_run_entered"
+  ],
+  "diagnostic_errors": [],
+  "timeout_trace_observed": false
+}

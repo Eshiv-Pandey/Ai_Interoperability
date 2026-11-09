@@ -1,0 +1,276 @@
+{
+  "schema_version": "identity-screen-source-index/1",
+  "files": [
+    {
+      "source": "external/a2a-to-mcp/src/handles.ts",
+      "snapshot": {
+        "path": "docs/research/source-evidence/identity-method-screen-v1/local-sources/amirk-handles.ts",
+        "bytes": 6910,
+        "sha256": "18fd7d218f9a0c9110add689a58273b8dffa18e30c85e507aa7e9deac764c6dc"
+      },
+      "selected_lines": [
+        {
+          "line": 93,
+          "text": "      if (entry !== undefined && !this.#isExpired(entry)) {"
+        },
+        {
+          "line": 98,
+          "text": "      this.#forget(existing);"
+        },
+        {
+          "line": 109,
+          "text": "    if (this.#isExpired(entry)) {"
+        },
+        {
+          "line": 121,
+          "text": "    if (this.#isExpired(entry)) {"
+        },
+        {
+          "line": 137,
+          "text": "  sweep(): number {"
+        },
+        {
+          "line": 140,
+          "text": "      if (this.#isExpired(entry)) {"
+        },
+        {
+          "line": 141,
+          "text": "        this.#forget(handle);"
+        },
+        {
+          "line": 149,
+          "text": "  delete(handle: string): boolean {"
+        },
+        {
+          "line": 153,
+          "text": "    this.#forget(handle);"
+        },
+        {
+          "line": 171,
+          "text": "    const handle = this.#newHandle();"
+        },
+        {
+          "line": 179,
+          "text": "  #newHandle(): string {"
+        },
+        {
+          "line": 187,
+          "text": "  #forget(handle: string): void {"
+        },
+        {
+          "line": 192,
+          "text": "    this.#entries.delete(handle);"
+        },
+        {
+          "line": 195,
+          "text": "  #isExpired(entry: HandleEntry<T>): boolean {"
+        }
+      ]
+    },
+    {
+      "source": "external/a2a-to-mcp/src/tasks/store.ts",
+      "snapshot": {
+        "path": "docs/research/source-evidence/identity-method-screen-v1/local-sources/amirk-task-store.ts",
+        "bytes": 6268,
+        "sha256": "aa9acdd39d91b68971497439f5aefae95cd7a96d754426fa6ca599a76aa1ae87"
+      },
+      "selected_lines": [
+        {
+          "line": 87,
+          "text": "  mintFor(alias: string, task: Task, terminal = false): string {"
+        },
+        {
+          "line": 88,
+          "text": "    const key = `${alias}:${task.id}`;"
+        },
+        {
+          "line": 98,
+          "text": "        if (!record.terminal) {"
+        },
+        {
+          "line": 100,
+          "text": "          record.terminal = terminal;"
+        },
+        {
+          "line": 147,
+          "text": "  delete(handle: string): boolean {"
+        },
+        {
+          "line": 152,
+          "text": "    return this.#table.delete(handle);"
+        }
+      ]
+    },
+    {
+      "source": "external/a2a-to-mcp/src/envelope.ts",
+      "snapshot": {
+        "path": "docs/research/source-evidence/identity-method-screen-v1/local-sources/amirk-envelope.ts",
+        "bytes": 7799,
+        "sha256": "ce218cbf0ddca4fb7ddcb5861eafd11e94ea5ac9530672d3b4a1c282c30ae8b1"
+      },
+      "selected_lines": [
+        {
+          "line": 100,
+          "text": "  mintContext(alias: string, contextId: string): string {"
+        },
+        {
+          "line": 101,
+          "text": "    return this.#contexts.mintFor(`${alias}:${contextId}`, { alias, contextId });"
+        },
+        {
+          "line": 135,
+          "text": "      contextHandle: handles.mintContext(alias, message.contextId),"
+        },
+        {
+          "line": 176,
+          "text": "    contextHandle: handles.mintContext(alias, task.contextId),"
+        },
+        {
+          "line": 177,
+          "text": "    taskHandle: handles.tasks.mintFor(alias, task, isTerminalA2AState(state)),"
+        }
+      ]
+    },
+    {
+      "source": "external/a2a-to-mcp/src/config.ts",
+      "snapshot": {
+        "path": "docs/research/source-evidence/identity-method-screen-v1/local-sources/amirk-config.ts",
+        "bytes": 7506,
+        "sha256": "dfbc33783e81b1867e03d82c7d9117b73f0f95260d574d7cfd8b39eaa9a2b467"
+      },
+      "selected_lines": [
+        {
+          "line": 24,
+          "text": "const ALIAS_PATTERN = /^[A-Za-z0-9_-]{1,64}$/;"
+        },
+        {
+          "line": 124,
+          "text": "    if (!ALIAS_PATTERN.test(alias)) {"
+        }
+      ]
+    },
+    {
+      "source": "external/a2a-to-mcp/src/a2a-client.ts",
+      "snapshot": {
+        "path": "docs/research/source-evidence/identity-method-screen-v1/local-sources/amirk-a2a-client.ts",
+        "bytes": 8572,
+        "sha256": "38cca90108c057823c823fac881bba074bc6df99e2ac07746ad2426550815b06"
+      },
+      "selected_lines": [
+        {
+          "line": 99,
+          "text": "        message: buildUserMessage(input),"
+        },
+        {
+          "line": 123,
+          "text": "          message: buildUserMessage(input),"
+        },
+        {
+          "line": 207,
+          "text": "export function buildUserMessage(input: SendMessageInput): Message {"
+        },
+        {
+          "line": 215,
+          "text": "    messageId: randomUUID(),"
+        }
+      ]
+    },
+    {
+      "source": "external/a2a-to-mcp/LICENSE",
+      "snapshot": {
+        "path": "docs/research/source-evidence/identity-method-screen-v1/local-sources/amirk-LICENSE",
+        "bytes": 11560,
+        "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5"
+      },
+      "selected_lines": []
+    },
+    {
+      "source": "external/mcp-a2a/src/client/peer.ts",
+      "snapshot": {
+        "path": "docs/research/source-evidence/identity-method-screen-v1/local-sources/mgcrea-peer.ts",
+        "bytes": 12628,
+        "sha256": "62c36155dd3f2438f4a629fff8cc5b1961d2f7c20bfbc5a620706a2f8218b909"
+      },
+      "selected_lines": [
+        {
+          "line": 172,
+          "text": "      messageId: randomId(\"msg\"),"
+        },
+        {
+          "line": 338,
+          "text": "export const normalizeBase = (url: string): string => url.replace(/\\/+$/, \"\");"
+        },
+        {
+          "line": 347,
+          "text": "export const randomId = (prefix: string): string =>"
+        }
+      ]
+    },
+    {
+      "source": "external/mcp-a2a/src/store/tasks.ts",
+      "snapshot": {
+        "path": "docs/research/source-evidence/identity-method-screen-v1/local-sources/mgcrea-tasks.ts",
+        "bytes": 15496,
+        "sha256": "487613b2cbbd7c33c0c8fc63e0cfedc0961f237b8b82bb6b5eca1fb053b82099"
+      },
+      "selected_lines": [
+        {
+          "line": 133,
+          "text": "  private pathFor(taskId: string): string {"
+        },
+        {
+          "line": 152,
+          "text": "    if (!isSafeId(taskId)) return undefined;"
+        },
+        {
+          "line": 210,
+          "text": "    return isSafeId(taskId) ? this.readRecord(taskId) : undefined;"
+        },
+        {
+          "line": 327,
+          "text": "      unlinkSync(this.pathFor(taskId));"
+        },
+        {
+          "line": 349,
+          "text": "    if (!isSafeId(taskId)) return undefined;"
+        },
+        {
+          "line": 361,
+          "text": "    const path = this.pathFor(taskId);"
+        }
+      ]
+    },
+    {
+      "source": "external/mcp-a2a/src/store/paths.ts",
+      "snapshot": {
+        "path": "docs/research/source-evidence/identity-method-screen-v1/local-sources/mgcrea-paths.ts",
+        "bytes": 3036,
+        "sha256": "81acd495cfb20046b39c05cdd065f735a9c0404a722e3e6cea9b5457110716fb"
+      },
+      "selected_lines": [
+        {
+          "line": 14,
+          "text": "const SAFE_ID = /^[A-Za-z0-9._-]{1,128}$/;"
+        },
+        {
+          "line": 16,
+          "text": "export const assertSafeId = (id: string): string => {"
+        },
+        {
+          "line": 22,
+          "text": "export const isSafeId = (id: string): boolean => SAFE_ID.test(id) && id !== \".\" && id !== \"..\";"
+        }
+      ]
+    },
+    {
+      "source": "external/mcp-a2a/LICENSE",
+      "snapshot": {
+        "path": "docs/research/source-evidence/identity-method-screen-v1/local-sources/mgcrea-LICENSE",
+        "bytes": 1095,
+        "sha256": "a9f8dd66aae38beed6db62a090dc410dd29ac69b3556e5d679f1ef33cb6714a4"
+      },
+      "selected_lines": []
+    }
+  ],
+  "claim_limit": "Original local bytes and line anchors; no runtime."
+}

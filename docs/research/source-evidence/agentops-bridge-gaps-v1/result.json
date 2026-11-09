@@ -1,0 +1,526 @@
+{
+  "schema_version": "agentops-bridge-gap-inspection/1",
+  "status": "retained_gap_evidence_inspected",
+  "started_at_utc": "2026-10-28T08:20:26.813038+00:00",
+  "application_requests": 0,
+  "live_model_calls": 0,
+  "scientific_gate_credit_added": 0,
+  "strict_outcomes_changed": false,
+  "cases": {
+    "B5": {
+      "public_bindings": {
+        "task_id": "1f4b0eab-3ef9-4080-848e-937414034f2d",
+        "context_id": "f9b289d2-17e4-417f-98c9-b5c77f42e822"
+      },
+      "answer_attempted": false,
+      "outcome": "unknown_or_partial",
+      "observation_gaps": [
+        "client:continuation_not_attempted:public_binding_not_observed"
+      ],
+      "requests": [
+        {
+          "sequence": 1,
+          "method": null,
+          "rpc_id": null,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 2,
+          "method": "SendMessage",
+          "rpc_id": 1,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 3,
+          "method": "GetTask",
+          "rpc_id": 2,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 4,
+          "method": "GetTask",
+          "rpc_id": 3,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 5,
+          "method": "GetTask",
+          "rpc_id": "rpc-mvqpc7rf-35xpu3x4",
+          "version_headers": [],
+          "http_status": 200,
+          "errors": [
+            {
+              "code": -32009,
+              "message": "A2A version '0.3' is not supported by this handler. Expected version '1.0'.",
+              "data": [
+                {
+                  "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+                  "reason": "VERSION_NOT_SUPPORTED",
+                  "domain": "a2a-protocol.org",
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequence": 6,
+          "method": "GetTask",
+          "rpc_id": 4,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 7,
+          "method": "GetTask",
+          "rpc_id": "evaluator-final",
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        }
+      ]
+    },
+    "B6": {
+      "public_bindings": {
+        "task_id": "59cdc8e9-98de-4858-8c44-3fdb2db1ae66",
+        "context_id": "745a42fd-c312-42ad-8137-23a419b8e6db"
+      },
+      "answer_attempted": false,
+      "outcome": "unknown_or_partial",
+      "observation_gaps": [
+        "client:continuation_not_attempted:public_binding_not_observed"
+      ],
+      "requests": [
+        {
+          "sequence": 1,
+          "method": null,
+          "rpc_id": null,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 2,
+          "method": "SendMessage",
+          "rpc_id": 1,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 3,
+          "method": "GetTask",
+          "rpc_id": 2,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 4,
+          "method": "GetTask",
+          "rpc_id": 3,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 5,
+          "method": "GetTask",
+          "rpc_id": "rpc-mvqpcsc6-u9f7wt1k",
+          "version_headers": [],
+          "http_status": 200,
+          "errors": [
+            {
+              "code": -32009,
+              "message": "A2A version '0.3' is not supported by this handler. Expected version '1.0'.",
+              "data": [
+                {
+                  "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+                  "reason": "VERSION_NOT_SUPPORTED",
+                  "domain": "a2a-protocol.org",
+                  "metadata": {}
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "sequence": 6,
+          "method": "GetTask",
+          "rpc_id": 4,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 7,
+          "method": "GetTask",
+          "rpc_id": "evaluator-final",
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        }
+      ]
+    },
+    "B7": {
+      "public_bindings": {
+        "task_id": "0beee415-237f-4def-b2af-c148d0e182b7",
+        "context_id": "7d92e1aa-677a-4ad0-8790-90b41002e392",
+        "confirmation_call_id": "adk-75120bfb-045c-4b2e-af04-2d2fdfe5b3dc",
+        "confirmation_call_name": "adk_request_confirmation"
+      },
+      "answer_attempted": true,
+      "outcome": "unknown_or_partial",
+      "observation_gaps": [
+        "service:terminal.snapshot_missing",
+        "service_shutdown_not_clean",
+        "service_owned_group_not_initially_clean",
+        "coordinator_cleanup_errors"
+      ],
+      "requests": [
+        {
+          "sequence": 1,
+          "method": null,
+          "rpc_id": null,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 2,
+          "method": "SendMessage",
+          "rpc_id": 1,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 3,
+          "method": "GetTask",
+          "rpc_id": 2,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 4,
+          "method": "GetTask",
+          "rpc_id": 3,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 5,
+          "method": "GetTask",
+          "rpc_id": 4,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 6,
+          "method": "GetTask",
+          "rpc_id": "rpc-mvqpdhca-o4ef0378",
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 7,
+          "method": "SendMessage",
+          "rpc_id": "rpc-mvqpdhdu-ui1ocrzd",
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 8,
+          "method": "GetTask",
+          "rpc_id": 5,
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        },
+        {
+          "sequence": 9,
+          "method": "GetTask",
+          "rpc_id": "evaluator-final",
+          "version_headers": [
+            "1.0"
+          ],
+          "http_status": 200,
+          "errors": []
+        }
+      ]
+    }
+  },
+  "b7_shutdown": {
+    "service_routine": {
+      "schema_version": "agentops-http-service/1",
+      "status": "stopped",
+      "observer_version": 3,
+      "socket_policy": {
+        "schema_version": "agentops-offline-socket-policy/1",
+        "capability_source": {
+          "installed_path": "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/lib/python3.13/site-packages/urllib3/util/connection.py",
+          "bytes": 4444,
+          "sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74"
+        },
+        "listener_port": 18764,
+        "denied_capability_probes": [
+          {
+            "event": "socket.bind",
+            "address": [
+              "::1",
+              0
+            ],
+            "family": 10,
+            "socket_type": 1,
+            "action": "blocked",
+            "function": "_has_ipv6",
+            "phase": "module-import",
+            "source_sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74"
+          }
+        ],
+        "listener_binds": [
+          {
+            "event": "socket.bind",
+            "address": [
+              "127.0.0.1",
+              18764
+            ],
+            "family": 2,
+            "socket_type": 1
+          }
+        ],
+        "internal_socketpairs": [],
+        "unexpected": []
+      },
+      "network_errors": [],
+      "internal_socketpairs": [],
+      "fixture": "Reproduced original confirmation agent with imported upstream model double",
+      "asgi_requests": 9,
+      "capture_errors": [],
+      "model_double_calls": 2,
+      "seen_contexts": [
+        [
+          "A2A_USER_7d92e1aa-677a-4ad0-8790-90b41002e392",
+          "7d92e1aa-677a-4ad0-8790-90b41002e392",
+          "e-f15d0e52-3e2f-44dd-b87e-97897d35c052",
+          false
+        ],
+        [
+          "A2A_USER_7d92e1aa-677a-4ad0-8790-90b41002e392",
+          "7d92e1aa-677a-4ad0-8790-90b41002e392",
+          "e-f15d0e52-3e2f-44dd-b87e-97897d35c052",
+          true
+        ]
+      ],
+      "finished_at_utc": "2026-10-27T13:10:05.011362+00:00"
+    },
+    "service_returncode": -15,
+    "forced_service_stop": true,
+    "cleanup_errors": [
+      "after_sigterm: PID 2926 has unknown argv"
+    ],
+    "controller_cleanup": {
+      "schema_version": "agentops-owned-process-group/1",
+      "pgid": 2926,
+      "initially_empty": false,
+      "final_empty": false,
+      "forced_cleanup": true,
+      "members": [
+        {
+          "pid": 2926,
+          "state": "R",
+          "pgrp": 2926,
+          "session": 2926,
+          "starttick": 51713,
+          "argv": [
+            "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+            "-B",
+            "/var/tmp/agentops-research-v7-gs9r5her/scripts/serve_agentops_bridge_v1.py",
+            "--output",
+            "/var/tmp/agentops-research-v7-gs9r5her/runs/agentops-http-control/bridge-v1-B7/service",
+            "--port",
+            "18764"
+          ]
+        }
+      ],
+      "final_members": [
+        {
+          "pid": 2926,
+          "state": "R",
+          "pgrp": 2926,
+          "session": 2926,
+          "starttick": 51713,
+          "argv": []
+        }
+      ],
+      "snapshots": [
+        {
+          "phase": "initial",
+          "monotonic_ns": 563646842314,
+          "members": [
+            {
+              "pid": 2926,
+              "state": "R",
+              "pgrp": 2926,
+              "session": 2926,
+              "starttick": 51713,
+              "argv": [
+                "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+                "-B",
+                "/var/tmp/agentops-research-v7-gs9r5her/scripts/serve_agentops_bridge_v1.py",
+                "--output",
+                "/var/tmp/agentops-research-v7-gs9r5her/runs/agentops-http-control/bridge-v1-B7/service",
+                "--port",
+                "18764"
+              ]
+            }
+          ],
+          "errors": []
+        },
+        {
+          "phase": "before_sigterm",
+          "monotonic_ns": 563649693311,
+          "members": [
+            {
+              "pid": 2926,
+              "state": "R",
+              "pgrp": 2926,
+              "session": 2926,
+              "starttick": 51713,
+              "argv": [
+                "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+                "-B",
+                "/var/tmp/agentops-research-v7-gs9r5her/scripts/serve_agentops_bridge_v1.py",
+                "--output",
+                "/var/tmp/agentops-research-v7-gs9r5her/runs/agentops-http-control/bridge-v1-B7/service",
+                "--port",
+                "18764"
+              ]
+            }
+          ],
+          "errors": []
+        },
+        {
+          "phase": "after_sigterm",
+          "monotonic_ns": 563824703349,
+          "members": [
+            {
+              "pid": 2926,
+              "state": "R",
+              "pgrp": 2926,
+              "session": 2926,
+              "starttick": 51713,
+              "argv": []
+            }
+          ],
+          "errors": []
+        }
+      ],
+      "signals": [
+        {
+          "signal": "SIGTERM",
+          "monotonic_ns": 563649966898,
+          "sent": true
+        }
+      ],
+      "errors": [
+        "after_sigterm: PID 2926 has unknown argv"
+      ]
+    },
+    "later_outer_cleanup": {
+      "schema_version": "agentops-owned-process-group/1",
+      "pgid": 2926,
+      "initially_empty": true,
+      "final_empty": true,
+      "forced_cleanup": false,
+      "members": [],
+      "final_members": [],
+      "snapshots": [
+        {
+          "phase": "initial",
+          "monotonic_ns": 575257164662,
+          "members": [],
+          "errors": []
+        }
+      ],
+      "signals": [],
+      "errors": []
+    },
+    "terminal_snapshot_present": false,
+    "root_cause_established": false
+  },
+  "archived_database": {
+    "copies": [
+      {
+        "source": {
+          "path": "runs/agentops-native-eligibility/linux-bridge-v10/workspace/runs/agentops-http-control/bridge-v1-B7/service/state/incidents.db",
+          "bytes": 40960,
+          "sha256": "b2d0ad46392a862406f3f157c436ca6e82becba553f7f794ecc4859d3e27fab5"
+        },
+        "copy_before_read": {
+          "path": "docs/research/source-evidence/agentops-bridge-gaps-v1/archived-database-copy/state/incidents.db",
+          "bytes": 40960,
+          "sha256": "b2d0ad46392a862406f3f157c436ca6e82becba553f7f794ecc4859d3e27fab5"
+        }
+      }
+    ],
+    "equals_last_live_final_snapshot": true,
+    "scope": "Logical archived state only; not the missing historical terminal observation or clean exit"
+  },
+  "inputs_unchanged": true,
+  "finished_at_utc": "2026-10-28T08:20:26.936180+00:00"
+}

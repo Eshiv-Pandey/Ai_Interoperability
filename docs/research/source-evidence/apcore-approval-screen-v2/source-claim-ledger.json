@@ -1,0 +1,75 @@
+{
+  "schema_version": "source-screen-claim-ledger/1",
+  "date_local": "2026-10-25",
+  "decision": "source-level-pending-ID-projection-lead; no-qualified-domain-or-extra-C1-step",
+  "retrieval_pairs": 12,
+  "source": {
+    "core_repository": "https://github.com/aiperceivable/apcore-python",
+    "core_tag": "python/v0.32.2",
+    "core_commit": "234813b283913c58532cd5292d9058730b42dc67",
+    "adapter_commit": "c8b5ae5c15ae7e848cdfb45c2f063293d172061d",
+    "pin_kind": "Web-resolved release commit links, not local Git receipts",
+    "core_license": "Apache-2.0 inspected at commit",
+    "cookbook": "Official documentation, unpinned; not a persisted-effect application"
+  },
+  "retained_local_inputs": [
+    "docs/research/source-evidence/apcore-screen-v1/decision.md",
+    "docs/research/source-evidence/apcore-screen-v1/source-claim-ledger.json",
+    "docs/research/evidence-acquisition-review-v1.md"
+  ],
+  "claims": [
+    {
+      "id": "AP2-1",
+      "kind": "primary revision provenance",
+      "claim": "Core release python/v0.32.2 resolves to the stated full commit and its pinned license is Apache-2.0.",
+      "evidence": ["04-approval-release-and-demo-tool-response.json", "05-release-pin-and-core-tool-response.json", "06-pinned-state-and-context-tool-response.json"],
+      "limit": "No original remote source bytes, checkout, installation or authenticity certification."
+    },
+    {
+      "id": "AP2-2",
+      "kind": "pinned approval implementation",
+      "claim": "Gate extracts string _approval_token, strips it from downstream inputs and dispatches check_approval rather than fresh request_approval.",
+      "evidence": ["06-pinned-state-and-context-tool-response.json", "07-core-gate-error-and-parts-tool-response.json"],
+      "limit": "A handler API is not an application/backend, native A2A continuation or verified authorization contract."
+    },
+    {
+      "id": "AP2-3",
+      "kind": "pinned source-chain inference",
+      "claim": "For the real core pending exception, ID details do not affect code/message string; the inspected adapter pending branch emits that string as text status without adding the ID.",
+      "evidence": ["07-core-gate-error-and-parts-tool-response.json", "08-errors-and-adjacent-django-tool-response.json", "06-pinned-state-and-context-tool-response.json", "12-status-emission-and-routes-tool-response.json"],
+      "limit": "No runtime pair, whole-interface impossibility, full opacity, token-guess exclusion or new-method finding."
+    },
+    {
+      "id": "AP2-4",
+      "kind": "input and transport scope",
+      "claim": "Object JSON text and DataPart can preserve token input; factory uses SDK handler/routes and enables v0.3 compatibility.",
+      "evidence": ["07-core-gate-error-and-parts-tool-response.json", "12-status-emission-and-routes-tool-response.json"],
+      "limit": "Actual deployment/card/bindings, principals and all public alternatives remain unexecuted."
+    },
+    {
+      "id": "AP2-5",
+      "kind": "application eligibility exclusion",
+      "claim": "Pinned CRM approval example returns a deleted flag without a CRM mutation; email module simulates sending; cookbook supplies in-memory decisions and dictionary refund output; adapter approval test is mocked.",
+      "evidence": ["07-core-gate-error-and-parts-tool-response.json", "08-errors-and-adjacent-django-tool-response.json", "09-factory-and-handler-tool-response.json", "10-closure-discovery-and-tests-tool-response.json", "11-cookbook-and-output-policy-tool-response.json"],
+      "limit": "Inspected examples do not qualify; no claim that every possible apcore application lacks substantive continuation."
+    },
+    {
+      "id": "AP2-6",
+      "kind": "separately authored AI technical screen",
+      "claim": "Uniform observation-history continuation and probe selection have established belief/game/symbolic comparators; no additional technical step or experiment is selected.",
+      "evidence": ["independent-ai-assessment.md", "decision.md"],
+      "limit": "AI reasoning condensed by root; not human novelty review, new primary literature inspection or independent runtime reproduction."
+    }
+  ],
+  "scope": {
+    "web_records_are_original_source_bytes": false,
+    "original_remote_source_snapshots": 0,
+    "model_calls": 0,
+    "application_requests": 0,
+    "candidate_implementations_or_performance_trials": 0,
+    "qualified_second_domain": false,
+    "novelty_demonstrated": false,
+    "human_review_completed": false,
+    "progress_percent": 5
+  }
+}

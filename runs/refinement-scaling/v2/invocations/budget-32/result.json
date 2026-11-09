@@ -1,0 +1,6417 @@
+{
+  "benchmark": {
+    "path": "invocations/budget-32/benchmark.receipt.json",
+    "bytes": 1260,
+    "sha256": "2b0d50aa8372996b8629f411673b5c660271e2e68ad1f67485ebdf56da4254d3"
+  },
+  "verify": {
+    "path": "invocations/budget-32/verify.receipt.json",
+    "bytes": 1051,
+    "sha256": "1319f1708b58ea48f3964ef635b61ed26f792fb7e85b3aea097f3174fdf3d671"
+  },
+  "benchmark_returncode": 0,
+  "verify_returncode": 0,
+  "status": "verified",
+  "summary": {
+    "path": "budget-32/summary.json",
+    "bytes": 57980,
+    "sha256": "02dc1ed83e9e1ef9ae8a864b71b5b03356b3a9468a58c04d835ffbbf2dc75c80"
+  },
+  "results": {
+    "path": "budget-32/results.jsonl",
+    "bytes": 432781,
+    "sha256": "469fb755ad5ee049c51993158c375b1bf0a177a23ce14e25f1892f89e0821163"
+  },
+  "benchmark_summary_status": "passed",
+  "algorithms": {
+    "baseline": {
+      "scheduled": 66,
+      "returned_valid": 66,
+      "errors": 0,
+      "supported": 8,
+      "unsupported": 4,
+      "unknown": 54,
+      "conclusive": 12,
+      "certificates_valid": 12,
+      "certificates_invalid": 0,
+      "certificate_check_errors": 0,
+      "certified_coverage": 0.18181818181818182,
+      "decision_agreements": 66,
+      "certificate_timing": {
+        "invocations": 12,
+        "evaluation_ns": {
+          "samples": [
+            1582900,
+            366200,
+            436900,
+            281400,
+            255000,
+            399500,
+            1529900,
+            282100,
+            378700,
+            2606900,
+            1312300,
+            705400
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 10137200
+        },
+        "worker_body_ns": {
+          "samples": [
+            25718000,
+            17334400,
+            14800400,
+            14893900,
+            14250900,
+            38203800,
+            37448800,
+            17050000,
+            25739400,
+            41834600,
+            31728300,
+            22274400
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 301276900
+        },
+        "worker_wall_ns": {
+          "samples": [
+            994903500,
+            190312100,
+            154340000,
+            225704600,
+            202473600,
+            327023000,
+            1378267500,
+            193369000,
+            270468100,
+            820496300,
+            498210700,
+            597836100
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 5853404500
+        }
+      }
+    },
+    "direct_pruned": {
+      "scheduled": 66,
+      "returned_valid": 66,
+      "errors": 0,
+      "supported": 12,
+      "unsupported": 8,
+      "unknown": 46,
+      "conclusive": 20,
+      "certificates_valid": 20,
+      "certificates_invalid": 0,
+      "certificate_check_errors": 0,
+      "certified_coverage": 0.30303030303030304,
+      "decision_agreements": 58,
+      "certificate_timing": {
+        "invocations": 20,
+        "evaluation_ns": {
+          "samples": [
+            280600,
+            293100,
+            366100,
+            1087000,
+            352300,
+            767300,
+            470000,
+            377300,
+            407400,
+            1176900,
+            1269200,
+            1678300,
+            1938000,
+            993200,
+            453700,
+            422700,
+            763400,
+            1453400,
+            1066800,
+            837100
+          ],
+          "observed": 20,
+          "missing": 0,
+          "total": 16453800
+        },
+        "worker_body_ns": {
+          "samples": [
+            34499000,
+            11549100,
+            13221600,
+            28063900,
+            25769800,
+            40583000,
+            56391600,
+            13313800,
+            25709000,
+            35552400,
+            39242900,
+            43747400,
+            27052000,
+            40909400,
+            27447500,
+            27881000,
+            32654400,
+            32680700,
+            44108200,
+            21163300
+          ],
+          "observed": 20,
+          "missing": 0,
+          "total": 621540000
+        },
+        "worker_wall_ns": {
+          "samples": [
+            349037600,
+            155761900,
+            142041200,
+            303719900,
+            226444300,
+            393265800,
+            281031700,
+            204873000,
+            341919800,
+            811607700,
+            511132400,
+            692098000,
+            680605700,
+            2018374700,
+            400458000,
+            256514700,
+            439314400,
+            353962000,
+            720215600,
+            375191500
+          ],
+          "observed": 20,
+          "missing": 0,
+          "total": 9657569900
+        }
+      }
+    },
+    "candidate": {
+      "scheduled": 66,
+      "returned_valid": 66,
+      "errors": 0,
+      "supported": 16,
+      "unsupported": 8,
+      "unknown": 42,
+      "conclusive": 24,
+      "certificates_valid": 24,
+      "certificates_invalid": 0,
+      "certificate_check_errors": 0,
+      "certified_coverage": 0.36363636363636365,
+      "decision_agreements": 54,
+      "certificate_timing": {
+        "invocations": 24,
+        "evaluation_ns": {
+          "samples": [
+            437800,
+            291000,
+            307800,
+            460600,
+            275700,
+            326600,
+            625900,
+            673100,
+            515200,
+            1031900,
+            971600,
+            2345700,
+            2714400,
+            3746200,
+            1845100,
+            1598600,
+            1129500,
+            1388100,
+            452500,
+            713200,
+            607600,
+            910100,
+            693700,
+            895100
+          ],
+          "observed": 24,
+          "missing": 0,
+          "total": 24957000
+        },
+        "worker_body_ns": {
+          "samples": [
+            19415600,
+            19098600,
+            12058300,
+            27102500,
+            17578000,
+            21430200,
+            31624100,
+            32237000,
+            26705500,
+            50777000,
+            29264400,
+            67755500,
+            55595100,
+            95812800,
+            70817400,
+            75133300,
+            24027000,
+            56575600,
+            30777500,
+            69291600,
+            38156700,
+            32648100,
+            59763400,
+            24117700
+          ],
+          "observed": 24,
+          "missing": 0,
+          "total": 987762900
+        },
+        "worker_wall_ns": {
+          "samples": [
+            225364400,
+            165950100,
+            179104600,
+            287531200,
+            236536800,
+            222057900,
+            302456600,
+            421125200,
+            453156000,
+            584118200,
+            467901300,
+            1441751900,
+            2680740600,
+            5598904400,
+            1770233800,
+            2176660800,
+            678311900,
+            654644600,
+            327394300,
+            1713396600,
+            652996600,
+            556596600,
+            482276300,
+            350396300
+          ],
+          "observed": 24,
+          "missing": 0,
+          "total": 22629607000
+        }
+      }
+    }
+  },
+  "families": {
+    "argument_product": {
+      "baseline": {
+        "cases": 16,
+        "decisions": {
+          "supported": 6,
+          "unsupported": 2,
+          "unknown": 8
+        },
+        "reasons": {
+          "concrete_recipe_path": 6,
+          "complete_relational_product_exhausted": 2,
+          "indeterminate_observables_or_relations": 3,
+          "work_budget_exhausted": 5
+        },
+        "certificate_valid": 8,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 16
+        },
+        "stats_totals": {
+          "argument_assignments": 53,
+          "cached_relation_outcomes": 0,
+          "certificate_checks": 0,
+          "expression_evaluations": 163,
+          "graph_edges": 80,
+          "product_states": 16,
+          "state_expansions": 80,
+          "work_units": 376
+        }
+      },
+      "direct_pruned": {
+        "cases": 16,
+        "decisions": {
+          "supported": 6,
+          "unsupported": 2,
+          "unknown": 8
+        },
+        "reasons": {
+          "concrete_recipe_path": 6,
+          "goal_relevant_relational_product_exhausted": 2,
+          "indeterminate_observables_or_relations": 3,
+          "work_budget_exhausted": 5
+        },
+        "certificate_valid": 8,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 16
+        },
+        "stats_totals": {
+          "argument_assignments": 53,
+          "cached_relation_outcomes": 0,
+          "certificate_checks": 0,
+          "expression_evaluations": 163,
+          "goal_pruned_edges": 0,
+          "graph_edges": 80,
+          "product_states": 16,
+          "state_expansions": 80,
+          "work_units": 376
+        }
+      },
+      "candidate": {
+        "cases": 16,
+        "decisions": {
+          "supported": 6,
+          "unsupported": 2,
+          "unknown": 8
+        },
+        "reasons": {
+          "public_recipe_witness": 6,
+          "certified_refinement_exhaustion": 2,
+          "unresolved_relation_or_recipe": 3,
+          "work_budget_exhausted": 5
+        },
+        "certificate_valid": 8,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 16
+        },
+        "stats_totals": {
+          "abstract_edge_checks": 32,
+          "abstract_paths": 16,
+          "abstract_state_visits": 64,
+          "expression_evaluations": 176,
+          "refinement_edges": 2,
+          "refinement_lookups": 16,
+          "refinements": 2,
+          "relation_checks": 50,
+          "work_units": 356
+        }
+      }
+    },
+    "layered_reconvergence": {
+      "baseline": {
+        "cases": 16,
+        "decisions": {
+          "unknown": 16
+        },
+        "reasons": {
+          "work_budget_exhausted": 16
+        },
+        "certificate_valid": 0,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 16
+        },
+        "stats_totals": {
+          "argument_assignments": 11,
+          "cached_relation_outcomes": 0,
+          "certificate_checks": 0,
+          "expression_evaluations": 11,
+          "graph_edges": 403,
+          "product_states": 7,
+          "state_expansions": 87,
+          "work_units": 512
+        }
+      },
+      "direct_pruned": {
+        "cases": 16,
+        "decisions": {
+          "unknown": 16
+        },
+        "reasons": {
+          "work_budget_exhausted": 16
+        },
+        "certificate_valid": 0,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 16
+        },
+        "stats_totals": {
+          "argument_assignments": 11,
+          "cached_relation_outcomes": 0,
+          "certificate_checks": 0,
+          "expression_evaluations": 11,
+          "goal_pruned_edges": 0,
+          "graph_edges": 403,
+          "product_states": 7,
+          "state_expansions": 87,
+          "work_units": 512
+        }
+      },
+      "candidate": {
+        "cases": 16,
+        "decisions": {
+          "supported": 1,
+          "unknown": 15
+        },
+        "reasons": {
+          "public_recipe_witness": 1,
+          "work_budget_exhausted": 15
+        },
+        "certificate_valid": 1,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 16
+        },
+        "stats_totals": {
+          "abstract_edge_checks": 296,
+          "abstract_paths": 6,
+          "abstract_state_visits": 128,
+          "expression_evaluations": 13,
+          "refinement_edges": 3,
+          "refinement_lookups": 50,
+          "refinements": 2,
+          "relation_checks": 9,
+          "work_units": 505
+        }
+      }
+    },
+    "correlated_frames": {
+      "baseline": {
+        "cases": 16,
+        "decisions": {
+          "unknown": 16
+        },
+        "reasons": {
+          "work_budget_exhausted": 16
+        },
+        "certificate_valid": 0,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 16
+        },
+        "stats_totals": {
+          "argument_assignments": 16,
+          "cached_relation_outcomes": 0,
+          "certificate_checks": 0,
+          "expression_evaluations": 36,
+          "graph_edges": 324,
+          "product_states": 16,
+          "state_expansions": 136,
+          "work_units": 512
+        }
+      },
+      "direct_pruned": {
+        "cases": 16,
+        "decisions": {
+          "unknown": 16
+        },
+        "reasons": {
+          "work_budget_exhausted": 16
+        },
+        "certificate_valid": 0,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 16
+        },
+        "stats_totals": {
+          "argument_assignments": 16,
+          "cached_relation_outcomes": 0,
+          "certificate_checks": 0,
+          "expression_evaluations": 36,
+          "goal_pruned_edges": 0,
+          "graph_edges": 324,
+          "product_states": 16,
+          "state_expansions": 136,
+          "work_units": 512
+        }
+      },
+      "candidate": {
+        "cases": 16,
+        "decisions": {
+          "supported": 1,
+          "unknown": 15
+        },
+        "reasons": {
+          "public_recipe_witness": 1,
+          "work_budget_exhausted": 15
+        },
+        "certificate_valid": 1,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 16
+        },
+        "stats_totals": {
+          "abstract_edge_checks": 196,
+          "abstract_paths": 9,
+          "abstract_state_visits": 161,
+          "expression_evaluations": 49,
+          "refinement_edges": 4,
+          "refinement_lookups": 77,
+          "refinements": 2,
+          "relation_checks": 14,
+          "work_units": 510
+        }
+      }
+    },
+    "horizon_boundary": {
+      "baseline": {
+        "cases": 6,
+        "decisions": {
+          "unsupported": 1,
+          "supported": 2,
+          "unknown": 3
+        },
+        "reasons": {
+          "complete_relational_product_exhausted": 1,
+          "concrete_recipe_path": 2,
+          "work_budget_exhausted": 3
+        },
+        "certificate_valid": 3,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 6
+        },
+        "stats_totals": {
+          "argument_assignments": 9,
+          "cached_relation_outcomes": 0,
+          "certificate_checks": 0,
+          "expression_evaluations": 9,
+          "graph_edges": 80,
+          "product_states": 13,
+          "state_expansions": 57,
+          "work_units": 155
+        }
+      },
+      "direct_pruned": {
+        "cases": 6,
+        "decisions": {
+          "unsupported": 2,
+          "supported": 2,
+          "unknown": 2
+        },
+        "reasons": {
+          "goal_relevant_relational_product_exhausted": 2,
+          "concrete_recipe_path": 2,
+          "work_budget_exhausted": 2
+        },
+        "certificate_valid": 4,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 6
+        },
+        "stats_totals": {
+          "argument_assignments": 6,
+          "cached_relation_outcomes": 0,
+          "certificate_checks": 0,
+          "expression_evaluations": 6,
+          "goal_pruned_edges": 0,
+          "graph_edges": 76,
+          "product_states": 8,
+          "state_expansions": 52,
+          "work_units": 140
+        }
+      },
+      "candidate": {
+        "cases": 6,
+        "decisions": {
+          "unsupported": 2,
+          "supported": 4
+        },
+        "reasons": {
+          "certified_refinement_exhaustion": 2,
+          "public_recipe_witness": 4
+        },
+        "certificate_valid": 6,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 6
+        },
+        "stats_totals": {
+          "abstract_edge_checks": 32,
+          "abstract_paths": 4,
+          "abstract_state_visits": 44,
+          "expression_evaluations": 12,
+          "refinement_edges": 0,
+          "refinement_lookups": 16,
+          "refinements": 0,
+          "relation_checks": 12,
+          "work_units": 120
+        }
+      }
+    },
+    "off_goal_load": {
+      "baseline": {
+        "cases": 12,
+        "decisions": {
+          "unknown": 11,
+          "unsupported": 1
+        },
+        "reasons": {
+          "work_budget_exhausted": 11,
+          "complete_relational_product_exhausted": 1
+        },
+        "certificate_valid": 1,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 12
+        },
+        "stats_totals": {
+          "argument_assignments": 42,
+          "cached_relation_outcomes": 0,
+          "certificate_checks": 0,
+          "expression_evaluations": 71,
+          "graph_edges": 175,
+          "product_states": 12,
+          "state_expansions": 96,
+          "work_units": 384
+        }
+      },
+      "direct_pruned": {
+        "cases": 12,
+        "decisions": {
+          "supported": 4,
+          "unsupported": 4,
+          "unknown": 4
+        },
+        "reasons": {
+          "concrete_recipe_path": 4,
+          "goal_relevant_relational_product_exhausted": 4,
+          "work_budget_exhausted": 4
+        },
+        "certificate_valid": 8,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 12
+        },
+        "stats_totals": {
+          "argument_assignments": 12,
+          "cached_relation_outcomes": 0,
+          "certificate_checks": 0,
+          "expression_evaluations": 20,
+          "goal_pruned_edges": 36,
+          "graph_edges": 204,
+          "product_states": 12,
+          "state_expansions": 96,
+          "work_units": 332
+        }
+      },
+      "candidate": {
+        "cases": 12,
+        "decisions": {
+          "supported": 4,
+          "unsupported": 4,
+          "unknown": 4
+        },
+        "reasons": {
+          "public_recipe_witness": 4,
+          "certified_refinement_exhaustion": 4,
+          "work_budget_exhausted": 4
+        },
+        "certificate_valid": 8,
+        "certificate_invalid": 0,
+        "execution_statuses": {
+          "returned": 12
+        },
+        "stats_totals": {
+          "abstract_edge_checks": 96,
+          "abstract_paths": 12,
+          "abstract_state_visits": 120,
+          "expression_evaluations": 28,
+          "refinement_edges": 4,
+          "refinement_lookups": 48,
+          "refinements": 8,
+          "relation_checks": 12,
+          "work_units": 320
+        }
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "scale-0001",
+      "family": "argument_product",
+      "scenario": "first_witness",
+      "parameters": {
+        "choices_per_argument": 2,
+        "arguments": 1,
+        "assignment_product": 2
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 15
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 15
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 251900,
+            "expression_evaluations": 4,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 13
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0002",
+      "family": "argument_product",
+      "scenario": "last_witness",
+      "parameters": {
+        "choices_per_argument": 2,
+        "arguments": 1,
+        "assignment_product": 2
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 8,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 20
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 8,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 20
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 205000,
+            "expression_evaluations": 8,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 2,
+            "work_units": 18
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0003",
+      "family": "argument_product",
+      "scenario": "refutation",
+      "parameters": {
+        "choices_per_argument": 2,
+        "arguments": 1,
+        "assignment_product": 2
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unsupported",
+          "reason": "complete_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 8,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 20
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unsupported",
+          "reason": "goal_relevant_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 8,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 20
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unsupported",
+          "reason": "certified_refinement_exhaustion",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 174900,
+            "expression_evaluations": 8,
+            "peak_frames": 1,
+            "refinement_edges": 1,
+            "refinement_lookups": 1,
+            "refinements": 1,
+            "relation_checks": 2,
+            "work_units": 19
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0004",
+      "family": "argument_product",
+      "scenario": "opaque",
+      "parameters": {
+        "choices_per_argument": 2,
+        "arguments": 1,
+        "assignment_product": 2
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "indeterminate_observables_or_relations",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 14
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "indeterminate_observables_or_relations",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 14
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "unresolved_relation_or_recipe",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 224600,
+            "expression_evaluations": 2,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 2,
+            "work_units": 12
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0005",
+      "family": "argument_product",
+      "scenario": "first_witness",
+      "parameters": {
+        "choices_per_argument": 2,
+        "arguments": 2,
+        "assignment_product": 4
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 7,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 18
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 7,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 18
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 500500,
+            "expression_evaluations": 7,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 16
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0006",
+      "family": "argument_product",
+      "scenario": "last_witness",
+      "parameters": {
+        "choices_per_argument": 2,
+        "arguments": 2,
+        "assignment_product": 4
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 18,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 18,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 217300,
+            "expression_evaluations": 21,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 3,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0007",
+      "family": "argument_product",
+      "scenario": "refutation",
+      "parameters": {
+        "choices_per_argument": 2,
+        "arguments": 2,
+        "assignment_product": 4
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 18,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 18,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 331500,
+            "expression_evaluations": 21,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 3,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0008",
+      "family": "argument_product",
+      "scenario": "opaque",
+      "parameters": {
+        "choices_per_argument": 2,
+        "arguments": 2,
+        "assignment_product": 4
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "indeterminate_observables_or_relations",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 18
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "indeterminate_observables_or_relations",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 18
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "unresolved_relation_or_recipe",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 340900,
+            "expression_evaluations": 4,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 4,
+            "work_units": 16
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0009",
+      "family": "argument_product",
+      "scenario": "first_witness",
+      "parameters": {
+        "choices_per_argument": 4,
+        "arguments": 1,
+        "assignment_product": 4
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 15
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 15
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 339900,
+            "expression_evaluations": 4,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 13
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0010",
+      "family": "argument_product",
+      "scenario": "last_witness",
+      "parameters": {
+        "choices_per_argument": 4,
+        "arguments": 1,
+        "assignment_product": 4
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 16,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 30
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 16,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 30
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 567200,
+            "expression_evaluations": 16,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 4,
+            "work_units": 28
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0011",
+      "family": "argument_product",
+      "scenario": "refutation",
+      "parameters": {
+        "choices_per_argument": 4,
+        "arguments": 1,
+        "assignment_product": 4
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unsupported",
+          "reason": "complete_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 16,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 30
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unsupported",
+          "reason": "goal_relevant_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 16,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 30
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unsupported",
+          "reason": "certified_refinement_exhaustion",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 293000,
+            "expression_evaluations": 16,
+            "peak_frames": 1,
+            "refinement_edges": 1,
+            "refinement_lookups": 1,
+            "refinements": 1,
+            "relation_checks": 4,
+            "work_units": 29
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0012",
+      "family": "argument_product",
+      "scenario": "opaque",
+      "parameters": {
+        "choices_per_argument": 4,
+        "arguments": 1,
+        "assignment_product": 4
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "indeterminate_observables_or_relations",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 18
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "indeterminate_observables_or_relations",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 18
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "unresolved_relation_or_recipe",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 285200,
+            "expression_evaluations": 4,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 4,
+            "work_units": 16
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0013",
+      "family": "argument_product",
+      "scenario": "first_witness",
+      "parameters": {
+        "choices_per_argument": 4,
+        "arguments": 2,
+        "assignment_product": 16
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 7,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 18
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 7,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 18
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 366000,
+            "expression_evaluations": 7,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 16
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0014",
+      "family": "argument_product",
+      "scenario": "last_witness",
+      "parameters": {
+        "choices_per_argument": 4,
+        "arguments": 2,
+        "assignment_product": 16
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 18,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 18,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 259600,
+            "expression_evaluations": 21,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 3,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0015",
+      "family": "argument_product",
+      "scenario": "refutation",
+      "parameters": {
+        "choices_per_argument": 4,
+        "arguments": 2,
+        "assignment_product": 16
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 18,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 18,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 198300,
+            "expression_evaluations": 21,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 3,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0016",
+      "family": "argument_product",
+      "scenario": "opaque",
+      "parameters": {
+        "choices_per_argument": 4,
+        "arguments": 2,
+        "assignment_product": 16
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 11,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 11,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 11,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 11,
+            "goal_pruned_edges": 0,
+            "graph_edges": 5,
+            "product_states": 1,
+            "state_expansions": 5,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 1,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 185400,
+            "expression_evaluations": 12,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 12,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0017",
+      "family": "layered_reconvergence",
+      "scenario": "witness",
+      "parameters": {
+        "width": 2,
+        "depth": 2,
+        "abstract_paths": 4
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "graph_edges": 19,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "goal_pruned_edges": 0,
+            "graph_edges": 19,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 10,
+            "abstract_paths": 1,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 410700,
+            "expression_evaluations": 2,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 3,
+            "refinements": 0,
+            "relation_checks": 2,
+            "work_units": 25
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0018",
+      "family": "layered_reconvergence",
+      "scenario": "early_refutation",
+      "parameters": {
+        "width": 2,
+        "depth": 2,
+        "abstract_paths": 4
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 5,
+            "graph_edges": 18,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 5,
+            "goal_pruned_edges": 0,
+            "graph_edges": 18,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 10,
+            "abstract_paths": 2,
+            "abstract_state_visits": 9,
+            "budget": 32,
+            "elapsed_ns": 687800,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 1,
+            "refinement_lookups": 6,
+            "refinements": 1,
+            "relation_checks": 1,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0019",
+      "family": "layered_reconvergence",
+      "scenario": "late_refutation",
+      "parameters": {
+        "width": 2,
+        "depth": 2,
+        "abstract_paths": 4
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "graph_edges": 19,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "goal_pruned_edges": 0,
+            "graph_edges": 19,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 10,
+            "abstract_paths": 1,
+            "abstract_state_visits": 8,
+            "budget": 32,
+            "elapsed_ns": 1560500,
+            "expression_evaluations": 4,
+            "peak_frames": 1,
+            "refinement_edges": 2,
+            "refinement_lookups": 5,
+            "refinements": 1,
+            "relation_checks": 2,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0020",
+      "family": "layered_reconvergence",
+      "scenario": "opaque",
+      "parameters": {
+        "width": 2,
+        "depth": 2,
+        "abstract_paths": 4
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "graph_edges": 19,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "goal_pruned_edges": 0,
+            "graph_edges": 19,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 10,
+            "abstract_paths": 2,
+            "abstract_state_visits": 8,
+            "budget": 32,
+            "elapsed_ns": 1930900,
+            "expression_evaluations": 4,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 4,
+            "refinements": 0,
+            "relation_checks": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0021",
+      "family": "layered_reconvergence",
+      "scenario": "witness",
+      "parameters": {
+        "width": 2,
+        "depth": 4,
+        "abstract_paths": 16
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 26,
+            "product_states": 0,
+            "state_expansions": 6,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 26,
+            "product_states": 0,
+            "state_expansions": 6,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 18,
+            "abstract_paths": 0,
+            "abstract_state_visits": 10,
+            "budget": 32,
+            "elapsed_ns": 231600,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 4,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0022",
+      "family": "layered_reconvergence",
+      "scenario": "early_refutation",
+      "parameters": {
+        "width": 2,
+        "depth": 4,
+        "abstract_paths": 16
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 26,
+            "product_states": 0,
+            "state_expansions": 6,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 26,
+            "product_states": 0,
+            "state_expansions": 6,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 18,
+            "abstract_paths": 0,
+            "abstract_state_visits": 10,
+            "budget": 32,
+            "elapsed_ns": 849500,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 4,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0023",
+      "family": "layered_reconvergence",
+      "scenario": "late_refutation",
+      "parameters": {
+        "width": 2,
+        "depth": 4,
+        "abstract_paths": 16
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 26,
+            "product_states": 0,
+            "state_expansions": 6,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 26,
+            "product_states": 0,
+            "state_expansions": 6,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 18,
+            "abstract_paths": 0,
+            "abstract_state_visits": 10,
+            "budget": 32,
+            "elapsed_ns": 657000,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 4,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0024",
+      "family": "layered_reconvergence",
+      "scenario": "opaque",
+      "parameters": {
+        "width": 2,
+        "depth": 4,
+        "abstract_paths": 16
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 26,
+            "product_states": 0,
+            "state_expansions": 6,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 26,
+            "product_states": 0,
+            "state_expansions": 6,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 18,
+            "abstract_paths": 0,
+            "abstract_state_visits": 10,
+            "budget": 32,
+            "elapsed_ns": 343100,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 4,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0025",
+      "family": "layered_reconvergence",
+      "scenario": "witness",
+      "parameters": {
+        "width": 4,
+        "depth": 2,
+        "abstract_paths": 16
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 22,
+            "abstract_paths": 0,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 272400,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 3,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0026",
+      "family": "layered_reconvergence",
+      "scenario": "early_refutation",
+      "parameters": {
+        "width": 4,
+        "depth": 2,
+        "abstract_paths": 16
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 22,
+            "abstract_paths": 0,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 437400,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 3,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0027",
+      "family": "layered_reconvergence",
+      "scenario": "late_refutation",
+      "parameters": {
+        "width": 4,
+        "depth": 2,
+        "abstract_paths": 16
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 22,
+            "abstract_paths": 0,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 429400,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 3,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0028",
+      "family": "layered_reconvergence",
+      "scenario": "opaque",
+      "parameters": {
+        "width": 4,
+        "depth": 2,
+        "abstract_paths": 16
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 22,
+            "abstract_paths": 0,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 299300,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 3,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0029",
+      "family": "layered_reconvergence",
+      "scenario": "witness",
+      "parameters": {
+        "width": 4,
+        "depth": 4,
+        "abstract_paths": 256
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 24,
+            "abstract_paths": 0,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 811100,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0030",
+      "family": "layered_reconvergence",
+      "scenario": "early_refutation",
+      "parameters": {
+        "width": 4,
+        "depth": 4,
+        "abstract_paths": 256
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 24,
+            "abstract_paths": 0,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 516800,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0031",
+      "family": "layered_reconvergence",
+      "scenario": "late_refutation",
+      "parameters": {
+        "width": 4,
+        "depth": 4,
+        "abstract_paths": 256
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 24,
+            "abstract_paths": 0,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 698600,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0032",
+      "family": "layered_reconvergence",
+      "scenario": "opaque",
+      "parameters": {
+        "width": 4,
+        "depth": 4,
+        "abstract_paths": 256
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 28,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 24,
+            "abstract_paths": 0,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 275600,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0033",
+      "family": "correlated_frames",
+      "scenario": "first_witness",
+      "parameters": {
+        "frames": 2,
+        "depth": 2
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 6,
+            "graph_edges": 15,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 6,
+            "goal_pruned_edges": 0,
+            "graph_edges": 15,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 7,
+            "abstract_paths": 1,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 504800,
+            "expression_evaluations": 10,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 3,
+            "refinements": 0,
+            "relation_checks": 2,
+            "work_units": 30
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0034",
+      "family": "correlated_frames",
+      "scenario": "last_witness",
+      "parameters": {
+        "frames": 2,
+        "depth": 2
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 6,
+            "graph_edges": 15,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 6,
+            "goal_pruned_edges": 0,
+            "graph_edges": 15,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 7,
+            "abstract_paths": 1,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 965500,
+            "expression_evaluations": 10,
+            "peak_frames": 1,
+            "refinement_edges": 2,
+            "refinement_lookups": 3,
+            "refinements": 1,
+            "relation_checks": 2,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0035",
+      "family": "correlated_frames",
+      "scenario": "unmatched_pair",
+      "parameters": {
+        "frames": 2,
+        "depth": 2
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 6,
+            "graph_edges": 15,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 6,
+            "goal_pruned_edges": 0,
+            "graph_edges": 15,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 7,
+            "abstract_paths": 1,
+            "abstract_state_visits": 7,
+            "budget": 32,
+            "elapsed_ns": 750600,
+            "expression_evaluations": 10,
+            "peak_frames": 1,
+            "refinement_edges": 2,
+            "refinement_lookups": 3,
+            "refinements": 1,
+            "relation_checks": 2,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0036",
+      "family": "correlated_frames",
+      "scenario": "opaque",
+      "parameters": {
+        "frames": 2,
+        "depth": 2
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 6,
+            "graph_edges": 15,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 6,
+            "goal_pruned_edges": 0,
+            "graph_edges": 15,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 7,
+            "abstract_paths": 2,
+            "abstract_state_visits": 8,
+            "budget": 32,
+            "elapsed_ns": 493500,
+            "expression_evaluations": 7,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 4,
+            "refinements": 0,
+            "relation_checks": 4,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0037",
+      "family": "correlated_frames",
+      "scenario": "first_witness",
+      "parameters": {
+        "frames": 2,
+        "depth": 4
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 11,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 11,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 13,
+            "abstract_paths": 0,
+            "abstract_state_visits": 13,
+            "budget": 32,
+            "elapsed_ns": 656000,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 6,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0038",
+      "family": "correlated_frames",
+      "scenario": "last_witness",
+      "parameters": {
+        "frames": 2,
+        "depth": 4
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 11,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 11,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 13,
+            "abstract_paths": 0,
+            "abstract_state_visits": 13,
+            "budget": 32,
+            "elapsed_ns": 499400,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 6,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0039",
+      "family": "correlated_frames",
+      "scenario": "unmatched_pair",
+      "parameters": {
+        "frames": 2,
+        "depth": 4
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 11,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 11,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 13,
+            "abstract_paths": 0,
+            "abstract_state_visits": 13,
+            "budget": 32,
+            "elapsed_ns": 560900,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 6,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0040",
+      "family": "correlated_frames",
+      "scenario": "opaque",
+      "parameters": {
+        "frames": 2,
+        "depth": 4
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 11,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 11,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 13,
+            "abstract_paths": 0,
+            "abstract_state_visits": 13,
+            "budget": 32,
+            "elapsed_ns": 439600,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 6,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0041",
+      "family": "correlated_frames",
+      "scenario": "first_witness",
+      "parameters": {
+        "frames": 4,
+        "depth": 2
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "goal_pruned_edges": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 13,
+            "abstract_paths": 1,
+            "abstract_state_visits": 9,
+            "budget": 32,
+            "elapsed_ns": 533300,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0042",
+      "family": "correlated_frames",
+      "scenario": "last_witness",
+      "parameters": {
+        "frames": 4,
+        "depth": 2
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "goal_pruned_edges": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 13,
+            "abstract_paths": 1,
+            "abstract_state_visits": 9,
+            "budget": 32,
+            "elapsed_ns": 305000,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0043",
+      "family": "correlated_frames",
+      "scenario": "unmatched_pair",
+      "parameters": {
+        "frames": 4,
+        "depth": 2
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "goal_pruned_edges": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 13,
+            "abstract_paths": 1,
+            "abstract_state_visits": 9,
+            "budget": 32,
+            "elapsed_ns": 534900,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0044",
+      "family": "correlated_frames",
+      "scenario": "opaque",
+      "parameters": {
+        "frames": 4,
+        "depth": 2
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "goal_pruned_edges": 0,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 13,
+            "abstract_paths": 1,
+            "abstract_state_visits": 9,
+            "budget": 32,
+            "elapsed_ns": 1847100,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0045",
+      "family": "correlated_frames",
+      "scenario": "first_witness",
+      "parameters": {
+        "frames": 4,
+        "depth": 4
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 24,
+            "product_states": 0,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 24,
+            "product_states": 0,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 16,
+            "abstract_paths": 0,
+            "abstract_state_visits": 11,
+            "budget": 32,
+            "elapsed_ns": 676100,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0046",
+      "family": "correlated_frames",
+      "scenario": "last_witness",
+      "parameters": {
+        "frames": 4,
+        "depth": 4
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 24,
+            "product_states": 0,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 24,
+            "product_states": 0,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 16,
+            "abstract_paths": 0,
+            "abstract_state_visits": 11,
+            "budget": 32,
+            "elapsed_ns": 495200,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0047",
+      "family": "correlated_frames",
+      "scenario": "unmatched_pair",
+      "parameters": {
+        "frames": 4,
+        "depth": 4
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 24,
+            "product_states": 0,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 24,
+            "product_states": 0,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 16,
+            "abstract_paths": 0,
+            "abstract_state_visits": 11,
+            "budget": 32,
+            "elapsed_ns": 538600,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0048",
+      "family": "correlated_frames",
+      "scenario": "opaque",
+      "parameters": {
+        "frames": 4,
+        "depth": 4
+      },
+      "authored_expectation": "unknown",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "graph_edges": 24,
+            "product_states": 0,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 24,
+            "product_states": 0,
+            "state_expansions": 8,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 16,
+            "abstract_paths": 0,
+            "abstract_state_visits": 11,
+            "budget": 32,
+            "elapsed_ns": 495200,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0049",
+      "family": "horizon_boundary",
+      "scenario": "slack_-1",
+      "parameters": {
+        "chain_length": 2,
+        "horizon": 1
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unsupported",
+          "reason": "complete_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "graph_edges": 7,
+            "product_states": 2,
+            "state_expansions": 6,
+            "work_units": 15
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unsupported",
+          "reason": "goal_relevant_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 6,
+            "product_states": 0,
+            "state_expansions": 4,
+            "work_units": 10
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unsupported",
+          "reason": "certified_refinement_exhaustion",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 2,
+            "abstract_paths": 0,
+            "abstract_state_visits": 4,
+            "budget": 32,
+            "elapsed_ns": 189800,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 1,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 7
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0050",
+      "family": "horizon_boundary",
+      "scenario": "slack_0",
+      "parameters": {
+        "chain_length": 2,
+        "horizon": 2
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "graph_edges": 10,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 22
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "goal_pruned_edges": 0,
+            "graph_edges": 10,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 22
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 4,
+            "abstract_paths": 1,
+            "abstract_state_visits": 6,
+            "budget": 32,
+            "elapsed_ns": 670800,
+            "expression_evaluations": 2,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 2,
+            "refinements": 0,
+            "relation_checks": 2,
+            "work_units": 17
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0051",
+      "family": "horizon_boundary",
+      "scenario": "slack_1",
+      "parameters": {
+        "chain_length": 2,
+        "horizon": 3
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "graph_edges": 10,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 22
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "goal_pruned_edges": 0,
+            "graph_edges": 10,
+            "product_states": 2,
+            "state_expansions": 8,
+            "work_units": 22
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 4,
+            "abstract_paths": 1,
+            "abstract_state_visits": 6,
+            "budget": 32,
+            "elapsed_ns": 928400,
+            "expression_evaluations": 2,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 2,
+            "refinements": 0,
+            "relation_checks": 2,
+            "work_units": 17
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0052",
+      "family": "horizon_boundary",
+      "scenario": "slack_-1",
+      "parameters": {
+        "chain_length": 4,
+        "horizon": 3
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 2,
+            "graph_edges": 17,
+            "product_states": 3,
+            "state_expansions": 11,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unsupported",
+          "reason": "goal_relevant_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 0,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 0,
+            "goal_pruned_edges": 0,
+            "graph_edges": 14,
+            "product_states": 0,
+            "state_expansions": 8,
+            "work_units": 22
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unsupported",
+          "reason": "certified_refinement_exhaustion",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 6,
+            "abstract_paths": 0,
+            "abstract_state_visits": 8,
+            "budget": 32,
+            "elapsed_ns": 1792800,
+            "expression_evaluations": 0,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 3,
+            "refinements": 0,
+            "relation_checks": 0,
+            "work_units": 17
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0053",
+      "family": "horizon_boundary",
+      "scenario": "slack_0",
+      "parameters": {
+        "chain_length": 4,
+        "horizon": 4
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "graph_edges": 18,
+            "product_states": 2,
+            "state_expansions": 12,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "goal_pruned_edges": 0,
+            "graph_edges": 18,
+            "product_states": 2,
+            "state_expansions": 12,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 8,
+            "abstract_paths": 1,
+            "abstract_state_visits": 10,
+            "budget": 32,
+            "elapsed_ns": 1230600,
+            "expression_evaluations": 4,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 4,
+            "refinements": 0,
+            "relation_checks": 4,
+            "work_units": 31
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0054",
+      "family": "horizon_boundary",
+      "scenario": "slack_1",
+      "parameters": {
+        "chain_length": 4,
+        "horizon": 5
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "graph_edges": 18,
+            "product_states": 2,
+            "state_expansions": 12,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "goal_pruned_edges": 0,
+            "graph_edges": 18,
+            "product_states": 2,
+            "state_expansions": 12,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 8,
+            "abstract_paths": 1,
+            "abstract_state_visits": 10,
+            "budget": 32,
+            "elapsed_ns": 2009600,
+            "expression_evaluations": 4,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 4,
+            "refinements": 0,
+            "relation_checks": 4,
+            "work_units": 31
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0055",
+      "family": "off_goal_load",
+      "scenario": "witness",
+      "parameters": {
+        "dead_branches": 2,
+        "choices_per_argument": 2,
+        "arguments": 1,
+        "off_goal_assignments": 4
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 8,
+            "graph_edges": 13,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "goal_pruned_edges": 2,
+            "graph_edges": 13,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 22
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 6,
+            "abstract_paths": 1,
+            "abstract_state_visits": 8,
+            "budget": 32,
+            "elapsed_ns": 903400,
+            "expression_evaluations": 1,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 3,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 20
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0056",
+      "family": "off_goal_load",
+      "scenario": "refutation",
+      "parameters": {
+        "dead_branches": 2,
+        "choices_per_argument": 2,
+        "arguments": 1,
+        "off_goal_assignments": 4
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 8,
+            "graph_edges": 13,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unsupported",
+          "reason": "goal_relevant_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "goal_pruned_edges": 2,
+            "graph_edges": 13,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 24
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unsupported",
+          "reason": "certified_refinement_exhaustion",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 6,
+            "abstract_paths": 1,
+            "abstract_state_visits": 8,
+            "budget": 32,
+            "elapsed_ns": 1151100,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 1,
+            "refinement_lookups": 3,
+            "refinements": 1,
+            "relation_checks": 1,
+            "work_units": 23
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0057",
+      "family": "off_goal_load",
+      "scenario": "irrelevant_opaque",
+      "parameters": {
+        "dead_branches": 2,
+        "choices_per_argument": 2,
+        "arguments": 1,
+        "off_goal_assignments": 4
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unsupported",
+          "reason": "complete_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 5,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 7,
+            "graph_edges": 13,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unsupported",
+          "reason": "goal_relevant_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "goal_pruned_edges": 2,
+            "graph_edges": 13,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 24
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unsupported",
+          "reason": "certified_refinement_exhaustion",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 6,
+            "abstract_paths": 1,
+            "abstract_state_visits": 8,
+            "budget": 32,
+            "elapsed_ns": 260500,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 1,
+            "refinement_lookups": 3,
+            "refinements": 1,
+            "relation_checks": 1,
+            "work_units": 23
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0058",
+      "family": "off_goal_load",
+      "scenario": "witness",
+      "parameters": {
+        "dead_branches": 2,
+        "choices_per_argument": 2,
+        "arguments": 2,
+        "off_goal_assignments": 8
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 10,
+            "graph_edges": 11,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "goal_pruned_edges": 2,
+            "graph_edges": 13,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 22
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 6,
+            "abstract_paths": 1,
+            "abstract_state_visits": 8,
+            "budget": 32,
+            "elapsed_ns": 2516100,
+            "expression_evaluations": 1,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 3,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 20
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0059",
+      "family": "off_goal_load",
+      "scenario": "refutation",
+      "parameters": {
+        "dead_branches": 2,
+        "choices_per_argument": 2,
+        "arguments": 2,
+        "off_goal_assignments": 8
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 4,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 10,
+            "graph_edges": 11,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unsupported",
+          "reason": "goal_relevant_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "goal_pruned_edges": 2,
+            "graph_edges": 13,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 24
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unsupported",
+          "reason": "certified_refinement_exhaustion",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 6,
+            "abstract_paths": 1,
+            "abstract_state_visits": 8,
+            "budget": 32,
+            "elapsed_ns": 366800,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 1,
+            "refinement_lookups": 3,
+            "refinements": 1,
+            "relation_checks": 1,
+            "work_units": 23
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0060",
+      "family": "off_goal_load",
+      "scenario": "irrelevant_opaque",
+      "parameters": {
+        "dead_branches": 2,
+        "choices_per_argument": 2,
+        "arguments": 2,
+        "off_goal_assignments": 8
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 7,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 6,
+            "graph_edges": 12,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unsupported",
+          "reason": "goal_relevant_relational_product_exhausted",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "goal_pruned_edges": 2,
+            "graph_edges": 13,
+            "product_states": 1,
+            "state_expansions": 7,
+            "work_units": 24
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unsupported",
+          "reason": "certified_refinement_exhaustion",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 6,
+            "abstract_paths": 1,
+            "abstract_state_visits": 8,
+            "budget": 32,
+            "elapsed_ns": 489200,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 1,
+            "refinement_lookups": 3,
+            "refinements": 1,
+            "relation_checks": 1,
+            "work_units": 23
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0061",
+      "family": "off_goal_load",
+      "scenario": "witness",
+      "parameters": {
+        "dead_branches": 4,
+        "choices_per_argument": 4,
+        "arguments": 1,
+        "off_goal_assignments": 16
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "graph_edges": 17,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "goal_pruned_edges": 4,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 10,
+            "abstract_paths": 1,
+            "abstract_state_visits": 12,
+            "budget": 32,
+            "elapsed_ns": 685600,
+            "expression_evaluations": 1,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 30
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0062",
+      "family": "off_goal_load",
+      "scenario": "refutation",
+      "parameters": {
+        "dead_branches": 4,
+        "choices_per_argument": 4,
+        "arguments": 1,
+        "off_goal_assignments": 16
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "graph_edges": 17,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "goal_pruned_edges": 4,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 10,
+            "abstract_paths": 1,
+            "abstract_state_visits": 12,
+            "budget": 32,
+            "elapsed_ns": 867400,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 1,
+            "relation_checks": 1,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0063",
+      "family": "off_goal_load",
+      "scenario": "irrelevant_opaque",
+      "parameters": {
+        "dead_branches": 4,
+        "choices_per_argument": 4,
+        "arguments": 1,
+        "off_goal_assignments": 16
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "graph_edges": 17,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "goal_pruned_edges": 4,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 10,
+            "abstract_paths": 1,
+            "abstract_state_visits": 12,
+            "budget": 32,
+            "elapsed_ns": 741400,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 1,
+            "relation_checks": 1,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0064",
+      "family": "off_goal_load",
+      "scenario": "witness",
+      "parameters": {
+        "dead_branches": 4,
+        "choices_per_argument": 4,
+        "arguments": 2,
+        "off_goal_assignments": 64
+      },
+      "authored_expectation": "supported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "graph_edges": 17,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "supported",
+          "reason": "concrete_recipe_path",
+          "certificate_valid": true,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "goal_pruned_edges": 4,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "supported",
+          "reason": "public_recipe_witness",
+          "certificate_valid": true,
+          "stats": {
+            "abstract_edge_checks": 10,
+            "abstract_paths": 1,
+            "abstract_state_visits": 12,
+            "budget": 32,
+            "elapsed_ns": 1528600,
+            "expression_evaluations": 1,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 0,
+            "relation_checks": 1,
+            "work_units": 30
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0065",
+      "family": "off_goal_load",
+      "scenario": "refutation",
+      "parameters": {
+        "dead_branches": 4,
+        "choices_per_argument": 4,
+        "arguments": 2,
+        "off_goal_assignments": 64
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 2,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 4,
+            "graph_edges": 17,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "goal_pruned_edges": 4,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 10,
+            "abstract_paths": 1,
+            "abstract_state_visits": 12,
+            "budget": 32,
+            "elapsed_ns": 714300,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 1,
+            "relation_checks": 1,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    },
+    {
+      "case_id": "scale-0066",
+      "family": "off_goal_load",
+      "scenario": "irrelevant_opaque",
+      "parameters": {
+        "dead_branches": 4,
+        "choices_per_argument": 4,
+        "arguments": 2,
+        "off_goal_assignments": 64
+      },
+      "authored_expectation": "unsupported",
+      "algorithms": {
+        "baseline": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 3,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 3,
+            "graph_edges": 17,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "direct_pruned": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "argument_assignments": 1,
+            "budget": 32,
+            "cached_relation_outcomes": 0,
+            "certificate_checks": 0,
+            "expression_evaluations": 1,
+            "goal_pruned_edges": 4,
+            "graph_edges": 21,
+            "product_states": 1,
+            "state_expansions": 9,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        },
+        "candidate": {
+          "decision": "unknown",
+          "reason": "work_budget_exhausted",
+          "certificate_valid": null,
+          "stats": {
+            "abstract_edge_checks": 10,
+            "abstract_paths": 1,
+            "abstract_state_visits": 12,
+            "budget": 32,
+            "elapsed_ns": 662900,
+            "expression_evaluations": 3,
+            "peak_frames": 1,
+            "refinement_edges": 0,
+            "refinement_lookups": 5,
+            "refinements": 1,
+            "relation_checks": 1,
+            "work_units": 32
+          },
+          "execution_status": "returned"
+        }
+      }
+    }
+  ],
+  "all_invocation_timing": {
+    "invocations": 320,
+    "evaluation_ns": {
+      "samples": [
+        7640100,
+        390600,
+        569000,
+        311800,
+        493300,
+        228400,
+        462300,
+        351900,
+        282500,
+        277200,
+        506500,
+        200900,
+        285300,
+        386600,
+        411700,
+        220200,
+        232800,
+        353400,
+        372900,
+        1221700,
+        1940000,
+        919300,
+        1118700,
+        1147100,
+        407800,
+        949600,
+        208900,
+        202400,
+        247200,
+        335300,
+        911700,
+        557100,
+        352700,
+        455200,
+        440000,
+        489200,
+        640600,
+        633100,
+        438100,
+        578800,
+        348500,
+        417100,
+        720100,
+        621700,
+        1102200,
+        438300,
+        323400,
+        283400,
+        278400,
+        1734000,
+        1438000,
+        1843000,
+        1432200,
+        1522900,
+        2386700,
+        2229700,
+        2336600,
+        669400,
+        743500,
+        701800,
+        567500,
+        2322800,
+        319000,
+        564100,
+        374800,
+        1119300,
+        1587500,
+        238900,
+        260500,
+        190400,
+        290900,
+        226000,
+        634200,
+        184100,
+        259300,
+        1050200,
+        1129500,
+        314300,
+        425500,
+        402100,
+        248400,
+        291500,
+        226400,
+        395500,
+        1034700,
+        2502700,
+        442100,
+        184600,
+        3053000,
+        1015300,
+        334800,
+        208200,
+        348100,
+        546500,
+        334200,
+        259600,
+        284600,
+        219300,
+        353600,
+        891400,
+        426100,
+        594200,
+        424200,
+        454100,
+        416200,
+        260900,
+        486300,
+        292600,
+        474500,
+        780200,
+        239400,
+        329000,
+        292000,
+        302100,
+        298200,
+        1667300,
+        1609300,
+        2437700,
+        2625600,
+        3789000,
+        2564800,
+        1043000,
+        1691700,
+        484200,
+        1949500,
+        288600,
+        441100,
+        7845100,
+        657000,
+        563000,
+        434500,
+        437400,
+        1582900,
+        366200,
+        436900,
+        281400,
+        255000,
+        399500,
+        1529900,
+        282100,
+        378700,
+        2606900,
+        1312300,
+        705400,
+        258000,
+        313500,
+        352700,
+        383500,
+        496700,
+        361300,
+        466100,
+        166300,
+        220300,
+        496400,
+        741000,
+        475500,
+        266500,
+        303300,
+        635900,
+        677800,
+        417600,
+        440100,
+        513700,
+        1600500,
+        324000,
+        781100,
+        259900,
+        1185100,
+        307900,
+        208400,
+        439500,
+        250400,
+        934900,
+        336400,
+        210500,
+        247200,
+        277400,
+        1548500,
+        703400,
+        291500,
+        446300,
+        345300,
+        1067000,
+        500700,
+        744200,
+        297500,
+        418300,
+        1420900,
+        285600,
+        330900,
+        243200,
+        432300,
+        366600,
+        1958100,
+        671600,
+        376000,
+        1394100,
+        1803500,
+        1229400,
+        1393300,
+        354500,
+        638200,
+        456200,
+        672300,
+        812900,
+        368100,
+        491100,
+        625300,
+        1104200,
+        453100,
+        280600,
+        293100,
+        366100,
+        1087000,
+        352300,
+        767300,
+        470000,
+        377300,
+        407400,
+        1176900,
+        1269200,
+        1678300,
+        1938000,
+        993200,
+        453700,
+        422700,
+        763400,
+        1453400,
+        1066800,
+        837100,
+        260300,
+        211100,
+        180200,
+        230900,
+        516500,
+        223100,
+        346600,
+        352900,
+        379100,
+        580500,
+        299800,
+        294700,
+        477100,
+        267400,
+        204500,
+        192100,
+        431800,
+        716300,
+        1603800,
+        1953400,
+        238500,
+        876500,
+        792600,
+        355400,
+        284000,
+        451400,
+        445200,
+        309200,
+        834700,
+        555400,
+        717400,
+        282000,
+        514900,
+        977900,
+        785000,
+        511800,
+        699700,
+        523600,
+        583200,
+        456800,
+        560600,
+        313900,
+        549100,
+        1903600,
+        697400,
+        507800,
+        555400,
+        512000,
+        196200,
+        687800,
+        939900,
+        1853700,
+        1280300,
+        2079600,
+        914500,
+        1174700,
+        268700,
+        2605800,
+        376800,
+        504700,
+        700400,
+        881800,
+        759700,
+        1579600,
+        735000,
+        680600,
+        437800,
+        291000,
+        307800,
+        460600,
+        275700,
+        326600,
+        625900,
+        673100,
+        515200,
+        1031900,
+        971600,
+        2345700,
+        2714400,
+        3746200,
+        1845100,
+        1598600,
+        1129500,
+        1388100,
+        452500,
+        713200,
+        607600,
+        910100,
+        693700,
+        895100
+      ],
+      "observed": 320,
+      "missing": 0,
+      "total": 247855400
+    },
+    "worker_body_ns": {
+      "samples": [
+        113504300,
+        16667400,
+        21024200,
+        16359700,
+        22030600,
+        13513200,
+        24792300,
+        20019900,
+        14912800,
+        16446700,
+        17342800,
+        14947000,
+        22277300,
+        35431100,
+        17688200,
+        17546500,
+        12088100,
+        27672900,
+        32959400,
+        33001700,
+        28843600,
+        30028800,
+        25578500,
+        25755300,
+        43689700,
+        47630600,
+        24276800,
+        21318900,
+        26886400,
+        41030700,
+        25031900,
+        26617400,
+        15469100,
+        20308200,
+        20252600,
+        30028600,
+        33751900,
+        47322600,
+        30115600,
+        55846400,
+        15799100,
+        16091700,
+        29362100,
+        112090300,
+        32644600,
+        23749100,
+        22258700,
+        26258300,
+        24145300,
+        26615200,
+        23526000,
+        26932000,
+        33585100,
+        51752900,
+        62126600,
+        34203000,
+        30702800,
+        38182600,
+        43015400,
+        33797600,
+        27108900,
+        48780400,
+        18881100,
+        21097100,
+        22111300,
+        28022000,
+        28067900,
+        10986300,
+        15517400,
+        13655100,
+        17502900,
+        11850800,
+        21170200,
+        12804000,
+        13680100,
+        53329900,
+        24171100,
+        29706200,
+        21443500,
+        11166000,
+        26183100,
+        15122600,
+        12324900,
+        31871400,
+        16622100,
+        101029200,
+        26971600,
+        24675300,
+        34599900,
+        26645900,
+        33508100,
+        19622600,
+        97631700,
+        17425200,
+        12015900,
+        26711600,
+        18729700,
+        14709500,
+        15308600,
+        30435500,
+        19346000,
+        21683800,
+        22091100,
+        17465800,
+        26174900,
+        19360000,
+        16546700,
+        20338200,
+        21457900,
+        26507700,
+        20066500,
+        20061000,
+        34746700,
+        19449400,
+        20007100,
+        46411200,
+        31890600,
+        28461100,
+        42244700,
+        90407900,
+        57409500,
+        20931800,
+        83911000,
+        21321700,
+        31348400,
+        19348700,
+        20355500,
+        52505400,
+        23249100,
+        16865000,
+        13418200,
+        22090100,
+        25718000,
+        17334400,
+        14800400,
+        14893900,
+        14250900,
+        38203800,
+        37448800,
+        17050000,
+        25739400,
+        41834600,
+        31728300,
+        22274400,
+        16006900,
+        12536600,
+        12174300,
+        12695600,
+        21347900,
+        25153300,
+        25486700,
+        37352500,
+        11055300,
+        40763400,
+        33139500,
+        26299300,
+        15547400,
+        22416300,
+        25702400,
+        22112100,
+        14053000,
+        17031500,
+        28605800,
+        36439100,
+        27285700,
+        22426800,
+        24053900,
+        32894000,
+        31888500,
+        20201900,
+        61093000,
+        16039900,
+        43758600,
+        20940400,
+        17307700,
+        16962000,
+        16359200,
+        33403300,
+        18232800,
+        26819300,
+        26406300,
+        19145700,
+        57254800,
+        21251100,
+        59118500,
+        18127900,
+        22238800,
+        33950900,
+        17251800,
+        20738200,
+        18995900,
+        26715200,
+        19102100,
+        41412500,
+        46466600,
+        20529300,
+        32775900,
+        112484600,
+        28275300,
+        27708500,
+        25256900,
+        19635500,
+        31943300,
+        25243500,
+        62849100,
+        22351800,
+        44703900,
+        37717400,
+        24844800,
+        28250600,
+        34499000,
+        11549100,
+        13221600,
+        28063900,
+        25769800,
+        40583000,
+        56391600,
+        13313800,
+        25709000,
+        35552400,
+        39242900,
+        43747400,
+        27052000,
+        40909400,
+        27447500,
+        27881000,
+        32654400,
+        32680700,
+        44108200,
+        21163300,
+        7487000,
+        5771400,
+        5993900,
+        12592700,
+        14152600,
+        5120100,
+        10433600,
+        10053100,
+        12959400,
+        10387500,
+        8620700,
+        20581700,
+        8460100,
+        8707400,
+        5306700,
+        5800600,
+        10379900,
+        8840900,
+        84295100,
+        12509900,
+        7077100,
+        14273700,
+        9130000,
+        12412500,
+        13271100,
+        13056300,
+        8843000,
+        8148800,
+        13678700,
+        12766900,
+        10146700,
+        6570500,
+        22890700,
+        11470800,
+        16472000,
+        11831100,
+        14554900,
+        37722300,
+        8692200,
+        9104600,
+        12800600,
+        10215200,
+        12272600,
+        13082600,
+        13685800,
+        17013600,
+        14410900,
+        10567200,
+        10073100,
+        16162300,
+        45179900,
+        27750100,
+        31838800,
+        26823100,
+        10457400,
+        14075000,
+        7803500,
+        30141600,
+        12998300,
+        17928400,
+        14212900,
+        11636800,
+        17414700,
+        20756000,
+        16750100,
+        10732000,
+        19415600,
+        19098600,
+        12058300,
+        27102500,
+        17578000,
+        21430200,
+        31624100,
+        32237000,
+        26705500,
+        50777000,
+        29264400,
+        67755500,
+        55595100,
+        95812800,
+        70817400,
+        75133300,
+        24027000,
+        56575600,
+        30777500,
+        69291600,
+        38156700,
+        32648100,
+        59763400,
+        24117700
+      ],
+      "observed": 320,
+      "missing": 0,
+      "total": 8603780500
+    },
+    "worker_wall_ns": {
+      "samples": [
+        2703524000,
+        206000500,
+        211032300,
+        163524100,
+        252983800,
+        241161600,
+        362673700,
+        253441800,
+        274956800,
+        237821100,
+        222009800,
+        303523100,
+        242176300,
+        382035700,
+        280235900,
+        195838700,
+        203463500,
+        421888700,
+        328296000,
+        1917785800,
+        10600747900,
+        411421900,
+        425219700,
+        684493400,
+        679436100,
+        509977900,
+        323360600,
+        352216100,
+        385337500,
+        498860900,
+        434402400,
+        407280500,
+        296791900,
+        522840000,
+        341887300,
+        584393400,
+        400385400,
+        604449000,
+        500882100,
+        598029000,
+        295661200,
+        235477700,
+        401785700,
+        597169500,
+        548815300,
+        455776400,
+        570205600,
+        347705100,
+        308448600,
+        516362400,
+        636296800,
+        805920800,
+        3876074600,
+        5266763000,
+        7998407400,
+        536939500,
+        1124114000,
+        352921100,
+        743096300,
+        461102100,
+        372456300,
+        1008070000,
+        290835700,
+        305381900,
+        295281700,
+        551465300,
+        3790281300,
+        224060800,
+        199142600,
+        242354300,
+        238004500,
+        190692300,
+        311532900,
+        274948300,
+        236012400,
+        852771000,
+        634219600,
+        308476200,
+        263383000,
+        424279900,
+        278238900,
+        219112700,
+        187639400,
+        640545000,
+        607849400,
+        679452300,
+        524196300,
+        518139700,
+        839349200,
+        1079179700,
+        792174100,
+        397738900,
+        632924800,
+        304013600,
+        292885700,
+        313471000,
+        327721600,
+        216080900,
+        350205100,
+        434140500,
+        411764400,
+        319658500,
+        417872000,
+        347773700,
+        298927600,
+        506381700,
+        377706800,
+        229994300,
+        316526500,
+        454019900,
+        396691900,
+        480328300,
+        495493000,
+        299078600,
+        247876800,
+        3346902600,
+        776569000,
+        372704800,
+        2456371700,
+        8464902700,
+        2379935600,
+        955014900,
+        2535238600,
+        519597300,
+        471869600,
+        336260300,
+        332893400,
+        941674500,
+        315371200,
+        347649000,
+        287128900,
+        385376400,
+        994903500,
+        190312100,
+        154340000,
+        225704600,
+        202473600,
+        327023000,
+        1378267500,
+        193369000,
+        270468100,
+        820496300,
+        498210700,
+        597836100,
+        269461600,
+        171273600,
+        146143300,
+        177407000,
+        317347300,
+        250467600,
+        389041000,
+        175281000,
+        227142800,
+        524843500,
+        415433300,
+        263577000,
+        186492600,
+        499460300,
+        329761300,
+        214898300,
+        194216400,
+        312021700,
+        468770700,
+        638456400,
+        332536100,
+        300897700,
+        403723300,
+        684650100,
+        413765900,
+        304279200,
+        494362600,
+        231900900,
+        344320900,
+        335438900,
+        269300900,
+        262959200,
+        276120400,
+        715462100,
+        303886700,
+        356229200,
+        296062400,
+        377222200,
+        384303300,
+        306735500,
+        355984900,
+        277998300,
+        389679700,
+        750823300,
+        457083900,
+        339397800,
+        394241900,
+        412905400,
+        346845700,
+        958200300,
+        463305300,
+        314297800,
+        887921400,
+        2378754900,
+        829740900,
+        1151868100,
+        404342300,
+        256494500,
+        443581900,
+        358173600,
+        457255500,
+        736985100,
+        603693700,
+        374500200,
+        373290300,
+        484840200,
+        349037600,
+        155761900,
+        142041200,
+        303719900,
+        226444300,
+        393265800,
+        281031700,
+        204873000,
+        341919800,
+        811607700,
+        511132400,
+        692098000,
+        680605700,
+        2018374700,
+        400458000,
+        256514700,
+        439314400,
+        353962000,
+        720215600,
+        375191500,
+        257724200,
+        157804200,
+        153449800,
+        235776100,
+        293025500,
+        223896000,
+        324039000,
+        229414600,
+        225620300,
+        796198500,
+        726851600,
+        321132800,
+        244660400,
+        349408900,
+        222094000,
+        212998100,
+        291052400,
+        291857700,
+        17604630900,
+        573497200,
+        323365300,
+        558360400,
+        311813700,
+        375806100,
+        382028800,
+        282819400,
+        412688200,
+        260085900,
+        353145000,
+        285425000,
+        274592400,
+        216892200,
+        276726500,
+        410204200,
+        298956200,
+        300982200,
+        307398600,
+        356737700,
+        361940500,
+        313828200,
+        286294500,
+        224857100,
+        319288900,
+        709745300,
+        413312800,
+        363254500,
+        397476500,
+        286833900,
+        287084700,
+        666516400,
+        2034362100,
+        1131015200,
+        1760639900,
+        1330850400,
+        555962700,
+        600974800,
+        292977000,
+        758205400,
+        418702500,
+        535585000,
+        339713800,
+        333173300,
+        352757100,
+        520615100,
+        449627300,
+        289941100,
+        225364400,
+        165950100,
+        179104600,
+        287531200,
+        236536800,
+        222057900,
+        302456600,
+        421125200,
+        453156000,
+        584118200,
+        467901300,
+        1441751900,
+        2680740600,
+        5598904400,
+        1770233800,
+        2176660800,
+        678311900,
+        654644600,
+        327394300,
+        1713396600,
+        652996600,
+        556596600,
+        482276300,
+        350396300
+      ],
+      "observed": 320,
+      "missing": 0,
+      "total": 219487231100
+    }
+  },
+  "reference_timing": {
+    "invocations": 66,
+    "evaluation_ns": {
+      "samples": [
+        7640100,
+        390600,
+        569000,
+        311800,
+        493300,
+        228400,
+        462300,
+        351900,
+        282500,
+        277200,
+        506500,
+        200900,
+        285300,
+        386600,
+        411700,
+        220200,
+        232800,
+        353400,
+        372900,
+        1221700,
+        1940000,
+        919300,
+        1118700,
+        1147100,
+        407800,
+        949600,
+        208900,
+        202400,
+        247200,
+        335300,
+        911700,
+        557100,
+        352700,
+        455200,
+        440000,
+        489200,
+        640600,
+        633100,
+        438100,
+        578800,
+        348500,
+        417100,
+        720100,
+        621700,
+        1102200,
+        438300,
+        323400,
+        283400,
+        278400,
+        1734000,
+        1438000,
+        1843000,
+        1432200,
+        1522900,
+        2386700,
+        2229700,
+        2336600,
+        669400,
+        743500,
+        701800,
+        567500,
+        2322800,
+        319000,
+        564100,
+        374800,
+        1119300
+      ],
+      "observed": 66,
+      "missing": 0,
+      "total": 55010300
+    },
+    "worker_body_ns": {
+      "samples": [
+        113504300,
+        16667400,
+        21024200,
+        16359700,
+        22030600,
+        13513200,
+        24792300,
+        20019900,
+        14912800,
+        16446700,
+        17342800,
+        14947000,
+        22277300,
+        35431100,
+        17688200,
+        17546500,
+        12088100,
+        27672900,
+        32959400,
+        33001700,
+        28843600,
+        30028800,
+        25578500,
+        25755300,
+        43689700,
+        47630600,
+        24276800,
+        21318900,
+        26886400,
+        41030700,
+        25031900,
+        26617400,
+        15469100,
+        20308200,
+        20252600,
+        30028600,
+        33751900,
+        47322600,
+        30115600,
+        55846400,
+        15799100,
+        16091700,
+        29362100,
+        112090300,
+        32644600,
+        23749100,
+        22258700,
+        26258300,
+        24145300,
+        26615200,
+        23526000,
+        26932000,
+        33585100,
+        51752900,
+        62126600,
+        34203000,
+        30702800,
+        38182600,
+        43015400,
+        33797600,
+        27108900,
+        48780400,
+        18881100,
+        21097100,
+        22111300,
+        28022000
+      ],
+      "observed": 66,
+      "missing": 0,
+      "total": 2002848900
+    },
+    "worker_wall_ns": {
+      "samples": [
+        2703524000,
+        206000500,
+        211032300,
+        163524100,
+        252983800,
+        241161600,
+        362673700,
+        253441800,
+        274956800,
+        237821100,
+        222009800,
+        303523100,
+        242176300,
+        382035700,
+        280235900,
+        195838700,
+        203463500,
+        421888700,
+        328296000,
+        1917785800,
+        10600747900,
+        411421900,
+        425219700,
+        684493400,
+        679436100,
+        509977900,
+        323360600,
+        352216100,
+        385337500,
+        498860900,
+        434402400,
+        407280500,
+        296791900,
+        522840000,
+        341887300,
+        584393400,
+        400385400,
+        604449000,
+        500882100,
+        598029000,
+        295661200,
+        235477700,
+        401785700,
+        597169500,
+        548815300,
+        455776400,
+        570205600,
+        347705100,
+        308448600,
+        516362400,
+        636296800,
+        805920800,
+        3876074600,
+        5266763000,
+        7998407400,
+        536939500,
+        1124114000,
+        352921100,
+        743096300,
+        461102100,
+        372456300,
+        1008070000,
+        290835700,
+        305381900,
+        295281700,
+        551465300
+      ],
+      "observed": 66,
+      "missing": 0,
+      "total": 57869320200
+    }
+  }
+}

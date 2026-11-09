@@ -1,0 +1,56 @@
+[
+  [
+    "adk_internal_metadata",
+    "table",
+    "adk_internal_metadata",
+    "CREATE TABLE adk_internal_metadata (\n\t\"key\" VARCHAR(128) NOT NULL, \n\tvalue VARCHAR(256) NOT NULL, \n\tPRIMARY KEY (\"key\")\n)"
+  ],
+  [
+    "sessions",
+    "table",
+    "sessions",
+    "CREATE TABLE sessions (\n\tapp_name VARCHAR(128) NOT NULL, \n\tuser_id VARCHAR(128) NOT NULL, \n\tid VARCHAR(128) NOT NULL, \n\tstate TEXT NOT NULL, \n\tcreate_time DATETIME NOT NULL, \n\tupdate_time DATETIME NOT NULL, \n\tPRIMARY KEY (app_name, user_id, id)\n)"
+  ],
+  [
+    "app_states",
+    "table",
+    "app_states",
+    "CREATE TABLE app_states (\n\tapp_name VARCHAR(128) NOT NULL, \n\tstate TEXT NOT NULL, \n\tupdate_time DATETIME NOT NULL, \n\tPRIMARY KEY (app_name)\n)"
+  ],
+  [
+    "user_states",
+    "table",
+    "user_states",
+    "CREATE TABLE user_states (\n\tapp_name VARCHAR(128) NOT NULL, \n\tuser_id VARCHAR(128) NOT NULL, \n\tstate TEXT NOT NULL, \n\tupdate_time DATETIME NOT NULL, \n\tPRIMARY KEY (app_name, user_id)\n)"
+  ],
+  [
+    "events",
+    "table",
+    "events",
+    "CREATE TABLE events (\n\tid VARCHAR(128) NOT NULL, \n\tapp_name VARCHAR(128) NOT NULL, \n\tuser_id VARCHAR(128) NOT NULL, \n\tsession_id VARCHAR(128) NOT NULL, \n\tinvocation_id VARCHAR(256) NOT NULL, \n\ttimestamp DATETIME NOT NULL, \n\tevent_data TEXT, \n\tPRIMARY KEY (id, app_name, user_id, session_id), \n\tFOREIGN KEY(app_name, user_id, session_id) REFERENCES sessions (app_name, user_id, id) ON DELETE CASCADE\n)"
+  ],
+  [
+    "idx_events_app_user_session_ts_id",
+    "index",
+    "events",
+    "CREATE INDEX idx_events_app_user_session_ts_id ON events (app_name, user_id, session_id, timestamp DESC, id DESC)"
+  ],
+  [
+    "tasks",
+    "table",
+    "tasks",
+    "CREATE TABLE tasks (\n\tid VARCHAR(36) NOT NULL, \n\tcontext_id VARCHAR(36) NOT NULL, \n\tkind VARCHAR(16) NOT NULL, \n\towner VARCHAR(255), \n\tlast_updated DATETIME, \n\tstatus JSON NOT NULL, \n\tartifacts JSON, \n\thistory JSON, \n\tprotocol_version VARCHAR(16), \n\tmetadata JSON, \n\tPRIMARY KEY (id)\n)"
+  ],
+  [
+    "idx_tasks_owner_last_updated",
+    "index",
+    "tasks",
+    "CREATE INDEX idx_tasks_owner_last_updated ON tasks (owner, last_updated)"
+  ],
+  [
+    "ix_tasks_id",
+    "index",
+    "tasks",
+    "CREATE INDEX ix_tasks_id ON tasks (id)"
+  ]
+]

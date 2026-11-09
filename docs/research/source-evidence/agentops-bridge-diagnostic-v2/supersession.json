@@ -1,0 +1,35 @@
+{
+  "schema_version": "agentops-diagnostic-supersession/1",
+  "recorded_at_utc": "2026-10-28T09:51:53.389049+00:00",
+  "status": "superseded_before_application_launch",
+  "superseded_intended_group": "linux-bridge-diagnostic-v11",
+  "successor_intended_group": "linux-bridge-diagnostic-v12",
+  "superseded_seal": {
+    "path": "docs/research/source-evidence/agentops-bridge-diagnostic-v1/manifest.json",
+    "bytes": 104294,
+    "sha256": "471b9f6d156696c4c1813799ef7d46cd2076467ed8019c0a57b99dcac7ea329b"
+  },
+  "retained_software_receipt": {
+    "path": "runs/agentops-native-eligibility/bridge-diagnostic-software-v1/result.json",
+    "bytes": 8121,
+    "sha256": "fa621cd6022f885df53798f0ed8ec7edad9644ed9b134f8f55edf79eba825eac"
+  },
+  "exporter_validation_receipt": {
+    "path": "runs/agentops-native-eligibility/diagnostic-export-preparation-v1/result.json",
+    "bytes": 1694,
+    "sha256": "5e362713ce7d31eb2112c1ba2f0838c296a7252277fd0930dfb5a0deea48a6c1"
+  },
+  "reason": "The generic exporter treats diagnostic checker top-level files as workspace-relative although that schema records paths relative to its case directory. Versioned exporter correction precedes any application launch.",
+  "case_prefix": "runs/agentops-http-control/bridge-diagnostic-v1-",
+  "case_order": [
+    "N11",
+    "B6",
+    "B7"
+  ],
+  "application_requests": 0,
+  "live_model_calls": 0,
+  "scientific_gate_credit_added": 0,
+  "v10_outcomes_changed": false,
+  "v11_application_outcome_claimed": false,
+  "preseal_requirement": "Observe parent v11/v12 group outputs and all intended native case directories absent in the actual retained Linux workspace before sealing."
+}

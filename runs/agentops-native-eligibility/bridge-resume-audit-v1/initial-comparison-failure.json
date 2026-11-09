@@ -1,0 +1,9 @@
+{
+  "source": "Recovered from the visible preceding tool invocation and output",
+  "raw_process_capture": false,
+  "comparison": "actual == {k:v for k,v in retained.items() if k != 'schema_version'}",
+  "error": "AssertionError: Current retained-data recomputation differs",
+  "correction": "checker.check returns schema_version; compare both complete objects.",
+  "evidence_modified": false,
+  "application_requests": 0
+}

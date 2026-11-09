@@ -1,0 +1,765 @@
+{
+  "test": "_ap2_injected_execution_tests.ReferenceExecutionTests.test_full_public_sequence_and_exact_payment_forms",
+  "constructed_artifacts": [
+    {
+      "schema_version": "ap2-hp-injected-reference-execution/1",
+      "status": "public_sequence_observed",
+      "phase": "finished",
+      "planning_report": {
+        "schema_version": "ap2-hp-reference-plan/1",
+        "scope": "pure_source_derived_caller_planning_only",
+        "next_phase": "finished",
+        "observations": [
+          {
+            "phase": "catalog",
+            "supplied_value": {
+              "kind": "task",
+              "id": "catalog",
+              "contextId": "shopping",
+              "status": {
+                "state": "completed"
+              },
+              "artifacts": [
+                {
+                  "parts": [
+                    {
+                      "kind": "data",
+                      "data": {
+                        "ap2.cart": {
+                          "cart_id": "cart",
+                          "item_label": "Coffee maker",
+                          "amount": 10,
+                          "currency": "USD"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "phase": "cart_selection",
+            "supplied_value": "cart"
+          },
+          {
+            "phase": "shipping",
+            "supplied_value": {
+              "kind": "task",
+              "id": "shipping",
+              "contextId": "shopping",
+              "status": {
+                "state": "completed"
+              },
+              "artifacts": [
+                {
+                  "parts": [
+                    {
+                      "kind": "data",
+                      "data": {
+                        "contact_picker.ContactAddress": {
+                          "address_line": [
+                            "1 Public Street"
+                          ],
+                          "city": "Example"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "phase": "payment_methods",
+            "supplied_value": {
+              "kind": "task",
+              "id": "methods",
+              "contextId": "shopping",
+              "status": {
+                "state": "completed"
+              },
+              "artifacts": [
+                {
+                  "parts": [
+                    {
+                      "kind": "data",
+                      "data": {
+                        "payment_method_aliases": [
+                          "alias"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "phase": "payment_selection",
+            "supplied_value": "alias"
+          },
+          {
+            "phase": "credential_token",
+            "supplied_value": {
+              "task": {
+                "kind": "task",
+                "id": "token",
+                "contextId": "shopping",
+                "status": {
+                  "state": "completed"
+                },
+                "artifacts": [
+                  {
+                    "parts": [
+                      {
+                        "kind": "data",
+                        "data": {
+                          "token": "constructed-public-token"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "agent_card": {
+                "url": "http://localhost:8002/a2a/credentials_provider"
+              }
+            }
+          },
+          {
+            "phase": "checkout",
+            "supplied_value": {
+              "kind": "task",
+              "id": "checkout",
+              "contextId": "shopping",
+              "status": {
+                "state": "completed"
+              },
+              "artifacts": [
+                {
+                  "parts": [
+                    {
+                      "kind": "data",
+                      "data": {
+                        "ap2.checkout": {
+                          "cart_id": "cart",
+                          "item_label": "Coffee maker",
+                          "amount": 10,
+                          "currency": "USD",
+                          "amount_cents": 1000,
+                          "checkout_jwt": "constructed-checkout-jwt",
+                          "checkout_hash": "hCk_LzzKfLN67l5UM2ZDJ7Jhki46tW0sdkOCOiocgaM"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "phase": "approval",
+            "supplied_value": {
+              "approved": true,
+              "summary": {
+                "cart_id": "cart",
+                "checkout_hash": "hCk_LzzKfLN67l5UM2ZDJ7Jhki46tW0sdkOCOiocgaM",
+                "item_label": "Coffee maker",
+                "amount_cents": 1000,
+                "currency": "USD",
+                "payment_method_alias": "alias",
+                "shipping_address": {
+                  "address_line": [
+                    "1 Public Street"
+                  ],
+                  "city": "Example"
+                }
+              }
+            }
+          },
+          {
+            "phase": "checkout_mandate",
+            "supplied_value": "constructed-checkout-mandate"
+          },
+          {
+            "phase": "payment_mandate",
+            "supplied_value": "constructed-payment-mandate"
+          },
+          {
+            "phase": "cp_association",
+            "supplied_value": {
+              "kind": "task",
+              "id": "association",
+              "contextId": "shopping",
+              "status": {
+                "state": "completed"
+              },
+              "artifacts": []
+            }
+          },
+          {
+            "phase": "payment_start",
+            "supplied_value": {
+              "kind": "task",
+              "id": "payment",
+              "contextId": "shopping",
+              "status": {
+                "state": "input_required",
+                "message": {
+                  "kind": "message",
+                  "parts": [
+                    {
+                      "kind": "data",
+                      "data": {
+                        "challenge": {
+                          "type": "otp",
+                          "display_text": "Enter the supplied code"
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "artifacts": []
+            }
+          },
+          {
+            "phase": "otp_response",
+            "supplied_value": "123"
+          },
+          {
+            "phase": "payment_resume",
+            "supplied_value": {
+              "kind": "task",
+              "id": "payment",
+              "contextId": "shopping",
+              "status": {
+                "state": "completed"
+              },
+              "artifacts": []
+            }
+          }
+        ],
+        "caller_state": {
+          "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data",
+          "supplied_distinct_prelude_task_ids": [
+            "catalog",
+            "shipping",
+            "methods",
+            "token",
+            "checkout",
+            "association",
+            "payment"
+          ],
+          "shopping_context_id": "shopping",
+          "available_carts": [
+            {
+              "cart_id": "cart",
+              "item_label": "Coffee maker",
+              "amount": 10,
+              "currency": "USD"
+            }
+          ],
+          "chosen_cart_id": "cart",
+          "selected_cart": {
+            "cart_id": "cart",
+            "item_label": "Coffee maker",
+            "amount": 10,
+            "currency": "USD"
+          },
+          "shipping_address": {
+            "address_line": [
+              "1 Public Street"
+            ],
+            "city": "Example"
+          },
+          "payment_method_aliases": [
+            "alias"
+          ],
+          "payment_method_alias": "alias",
+          "payment_credential_token": {
+            "value": "constructed-public-token",
+            "url": "http://localhost:8002/a2a/credentials_provider"
+          },
+          "checkout_data": {
+            "cart_id": "cart",
+            "item_label": "Coffee maker",
+            "amount": 10,
+            "currency": "USD",
+            "amount_cents": 1000,
+            "checkout_jwt": "constructed-checkout-jwt",
+            "checkout_hash": "hCk_LzzKfLN67l5UM2ZDJ7Jhki46tW0sdkOCOiocgaM"
+          },
+          "explicit_reference_approval": {
+            "approved": true,
+            "summary": {
+              "cart_id": "cart",
+              "checkout_hash": "hCk_LzzKfLN67l5UM2ZDJ7Jhki46tW0sdkOCOiocgaM",
+              "item_label": "Coffee maker",
+              "amount_cents": 1000,
+              "currency": "USD",
+              "payment_method_alias": "alias",
+              "shipping_address": {
+                "address_line": [
+                  "1 Public Street"
+                ],
+                "city": "Example"
+              }
+            }
+          },
+          "checkout_mandate_sdjwt": "constructed-checkout-mandate",
+          "checkout_hash": "hCk_LzzKfLN67l5UM2ZDJ7Jhki46tW0sdkOCOiocgaM",
+          "payment_mandate_sdjwt": "constructed-payment-mandate",
+          "cp_association_public_completion_observed": true,
+          "initiate_payment_task_id": "payment",
+          "public_challenge": {
+            "type": "otp",
+            "display_text": "Enter the supplied code"
+          },
+          "challenge_response": "123",
+          "supplied_merchant_after": {
+            "kind": "task",
+            "id": "payment",
+            "contextId": "shopping",
+            "status": {
+              "state": "completed"
+            },
+            "artifacts": []
+          },
+          "source_branch_requested_target": "completed",
+          "supplied_continuation_target_observed": true
+        },
+        "aggregate_task_grade": null,
+        "native_execution_enabled": false,
+        "native_qualification_established": false,
+        "original_source_authenticated": false,
+        "capture_order_and_completeness": "unknown",
+        "credential_transaction_association": "unknown",
+        "mandate_signatures": "unknown",
+        "source_reset_and_effects": "unknown",
+        "model_usage_guard": "not_implemented",
+        "bootstrap_environment_gate_contract": "not_implemented"
+      },
+      "public_records": [
+        {
+          "sequence": 0,
+          "call": 0,
+          "endpoint": "http://localhost:8001/a2a/merchant_agent",
+          "operation": "send_a2a_message",
+          "boundary": "attempt",
+          "public_value": {
+            "constructed_phase": "catalog"
+          },
+          "global_sequence": 0
+        },
+        {
+          "sequence": 1,
+          "call": 0,
+          "endpoint": "http://localhost:8001/a2a/merchant_agent",
+          "operation": "send_a2a_message",
+          "boundary": "returned",
+          "public_value": {
+            "kind": "task",
+            "id": "catalog",
+            "contextId": "shopping",
+            "status": {
+              "state": "completed"
+            },
+            "artifacts": [
+              {
+                "parts": [
+                  {
+                    "kind": "data",
+                    "data": {
+                      "ap2.cart": {
+                        "cart_id": "cart",
+                        "item_label": "Coffee maker",
+                        "amount": 10,
+                        "currency": "USD"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "global_sequence": 1
+        },
+        {
+          "sequence": 0,
+          "call": 0,
+          "endpoint": "http://localhost:8002/a2a/credentials_provider",
+          "operation": "send_a2a_message",
+          "boundary": "attempt",
+          "public_value": {
+            "constructed_phase": "shipping"
+          },
+          "global_sequence": 2
+        },
+        {
+          "sequence": 1,
+          "call": 0,
+          "endpoint": "http://localhost:8002/a2a/credentials_provider",
+          "operation": "send_a2a_message",
+          "boundary": "returned",
+          "public_value": {
+            "kind": "task",
+            "id": "shipping",
+            "contextId": "shopping",
+            "status": {
+              "state": "completed"
+            },
+            "artifacts": [
+              {
+                "parts": [
+                  {
+                    "kind": "data",
+                    "data": {
+                      "contact_picker.ContactAddress": {
+                        "address_line": [
+                          "1 Public Street"
+                        ],
+                        "city": "Example"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "global_sequence": 3
+        },
+        {
+          "sequence": 2,
+          "call": 1,
+          "endpoint": "http://localhost:8002/a2a/credentials_provider",
+          "operation": "send_a2a_message",
+          "boundary": "attempt",
+          "public_value": {
+            "constructed_phase": "methods"
+          },
+          "global_sequence": 4
+        },
+        {
+          "sequence": 3,
+          "call": 1,
+          "endpoint": "http://localhost:8002/a2a/credentials_provider",
+          "operation": "send_a2a_message",
+          "boundary": "returned",
+          "public_value": {
+            "kind": "task",
+            "id": "methods",
+            "contextId": "shopping",
+            "status": {
+              "state": "completed"
+            },
+            "artifacts": [
+              {
+                "parts": [
+                  {
+                    "kind": "data",
+                    "data": {
+                      "payment_method_aliases": [
+                        "alias"
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "global_sequence": 5
+        },
+        {
+          "sequence": 4,
+          "call": 2,
+          "endpoint": "http://localhost:8002/a2a/credentials_provider",
+          "operation": "send_a2a_message",
+          "boundary": "attempt",
+          "public_value": {
+            "constructed_phase": "token"
+          },
+          "global_sequence": 6
+        },
+        {
+          "sequence": 5,
+          "call": 2,
+          "endpoint": "http://localhost:8002/a2a/credentials_provider",
+          "operation": "send_a2a_message",
+          "boundary": "returned",
+          "public_value": {
+            "kind": "task",
+            "id": "token",
+            "contextId": "shopping",
+            "status": {
+              "state": "completed"
+            },
+            "artifacts": [
+              {
+                "parts": [
+                  {
+                    "kind": "data",
+                    "data": {
+                      "token": "constructed-public-token"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "global_sequence": 7
+        },
+        {
+          "sequence": 6,
+          "call": 3,
+          "endpoint": "http://localhost:8002/a2a/credentials_provider",
+          "operation": "get_agent_card",
+          "boundary": "attempt",
+          "global_sequence": 8
+        },
+        {
+          "sequence": 7,
+          "call": 3,
+          "endpoint": "http://localhost:8002/a2a/credentials_provider",
+          "operation": "get_agent_card",
+          "boundary": "returned",
+          "public_value": {
+            "url": "http://localhost:8002/a2a/credentials_provider"
+          },
+          "global_sequence": 9
+        },
+        {
+          "sequence": 2,
+          "call": 1,
+          "endpoint": "http://localhost:8001/a2a/merchant_agent",
+          "operation": "send_a2a_message",
+          "boundary": "attempt",
+          "public_value": {
+            "constructed_phase": "checkout"
+          },
+          "global_sequence": 10
+        },
+        {
+          "sequence": 3,
+          "call": 1,
+          "endpoint": "http://localhost:8001/a2a/merchant_agent",
+          "operation": "send_a2a_message",
+          "boundary": "returned",
+          "public_value": {
+            "kind": "task",
+            "id": "checkout",
+            "contextId": "shopping",
+            "status": {
+              "state": "completed"
+            },
+            "artifacts": [
+              {
+                "parts": [
+                  {
+                    "kind": "data",
+                    "data": {
+                      "ap2.checkout": {
+                        "cart_id": "cart",
+                        "item_label": "Coffee maker",
+                        "amount": 10,
+                        "currency": "USD",
+                        "amount_cents": 1000,
+                        "checkout_jwt": "constructed-checkout-jwt",
+                        "checkout_hash": "hCk_LzzKfLN67l5UM2ZDJ7Jhki46tW0sdkOCOiocgaM"
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "global_sequence": 11
+        },
+        {
+          "sequence": 8,
+          "call": 4,
+          "endpoint": "http://localhost:8002/a2a/credentials_provider",
+          "operation": "send_a2a_message",
+          "boundary": "attempt",
+          "public_value": {
+            "constructed_phase": "association"
+          },
+          "global_sequence": 12
+        },
+        {
+          "sequence": 9,
+          "call": 4,
+          "endpoint": "http://localhost:8002/a2a/credentials_provider",
+          "operation": "send_a2a_message",
+          "boundary": "returned",
+          "public_value": {
+            "kind": "task",
+            "id": "association",
+            "contextId": "shopping",
+            "status": {
+              "state": "completed"
+            },
+            "artifacts": []
+          },
+          "global_sequence": 13
+        },
+        {
+          "sequence": 4,
+          "call": 2,
+          "endpoint": "http://localhost:8001/a2a/merchant_agent",
+          "operation": "send_a2a_message",
+          "boundary": "attempt",
+          "public_value": {
+            "kind": "message",
+            "role": "agent",
+            "messageId": "8a3c29b48ad14a709b3e311152c799c6",
+            "parts": [
+              {
+                "kind": "text",
+                "text": "Initiate a payment"
+              },
+              {
+                "kind": "data",
+                "data": {
+                  "ap2.mandates.PaymentMandateSdJwt": "constructed-payment-mandate"
+                }
+              },
+              {
+                "kind": "data",
+                "data": {
+                  "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                }
+              },
+              {
+                "kind": "data",
+                "data": {
+                  "shopping_agent_id": "trusted_shopping_agent"
+                }
+              },
+              {
+                "kind": "data",
+                "data": {
+                  "ap2.mandates.CheckoutMandateSdJwt": "constructed-checkout-mandate"
+                }
+              }
+            ],
+            "contextId": "shopping"
+          },
+          "global_sequence": 14
+        },
+        {
+          "sequence": 5,
+          "call": 2,
+          "endpoint": "http://localhost:8001/a2a/merchant_agent",
+          "operation": "send_a2a_message",
+          "boundary": "returned",
+          "public_value": {
+            "kind": "task",
+            "id": "payment",
+            "contextId": "shopping",
+            "status": {
+              "state": "input_required",
+              "message": {
+                "kind": "message",
+                "parts": [
+                  {
+                    "kind": "data",
+                    "data": {
+                      "challenge": {
+                        "type": "otp",
+                        "display_text": "Enter the supplied code"
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "artifacts": []
+          },
+          "global_sequence": 15
+        },
+        {
+          "sequence": 6,
+          "call": 3,
+          "endpoint": "http://localhost:8001/a2a/merchant_agent",
+          "operation": "send_a2a_message",
+          "boundary": "attempt",
+          "public_value": {
+            "kind": "message",
+            "role": "agent",
+            "messageId": "f1dc11a15ac74fbaa1eb56f3f74995e4",
+            "parts": [
+              {
+                "kind": "text",
+                "text": "Initiate a payment. Include the challenge response."
+              },
+              {
+                "kind": "data",
+                "data": {
+                  "ap2.mandates.PaymentMandateSdJwt": "constructed-payment-mandate"
+                }
+              },
+              {
+                "kind": "data",
+                "data": {
+                  "shopping_agent_id": "trusted_shopping_agent"
+                }
+              },
+              {
+                "kind": "data",
+                "data": {
+                  "challenge_response": "123"
+                }
+              },
+              {
+                "kind": "data",
+                "data": {
+                  "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                }
+              },
+              {
+                "kind": "data",
+                "data": {
+                  "ap2.mandates.CheckoutMandateSdJwt": "constructed-checkout-mandate"
+                }
+              }
+            ],
+            "contextId": "shopping",
+            "taskId": "payment"
+          },
+          "global_sequence": 16
+        },
+        {
+          "sequence": 7,
+          "call": 3,
+          "endpoint": "http://localhost:8001/a2a/merchant_agent",
+          "operation": "send_a2a_message",
+          "boundary": "returned",
+          "public_value": {
+            "kind": "task",
+            "id": "payment",
+            "contextId": "shopping",
+            "status": {
+              "state": "completed"
+            },
+            "artifacts": []
+          },
+          "global_sequence": 17
+        }
+      ],
+      "public_record_order": "coordinator_observer_boundary_order",
+      "error_type": null,
+      "scope": "injected public reference coordination",
+      "original_bindings_authenticated": false,
+      "native_execution_enabled": false,
+      "native_qualification_established": false,
+      "aggregate_task_grade": null,
+      "required_http_extension": {
+        "X-A2A-Extensions": "https://github.com/google-agentic-commerce/ap2/v1"
+      },
+      "http_extension_observed": false,
+      "transport_peer_ownership_verified": false
+    }
+  ]
+}

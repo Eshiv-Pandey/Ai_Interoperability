@@ -1,0 +1,92 @@
+{
+  "schema_version": "identity-representation-source-screen/1",
+  "date_local": "2026-10-25",
+  "verdict": "no demonstrated C1 distinction",
+  "primary_sources": [
+    {
+      "id": "DI",
+      "url": "https://www.cs.ox.ac.uk/activities/concurrency/research/dataindependence/",
+      "inspected": "research summary paragraphs14-17",
+      "supports": "equality-only data, symbolic semantics, symmetry elimination and finite-instance reduction",
+      "limits": "summary; no arbitrary-code cutoff proof inspected"
+    },
+    {
+      "id": "RA",
+      "url": "https://automata.cs.ru.nl/Syntax/RegisterFresh",
+      "inspected": "definition and operational-semantics summary",
+      "supports": "guarded names, copying and fresh-output model",
+      "limits": "definition wiki; bibliography label is not publication verification"
+    },
+    {
+      "id": "HRA",
+      "url": "https://lmcs.episciences.org/1630",
+      "inspected": "journal metadata and abstract",
+      "supports": "history storage, consumption, reset and reachability overlap",
+      "limits": "full paper construction uninspected"
+    },
+    {
+      "id": "FLTS",
+      "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol363-csl2026/html/LIPIcs.CSL.2026.23/LIPIcs.CSL.2026.23.html",
+      "inspected": "Sections1-2 and Section4 excerpts around Theorem30/Definition31",
+      "supports": "nominal/orbit representation, global freshness distinction, parity-game reduction and N+1 bounded histories under stated assumptions",
+      "limits": "not whole-paper proof verification or independently run implementation"
+    }
+  ],
+  "source_claims": [
+    {
+      "id": "I1",
+      "claim": "Token mint checks current entries, including expired unswept entries, rather than all emitted-token history.",
+      "source": "local-sources/amirk-handles.ts",
+      "limits": "No observed or injected collision, probability estimate, natural defect or runtime outcome."
+    },
+    {
+      "id": "I2",
+      "claim": "Alias/native identity keying, retained caller handles, expiry/touch and terminal freezing must be preserved by any abstraction.",
+      "sources": [
+        "local-sources/amirk-config.ts",
+        "local-sources/amirk-envelope.ts",
+        "local-sources/amirk-task-store.ts"
+      ],
+      "limits": "No generated delimiter collision; aliases exclude colon."
+    },
+    {
+      "id": "I3",
+      "claim": "mgcrea generated IDs, input safety predicates, file paths and URL normalization prevent blanket equality-only abstraction.",
+      "sources": [
+        "local-sources/mgcrea-peer.ts",
+        "local-sources/mgcrea-tasks.ts",
+        "local-sources/mgcrea-paths.ts"
+      ],
+      "limits": "Restricted sort interpretation might support a reviewed fragment; no whole-program impossibility or defect claimed."
+    },
+    {
+      "id": "I4",
+      "claim": "Caller knowledge and constructibility cannot be changed by renaming hidden identifiers.",
+      "sources": [
+        "local-sources/amirk-a2a-client.ts",
+        "local-sources/amirk-envelope.ts",
+        "local-sources/mgcrea-peer.ts"
+      ],
+      "limits": "Analytical requirement; no new nominal decision procedure."
+    },
+    {
+      "id": "I5",
+      "claim": "An exact symmetry-aware comparator can use the same identity representation; generic canonicalization/cutoff does not establish C1.",
+      "sources": [
+        "DI",
+        "RA",
+        "HRA",
+        "FLTS",
+        "decision.md"
+      ],
+      "limits": "Adverse screen, not proof that no distinct future method exists."
+    }
+  ],
+  "model_calls": 0,
+  "bridge_application_executions": 0,
+  "candidate_implementations": 0,
+  "performance_trials": 0,
+  "qualified_second_domain": false,
+  "human_review_completed": false,
+  "progress_percent": 5
+}

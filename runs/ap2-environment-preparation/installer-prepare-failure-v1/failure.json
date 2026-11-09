@@ -1,0 +1,29 @@
+{
+  "schema_version": "ap2-installer-preallocation-failure/1",
+  "status": "wheel_metadata_selection_refused_before_output_allocation",
+  "driver_source": "scripts/install_ap2_frozen_environment_v1.py",
+  "driver_sha256": "4012ae7f6c04ac3e254a023d0a678b74122cacfaec43a403f6f3fb83fb47e0cb",
+  "argv": [
+    "C:\\Python313\\python.exe", "-I", "-S", "-B",
+    "scripts/install_ap2_frozen_environment_v1.py", "--phase", "prepare",
+    "--local-build-manifest",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-environment-preparation\\local-build-v2\\result.json",
+    "--local-build-sha256", "554f4cea03f8153daac9b65117c445581bb725e1d3eea9ce8f93d96f7116c7d0"
+  ],
+  "exit_code": 1,
+  "error_type": "ValueError",
+  "error_message": "Exact wheel distribution metadata required",
+  "offending_wheel": "py-1.11.0-py2.py3-none-any.whl",
+  "offending_wheel_sha256": "607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378",
+  "metadata_members_from_subsequent_central_directory_read": [
+    "py-1.11.0.dist-info/METADATA",
+    "py/_vendored_packages/apipkg-2.0.0.dist-info/METADATA",
+    "py/_vendored_packages/iniconfig-1.1.1.dist-info/METADATA"
+  ],
+  "installed_environment_output_allocated": false,
+  "venv_created": false,
+  "installer_executed": false,
+  "original_application_imported": false,
+  "model_requests": 0,
+  "evidence_limit": "Retained tool-reported exit/error and exact argv plus source copy; first raw binary stdout/stderr were not separately captured. No failing driver replay."
+}

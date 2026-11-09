@@ -1,0 +1,398 @@
+{
+  "application_requests": 0,
+  "causal_order_proven": false,
+  "checks": [
+    {
+      "check": "Export receipt reports passing preservation",
+      "passed": true
+    },
+    {
+      "check": "Export claims no execution, grading, causal order or complete stream",
+      "passed": true
+    },
+    {
+      "check": "Original and captured SQLite bytes are identical",
+      "passed": true
+    },
+    {
+      "check": "Database before/after digest independently matches original",
+      "passed": true
+    },
+    {
+      "check": "Original closed archive has no sidecars at audit",
+      "passed": true
+    },
+    {
+      "check": "Captured and current exporter match reviewed source hash",
+      "passed": true
+    },
+    {
+      "check": "Original database quick_check passes",
+      "passed": true
+    },
+    {
+      "check": "Original database foreign_key_check passes",
+      "passed": true
+    },
+    {
+      "check": "Complete exported schema exactly equals original SQLite objects",
+      "passed": true
+    },
+    {
+      "check": "Six original SDK tables and three original indexes present; no other schema objects",
+      "passed": true
+    },
+    {
+      "check": "Column layout adk_internal_metadata",
+      "passed": true
+    },
+    {
+      "check": "Primary key adk_internal_metadata",
+      "passed": true
+    },
+    {
+      "check": "Column layout sessions",
+      "passed": true
+    },
+    {
+      "check": "Primary key sessions",
+      "passed": true
+    },
+    {
+      "check": "Column layout app_states",
+      "passed": true
+    },
+    {
+      "check": "Primary key app_states",
+      "passed": true
+    },
+    {
+      "check": "Column layout user_states",
+      "passed": true
+    },
+    {
+      "check": "Primary key user_states",
+      "passed": true
+    },
+    {
+      "check": "Column layout events",
+      "passed": true
+    },
+    {
+      "check": "Primary key events",
+      "passed": true
+    },
+    {
+      "check": "Column layout tasks",
+      "passed": true
+    },
+    {
+      "check": "Primary key tasks",
+      "passed": true
+    },
+    {
+      "check": "Index layout idx_events_app_user_session_ts_id",
+      "passed": true
+    },
+    {
+      "check": "Index layout idx_tasks_owner_last_updated",
+      "passed": true
+    },
+    {
+      "check": "Index layout ix_tasks_id",
+      "passed": true
+    },
+    {
+      "check": "All six raw tables and original JSON text cells reconstructed exactly",
+      "passed": true
+    },
+    {
+      "check": "All six decoded tables reconstructed independently",
+      "passed": true
+    },
+    {
+      "check": "Event identity and session association 97b88974-f8d8-45be-8117-d229891a055b",
+      "passed": true
+    },
+    {
+      "check": "Event identity and session association 870042c5-8236-42e0-bfd5-760462c676aa",
+      "passed": true
+    },
+    {
+      "check": "Event identity and session association 01f98665-46e0-4397-99e0-b9bebe8174f2",
+      "passed": true
+    },
+    {
+      "check": "Event identity and session association d276a6ec-e69d-4c41-8eaf-7586cfa83051",
+      "passed": true
+    },
+    {
+      "check": "Event identity and session association 42ce022a-20c8-4724-ab56-a8b2a0dbe9ea",
+      "passed": true
+    },
+    {
+      "check": "Event identity and session association 3627138c-685e-49dd-a6dd-4c55c5f5fd31",
+      "passed": true
+    },
+    {
+      "check": "Event identity and session association 3160223a-6646-41da-adcb-429d0078c5ac",
+      "passed": true
+    },
+    {
+      "check": "Every function projection reconstructed from original event JSON and raw part index",
+      "passed": true
+    },
+    {
+      "check": "Seven events, two calls, three responses independently counted",
+      "passed": true
+    },
+    {
+      "check": "All table row counts independently match",
+      "passed": true
+    },
+    {
+      "check": "Both preliminary and executed responses under original guarded call ID preserved in distinct events",
+      "passed": true
+    },
+    {
+      "check": "Original action/confirmation/user answer association independently matches",
+      "passed": true
+    },
+    {
+      "check": "Ordering diagnostics reconstructed without promoting physical order to causal order",
+      "passed": true
+    },
+    {
+      "check": "Manifest relative path uniqueness decoded-tables.json",
+      "passed": true
+    },
+    {
+      "check": "Manifest bytes/hash decoded-tables.json",
+      "passed": true
+    },
+    {
+      "check": "Manifest relative path uniqueness exporter.py",
+      "passed": true
+    },
+    {
+      "check": "Manifest bytes/hash exporter.py",
+      "passed": true
+    },
+    {
+      "check": "Manifest relative path uniqueness function-observations.json",
+      "passed": true
+    },
+    {
+      "check": "Manifest bytes/hash function-observations.json",
+      "passed": true
+    },
+    {
+      "check": "Manifest relative path uniqueness input/runtime.db",
+      "passed": true
+    },
+    {
+      "check": "Manifest bytes/hash input/runtime.db",
+      "passed": true
+    },
+    {
+      "check": "Manifest relative path uniqueness ordering.json",
+      "passed": true
+    },
+    {
+      "check": "Manifest bytes/hash ordering.json",
+      "passed": true
+    },
+    {
+      "check": "Manifest relative path uniqueness plan.json",
+      "passed": true
+    },
+    {
+      "check": "Manifest bytes/hash plan.json",
+      "passed": true
+    },
+    {
+      "check": "Manifest relative path uniqueness raw-tables.json",
+      "passed": true
+    },
+    {
+      "check": "Manifest bytes/hash raw-tables.json",
+      "passed": true
+    },
+    {
+      "check": "Manifest relative path uniqueness schema.json",
+      "passed": true
+    },
+    {
+      "check": "Manifest bytes/hash schema.json",
+      "passed": true
+    },
+    {
+      "check": "All eight manifest files and all nine export allocation files covered",
+      "passed": true
+    },
+    {
+      "check": "Current and captured software source src/interoperability/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "Current and captured software source src/interoperability/agentops_raw_events_v1.py",
+      "passed": true
+    },
+    {
+      "check": "Current and captured software source tests/test_agentops_raw_events_v1.py",
+      "passed": true
+    },
+    {
+      "check": "Retained software process shows all thirteen captured-source tests OK with zero skips",
+      "passed": true
+    },
+    {
+      "check": "Software stdout/stderr byte hashes independently match receipt",
+      "passed": true
+    },
+    {
+      "check": "Software receipt preserves focused temporary-fixture scope",
+      "passed": true
+    },
+    {
+      "check": "Every monitored source/capture/software file and allocation membership unchanged during audit",
+      "passed": true
+    }
+  ],
+  "complete_event_stream_proven": false,
+  "counts": {
+    "events": 7,
+    "export_allocation_files_checked": 9,
+    "function_calls": 2,
+    "function_responses": 3,
+    "manifest_files_checked": 8,
+    "sdk_indexes": 3,
+    "sdk_tables": 6,
+    "software_allocation_files_checked": 7,
+    "software_tests_passed": 13,
+    "test_skips": 0
+  },
+  "discrepancies": [],
+  "finished_at_utc": "2026-10-29T13:20:05.701039+00:00",
+  "graded_source_case_outcomes": 0,
+  "guarded_response_phases": {
+    "confirmation_answer_event_id": "42ce022a-20c8-4724-ab56-a8b2a0dbe9ea",
+    "executed_event_id": "3627138c-685e-49dd-a6dd-4c55c5f5fd31",
+    "interpretation": "Identity/phase records preserved; raw physical order is not a proved causal timeline",
+    "original_function_id": "restart-inventory-call",
+    "preliminary_event_id": "d276a6ec-e69d-4c41-8eaf-7586cfa83051"
+  },
+  "method": "Standalone standard-library SQLite read-only inspection, strict JSON parsing, independent row/projection reconstruction and byte hashing; no project imports or execution",
+  "model_calls": 0,
+  "preservation": {
+    "all_monitored_bytes_unchanged": true,
+    "allocation_membership_unchanged": true,
+    "before_files": [
+      {
+        "bytes": 18850,
+        "path": "runs/agentops-event-evidence/native-v12-v1/decoded-tables.json",
+        "sha256": "f853410c43f3b6b82cc97e2e74e55eae8ffb2b0a5e7a0932b57d77655448fe28"
+      },
+      {
+        "bytes": 15826,
+        "path": "runs/agentops-event-evidence/native-v12-v1/exporter.py",
+        "sha256": "de196858e75738e1976df39c077b4ab5b4c45d53298cf885cda212e82eba421b"
+      },
+      {
+        "bytes": 5204,
+        "path": "runs/agentops-event-evidence/native-v12-v1/function-observations.json",
+        "sha256": "8d53fc94a44f6c48d54e6ed539db27106f99a1a3a2deb1ca58d631d353932643"
+      },
+      {
+        "bytes": 81920,
+        "path": "runs/agentops-event-evidence/native-v12-v1/input/runtime.db",
+        "sha256": "a63ddad7981ed4c3464bc97eb568a59e4c101f1acf92095b179bb311d734e406"
+      },
+      {
+        "bytes": 281,
+        "path": "runs/agentops-event-evidence/native-v12-v1/ordering.json",
+        "sha256": "d8147b3d29d10b87e673f7e8a61d04e4ec465acda2add128a8952e0addde387f"
+      },
+      {
+        "bytes": 748,
+        "path": "runs/agentops-event-evidence/native-v12-v1/plan.json",
+        "sha256": "91ecc1b91d4801a65fe0d5c3fb5f9d589dfaf0481257f44e193b4524f62940cb"
+      },
+      {
+        "bytes": 14302,
+        "path": "runs/agentops-event-evidence/native-v12-v1/raw-tables.json",
+        "sha256": "e96f2d359c30d9fabf75cbf9e741e557408b626c0cb8b12e7ee0a42fc45c43cb"
+      },
+      {
+        "bytes": 2224,
+        "path": "runs/agentops-event-evidence/native-v12-v1/result.json",
+        "sha256": "a295f999367278f87ed5389fca6d8d28dc5a0e85c9336175c1c0a201fd576779"
+      },
+      {
+        "bytes": 2306,
+        "path": "runs/agentops-event-evidence/native-v12-v1/schema.json",
+        "sha256": "ff319ff575c12e038b5615b30aac183b7a3b1220eabb64dbd9c453ee1b5a4b47"
+      },
+      {
+        "bytes": 1128,
+        "path": "runs/agentops-event-evidence/software-v2/plan.json",
+        "sha256": "b28f0a236f296deb4dadd4832124fbc372240cec11629d2cec2b3eea39d9b921"
+      },
+      {
+        "bytes": 1121,
+        "path": "runs/agentops-event-evidence/software-v2/result.json",
+        "sha256": "8616a0b81ff81bed1f622bb50375f4be293d3d4cd53bcda65a1fe22a7e5d2854"
+      },
+      {
+        "bytes": 2312,
+        "path": "runs/agentops-event-evidence/software-v2/stderr.txt",
+        "sha256": "c1685490073b1d357a240f4dd79a068e7509f15c450d4479a84ecaa38d982fc9"
+      },
+      {
+        "bytes": 0,
+        "path": "runs/agentops-event-evidence/software-v2/stdout.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 172,
+        "path": "runs/agentops-event-evidence/software-v2/workspace/src/interoperability/__init__.py",
+        "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+      },
+      {
+        "bytes": 15826,
+        "path": "runs/agentops-event-evidence/software-v2/workspace/src/interoperability/agentops_raw_events_v1.py",
+        "sha256": "de196858e75738e1976df39c077b4ab5b4c45d53298cf885cda212e82eba421b"
+      },
+      {
+        "bytes": 10247,
+        "path": "runs/agentops-event-evidence/software-v2/workspace/tests/test_agentops_raw_events_v1.py",
+        "sha256": "a19491540de0e0c75075cfe3a313fa4882c4dd8b24a5e3a5ea60455b1faf4af3"
+      },
+      {
+        "bytes": 81920,
+        "path": "runs/agentops-native-eligibility/linux-bridge-diagnostic-v12/workspace/runs/agentops-http-control/bridge-diagnostic-v1-N11/service/state/runtime.db",
+        "sha256": "a63ddad7981ed4c3464bc97eb568a59e4c101f1acf92095b179bb311d734e406"
+      },
+      {
+        "bytes": 172,
+        "path": "src/interoperability/__init__.py",
+        "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+      },
+      {
+        "bytes": 15826,
+        "path": "src/interoperability/agentops_raw_events_v1.py",
+        "sha256": "de196858e75738e1976df39c077b4ab5b4c45d53298cf885cda212e82eba421b"
+      },
+      {
+        "bytes": 10247,
+        "path": "tests/test_agentops_raw_events_v1.py",
+        "sha256": "a19491540de0e0c75075cfe3a313fa4882c4dd8b24a5e3a5ea60455b1faf4af3"
+      }
+    ],
+    "monitored_files": 20
+  },
+  "schema_version": "agentops-raw-event-independent-review/1",
+  "started_at_utc": "2026-10-29T13:20:05.671348+00:00",
+  "status": "passed",
+  "test_executions": 0
+}

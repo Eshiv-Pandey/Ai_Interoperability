@@ -1,0 +1,432 @@
+{
+  "schema_version": "official-handler-bridge-archive-replay/2",
+  "valid": false,
+  "checked_at": "2026-10-24T18:07:23.452687+00:00",
+  "archive_files": 1774,
+  "archive_unchanged": true,
+  "worker_exit_code": 1,
+  "worker_stderr": "",
+  "worker_stdout": null,
+  "result": {
+    "schema_version": "official-handler-bridge-check/2",
+    "valid": true,
+    "complete": true,
+    "partial": false,
+    "expected_outcome_observed": true,
+    "validation_errors": [],
+    "expectation_deviations": [],
+    "observations": {
+      "source_snapshot_count": 23,
+      "complete_tree_snapshot_count": 7,
+      "native_eligible": true,
+      "native_control_task_id": "50ed03c8-33f1-4785-ba4b-31c3055ee8db",
+      "bridge_original_task_id": "88fc4bb6-267a-4423-b0c7-550f008c1695",
+      "bridge_original_context_id": "de52dbde-f693-419c-ba8d-674b40e96ea9",
+      "evaluator_original_state": "TASK_STATE_INPUT_REQUIRED",
+      "selected_answer_attempts": 1,
+      "final_bridge_read_attempts": 1,
+      "complete_planned_attempt": true,
+      "paired_ingress": 9,
+      "process_boundary_complete": true,
+      "actual_stdin_bytes": 0,
+      "actual_stdout_bytes": 224,
+      "actual_stderr_bytes": 0,
+      "actual_stdin_operations": 0,
+      "actual_pipe_pairs": 4,
+      "derived_costs": {
+        "mcp_rpc_requests": 6,
+        "mcp_notifications_sent": 0,
+        "request_bytes": 2174,
+        "response_bytes": 8642,
+        "setup_ms": 6483.6118,
+        "bridge_native_requests": 5,
+        "native_control_requests": 3,
+        "evaluator_only_requests": 1,
+        "server_ingress_requests": 9,
+        "bridge_children_started": 1,
+        "model_calls": 0,
+        "remote_network_requests": 0
+      }
+    },
+    "checked_entity_count": 77,
+    "official_variant": "B1",
+    "claim_limit": "Archive/software fidelity validation only; no service rerun, scientific novelty credit, second domain or human review",
+    "archive": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\official-handler-bridge-control\\clean-replay-B1-v2.sources",
+    "report_path": "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-24T18-02-06-000Z-19188/runtime.json",
+    "report_sha256": "d02cc87f609a7e7416cad9a70d5caa1713b348d1892f1d376d5c672412f7eae8",
+    "mutation_checks": [
+      {
+        "name": "wrong-native-positive-reference",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "N2",
+            "reason": "Native completion binding/reference altered"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "changed-native-source-artifact",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "native_eligible",
+            "reason": "Declared eligibility differs from raw controls"
+          },
+          {
+            "path": "N2",
+            "reason": "Native completion changed original artifact"
+          },
+          {
+            "path": "N3",
+            "reason": "Native completion changed original artifact"
+          },
+          {
+            "path": "lifecycle",
+            "reason": "Bridge child provenance/native eligibility changed"
+          }
+        ],
+        "expectation_deviations": [
+          {
+            "path": "native_controls",
+            "reason": "Header-positive native eligibility did not succeed"
+          }
+        ]
+      },
+      {
+        "name": "evaluator-different-context",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "E1",
+            "reason": "Evaluator task/context mismatch"
+          },
+          {
+            "path": "E1.snapshot",
+            "reason": "Evaluator task/artifacts differ from last unchanged authoritative origin snapshot"
+          }
+        ],
+        "expectation_deviations": [
+          {
+            "path": "E1",
+            "reason": "Evaluator read did not establish original association"
+          }
+        ]
+      },
+      {
+        "name": "changed-outgoing-version",
+        "claim_rejected": false,
+        "mutation_setup_error": "'NoneType' object has no attribute 'get'"
+      },
+      {
+        "name": "changed-serialized-answer-reference",
+        "claim_rejected": false,
+        "mutation_setup_error": "'NoneType' object has no attribute 'get'"
+      },
+      {
+        "name": "changed-delivered-http-status",
+        "claim_rejected": false,
+        "mutation_setup_error": "'NoneType' object has no attribute 'get'"
+      },
+      {
+        "name": "changed-runtime-tree-entry",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "trees.external/a2a-to-mcp/src",
+            "reason": "Frozen full tree snapshot missing, altered, or contains extra files"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "changed-frozen-specification-bytes",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "docs/research/official-handler-bridge-probe-v2.md.raw",
+            "reason": "UTF-8 raw text differs from base64"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "duplicated-answer-attempt",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "exchanges.6",
+            "reason": "MCP exchange ID reused"
+          },
+          {
+            "path": "exchanges.6",
+            "reason": "MCP request sequence/identity altered"
+          },
+          {
+            "path": "exchanges.6",
+            "reason": "MCP request order altered"
+          },
+          {
+            "path": "costs",
+            "reason": "MCP aggregate costs altered"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "different-advertised-version",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "card",
+            "reason": "Advertised singleton 1.0-only official-handler profile changed"
+          },
+          {
+            "path": "native_card",
+            "reason": "Captured advertised card differs from actual service profile"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "evaluator-before-caller",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "native_controls.E1",
+            "reason": "Native controls/E1 reordered"
+          },
+          {
+            "path": "E1",
+            "reason": "Evaluator read preceded caller completion"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "missing-native-case",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "native_controls",
+            "reason": "All planned controls must appear once in order"
+          },
+          {
+            "path": "native_controls.E1",
+            "reason": "Control JSONRPC order/ID altered"
+          },
+          {
+            "path": "native_eligible",
+            "reason": "Declared eligibility differs from raw controls"
+          },
+          {
+            "path": "ingress.2",
+            "reason": "Ingress does not correlate exact supplied body/headers/status/timing"
+          },
+          {
+            "path": "lifecycle",
+            "reason": "Bridge child provenance/native eligibility changed"
+          },
+          {
+            "path": "control_costs",
+            "reason": "Separately charged control/ingress/lifecycle costs altered"
+          }
+        ],
+        "expectation_deviations": [
+          {
+            "path": "native_controls",
+            "reason": "Header-positive native eligibility did not succeed"
+          }
+        ]
+      },
+      {
+        "name": "reversed-native-cases",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "native_controls",
+            "reason": "All planned controls must appear once in order"
+          },
+          {
+            "path": "native_controls.N3",
+            "reason": "Control JSONRPC order/ID altered"
+          },
+          {
+            "path": "native_controls.N2",
+            "reason": "Native controls/E1 reordered"
+          },
+          {
+            "path": "native_controls.N1",
+            "reason": "Control JSONRPC order/ID altered"
+          },
+          {
+            "path": "native_controls.N1",
+            "reason": "Native controls/E1 reordered"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "invented-agent-goal",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "observation",
+            "reason": "Goal summary differs from final public receipt"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "unclosed-service",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "official_service",
+            "reason": "Service still listening or cleanup missing"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "wrong-control-cost",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "control_costs",
+            "reason": "Separately charged control/ingress/lifecycle costs altered"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "private-binding-fed-to-arm",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "evaluator_binding",
+            "reason": "E1 private binding does not derive from initial raw response"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "altered-default-builder",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "official_service",
+            "reason": "Handler/profile changed"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "changed-actual-forwarded-pipe-bytes",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "relay.stdout",
+            "reason": "Actual read/forward pair differs"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "changed-both-real-stdout-pair-bytes",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "relay.stdout",
+            "reason": "Caller process diagnostics differ from actual forwarded chunks"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "changed-pinned-git-receipt",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "git_receipt",
+            "reason": "Unpinned or dirty tracked source"
+          },
+          {
+            "path": "git_receipt",
+            "reason": "Pre-launch receipt bytes differ from archive"
+          },
+          {
+            "path": "git_receipt",
+            "reason": "Frozen source receipt differs from supervisor observation"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "changed-actual-launch-pid",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "supervisor.bridge",
+            "reason": "Launch PID/run/route/directory differs"
+          },
+          {
+            "path": "relay.close",
+            "reason": "Actual shutdown-file bytes/PID/run differ from worker request"
+          },
+          {
+            "path": "relay.exit",
+            "reason": "Actual bridge exit differs from caller lifecycle"
+          },
+          {
+            "path": "supervisor.cleanup",
+            "reason": "Actual children not terminal before final cleanup"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "changed-shutdown-control-pid",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "relay.close",
+            "reason": "Actual shutdown-file bytes/PID/run differ from worker request"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "removed-actual-process-exit",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "relay.exit",
+            "reason": "Actual bridge exit differs from caller lifecycle"
+          }
+        ],
+        "expectation_deviations": []
+      },
+      {
+        "name": "reversed-real-output-chunks",
+        "claim_rejected": true,
+        "validation_errors": [
+          {
+            "path": "relay.stdout",
+            "reason": "Caller process diagnostics differ from actual forwarded chunks"
+          }
+        ],
+        "expectation_deviations": []
+      }
+    ],
+    "mutation_claims_rejected": false,
+    "checker_imported": true,
+    "sdk_imported": false,
+    "bridge_started": false,
+    "service_requests": 0,
+    "model_calls": 0
+  },
+  "replay_driver_sha256": "4447b34b7b99e067c807fffe79dda7174b302d15283eaf3fdd286e0f004b0e5c",
+  "claim_limit": "Replay of retained control only; no service rerun, new scientific trial, novelty or human review"
+}

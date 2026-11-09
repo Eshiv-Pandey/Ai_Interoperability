@@ -1,0 +1,516 @@
+{
+  "additional_runtime_constraint": "Actual future pip driver must set child PIP_CONFIG_FILE=os.devnull to suppress global/site config as well as Python -I and pip --isolated; the immutable prepared argv alone does not clear global extra-index/find-links config.",
+  "capture_files": {
+    "indexed-runtime-requirements.txt": {
+      "bytes": 791,
+      "sha256": "46b609b3a68bf63c67987107936846992362e559b9db310256ae33ee15cacf50"
+    },
+    "input-snapshots/01.source": {
+      "bytes": 72070,
+      "sha256": "ce0ffdd5503fddfe78ccb13d9c88e673ca2fdc3227e4ae460d3da10b2dc9406c"
+    },
+    "input-snapshots/02.source": {
+      "bytes": 63593,
+      "sha256": "74db7661df834b7d05371d84aa4a6f0e6d9d243f344204923cef65e15b449d07"
+    },
+    "input-snapshots/03.source": {
+      "bytes": 606,
+      "sha256": "78656cfd88b01d10c693a7fdffdf9d789dc4ddfbb57c208b583e13986fd44b63"
+    },
+    "input-snapshots/04.source": {
+      "bytes": 857,
+      "sha256": "0121f705c05aa3836cff7a7fb4d967b9e3af7a3983a4e78f3cb0f19747b7fbf1"
+    },
+    "input-snapshots/05.source": {
+      "bytes": 1645,
+      "sha256": "fe10d8e08f5787d943b521cc9ec94cb76ad07bdd80e24a0eb68eef8a525b9e46"
+    },
+    "prepare-script.py": {
+      "bytes": 13655,
+      "sha256": "290acf02c2ccb8ee666f1d74e99b0a0d376ffaa448dc5e31491ed2d503d527a8"
+    },
+    "result.json": {
+      "bytes": 4178,
+      "sha256": "c18051856084954d1d08b24701d7ab2fc981ed9f9a44441e7fef84c8890ab12d"
+    },
+    "separate-build-requirements.txt": {
+      "bytes": 233,
+      "sha256": "dcf3b9ee279fa4fa7b1dfdcb1204e924479e6f226e73d5d5097940ed68bf2b2f"
+    },
+    "source-descriptors.json": {
+      "bytes": 13477,
+      "sha256": "3d871894e37fa591ed78c51970bb30d22a71f86d2fe66eecd12b5b5a3f121e3b"
+    }
+  },
+  "checks": [
+    {
+      "name": "result_schema_status",
+      "passed": true
+    },
+    {
+      "name": "descriptor_schema",
+      "passed": true
+    },
+    {
+      "name": "manifest_exact_allocation_membership",
+      "passed": true
+    },
+    {
+      "name": "nine_unique_manifest_outputs",
+      "passed": true
+    },
+    {
+      "name": "manifest:indexed-runtime-requirements.txt",
+      "passed": true
+    },
+    {
+      "name": "manifest:separate-build-requirements.txt",
+      "passed": true
+    },
+    {
+      "name": "manifest:source-descriptors.json",
+      "passed": true
+    },
+    {
+      "name": "manifest:prepare-script.py",
+      "passed": true
+    },
+    {
+      "name": "manifest:input-snapshots/01.source",
+      "passed": true
+    },
+    {
+      "name": "manifest:input-snapshots/02.source",
+      "passed": true
+    },
+    {
+      "name": "manifest:input-snapshots/03.source",
+      "passed": true
+    },
+    {
+      "name": "manifest:input-snapshots/04.source",
+      "passed": true
+    },
+    {
+      "name": "manifest:input-snapshots/05.source",
+      "passed": true
+    },
+    {
+      "name": "five_unique_snapshot_bindings",
+      "passed": true
+    },
+    {
+      "name": "current_snapshot_binding:docs/research/source-evidence/ap2-procurement-screen-v1/source-result.json",
+      "passed": true
+    },
+    {
+      "name": "current_snapshot_binding:docs/research/source-evidence/ap2-x402-package-v1/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "current_snapshot_binding:docs/research/source-evidence/ap2-procurement-screen-v1/source/pyproject.toml",
+      "passed": true
+    },
+    {
+      "name": "current_snapshot_binding:docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/pyproject.toml",
+      "passed": true
+    },
+    {
+      "name": "current_snapshot_binding:docs/research/source-evidence/ap2-x402-package-v1/source/python/x402_a2a/pyproject.toml",
+      "passed": true
+    },
+    {
+      "name": "exact_frozen_current_captured_exporter",
+      "passed": true
+    },
+    {
+      "name": "original_source_pin",
+      "passed": true
+    },
+    {
+      "name": "selected_complete_x402_manifest",
+      "passed": true
+    },
+    {
+      "name": "three_ordered_local_source_descriptors",
+      "passed": true
+    },
+    {
+      "name": "pyproject_retained_source_entry:ap2",
+      "passed": true
+    },
+    {
+      "name": "descriptor_exact_project_identity:ap2",
+      "passed": true
+    },
+    {
+      "name": "descriptor_preserves_original_requirements:ap2",
+      "passed": true
+    },
+    {
+      "name": "source_build_config_preserved:ap2",
+      "passed": true
+    },
+    {
+      "name": "pyproject_retained_source_entry:ap2-samples",
+      "passed": true
+    },
+    {
+      "name": "descriptor_exact_project_identity:ap2-samples",
+      "passed": true
+    },
+    {
+      "name": "descriptor_preserves_original_requirements:ap2-samples",
+      "passed": true
+    },
+    {
+      "name": "source_build_config_preserved:ap2-samples",
+      "passed": true
+    },
+    {
+      "name": "pyproject_retained_source_entry:x402-a2a",
+      "passed": true
+    },
+    {
+      "name": "descriptor_exact_project_identity:x402-a2a",
+      "passed": true
+    },
+    {
+      "name": "descriptor_preserves_original_requirements:x402-a2a",
+      "passed": true
+    },
+    {
+      "name": "source_build_config_preserved:x402-a2a",
+      "passed": true
+    },
+    {
+      "name": "25_exact_runtime_trace_rows",
+      "passed": true
+    },
+    {
+      "name": "all_runtime_classifications_indexed",
+      "passed": true
+    },
+    {
+      "name": "two_exact_local_edges_only",
+      "passed": true
+    },
+    {
+      "name": "three_exact_separate_build_rows",
+      "passed": true
+    },
+    {
+      "name": "runtime_text_exact_order_duplicates",
+      "passed": true
+    },
+    {
+      "name": "build_text_exact_order_duplicates",
+      "passed": true
+    },
+    {
+      "name": "no_local_direct_source_in_index_runtime",
+      "passed": true
+    },
+    {
+      "name": "root_declared_pytest_retained",
+      "passed": true
+    },
+    {
+      "name": "dev_lint_not_silently_runtime",
+      "passed": true
+    },
+    {
+      "name": "original_overlap_preserved",
+      "passed": true
+    },
+    {
+      "name": "exact_target_bound",
+      "passed": true
+    },
+    {
+      "name": "exact_prospective_binary_only_pip_argv",
+      "passed": true
+    },
+    {
+      "name": "descriptor_no_upgrade:prospective_command_executed",
+      "passed": true
+    },
+    {
+      "name": "descriptor_no_upgrade:complete_runtime_lock_established",
+      "passed": true
+    },
+    {
+      "name": "descriptor_no_upgrade:source_wheels_built",
+      "passed": true
+    },
+    {
+      "name": "descriptor_no_upgrade:environment_installed",
+      "passed": true
+    },
+    {
+      "name": "descriptor_no_upgrade:source_imported",
+      "passed": true
+    },
+    {
+      "name": "descriptor_no_upgrade:native_application_executed",
+      "passed": true
+    },
+    {
+      "name": "receipt_no_upgrade:resolver_executed",
+      "passed": true
+    },
+    {
+      "name": "receipt_no_upgrade:source_wheels_built",
+      "passed": true
+    },
+    {
+      "name": "receipt_no_upgrade:environment_installed",
+      "passed": true
+    },
+    {
+      "name": "receipt_no_upgrade:acquired_source_imported",
+      "passed": true
+    },
+    {
+      "name": "receipt_no_upgrade:native_application_executed",
+      "passed": true
+    },
+    {
+      "name": "recorded_export_network_model_zero",
+      "passed": true
+    },
+    {
+      "name": "allocation_preserved_during_review",
+      "passed": true
+    },
+    {
+      "name": "original_input_preserved:docs/research/source-evidence/ap2-procurement-screen-v1/source-result.json",
+      "passed": true
+    },
+    {
+      "name": "original_input_preserved:docs/research/source-evidence/ap2-x402-package-v1/manifest.json",
+      "passed": true
+    },
+    {
+      "name": "original_input_preserved:docs/research/source-evidence/ap2-procurement-screen-v1/source/pyproject.toml",
+      "passed": true
+    },
+    {
+      "name": "original_input_preserved:docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/pyproject.toml",
+      "passed": true
+    },
+    {
+      "name": "original_input_preserved:docs/research/source-evidence/ap2-x402-package-v1/source/python/x402_a2a/pyproject.toml",
+      "passed": true
+    },
+    {
+      "name": "exporter_preserved",
+      "passed": true
+    }
+  ],
+  "checks_passed": 66,
+  "current_source_inputs": {
+    "docs/research/source-evidence/ap2-procurement-screen-v1/source-result.json": {
+      "bytes": 72070,
+      "sha256": "ce0ffdd5503fddfe78ccb13d9c88e673ca2fdc3227e4ae460d3da10b2dc9406c"
+    },
+    "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/pyproject.toml": {
+      "bytes": 857,
+      "sha256": "0121f705c05aa3836cff7a7fb4d967b9e3af7a3983a4e78f3cb0f19747b7fbf1"
+    },
+    "docs/research/source-evidence/ap2-procurement-screen-v1/source/pyproject.toml": {
+      "bytes": 606,
+      "sha256": "78656cfd88b01d10c693a7fdffdf9d789dc4ddfbb57c208b583e13986fd44b63"
+    },
+    "docs/research/source-evidence/ap2-x402-package-v1/manifest.json": {
+      "bytes": 63593,
+      "sha256": "74db7661df834b7d05371d84aa4a6f0e6d9d243f344204923cef65e15b449d07"
+    },
+    "docs/research/source-evidence/ap2-x402-package-v1/source/python/x402_a2a/pyproject.toml": {
+      "bytes": 1645,
+      "sha256": "fe10d8e08f5787d943b521cc9ec94cb76ad07bdd80e24a0eb68eef8a525b9e46"
+    }
+  },
+  "discrepancies": [],
+  "exporter_digest": {
+    "bytes": 13655,
+    "sha256": "290acf02c2ccb8ee666f1d74e99b0a0d376ffaa448dc5e31491ed2d503d527a8"
+  },
+  "indexed_runtime_rows": [
+    {
+      "original_requirement": "cryptography==46.0.5",
+      "source_ordinal": 1,
+      "source_project": "ap2"
+    },
+    {
+      "original_requirement": "jwcrypto==1.5.6",
+      "source_ordinal": 2,
+      "source_project": "ap2"
+    },
+    {
+      "original_requirement": "pydantic==2.12.5",
+      "source_ordinal": 3,
+      "source_project": "ap2"
+    },
+    {
+      "original_requirement": "sd-jwt==0.10.4",
+      "source_ordinal": 4,
+      "source_project": "ap2"
+    },
+    {
+      "original_requirement": "pytest==9.0.2",
+      "source_ordinal": 5,
+      "source_project": "ap2"
+    },
+    {
+      "original_requirement": "py",
+      "source_ordinal": 6,
+      "source_project": "ap2"
+    },
+    {
+      "original_requirement": "a2a-sdk==0.3.24",
+      "source_ordinal": 1,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "absl-py==2.4.0",
+      "source_ordinal": 3,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "flask==3.1.3",
+      "source_ordinal": 4,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "flask-cors==6.0.2",
+      "source_ordinal": 5,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "google-adk==1.28.0",
+      "source_ordinal": 6,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "opentelemetry-sdk==1.38.0",
+      "source_ordinal": 7,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "google-genai==1.66.0",
+      "source_ordinal": 8,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "httpx==0.28.1",
+      "source_ordinal": 9,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "requests==2.32.5",
+      "source_ordinal": 10,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "mcp==1.26.0",
+      "source_ordinal": 12,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "python-dotenv==1.2.2",
+      "source_ordinal": 13,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "fastmcp==3.1.0",
+      "source_ordinal": 14,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "cryptography==46.0.5",
+      "source_ordinal": 15,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "web3==7.15.0",
+      "source_ordinal": 16,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "a2a-sdk>=0.1.0",
+      "source_ordinal": 1,
+      "source_project": "x402-a2a"
+    },
+    {
+      "original_requirement": "x402>=0.2.0",
+      "source_ordinal": 2,
+      "source_project": "x402-a2a"
+    },
+    {
+      "original_requirement": "eth-account>=0.13.7",
+      "source_ordinal": 3,
+      "source_project": "x402-a2a"
+    },
+    {
+      "original_requirement": "httpx>=0.28.1",
+      "source_ordinal": 4,
+      "source_project": "x402-a2a"
+    },
+    {
+      "original_requirement": "pydantic>=2.0.0",
+      "source_ordinal": 5,
+      "source_project": "x402-a2a"
+    }
+  ],
+  "installation_by_reviewer": false,
+  "local_edges": [
+    {
+      "original_requirement": "x402-a2a @ git+https://github.com/google-agentic-commerce/a2a-x402.git#subdirectory=python/x402_a2a",
+      "selected_commit": "125db5526a965d2325459d1a9df2e274a7e42396",
+      "selected_project": "x402-a2a",
+      "source_ordinal": 2,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "ap2",
+      "selected_commit": "e1ea56db72a6385bce3e5c1112b3a56ce60acb43",
+      "selected_project": "ap2",
+      "source_ordinal": 11,
+      "source_project": "ap2-samples"
+    }
+  ],
+  "native_or_model_requests_by_reviewer": 0,
+  "resolver_executed_by_reviewer": false,
+  "result_digest": {
+    "bytes": 4178,
+    "sha256": "c18051856084954d1d08b24701d7ab2fc981ed9f9a44441e7fef84c8890ab12d"
+  },
+  "reviewed_at_utc": "2026-10-30T11:54:56.256310+00:00",
+  "reviewer": "separate_AI_agent_method_next_step",
+  "reviewer_script_digest": {
+    "bytes": 11933,
+    "sha256": "236fca3ae916d7f85033930bf7e6ebabae1820afa23ae2b2968a365b19dee608"
+  },
+  "schema_version": "ap2-dependency-input-independent-review/1",
+  "scope": "Retained source declarations, exact row/order/overlap/local-edge/build split, snapshots, input/output/current hashes and preservation only. No pip/resolver, package metadata/build/import/install/native/model execution. No combined lock, local wheels, installed environment, compatibility, loaded-source workflow, quota or domain/scientific qualification. Zero execution fields are preparation-time recorder assertions and source-scope limits.",
+  "separate_build_rows": [
+    {
+      "original_requirement": "setuptools>=61.0",
+      "source_ordinal": 1,
+      "source_project": "ap2"
+    },
+    {
+      "original_requirement": "setuptools>=61.0",
+      "source_ordinal": 1,
+      "source_project": "ap2-samples"
+    },
+    {
+      "original_requirement": "hatchling",
+      "source_ordinal": 1,
+      "source_project": "x402-a2a"
+    }
+  ],
+  "source_imports_by_reviewer": 0,
+  "status": "verified_source_input_export"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "files_verified": 2219,
+  "case_records": 66,
+  "summary_recomputed": true,
+  "fresh_algorithm_execution": false,
+  "schema_version": "direct-comparison-verification/2",
+  "entrypoint": "interoperability.direct_comparison_v2",
+  "entrypoint_source": {
+    "path": "source/interoperability/direct_comparison_v2.py",
+    "bytes": 9565,
+    "sha256": "610c082233dcf44b58bb0b0bf68bfc4ca7fec307e380be21699ec3db39e60eb9"
+  },
+  "checker": "interoperability.direct_goal_pruned_v2",
+  "checker_source": {
+    "path": "source/interoperability/direct_goal_pruned_v2.py",
+    "bytes": 10620,
+    "sha256": "1fba2d0bd747f965056279bbda40b9c28f50f1200b7e9a6869f343ab6f64de51"
+  },
+  "algorithms": [
+    {
+      "name": "baseline",
+      "module": "interoperability.refinement_oracle",
+      "entrypoint": "evaluate",
+      "input_schema": "recipe-continuation/1"
+    },
+    {
+      "name": "direct_pruned",
+      "module": "interoperability.direct_goal_pruned_v2",
+      "entrypoint": "evaluate",
+      "input_schema": "recipe-continuation/1"
+    },
+    {
+      "name": "candidate",
+      "module": "interoperability.refinement",
+      "entrypoint": "evaluate",
+      "input_schema": "recipe-continuation/1"
+    }
+  ],
+  "certificate_jobs_bound": 162,
+  "benchmark_status": "passed",
+  "invocation_provenance": "Use the external command receipt; captured source is not an invocation attestation."
+}

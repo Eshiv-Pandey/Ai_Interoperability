@@ -1,0 +1,1197 @@
+{
+  "causal_order_proven": false,
+  "client_receipt_proven": false,
+  "complete_event_stream_proven": false,
+  "continuous_absence_of_mutation_proven": false,
+  "dimensions": {
+    "audit_append": {
+      "appended_audit_id": 1,
+      "reasons": [],
+      "status": "consistent"
+    },
+    "audit_context": {
+      "context_source": "pinned before-state SELECT semantics; transaction-time state not proven",
+      "derived_context_summary": "service inventory was down; open incidents: INC-002",
+      "ordered_open_incident_ids": [
+        "INC-002"
+      ],
+      "reasons": [],
+      "status": "consistent"
+    },
+    "audit_identity": {
+      "identity_assurance": "supplied runtime identity; authenticated human identity not established",
+      "reasons": [],
+      "status": "consistent"
+    },
+    "clean_text_contract": {
+      "rationale_scope": "declared_clean_fixture_texts_only",
+      "reasons": [],
+      "source_clean_transforms_proven": false,
+      "status": "consistent"
+    },
+    "database_metadata": {
+      "reasons": [],
+      "status": "consistent"
+    },
+    "executed_result_agreement": {
+      "reasons": [],
+      "status": "consistent"
+    },
+    "idempotency_consistency": {
+      "matching_prior_audit_ids": [],
+      "reasons": [],
+      "status": "consistent"
+    },
+    "incident_preservation": {
+      "reasons": [],
+      "status": "consistent"
+    },
+    "input_shape": {
+      "reasons": [],
+      "status": "consistent"
+    },
+    "service_delta": {
+      "reasons": [],
+      "status": "consistent"
+    },
+    "sqlite_sequence": {
+      "reasons": [],
+      "status": "consistent"
+    },
+    "timestamp_consistency": {
+      "audit_interval_end_exclusive_utc": "2026-10-28T10:39:25+00:00",
+      "audit_interval_start_utc": "2026-10-28T10:39:24+00:00",
+      "audit_timestamp_precision_seconds": 1.0,
+      "authoritative_clock_proven": false,
+      "endpoint_intervals": {
+        "after_snapshot": {
+          "end_exclusive_utc": "2026-10-28T10:39:26.122855+00:00",
+          "start_utc": "2026-10-28T10:39:26.122854+00:00"
+        },
+        "before_snapshot": {
+          "end_exclusive_utc": "2026-10-28T10:39:23.008186+00:00",
+          "start_utc": "2026-10-28T10:39:23.008185+00:00"
+        },
+        "exchange_finish": {
+          "end_exclusive_utc": "2026-10-28T10:39:26.122687+00:00",
+          "start_utc": "2026-10-28T10:39:26.122686+00:00"
+        },
+        "exchange_start": {
+          "end_exclusive_utc": "2026-10-28T10:39:23.057805+00:00",
+          "start_utc": "2026-10-28T10:39:23.057804+00:00"
+        }
+      },
+      "guaranteed_bracket_end_utc": "2026-10-28T10:39:26.122686+00:00",
+      "guaranteed_bracket_start_utc": "2026-10-28T10:39:23.057805+00:00",
+      "reasons": [],
+      "status": "consistent"
+    },
+    "unrelated_table_preservation": {
+      "reasons": [],
+      "status": "consistent"
+    }
+  },
+  "graded_upstream_cases": 0,
+  "new_native_runs": 0,
+  "phase_linkage_checked": false,
+  "qualification_established": false,
+  "rationale_scope": "declared_clean_fixture_texts_only",
+  "raw": {
+    "after_snapshot": {
+      "database": {
+        "columns": {
+          "audit_log": [
+            {
+              "cid": 0,
+              "dflt_value": null,
+              "name": "id",
+              "notnull": 0,
+              "pk": 1,
+              "type": "INTEGER"
+            },
+            {
+              "cid": 1,
+              "dflt_value": "1",
+              "name": "schema_version",
+              "notnull": 1,
+              "pk": 0,
+              "type": "INTEGER"
+            },
+            {
+              "cid": 2,
+              "dflt_value": null,
+              "name": "ts",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 3,
+              "dflt_value": null,
+              "name": "actor",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 4,
+              "dflt_value": null,
+              "name": "approved_by",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 5,
+              "dflt_value": null,
+              "name": "rationale",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 6,
+              "dflt_value": null,
+              "name": "context_summary",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 7,
+              "dflt_value": null,
+              "name": "session_id",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 8,
+              "dflt_value": null,
+              "name": "invocation_id",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 9,
+              "dflt_value": null,
+              "name": "action",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 10,
+              "dflt_value": null,
+              "name": "target",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 11,
+              "dflt_value": null,
+              "name": "detail",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            }
+          ],
+          "incidents": [
+            {
+              "cid": 0,
+              "dflt_value": null,
+              "name": "id",
+              "notnull": 0,
+              "pk": 1,
+              "type": "TEXT"
+            },
+            {
+              "cid": 1,
+              "dflt_value": null,
+              "name": "service",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 2,
+              "dflt_value": null,
+              "name": "title",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 3,
+              "dflt_value": null,
+              "name": "severity",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 4,
+              "dflt_value": null,
+              "name": "status",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 5,
+              "dflt_value": null,
+              "name": "runbook",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 6,
+              "dflt_value": null,
+              "name": "opened_at",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 7,
+              "dflt_value": null,
+              "name": "resolved_at",
+              "notnull": 0,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 8,
+              "dflt_value": null,
+              "name": "summary",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            }
+          ],
+          "services": [
+            {
+              "cid": 0,
+              "dflt_value": null,
+              "name": "name",
+              "notnull": 0,
+              "pk": 1,
+              "type": "TEXT"
+            },
+            {
+              "cid": 1,
+              "dflt_value": null,
+              "name": "description",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 2,
+              "dflt_value": null,
+              "name": "status",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 3,
+              "dflt_value": null,
+              "name": "owner",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            }
+          ],
+          "sqlite_sequence": [
+            {
+              "cid": 0,
+              "dflt_value": null,
+              "name": "name",
+              "notnull": 0,
+              "pk": 0,
+              "type": ""
+            },
+            {
+              "cid": 1,
+              "dflt_value": null,
+              "name": "seq",
+              "notnull": 0,
+              "pk": 0,
+              "type": ""
+            }
+          ]
+        },
+        "path": "state/incidents.db",
+        "path_base": "run",
+        "schema": [
+          {
+            "name": "idx_incidents_service",
+            "sql": "CREATE INDEX idx_incidents_service ON incidents (service)",
+            "tbl_name": "incidents",
+            "type": "index"
+          },
+          {
+            "name": "idx_incidents_status",
+            "sql": "CREATE INDEX idx_incidents_status ON incidents (status)",
+            "tbl_name": "incidents",
+            "type": "index"
+          },
+          {
+            "name": "sqlite_autoindex_incidents_1",
+            "sql": null,
+            "tbl_name": "incidents",
+            "type": "index"
+          },
+          {
+            "name": "sqlite_autoindex_services_1",
+            "sql": null,
+            "tbl_name": "services",
+            "type": "index"
+          },
+          {
+            "name": "uq_audit_log_idempotency",
+            "sql": "CREATE UNIQUE INDEX uq_audit_log_idempotency\nON audit_log (invocation_id, action, target)",
+            "tbl_name": "audit_log",
+            "type": "index"
+          },
+          {
+            "name": "audit_log",
+            "sql": "CREATE TABLE audit_log (\n    id              INTEGER PRIMARY KEY AUTOINCREMENT,\n    schema_version  INTEGER NOT NULL DEFAULT 1 CHECK (schema_version >= 1),\n    ts              TEXT NOT NULL,                         -- ISO-8601 UTC of the action\n    actor           TEXT NOT NULL,                         -- executing agent, e.g. \"agentops-agent\"\n    approved_by     TEXT NOT NULL,                         -- ADK user id; synthetic on unauthenticated A2A\n    rationale       TEXT NOT NULL,                         -- the approver's stated reason (HITL, Ch. 4.5)\n    context_summary TEXT NOT NULL,                         -- current decision context reconstructed at execution\n    session_id      TEXT NOT NULL,\n    invocation_id   TEXT NOT NULL,\n    action          TEXT NOT NULL,                         -- e.g. \"restart_service\", \"resolve_incident\"\n    target          TEXT NOT NULL,                         -- service name or incident id\n    detail          TEXT NOT NULL\n)",
+            "tbl_name": "audit_log",
+            "type": "table"
+          },
+          {
+            "name": "incidents",
+            "sql": "CREATE TABLE incidents (\n    id          TEXT PRIMARY KEY,                          -- human id, e.g. \"INC-001\"\n    service     TEXT NOT NULL REFERENCES services (name),\n    title       TEXT NOT NULL,\n    severity    TEXT NOT NULL CHECK (severity IN ('SEV1', 'SEV2', 'SEV3')),\n    status      TEXT NOT NULL CHECK (status IN ('open', 'investigating', 'resolved')),\n    runbook     TEXT NOT NULL,                             -- runbook slug (knowledge base key)\n    opened_at   TEXT NOT NULL,                             -- ISO-8601 UTC\n    resolved_at TEXT,                                      -- ISO-8601 UTC, NULL while unresolved\n    summary     TEXT NOT NULL\n)",
+            "tbl_name": "incidents",
+            "type": "table"
+          },
+          {
+            "name": "services",
+            "sql": "CREATE TABLE services (\n    name        TEXT PRIMARY KEY,                          -- stable slug, e.g. \"checkout\"\n    description TEXT NOT NULL,\n    status      TEXT NOT NULL CHECK (status IN ('operational', 'degraded', 'down')),\n    owner       TEXT NOT NULL                              -- owning team\n)",
+            "tbl_name": "services",
+            "type": "table"
+          },
+          {
+            "name": "sqlite_sequence",
+            "sql": "CREATE TABLE sqlite_sequence(name,seq)",
+            "tbl_name": "sqlite_sequence",
+            "type": "table"
+          },
+          {
+            "name": "audit_log_no_delete",
+            "sql": "CREATE TRIGGER audit_log_no_delete\nBEFORE DELETE ON audit_log\nBEGIN\n    SELECT RAISE(ABORT, 'audit_log is append-only');\nEND",
+            "tbl_name": "audit_log",
+            "type": "trigger"
+          },
+          {
+            "name": "audit_log_no_update",
+            "sql": "CREATE TRIGGER audit_log_no_update\nBEFORE UPDATE ON audit_log\nBEGIN\n    SELECT RAISE(ABORT, 'audit_log is append-only');\nEND",
+            "tbl_name": "audit_log",
+            "type": "trigger"
+          }
+        ],
+        "tables": {
+          "audit_log": [
+            {
+              "action": "restart_service",
+              "actor": "agentops-agent",
+              "approved_by": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+              "context_summary": "service inventory was down; open incidents: INC-002",
+              "detail": "service restarted and marked operational (mock)",
+              "id": 1,
+              "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+              "rationale": "Inventory is down and INC-002 matches the service-down runbook.",
+              "schema_version": 1,
+              "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+              "target": "inventory",
+              "ts": "2026-10-28T10:39:24Z"
+            }
+          ],
+          "incidents": [
+            {
+              "id": "INC-001",
+              "opened_at": "2026-07-05T08:15:00Z",
+              "resolved_at": null,
+              "runbook": "high-latency",
+              "service": "checkout",
+              "severity": "SEV2",
+              "status": "investigating",
+              "summary": "p99 checkout latency rose from 200ms to 3.5s right after the 08:00 deploy.",
+              "title": "Checkout latency spike"
+            },
+            {
+              "id": "INC-002",
+              "opened_at": "2026-07-05T09:02:00Z",
+              "resolved_at": null,
+              "runbook": "service-down",
+              "service": "inventory",
+              "severity": "SEV1",
+              "status": "open",
+              "summary": "Inventory pods are crash-looping; stock lookups return HTTP 503.",
+              "title": "Inventory service unavailable"
+            },
+            {
+              "id": "INC-003",
+              "opened_at": "2026-07-04T14:20:00Z",
+              "resolved_at": "2026-07-04T15:05:00Z",
+              "runbook": "elevated-errors",
+              "service": "payments",
+              "severity": "SEV3",
+              "status": "resolved",
+              "summary": "Decline rate hit 12% due to an expired downstream certificate; certificate rotated.",
+              "title": "Elevated payment declines"
+            },
+            {
+              "id": "INC-004",
+              "opened_at": "2026-07-03T22:10:00Z",
+              "resolved_at": "2026-07-03T23:00:00Z",
+              "runbook": "elevated-errors",
+              "service": "auth",
+              "severity": "SEV2",
+              "status": "resolved",
+              "summary": "5xx from token validation caused by an exhausted connection pool; pool size raised.",
+              "title": "Token validation errors"
+            },
+            {
+              "id": "INC-005",
+              "opened_at": "2026-07-05T07:40:00Z",
+              "resolved_at": null,
+              "runbook": "high-latency",
+              "service": "search",
+              "severity": "SEV3",
+              "status": "open",
+              "summary": "Search p95 degraded after an index rebuild; cache hit-rate dropped to 40%.",
+              "title": "Search results slow"
+            },
+            {
+              "id": "INC-006",
+              "opened_at": "2026-07-02T03:30:00Z",
+              "resolved_at": "2026-07-02T04:15:00Z",
+              "runbook": "disk-full",
+              "service": "checkout",
+              "severity": "SEV2",
+              "status": "resolved",
+              "summary": "Log volume filled the disk; rotated logs and expanded the volume.",
+              "title": "Disk full on checkout node"
+            },
+            {
+              "id": "INC-007",
+              "opened_at": "2026-07-07T09:48:00Z",
+              "resolved_at": "2026-07-07T12:30:00Z",
+              "runbook": "memory-leak",
+              "service": "cache",
+              "severity": "SEV2",
+              "status": "resolved",
+              "summary": "A leaking serializer buffer exhausted cache memory and triggered mass evictions; hit-rate fell from 92% to 31%. Root cause of INC-008 and INC-009; fixed by deploying v2026.07.07-2.",
+              "title": "Cache eviction storm"
+            },
+            {
+              "id": "INC-008",
+              "opened_at": "2026-07-07T10:12:00Z",
+              "resolved_at": "2026-07-07T12:45:00Z",
+              "runbook": "cascade-failure",
+              "service": "database",
+              "severity": "SEV1",
+              "status": "resolved",
+              "summary": "Cache misses from INC-007 multiplied read load eightfold and exhausted the connection pool (200/200). Restarting the database did not help; recovered once the cache (INC-007) was fixed.",
+              "title": "Database connection saturation"
+            },
+            {
+              "id": "INC-009",
+              "opened_at": "2026-07-07T10:20:00Z",
+              "resolved_at": null,
+              "runbook": "cascade-failure",
+              "service": "checkout",
+              "severity": "SEV2",
+              "status": "investigating",
+              "summary": "Checkout p99 reached 4.8s while queries queued on the saturated database (INC-008), itself a symptom of the cache eviction storm (INC-007). Latency is recovering; verifying baseline.",
+              "title": "Checkout latency cascade"
+            },
+            {
+              "id": "INC-010",
+              "opened_at": "2026-07-08T06:30:00Z",
+              "resolved_at": null,
+              "runbook": "memory-leak",
+              "service": "api-gateway",
+              "severity": "SEV3",
+              "status": "open",
+              "summary": "Gateway worker RSS climbs about 80MB per hour and p99 latency doubles before each scheduled restart clears it; unclear whether a slow leak or a slow upstream dependency is primary.",
+              "title": "Gateway workers degrade over uptime"
+            }
+          ],
+          "services": [
+            {
+              "description": "Public API gateway and edge routing",
+              "name": "api-gateway",
+              "owner": "team-platform",
+              "status": "degraded"
+            },
+            {
+              "description": "Authentication and identity service",
+              "name": "auth",
+              "owner": "team-platform",
+              "status": "operational"
+            },
+            {
+              "description": "Shared read-through cache fleet",
+              "name": "cache",
+              "owner": "team-platform",
+              "status": "operational"
+            },
+            {
+              "description": "Checkout and shopping-cart service",
+              "name": "checkout",
+              "owner": "team-payments",
+              "status": "degraded"
+            },
+            {
+              "description": "Primary transactional database cluster",
+              "name": "database",
+              "owner": "team-platform",
+              "status": "operational"
+            },
+            {
+              "description": "Inventory and stock-availability service",
+              "name": "inventory",
+              "owner": "team-fulfillment",
+              "status": "operational"
+            },
+            {
+              "description": "Payment processing gateway",
+              "name": "payments",
+              "owner": "team-payments",
+              "status": "operational"
+            },
+            {
+              "description": "Product search API",
+              "name": "search",
+              "owner": "team-discovery",
+              "status": "operational"
+            }
+          ],
+          "sqlite_sequence": [
+            {
+              "name": "audit_log",
+              "seq": 1
+            }
+          ]
+        },
+        "user_tables": [
+          "audit_log",
+          "incidents",
+          "services"
+        ],
+        "user_version": 0
+      },
+      "monotonic_ns": 117664789840,
+      "observed_at_utc": "2026-10-28T10:39:26.122854+00:00"
+    },
+    "before_snapshot": {
+      "database": {
+        "columns": {
+          "audit_log": [
+            {
+              "cid": 0,
+              "dflt_value": null,
+              "name": "id",
+              "notnull": 0,
+              "pk": 1,
+              "type": "INTEGER"
+            },
+            {
+              "cid": 1,
+              "dflt_value": "1",
+              "name": "schema_version",
+              "notnull": 1,
+              "pk": 0,
+              "type": "INTEGER"
+            },
+            {
+              "cid": 2,
+              "dflt_value": null,
+              "name": "ts",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 3,
+              "dflt_value": null,
+              "name": "actor",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 4,
+              "dflt_value": null,
+              "name": "approved_by",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 5,
+              "dflt_value": null,
+              "name": "rationale",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 6,
+              "dflt_value": null,
+              "name": "context_summary",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 7,
+              "dflt_value": null,
+              "name": "session_id",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 8,
+              "dflt_value": null,
+              "name": "invocation_id",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 9,
+              "dflt_value": null,
+              "name": "action",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 10,
+              "dflt_value": null,
+              "name": "target",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 11,
+              "dflt_value": null,
+              "name": "detail",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            }
+          ],
+          "incidents": [
+            {
+              "cid": 0,
+              "dflt_value": null,
+              "name": "id",
+              "notnull": 0,
+              "pk": 1,
+              "type": "TEXT"
+            },
+            {
+              "cid": 1,
+              "dflt_value": null,
+              "name": "service",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 2,
+              "dflt_value": null,
+              "name": "title",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 3,
+              "dflt_value": null,
+              "name": "severity",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 4,
+              "dflt_value": null,
+              "name": "status",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 5,
+              "dflt_value": null,
+              "name": "runbook",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 6,
+              "dflt_value": null,
+              "name": "opened_at",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 7,
+              "dflt_value": null,
+              "name": "resolved_at",
+              "notnull": 0,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 8,
+              "dflt_value": null,
+              "name": "summary",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            }
+          ],
+          "services": [
+            {
+              "cid": 0,
+              "dflt_value": null,
+              "name": "name",
+              "notnull": 0,
+              "pk": 1,
+              "type": "TEXT"
+            },
+            {
+              "cid": 1,
+              "dflt_value": null,
+              "name": "description",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 2,
+              "dflt_value": null,
+              "name": "status",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            },
+            {
+              "cid": 3,
+              "dflt_value": null,
+              "name": "owner",
+              "notnull": 1,
+              "pk": 0,
+              "type": "TEXT"
+            }
+          ],
+          "sqlite_sequence": [
+            {
+              "cid": 0,
+              "dflt_value": null,
+              "name": "name",
+              "notnull": 0,
+              "pk": 0,
+              "type": ""
+            },
+            {
+              "cid": 1,
+              "dflt_value": null,
+              "name": "seq",
+              "notnull": 0,
+              "pk": 0,
+              "type": ""
+            }
+          ]
+        },
+        "path": "state/incidents.db",
+        "path_base": "run",
+        "schema": [
+          {
+            "name": "idx_incidents_service",
+            "sql": "CREATE INDEX idx_incidents_service ON incidents (service)",
+            "tbl_name": "incidents",
+            "type": "index"
+          },
+          {
+            "name": "idx_incidents_status",
+            "sql": "CREATE INDEX idx_incidents_status ON incidents (status)",
+            "tbl_name": "incidents",
+            "type": "index"
+          },
+          {
+            "name": "sqlite_autoindex_incidents_1",
+            "sql": null,
+            "tbl_name": "incidents",
+            "type": "index"
+          },
+          {
+            "name": "sqlite_autoindex_services_1",
+            "sql": null,
+            "tbl_name": "services",
+            "type": "index"
+          },
+          {
+            "name": "uq_audit_log_idempotency",
+            "sql": "CREATE UNIQUE INDEX uq_audit_log_idempotency\nON audit_log (invocation_id, action, target)",
+            "tbl_name": "audit_log",
+            "type": "index"
+          },
+          {
+            "name": "audit_log",
+            "sql": "CREATE TABLE audit_log (\n    id              INTEGER PRIMARY KEY AUTOINCREMENT,\n    schema_version  INTEGER NOT NULL DEFAULT 1 CHECK (schema_version >= 1),\n    ts              TEXT NOT NULL,                         -- ISO-8601 UTC of the action\n    actor           TEXT NOT NULL,                         -- executing agent, e.g. \"agentops-agent\"\n    approved_by     TEXT NOT NULL,                         -- ADK user id; synthetic on unauthenticated A2A\n    rationale       TEXT NOT NULL,                         -- the approver's stated reason (HITL, Ch. 4.5)\n    context_summary TEXT NOT NULL,                         -- current decision context reconstructed at execution\n    session_id      TEXT NOT NULL,\n    invocation_id   TEXT NOT NULL,\n    action          TEXT NOT NULL,                         -- e.g. \"restart_service\", \"resolve_incident\"\n    target          TEXT NOT NULL,                         -- service name or incident id\n    detail          TEXT NOT NULL\n)",
+            "tbl_name": "audit_log",
+            "type": "table"
+          },
+          {
+            "name": "incidents",
+            "sql": "CREATE TABLE incidents (\n    id          TEXT PRIMARY KEY,                          -- human id, e.g. \"INC-001\"\n    service     TEXT NOT NULL REFERENCES services (name),\n    title       TEXT NOT NULL,\n    severity    TEXT NOT NULL CHECK (severity IN ('SEV1', 'SEV2', 'SEV3')),\n    status      TEXT NOT NULL CHECK (status IN ('open', 'investigating', 'resolved')),\n    runbook     TEXT NOT NULL,                             -- runbook slug (knowledge base key)\n    opened_at   TEXT NOT NULL,                             -- ISO-8601 UTC\n    resolved_at TEXT,                                      -- ISO-8601 UTC, NULL while unresolved\n    summary     TEXT NOT NULL\n)",
+            "tbl_name": "incidents",
+            "type": "table"
+          },
+          {
+            "name": "services",
+            "sql": "CREATE TABLE services (\n    name        TEXT PRIMARY KEY,                          -- stable slug, e.g. \"checkout\"\n    description TEXT NOT NULL,\n    status      TEXT NOT NULL CHECK (status IN ('operational', 'degraded', 'down')),\n    owner       TEXT NOT NULL                              -- owning team\n)",
+            "tbl_name": "services",
+            "type": "table"
+          },
+          {
+            "name": "sqlite_sequence",
+            "sql": "CREATE TABLE sqlite_sequence(name,seq)",
+            "tbl_name": "sqlite_sequence",
+            "type": "table"
+          },
+          {
+            "name": "audit_log_no_delete",
+            "sql": "CREATE TRIGGER audit_log_no_delete\nBEFORE DELETE ON audit_log\nBEGIN\n    SELECT RAISE(ABORT, 'audit_log is append-only');\nEND",
+            "tbl_name": "audit_log",
+            "type": "trigger"
+          },
+          {
+            "name": "audit_log_no_update",
+            "sql": "CREATE TRIGGER audit_log_no_update\nBEFORE UPDATE ON audit_log\nBEGIN\n    SELECT RAISE(ABORT, 'audit_log is append-only');\nEND",
+            "tbl_name": "audit_log",
+            "type": "trigger"
+          }
+        ],
+        "tables": {
+          "audit_log": [],
+          "incidents": [
+            {
+              "id": "INC-001",
+              "opened_at": "2026-07-05T08:15:00Z",
+              "resolved_at": null,
+              "runbook": "high-latency",
+              "service": "checkout",
+              "severity": "SEV2",
+              "status": "investigating",
+              "summary": "p99 checkout latency rose from 200ms to 3.5s right after the 08:00 deploy.",
+              "title": "Checkout latency spike"
+            },
+            {
+              "id": "INC-002",
+              "opened_at": "2026-07-05T09:02:00Z",
+              "resolved_at": null,
+              "runbook": "service-down",
+              "service": "inventory",
+              "severity": "SEV1",
+              "status": "open",
+              "summary": "Inventory pods are crash-looping; stock lookups return HTTP 503.",
+              "title": "Inventory service unavailable"
+            },
+            {
+              "id": "INC-003",
+              "opened_at": "2026-07-04T14:20:00Z",
+              "resolved_at": "2026-07-04T15:05:00Z",
+              "runbook": "elevated-errors",
+              "service": "payments",
+              "severity": "SEV3",
+              "status": "resolved",
+              "summary": "Decline rate hit 12% due to an expired downstream certificate; certificate rotated.",
+              "title": "Elevated payment declines"
+            },
+            {
+              "id": "INC-004",
+              "opened_at": "2026-07-03T22:10:00Z",
+              "resolved_at": "2026-07-03T23:00:00Z",
+              "runbook": "elevated-errors",
+              "service": "auth",
+              "severity": "SEV2",
+              "status": "resolved",
+              "summary": "5xx from token validation caused by an exhausted connection pool; pool size raised.",
+              "title": "Token validation errors"
+            },
+            {
+              "id": "INC-005",
+              "opened_at": "2026-07-05T07:40:00Z",
+              "resolved_at": null,
+              "runbook": "high-latency",
+              "service": "search",
+              "severity": "SEV3",
+              "status": "open",
+              "summary": "Search p95 degraded after an index rebuild; cache hit-rate dropped to 40%.",
+              "title": "Search results slow"
+            },
+            {
+              "id": "INC-006",
+              "opened_at": "2026-07-02T03:30:00Z",
+              "resolved_at": "2026-07-02T04:15:00Z",
+              "runbook": "disk-full",
+              "service": "checkout",
+              "severity": "SEV2",
+              "status": "resolved",
+              "summary": "Log volume filled the disk; rotated logs and expanded the volume.",
+              "title": "Disk full on checkout node"
+            },
+            {
+              "id": "INC-007",
+              "opened_at": "2026-07-07T09:48:00Z",
+              "resolved_at": "2026-07-07T12:30:00Z",
+              "runbook": "memory-leak",
+              "service": "cache",
+              "severity": "SEV2",
+              "status": "resolved",
+              "summary": "A leaking serializer buffer exhausted cache memory and triggered mass evictions; hit-rate fell from 92% to 31%. Root cause of INC-008 and INC-009; fixed by deploying v2026.07.07-2.",
+              "title": "Cache eviction storm"
+            },
+            {
+              "id": "INC-008",
+              "opened_at": "2026-07-07T10:12:00Z",
+              "resolved_at": "2026-07-07T12:45:00Z",
+              "runbook": "cascade-failure",
+              "service": "database",
+              "severity": "SEV1",
+              "status": "resolved",
+              "summary": "Cache misses from INC-007 multiplied read load eightfold and exhausted the connection pool (200/200). Restarting the database did not help; recovered once the cache (INC-007) was fixed.",
+              "title": "Database connection saturation"
+            },
+            {
+              "id": "INC-009",
+              "opened_at": "2026-07-07T10:20:00Z",
+              "resolved_at": null,
+              "runbook": "cascade-failure",
+              "service": "checkout",
+              "severity": "SEV2",
+              "status": "investigating",
+              "summary": "Checkout p99 reached 4.8s while queries queued on the saturated database (INC-008), itself a symptom of the cache eviction storm (INC-007). Latency is recovering; verifying baseline.",
+              "title": "Checkout latency cascade"
+            },
+            {
+              "id": "INC-010",
+              "opened_at": "2026-07-08T06:30:00Z",
+              "resolved_at": null,
+              "runbook": "memory-leak",
+              "service": "api-gateway",
+              "severity": "SEV3",
+              "status": "open",
+              "summary": "Gateway worker RSS climbs about 80MB per hour and p99 latency doubles before each scheduled restart clears it; unclear whether a slow leak or a slow upstream dependency is primary.",
+              "title": "Gateway workers degrade over uptime"
+            }
+          ],
+          "services": [
+            {
+              "description": "Public API gateway and edge routing",
+              "name": "api-gateway",
+              "owner": "team-platform",
+              "status": "degraded"
+            },
+            {
+              "description": "Authentication and identity service",
+              "name": "auth",
+              "owner": "team-platform",
+              "status": "operational"
+            },
+            {
+              "description": "Shared read-through cache fleet",
+              "name": "cache",
+              "owner": "team-platform",
+              "status": "operational"
+            },
+            {
+              "description": "Checkout and shopping-cart service",
+              "name": "checkout",
+              "owner": "team-payments",
+              "status": "degraded"
+            },
+            {
+              "description": "Primary transactional database cluster",
+              "name": "database",
+              "owner": "team-platform",
+              "status": "operational"
+            },
+            {
+              "description": "Inventory and stock-availability service",
+              "name": "inventory",
+              "owner": "team-fulfillment",
+              "status": "down"
+            },
+            {
+              "description": "Payment processing gateway",
+              "name": "payments",
+              "owner": "team-payments",
+              "status": "operational"
+            },
+            {
+              "description": "Product search API",
+              "name": "search",
+              "owner": "team-discovery",
+              "status": "operational"
+            }
+          ],
+          "sqlite_sequence": []
+        },
+        "user_tables": [
+          "audit_log",
+          "incidents",
+          "services"
+        ],
+        "user_version": 0
+      },
+      "monotonic_ns": 114550146064,
+      "observed_at_utc": "2026-10-28T10:39:23.008185+00:00"
+    },
+    "exchange": {
+      "finished_at_utc": "2026-10-28T10:39:26.122686+00:00",
+      "http_version": "1.1",
+      "method": "POST",
+      "path": "/",
+      "query_string": "",
+      "request_body_complete": true,
+      "request_bytes": 504,
+      "request_headers": [
+        [
+          "host",
+          "127.0.0.1:18764"
+        ],
+        [
+          "connection",
+          "keep-alive"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ],
+        [
+          "a2a-version",
+          "1.0"
+        ],
+        [
+          "user-agent",
+          "mcp-a2a-js/0.1.0"
+        ],
+        [
+          "accept",
+          "*/*"
+        ],
+        [
+          "accept-language",
+          "*"
+        ],
+        [
+          "sec-fetch-mode",
+          "cors"
+        ],
+        [
+          "accept-encoding",
+          "gzip, deflate"
+        ],
+        [
+          "content-length",
+          "504"
+        ]
+      ],
+      "response_body_complete": true,
+      "response_bytes": 4544,
+      "response_chunks": [
+        {
+          "bytes": 4544,
+          "more_body": false,
+          "sha256": "e895f04440197c02ad0d4118113aea10076ca4ab852ff7c5e881756b3a1f38d9"
+        }
+      ],
+      "response_headers": [
+        [
+          "content-length",
+          "4544"
+        ],
+        [
+          "content-type",
+          "application/json"
+        ]
+      ],
+      "response_status": 200,
+      "schema_version": "agentops-asgi-exchange/1",
+      "sequence": 7,
+      "started_at_utc": "2026-10-28T10:39:23.057804+00:00"
+    },
+    "executed_function": {
+      "app_name": "agentops-agent",
+      "author": "confirmation_test_agent",
+      "database_timestamp": "2026-10-28 10:39:25.394662",
+      "event_id": "3627138c-685e-49dd-a6dd-4c55c5f5fd31",
+      "event_rowid": 6,
+      "event_timestamp": 1793183965.394662,
+      "function": {
+        "id": "restart-inventory-call",
+        "name": "restart_service",
+        "response": {
+          "audit": {
+            "action": "restart_service",
+            "actor": "agentops-agent",
+            "approved_by": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+            "context_summary": "<<<TOOL_DATA data-not-instructions>>>\nservice inventory was down; open incidents: INC-002\n<<<END_TOOL_DATA>>>",
+            "detail": "<<<TOOL_DATA data-not-instructions>>>\nservice restarted and marked operational (mock)\n<<<END_TOOL_DATA>>>",
+            "id": 1,
+            "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+            "rationale": "<<<TOOL_DATA data-not-instructions>>>\nInventory is down and INC-002 matches the service-down runbook.\n<<<END_TOOL_DATA>>>",
+            "schema_version": 1,
+            "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+            "target": "inventory",
+            "ts": "2026-10-28T10:39:24Z"
+          },
+          "result": "Service 'inventory' restarted and marked operational."
+        }
+      },
+      "function_id": "restart-inventory-call",
+      "function_identity_complete": true,
+      "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+      "kind": "function_response",
+      "original_function_call": {
+        "args": {
+          "name": "inventory"
+        },
+        "id": "restart-inventory-call",
+        "name": "restart_service"
+      },
+      "part_index": 0,
+      "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+      "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+    },
+    "expected_identity": {
+      "app_name": "agentops-agent",
+      "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+      "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+      "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+    },
+    "rationale": "Inventory is down and INC-002 matches the service-down runbook."
+  },
+  "raw_byte_binding_checked": false,
+  "schema_version": "agentops-restart-effects/1",
+  "source_clean_transforms_proven": false,
+  "status": "consistent"
+}

@@ -1,0 +1,139 @@
+[
+  {
+    "app_name": "agentops-agent",
+    "author": "confirmation_test_agent",
+    "database_timestamp": "2026-10-28 10:39:16.401834",
+    "event_id": "870042c5-8236-42e0-bfd5-760462c676aa",
+    "event_rowid": 2,
+    "event_timestamp": 1793183956.4018342,
+    "function": {
+      "args": {
+        "name": "inventory"
+      },
+      "id": "restart-inventory-call",
+      "name": "restart_service"
+    },
+    "function_id": "restart-inventory-call",
+    "function_identity_complete": true,
+    "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+    "kind": "function_call",
+    "part_index": 0,
+    "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+    "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+  },
+  {
+    "app_name": "agentops-agent",
+    "author": "confirmation_test_agent",
+    "database_timestamp": "2026-10-28 10:39:20.672779",
+    "event_id": "01f98665-46e0-4397-99e0-b9bebe8174f2",
+    "event_rowid": 3,
+    "event_timestamp": 1793183960.6727788,
+    "function": {
+      "args": {
+        "originalFunctionCall": {
+          "args": {
+            "name": "inventory"
+          },
+          "id": "restart-inventory-call",
+          "name": "restart_service"
+        },
+        "toolConfirmation": {
+          "confirmed": false,
+          "hint": "Please approve or reject the tool call restart_service() by responding with a FunctionResponse with an expected ToolConfirmation payload."
+        }
+      },
+      "id": "adk-99d59d44-7188-44fb-8a53-479d397d9842",
+      "name": "adk_request_confirmation"
+    },
+    "function_id": "adk-99d59d44-7188-44fb-8a53-479d397d9842",
+    "function_identity_complete": true,
+    "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+    "kind": "function_call",
+    "part_index": 0,
+    "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+    "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+  },
+  {
+    "app_name": "agentops-agent",
+    "author": "confirmation_test_agent",
+    "database_timestamp": "2026-10-28 10:39:20.657603",
+    "event_id": "d276a6ec-e69d-4c41-8eaf-7586cfa83051",
+    "event_rowid": 4,
+    "event_timestamp": 1793183960.6576025,
+    "function": {
+      "id": "restart-inventory-call",
+      "name": "restart_service",
+      "response": {
+        "error": "This tool call requires confirmation, please approve or reject."
+      }
+    },
+    "function_id": "restart-inventory-call",
+    "function_identity_complete": true,
+    "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+    "kind": "function_response",
+    "part_index": 0,
+    "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+    "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+  },
+  {
+    "app_name": "agentops-agent",
+    "author": "user",
+    "database_timestamp": "2026-10-28 10:39:23.260999",
+    "event_id": "42ce022a-20c8-4724-ab56-a8b2a0dbe9ea",
+    "event_rowid": 5,
+    "event_timestamp": 1793183963.260999,
+    "function": {
+      "id": "adk-99d59d44-7188-44fb-8a53-479d397d9842",
+      "name": "adk_request_confirmation",
+      "response": {
+        "confirmed": true,
+        "payload": {
+          "rationale": "Inventory is down and INC-002 matches the service-down runbook."
+        }
+      }
+    },
+    "function_id": "adk-99d59d44-7188-44fb-8a53-479d397d9842",
+    "function_identity_complete": true,
+    "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+    "kind": "function_response",
+    "part_index": 0,
+    "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+    "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+  },
+  {
+    "app_name": "agentops-agent",
+    "author": "confirmation_test_agent",
+    "database_timestamp": "2026-10-28 10:39:25.394662",
+    "event_id": "3627138c-685e-49dd-a6dd-4c55c5f5fd31",
+    "event_rowid": 6,
+    "event_timestamp": 1793183965.394662,
+    "function": {
+      "id": "restart-inventory-call",
+      "name": "restart_service",
+      "response": {
+        "audit": {
+          "action": "restart_service",
+          "actor": "agentops-agent",
+          "approved_by": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+          "context_summary": "<<<TOOL_DATA data-not-instructions>>>\nservice inventory was down; open incidents: INC-002\n<<<END_TOOL_DATA>>>",
+          "detail": "<<<TOOL_DATA data-not-instructions>>>\nservice restarted and marked operational (mock)\n<<<END_TOOL_DATA>>>",
+          "id": 1,
+          "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+          "rationale": "<<<TOOL_DATA data-not-instructions>>>\nInventory is down and INC-002 matches the service-down runbook.\n<<<END_TOOL_DATA>>>",
+          "schema_version": 1,
+          "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+          "target": "inventory",
+          "ts": "2026-10-28T10:39:24Z"
+        },
+        "result": "Service 'inventory' restarted and marked operational."
+      }
+    },
+    "function_id": "restart-inventory-call",
+    "function_identity_complete": true,
+    "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+    "kind": "function_response",
+    "part_index": 0,
+    "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+    "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+  }
+]

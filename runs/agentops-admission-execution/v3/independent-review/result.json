@@ -1,0 +1,268 @@
+{
+  "schema_version": "agentops-admission-independent-export-review/1",
+  "started_at_utc": "2026-10-28T21:50:49.370278+00:00",
+  "reviewer": "independent AI evidence review; not human review",
+  "status": "verified_expected_partial",
+  "export": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\agentops-admission-execution\\v3\\export",
+  "application_launches": 0,
+  "benchmark_or_test_reruns": 0,
+  "failures": [],
+  "source": {
+    "path": "review_export.py",
+    "bytes": 24543,
+    "sha256": "8181d1084953993fc729f8f08541dfa4356fa489bc880c49b07dcba7ed1ddbb9"
+  },
+  "integrity": {
+    "manifest": {
+      "path": "manifest.json",
+      "bytes": 618797,
+      "sha256": "d03485034cb34835334c45597b320c4244c45de6f7cb569cc0100a8a8befe6e7"
+    },
+    "workspace_files": 800,
+    "workspace_bytes": 10923138,
+    "staged_inputs": 702,
+    "export_files_including_manifest_and_result": 803,
+    "reuse_root": "/var/tmp/agentops-research-v7-gs9r5her",
+    "external_runtime_closure_copied": false,
+    "exporter_source": {
+      "path": "exporter-source.py",
+      "bytes": 17140,
+      "sha256": "bd9409f1c2e2a97ba6265745cd5a0668dd60bcbb603e8207d20c77f43f692e00"
+    }
+  },
+  "live_outcome": {
+    "group_status": "attempts_recorded",
+    "N11_status": "failed",
+    "N11_outcome": "unknown_or_partial",
+    "N11_strict_success": false,
+    "N11_failure": "TimeoutError: Fixture readiness deadline",
+    "N11_task_completed": false,
+    "N11_effect_classification": "not_observed_no_service_result",
+    "N11_observation_gaps": [
+      "missing_evidence_file:config.json"
+    ],
+    "N11_diagnostic_classification": "incomplete_before_supported_boundary",
+    "N11_service_returncode": -15,
+    "N11_child_reaped_before_group_check": true,
+    "N11_group_empty_after_reap": true,
+    "N11_cleanup_errors": [],
+    "client_launch_recorded": false,
+    "captured_client_requests": 0,
+    "captured_ASGI_requests": 0,
+    "absent_startup_or_client_paths": [
+      "client",
+      "client-process.json",
+      "client.started.json",
+      "client.stdout.bin",
+      "client.stderr.bin",
+      "evaluator",
+      "service/service-ready.json",
+      "service/service-result.json",
+      "service/wire",
+      "service/state"
+    ],
+    "interpreter_lifecycle_phases": [
+      "interpreter_exit_observer_installed"
+    ],
+    "asyncio_lifecycle_phases": [
+      "asyncio_run_entered"
+    ],
+    "exit_stall_trace_reproduced": false,
+    "interpreter_exit_valid": false,
+    "interpreter_exit_complete": false,
+    "exit_recheck_error_text_difference": "Original Linux and relocated Windows FileNotFoundError paths/text differ; same absent service-result.json and all other report fields agree",
+    "B7_status": "skipped",
+    "B7_reason": "Fresh matched native control did not qualify",
+    "B7_directory_absent": true,
+    "candidate_live_calls": 0,
+    "candidate_certificate_to_ASGI_check": "not_applicable_B7_was_not_executed",
+    "live_model_calls": 0,
+    "research_gate_credit_added": 0,
+    "diagnostic_root_cause_established": false
+  },
+  "software_tests": {
+    "evidence_only_not_rerun": true,
+    "python_passed": 146,
+    "node_passed": 26,
+    "suites": [
+      {
+        "suite": "test_agentops_admitted_client_v1",
+        "passed": 17
+      },
+      {
+        "suite": "test_agentops_admission_live_plan_v2",
+        "passed": 9
+      },
+      {
+        "suite": "test_export_agentops_admission_v1",
+        "passed": 15
+      },
+      {
+        "suite": "test_pending_admission",
+        "passed": 25
+      },
+      {
+        "suite": "test_refinement",
+        "passed": 32
+      },
+      {
+        "suite": "test_agentops_owned_child_v1",
+        "passed": 8
+      },
+      {
+        "suite": "test_agentops_interpreter_exit_diagnostics_v1",
+        "passed": 12
+      },
+      {
+        "suite": "test_check_agentops_interpreter_exit_v1",
+        "passed": 18
+      },
+      {
+        "suite": "test_refinement_scaling_generator_v1",
+        "passed": 10
+      },
+      {
+        "suite": "node-controller",
+        "passed": 26
+      }
+    ]
+  },
+  "runtime_evidence": {
+    "python_inspection_before": {
+      "path": "runs/agentops-admission-live-v1/python-runtime-before.json",
+      "bytes": 128695,
+      "sha256": "123164d5179338607d7b8ea357f1886e71030f25a080de1070f83831bb021b7e"
+    },
+    "python_inspection_after": {
+      "path": "runs/agentops-admission-live-v1/phase-after/python-runtime-after.stdout.bin",
+      "bytes": 128695,
+      "sha256": "123164d5179338607d7b8ea357f1886e71030f25a080de1070f83831bb021b7e"
+    },
+    "python_inspection_bytes_equal": true,
+    "bridge_verification_before_after_equal": true,
+    "bridge": {
+      "status": "runtime_bytes_and_links_verified",
+      "files": 2938,
+      "packages": 15,
+      "links": 22,
+      "graph_sha256": "efafadaa673d78dd1e4ccf20d92db9941e00d6bd802d909fdae4c4b8a8278de6"
+    },
+    "external_runtime_reinspected_during_review": false,
+    "scope": "Executable, provider, selected sources and installed metadata; not complete runtime authenticity"
+  },
+  "host_configuration": {
+    "plan": {
+      "path": "host-resource-adjustment/plan.json",
+      "bytes": 541,
+      "sha256": "d7e089226ff6a260a4d19411bb4a00dc6d8b6bf5b0e54ac8856f41304201192b"
+    },
+    "restoration": {
+      "path": "host-resource-adjustment/restoration.json",
+      "bytes": 168,
+      "sha256": "b5f979c6ded5427adbfd1b3aef64f38388bae20043b21e342e0bb876c122bd0b"
+    },
+    "restored_at_utc": "2026-10-28T21:46:23.665008+00:00",
+    "current_bytes_match_original": true,
+    "current_sha256": "9974fe54da5586ac09b9f352a7d4580df98138b3a81d35342f25b4dfb1756cf1",
+    "wsl_launches_during_review": 0,
+    "temporary_change": "memory 4GB to 2GB; preserve swap/processors"
+  },
+  "exported_modules_imported": [
+    {
+      "module": "check_agentops_bridge_diagnostic_v1",
+      "source": {
+        "path": "scripts/check_agentops_bridge_diagnostic_v1.py",
+        "bytes": 13339,
+        "sha256": "3f9c430a111a594bd899238354ce0fadcd4a260aaecc558b7013989d50f21ff9"
+      }
+    },
+    {
+      "module": "check_agentops_bridge_v1",
+      "source": {
+        "path": "scripts/check_agentops_bridge_v1.py",
+        "bytes": 82113,
+        "sha256": "761abe87fcb1133392c4f64718ae770b95d29b9c2d61502b56409e1fcead79ee"
+      }
+    },
+    {
+      "module": "check_agentops_effect_v2",
+      "source": {
+        "path": "scripts/check_agentops_effect_v2.py",
+        "bytes": 13980,
+        "sha256": "3c0312123adcf94460b8e802f3734c6c216a942de997a50f9cb0f0c34f908041"
+      }
+    },
+    {
+      "module": "check_agentops_interpreter_exit_v1",
+      "source": {
+        "path": "scripts/check_agentops_interpreter_exit_v1.py",
+        "bytes": 17107,
+        "sha256": "c17f4607e9fac45ede79973f7854fb7bfbf2a9c368575f9d95a4d1d5748e803e"
+      }
+    },
+    {
+      "module": "check_agentops_socket_policy_v1",
+      "source": {
+        "path": "scripts/check_agentops_socket_policy_v1.py",
+        "bytes": 2318,
+        "sha256": "5e6fd93fed632c6f8541d1b755dab9938235bd01f27059ca59d7143a23579c26"
+      }
+    }
+  ],
+  "export_unchanged_during_review": true,
+  "host_receipts_unchanged_during_review": true,
+  "host_configuration_unchanged_during_review": true,
+  "finished_at_utc": "2026-10-28T21:50:51.205700+00:00",
+  "review_files": [
+    {
+      "path": "execution.json",
+      "bytes": 562,
+      "sha256": "ebca0b174183656ff78594e3e2f70e0fde3c91304d42f72f51b20160440a6073"
+    },
+    {
+      "path": "export-after.json",
+      "bytes": 151710,
+      "sha256": "20da142462ba70591b0d8240a22d18299c318b4fcb1e1863ec4ee79fa1ce6d12"
+    },
+    {
+      "path": "export-before.json",
+      "bytes": 151710,
+      "sha256": "20da142462ba70591b0d8240a22d18299c318b4fcb1e1863ec4ee79fa1ce6d12"
+    },
+    {
+      "path": "host-receipts-after.json",
+      "bytes": 1425,
+      "sha256": "810458c144b6662d358b0688c94bead5ba30b479babf9d3b5d7f18c665f07dc2"
+    },
+    {
+      "path": "host-receipts-before.json",
+      "bytes": 1425,
+      "sha256": "810458c144b6662d358b0688c94bead5ba30b479babf9d3b5d7f18c665f07dc2"
+    },
+    {
+      "path": "N11-case-recheck.json",
+      "bytes": 413,
+      "sha256": "b107f8403fe7ee991e642597b19b6e600d6753ea6a3d7ffa309a47f025c2f86d"
+    },
+    {
+      "path": "N11-diagnostic-recheck.json",
+      "bytes": 1287,
+      "sha256": "ca0112f0dca258a0ad7dbc0cc242a839442bba7db0832fcdd7da9445ba8d525a"
+    },
+    {
+      "path": "N11-interpreter-exit-recheck.json",
+      "bytes": 1012,
+      "sha256": "6efd02b177564cdc79dd33750f3dfcd20dd2bec806ac7fc3cbce04c9c286e12f"
+    },
+    {
+      "path": "N11-service-recheck.json",
+      "bytes": 553,
+      "sha256": "13cf4559f9da695cf232432cbc82b9d5c6ec86417082412581ec1c2033292d7b"
+    },
+    {
+      "path": "review_export.py",
+      "bytes": 24543,
+      "sha256": "8181d1084953993fc729f8f08541dfa4356fa489bc880c49b07dcba7ed1ddbb9"
+    }
+  ]
+}

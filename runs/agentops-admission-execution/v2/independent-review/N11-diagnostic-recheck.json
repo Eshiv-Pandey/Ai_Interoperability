@@ -1,0 +1,48 @@
+{
+  "schema_version": "agentops-shutdown-diagnostic-check/1",
+  "valid": true,
+  "complete": true,
+  "classification": "post_asyncio_process_survival",
+  "validation_errors": [],
+  "observation_gaps": [],
+  "files": [
+    {
+      "path": "result.json",
+      "bytes": 17727,
+      "sha256": "d71ef1fbc6116eb6d196f6b73ea2090a3e54f503d96ca3025eacd3209e619afb"
+    },
+    {
+      "path": "service-process.json",
+      "bytes": 706,
+      "sha256": "f79a1f304647934f81598ce034e665cfc164a00bc4e56169365f98ee842ce92e"
+    },
+    {
+      "path": "service/shutdown-diagnostics/lifecycle.jsonl",
+      "bytes": 5281,
+      "sha256": "e123d26805f4bb0fa7d5ace8b2313582740931939dc6247565c1565b685aa780"
+    },
+    {
+      "path": "service/shutdown-diagnostics/teardown-stacks.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "service/service-result.json",
+      "bytes": 1792,
+      "sha256": "b07566eb3cecf728a99fc031bcc82719934ce5695ba2a886320591ed82f789b0"
+    }
+  ],
+  "case_outcome": "unknown_or_partial",
+  "case_strict_success": false,
+  "root_cause_established": false,
+  "scientific_gate_credit_added": 0,
+  "case_id": "N11",
+  "phases": [
+    "asyncio_run_entered",
+    "teardown_watchdog_armed",
+    "coroutine_finished",
+    "asyncio_run_exited"
+  ],
+  "diagnostic_errors": [],
+  "timeout_trace_observed": false
+}

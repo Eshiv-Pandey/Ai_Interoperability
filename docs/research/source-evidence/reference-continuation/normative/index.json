@@ -1,0 +1,1486 @@
+{
+  "schema_version": "primary-source-archive/1",
+  "purpose": "Read-only referenceTaskIds and task-history normative challenge; no protocol captures or source execution",
+  "started_at_utc": "2026-10-23T20:39:57.172Z",
+  "sources": [
+    {
+      "label": "v1.0.1",
+      "repository": "https://github.com/a2aproject/A2A",
+      "commit": "3303592588e388e62e0f69f701af531d2f4e3991",
+      "provenance": "Official latest release tag returned by GitHub API",
+      "source_path": "docs/specification.md",
+      "url": "https://raw.githubusercontent.com/a2aproject/A2A/3303592588e388e62e0f69f701af531d2f4e3991/docs/specification.md",
+      "retrieved_started_at_utc": "2026-10-23T20:39:57.173Z",
+      "retrieved_completed_at_utc": "2026-10-23T20:39:57.777Z",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=300",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "42749",
+        "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "content-type": "text/plain; charset=utf-8",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Fri, 23 Oct 2026 20:39:58 GMT",
+        "etag": "W/\"f3bd7456bc13d4e19c459d048619b3cf2bf1441a089ffe95468c24c851d112d7\"",
+        "expires": "Fri, 23 Oct 2026 20:44:58 GMT",
+        "source-age": "0",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Authorization,Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-content-type-options": "nosniff",
+        "x-fastly-request-id": "5eeab3998d65b893f0a8c5bd3c9dea3b32f87672",
+        "x-frame-options": "deny",
+        "x-github-edge-region": "centralindia",
+        "x-github-request-id": "2FE2:2F35D8:508A0:6CC54:6ADBC61E",
+        "x-served-by": "cache-del-vibw2260021-DEL",
+        "x-timer": "S1792787998.385546,VS0,VE477",
+        "x-xss-protection": "1; mode=block"
+      },
+      "raw_encoding": "Exact fetch response entity bytes, stored without transcoding",
+      "bytes": 155498,
+      "sha256": "627ccfe6ffb1be2c56811c3dcc18780deb419f41cdc98248095c939b2d9dc9cb",
+      "local_path": "source-evidence/reference-continuation/normative/v1.0.1/docs/specification.md",
+      "line_count": 3611,
+      "excerpts": [
+        {
+          "line": 173,
+          "text": ""
+        },
+        {
+          "line": 174,
+          "text": "- [`ContentTypeNotSupportedError`](#332-error-handling): A Media Type provided in the request's message parts is not supported by the agent."
+        },
+        {
+          "line": 175,
+          "text": "- [`UnsupportedOperationError`](#332-error-handling): Messages sent to Tasks that are in a terminal state (`TASK_STATE_COMPLETED`, `TASK_STATE_FAILED`, `TASK_STATE_CANCELED`, `TASK_STATE_REJECTED`) cannot accept further messages."
+        },
+        {
+          "line": 176,
+          "text": "- [`TaskNotFoundError`](#332-error-handling): The task ID does not exist or is not accessible."
+        },
+        {
+          "line": 177,
+          "text": ""
+        },
+        {
+          "line": 178,
+          "text": "**Behavior:**"
+        },
+        {
+          "line": 198,
+          "text": ""
+        },
+        {
+          "line": 199,
+          "text": "- [`UnsupportedOperationError`](#332-error-handling): Streaming is not supported by the agent (see [Capability Validation](#334-capability-validation))."
+        },
+        {
+          "line": 200,
+          "text": "- [`UnsupportedOperationError`](#332-error-handling): Messages sent to Tasks that are in a terminal state (`TASK_STATE_COMPLETED`, `TASK_STATE_FAILED`, `TASK_STATE_CANCELED`, `TASK_STATE_REJECTED`) cannot accept further messages."
+        },
+        {
+          "line": 201,
+          "text": "- [`ContentTypeNotSupportedError`](#332-error-handling): A Media Type provided in the request's message parts is not supported by the agent."
+        },
+        {
+          "line": 202,
+          "text": "- [`TaskNotFoundError`](#332-error-handling): The task ID does not exist or is not accessible."
+        },
+        {
+          "line": 203,
+          "text": ""
+        },
+        {
+          "line": 220,
+          "text": "{{ proto_to_table(\"GetTaskRequest\") }}"
+        },
+        {
+          "line": 221,
+          "text": ""
+        },
+        {
+          "line": 222,
+          "text": "See [History Length Semantics](#324-history-length-semantics) for details about `historyLength`."
+        },
+        {
+          "line": 223,
+          "text": ""
+        },
+        {
+          "line": 224,
+          "text": "**Outputs:**"
+        },
+        {
+          "line": 225,
+          "text": ""
+        },
+        {
+          "line": 463,
+          "text": "This wrapper allows streaming endpoints to return different types of updates through a single response stream while maintaining type safety."
+        },
+        {
+          "line": 464,
+          "text": ""
+        },
+        {
+          "line": 465,
+          "text": "#### 3.2.4. History Length Semantics"
+        },
+        {
+          "line": 466,
+          "text": ""
+        },
+        {
+          "line": 467,
+          "text": "The `historyLength` parameter appears in multiple operations and controls how much task history is returned in responses. This parameter follows consistent semantics across all operations:"
+        },
+        {
+          "line": 468,
+          "text": ""
+        },
+        {
+          "line": 469,
+          "text": "- **Unset/undefined**: No limit imposed; server returns its default amount of history (implementation-defined, may be all history)"
+        },
+        {
+          "line": 470,
+          "text": "- **0**: No history should be returned; the `history` field SHOULD be omitted"
+        },
+        {
+          "line": 471,
+          "text": "- **> 0**: Return at most this many recent messages from the task's history"
+        },
+        {
+          "line": 472,
+          "text": ""
+        },
+        {
+          "line": 473,
+          "text": "#### 3.2.5. Metadata"
+        },
+        {
+          "line": 474,
+          "text": ""
+        },
+        {
+          "line": 475,
+          "text": "A flexible key-value map for passing additional context or parameters with operations. Metadata keys and are strings and values can be any valid value that can be represented in JSON. [`Extensions`](#46-extensions) can be used to strongly type metadata values for specific use cases."
+        },
+        {
+          "line": 476,
+          "text": ""
+        },
+        {
+          "line": 477,
+          "text": "#### 3.2.6 Service Parameters"
+        },
+        {
+          "line": 478,
+          "text": ""
+        },
+        {
+          "line": 624,
+          "text": "- Clients **MAY** include the `contextId` in subsequent messages to indicate continuation of a previous interaction"
+        },
+        {
+          "line": 625,
+          "text": "- Clients **MAY** use `taskId` (with or without `contextId`) to continue or refine a specific task"
+        },
+        {
+          "line": 626,
+          "text": "- Clients **MAY** use `contextId` without `taskId` to start a new task within an existing conversation context"
+        },
+        {
+          "line": 627,
+          "text": "- Agents **MUST** infer `contextId` from the task if only `taskId` is provided"
+        },
+        {
+          "line": 628,
+          "text": "- Agents **MUST** reject messages containing mismatching `contextId` and `taskId` (i.e., the provided `contextId` is different from that of the referenced [`Task`](#411-task))."
+        },
+        {
+          "line": 629,
+          "text": ""
+        },
+        {
+          "line": 630,
+          "text": "**Input Required State:**"
+        },
+        {
+          "line": 631,
+          "text": ""
+        },
+        {
+          "line": 636,
+          "text": ""
+        },
+        {
+          "line": 637,
+          "text": "- Clients can send additional messages with `taskId` references to continue or refine existing tasks"
+        },
+        {
+          "line": 638,
+          "text": "- Clients **SHOULD** use the `referenceTaskIds` field in [`Message`](#414-message) to explicitly reference related tasks"
+        },
+        {
+          "line": 639,
+          "text": "- Agents **SHOULD** use referenced tasks to understand the context and intent of follow-up requests"
+        },
+        {
+          "line": 640,
+          "text": ""
+        },
+        {
+          "line": 641,
+          "text": "**Context Inheritance:**"
+        },
+        {
+          "line": 758,
+          "text": "Messages SHOULD NOT be used to deliver task outputs. Results SHOULD BE returned using Artifacts associated with a Task. This separation allows for a clear distinction between communication (Messages) and data output (Artifacts)."
+        },
+        {
+          "line": 759,
+          "text": ""
+        },
+        {
+          "line": 760,
+          "text": "The Task History field contains Messages exchanged during task execution. However, not all Messages are guaranteed to be persisted in the Task history; for example, transient informational messages may not be stored. Messages exchanged prior to task creation may not be stored in Task history. The agent is responsible to determine which Messages are persisted in the Task History."
+        },
+        {
+          "line": 761,
+          "text": ""
+        },
+        {
+          "line": 762,
+          "text": "Clients using streaming to retrieve task updates MAY not receive all status update messages if the client is disconnected and then reconnects. Messages MUST NOT be considered a reliable delivery mechanism for critical information."
+        },
+        {
+          "line": 763,
+          "text": ""
+        },
+        {
+          "line": 764,
+          "text": "Agents MAY choose to persist all Messages that contain important information in the Task history to ensure clients can retrieve it later. However, clients MUST NOT rely on this behavior unless negotiated out-of-band."
+        },
+        {
+          "line": 765,
+          "text": ""
+        },
+        {
+          "line": 766,
+          "text": "## 4. Protocol Data Model"
+        },
+        {
+          "line": 767,
+          "text": ""
+        },
+        {
+          "line": 2942,
+          "text": "```"
+        },
+        {
+          "line": 2943,
+          "text": ""
+        },
+        {
+          "line": 2944,
+          "text": "Extension fields like `taskId` and `timestamp` provide additional context to help diagnose the error."
+        },
+        {
+          "line": 2945,
+          "text": ""
+        },
+        {
+          "line": 2946,
+          "text": "### 11.7. Streaming"
+        },
+        {
+          "line": 2947,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "label": "v1.0.1",
+      "repository": "https://github.com/a2aproject/A2A",
+      "commit": "3303592588e388e62e0f69f701af531d2f4e3991",
+      "provenance": "Official latest release tag returned by GitHub API",
+      "source_path": "docs/topics/life-of-a-task.md",
+      "url": "https://raw.githubusercontent.com/a2aproject/A2A/3303592588e388e62e0f69f701af531d2f4e3991/docs/topics/life-of-a-task.md",
+      "retrieved_started_at_utc": "2026-10-23T20:39:57.783Z",
+      "retrieved_completed_at_utc": "2026-10-23T20:39:58.073Z",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=300",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "3668",
+        "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "content-type": "text/plain; charset=utf-8",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Fri, 23 Oct 2026 20:39:59 GMT",
+        "etag": "W/\"dd7adfe4ed176eff1867ee8810b951d43769b826071062c96b52713662646061\"",
+        "expires": "Fri, 23 Oct 2026 20:44:59 GMT",
+        "source-age": "0",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Authorization,Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-content-type-options": "nosniff",
+        "x-fastly-request-id": "63de0a0114dcb0135d856e9905ba8dba50bd2235",
+        "x-frame-options": "deny",
+        "x-github-edge-region": "centralindia",
+        "x-github-request-id": "C418:780C0:53E54:70337:6ADBC61E",
+        "x-served-by": "cache-del-vibw2260021-DEL",
+        "x-timer": "S1792787999.896042,VS0,VE283",
+        "x-xss-protection": "1; mode=block"
+      },
+      "raw_encoding": "Exact fetch response entity bytes, stored without transcoding",
+      "bytes": 10635,
+      "sha256": "8d6fd94d6e656177a47081ea3459a55f1554358e427ccbd71ff53b5f8ec9d6c6",
+      "local_path": "source-evidence/reference-continuation/normative/v1.0.1/docs/topics/life-of-a-task.md",
+      "line_count": 250,
+      "excerpts": [
+        {
+          "line": 74,
+          "text": "Clients often need to send new requests based on task results or refine the"
+        },
+        {
+          "line": 75,
+          "text": "outputs of previous tasks. This is modeled by starting another interaction using"
+        },
+        {
+          "line": 76,
+          "text": "the same `contextId` as the original task. Clients further hint the agent by"
+        },
+        {
+          "line": 77,
+          "text": "providing references to the original task using `referenceTaskIds` in the"
+        },
+        {
+          "line": 78,
+          "text": "`Message` object. The agent then responds with either a new `Task` or a"
+        },
+        {
+          "line": 79,
+          "text": "`Message`."
+        },
+        {
+          "line": 80,
+          "text": ""
+        },
+        {
+          "line": 82,
+          "text": ""
+        },
+        {
+          "line": 83,
+          "text": "Once a task reaches a terminal state (completed, canceled, rejected, or failed),"
+        },
+        {
+          "line": 84,
+          "text": "it cannot restart. Any subsequent interaction related to that task, such as a"
+        },
+        {
+          "line": 85,
+          "text": "refinement, must initiate a new task within the same `contextId`. This principle"
+        },
+        {
+          "line": 86,
+          "text": "offers several benefits:"
+        },
+        {
+          "line": 87,
+          "text": ""
+        },
+        {
+          "line": 88,
+          "text": "- **Task Immutability.** Clients reliably reference tasks and their"
+        },
+        {
+          "line": 101,
+          "text": "tasks for each follow-up message sent within the same `contextId`. This allows"
+        },
+        {
+          "line": 102,
+          "text": "clients to track individual tasks and create new dependent tasks as soon as a"
+        },
+        {
+          "line": 103,
+          "text": "prerequisite task is complete."
+        },
+        {
+          "line": 104,
+          "text": ""
+        },
+        {
+          "line": 105,
+          "text": "For example:"
+        },
+        {
+          "line": 106,
+          "text": ""
+        },
+        {
+          "line": 123,
+          "text": "Follow-up or refinement tasks often lead to the creation of new artifacts based on older ones. Tracking these mutations is important to ensure that only the most recent version of an artifact is used in subsequent interactions. This could be conceptualized as a version history, where each new artifact is linked to its predecessor."
+        },
+        {
+          "line": 124,
+          "text": ""
+        },
+        {
+          "line": 125,
+          "text": "However, the client is in the best position to manage this artifact linkage. The client determines what constitutes an acceptable result and has the ability to accept or reject new versions. Therefore, the serving agent shouldn't be responsible for tracking artifact mutations, and this linkage is not part of the A2A protocol specification. Clients should maintain this version history on their end and present the latest acceptable version to the user."
+        },
+        {
+          "line": 126,
+          "text": ""
+        },
+        {
+          "line": 127,
+          "text": "To facilitate client-side tracking, serving agents should use a consistent `artifact-name` when generating a refined version of an existing artifact."
+        },
+        {
+          "line": 128,
+          "text": ""
+        },
+        {
+          "line": 189,
+          "text": "    ```"
+        },
+        {
+          "line": 190,
+          "text": ""
+        },
+        {
+          "line": 191,
+          "text": "3. Client asks to color the boat red. This refinement request refers to the"
+        },
+        {
+          "line": 192,
+          "text": "    previous `taskId` and uses the same `contextId`."
+        },
+        {
+          "line": 193,
+          "text": ""
+        },
+        {
+          "line": 194,
+          "text": "    ```json"
+        },
+        {
+          "line": 202,
+          "text": "          \"messageId\": \"msg-user-002\","
+        },
+        {
+          "line": 203,
+          "text": "          \"contextId\": \"ctx-conversation-abc\","
+        },
+        {
+          "line": 204,
+          "text": "          \"referenceTaskIds\": ["
+        },
+        {
+          "line": 205,
+          "text": "            \"task-boat-gen-123\""
+        },
+        {
+          "line": 206,
+          "text": "          ],"
+        },
+        {
+          "line": 207,
+          "text": "          \"parts\": ["
+        },
+        {
+          "line": 216,
+          "text": ""
+        },
+        {
+          "line": 217,
+          "text": "4. Agent responds with a new image artifact (new task, same context, same"
+        },
+        {
+          "line": 218,
+          "text": "    artifact name): The agent creates a new task within the same `contextId`. The"
+        },
+        {
+          "line": 219,
+          "text": "    new boat image artifact retains the same name but has a new `artifactId`."
+        },
+        {
+          "line": 220,
+          "text": ""
+        },
+        {
+          "line": 221,
+          "text": "    ```json"
+        }
+      ]
+    },
+    {
+      "label": "v1.0.1",
+      "repository": "https://github.com/a2aproject/A2A",
+      "commit": "3303592588e388e62e0f69f701af531d2f4e3991",
+      "provenance": "Official latest release tag returned by GitHub API",
+      "source_path": "specification/a2a.proto",
+      "url": "https://raw.githubusercontent.com/a2aproject/A2A/3303592588e388e62e0f69f701af531d2f4e3991/specification/a2a.proto",
+      "retrieved_started_at_utc": "2026-10-23T20:39:58.075Z",
+      "retrieved_completed_at_utc": "2026-10-23T20:39:58.389Z",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=300",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "8533",
+        "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "content-type": "text/plain; charset=utf-8",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Fri, 23 Oct 2026 20:39:59 GMT",
+        "etag": "W/\"9b16b03f1043341de04deea8cffa210f25650e526de6b255517bda62ad486204\"",
+        "expires": "Fri, 23 Oct 2026 20:44:59 GMT",
+        "source-age": "0",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Authorization,Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-content-type-options": "nosniff",
+        "x-fastly-request-id": "bdf2db2b5f955a9518fd9e5cfd0cfeaf7edc24d4",
+        "x-frame-options": "deny",
+        "x-github-edge-region": "centralindia",
+        "x-github-request-id": "641C:2E8467:56AC1:72FD1:6ADBC61F",
+        "x-served-by": "cache-del-vibw2260021-DEL",
+        "x-timer": "S1792787999.186579,VS0,VE307",
+        "x-xss-protection": "1; mode=block"
+      },
+      "raw_encoding": "Exact fetch response entity bytes, stored without transcoding",
+      "bytes": 35844,
+      "sha256": "e195bf96ab630c69797851970203e1b2b6b19528f2e9803b7d904b91a5104016",
+      "local_path": "source-evidence/reference-continuation/normative/v1.0.1/specification/a2a.proto",
+      "line_count": 812,
+      "excerpts": [
+        {
+          "line": 148,
+          "text": "  // Task id should be empty when sending this configuration in a `SendMessage` request."
+        },
+        {
+          "line": 149,
+          "text": "  TaskPushNotificationConfig task_push_notification_config = 2;"
+        },
+        {
+          "line": 150,
+          "text": "  // The maximum number of most recent messages from the task's history to retrieve in"
+        },
+        {
+          "line": 151,
+          "text": "  // the response. An unset value means the client does not impose any limit. A"
+        },
+        {
+          "line": 152,
+          "text": "  // value of zero is a request to not include any messages. The server MUST NOT"
+        },
+        {
+          "line": 153,
+          "text": "  // return more messages than the provided value, but MAY apply a lower limit."
+        },
+        {
+          "line": 154,
+          "text": "  optional int32 history_length = 3;"
+        },
+        {
+          "line": 155,
+          "text": "  // If `true`, the operation returns immediately after creating the task,"
+        },
+        {
+          "line": 156,
+          "text": "  // even if processing is still in progress."
+        },
+        {
+          "line": 273,
+          "text": "  // The URIs of extensions that are present or contributed to this Message."
+        },
+        {
+          "line": 274,
+          "text": "  repeated string extensions = 7;"
+        },
+        {
+          "line": 275,
+          "text": "  // A list of task IDs that this message references for additional context."
+        },
+        {
+          "line": 276,
+          "text": "  repeated string reference_task_ids = 8;"
+        },
+        {
+          "line": 277,
+          "text": "}"
+        },
+        {
+          "line": 278,
+          "text": ""
+        },
+        {
+          "line": 279,
+          "text": "// Artifacts represent task outputs."
+        },
+        {
+          "line": 654,
+          "text": "  // Configuration for the send request."
+        },
+        {
+          "line": 655,
+          "text": "  SendMessageConfiguration configuration = 3;"
+        },
+        {
+          "line": 656,
+          "text": "  // A flexible key-value map for passing additional context or parameters."
+        },
+        {
+          "line": 657,
+          "text": "  google.protobuf.Struct metadata = 4;"
+        },
+        {
+          "line": 658,
+          "text": "}"
+        },
+        {
+          "line": 659,
+          "text": ""
+        },
+        {
+          "line": 665,
+          "text": "  // The resource ID of the task to retrieve."
+        },
+        {
+          "line": 666,
+          "text": "  string id = 2 [(google.api.field_behavior) = REQUIRED];"
+        },
+        {
+          "line": 667,
+          "text": "  // The maximum number of most recent messages from the task's history to retrieve. An"
+        },
+        {
+          "line": 668,
+          "text": "  // unset value means the client does not impose any limit. A value of zero is"
+        },
+        {
+          "line": 669,
+          "text": "  // a request to not include any messages. The server MUST NOT return more"
+        },
+        {
+          "line": 670,
+          "text": "  // messages than the provided value, but MAY apply a lower limit."
+        },
+        {
+          "line": 671,
+          "text": "  optional int32 history_length = 3;"
+        },
+        {
+          "line": 672,
+          "text": "}"
+        },
+        {
+          "line": 673,
+          "text": ""
+        },
+        {
+          "line": 719,
+          "text": "  // The resource ID of the task to cancel."
+        },
+        {
+          "line": 720,
+          "text": "  string id = 2 [(google.api.field_behavior) = REQUIRED];"
+        },
+        {
+          "line": 721,
+          "text": "  // A flexible key-value map for passing additional context or parameters."
+        },
+        {
+          "line": 722,
+          "text": "  google.protobuf.Struct metadata = 3;"
+        },
+        {
+          "line": 723,
+          "text": "}"
+        },
+        {
+          "line": 724,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "label": "main-2026-10-20",
+      "repository": "https://github.com/a2aproject/A2A",
+      "commit": "98279d62316361ba8451eaef300f72b72e169185",
+      "provenance": "Official main commit retrieved read-only; committer time 2026-10-20T17:28:30Z",
+      "source_path": "docs/specification.md",
+      "url": "https://raw.githubusercontent.com/a2aproject/A2A/98279d62316361ba8451eaef300f72b72e169185/docs/specification.md",
+      "retrieved_started_at_utc": "2026-10-23T20:39:58.390Z",
+      "retrieved_completed_at_utc": "2026-10-23T20:39:58.764Z",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=300",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "43263",
+        "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "content-type": "text/plain; charset=utf-8",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Fri, 23 Oct 2026 20:39:59 GMT",
+        "etag": "W/\"2ba231b38cbe1f496f8e5b89d7b7be0d1f6288bb5f03feed8115eefdad224c27\"",
+        "expires": "Fri, 23 Oct 2026 20:44:59 GMT",
+        "source-age": "0",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Authorization,Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-content-type-options": "nosniff",
+        "x-fastly-request-id": "13b3779661e6897e30d009d8d1d3c369b5b880f6",
+        "x-frame-options": "deny",
+        "x-github-edge-region": "centralindia",
+        "x-github-request-id": "89EE:28CB86:55A73:71E95:6ADBC61F",
+        "x-served-by": "cache-del-vibw2260021-DEL",
+        "x-timer": "S1792788000.501637,VS0,VE360",
+        "x-xss-protection": "1; mode=block"
+      },
+      "raw_encoding": "Exact fetch response entity bytes, stored without transcoding",
+      "bytes": 157901,
+      "sha256": "8af843abb347083d175945c9c3e340a68288fdf3a5eee8b38514fa1a158d7e88",
+      "local_path": "source-evidence/reference-continuation/normative/main-2026-10-20/docs/specification.md",
+      "line_count": 3640,
+      "excerpts": [
+        {
+          "line": 173,
+          "text": ""
+        },
+        {
+          "line": 174,
+          "text": "- [`ContentTypeNotSupportedError`](#332-error-handling): A Media Type provided in the request's message parts is not supported by the agent."
+        },
+        {
+          "line": 175,
+          "text": "- [`UnsupportedOperationError`](#332-error-handling): Messages sent to Tasks that are in a terminal state (`TASK_STATE_COMPLETED`, `TASK_STATE_FAILED`, `TASK_STATE_CANCELED`, `TASK_STATE_REJECTED`) cannot accept further messages."
+        },
+        {
+          "line": 176,
+          "text": "- [`TaskNotFoundError`](#332-error-handling): The task ID does not exist or is not accessible."
+        },
+        {
+          "line": 177,
+          "text": ""
+        },
+        {
+          "line": 178,
+          "text": "**Behavior:**"
+        },
+        {
+          "line": 198,
+          "text": ""
+        },
+        {
+          "line": 199,
+          "text": "- [`UnsupportedOperationError`](#332-error-handling): Streaming is not supported by the agent (see [Capability Validation](#334-capability-validation))."
+        },
+        {
+          "line": 200,
+          "text": "- [`UnsupportedOperationError`](#332-error-handling): Messages sent to Tasks that are in a terminal state (`TASK_STATE_COMPLETED`, `TASK_STATE_FAILED`, `TASK_STATE_CANCELED`, `TASK_STATE_REJECTED`) cannot accept further messages."
+        },
+        {
+          "line": 201,
+          "text": "- [`ContentTypeNotSupportedError`](#332-error-handling): A Media Type provided in the request's message parts is not supported by the agent."
+        },
+        {
+          "line": 202,
+          "text": "- [`TaskNotFoundError`](#332-error-handling): The task ID does not exist or is not accessible."
+        },
+        {
+          "line": 203,
+          "text": ""
+        },
+        {
+          "line": 220,
+          "text": "{{ proto_to_table(\"GetTaskRequest\") }}"
+        },
+        {
+          "line": 221,
+          "text": ""
+        },
+        {
+          "line": 222,
+          "text": "See [History Length Semantics](#324-history-length-semantics) for details about `historyLength`."
+        },
+        {
+          "line": 223,
+          "text": ""
+        },
+        {
+          "line": 224,
+          "text": "**Outputs:**"
+        },
+        {
+          "line": 225,
+          "text": ""
+        },
+        {
+          "line": 463,
+          "text": "This wrapper allows streaming endpoints to return different types of updates through a single response stream while maintaining type safety."
+        },
+        {
+          "line": 464,
+          "text": ""
+        },
+        {
+          "line": 465,
+          "text": "#### 3.2.4. History Length Semantics"
+        },
+        {
+          "line": 466,
+          "text": ""
+        },
+        {
+          "line": 467,
+          "text": "The `historyLength` parameter appears in multiple operations and controls how much task history is returned in responses. This parameter follows consistent semantics across all operations:"
+        },
+        {
+          "line": 468,
+          "text": ""
+        },
+        {
+          "line": 469,
+          "text": "- **Unset/undefined**: No limit imposed; server returns its default amount of history (implementation-defined, may be all history)"
+        },
+        {
+          "line": 470,
+          "text": "- **0**: No history should be returned; the `history` field SHOULD be omitted"
+        },
+        {
+          "line": 471,
+          "text": "- **> 0**: Return at most this many recent messages from the task's history"
+        },
+        {
+          "line": 472,
+          "text": ""
+        },
+        {
+          "line": 473,
+          "text": "#### 3.2.5. Metadata"
+        },
+        {
+          "line": 474,
+          "text": ""
+        },
+        {
+          "line": 475,
+          "text": "A flexible key-value map for passing additional context or parameters with operations. Metadata keys must be strings, and values can be any valid JSON value. [Extensions](#46-extensions) can be used to strongly type metadata values for specific use cases."
+        },
+        {
+          "line": 476,
+          "text": ""
+        },
+        {
+          "line": 477,
+          "text": "#### 3.2.6 Service Parameters"
+        },
+        {
+          "line": 478,
+          "text": ""
+        },
+        {
+          "line": 624,
+          "text": "- Clients **MAY** include the `contextId` in subsequent messages to indicate continuation of a previous interaction"
+        },
+        {
+          "line": 625,
+          "text": "- Clients **MAY** use `taskId` (with or without `contextId`) to continue or refine a specific task"
+        },
+        {
+          "line": 626,
+          "text": "- Clients **MAY** use `contextId` without `taskId` to start a new task within an existing conversation context"
+        },
+        {
+          "line": 627,
+          "text": "- Agents **MUST** infer `contextId` from the task if only `taskId` is provided"
+        },
+        {
+          "line": 628,
+          "text": "- Agents **MUST** reject messages containing mismatching `contextId` and `taskId` (i.e., the provided `contextId` is different from that of the referenced [`Task`](#411-task))."
+        },
+        {
+          "line": 629,
+          "text": ""
+        },
+        {
+          "line": 630,
+          "text": "**Input Required State:**"
+        },
+        {
+          "line": 631,
+          "text": ""
+        },
+        {
+          "line": 636,
+          "text": ""
+        },
+        {
+          "line": 637,
+          "text": "- Clients can send additional messages with `taskId` references to continue or refine existing tasks"
+        },
+        {
+          "line": 638,
+          "text": "- Clients **SHOULD** use the `referenceTaskIds` field in [`Message`](#414-message) to explicitly reference related tasks"
+        },
+        {
+          "line": 639,
+          "text": "- Agents **SHOULD** use referenced tasks to understand the context and intent of follow-up requests"
+        },
+        {
+          "line": 640,
+          "text": ""
+        },
+        {
+          "line": 641,
+          "text": "**Context Inheritance:**"
+        },
+        {
+          "line": 758,
+          "text": "Messages SHOULD NOT be used to deliver task outputs. Results SHOULD BE returned using Artifacts associated with a Task. This separation allows for a clear distinction between communication (Messages) and data output (Artifacts)."
+        },
+        {
+          "line": 759,
+          "text": ""
+        },
+        {
+          "line": 760,
+          "text": "The Task History field contains Messages exchanged during task execution. However, not all Messages are guaranteed to be persisted in the Task history; for example, transient informational messages may not be stored. Messages exchanged prior to task creation may not be stored in Task history. The agent is responsible to determine which Messages are persisted in the Task History."
+        },
+        {
+          "line": 761,
+          "text": ""
+        },
+        {
+          "line": 762,
+          "text": "Clients using streaming to retrieve task updates MAY not receive all status update messages if the client is disconnected and then reconnects. Messages MUST NOT be considered a reliable delivery mechanism for critical information."
+        },
+        {
+          "line": 763,
+          "text": ""
+        },
+        {
+          "line": 764,
+          "text": "Agents MAY choose to persist all Messages that contain important information in the Task history to ensure clients can retrieve it later. However, clients MUST NOT rely on this behavior unless negotiated out-of-band."
+        },
+        {
+          "line": 765,
+          "text": ""
+        },
+        {
+          "line": 766,
+          "text": "## 4. Protocol Data Model"
+        },
+        {
+          "line": 767,
+          "text": ""
+        },
+        {
+          "line": 2971,
+          "text": "```"
+        },
+        {
+          "line": 2972,
+          "text": ""
+        },
+        {
+          "line": 2973,
+          "text": "Extension fields like `taskId` and `timestamp` provide additional context to help diagnose the error."
+        },
+        {
+          "line": 2974,
+          "text": ""
+        },
+        {
+          "line": 2975,
+          "text": "### 11.7. Streaming"
+        },
+        {
+          "line": 2976,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "label": "main-2026-10-20",
+      "repository": "https://github.com/a2aproject/A2A",
+      "commit": "98279d62316361ba8451eaef300f72b72e169185",
+      "provenance": "Official main commit retrieved read-only; committer time 2026-10-20T17:28:30Z",
+      "source_path": "docs/topics/life-of-a-task.md",
+      "url": "https://raw.githubusercontent.com/a2aproject/A2A/98279d62316361ba8451eaef300f72b72e169185/docs/topics/life-of-a-task.md",
+      "retrieved_started_at_utc": "2026-10-23T20:39:58.767Z",
+      "retrieved_completed_at_utc": "2026-10-23T20:39:59.072Z",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=300",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "3572",
+        "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "content-type": "text/plain; charset=utf-8",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Fri, 23 Oct 2026 20:40:00 GMT",
+        "etag": "W/\"a50ff77dd07997e127ff745871c0689e528b789cdef92dbf85bc41b3972b373e\"",
+        "expires": "Fri, 23 Oct 2026 20:45:00 GMT",
+        "source-age": "0",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Authorization,Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-content-type-options": "nosniff",
+        "x-fastly-request-id": "af472977ee22f4ae1055c8bf8f4f860b8d3bf07a",
+        "x-frame-options": "deny",
+        "x-github-edge-region": "centralindia",
+        "x-github-request-id": "89EE:28CB86:55A7D:71E9D:6ADBC61F",
+        "x-served-by": "cache-del-vibw2260021-DEL",
+        "x-timer": "S1792788000.879573,VS0,VE298",
+        "x-xss-protection": "1; mode=block"
+      },
+      "raw_encoding": "Exact fetch response entity bytes, stored without transcoding",
+      "bytes": 10216,
+      "sha256": "1186a4153be5dab010ce2a03a664bbd7dcdd2329ec3dd6c5b6b52ef72b6f6d8e",
+      "local_path": "source-evidence/reference-continuation/normative/main-2026-10-20/docs/topics/life-of-a-task.md",
+      "line_count": 246,
+      "excerpts": [
+        {
+          "line": 70,
+          "text": "Clients often need to send new requests based on task results or refine the"
+        },
+        {
+          "line": 71,
+          "text": "outputs of previous tasks. This is modeled by starting another interaction using"
+        },
+        {
+          "line": 72,
+          "text": "the same `contextId` as the original task. Clients further hint the agent by"
+        },
+        {
+          "line": 73,
+          "text": "providing references to the original task using `referenceTaskIds` in the"
+        },
+        {
+          "line": 74,
+          "text": "`Message` object. The agent then responds with either a new `Task` or a"
+        },
+        {
+          "line": 75,
+          "text": "`Message`."
+        },
+        {
+          "line": 76,
+          "text": ""
+        },
+        {
+          "line": 78,
+          "text": ""
+        },
+        {
+          "line": 79,
+          "text": "Once a task reaches a terminal state (completed, canceled, rejected, or failed),"
+        },
+        {
+          "line": 80,
+          "text": "it cannot restart. Any subsequent interaction related to that task, such as a"
+        },
+        {
+          "line": 81,
+          "text": "refinement, must initiate a new task within the same `contextId`. This principle"
+        },
+        {
+          "line": 82,
+          "text": "offers several benefits:"
+        },
+        {
+          "line": 83,
+          "text": ""
+        },
+        {
+          "line": 84,
+          "text": "- **Task Immutability.** Clients reliably reference a task and its state,"
+        },
+        {
+          "line": 97,
+          "text": "tasks for each follow-up message sent within the same `contextId`. This allows"
+        },
+        {
+          "line": 98,
+          "text": "clients to track individual tasks and create new dependent tasks as soon as a"
+        },
+        {
+          "line": 99,
+          "text": "prerequisite task is complete."
+        },
+        {
+          "line": 100,
+          "text": ""
+        },
+        {
+          "line": 101,
+          "text": "For example:"
+        },
+        {
+          "line": 102,
+          "text": ""
+        },
+        {
+          "line": 119,
+          "text": "Follow-up or refinement tasks often create new artifacts based on older ones. Track these mutations so that later interactions use only the most recent version. Think of it as a version history, where each new artifact links to the one before it."
+        },
+        {
+          "line": 120,
+          "text": ""
+        },
+        {
+          "line": 121,
+          "text": "The client is best placed to manage this artifact linkage. The client decides what counts as an acceptable result and can accept or reject new versions. So the serving agent shouldn't track artifact mutations, and this linkage is not part of the A2A protocol specification. Clients should keep the version history on their end and show the user the latest acceptable version."
+        },
+        {
+          "line": 122,
+          "text": ""
+        },
+        {
+          "line": 123,
+          "text": "To help client-side tracking, serving agents should reuse a consistent `artifact-name` when they generate a refined version of an existing artifact."
+        },
+        {
+          "line": 124,
+          "text": ""
+        },
+        {
+          "line": 185,
+          "text": "    ```"
+        },
+        {
+          "line": 186,
+          "text": ""
+        },
+        {
+          "line": 187,
+          "text": "3. Client asks to color the boat red. This refinement request refers to the"
+        },
+        {
+          "line": 188,
+          "text": "    previous `taskId` and uses the same `contextId`."
+        },
+        {
+          "line": 189,
+          "text": ""
+        },
+        {
+          "line": 190,
+          "text": "    ```json"
+        },
+        {
+          "line": 198,
+          "text": "          \"messageId\": \"msg-user-002\","
+        },
+        {
+          "line": 199,
+          "text": "          \"contextId\": \"ctx-conversation-abc\","
+        },
+        {
+          "line": 200,
+          "text": "          \"referenceTaskIds\": ["
+        },
+        {
+          "line": 201,
+          "text": "            \"task-boat-gen-123\""
+        },
+        {
+          "line": 202,
+          "text": "          ],"
+        },
+        {
+          "line": 203,
+          "text": "          \"parts\": ["
+        },
+        {
+          "line": 212,
+          "text": ""
+        },
+        {
+          "line": 213,
+          "text": "4. Agent responds with a new image artifact (new task, same context, same"
+        },
+        {
+          "line": 214,
+          "text": "    artifact name): The agent creates a new task within the same `contextId`. The"
+        },
+        {
+          "line": 215,
+          "text": "    new boat image artifact keeps the same name but has a new `artifactId`."
+        },
+        {
+          "line": 216,
+          "text": ""
+        },
+        {
+          "line": 217,
+          "text": "    ```json"
+        }
+      ]
+    },
+    {
+      "label": "main-2026-10-20",
+      "repository": "https://github.com/a2aproject/A2A",
+      "commit": "98279d62316361ba8451eaef300f72b72e169185",
+      "provenance": "Official main commit retrieved read-only; committer time 2026-10-20T17:28:30Z",
+      "source_path": "specification/a2a.proto",
+      "url": "https://raw.githubusercontent.com/a2aproject/A2A/98279d62316361ba8451eaef300f72b72e169185/specification/a2a.proto",
+      "retrieved_started_at_utc": "2026-10-23T20:39:59.073Z",
+      "retrieved_completed_at_utc": "2026-10-23T20:39:59.398Z",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=300",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-length": "8581",
+        "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+        "content-type": "text/plain; charset=utf-8",
+        "cross-origin-resource-policy": "cross-origin",
+        "date": "Fri, 23 Oct 2026 20:40:00 GMT",
+        "etag": "W/\"d4f73b089095de56ec5d155fb21626cd094e8155de0ea1b87448855c369fc698\"",
+        "expires": "Fri, 23 Oct 2026 20:45:00 GMT",
+        "source-age": "0",
+        "strict-transport-security": "max-age=31536000",
+        "vary": "Authorization,Accept-Encoding",
+        "via": "1.1 varnish",
+        "x-cache": "MISS",
+        "x-cache-hits": "0",
+        "x-content-type-options": "nosniff",
+        "x-fastly-request-id": "93d0fc4d6894be09b58776b10f2f40f557d439b2",
+        "x-frame-options": "deny",
+        "x-github-edge-region": "centralindia",
+        "x-github-request-id": "A362:1F26A8:5502F:715FA:6ADBC620",
+        "x-served-by": "cache-del-vibw2260021-DEL",
+        "x-timer": "S1792788000.187161,VS0,VE317",
+        "x-xss-protection": "1; mode=block"
+      },
+      "raw_encoding": "Exact fetch response entity bytes, stored without transcoding",
+      "bytes": 35942,
+      "sha256": "945df6e34001b2bfd0fd62d9484b63094dfad9d78705e41e2873441c419ae2d1",
+      "local_path": "source-evidence/reference-continuation/normative/main-2026-10-20/specification/a2a.proto",
+      "line_count": 813,
+      "excerpts": [
+        {
+          "line": 148,
+          "text": "  // Task id should be empty when sending this configuration in a `SendMessage` request."
+        },
+        {
+          "line": 149,
+          "text": "  TaskPushNotificationConfig task_push_notification_config = 2;"
+        },
+        {
+          "line": 150,
+          "text": "  // The maximum number of most recent messages from the task's history to retrieve in"
+        },
+        {
+          "line": 151,
+          "text": "  // the response. An unset value means the client does not impose any limit. A"
+        },
+        {
+          "line": 152,
+          "text": "  // value of zero is a request to not include any messages. The server MUST NOT"
+        },
+        {
+          "line": 153,
+          "text": "  // return more messages than the provided value, but MAY apply a lower limit."
+        },
+        {
+          "line": 154,
+          "text": "  optional int32 history_length = 3;"
+        },
+        {
+          "line": 155,
+          "text": "  // If `true`, the operation returns immediately after creating the task,"
+        },
+        {
+          "line": 156,
+          "text": "  // even if processing is still in progress."
+        },
+        {
+          "line": 273,
+          "text": "  // The URIs of extensions that are present or contributed to this Message."
+        },
+        {
+          "line": 274,
+          "text": "  repeated string extensions = 7;"
+        },
+        {
+          "line": 275,
+          "text": "  // A list of task IDs that this message references for additional context."
+        },
+        {
+          "line": 276,
+          "text": "  repeated string reference_task_ids = 8;"
+        },
+        {
+          "line": 277,
+          "text": "}"
+        },
+        {
+          "line": 278,
+          "text": ""
+        },
+        {
+          "line": 279,
+          "text": "// Artifacts represent task outputs."
+        },
+        {
+          "line": 655,
+          "text": "  // Configuration for the send request."
+        },
+        {
+          "line": 656,
+          "text": "  SendMessageConfiguration configuration = 3;"
+        },
+        {
+          "line": 657,
+          "text": "  // A flexible key-value map for passing additional context or parameters."
+        },
+        {
+          "line": 658,
+          "text": "  google.protobuf.Struct metadata = 4;"
+        },
+        {
+          "line": 659,
+          "text": "}"
+        },
+        {
+          "line": 660,
+          "text": ""
+        },
+        {
+          "line": 666,
+          "text": "  // The resource ID of the task to retrieve."
+        },
+        {
+          "line": 667,
+          "text": "  string id = 2 [(google.api.field_behavior) = REQUIRED];"
+        },
+        {
+          "line": 668,
+          "text": "  // The maximum number of most recent messages from the task's history to retrieve. An"
+        },
+        {
+          "line": 669,
+          "text": "  // unset value means the client does not impose any limit. A value of zero is"
+        },
+        {
+          "line": 670,
+          "text": "  // a request to not include any messages. The server MUST NOT return more"
+        },
+        {
+          "line": 671,
+          "text": "  // messages than the provided value, but MAY apply a lower limit."
+        },
+        {
+          "line": 672,
+          "text": "  optional int32 history_length = 3;"
+        },
+        {
+          "line": 673,
+          "text": "}"
+        },
+        {
+          "line": 674,
+          "text": ""
+        },
+        {
+          "line": 720,
+          "text": "  // The resource ID of the task to cancel."
+        },
+        {
+          "line": 721,
+          "text": "  string id = 2 [(google.api.field_behavior) = REQUIRED];"
+        },
+        {
+          "line": 722,
+          "text": "  // A flexible key-value map for passing additional context or parameters."
+        },
+        {
+          "line": 723,
+          "text": "  google.protobuf.Struct metadata = 3;"
+        },
+        {
+          "line": 724,
+          "text": "}"
+        },
+        {
+          "line": 725,
+          "text": ""
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "topic": "references",
+      "meaning": "ReferenceTaskIds identifies related tasks for additional context. Clients SHOULD supply references, and agents SHOULD use them to understand intent; no prerequisite completion, cross-peer dependency enforcement, or snapshot guarantee is specified.",
+      "release_anchors": [
+        "specification/a2a.proto:275-276",
+        "docs/specification.md:637-639"
+      ]
+    },
+    {
+      "topic": "illustrative_followup",
+      "meaning": "Life-of-task gives a source-authored boat-image refinement example with referenceTaskIds and a new task in the same context. This is an illustrative successful response scenario, not executed application evidence. References are hints; inference from context and clarification are allowed.",
+      "release_anchors": [
+        "docs/topics/life-of-a-task.md:75-79",
+        "docs/topics/life-of-a-task.md:114-119",
+        "docs/topics/life-of-a-task.md:191-219"
+      ]
+    },
+    {
+      "topic": "history",
+      "meaning": "GetTask returns current status/artifacts and optional bounded recent history. Unset imposes no client limit but server default is implementation-defined; server may apply a lower limit. Critical message delivery/history persistence cannot be assumed absent out-of-band negotiation.",
+      "release_anchors": [
+        "docs/specification.md:465-471",
+        "specification/a2a.proto:667-671",
+        "docs/specification.md:758-764"
+      ]
+    },
+    {
+      "topic": "identity_and_terminal",
+      "meaning": "Specific taskId must exist and match provided contextId. Terminal tasks cannot accept further messages; refinement starts a new task in the same context. These constraints are distinct from contextual references.",
+      "release_anchors": [
+        "docs/specification.md:175",
+        "docs/specification.md:610-628",
+        "docs/topics/life-of-a-task.md:83-103"
+      ]
+    },
+    {
+      "topic": "limits",
+      "meaning": "No mandatory referenced-task dependency or reliable complete-history application contract follows from these sources alone. Application-native success and behavior requirements still need independently existing implementation evidence. No principals, expiry leases, authorization, novelty, or defect claims."
+    }
+  ],
+  "outcome": "passed",
+  "completed_at_utc": "2026-10-23T20:39:59.399Z"
+}

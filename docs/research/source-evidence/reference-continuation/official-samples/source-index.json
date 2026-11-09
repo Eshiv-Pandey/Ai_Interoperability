@@ -1,0 +1,2402 @@
+{
+  "schema_version": "source-reference-continuation/1",
+  "retrieved_at_utc": "2026-10-23T20:39:44.983Z",
+  "kind": "read-only-primary-source-development-investigation",
+  "repository": "https://github.com/a2aproject/a2a-samples",
+  "source_commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3",
+  "execution": "unexecuted; no installation, model inference, bridge capture or source modifications",
+  "sources": [
+    {
+      "source_path": "samples/python/agents/number_guessing_game/agent_Carol.py",
+      "primary_raw_url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/python/agents/number_guessing_game/agent_Carol.py",
+      "local_file": "number-game__agent_Carol.py",
+      "sha256": "d5a35d2a9e2be96d948c369f1523cb23b25bc82b8f3392db8f65880324b441d3",
+      "byte_length": 7558,
+      "excerpt_ranges": [
+        {
+          "start": 53,
+          "end": 69,
+          "lines": [
+            {
+              "line": 53,
+              "text": "carol_card = AgentCard.model_validate("
+            },
+            {
+              "line": 54,
+              "text": "    {"
+            },
+            {
+              "line": 55,
+              "text": "        'name': 'AgentCarol',"
+            },
+            {
+              "line": 56,
+              "text": "        'description': 'Visualises the history of guesses and hints from AgentAlice in a readable table format.',"
+            },
+            {
+              "line": 57,
+              "text": "        'url': f'http://localhost:{AGENT_CAROL_PORT}/a2a/v1',"
+            },
+            {
+              "line": 58,
+              "text": "        'preferredTransport': 'JSONRPC',"
+            },
+            {
+              "line": 59,
+              "text": "        'protocolVersion': '0.3.0',"
+            },
+            {
+              "line": 60,
+              "text": "        'version': '1.0.0',"
+            },
+            {
+              "line": 61,
+              "text": "        'capabilities': {"
+            },
+            {
+              "line": 62,
+              "text": "            'streaming': False,"
+            },
+            {
+              "line": 63,
+              "text": "            'pushNotifications': False,"
+            },
+            {
+              "line": 64,
+              "text": "            'stateTransitionHistory': False,"
+            },
+            {
+              "line": 65,
+              "text": "        },"
+            },
+            {
+              "line": 66,
+              "text": "        'defaultInputModes': ['text/plain'],"
+            },
+            {
+              "line": 67,
+              "text": "        'defaultOutputModes': ['text/plain'],"
+            },
+            {
+              "line": 68,
+              "text": "        'skills': carol_skills,"
+            },
+            {
+              "line": 69,
+              "text": "    }"
+            }
+          ]
+        },
+        {
+          "start": 87,
+          "end": 123,
+          "lines": [
+            {
+              "line": 87,
+              "text": "    def __init__(self) -> None:"
+            },
+            {
+              "line": 88,
+              "text": "        # Keep the last history list so we can reshuffle it on follow-up."
+            },
+            {
+              "line": 89,
+              "text": "        self._last_history: list[dict[str, Any]] = []"
+            },
+            {
+              "line": 90,
+              "text": ""
+            },
+            {
+              "line": 91,
+              "text": "    # ------------------------------------------------------------------"
+            },
+            {
+              "line": 92,
+              "text": "    # Internal helper methods"
+            },
+            {
+              "line": 93,
+              "text": "    # ------------------------------------------------------------------"
+            },
+            {
+              "line": 94,
+              "text": ""
+            },
+            {
+              "line": 95,
+              "text": "    async def _handle_followup("
+            },
+            {
+              "line": 96,
+              "text": "        self, context: RequestContext, raw_text: str, event_queue: EventQueue"
+            },
+            {
+              "line": 97,
+              "text": "    ) -> None:"
+            },
+            {
+              "line": 98,
+              "text": "        \"\"\"Handle a follow-up message that references an existing task.\"\"\""
+            },
+            {
+              "line": 99,
+              "text": "        task_id = context.task_id or ("
+            },
+            {
+              "line": 100,
+              "text": "            context.message.reference_task_ids[0]  # type: ignore[index]"
+            },
+            {
+              "line": 101,
+              "text": "            if context.message and context.message.reference_task_ids"
+            },
+            {
+              "line": 102,
+              "text": "            else str(uuid.uuid4())"
+            },
+            {
+              "line": 103,
+              "text": "        )"
+            },
+            {
+              "line": 104,
+              "text": "        updater = TaskUpdater("
+            },
+            {
+              "line": 105,
+              "text": "            event_queue,"
+            },
+            {
+              "line": 106,
+              "text": "            task_id=task_id,"
+            },
+            {
+              "line": 107,
+              "text": "            context_id=context.context_id or str(uuid.uuid4()),"
+            },
+            {
+              "line": 108,
+              "text": "        )"
+            },
+            {
+              "line": 109,
+              "text": ""
+            },
+            {
+              "line": 110,
+              "text": "        if raw_text.lower().startswith('well done'):"
+            },
+            {
+              "line": 111,
+              "text": "            print('[Carol] Received well done – completing task')"
+            },
+            {
+              "line": 112,
+              "text": "            await updater.complete()"
+            },
+            {
+              "line": 113,
+              "text": "            return"
+            },
+            {
+              "line": 114,
+              "text": ""
+            },
+            {
+              "line": 115,
+              "text": "        # Any other text → shuffle again and ask for more input"
+            },
+            {
+              "line": 116,
+              "text": "        print('[Carol] Shuffling again and returning list')"
+            },
+            {
+              "line": 117,
+              "text": "        random.shuffle(self._last_history)"
+            },
+            {
+              "line": 118,
+              "text": "        # Debug print before sending back to Bob"
+            },
+            {
+              "line": 119,
+              "text": "        self._print_guesses('Shuffled list', self._last_history)"
+            },
+            {
+              "line": 120,
+              "text": "        response_text = json.dumps(self._last_history)"
+            },
+            {
+              "line": 121,
+              "text": "        await updater.add_artifact([Part(root=TextPart(text=response_text))])"
+            },
+            {
+              "line": 122,
+              "text": "        # Ask for another input and signal that this is the last event for this invocation"
+            },
+            {
+              "line": 123,
+              "text": "        await updater.requires_input(final=True)"
+            }
+          ]
+        },
+        {
+          "start": 125,
+          "end": 178,
+          "lines": [
+            {
+              "line": 125,
+              "text": "    async def _handle_initial("
+            },
+            {
+              "line": 126,
+              "text": "        self, raw_text: str, context: RequestContext, event_queue: EventQueue"
+            },
+            {
+              "line": 127,
+              "text": "    ) -> None:"
+            },
+            {
+              "line": 128,
+              "text": "        \"\"\"Handle the first message in a new conversation.\"\"\""
+            },
+            {
+              "line": 129,
+              "text": "        response_text = ("
+            },
+            {
+              "line": 130,
+              "text": "            process_history_payload(raw_text) if raw_text else 'Invalid input.'"
+            },
+            {
+              "line": 131,
+              "text": "        )"
+            },
+            {
+              "line": 132,
+              "text": ""
+            },
+            {
+              "line": 133,
+              "text": "        # Remember history list if provided so we can shuffle again later"
+            },
+            {
+              "line": 134,
+              "text": "        success, parsed = try_parse_json(raw_text)"
+            },
+            {
+              "line": 135,
+              "text": "        if ("
+            },
+            {
+              "line": 136,
+              "text": "            success"
+            },
+            {
+              "line": 137,
+              "text": "            and isinstance(parsed, dict)"
+            },
+            {
+              "line": 138,
+              "text": "            and parsed.get('action') == 'shuffle'"
+            },
+            {
+              "line": 139,
+              "text": "        ):"
+            },
+            {
+              "line": 140,
+              "text": "            hist = parsed.get('history', [])"
+            },
+            {
+              "line": 141,
+              "text": "            if isinstance(hist, list):"
+            },
+            {
+              "line": 142,
+              "text": "                self._last_history = hist"
+            },
+            {
+              "line": 143,
+              "text": ""
+            },
+            {
+              "line": 144,
+              "text": "        task_id = context.task_id or str(uuid.uuid4())"
+            },
+            {
+              "line": 145,
+              "text": "        updater = TaskUpdater("
+            },
+            {
+              "line": 146,
+              "text": "            event_queue,"
+            },
+            {
+              "line": 147,
+              "text": "            task_id=task_id,"
+            },
+            {
+              "line": 148,
+              "text": "            context_id=context.context_id or str(uuid.uuid4()),"
+            },
+            {
+              "line": 149,
+              "text": "        )"
+            },
+            {
+              "line": 150,
+              "text": "        # Debug print before sending initial response"
+            },
+            {
+              "line": 151,
+              "text": "        try:"
+            },
+            {
+              "line": 152,
+              "text": "            if success and isinstance(parsed, list):"
+            },
+            {
+              "line": 153,
+              "text": "                self._print_guesses('Initial list', parsed)"
+            },
+            {
+              "line": 154,
+              "text": "            else:"
+            },
+            {
+              "line": 155,
+              "text": "                self._print_guesses('Initial list', self._last_history)"
+            },
+            {
+              "line": 156,
+              "text": "        except Exception:"
+            },
+            {
+              "line": 157,
+              "text": "            pass"
+            },
+            {
+              "line": 158,
+              "text": "        await updater.add_artifact([Part(root=TextPart(text=response_text))])"
+            },
+            {
+              "line": 159,
+              "text": "        # Ask Bob for further input"
+            },
+            {
+              "line": 160,
+              "text": "        await updater.requires_input(final=True)"
+            },
+            {
+              "line": 161,
+              "text": ""
+            },
+            {
+              "line": 162,
+              "text": "    # ------------------------------------------------------------------"
+            },
+            {
+              "line": 163,
+              "text": "    # AgentExecutor interface"
+            },
+            {
+              "line": 164,
+              "text": "    # ------------------------------------------------------------------"
+            },
+            {
+              "line": 165,
+              "text": ""
+            },
+            {
+              "line": 166,
+              "text": "    async def execute("
+            },
+            {
+              "line": 167,
+              "text": "        self, context: RequestContext, event_queue: EventQueue"
+            },
+            {
+              "line": 168,
+              "text": "    ) -> None:"
+            },
+            {
+              "line": 169,
+              "text": "        \"\"\"Process an incoming message and dispatch to the appropriate handler.\"\"\""
+            },
+            {
+              "line": 170,
+              "text": "        raw_text = get_message_text(context.message) if context.message else ''"
+            },
+            {
+              "line": 171,
+              "text": "        is_followup = bool("
+            },
+            {
+              "line": 172,
+              "text": "            context.message and context.message.reference_task_ids"
+            },
+            {
+              "line": 173,
+              "text": "        )"
+            },
+            {
+              "line": 174,
+              "text": ""
+            },
+            {
+              "line": 175,
+              "text": "        if is_followup:"
+            },
+            {
+              "line": 176,
+              "text": "            await self._handle_followup(context, raw_text, event_queue)"
+            },
+            {
+              "line": 177,
+              "text": "        else:"
+            },
+            {
+              "line": 178,
+              "text": "            await self._handle_initial(raw_text, context, event_queue)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_path": "samples/python/agents/number_guessing_game/utils/protocol_wrappers.py",
+      "primary_raw_url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/python/agents/number_guessing_game/utils/protocol_wrappers.py",
+      "local_file": "number-game__utils__protocol_wrappers.py",
+      "sha256": "b2147424eeb816ddec8d1592e418edb5b55ed60178126737a2d915166884b2ef",
+      "byte_length": 6819,
+      "excerpt_ranges": [
+        {
+          "start": 34,
+          "end": 85,
+          "lines": [
+            {
+              "line": 34,
+              "text": "async def send_text_async("
+            },
+            {
+              "line": 35,
+              "text": "    port: int,"
+            },
+            {
+              "line": 36,
+              "text": "    text: str,"
+            },
+            {
+              "line": 37,
+              "text": "    *,"
+            },
+            {
+              "line": 38,
+              "text": "    context_id: str | None = None,"
+            },
+            {
+              "line": 39,
+              "text": "    reference_task_ids: list[str] | None = None,"
+            },
+            {
+              "line": 40,
+              "text": "    task_id: str | None = None,"
+            },
+            {
+              "line": 41,
+              "text": "):"
+            },
+            {
+              "line": 42,
+              "text": "    \"\"\"Send *text* to the target agent via the A2A ``message/send`` operation."
+            },
+            {
+              "line": 43,
+              "text": ""
+            },
+            {
+              "line": 44,
+              "text": "    Args:"
+            },
+            {
+              "line": 45,
+              "text": "        port: TCP port where the target agent is listening."
+            },
+            {
+              "line": 46,
+              "text": "        text: Payload to send as a plain-text message."
+            },
+            {
+              "line": 47,
+              "text": "        context_id: Optional conversation context ID to maintain multi-turn state."
+            },
+            {
+              "line": 48,
+              "text": "        reference_task_ids: Optional list of task IDs this message replies to."
+            },
+            {
+              "line": 49,
+              "text": "        task_id: Explicit task ID to reuse (follow-up scenarios)."
+            },
+            {
+              "line": 50,
+              "text": ""
+            },
+            {
+              "line": 51,
+              "text": "    Returns:"
+            },
+            {
+              "line": 52,
+              "text": "        Union[Task, Message]: The final object produced by the agent—normally a"
+            },
+            {
+              "line": 53,
+              "text": "        ``Task`` but may be a plain ``Message`` for very small interactions."
+            },
+            {
+              "line": 54,
+              "text": "    \"\"\""
+            },
+            {
+              "line": 55,
+              "text": "    client = _client_factory.create("
+            },
+            {
+              "line": 56,
+              "text": "        minimal_agent_card(f'http://localhost:{port}/a2a/v1')"
+            },
+            {
+              "line": 57,
+              "text": "    )"
+            },
+            {
+              "line": 58,
+              "text": "    msg = Message("
+            },
+            {
+              "line": 59,
+              "text": "        kind='message',"
+            },
+            {
+              "line": 60,
+              "text": "        role=Role.user,"
+            },
+            {
+              "line": 61,
+              "text": "        message_id=uuid.uuid4().hex,"
+            },
+            {
+              "line": 62,
+              "text": "        context_id=context_id,"
+            },
+            {
+              "line": 63,
+              "text": "        reference_task_ids=reference_task_ids or [],"
+            },
+            {
+              "line": 64,
+              "text": "        parts=[TextPart(text=text)],"
+            },
+            {
+              "line": 65,
+              "text": "        task_id=task_id,"
+            },
+            {
+              "line": 66,
+              "text": "    )"
+            },
+            {
+              "line": 67,
+              "text": ""
+            },
+            {
+              "line": 68,
+              "text": "    task_manager = ClientTaskManager()"
+            },
+            {
+              "line": 69,
+              "text": "    last_message: Message | None = None"
+            },
+            {
+              "line": 70,
+              "text": ""
+            },
+            {
+              "line": 71,
+              "text": "    async for event in client.send_message(msg):  # type: ignore[attr-defined]"
+            },
+            {
+              "line": 72,
+              "text": "        # Unwrap tuple from transport implementations"
+            },
+            {
+              "line": 73,
+              "text": "        if isinstance(event, tuple):"
+            },
+            {
+              "line": 74,
+              "text": "            event = event[0]"
+            },
+            {
+              "line": 75,
+              "text": "        # Let the SDK task manager handle state aggregation"
+            },
+            {
+              "line": 76,
+              "text": "        await task_manager.process(event)"
+            },
+            {
+              "line": 77,
+              "text": "        if isinstance(event, Message):"
+            },
+            {
+              "line": 78,
+              "text": "            last_message = event"
+            },
+            {
+              "line": 79,
+              "text": ""
+            },
+            {
+              "line": 80,
+              "text": "    task = task_manager.get_task()"
+            },
+            {
+              "line": 81,
+              "text": "    if task:"
+            },
+            {
+              "line": 82,
+              "text": "        return task"
+            },
+            {
+              "line": 83,
+              "text": "    if last_message is not None:"
+            },
+            {
+              "line": 84,
+              "text": "        return last_message"
+            },
+            {
+              "line": 85,
+              "text": "    raise RuntimeError('No response from agent')"
+            }
+          ]
+        },
+        {
+          "start": 138,
+          "end": 166,
+          "lines": [
+            {
+              "line": 138,
+              "text": "def send_followup("
+            },
+            {
+              "line": 139,
+              "text": "    port: int,"
+            },
+            {
+              "line": 140,
+              "text": "    resp_task: Task,"
+            },
+            {
+              "line": 141,
+              "text": "    text: str,"
+            },
+            {
+              "line": 142,
+              "text": "):"
+            },
+            {
+              "line": 143,
+              "text": "    \"\"\"Convenience helper to send a *text* follow-up message that keeps the existing"
+            },
+            {
+              "line": 144,
+              "text": "    conversation context and task identifiers intact."
+            },
+            {
+              "line": 145,
+              "text": ""
+            },
+            {
+              "line": 146,
+              "text": "    Parameters"
+            },
+            {
+              "line": 147,
+              "text": "    ----------"
+            },
+            {
+              "line": 148,
+              "text": "    port"
+            },
+            {
+              "line": 149,
+              "text": "        Listening port of the target agent."
+            },
+            {
+              "line": 150,
+              "text": "    resp_task"
+            },
+            {
+              "line": 151,
+              "text": "        The original Task to which we want to send a follow-up."
+            },
+            {
+              "line": 152,
+              "text": "    text"
+            },
+            {
+              "line": 153,
+              "text": "        The plain-text content of the follow-up message."
+            },
+            {
+              "line": 154,
+              "text": ""
+            },
+            {
+              "line": 155,
+              "text": "    Returns:"
+            },
+            {
+              "line": 156,
+              "text": "    -------"
+            },
+            {
+              "line": 157,
+              "text": "    Task | Message"
+            },
+            {
+              "line": 158,
+              "text": "        The resulting SDK object returned by the agent (normally a Task)."
+            },
+            {
+              "line": 159,
+              "text": "    \"\"\""
+            },
+            {
+              "line": 160,
+              "text": "    return send_text("
+            },
+            {
+              "line": 161,
+              "text": "        port,"
+            },
+            {
+              "line": 162,
+              "text": "        text,"
+            },
+            {
+              "line": 163,
+              "text": "        context_id=resp_task.context_id,"
+            },
+            {
+              "line": 164,
+              "text": "        reference_task_ids=[resp_task.id],"
+            },
+            {
+              "line": 165,
+              "text": "        task_id=resp_task.id,"
+            },
+            {
+              "line": 166,
+              "text": "    )"
+            }
+          ]
+        },
+        {
+          "start": 206,
+          "end": 218,
+          "lines": [
+            {
+              "line": 206,
+              "text": "def extract_text(obj: Task | Message):"
+            },
+            {
+              "line": 207,
+              "text": "    \"\"\"Return plain text from a Task or Message, using SDK helpers when possible.\"\"\""
+            },
+            {
+              "line": 208,
+              "text": "    if isinstance(obj, Message):"
+            },
+            {
+              "line": 209,
+              "text": "        return get_message_text(obj)"
+            },
+            {
+              "line": 210,
+              "text": ""
+            },
+            {
+              "line": 211,
+              "text": "    if isinstance(obj, Task) and obj.artifacts:"
+            },
+            {
+              "line": 212,
+              "text": "        # Prefer the newest artifact/part (at the end) but fall back gracefully."
+            },
+            {
+              "line": 213,
+              "text": "        for artifact in reversed(obj.artifacts):"
+            },
+            {
+              "line": 214,
+              "text": "            if artifact.parts:"
+            },
+            {
+              "line": 215,
+              "text": "                for part in reversed(artifact.parts):"
+            },
+            {
+              "line": 216,
+              "text": "                    if hasattr(part, 'root') and hasattr(part.root, 'text'):"
+            },
+            {
+              "line": 217,
+              "text": "                        return part.root.text  # type: ignore[attr-defined]"
+            },
+            {
+              "line": 218,
+              "text": "    return ''"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_path": "samples/python/agents/number_guessing_game/agent_Bob.py",
+      "primary_raw_url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/python/agents/number_guessing_game/agent_Bob.py",
+      "local_file": "number-game__agent_Bob.py",
+      "sha256": "33c0e32833f14dad4250e160852c78da263e9bdfa0e00dae4fe48463e3d4b8be",
+      "byte_length": 5856,
+      "excerpt_ranges": [
+        {
+          "start": 38,
+          "end": 57,
+          "lines": [
+            {
+              "line": 38,
+              "text": "def _start_shuffle_request() -> Task | None:"
+            },
+            {
+              "line": 39,
+              "text": "    \"\"\"Send the initial shuffle request to AgentCarol and ensure we get back a Task.\"\"\""
+            },
+            {
+              "line": 40,
+              "text": "    payload = json.dumps({'action': 'shuffle', 'history': game_history})"
+            },
+            {
+              "line": 41,
+              "text": "    resp_obj = send_text(AGENT_CAROL_PORT, payload)  # type: ignore[arg-type]"
+            },
+            {
+              "line": 42,
+              "text": "    return resp_obj if isinstance(resp_obj, Task) else None"
+            },
+            {
+              "line": 43,
+              "text": ""
+            },
+            {
+              "line": 44,
+              "text": ""
+            },
+            {
+              "line": 45,
+              "text": "def _extract_history_from_task(resp_task: Task) -> list[Any]:"
+            },
+            {
+              "line": 46,
+              "text": "    \"\"\"Return the JSON-decoded history list from *resp_task*."
+            },
+            {
+              "line": 47,
+              "text": ""
+            },
+            {
+              "line": 48,
+              "text": "    Args:"
+            },
+            {
+              "line": 49,
+              "text": "        resp_task: Task object produced by Agent Carol that is expected to"
+            },
+            {
+              "line": 50,
+              "text": "            contain a single JSON list in its most recent artifact."
+            },
+            {
+              "line": 51,
+              "text": ""
+            },
+            {
+              "line": 52,
+              "text": "    Returns:"
+            },
+            {
+              "line": 53,
+              "text": "        list: The parsed history list or an empty list when parsing fails or the"
+            },
+            {
+              "line": 54,
+              "text": "        artifact is missing/invalid."
+            },
+            {
+              "line": 55,
+              "text": "    \"\"\""
+            },
+            {
+              "line": 56,
+              "text": "    parts_text = extract_text(resp_task)"
+            },
+            {
+              "line": 57,
+              "text": "    try:"
+            }
+          ]
+        },
+        {
+          "start": 63,
+          "end": 128,
+          "lines": [
+            {
+              "line": 63,
+              "text": "def _negotiate_sorted_history("
+            },
+            {
+              "line": 64,
+              "text": "    max_attempts: int = MAX_NEGOTIATION_ATTEMPTS,"
+            },
+            {
+              "line": 65,
+              "text": ") -> int:"
+            },
+            {
+              "line": 66,
+              "text": "    \"\"\"Ask Carol to shuffle until the history list is sorted."
+            },
+            {
+              "line": 67,
+              "text": ""
+            },
+            {
+              "line": 68,
+              "text": "    The function starts a new *shuffle* task, then enters a request/response"
+            },
+            {
+              "line": 69,
+              "text": "    loop sending either “Try again” or “Well done!” follow-ups depending on"
+            },
+            {
+              "line": 70,
+              "text": "    whether the returned list is sorted."
+            },
+            {
+              "line": 71,
+              "text": ""
+            },
+            {
+              "line": 72,
+              "text": "    Args:"
+            },
+            {
+              "line": 73,
+              "text": "        max_attempts: Upper bound on the number of reshuffle attempts before the"
+            },
+            {
+              "line": 74,
+              "text": "            task is cancelled to avoid an infinite loop."
+            },
+            {
+              "line": 75,
+              "text": ""
+            },
+            {
+              "line": 76,
+              "text": "    Returns:"
+            },
+            {
+              "line": 77,
+              "text": "        int: The number of messages sent to Carol during the negotiation."
+            },
+            {
+              "line": 78,
+              "text": "    \"\"\""
+            },
+            {
+              "line": 79,
+              "text": "    attempts = 0"
+            },
+            {
+              "line": 80,
+              "text": "    resp_task = _start_shuffle_request()"
+            },
+            {
+              "line": 81,
+              "text": "    if resp_task is None:"
+            },
+            {
+              "line": 82,
+              "text": "        return attempts"
+            },
+            {
+              "line": 83,
+              "text": ""
+            },
+            {
+              "line": 84,
+              "text": "    print("
+            },
+            {
+              "line": 85,
+              "text": "        f'[Bob] Received Task {resp_task.id} with state={resp_task.status.state}'"
+            },
+            {
+              "line": 86,
+              "text": "    )"
+            },
+            {
+              "line": 87,
+              "text": ""
+            },
+            {
+              "line": 88,
+              "text": "    while ("
+            },
+            {
+              "line": 89,
+              "text": "        resp_task.status.state == TaskState.input_required"
+            },
+            {
+              "line": 90,
+              "text": "        and attempts < max_attempts"
+            },
+            {
+              "line": 91,
+              "text": "    ):"
+            },
+            {
+              "line": 92,
+              "text": "        # Evaluate the list *before* deciding what follow-up to send"
+            },
+            {
+              "line": 93,
+              "text": "        maybe_hist = _extract_history_from_task(resp_task)"
+            },
+            {
+              "line": 94,
+              "text": "        if isinstance(maybe_hist, list):"
+            },
+            {
+              "line": 95,
+              "text": "            print(f'[Bob] Candidate history: {maybe_hist}')"
+            },
+            {
+              "line": 96,
+              "text": "            print(f'[Bob] is_sorted? {is_sorted_history(maybe_hist)}')"
+            },
+            {
+              "line": 97,
+              "text": ""
+            },
+            {
+              "line": 98,
+              "text": "        if isinstance(maybe_hist, list) and is_sorted_history(maybe_hist):"
+            },
+            {
+              "line": 99,
+              "text": "            attempts += 1"
+            },
+            {
+              "line": 100,
+              "text": "            game_history.clear()"
+            },
+            {
+              "line": 101,
+              "text": "            game_history.extend(maybe_hist)"
+            },
+            {
+              "line": 102,
+              "text": "            print(f'[Bob] History is sorted after {attempts} attempt(s)')"
+            },
+            {
+              "line": 103,
+              "text": "            print("
+            },
+            {
+              "line": 104,
+              "text": "                '(We do sorting by random to illustrate multi-turn communication)'"
+            },
+            {
+              "line": 105,
+              "text": "            )"
+            },
+            {
+              "line": 106,
+              "text": "            resp_task = send_followup(AGENT_CAROL_PORT, resp_task, 'Well done!')  # type: ignore[assignment]"
+            },
+            {
+              "line": 107,
+              "text": "            break"
+            },
+            {
+              "line": 108,
+              "text": ""
+            },
+            {
+              "line": 109,
+              "text": "        # Not sorted → ask Carol to shuffle again"
+            },
+            {
+              "line": 110,
+              "text": "        attempts += 1"
+            },
+            {
+              "line": 111,
+              "text": "        print(f\"[Bob] Attempt {attempts}: sending 'Try again'\")"
+            },
+            {
+              "line": 112,
+              "text": "        resp_obj = send_followup(AGENT_CAROL_PORT, resp_task, 'Try again')"
+            },
+            {
+              "line": 113,
+              "text": "        if not isinstance(resp_obj, Task):"
+            },
+            {
+              "line": 114,
+              "text": "            print("
+            },
+            {
+              "line": 115,
+              "text": "                '[Bob] Did not receive Task in response; aborting negotiation'"
+            },
+            {
+              "line": 116,
+              "text": "            )"
+            },
+            {
+              "line": 117,
+              "text": "            break"
+            },
+            {
+              "line": 118,
+              "text": "        resp_task = resp_obj"
+            },
+            {
+              "line": 119,
+              "text": "        print(f'[Bob] Carol responded with state={resp_task.status.state}')"
+            },
+            {
+              "line": 120,
+              "text": ""
+            },
+            {
+              "line": 121,
+              "text": "    if ("
+            },
+            {
+              "line": 122,
+              "text": "        resp_task.status.state == TaskState.input_required"
+            },
+            {
+              "line": 123,
+              "text": "        and attempts >= max_attempts"
+            },
+            {
+              "line": 124,
+              "text": "    ):"
+            },
+            {
+              "line": 125,
+              "text": "        print("
+            },
+            {
+              "line": 126,
+              "text": "            f'[Bob] Reached maximum attempts ({max_attempts}). Cancelling task.'"
+            },
+            {
+              "line": 127,
+              "text": "        )"
+            },
+            {
+              "line": 128,
+              "text": "        cancel_task(AGENT_CAROL_PORT, resp_task.id)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_path": "samples/python/agents/number_guessing_game/README.md",
+      "primary_raw_url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/python/agents/number_guessing_game/README.md",
+      "local_file": "number-game__README.md",
+      "sha256": "2688a75ad71c29ea324dc1285cf825cbd63ba5583ed119c4689431016ac24e7f",
+      "byte_length": 3395,
+      "excerpt_ranges": [
+        {
+          "start": 1,
+          "end": 17,
+          "lines": [
+            {
+              "line": 1,
+              "text": "# A2A Number-Guessing Demo (Python)"
+            },
+            {
+              "line": 2,
+              "text": ""
+            },
+            {
+              "line": 3,
+              "text": "This repository showcases three lightweight A2A agents that cooperate to play a classic _guess-the-number_ game.  "
+            },
+            {
+              "line": 4,
+              "text": ""
+            },
+            {
+              "line": 5,
+              "text": "To make it an accessible practical introduction into A2A and the Python SDK, we keep this app intentionally minimalistic:"
+            },
+            {
+              "line": 6,
+              "text": ""
+            },
+            {
+              "line": 7,
+              "text": "- no LLMs, API keys etc"
+            },
+            {
+              "line": 8,
+              "text": "- no need for remote servers (all 3 agents run locally)"
+            },
+            {
+              "line": 9,
+              "text": "- easy to install and try"
+            },
+            {
+              "line": 10,
+              "text": "- minimal external dependencies"
+            },
+            {
+              "line": 11,
+              "text": "- the minimal set of features to demonstrate some core concepts of A2A."
+            },
+            {
+              "line": 12,
+              "text": ""
+            },
+            {
+              "line": 13,
+              "text": "| Agent | Role |"
+            },
+            {
+              "line": 14,
+              "text": "|-------|------|"
+            },
+            {
+              "line": 15,
+              "text": "| **AgentAlice** | Picks a secret integer (1-100) and grades incoming guesses. |"
+            },
+            {
+              "line": 16,
+              "text": "| **AgentBob**   | CLI front-end – relays player guesses, shows Alice’s hints, negotiates with Carol. |"
+            },
+            {
+              "line": 17,
+              "text": "| **AgentCarol** | Generates a text visualisation of the guess history and, on request, shuffles it until Bob is happy. |"
+            }
+          ]
+        },
+        {
+          "start": 53,
+          "end": 55,
+          "lines": [
+            {
+              "line": 53,
+              "text": "3. Play!  Bob will prompt you for numbers until Alice replies with `correct! attempts: N`."
+            },
+            {
+              "line": 54,
+              "text": ""
+            },
+            {
+              "line": 55,
+              "text": "During play Bob will repeatedly ask Carol to reshuffle the history until it is sorted – this exercises multi-turn, task-referencing messages between agents."
+            }
+          ]
+        },
+        {
+          "start": 75,
+          "end": 90,
+          "lines": [
+            {
+              "line": 75,
+              "text": "## A2A feature coverage (SDK 0.3.x)"
+            },
+            {
+              "line": 76,
+              "text": ""
+            },
+            {
+              "line": 77,
+              "text": "Most heavy lifting (validation, error mapping, Task aggregation, etc.) is handled by the SDK.  The demo therefore focuses on **agent logic** – not protocol plumbing."
+            },
+            {
+              "line": 78,
+              "text": ""
+            },
+            {
+              "line": 79,
+              "text": "| Area | Status |"
+            },
+            {
+              "line": 80,
+              "text": "|------|--------|"
+            },
+            {
+              "line": 81,
+              "text": "| `message/send` | Implemented via SDK helper. |"
+            },
+            {
+              "line": 82,
+              "text": "| Task aggregation | Handled by `ClientTaskManager`. |"
+            },
+            {
+              "line": 83,
+              "text": "| Streaming & subscriptions | **Not implemented** – SDK returns `Unsupported operation`. |"
+            },
+            {
+              "line": 84,
+              "text": "| Push notification config | Not implemented (capability flag is `false`). |"
+            },
+            {
+              "line": 85,
+              "text": "| Transports | JSON-RPC via Starlette/Uvicorn (gRPC left as exercise). |"
+            },
+            {
+              "line": 86,
+              "text": "| TLS & auth | Plain HTTP on `localhost` only. |"
+            },
+            {
+              "line": 87,
+              "text": ""
+            },
+            {
+              "line": 88,
+              "text": "## License"
+            },
+            {
+              "line": 89,
+              "text": ""
+            },
+            {
+              "line": 90,
+              "text": "Released into the public domain."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_path": "samples/python/agents/number_guessing_game/requirements.txt",
+      "primary_raw_url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/python/agents/number_guessing_game/requirements.txt",
+      "local_file": "number-game__requirements.txt",
+      "sha256": "c797ab689ee0012c2e612b2b6a7a4ddb6b8ef1c810057a64f3c6e9395c81332a",
+      "byte_length": 163,
+      "excerpt_ranges": [
+        {
+          "start": 1,
+          "end": 8,
+          "lines": [
+            {
+              "line": 1,
+              "text": "# Runtime requirements for number_guessing_game demo"
+            },
+            {
+              "line": 2,
+              "text": ""
+            },
+            {
+              "line": 3,
+              "text": "# Official A2A Python SDK published on PyPI"
+            },
+            {
+              "line": 4,
+              "text": "a2a-sdk==0.3.0"
+            },
+            {
+              "line": 5,
+              "text": ""
+            },
+            {
+              "line": 6,
+              "text": "# ASGI server used by the agents"
+            },
+            {
+              "line": 7,
+              "text": "uvicorn==0.35.0"
+            },
+            {
+              "line": 8,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_path": "samples/python/agents/number_guessing_game/utils/server.py",
+      "primary_raw_url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/python/agents/number_guessing_game/utils/server.py",
+      "local_file": "number-game__utils__server.py",
+      "sha256": "445d23b9f61a72e5ffe70bb5414c245b423115618a4bd399c043224906248e5d",
+      "byte_length": 2205,
+      "excerpt_ranges": [
+        {
+          "start": 1,
+          "end": 68,
+          "lines": [
+            {
+              "line": 1,
+              "text": "\"\"\"utils.server"
+            },
+            {
+              "line": 2,
+              "text": "Helper utilities to host an A2A agent using the SDK server stack."
+            },
+            {
+              "line": 3,
+              "text": ""
+            },
+            {
+              "line": 4,
+              "text": "Minimal helpers to create a Starlette app with `DefaultRequestHandler` and run Uvicorn."
+            },
+            {
+              "line": 5,
+              "text": "\"\"\""
+            },
+            {
+              "line": 6,
+              "text": ""
+            },
+            {
+              "line": 7,
+              "text": "from __future__ import annotations"
+            },
+            {
+              "line": 8,
+              "text": ""
+            },
+            {
+              "line": 9,
+              "text": "import uvicorn  # type: ignore"
+            },
+            {
+              "line": 10,
+              "text": ""
+            },
+            {
+              "line": 11,
+              "text": "from a2a.server.apps.jsonrpc.starlette_app import A2AStarletteApplication"
+            },
+            {
+              "line": 12,
+              "text": "from a2a.server.request_handlers.default_request_handler import ("
+            },
+            {
+              "line": 13,
+              "text": "    DefaultRequestHandler,"
+            },
+            {
+              "line": 14,
+              "text": ")"
+            },
+            {
+              "line": 15,
+              "text": "from a2a.server.tasks.inmemory_task_store import InMemoryTaskStore"
+            },
+            {
+              "line": 16,
+              "text": "from a2a.types import AgentCard"
+            },
+            {
+              "line": 17,
+              "text": ""
+            },
+            {
+              "line": 18,
+              "text": ""
+            },
+            {
+              "line": 19,
+              "text": "def build_starlette_app("
+            },
+            {
+              "line": 20,
+              "text": "    agent_card,"
+            },
+            {
+              "line": 21,
+              "text": "    *,"
+            },
+            {
+              "line": 22,
+              "text": "    executor,"
+            },
+            {
+              "line": 23,
+              "text": "):"
+            },
+            {
+              "line": 24,
+              "text": "    \"\"\"Create and return a ready-to-serve Starlette ASGI application."
+            },
+            {
+              "line": 25,
+              "text": ""
+            },
+            {
+              "line": 26,
+              "text": "    Args:"
+            },
+            {
+              "line": 27,
+              "text": "        agent_card: Either a raw ``dict`` or an :class:`a2a.types.AgentCard`"
+            },
+            {
+              "line": 28,
+              "text": "            instance describing the agent."
+            },
+            {
+              "line": 29,
+              "text": "        executor: Concrete implementation of the A2A ``AgentExecutor``"
+            },
+            {
+              "line": 30,
+              "text": "            interface that will handle incoming requests."
+            },
+            {
+              "line": 31,
+              "text": ""
+            },
+            {
+              "line": 32,
+              "text": "    Returns:"
+            },
+            {
+              "line": 33,
+              "text": "        Starlette: Configured Starlette application with the SDK request handler"
+            },
+            {
+              "line": 34,
+              "text": "        mounted at ``/a2a/v1``."
+            },
+            {
+              "line": 35,
+              "text": "    \"\"\""
+            },
+            {
+              "line": 36,
+              "text": "    # Ensure we have a Pydantic AgentCard instance."
+            },
+            {
+              "line": 37,
+              "text": "    if isinstance(agent_card, dict):"
+            },
+            {
+              "line": 38,
+              "text": "        agent_card = AgentCard.model_validate(agent_card)  # type: ignore[arg-type]"
+            },
+            {
+              "line": 39,
+              "text": ""
+            },
+            {
+              "line": 40,
+              "text": "    # Validate executor ---------------------------------------------------------"
+            },
+            {
+              "line": 41,
+              "text": "    if executor is None:"
+            },
+            {
+              "line": 42,
+              "text": "        raise ValueError('executor must be supplied')"
+            },
+            {
+              "line": 43,
+              "text": ""
+            },
+            {
+              "line": 44,
+              "text": "    handler = DefaultRequestHandler(executor, InMemoryTaskStore())"
+            },
+            {
+              "line": 45,
+              "text": "    return A2AStarletteApplication("
+            },
+            {
+              "line": 46,
+              "text": "        agent_card=agent_card, http_handler=handler"
+            },
+            {
+              "line": 47,
+              "text": "    ).build(rpc_url='/a2a/v1')"
+            },
+            {
+              "line": 48,
+              "text": ""
+            },
+            {
+              "line": 49,
+              "text": ""
+            },
+            {
+              "line": 50,
+              "text": "def run_agent_blocking("
+            },
+            {
+              "line": 51,
+              "text": "    name: str,"
+            },
+            {
+              "line": 52,
+              "text": "    port: int,"
+            },
+            {
+              "line": 53,
+              "text": "    agent_card,"
+            },
+            {
+              "line": 54,
+              "text": "    *,"
+            },
+            {
+              "line": 55,
+              "text": "    executor,"
+            },
+            {
+              "line": 56,
+              "text": ") -> None:"
+            },
+            {
+              "line": 57,
+              "text": "    \"\"\"Spin up a Uvicorn server for the given agent and block the current thread."
+            },
+            {
+              "line": 58,
+              "text": ""
+            },
+            {
+              "line": 59,
+              "text": "    Args:"
+            },
+            {
+              "line": 60,
+              "text": "        name: Human-readable agent name printed on start-up."
+            },
+            {
+              "line": 61,
+              "text": "        port: TCP port to bind to."
+            },
+            {
+              "line": 62,
+              "text": "        agent_card: Metadata describing the agent (``dict`` or ``AgentCard``)."
+            },
+            {
+              "line": 63,
+              "text": "        executor: Instance of an ``AgentExecutor`` to handle requests."
+            },
+            {
+              "line": 64,
+              "text": "    \"\"\""
+            },
+            {
+              "line": 65,
+              "text": "    app = build_starlette_app(agent_card, executor=executor)"
+            },
+            {
+              "line": 66,
+              "text": "    print(f'{name} listening on http://localhost:{port}')"
+            },
+            {
+              "line": 67,
+              "text": "    uvicorn.run(app, host='127.0.0.1', port=port, log_level='error')"
+            },
+            {
+              "line": 68,
+              "text": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source_path": "samples/python/agents/number_guessing_game/utils/game_logic.py",
+      "primary_raw_url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/python/agents/number_guessing_game/utils/game_logic.py",
+      "local_file": "number-game__utils__game_logic.py",
+      "sha256": "c1dd3b27dbb74c00e249a1aed84ad395f74691d33275b9c5fee8be456997e7f2",
+      "byte_length": 5660,
+      "excerpt_ranges": [
+        {
+          "start": 1,
+          "end": 160,
+          "lines": [
+            {
+              "line": 1,
+              "text": "\"\"\"utils.game_logic"
+            },
+            {
+              "line": 2,
+              "text": "Game mechanics shared by the toy number-guessing demo."
+            },
+            {
+              "line": 3,
+              "text": ""
+            },
+            {
+              "line": 4,
+              "text": "This module is transport-agnostic. It currently contains:"
+            },
+            {
+              "line": 5,
+              "text": "* Number-guess evaluation for Agent Alice (`process_guess`)."
+            },
+            {
+              "line": 6,
+              "text": "* History visualisation and shuffle helpers for Agent Carol"
+            },
+            {
+              "line": 7,
+              "text": "  (`build_visualisation`, `process_history_payload`)."
+            },
+            {
+              "line": 8,
+              "text": "\"\"\""
+            },
+            {
+              "line": 9,
+              "text": ""
+            },
+            {
+              "line": 10,
+              "text": "from __future__ import annotations"
+            },
+            {
+              "line": 11,
+              "text": ""
+            },
+            {
+              "line": 12,
+              "text": "import json"
+            },
+            {
+              "line": 13,
+              "text": "import random"
+            },
+            {
+              "line": 14,
+              "text": ""
+            },
+            {
+              "line": 15,
+              "text": "from utils.helpers import parse_int_in_range, try_parse_json"
+            },
+            {
+              "line": 16,
+              "text": ""
+            },
+            {
+              "line": 17,
+              "text": ""
+            },
+            {
+              "line": 18,
+              "text": "__all__ = ["
+            },
+            {
+              "line": 19,
+              "text": "    'build_visualisation',"
+            },
+            {
+              "line": 20,
+              "text": "    'is_sorted_history',"
+            },
+            {
+              "line": 21,
+              "text": "    'process_guess',"
+            },
+            {
+              "line": 22,
+              "text": "    'process_history_payload',"
+            },
+            {
+              "line": 23,
+              "text": "]"
+            },
+            {
+              "line": 24,
+              "text": ""
+            },
+            {
+              "line": 25,
+              "text": "# ---------------------------------------------------------------------------"
+            },
+            {
+              "line": 26,
+              "text": "# Number-guessing state (Alice)"
+            },
+            {
+              "line": 27,
+              "text": "# ---------------------------------------------------------------------------"
+            },
+            {
+              "line": 28,
+              "text": ""
+            },
+            {
+              "line": 29,
+              "text": "_target_number: int = random.randint(1, 100)"
+            },
+            {
+              "line": 30,
+              "text": "_attempts: int = 0"
+            },
+            {
+              "line": 31,
+              "text": "_secret_logged: bool = False"
+            },
+            {
+              "line": 32,
+              "text": ""
+            },
+            {
+              "line": 33,
+              "text": ""
+            },
+            {
+              "line": 34,
+              "text": "# ---------------------------------------------------------------------------"
+            },
+            {
+              "line": 35,
+              "text": "# Number-guessing helpers"
+            },
+            {
+              "line": 36,
+              "text": "# ---------------------------------------------------------------------------"
+            },
+            {
+              "line": 37,
+              "text": ""
+            },
+            {
+              "line": 38,
+              "text": ""
+            },
+            {
+              "line": 39,
+              "text": "def process_guess(raw_text: str) -> str:"
+            },
+            {
+              "line": 40,
+              "text": "    \"\"\"Evaluate a single guess and return Agent Alice's feedback."
+            },
+            {
+              "line": 41,
+              "text": ""
+            },
+            {
+              "line": 42,
+              "text": "    Args:"
+            },
+            {
+              "line": 43,
+              "text": "        raw_text: Raw user input that should represent an integer between 1"
+            },
+            {
+              "line": 44,
+              "text": "            and 100 (inclusive)."
+            },
+            {
+              "line": 45,
+              "text": ""
+            },
+            {
+              "line": 46,
+              "text": "    Returns:"
+            },
+            {
+              "line": 47,
+              "text": "        str: One of the following response strings:"
+            },
+            {
+              "line": 48,
+              "text": "            * ``\"Go higher\"`` – the guess was lower than the secret."
+            },
+            {
+              "line": 49,
+              "text": "            * ``\"Go lower\"`` – the guess was higher than the secret."
+            },
+            {
+              "line": 50,
+              "text": "            * ``\"correct! attempts: <n>\"`` – the guess is correct; *n* is the"
+            },
+            {
+              "line": 51,
+              "text": "              number of attempts so far."
+            },
+            {
+              "line": 52,
+              "text": "            * An error prompt when the input is invalid."
+            },
+            {
+              "line": 53,
+              "text": "    \"\"\""
+            },
+            {
+              "line": 54,
+              "text": "    global _attempts, _target_number, _secret_logged"
+            },
+            {
+              "line": 55,
+              "text": ""
+            },
+            {
+              "line": 56,
+              "text": "    if not _secret_logged:"
+            },
+            {
+              "line": 57,
+              "text": "        print('[GameLogic] Secret number selected. Waiting for guesses…')"
+            },
+            {
+              "line": 58,
+              "text": "        _secret_logged = True"
+            },
+            {
+              "line": 59,
+              "text": ""
+            },
+            {
+              "line": 60,
+              "text": "    guess = parse_int_in_range(raw_text, 1, 100)"
+            },
+            {
+              "line": 61,
+              "text": "    if guess is None:"
+            },
+            {
+              "line": 62,
+              "text": "        print(f\"[GameLogic] Received invalid input '{raw_text}'.\")"
+            },
+            {
+              "line": 63,
+              "text": "        return 'Please send a number between 1 and 100.'"
+            },
+            {
+              "line": 64,
+              "text": ""
+            },
+            {
+              "line": 65,
+              "text": "    _attempts += 1"
+            },
+            {
+              "line": 66,
+              "text": ""
+            },
+            {
+              "line": 67,
+              "text": "    if guess < _target_number:"
+            },
+            {
+              "line": 68,
+              "text": "        hint = 'Go higher'"
+            },
+            {
+              "line": 69,
+              "text": "    elif guess > _target_number:"
+            },
+            {
+              "line": 70,
+              "text": "        hint = 'Go lower'"
+            },
+            {
+              "line": 71,
+              "text": "    else:"
+            },
+            {
+              "line": 72,
+              "text": "        hint = f'correct! attempts: {_attempts}'"
+            },
+            {
+              "line": 73,
+              "text": ""
+            },
+            {
+              "line": 74,
+              "text": "    print(f'[GameLogic] Guess {guess} -> {hint}')"
+            },
+            {
+              "line": 75,
+              "text": "    return hint"
+            },
+            {
+              "line": 76,
+              "text": ""
+            },
+            {
+              "line": 77,
+              "text": ""
+            },
+            {
+              "line": 78,
+              "text": "# ---------------------------------------------------------------------------"
+            },
+            {
+              "line": 79,
+              "text": "# History helpers (Carol and Bob)"
+            },
+            {
+              "line": 80,
+              "text": "# ---------------------------------------------------------------------------"
+            },
+            {
+              "line": 81,
+              "text": ""
+            },
+            {
+              "line": 82,
+              "text": ""
+            },
+            {
+              "line": 83,
+              "text": "def build_visualisation(history: list[dict[str, str]]) -> str:"
+            },
+            {
+              "line": 84,
+              "text": "    \"\"\"Create a human-readable rendering of a guess/response history list."
+            },
+            {
+              "line": 85,
+              "text": ""
+            },
+            {
+              "line": 86,
+              "text": "    Args:"
+            },
+            {
+              "line": 87,
+              "text": "        history: Sequence of dictionaries, each containing at least the keys"
+            },
+            {
+              "line": 88,
+              "text": "            ``\"guess\"`` and ``\"response\"``."
+            },
+            {
+              "line": 89,
+              "text": ""
+            },
+            {
+              "line": 90,
+              "text": "    Returns:"
+            },
+            {
+              "line": 91,
+              "text": "        str: Multi-line string ready to be printed to the console."
+            },
+            {
+              "line": 92,
+              "text": "    \"\"\""
+            },
+            {
+              "line": 93,
+              "text": "    if not history:"
+            },
+            {
+              "line": 94,
+              "text": "        return 'No guesses yet.'"
+            },
+            {
+              "line": 95,
+              "text": ""
+            },
+            {
+              "line": 96,
+              "text": "    lines = ['Guesses so far:']"
+            },
+            {
+              "line": 97,
+              "text": "    for idx, entry in enumerate(history, 1):"
+            },
+            {
+              "line": 98,
+              "text": "        guess = entry.get('guess', '?')"
+            },
+            {
+              "line": 99,
+              "text": "        response = entry.get('response', '?')"
+            },
+            {
+              "line": 100,
+              "text": "        lines.append(f' {idx:>2}. {guess:>3} -> {response}')"
+            },
+            {
+              "line": 101,
+              "text": "    print('[GameLogic] Created a visualisation for Bob')"
+            },
+            {
+              "line": 102,
+              "text": "    return '\\n'.join(lines)"
+            },
+            {
+              "line": 103,
+              "text": ""
+            },
+            {
+              "line": 104,
+              "text": ""
+            },
+            {
+              "line": 105,
+              "text": "def is_sorted_history(history: list[dict[str, str]]) -> bool:"
+            },
+            {
+              "line": 106,
+              "text": "    \"\"\"Return ``True`` when *history* is sorted in ascending order by the guess."
+            },
+            {
+              "line": 107,
+              "text": ""
+            },
+            {
+              "line": 108,
+              "text": "    The helper gracefully handles histories that contain plain numbers or"
+            },
+            {
+              "line": 109,
+              "text": "    numeric strings instead of full dictionaries."
+            },
+            {
+              "line": 110,
+              "text": ""
+            },
+            {
+              "line": 111,
+              "text": "    Args:"
+            },
+            {
+              "line": 112,
+              "text": "        history: List of dictionaries **or** plain numbers representing the"
+            },
+            {
+              "line": 113,
+              "text": "            guessed value."
+            },
+            {
+              "line": 114,
+              "text": ""
+            },
+            {
+              "line": 115,
+              "text": "    Returns:"
+            },
+            {
+              "line": 116,
+              "text": "        bool: ``True`` when values are in non-decreasing order; ``False``"
+            },
+            {
+              "line": 117,
+              "text": "        otherwise or on parse errors."
+            },
+            {
+              "line": 118,
+              "text": "    \"\"\""
+            },
+            {
+              "line": 119,
+              "text": "    # The history list can contain either dict entries (with a 'guess' key)"
+            },
+            {
+              "line": 120,
+              "text": "    # or bare numeric values when other agents reply with a simplified list."
+            },
+            {
+              "line": 121,
+              "text": "    try:"
+            },
+            {
+              "line": 122,
+              "text": "        if history and isinstance(history[0], dict):"
+            },
+            {
+              "line": 123,
+              "text": "            guesses = [int(entry['guess']) for entry in history]"
+            },
+            {
+              "line": 124,
+              "text": "        else:"
+            },
+            {
+              "line": 125,
+              "text": "            # Assume iterable of plain numbers / numeric strings"
+            },
+            {
+              "line": 126,
+              "text": "            guesses = [int(entry) for entry in history]"
+            },
+            {
+              "line": 127,
+              "text": "    except (ValueError, TypeError, KeyError):"
+            },
+            {
+              "line": 128,
+              "text": "        return False"
+            },
+            {
+              "line": 129,
+              "text": "    return guesses == sorted(guesses)"
+            },
+            {
+              "line": 130,
+              "text": ""
+            },
+            {
+              "line": 131,
+              "text": ""
+            },
+            {
+              "line": 132,
+              "text": "def process_history_payload(raw_text: str) -> str:"
+            },
+            {
+              "line": 133,
+              "text": "    \"\"\"Return Agent Carol's response for the supplied payload."
+            },
+            {
+              "line": 134,
+              "text": ""
+            },
+            {
+              "line": 135,
+              "text": "    The interpretation depends on the JSON structure:"
+            },
+            {
+              "line": 136,
+              "text": ""
+            },
+            {
+              "line": 137,
+              "text": "    1. ``{\"action\": \"shuffle\", \"history\": [...]}`` – The history list is"
+            },
+            {
+              "line": 138,
+              "text": "       shuffled in place and returned as a JSON string."
+            },
+            {
+              "line": 139,
+              "text": "    2. ``[ ... ]`` – The list is treated as a full history and formatted via"
+            },
+            {
+              "line": 140,
+              "text": "       :func:`build_visualisation`."
+            },
+            {
+              "line": 141,
+              "text": ""
+            },
+            {
+              "line": 142,
+              "text": "    Any input that cannot be parsed as JSON yields an empty visualisation to"
+            },
+            {
+              "line": 143,
+              "text": "    signal invalid input."
+            },
+            {
+              "line": 144,
+              "text": ""
+            },
+            {
+              "line": 145,
+              "text": "    Args:"
+            },
+            {
+              "line": 146,
+              "text": "        raw_text: Raw payload received from Bob."
+            },
+            {
+              "line": 147,
+              "text": ""
+            },
+            {
+              "line": 148,
+              "text": "    Returns:"
+            },
+            {
+              "line": 149,
+              "text": "        str: Either a JSON-encoded list or a plain-text visualisation."
+            },
+            {
+              "line": 150,
+              "text": "    \"\"\""
+            },
+            {
+              "line": 151,
+              "text": "    success, parsed = try_parse_json(raw_text)"
+            },
+            {
+              "line": 152,
+              "text": "    if not success:"
+            },
+            {
+              "line": 153,
+              "text": "        # Not JSON – return an empty visualisation to signal invalid input."
+            },
+            {
+              "line": 154,
+              "text": "        return build_visualisation([])"
+            },
+            {
+              "line": 155,
+              "text": ""
+            },
+            {
+              "line": 156,
+              "text": "    # Shuffle request"
+            },
+            {
+              "line": 157,
+              "text": "    if isinstance(parsed, dict) and parsed.get('action') == 'shuffle':"
+            },
+            {
+              "line": 158,
+              "text": "        history_list = parsed.get('history', [])"
+            },
+            {
+              "line": 159,
+              "text": "        if not isinstance(history_list, list):"
+            },
+            {
+              "line": 160,
+              "text": "            history_list = []"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Sample is A2A0.3.x; compatibility with frozen bridge1.0 profiles is unverified.",
+    "referenceTaskIds application branch does not establish protocol-mandated dependency enforcement.",
+    "Source-native completion path is described by code only, not an observed native success."
+  ]
+}

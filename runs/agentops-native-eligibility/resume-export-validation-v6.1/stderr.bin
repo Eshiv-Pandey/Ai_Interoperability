@@ -1,0 +1,30 @@
+test_complete_constructed_export_passes_without_executing_archive (test_agentops_resume_export_v6.ResumeExportTests.test_complete_constructed_export_passes_without_executing_archive) ... ok
+test_forged_original_command_cannot_be_hidden_by_rebasing (test_agentops_resume_export_v6.ResumeExportTests.test_forged_original_command_cannot_be_hidden_by_rebasing) ... ok
+test_missing_boundary_source_inventory_is_rejected (test_agentops_resume_export_v6.ResumeExportTests.test_missing_boundary_source_inventory_is_rejected) ... ok
+test_nonzero_native_capture_rejected_after_resealing (test_agentops_resume_export_v6.ResumeExportTests.test_nonzero_native_capture_rejected_after_resealing) ... ok
+test_outer_outcome_cannot_hide_successful_inner_attempt (test_agentops_resume_export_v6.ResumeExportTests.test_outer_outcome_cannot_hide_successful_inner_attempt) ... ok
+test_overlapping_outer_stages_rejected (test_agentops_resume_export_v6.ResumeExportTests.test_overlapping_outer_stages_rejected) ... ok
+test_receipt_rebasing_preserves_original_bytes_and_digest (test_agentops_resume_export_v6.ResumeExportTests.test_receipt_rebasing_preserves_original_bytes_and_digest) ... ok
+test_resealed_capability_command_still_requires_original_probe (test_agentops_resume_export_v6.ResumeExportTests.test_resealed_capability_command_still_requires_original_probe) ... ok
+test_resealed_http_unrelated_effect_rejected (test_agentops_resume_export_v6.ResumeExportTests.test_resealed_http_unrelated_effect_rejected) ... ok
+test_resealed_native_network_attempt_fails_effect_semantics (test_agentops_resume_export_v6.ResumeExportTests.test_resealed_native_network_attempt_fails_effect_semantics) ... FAIL
+test_runtime_native_provider_cannot_be_relabelled_as_shim (test_agentops_resume_export_v6.ResumeExportTests.test_runtime_native_provider_cannot_be_relabelled_as_shim) ... ok
+test_wrong_resume_schema_and_prior_binding_are_rejected (test_agentops_resume_export_v6.ResumeExportTests.test_wrong_resume_schema_and_prior_binding_are_rejected) ... ok
+
+======================================================================
+FAIL: test_resealed_native_network_attempt_fails_effect_semantics (test_agentops_resume_export_v6.ResumeExportTests.test_resealed_native_network_attempt_fails_effect_semantics)
+----------------------------------------------------------------------
+ValueError: offline observer boundaries
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_resume_export_v6.py", line 290, in test_resealed_native_network_attempt_fails_effect_semantics
+    with self.assertRaisesRegex(ValueError, "network"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "network" does not match "offline observer boundaries"
+
+----------------------------------------------------------------------
+Ran 12 tests in 46.311s
+
+FAILED (failures=1)

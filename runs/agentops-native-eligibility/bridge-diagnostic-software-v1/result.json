@@ -1,0 +1,243 @@
+{
+  "schema_version": "agentops-bridge-diagnostic-software/1",
+  "status": "passed",
+  "started_at_utc": "2026-10-28T09:38:05.323474+00:00",
+  "inputs": [
+    {
+      "path": "docs/research/source-evidence/agentops-bridge-diagnostic-v1/protocol.md",
+      "bytes": 7144,
+      "sha256": "d40ba804acd4f1199db61c9a5d9410c79c725080d1b1665ac014eaf208f6f1a8"
+    },
+    {
+      "path": "scripts/agentops_shutdown_diagnostics_v2.py",
+      "bytes": 4196,
+      "sha256": "eb27070a6d94d6a74c3d5bdde529c6302f9defc731b6066854431a3397fbd968"
+    },
+    {
+      "path": "scripts/serve_agentops_bridge_diagnostic_v2.py",
+      "bytes": 688,
+      "sha256": "48ab26444bce154852e5a55a6fb42bc0821b0fe38fe8a1acbc9a63435492ecc9"
+    },
+    {
+      "path": "scripts/agentops_bridge_diagnostic_plan_v1.py",
+      "bytes": 643,
+      "sha256": "f23a5789576d5bcb326a2449f0e95c6084ed8680074718fbddbc1c05c00c8f39"
+    },
+    {
+      "path": "scripts/agentops_bridge_diagnostic_control_v1.py",
+      "bytes": 14167,
+      "sha256": "c91d9ed1603a52d8b3b25f06034479281dfc87c54790293366ccf3cf975777ba"
+    },
+    {
+      "path": "scripts/resume_agentops_bridge_diagnostic_v11.py",
+      "bytes": 14947,
+      "sha256": "cc6752e8755ae83cf584bf9837b82d5c32b0ae275492752a828dd63ad3a18c75"
+    },
+    {
+      "path": "scripts/check_agentops_bridge_diagnostic_v1.py",
+      "bytes": 13339,
+      "sha256": "3f9c430a111a594bd899238354ce0fadcd4a260aaecc558b7013989d50f21ff9"
+    },
+    {
+      "path": "scripts/check_agentops_bridge_diagnostic_group_v1.py",
+      "bytes": 28189,
+      "sha256": "c4c7d1ffd913bb8d2c7d37e33cfa08b99a9ed28997c15001f502631865d6bb50"
+    },
+    {
+      "path": "scripts/agentops_diagnostic_sources_v1.py",
+      "bytes": 8171,
+      "sha256": "da38b0c5d4b5f03446034ed5e2761ab5b2c836ce0f8262c66e2a9c9e7d3a81d9"
+    },
+    {
+      "path": "tests/test_agentops_shutdown_diagnostics_v2.py",
+      "bytes": 8233,
+      "sha256": "0029c1cc4e30491f49ccc7022917b6c7f4430fad9a8bbff351896990c122d603"
+    },
+    {
+      "path": "tests/test_agentops_bridge_diagnostic_v1.py",
+      "bytes": 10168,
+      "sha256": "aa4aef5b331aaa39cf39a7514f228cfdeb1ce3b28c99b3d379d23ce5f3219793"
+    },
+    {
+      "path": "tests/test_agentops_bridge_diagnostic_supervision_v1.py",
+      "bytes": 15344,
+      "sha256": "36e672dad0c9c301ae25fc95b4c2509fba9c7a18db78d6b8b419a66bdaaaecba"
+    },
+    {
+      "path": "tests/test_agentops_bridge_diagnostic_group_v1.py",
+      "bytes": 15379,
+      "sha256": "d36b2dfa41678d358632f3687b1c8b2c12e344a0547550a5d5a979d446cd991e"
+    },
+    {
+      "path": "tests/test_agentops_diagnostic_sources_v1.py",
+      "bytes": 8762,
+      "sha256": "627156d7d8f985b5ec6b9573a6dddbb4d7238cf27841cfe8488b50408d639442"
+    },
+    {
+      "path": "scripts/prepare_agentops_bridge_diagnostic_v1.py",
+      "bytes": 7274,
+      "sha256": "bce71eb981d8c06bc330c36d29feed7da9b21aa45fe3f5576e09a8623f900c18"
+    }
+  ],
+  "application_requests": 0,
+  "live_model_calls": 0,
+  "commands": [
+    {
+      "label": "stage-1",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_agentops_shutdown_diagnostics_v2.py",
+        "-v"
+      ],
+      "started_at_utc": "2026-10-28T09:38:05.337604+00:00",
+      "timed_out": false,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-28T09:38:09.435841+00:00",
+      "streams": [
+        {
+          "path": "runs/agentops-native-eligibility/bridge-diagnostic-software-v1/stage-1.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "runs/agentops-native-eligibility/bridge-diagnostic-software-v1/stage-1.stderr.bin",
+          "bytes": 1873,
+          "sha256": "5ec65e0d0fd360cb4d4cd7e9d55ac4131b2e64ad337ff966380fcc13df4e8998"
+        }
+      ]
+    },
+    {
+      "label": "stage-2",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_agentops_bridge_diagnostic_v1.py",
+        "-v"
+      ],
+      "started_at_utc": "2026-10-28T09:38:09.544055+00:00",
+      "timed_out": false,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-28T09:38:11.176721+00:00",
+      "streams": [
+        {
+          "path": "runs/agentops-native-eligibility/bridge-diagnostic-software-v1/stage-2.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "runs/agentops-native-eligibility/bridge-diagnostic-software-v1/stage-2.stderr.bin",
+          "bytes": 4367,
+          "sha256": "3bf71023a786c785863c39e805776ae729256d9ec06dfe876593e2c2e4284d24"
+        }
+      ]
+    },
+    {
+      "label": "stage-3",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_agentops_bridge_diagnostic_supervision_v1.py",
+        "-v"
+      ],
+      "started_at_utc": "2026-10-28T09:38:11.214232+00:00",
+      "timed_out": false,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-28T09:38:23.854237+00:00",
+      "streams": [
+        {
+          "path": "runs/agentops-native-eligibility/bridge-diagnostic-software-v1/stage-3.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "runs/agentops-native-eligibility/bridge-diagnostic-software-v1/stage-3.stderr.bin",
+          "bytes": 2720,
+          "sha256": "14de61a3fb292f73e771cebc69e975e10736ed754b5f637e4c8af6b0ad868a01"
+        }
+      ]
+    },
+    {
+      "label": "stage-4",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_agentops_bridge_diagnostic_group_v1.py",
+        "-v"
+      ],
+      "started_at_utc": "2026-10-28T09:38:24.113455+00:00",
+      "timed_out": false,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-28T09:38:27.462284+00:00",
+      "streams": [
+        {
+          "path": "runs/agentops-native-eligibility/bridge-diagnostic-software-v1/stage-4.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "runs/agentops-native-eligibility/bridge-diagnostic-software-v1/stage-4.stderr.bin",
+          "bytes": 3016,
+          "sha256": "6acf1b562cc6f03bcdc57ac2d36a9f4f529eade66d02f61fac1277f4fa4366cc"
+        }
+      ]
+    },
+    {
+      "label": "stage-5",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_agentops_diagnostic_sources_v1.py",
+        "-v"
+      ],
+      "started_at_utc": "2026-10-28T09:38:27.588531+00:00",
+      "timed_out": false,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-28T09:38:29.141423+00:00",
+      "streams": [
+        {
+          "path": "runs/agentops-native-eligibility/bridge-diagnostic-software-v1/stage-5.stdout.bin",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "runs/agentops-native-eligibility/bridge-diagnostic-software-v1/stage-5.stderr.bin",
+          "bytes": 2696,
+          "sha256": "17605d32ed50b05828399c74fbe8465b1790221cf3fa6d5bf4849b750820e081"
+        }
+      ]
+    }
+  ],
+  "inputs_unchanged": true,
+  "finished_at_utc": "2026-10-28T09:38:29.360538+00:00"
+}

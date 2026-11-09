@@ -1,0 +1,72 @@
+{
+  "schema_version": "agentops-platform-diagnosis/1",
+  "reviewed_at_utc": "2026-10-25T21:55:57.276032+00:00",
+  "native_result": {
+    "path": "runs/agentops-native-eligibility/native-probe-v3/result.json",
+    "bytes": 4420,
+    "sha256": "669d3fe61d34f5d91e7a2af61d48478fbdb842d79c34ba05dbb59c9cdb81c3a3"
+  },
+  "failure_stage": "pytest_collection",
+  "pytest_exitstatus": 4,
+  "collected_tests": 0,
+  "test_phases": 0,
+  "observed_application_helper_calls": 0,
+  "error": "ModuleNotFoundError: No module named 'fcntl'",
+  "network_attempts_recorded_by_original_observer": [
+    {
+      "event": "socket.bind"
+    }
+  ],
+  "native_result_field_interpretation": "v3 application_test_started denotes pytest launch; no test phase ran",
+  "source_files_verified": 421,
+  "harness_files_verified": 8,
+  "native_receipt_files_verified": 19,
+  "source_evidence": [
+    {
+      "path": "external/agentops-c806b7f1/SUPPORT.md",
+      "bytes": 16976,
+      "sha256": "e091d743a889eaf9e20e61a68a45594a0e4decb943ec840b0441fd08969e67fd"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/state.py",
+      "bytes": 40366,
+      "sha256": "0a560ea3d5cbf4203a02e2ef2842a5589bd93cd77c3454078ef1edcc8104a7f5"
+    },
+    {
+      "path": "external/agentops-c806b7f1/mise.lock",
+      "bytes": 58450,
+      "sha256": "ddc7d6763e141ec64bae55607507df325f8e6c69654cc3b133cc33ca743d2ebf"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/uv.lock",
+      "bytes": 403629,
+      "sha256": "f6ed9a8b5140460424749f61adf01d8c424acaa3c354c0659e34cca3c2088ccd"
+    }
+  ],
+  "capabilities": [
+    {
+      "label": "wsl-distributions",
+      "argv": [
+        "C:/Windows/System32/wsl.exe",
+        "--list",
+        "--quiet"
+      ],
+      "started_at_utc": "2026-10-25T21:49:16.249758+00:00",
+      "returncode": 4294967295
+    },
+    {
+      "label": "docker-engine",
+      "argv": [
+        "C:/Program Files/Docker/Docker/resources/bin/docker.exe",
+        "version",
+        "--format",
+        "{{json .}}"
+      ],
+      "started_at_utc": "2026-10-25T21:49:16.499050+00:00",
+      "returncode": 1
+    }
+  ],
+  "new_application_requests": 0,
+  "model_calls": 0,
+  "gate_credit_added": 0
+}

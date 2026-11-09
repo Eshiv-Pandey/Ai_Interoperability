@@ -1,0 +1,69 @@
+{
+    "schema_version":  "shared-admission-source-review/1",
+    "reviewed_at_utc":  "2026-10-29T02:04:15.1302263+00:00",
+    "status":  "no_blocking_source_findings",
+    "reviewer":  "independent AI source review",
+    "human_approval_established":  false,
+    "sources":  [
+                    {
+                        "path":  "src/interoperability/shared_admission_v1.py",
+                        "sha256":  "7c37baa751bb8f0e437b02e87b9da47db011449be13a7256dcf43b08ca4cd3ec"
+                    },
+                    {
+                        "path":  "tests/test_shared_admission_v1.py",
+                        "sha256":  "0b6a5842844376769103d31c59fc5f4369f4ca08c3bd9279d82f9405b42f7ed8"
+                    },
+                    {
+                        "path":  "scripts/run_shared_admission_demo_v1.py",
+                        "sha256":  "59be1ab11b61196ea5a2c6dcfa8b22bd62bdbc40dc337737ead692c1eb78605f"
+                    }
+                ],
+    "scope":  [
+                  "Single-profile command, focused tests, and prospective frozen rehearsal runner",
+                  "Checker dispatch traced through direct_goal_pruned_v2 and refinement_oracle",
+                  "Benchmark run, verifier and captured replay dispatch traced through shared_lifting_comparison_v3"
+              ],
+    "checks":  [
+                   "Strict integer work budget and clock; duplicate keys and non-JSON numbers rejected",
+                   "Malformed JSON-safe solver results retained as failure; exact string decision/reason and explicit certificate field required",
+                   "Conclusive result requires an independently accepted certificate with exact boolean True",
+                   "Unknown and budget exhaustion remain nonconclusive and do not invoke a certificate checker",
+                   "Input and checker mutations detected using canonical JSON preserving type distinctions",
+                   "Exclusive output creation preserves earlier attempts",
+                   "Runner captures source and inputs before child dispatch and compares original/frozen inventories afterward",
+                   "Four standalone examples and eleven-case four-arm v3 benchmark outcomes checked from retained records",
+                   "Captured v3 replay compares complete semantic results and checker acceptance, excluding only stats.elapsed_ns",
+                   "Overall runner success requires every requested command and validation step to pass"
+               ],
+    "resolved_findings":  [
+                              {
+                                  "finding":  "Standalone command previously accepted unknown without reason or explicit certificate fields",
+                                  "resolution":  "Final source now rejects missing/nonstring reason, nonstring decision, missing certificate, and non-object result; focused malformed-result test added"
+                              }
+                          ],
+    "unresolved_findings":  [
+
+                            ],
+    "validation_receipt_observed":  {
+                                        "path":  "runs/shared-admission-software/windows-v2/result.json",
+                                        "status":  "passed",
+                                        "counts":  {
+                                                       "tests_run":  11,
+                                                       "failures":  0,
+                                                       "errors":  0,
+                                                       "skipped":  0,
+                                                       "successful":  true
+                                                   },
+                                        "inputs_unchanged":  true,
+                                        "preliminary_validation_unchanged":  true,
+                                        "rerun_by_reviewer":  false
+                                    },
+    "reviewer_execution":  {
+                               "tests":  0,
+                               "solvers":  0,
+                               "benchmarks":  0,
+                               "live_applications":  0,
+                               "wsl_runtime_launches":  0
+                           },
+    "claim_limit":  "Source review and read-only receipt inspection, not an executed rehearsal, live task/effect qualification, novelty result, performance claim or human approval."
+}

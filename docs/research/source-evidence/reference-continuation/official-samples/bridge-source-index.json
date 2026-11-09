@@ -1,0 +1,1391 @@
+{
+  "schema_version": "source-reference-bridge-projection/1",
+  "observed_at_utc": "2026-10-23T20:39:47.564Z",
+  "kind": "local-read-only-pinned-source",
+  "sources": [
+    {
+      "route_id": "amirk_a2a_to_mcp",
+      "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "source_path": "external/a2a-to-mcp/src/a2a-client.ts",
+      "local_file": "amirk_a2a_to_mcp__a2a-client.ts",
+      "sha256": "38cca90108c057823c823fac881bba074bc6df99e2ac07746ad2426550815b06",
+      "byte_length": 8572,
+      "excerpt_ranges": [
+        {
+          "start": 67,
+          "end": 75,
+          "lines": [
+            {
+              "line": 67,
+              "text": "/** What a2a_send_message hands to the upstream agent. */\r"
+            },
+            {
+              "line": 68,
+              "text": "export interface SendMessageInput {\r"
+            },
+            {
+              "line": 69,
+              "text": "  text: string;\r"
+            },
+            {
+              "line": 70,
+              "text": "  /** A2A context id, to continue a conversation. */\r"
+            },
+            {
+              "line": 71,
+              "text": "  contextId?: string;\r"
+            },
+            {
+              "line": 72,
+              "text": "  /** A2A task id, to answer a task parked in INPUT_REQUIRED. */\r"
+            },
+            {
+              "line": 73,
+              "text": "  taskId?: string;\r"
+            },
+            {
+              "line": 74,
+              "text": "}\r"
+            },
+            {
+              "line": 75,
+              "text": "\r"
+            }
+          ]
+        },
+        {
+          "start": 207,
+          "end": 225,
+          "lines": [
+            {
+              "line": 207,
+              "text": "export function buildUserMessage(input: SendMessageInput): Message {\r"
+            },
+            {
+              "line": 208,
+              "text": "  const part: Part = {\r"
+            },
+            {
+              "line": 209,
+              "text": "    content: { $case: \"text\", value: input.text },\r"
+            },
+            {
+              "line": 210,
+              "text": "    metadata: undefined,\r"
+            },
+            {
+              "line": 211,
+              "text": "    filename: \"\",\r"
+            },
+            {
+              "line": 212,
+              "text": "    mediaType: \"text/plain\",\r"
+            },
+            {
+              "line": 213,
+              "text": "  };\r"
+            },
+            {
+              "line": 214,
+              "text": "  return {\r"
+            },
+            {
+              "line": 215,
+              "text": "    messageId: randomUUID(),\r"
+            },
+            {
+              "line": 216,
+              "text": "    contextId: input.contextId ?? \"\",\r"
+            },
+            {
+              "line": 217,
+              "text": "    taskId: input.taskId ?? \"\",\r"
+            },
+            {
+              "line": 218,
+              "text": "    // Role is a numeric ts-proto enum: the string \"ROLE_USER\" would serialize\r"
+            },
+            {
+              "line": 219,
+              "text": "    // as UNRECOGNIZED.\r"
+            },
+            {
+              "line": 220,
+              "text": "    role: Role.ROLE_USER,\r"
+            },
+            {
+              "line": 221,
+              "text": "    parts: [part],\r"
+            },
+            {
+              "line": 222,
+              "text": "    metadata: undefined,\r"
+            },
+            {
+              "line": 223,
+              "text": "    extensions: [],\r"
+            },
+            {
+              "line": 224,
+              "text": "    referenceTaskIds: [],\r"
+            },
+            {
+              "line": 225,
+              "text": "  };\r"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "amirk_a2a_to_mcp",
+      "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "source_path": "external/a2a-to-mcp/src/tools.ts",
+      "local_file": "amirk_a2a_to_mcp__tools.ts",
+      "sha256": "9e96fd60b8146a88c575fd63ef07baef532a6fe9c40a650ede390626c71cf659",
+      "byte_length": 19463,
+      "excerpt_ranges": [
+        {
+          "start": 176,
+          "end": 201,
+          "lines": [
+            {
+              "line": 176,
+              "text": "      name: \"a2a_send_message\",\r"
+            },
+            {
+              "line": 177,
+              "text": "      title: \"Send a message to an A2A agent\",\r"
+            },
+            {
+              "line": 178,
+              "text": "      description:\r"
+            },
+            {
+              "line": 179,
+              "text": "        \"Sends one text message to an A2A agent and returns its answer, which is either a \" +\r"
+            },
+            {
+              "line": 180,
+              "text": "        \"direct message or a task. The reply carries a context handle, and a task handle \" +\r"
+            },
+            {
+              "line": 181,
+              "text": "        \"when the agent opened a task. Pass contextHandle back to continue the same \" +\r"
+            },
+            {
+              "line": 182,
+              "text": "        \"conversation, and taskHandle back to answer a task the agent left waiting for \" +\r"
+            },
+            {
+              "line": 183,
+              "text": "        `input. ${retention}`,\r"
+            },
+            {
+              "line": 184,
+              "text": "      inputSchema: z.object({\r"
+            },
+            {
+              "line": 185,
+              "text": "        agent: agentEnum,\r"
+            },
+            {
+              "line": 186,
+              "text": "        text: z.string().min(1).describe(\"The message text to send to the agent.\"),\r"
+            },
+            {
+              "line": 187,
+              "text": "        contextHandle: z\r"
+            },
+            {
+              "line": 188,
+              "text": "          .string()\r"
+            },
+            {
+              "line": 189,
+              "text": "          .optional()\r"
+            },
+            {
+              "line": 190,
+              "text": "          .describe(\"Context handle returned by an earlier call, to continue that conversation.\"),\r"
+            },
+            {
+              "line": 191,
+              "text": "        taskHandle: z\r"
+            },
+            {
+              "line": 192,
+              "text": "          .string()\r"
+            },
+            {
+              "line": 193,
+              "text": "          .optional()\r"
+            },
+            {
+              "line": 194,
+              "text": "          .describe(\"Task handle returned by an earlier call, to answer a task awaiting input.\"),\r"
+            },
+            {
+              "line": 195,
+              "text": "      }),\r"
+            },
+            {
+              "line": 196,
+              "text": "      argsSchema: z.object({\r"
+            },
+            {
+              "line": 197,
+              "text": "        agent: agentString,\r"
+            },
+            {
+              "line": 198,
+              "text": "        text: z.string().min(1),\r"
+            },
+            {
+              "line": 199,
+              "text": "        contextHandle: z.string().optional(),\r"
+            },
+            {
+              "line": 200,
+              "text": "        taskHandle: z.string().optional(),\r"
+            },
+            {
+              "line": 201,
+              "text": "      }),\r"
+            }
+          ]
+        },
+        {
+          "start": 254,
+          "end": 309,
+          "lines": [
+            {
+              "line": 254,
+              "text": "async function sendMessage(\r"
+            },
+            {
+              "line": 255,
+              "text": "  args: Record<string, unknown>,\r"
+            },
+            {
+              "line": 256,
+              "text": "  deps: ToolDeps,\r"
+            },
+            {
+              "line": 257,
+              "text": "  context: CallContext,\r"
+            },
+            {
+              "line": 258,
+              "text": "): Promise<CallToolResult | InputRequiredResult> {\r"
+            },
+            {
+              "line": 259,
+              "text": "  const alias = String(args[\"agent\"]);\r"
+            },
+            {
+              "line": 260,
+              "text": "  // Validates the alias without a fetch: a handle is checked before the\r"
+            },
+            {
+              "line": 261,
+              "text": "  // network, so an unknown handle is reported as such even when the agent\r"
+            },
+            {
+              "line": 262,
+              "text": "  // card happens to be unreachable.\r"
+            },
+            {
+              "line": 263,
+              "text": "  deps.cards.cardUrlOf(alias);\r"
+            },
+            {
+              "line": 264,
+              "text": "\r"
+            },
+            {
+              "line": 265,
+              "text": "  if (context.requestState !== undefined) {\r"
+            },
+            {
+              "line": 266,
+              "text": "    // A later round of a multi-round-trip: the arguments are the ones the\r"
+            },
+            {
+              "line": 267,
+              "text": "    // first round was called with, and what matters is the answer the client\r"
+            },
+            {
+              "line": 268,
+              "text": "    // collected and the task the verified state names.\r"
+            },
+            {
+              "line": 269,
+              "text": "    return deps.mrtr.resume(alias, context.requestState, context.inputResponses);\r"
+            },
+            {
+              "line": 270,
+              "text": "  }\r"
+            },
+            {
+              "line": 271,
+              "text": "\r"
+            },
+            {
+              "line": 272,
+              "text": "  let contextId: string | undefined;\r"
+            },
+            {
+              "line": 273,
+              "text": "  let taskId: string | undefined;\r"
+            },
+            {
+              "line": 274,
+              "text": "\r"
+            },
+            {
+              "line": 275,
+              "text": "  const taskHandle = args[\"taskHandle\"];\r"
+            },
+            {
+              "line": 276,
+              "text": "  if (typeof taskHandle === \"string\") {\r"
+            },
+            {
+              "line": 277,
+              "text": "    const record = deps.handles.tasks.resolve(taskHandle);\r"
+            },
+            {
+              "line": 278,
+              "text": "    assertSameAgent(alias, record.alias, taskHandle);\r"
+            },
+            {
+              "line": 279,
+              "text": "    taskId = record.a2aTaskId;\r"
+            },
+            {
+              "line": 280,
+              "text": "    contextId = record.contextId;\r"
+            },
+            {
+              "line": 281,
+              "text": "  }\r"
+            },
+            {
+              "line": 282,
+              "text": "\r"
+            },
+            {
+              "line": 283,
+              "text": "  const contextHandle = args[\"contextHandle\"];\r"
+            },
+            {
+              "line": 284,
+              "text": "  if (typeof contextHandle === \"string\") {\r"
+            },
+            {
+              "line": 285,
+              "text": "    const record = deps.handles.resolveContext(contextHandle);\r"
+            },
+            {
+              "line": 286,
+              "text": "    assertSameAgent(alias, record.alias, contextHandle);\r"
+            },
+            {
+              "line": 287,
+              "text": "    contextId = record.contextId;\r"
+            },
+            {
+              "line": 288,
+              "text": "  }\r"
+            },
+            {
+              "line": 289,
+              "text": "\r"
+            },
+            {
+              "line": 290,
+              "text": "  const input = {\r"
+            },
+            {
+              "line": 291,
+              "text": "    text: String(args[\"text\"]),\r"
+            },
+            {
+              "line": 292,
+              "text": "    ...(contextId === undefined ? {} : { contextId }),\r"
+            },
+            {
+              "line": 293,
+              "text": "    ...(taskId === undefined ? {} : { taskId }),\r"
+            },
+            {
+              "line": 294,
+              "text": "  };\r"
+            },
+            {
+              "line": 295,
+              "text": "\r"
+            },
+            {
+              "line": 296,
+              "text": "  if (context.tasksExtension) {\r"
+            },
+            {
+              "line": 297,
+              "text": "    // The client can hold an MCP task, so an A2A task becomes one instead of\r"
+            },
+            {
+              "line": 298,
+              "text": "    // being waited out inside the tool call.\r"
+            },
+            {
+              "line": 299,
+              "text": "    const outcome = await deps.tasks.createTask(alias, input);\r"
+            },
+            {
+              "line": 300,
+              "text": "    if (outcome.kind === \"task\") {\r"
+            },
+            {
+              "line": 301,
+              "text": "      return outcome.result as unknown as CallToolResult;\r"
+            },
+            {
+              "line": 302,
+              "text": "    }\r"
+            },
+            {
+              "line": 303,
+              "text": "    return resultEnvelope(deps.handles, alias, outcome.result) as CallToolResult;\r"
+            },
+            {
+              "line": 304,
+              "text": "  }\r"
+            },
+            {
+              "line": 305,
+              "text": "\r"
+            },
+            {
+              "line": 306,
+              "text": "  const result = await deps.agents.sendMessage(alias, input);\r"
+            },
+            {
+              "line": 307,
+              "text": "  if (context.elicitation && isTask(result) && MrtrService.isWaitingForInput(result)) {\r"
+            },
+            {
+              "line": 308,
+              "text": "    // The client cannot hold an MCP task but can answer a question, so the\r"
+            },
+            {
+              "line": 309,
+              "text": "    // interruption becomes an elicitation the client fulfils and replays,\r"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "amirk_a2a_to_mcp",
+      "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "source_path": "external/a2a-to-mcp/src/tasks/handlers.ts",
+      "local_file": "amirk_a2a_to_mcp__handlers.ts",
+      "sha256": "c084b0a6857c8f990875cc04ab8f2a5c9072ca969ed5db67589c597b8dda5f02",
+      "byte_length": 22842,
+      "excerpt_ranges": [
+        {
+          "start": 247,
+          "end": 310,
+          "lines": [
+            {
+              "line": 247,
+              "text": "   * The acknowledgement is always the empty complete result the extension\r"
+            },
+            {
+              "line": 248,
+              "text": "   * mandates: a response whose key is not outstanding, or that arrives on a\r"
+            },
+            {
+              "line": 249,
+              "text": "   * task which is not waiting for anything, is ignored rather than refused,\r"
+            },
+            {
+              "line": 250,
+              "text": "   * because the extension says a server SHOULD ignore exactly that.\r"
+            },
+            {
+              "line": 251,
+              "text": "   */\r"
+            },
+            {
+              "line": 252,
+              "text": "  async #update(record: TaskRecord, params: unknown): Promise<Record<string, unknown>> {\r"
+            },
+            {
+              "line": 253,
+              "text": "    const view = inputResponse(readInputResponses(params), ANSWER_KEY);\r"
+            },
+            {
+              "line": 254,
+              "text": "    if (view.kind === \"elicit\" && this.#isWaiting(record)) {\r"
+            },
+            {
+              "line": 255,
+              "text": "      if (view.action === \"accept\") {\r"
+            },
+            {
+              "line": 256,
+              "text": "        const answer = readAnswer(view.content);\r"
+            },
+            {
+              "line": 257,
+              "text": "        if (answer !== undefined) {\r"
+            },
+            {
+              "line": 258,
+              "text": "          await this.#answer(record, answer);\r"
+            },
+            {
+              "line": 259,
+              "text": "        }\r"
+            },
+            {
+              "line": 260,
+              "text": "      } else {\r"
+            },
+            {
+              "line": 261,
+              "text": "        // decline and cancel both say the client will not answer, so the A2A\r"
+            },
+            {
+              "line": 262,
+              "text": "        // task is cancelled rather than left waiting until its handle expires.\r"
+            },
+            {
+              "line": 263,
+              "text": "        await this.#cancelUpstream(record);\r"
+            },
+            {
+              "line": 264,
+              "text": "      }\r"
+            },
+            {
+              "line": 265,
+              "text": "    }\r"
+            },
+            {
+              "line": 266,
+              "text": "    this.#handles.tasks.markUpdated(record.handle);\r"
+            },
+            {
+              "line": 267,
+              "text": "    return { resultType: \"complete\" };\r"
+            },
+            {
+              "line": 268,
+              "text": "  }\r"
+            },
+            {
+              "line": 269,
+              "text": "\r"
+            },
+            {
+              "line": 270,
+              "text": "  /** True while the task is parked in A2A INPUT_REQUIRED and reachable. */\r"
+            },
+            {
+              "line": 271,
+              "text": "  #isWaiting(record: TaskRecord): boolean {\r"
+            },
+            {
+              "line": 272,
+              "text": "    return (\r"
+            },
+            {
+              "line": 273,
+              "text": "      record.bridgeError === undefined &&\r"
+            },
+            {
+              "line": 274,
+              "text": "      !record.terminal &&\r"
+            },
+            {
+              "line": 275,
+              "text": "      stateOf(record.snapshot) === TaskState.TASK_STATE_INPUT_REQUIRED\r"
+            },
+            {
+              "line": 276,
+              "text": "    );\r"
+            },
+            {
+              "line": 277,
+              "text": "  }\r"
+            },
+            {
+              "line": 278,
+              "text": "\r"
+            },
+            {
+              "line": 279,
+              "text": "  /**\r"
+            },
+            {
+              "line": 280,
+              "text": "   * Sends the answer back to the agent on the same A2A task and leaves the\r"
+            },
+            {
+              "line": 281,
+              "text": "   * record running.\r"
+            },
+            {
+              "line": 282,
+              "text": "   *\r"
+            },
+            {
+              "line": 283,
+              "text": "   * The record is moved to working before the answer is even on the wire, so\r"
+            },
+            {
+              "line": 284,
+              "text": "   * that a tasks/get racing the acknowledgement can never show the question\r"
+            },
+            {
+              "line": 285,
+              "text": "   * a second time: the client has answered it and the key is gone.\r"
+            },
+            {
+              "line": 286,
+              "text": "   */\r"
+            },
+            {
+              "line": 287,
+              "text": "  async #answer(record: TaskRecord, answer: string): Promise<void> {\r"
+            },
+            {
+              "line": 288,
+              "text": "    const input: SendMessageInput = {\r"
+            },
+            {
+              "line": 289,
+              "text": "      text: answer,\r"
+            },
+            {
+              "line": 290,
+              "text": "      contextId: record.contextId,\r"
+            },
+            {
+              "line": 291,
+              "text": "      taskId: record.a2aTaskId,\r"
+            },
+            {
+              "line": 292,
+              "text": "    };\r"
+            },
+            {
+              "line": 293,
+              "text": "    this.#markWorking(record);\r"
+            },
+            {
+              "line": 294,
+              "text": "    if (!(await this.#agents.supportsStreaming(record.alias))) {\r"
+            },
+            {
+              "line": 295,
+              "text": "      await this.#upstream(record, () =>\r"
+            },
+            {
+              "line": 296,
+              "text": "        this.#agents.sendMessage(record.alias, input, { returnImmediately: true }),\r"
+            },
+            {
+              "line": 297,
+              "text": "      );\r"
+            },
+            {
+              "line": 298,
+              "text": "      await this.#refresh(record);\r"
+            },
+            {
+              "line": 299,
+              "text": "      return;\r"
+            },
+            {
+              "line": 300,
+              "text": "    }\r"
+            },
+            {
+              "line": 301,
+              "text": "    const stream = await this.#upstream(record, () =>\r"
+            },
+            {
+              "line": 302,
+              "text": "      this.#agents.sendMessageStream(record.alias, input),\r"
+            },
+            {
+              "line": 303,
+              "text": "    );\r"
+            },
+            {
+              "line": 304,
+              "text": "    record.streaming = true;\r"
+            },
+            {
+              "line": 305,
+              "text": "    // Not awaited on purpose: the client is acknowledged now, and the stream\r"
+            },
+            {
+              "line": 306,
+              "text": "    // keeps writing into the record until it closes.\r"
+            },
+            {
+              "line": 307,
+              "text": "    void this.#consume(record, stream[Symbol.asyncIterator]());\r"
+            },
+            {
+              "line": 308,
+              "text": "  }\r"
+            },
+            {
+              "line": 309,
+              "text": "\r"
+            },
+            {
+              "line": 310,
+              "text": "  /**\r"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "amirk_a2a_to_mcp",
+      "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "source_path": "external/a2a-to-mcp/src/agent-card.ts",
+      "local_file": "amirk_a2a_to_mcp__agent-card.ts",
+      "sha256": "69f6bf59c45bc490493f7a18a9e8c500bb2b3970a019948b1423720266cd2cba",
+      "byte_length": 8984,
+      "excerpt_ranges": [
+        {
+          "start": 214,
+          "end": 242,
+          "lines": [
+            {
+              "line": 214,
+              "text": "  cardUrl: string,\r"
+            },
+            {
+              "line": 215,
+              "text": "  card: AgentCard,\r"
+            },
+            {
+              "line": 216,
+              "text": "): AgentInterface {\r"
+            },
+            {
+              "line": 217,
+              "text": "  const candidates = (card.supportedInterfaces ?? []).filter(\r"
+            },
+            {
+              "line": 218,
+              "text": "    (entry): entry is AgentInterface =>\r"
+            },
+            {
+              "line": 219,
+              "text": "      typeof entry === \"object\" &&\r"
+            },
+            {
+              "line": 220,
+              "text": "      entry !== null &&\r"
+            },
+            {
+              "line": 221,
+              "text": "      typeof entry.url === \"string\" &&\r"
+            },
+            {
+              "line": 222,
+              "text": "      entry.url !== \"\" &&\r"
+            },
+            {
+              "line": 223,
+              "text": "      typeof entry.protocolBinding === \"string\" &&\r"
+            },
+            {
+              "line": 224,
+              "text": "      entry.protocolBinding.toLowerCase() === JSONRPC_BINDING,\r"
+            },
+            {
+              "line": 225,
+              "text": "  );\r"
+            },
+            {
+              "line": 226,
+              "text": "  const preferred =\r"
+            },
+            {
+              "line": 227,
+              "text": "    candidates.find((entry) => String(entry.protocolVersion ?? \"\").startsWith(A2A_VERSION)) ??\r"
+            },
+            {
+              "line": 228,
+              "text": "    candidates[0];\r"
+            },
+            {
+              "line": 229,
+              "text": "  if (preferred === undefined) {\r"
+            },
+            {
+              "line": 230,
+              "text": "    const bindings = (card.supportedInterfaces ?? [])\r"
+            },
+            {
+              "line": 231,
+              "text": "      .map((entry) => String((entry as { protocolBinding?: unknown }).protocolBinding))\r"
+            },
+            {
+              "line": 232,
+              "text": "      .join(\", \");\r"
+            },
+            {
+              "line": 233,
+              "text": "    throw new AgentCardError(\r"
+            },
+            {
+              "line": 234,
+              "text": "      alias,\r"
+            },
+            {
+              "line": 235,
+              "text": "      cardUrl,\r"
+            },
+            {
+              "line": 236,
+              "text": "      `no JSONRPC interface is declared. The card offers: ${bindings || \"nothing\"}. ` +\r"
+            },
+            {
+              "line": 237,
+              "text": "        \"The bridge only speaks the A2A JSON-RPC binding.\",\r"
+            },
+            {
+              "line": 238,
+              "text": "    );\r"
+            },
+            {
+              "line": 239,
+              "text": "  }\r"
+            },
+            {
+              "line": 240,
+              "text": "  return preferred;\r"
+            },
+            {
+              "line": 241,
+              "text": "}\r"
+            },
+            {
+              "line": 242,
+              "text": "\r"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "mgcrea_mcp_a2a",
+      "source_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "source_path": "external/mcp-a2a/src/tools/request.ts",
+      "local_file": "mgcrea_mcp_a2a__request.ts",
+      "sha256": "1c9eb49a065f3eac95c0fd2172068443719a29aeca9453a31690c70a61731342",
+      "byte_length": 3524,
+      "excerpt_ranges": [
+        {
+          "start": 11,
+          "end": 33,
+          "lines": [
+            {
+              "line": 11,
+              "text": "const READ_METHODS = [\r"
+            },
+            {
+              "line": 12,
+              "text": "  \"GetTask\",\r"
+            },
+            {
+              "line": 13,
+              "text": "  \"ListTasks\",\r"
+            },
+            {
+              "line": 14,
+              "text": "  \"GetTaskPushNotificationConfig\",\r"
+            },
+            {
+              "line": 15,
+              "text": "  \"ListTaskPushNotificationConfigs\",\r"
+            },
+            {
+              "line": 16,
+              "text": "  \"GetExtendedAgentCard\",\r"
+            },
+            {
+              "line": 17,
+              "text": "] as const;\r"
+            },
+            {
+              "line": 18,
+              "text": "\r"
+            },
+            {
+              "line": 19,
+              "text": "const WRITE_METHODS = [\r"
+            },
+            {
+              "line": 20,
+              "text": "  \"SendMessage\",\r"
+            },
+            {
+              "line": 21,
+              "text": "  \"CancelTask\",\r"
+            },
+            {
+              "line": 22,
+              "text": "  \"CreateTaskPushNotificationConfig\",\r"
+            },
+            {
+              "line": 23,
+              "text": "  \"DeleteTaskPushNotificationConfig\",\r"
+            },
+            {
+              "line": 24,
+              "text": "] as const;\r"
+            },
+            {
+              "line": 25,
+              "text": "\r"
+            },
+            {
+              "line": 26,
+              "text": "/**\r"
+            },
+            {
+              "line": 27,
+              "text": " * The escape hatch: any A2A JSON-RPC method against any peer, so an RPC nobody\r"
+            },
+            {
+              "line": 28,
+              "text": " * wrapped stays reachable without a code change.\r"
+            },
+            {
+              "line": 29,
+              "text": " *\r"
+            },
+            {
+              "line": 30,
+              "text": " * Two things constrain it. The method list is an enum rather than a free string,\r"
+            },
+            {
+              "line": 31,
+              "text": " * and it narrows to the read-only half when `A2A_ALLOW_WRITES` is off — belt and\r"
+            },
+            {
+              "line": 32,
+              "text": " * braces on top of the write tools simply not existing. And the endpoint comes\r"
+            },
+            {
+              "line": 33,
+              "text": " * from the peer's own agent card, never from an argument, so this cannot be\r"
+            }
+          ]
+        },
+        {
+          "start": 54,
+          "end": 78,
+          "lines": [
+            {
+              "line": 54,
+              "text": "      inputSchema: {\r"
+            },
+            {
+              "line": 55,
+              "text": "        url: peerUrlArg,\r"
+            },
+            {
+              "line": 56,
+              "text": "        method: z\r"
+            },
+            {
+              "line": 57,
+              "text": "          .enum(methods)\r"
+            },
+            {
+              "line": 58,
+              "text": "          .describe(\r"
+            },
+            {
+              "line": 59,
+              "text": "            \"The A2A v1.0 RPC name, PascalCase — `GetTask`, `ListTasks`, `SendMessage`. NOT \" +\r"
+            },
+            {
+              "line": 60,
+              "text": "              \"the 0.x names (`tasks/get`, `message/send`): v1.0 renamed all of them, and an \" +\r"
+            },
+            {
+              "line": 61,
+              "text": "              \"0.x name comes back as -32601 method not found.\" +\r"
+            },
+            {
+              "line": 62,
+              "text": "              (ctx.allowWrites ? \"\" : \" Only the read-only methods are available right now.\"),\r"
+            },
+            {
+              "line": 63,
+              "text": "          ),\r"
+            },
+            {
+              "line": 64,
+              "text": "        params: z\r"
+            },
+            {
+              "line": 65,
+              "text": "          .record(z.string(), z.unknown())\r"
+            },
+            {
+              "line": 66,
+              "text": "          .default({})\r"
+            },
+            {
+              "line": 67,
+              "text": "          .describe(\r"
+            },
+            {
+              "line": 68,
+              "text": "            'The method\\'s params object, e.g. `{\"id\": \"task-abc\"}` for GetTask or ' +\r"
+            },
+            {
+              "line": 69,
+              "text": "              '`{\"pageSize\": 10}` for ListTasks. Field names are camelCase (`historyLength`, ' +\r"
+            },
+            {
+              "line": 70,
+              "text": "              \"`pageToken`) because the wire format is protobuf JSON.\",\r"
+            },
+            {
+              "line": 71,
+              "text": "          ),\r"
+            },
+            {
+              "line": 72,
+              "text": "      },\r"
+            },
+            {
+              "line": 73,
+              "text": "      // Read-only exactly when the gate is off, which is what the enum enforces.\r"
+            },
+            {
+              "line": 74,
+              "text": "      annotations: { readOnlyHint: !ctx.allowWrites, destructiveHint: ctx.allowWrites },\r"
+            },
+            {
+              "line": 75,
+              "text": "    },\r"
+            },
+            {
+              "line": 76,
+              "text": "    async ({ url, method, params }) =>\r"
+            },
+            {
+              "line": 77,
+              "text": "      wrap(async () => await ctx.peers.rawRpc(url, method, params)),\r"
+            },
+            {
+              "line": 78,
+              "text": "  );\r"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "route_id": "mgcrea_mcp_a2a",
+      "source_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "source_path": "external/mcp-a2a/src/client/peer.ts",
+      "local_file": "mgcrea_mcp_a2a__peer.ts",
+      "sha256": "62c36155dd3f2438f4a629fff8cc5b1961d2f7c20bfbc5a620706a2f8218b909",
+      "byte_length": 12628,
+      "excerpt_ranges": [
+        {
+          "start": 166,
+          "end": 193,
+          "lines": [
+            {
+              "line": 166,
+              "text": "  async sendMessage(\r"
+            },
+            {
+              "line": 167,
+              "text": "    url: string,\r"
+            },
+            {
+              "line": 168,
+              "text": "    args: { text: string; taskId?: string; contextId?: string; metadata?: Record<string, unknown> },\r"
+            },
+            {
+              "line": 169,
+              "text": "  ): Promise<{ result: Task | Message; sent: Message }> {\r"
+            },
+            {
+              "line": 170,
+              "text": "    const client = await this.clientFor(url);\r"
+            },
+            {
+              "line": 171,
+              "text": "    const message: Message = {\r"
+            },
+            {
+              "line": 172,
+              "text": "      messageId: randomId(\"msg\"),\r"
+            },
+            {
+              "line": 173,
+              "text": "      contextId: args.contextId ?? \"\",\r"
+            },
+            {
+              "line": 174,
+              "text": "      taskId: args.taskId ?? \"\",\r"
+            },
+            {
+              "line": 175,
+              "text": "      // ROLE_USER means \"from the client to the server\" in A2A, regardless of\r"
+            },
+            {
+              "line": 176,
+              "text": "      // whether a human or an agent composed it. Sending ROLE_AGENT here is the\r"
+            },
+            {
+              "line": 177,
+              "text": "      // easy mistake and some peers reject it.\r"
+            },
+            {
+              "line": 178,
+              "text": "      role: Role.ROLE_USER,\r"
+            },
+            {
+              "line": 179,
+              "text": "      parts: [textPart(args.text)],\r"
+            },
+            {
+              "line": 180,
+              "text": "      metadata: args.metadata,\r"
+            },
+            {
+              "line": 181,
+              "text": "      extensions: [],\r"
+            },
+            {
+              "line": 182,
+              "text": "      referenceTaskIds: [],\r"
+            },
+            {
+              "line": 183,
+              "text": "    };\r"
+            },
+            {
+              "line": 184,
+              "text": "    const result = await this.call(\r"
+            },
+            {
+              "line": 185,
+              "text": "      url,\r"
+            },
+            {
+              "line": 186,
+              "text": "      async () =>\r"
+            },
+            {
+              "line": 187,
+              "text": "        await client.sendMessage({\r"
+            },
+            {
+              "line": 188,
+              "text": "          tenant: \"\",\r"
+            },
+            {
+              "line": 189,
+              "text": "          message,\r"
+            },
+            {
+              "line": 190,
+              "text": "          configuration: undefined,\r"
+            },
+            {
+              "line": 191,
+              "text": "          metadata: undefined,\r"
+            },
+            {
+              "line": 192,
+              "text": "        }),\r"
+            },
+            {
+              "line": 193,
+              "text": "    );\r"
+            }
+          ]
+        },
+        {
+          "start": 261,
+          "end": 297,
+          "lines": [
+            {
+              "line": 261,
+              "text": "  async rawRpc(url: string, method: string, params: Record<string, unknown>): Promise<unknown> {\r"
+            },
+            {
+              "line": 262,
+              "text": "    const card = await this.card(url);\r"
+            },
+            {
+              "line": 263,
+              "text": "    const iface = card.supportedInterfaces.find(\r"
+            },
+            {
+              "line": 264,
+              "text": "      (candidate) => candidate.protocolBinding === \"JSONRPC\",\r"
+            },
+            {
+              "line": 265,
+              "text": "    );\r"
+            },
+            {
+              "line": 266,
+              "text": "    if (!iface) {\r"
+            },
+            {
+              "line": 267,
+              "text": "      throw new A2AApiError(`${normalizeBase(url)} advertises no JSON-RPC interface.`, {\r"
+            },
+            {
+              "line": 268,
+              "text": "        status: 0,\r"
+            },
+            {
+              "line": 269,
+              "text": "        remedy:\r"
+            },
+            {
+              "line": 270,
+              "text": "          \"Its card lists \" +\r"
+            },
+            {
+              "line": 271,
+              "text": "          (card.supportedInterfaces.map((i) => i.protocolBinding).join(\", \") || \"nothing\") +\r"
+            },
+            {
+              "line": 272,
+              "text": "          \". The escape hatch speaks JSON-RPC only; use the typed tools for the other bindings.\",\r"
+            },
+            {
+              "line": 273,
+              "text": "      });\r"
+            },
+            {
+              "line": 274,
+              "text": "    }\r"
+            },
+            {
+              "line": 275,
+              "text": "    const res = await this.rpcFetch(iface.url, {\r"
+            },
+            {
+              "line": 276,
+              "text": "      method: \"POST\",\r"
+            },
+            {
+              "line": 277,
+              "text": "      headers: { \"content-type\": \"application/json\" },\r"
+            },
+            {
+              "line": 278,
+              "text": "      body: JSON.stringify({ jsonrpc: \"2.0\", id: randomId(\"rpc\"), method, params }),\r"
+            },
+            {
+              "line": 279,
+              "text": "    });\r"
+            },
+            {
+              "line": 280,
+              "text": "    const text = await res.text();\r"
+            },
+            {
+              "line": 281,
+              "text": "    if (!res.ok) {\r"
+            },
+            {
+              "line": 282,
+              "text": "      const remedy = remedyForStatus(res.status, this.opts.token !== undefined);\r"
+            },
+            {
+              "line": 283,
+              "text": "      throw new A2AApiError(`${iface.url} answered HTTP ${res.status}: ${text.slice(0, 400)}`, {\r"
+            },
+            {
+              "line": 284,
+              "text": "        status: res.status,\r"
+            },
+            {
+              "line": 285,
+              "text": "        ...(remedy ? { remedy } : {}),\r"
+            },
+            {
+              "line": 286,
+              "text": "      });\r"
+            },
+            {
+              "line": 287,
+              "text": "    }\r"
+            },
+            {
+              "line": 288,
+              "text": "    try {\r"
+            },
+            {
+              "line": 289,
+              "text": "      return JSON.parse(text) as unknown;\r"
+            },
+            {
+              "line": 290,
+              "text": "    } catch {\r"
+            },
+            {
+              "line": 291,
+              "text": "      throw new A2AApiError(`${iface.url} answered with something that is not JSON.`, {\r"
+            },
+            {
+              "line": 292,
+              "text": "        status: res.status,\r"
+            },
+            {
+              "line": 293,
+              "text": "        errors: text.slice(0, 400),\r"
+            },
+            {
+              "line": 294,
+              "text": "      });\r"
+            },
+            {
+              "line": 295,
+              "text": "    }\r"
+            },
+            {
+              "line": 296,
+              "text": "  }\r"
+            },
+            {
+              "line": 297,
+              "text": "\r"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": "startup-pipeline-software-validation/2",
+  "argv": [
+    "C:\\Python313\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_agentops_admission_live_plan_v3",
+    "test_agentops_admission_chain_v3"
+  ],
+  "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+  "created_at_utc": "2026-10-28T22:45:18.886137+00:00",
+  "inputs": [
+    {
+      "path": "scripts/agentops_admission_live_plan_v3.py",
+      "sha256": "8213bf78048138cae395ca9553788033c4b7b01044be43db84890d42d6f6b58a",
+      "bytes": 15128
+    },
+    {
+      "path": "scripts/agentops_admission_control_v3.py",
+      "sha256": "692636ce8f0951de3fd48bd49c728cb5ab42019ff41f7baba977a330c673d47f",
+      "bytes": 25598
+    },
+    {
+      "path": "scripts/stage_agentops_admission_v3.py",
+      "sha256": "fc317b08512491f56a9ade0c5c681f73fbc8fe738b5467da941f23409855841b",
+      "bytes": 4719
+    },
+    {
+      "path": "scripts/execute_agentops_admission_phase_v3.py",
+      "sha256": "a034a90375a8cc3c2a6928849a7648a50cbf0cbb1528065fedb9d4269355e70d",
+      "bytes": 6124
+    },
+    {
+      "path": "scripts/check_agentops_startup_v1.py",
+      "sha256": "7fecd23a8cd5dad5cce048577788e2f87e7f610af0f0367143fe71dda90fa693",
+      "bytes": 13758
+    },
+    {
+      "path": "scripts/check_agentops_interpreter_exit_v2.py",
+      "sha256": "5f8b1a3796634af134aef029cdbccabec2352d35877e75f6d8e3115ff143c656",
+      "bytes": 16519
+    },
+    {
+      "path": "scripts/export_agentops_admission_v3.py",
+      "sha256": "069d2daac920b9ed9983a81698cb17c7da7a94d2417fcb7b9a7ac341b771fab3",
+      "bytes": 17140
+    },
+    {
+      "path": "scripts/run_agentops_admission_chain_v3.py",
+      "sha256": "9681b31c3093b007142ffd8c511a3dfdc52f2f128fcfd275792b69872cc237eb",
+      "bytes": 5691
+    },
+    {
+      "path": "tests/test_agentops_admission_live_plan_v3.py",
+      "sha256": "9c75deb96becade9e94bb5d7ae534dc6c81c71e742f7dd57abd1d8b17bc5008e",
+      "bytes": 21187
+    },
+    {
+      "path": "tests/test_agentops_admission_chain_v3.py",
+      "sha256": "9ac81e4b7692e4a1c81838189f5965a3ba65e4a3c5a94163ae06a58972fa2a15",
+      "bytes": 6133
+    },
+    {
+      "path": "tests/test_check_agentops_startup_v1.py",
+      "sha256": "61fdcb078e2d72f0704ced94243048708230efc45e8e64a8b48ee3aa360bdb65",
+      "bytes": 9687
+    },
+    {
+      "path": "tests/test_check_agentops_interpreter_exit_v2.py",
+      "sha256": "b7e381787717431f14cf82344c8110aa16f49b8a573eb8d8e1f451ae09060ca3",
+      "bytes": 13183
+    },
+    {
+      "path": "tests/test_export_agentops_admission_v3.py",
+      "sha256": "2ea1bda20816a82ba13b7fbd5222278e66f834964604d1d622c592354850c288",
+      "bytes": 19823
+    }
+  ],
+  "application_launches": 0,
+  "wsl_launches": 0,
+  "prior_unmodified_checker_exporter_suites": {
+    "receipt": "runs\\agentops-startup-pipeline-software\\windows-v1\\result.json",
+    "sha256": "4f6fee00ff57118bdd918a9a5c0ee55ef37ed97e674fc680eb2a0be43a812bdd",
+    "source_files": [
+      "scripts/check_agentops_interpreter_exit_v2.py",
+      "scripts/check_agentops_startup_v1.py",
+      "scripts/export_agentops_admission_v3.py",
+      "tests/test_check_agentops_interpreter_exit_v2.py",
+      "tests/test_check_agentops_startup_v1.py",
+      "tests/test_export_agentops_admission_v3.py"
+    ],
+    "unchanged": true
+  },
+  "scope": "Fresh changed plan/phase and root chain regressions; earlier checker/exporter tests refer to unchanged source and are not rerun."
+}

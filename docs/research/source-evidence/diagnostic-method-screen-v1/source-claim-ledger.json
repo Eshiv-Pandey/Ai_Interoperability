@@ -1,0 +1,121 @@
+{
+  "schema_version": "source-screen-claim-ledger/1",
+  "date_local": "2026-10-25",
+  "decision": "generic-minimum-edit-baseline; no-demonstrated-C1-distinction",
+  "retrieval_pairs": 6,
+  "primary_sources": [
+    {
+      "id": "parreaux2023",
+      "url": "https://arxiv.org/pdf/2308.11385v1",
+      "status": "Extended preprint v1; primary landing reports GandALF2023 acceptance",
+      "evidence": [
+        "03-primary-definitions-tool-response.json",
+        "04-reachability-definitions-tool-response.json",
+        "05-definition-locations-tool-response.json",
+        "06-strategy-explanation-passages-tool-response.json"
+      ],
+      "inspected": "Introduction, Section3.1 Definition2, Section4.2 Definitions16/18, Theorem20/Corollary21, AppendixA.1 excerpts",
+      "limit": "No complete-paper proof check, implementation or complexity transfer to arbitrary edited source."
+    },
+    {
+      "id": "coenen2022",
+      "url": "https://finkbeiner.groups.cispa.de/publications/2022-temporal-causality-in-reactive-systems/",
+      "status": "ATVA2022 author publication-page metadata/abstract",
+      "evidence": [
+        "02-primary-scope-tool-response.json",
+        "03-primary-definitions-tool-response.json"
+      ],
+      "inspected": "Identity, bibliography and author abstract",
+      "limit": "PDF fetch timed out; no full mechanism audit."
+    },
+    {
+      "id": "bartocci2011",
+      "url": "https://www3.cs.stonybrook.edu/~cram/Papers/BGKRS_TACAS11/index.html",
+      "status": "TACAS2011 author publication-page metadata/abstract",
+      "evidence": [
+        "02-primary-scope-tool-response.json"
+      ],
+      "inspected": "Controllable transition-flow changes and minimum-cost model repair framing",
+      "limit": "Probabilistic properties differ from finite existential completion; no implementation audit."
+    }
+  ],
+  "retained_local_inputs": [
+    "docs/research/source-recipe-baseline-v0.md",
+    "docs/research/source-evidence/recipe-method-screen-v1/manifest.json",
+    "docs/research/official-handler-method-implication-v2.md",
+    "runs/official-handler-bridge-control/group-status-v2.json"
+  ],
+  "claims": [
+    {
+      "id": "D1",
+      "kind": "restricted structural baseline reduction",
+      "claim": "Finite legal edit selection plus bounded existential completion has an exact edit-enumeration/reachability or jointly unrolled symbolic optimization baseline.",
+      "source_ids": [],
+      "evidence": [
+        "decision.md"
+      ],
+      "limit": "Supplied finite complete model/edit family and faithful encoding required. Not a novelty theorem or executed solver."
+    },
+    {
+      "id": "D2",
+      "kind": "primary definition comparison",
+      "claim": "Definition2 uses all closest cause-avoiding maximal paths; Definitions16/18 use existence/minimality of a winning strategy, whose winning condition covers all induced plays.",
+      "source_ids": [
+        "parreaux2023"
+      ],
+      "evidence": [
+        "05-definition-locations-tool-response.json",
+        "06-strategy-explanation-passages-tool-response.json"
+      ],
+      "limit": "Not equivalent to existence of one bounded edited completion. No inherited complexity result."
+    },
+    {
+      "id": "D3",
+      "kind": "prior-art scope",
+      "claim": "Trace-property causality and controllable minimum-cost model repair are established subject areas.",
+      "source_ids": [
+        "coenen2022",
+        "bartocci2011"
+      ],
+      "evidence": [
+        "02-primary-scope-tool-response.json"
+      ],
+      "limit": "Author-page abstract support only for those two sources; no reproduced results."
+    },
+    {
+      "id": "D4",
+      "kind": "retained source consequence",
+      "claim": "Hypothetical serializer/header/service edits are design changes distinct from recovery by the original caller interface.",
+      "source_ids": [],
+      "evidence": [
+        "decision.md"
+      ],
+      "limit": "No edit execution, successful route outcome or unique causal blame established."
+    },
+    {
+      "id": "D5",
+      "kind": "negative research screen",
+      "claim": "Generic minimum-edit or causal-diagnosis framing does not identify the additional C1 technical step.",
+      "source_ids": [
+        "parreaux2023",
+        "coenen2022",
+        "bartocci2011"
+      ],
+      "evidence": [
+        "decision.md"
+      ],
+      "limit": "Not proof that no diagnostic innovation can exist; no scientific gate credit."
+    }
+  ],
+  "scope": {
+    "web_records_are_original_source_bytes": false,
+    "original_remote_source_snapshots": 0,
+    "model_calls": 0,
+    "application_requests": 0,
+    "candidate_implementations_or_performance_trials": 0,
+    "qualified_second_domain": false,
+    "novelty_demonstrated": false,
+    "human_review_completed": false,
+    "progress_percent": 5
+  }
+}

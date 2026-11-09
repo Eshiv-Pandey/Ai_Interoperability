@@ -1,0 +1,1588 @@
+{
+  "schema_version": "reference-bridge-verification/1",
+  "recorded_at": "2026-10-23T21:58:11.637923+00:00",
+  "claim_limit": "Four authored Carol-port route observations and software/source/data checks only; no unchanged-application prevalence, prospective unsupported/admission, candidate advantage, novelty or human review",
+  "attempt_count": 4,
+  "all_four_single_attempts": true,
+  "checks": [
+    {
+      "input": "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/runtime.json",
+      "input_sha256": "e8450de64e1dbb43acd81c1d92850aa8d1e981505818ced54aac1d8733b0135d",
+      "run_id": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416",
+      "variant": "R1",
+      "capture_outcome": "recorded",
+      "capture_exit_code": 0,
+      "classification": "checked-actual-authored-port-observation",
+      "projection": {
+        "schema_version": "observed-status-trace-projection/1",
+        "source_trace_sha256": "a3376c40a2c9640e555458f8d4779e59cac9b18e612ba16d2ffef55fbb421e2c",
+        "config": {
+          "goal": "logical-completion-and-original-association"
+        },
+        "analysis_clock": 1792792476,
+        "initial_exchange_id": "mcp-3",
+        "events": [
+          {
+            "state_id": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-3",
+            "exchange_id": "mcp-3",
+            "request_method": "tools/call",
+            "operation": "a2a_send_message",
+            "response_sha256": "c921b1166e4f6fb8025121e7a803ee846364fe0ab8546702ddaa2bfdabb321af",
+            "evidence_source": "send-acknowledgement",
+            "observable_fields": {
+              "returned_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "returned_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "required_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw"
+            }
+          },
+          {
+            "state_id": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-4",
+            "exchange_id": "mcp-4",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "5e8b9a4727302f2a5d210634466770a95207b899059be50fd6aabc2b740be9bf",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "returned_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "required_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw"
+            }
+          },
+          {
+            "state_id": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-5",
+            "exchange_id": "mcp-5",
+            "request_method": "tools/call",
+            "operation": "a2a_send_message",
+            "response_sha256": "9d28f94f59c3127c1e881cb6b48dedf5877de72bd203d18d1ecef38c137eeca4",
+            "evidence_source": "send-acknowledgement",
+            "observable_fields": {
+              "returned_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "returned_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "required_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw"
+            }
+          },
+          {
+            "state_id": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-6",
+            "exchange_id": "mcp-6",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "671e0cb79c92fe008c60172f0cb571efe67a8b5792e3ca68beea8518dff7225b",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "returned_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "required_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw"
+            }
+          }
+        ],
+        "manifest": {
+          "schema_version": "finite-continuation/1",
+          "id": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416:historical-status",
+          "route": "amirk_a2a_to_mcp historical status observation",
+          "horizon": 3,
+          "provenance": {
+            "kind": "wire-derived",
+            "source": "runtime-wire-observation/1:a3376c40a2c9640e555458f8d4779e59cac9b18e612ba16d2ffef55fbb421e2c",
+            "review_status": "AI-authored status projection; human review pending"
+          },
+          "evidence": {
+            "complete": false,
+            "observed_at": 1792792476,
+            "valid_until": 1792792476
+          },
+          "initial": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-3",
+          "states": {
+            "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-3": {
+              "returned_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "returned_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "required_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw"
+            },
+            "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-4": {
+              "returned_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "returned_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "required_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw"
+            },
+            "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-5": {
+              "returned_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "returned_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "required_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw"
+            },
+            "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-6": {
+              "returned_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "returned_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_F0yX6f5JTQrop8vh6qbKMg",
+              "required_context_reference": "cx_k0WC0eHYpsDzlEPymU-Epw"
+            }
+          },
+          "transitions": [
+            {
+              "id": "edge:mcp-4",
+              "source": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-3",
+              "target": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-4",
+              "operation": "a2a_get_task"
+            },
+            {
+              "id": "edge:mcp-5",
+              "source": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-4",
+              "target": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-5",
+              "operation": "a2a_send_message"
+            },
+            {
+              "id": "edge:mcp-6",
+              "source": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-5",
+              "target": "R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416::mcp-6",
+              "operation": "a2a_get_task"
+            }
+          ],
+          "runtime_contract": {
+            "goal": [
+              {
+                "field": "status",
+                "op": "eq",
+                "value": "completed"
+              },
+              {
+                "field": "returned_task_reference",
+                "op": "eq_field",
+                "other_field": "required_task_reference"
+              },
+              {
+                "field": "returned_context_reference",
+                "op": "eq_field",
+                "other_field": "required_context_reference"
+              }
+            ],
+            "invariants": [
+              {
+                "field": "request_target_valid",
+                "op": "eq",
+                "value": true
+              },
+              {
+                "field": "task_namespace",
+                "op": "eq",
+                "value": "bridge-handle"
+              }
+            ]
+          }
+        }
+      },
+      "baseline": {
+        "decision": "unknown",
+        "reason": "incomplete_model",
+        "certificate": null,
+        "stats": {
+          "state_visits": 4,
+          "edge_checks": 3
+        }
+      },
+      "independent_finite_oracle": {
+        "decision": "unknown",
+        "reason": "The finite evidence is incomplete or a relevant observable is indeterminate.",
+        "certificate": null,
+        "stats": {
+          "path_nodes": 4
+        }
+      },
+      "certificates": {
+        "baseline": null,
+        "oracle": null
+      },
+      "checks": {
+        "independent_public_projection": true,
+        "independent_native_correlation": true,
+        "snapshot_hashes": true,
+        "prospective_specification": true,
+        "source_ledger_matches_report": true,
+        "sources_unchanged_during_capture": true,
+        "runtime_configuration_hash": true,
+        "bridge_source_archive": true,
+        "mcp_cost_ledger": true,
+        "specific_children_closed_normally": true,
+        "finite_decision_agreement": true,
+        "certificates": true,
+        "later_clock_abstains": true
+      },
+      "native_sidecar_sha256": "fe6ef7814000bfee4ad559f2362b29d32b536a7e2fda80219571bf00f880cf40",
+      "native_costs": {
+        "http_requests": 5,
+        "rpc_requests": 4,
+        "request_body_bytes": 835,
+        "response_body_bytes": 4870
+      },
+      "mcp_costs": {
+        "mcp_rpc_requests": 6,
+        "mcp_notifications_sent": 0,
+        "request_bytes": 2174,
+        "response_bytes": 8642
+      },
+      "tree_checks": {
+        "bridge_source_manifest": true,
+        "bridge_dist_manifest": true
+      },
+      "observed": {
+        "initial_required_observed": true,
+        "answer_sent": true,
+        "answer_attempts": 1,
+        "final_authoritative_read_received": true,
+        "final_application_error": false,
+        "final_task_handle": "tk_F0yX6f5JTQrop8vh6qbKMg",
+        "final_context_handle": "cx_k0WC0eHYpsDzlEPymU-Epw",
+        "final_state": "TASK_STATE_INPUT_REQUIRED",
+        "final_status": "input_required",
+        "original_task_preserved": true,
+        "original_context_preserved": true,
+        "goal_achieved": false,
+        "outer_answer_result_type": "complete",
+        "outer_answer_is_goal_evidence": false,
+        "extension_status_after_answer": null,
+        "source_expected_state_observed": true,
+        "answer_protocol_error": null,
+        "extension_protocol_error": null,
+        "final_protocol_error": null
+      },
+      "source_based_expectation_is_validation_condition": false,
+      "valid": true
+    },
+    {
+      "input": "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/runtime.json",
+      "input_sha256": "81478f529d6a838bf759a539b91346e66e14aa63506f2116482edb02b8ea820c",
+      "run_id": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780",
+      "variant": "R2",
+      "capture_outcome": "recorded",
+      "capture_exit_code": 0,
+      "classification": "checked-actual-authored-port-observation",
+      "projection": {
+        "schema_version": "observed-status-trace-projection/1",
+        "source_trace_sha256": "0e3b75b475827414a0b83b9cd8c2a103d1d252311203d432c13010cbe1deac78",
+        "config": {
+          "goal": "logical-completion-and-original-association"
+        },
+        "analysis_clock": 1792792514,
+        "initial_exchange_id": "mcp-4",
+        "events": [
+          {
+            "state_id": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-4",
+            "exchange_id": "mcp-4",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "174dd5541d8a7ab984781368713a680269831207e4475d24d16fb3b6589365d2",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "returned_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "required_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A"
+            }
+          },
+          {
+            "state_id": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-5",
+            "exchange_id": "mcp-5",
+            "request_method": "tasks/get",
+            "operation": "tasks/get",
+            "response_sha256": "391674e4f3410fee1bda1d1b6930b395473581c233db27a42f0e410d2a44f45d",
+            "evidence_source": "extension-observation",
+            "observable_fields": {
+              "returned_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "required_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A"
+            }
+          },
+          {
+            "state_id": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-6",
+            "exchange_id": "mcp-6",
+            "request_method": "tasks/update",
+            "operation": "tasks/update",
+            "response_sha256": "68157815e9508d5e35b17d60a699dc95a24d01b7a5581706b558b9c5a2f82da5",
+            "evidence_source": "extension-observation",
+            "observable_fields": {
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "required_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A"
+            }
+          },
+          {
+            "state_id": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-7",
+            "exchange_id": "mcp-7",
+            "request_method": "tasks/get",
+            "operation": "tasks/get",
+            "response_sha256": "a99ad2ae17e45b6c8b6d7de4be7be8c2a921c81a265fdecf46ccd41966dd62f6",
+            "evidence_source": "extension-observation",
+            "observable_fields": {
+              "returned_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "required_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A"
+            }
+          },
+          {
+            "state_id": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-8",
+            "exchange_id": "mcp-8",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "e03e73b645b91087cb8aa2f9242cf3b835bf32e4e6d563613c15c9dc11e2ff46",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "returned_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "required_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A"
+            }
+          }
+        ],
+        "manifest": {
+          "schema_version": "finite-continuation/1",
+          "id": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780:historical-status",
+          "route": "amirk_a2a_to_mcp historical status observation",
+          "horizon": 4,
+          "provenance": {
+            "kind": "wire-derived",
+            "source": "runtime-wire-observation/1:0e3b75b475827414a0b83b9cd8c2a103d1d252311203d432c13010cbe1deac78",
+            "review_status": "AI-authored status projection; human review pending"
+          },
+          "evidence": {
+            "complete": false,
+            "observed_at": 1792792514,
+            "valid_until": 1792792514
+          },
+          "initial": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-4",
+          "states": {
+            "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-4": {
+              "returned_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "returned_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "required_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A"
+            },
+            "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-5": {
+              "returned_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "required_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A"
+            },
+            "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-6": {
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "required_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A"
+            },
+            "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-7": {
+              "returned_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "required_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A"
+            },
+            "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-8": {
+              "returned_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "returned_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A",
+              "status": "input_required",
+              "task_namespace": "bridge-handle",
+              "request_target_valid": true,
+              "required_task_reference": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+              "required_context_reference": "cx_gQSGHTvfc3d9PlzyIgVo2A"
+            }
+          },
+          "transitions": [
+            {
+              "id": "edge:mcp-5",
+              "source": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-4",
+              "target": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-5",
+              "operation": "tasks/get"
+            },
+            {
+              "id": "edge:mcp-6",
+              "source": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-5",
+              "target": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-6",
+              "operation": "tasks/update"
+            },
+            {
+              "id": "edge:mcp-7",
+              "source": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-6",
+              "target": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-7",
+              "operation": "tasks/get"
+            },
+            {
+              "id": "edge:mcp-8",
+              "source": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-7",
+              "target": "R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780::mcp-8",
+              "operation": "a2a_get_task"
+            }
+          ],
+          "runtime_contract": {
+            "goal": [
+              {
+                "field": "status",
+                "op": "eq",
+                "value": "completed"
+              },
+              {
+                "field": "returned_task_reference",
+                "op": "eq_field",
+                "other_field": "required_task_reference"
+              },
+              {
+                "field": "returned_context_reference",
+                "op": "eq_field",
+                "other_field": "required_context_reference"
+              }
+            ],
+            "invariants": [
+              {
+                "field": "request_target_valid",
+                "op": "eq",
+                "value": true
+              },
+              {
+                "field": "task_namespace",
+                "op": "eq",
+                "value": "bridge-handle"
+              }
+            ]
+          }
+        }
+      },
+      "baseline": {
+        "decision": "unknown",
+        "reason": "indeterminate_observables",
+        "certificate": null,
+        "stats": {
+          "state_visits": 5,
+          "edge_checks": 4
+        }
+      },
+      "independent_finite_oracle": {
+        "decision": "unknown",
+        "reason": "The finite evidence is incomplete or a relevant observable is indeterminate.",
+        "certificate": null,
+        "stats": {
+          "path_nodes": 5
+        }
+      },
+      "certificates": {
+        "baseline": null,
+        "oracle": null
+      },
+      "checks": {
+        "independent_public_projection": true,
+        "independent_native_correlation": true,
+        "snapshot_hashes": true,
+        "prospective_specification": true,
+        "source_ledger_matches_report": true,
+        "sources_unchanged_during_capture": true,
+        "runtime_configuration_hash": true,
+        "bridge_source_archive": true,
+        "mcp_cost_ledger": true,
+        "specific_children_closed_normally": true,
+        "finite_decision_agreement": true,
+        "certificates": true,
+        "later_clock_abstains": true
+      },
+      "native_sidecar_sha256": "17dbf579f0ccc0627c3a88ade84ae25671e001cdd2fa2bfc74e7b2dd56bcdc91",
+      "native_costs": {
+        "http_requests": 8,
+        "rpc_requests": 7,
+        "request_body_bytes": 1177,
+        "response_body_bytes": 7331
+      },
+      "mcp_costs": {
+        "mcp_rpc_requests": 8,
+        "mcp_notifications_sent": 0,
+        "request_bytes": 3144,
+        "response_bytes": 8904
+      },
+      "tree_checks": {
+        "bridge_source_manifest": true,
+        "bridge_dist_manifest": true
+      },
+      "observed": {
+        "initial_required_observed": true,
+        "answer_sent": true,
+        "answer_attempts": 1,
+        "final_authoritative_read_received": true,
+        "final_application_error": false,
+        "final_task_handle": "tk_lKGMSiSiabjWYKZ5JH3tWQ",
+        "final_context_handle": "cx_gQSGHTvfc3d9PlzyIgVo2A",
+        "final_state": "TASK_STATE_INPUT_REQUIRED",
+        "final_status": "input_required",
+        "original_task_preserved": true,
+        "original_context_preserved": true,
+        "goal_achieved": false,
+        "outer_answer_result_type": "complete",
+        "outer_answer_is_goal_evidence": false,
+        "extension_status_after_answer": "input_required",
+        "source_expected_state_observed": true,
+        "answer_protocol_error": null,
+        "extension_protocol_error": null,
+        "final_protocol_error": null
+      },
+      "source_based_expectation_is_validation_condition": false,
+      "valid": true
+    },
+    {
+      "input": "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/runtime.json",
+      "input_sha256": "2e9cabd0eaee3b2d6ab33dc70a0f6be76e9bc303bf8eb6114435ee7596c790db",
+      "run_id": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692",
+      "variant": "R3",
+      "capture_outcome": "recorded",
+      "capture_exit_code": 0,
+      "classification": "checked-actual-authored-port-observation",
+      "projection": {
+        "schema_version": "observed-status-trace-projection/1",
+        "source_trace_sha256": "9cd99979e5c4bedf61520be4f5eb369b22b0a2c542727fe11c8e5397bdc47743",
+        "config": {
+          "goal": "logical-completion-and-original-association"
+        },
+        "analysis_clock": 1792792552,
+        "initial_exchange_id": "mcp-3",
+        "events": [
+          {
+            "state_id": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-3",
+            "exchange_id": "mcp-3",
+            "request_method": "tools/call",
+            "operation": "a2a_send_message",
+            "response_sha256": "a5a7f6fdddf12b83efdbc19bc5b8a8943870d7e8ab7ee5e3c4efd853dcf2b0e8",
+            "evidence_source": "send-acknowledgement",
+            "observable_fields": {
+              "returned_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "returned_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad",
+              "status": "submitted",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "required_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad"
+            }
+          },
+          {
+            "state_id": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-4",
+            "exchange_id": "mcp-4",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "b3fd55ddf2b0ae8f42bf284aa4aed6034ec95ac8b23a31cacc56ced0ace08a69",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "returned_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "required_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad"
+            }
+          },
+          {
+            "state_id": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-5",
+            "exchange_id": "mcp-5",
+            "request_method": "tools/call",
+            "operation": "a2a_send_message",
+            "response_sha256": "3a3a53a7eb2b87506433ebceb0006c34d28e32844a4bded993466d4eb8718262",
+            "evidence_source": "send-acknowledgement",
+            "observable_fields": {
+              "returned_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "returned_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "required_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad"
+            }
+          },
+          {
+            "state_id": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-6",
+            "exchange_id": "mcp-6",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "9fe1caa1c5f8d6c874697fe07566a37d3f62a0f85701727c950fe32139935984",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "returned_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "required_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad"
+            }
+          }
+        ],
+        "manifest": {
+          "schema_version": "finite-continuation/1",
+          "id": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692:historical-status",
+          "route": "mgcrea_mcp_a2a historical status observation",
+          "horizon": 3,
+          "provenance": {
+            "kind": "wire-derived",
+            "source": "runtime-wire-observation/1:9cd99979e5c4bedf61520be4f5eb369b22b0a2c542727fe11c8e5397bdc47743",
+            "review_status": "AI-authored status projection; human review pending"
+          },
+          "evidence": {
+            "complete": false,
+            "observed_at": 1792792552,
+            "valid_until": 1792792552
+          },
+          "initial": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-3",
+          "states": {
+            "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-3": {
+              "returned_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "returned_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad",
+              "status": "submitted",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "required_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad"
+            },
+            "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-4": {
+              "returned_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "returned_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "required_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad"
+            },
+            "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-5": {
+              "returned_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "returned_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "required_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad"
+            },
+            "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-6": {
+              "returned_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "returned_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "859c15ce-6082-4311-9404-1f8455cfee77",
+              "required_context_reference": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad"
+            }
+          },
+          "transitions": [
+            {
+              "id": "edge:mcp-4",
+              "source": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-3",
+              "target": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-4",
+              "operation": "a2a_get_task"
+            },
+            {
+              "id": "edge:mcp-5",
+              "source": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-4",
+              "target": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-5",
+              "operation": "a2a_send_message"
+            },
+            {
+              "id": "edge:mcp-6",
+              "source": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-5",
+              "target": "R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692::mcp-6",
+              "operation": "a2a_get_task"
+            }
+          ],
+          "runtime_contract": {
+            "goal": [
+              {
+                "field": "status",
+                "op": "eq",
+                "value": "completed"
+              },
+              {
+                "field": "returned_task_reference",
+                "op": "eq_field",
+                "other_field": "required_task_reference"
+              },
+              {
+                "field": "returned_context_reference",
+                "op": "eq_field",
+                "other_field": "required_context_reference"
+              }
+            ],
+            "invariants": [
+              {
+                "field": "request_target_valid",
+                "op": "eq",
+                "value": true
+              },
+              {
+                "field": "task_namespace",
+                "op": "eq",
+                "value": "public-native-a2a-id"
+              }
+            ]
+          }
+        }
+      },
+      "baseline": {
+        "decision": "unknown",
+        "reason": "incomplete_model",
+        "certificate": null,
+        "stats": {
+          "state_visits": 4,
+          "edge_checks": 3
+        }
+      },
+      "independent_finite_oracle": {
+        "decision": "unknown",
+        "reason": "The finite evidence is incomplete or a relevant observable is indeterminate.",
+        "certificate": null,
+        "stats": {
+          "path_nodes": 4
+        }
+      },
+      "certificates": {
+        "baseline": null,
+        "oracle": null
+      },
+      "checks": {
+        "independent_public_projection": true,
+        "independent_native_correlation": true,
+        "snapshot_hashes": true,
+        "prospective_specification": true,
+        "source_ledger_matches_report": true,
+        "sources_unchanged_during_capture": true,
+        "runtime_configuration_hash": true,
+        "bridge_source_archive": true,
+        "mcp_cost_ledger": true,
+        "specific_children_closed_normally": true,
+        "finite_decision_agreement": true,
+        "certificates": true,
+        "later_clock_abstains": true
+      },
+      "native_sidecar_sha256": "ee0ea47d1cde7ac8d81c2271ba62c34b1477925550f4ba3e8ad8acfa0470523f",
+      "native_costs": {
+        "http_requests": 5,
+        "rpc_requests": 4,
+        "request_body_bytes": 965,
+        "response_body_bytes": 4501
+      },
+      "mcp_costs": {
+        "mcp_rpc_requests": 6,
+        "mcp_notifications_sent": 1,
+        "request_bytes": 1125,
+        "response_bytes": 19515
+      },
+      "tree_checks": {
+        "bridge_source_manifest": true,
+        "bridge_dist_manifest": true
+      },
+      "observed": {
+        "initial_required_observed": true,
+        "initial_artifact_expected_history_observed": true,
+        "answer_sent": true,
+        "answer_attempts": 1,
+        "answer_application_error": false,
+        "final_authoritative_read_received": true,
+        "final_application_error": false,
+        "final_task_id": "859c15ce-6082-4311-9404-1f8455cfee77",
+        "final_context_id": "d6325f34-fe7d-4dbc-98a6-da0dd5c837ad",
+        "final_state": "input_required",
+        "final_state_returned": "input_required",
+        "original_task_preserved": true,
+        "original_context_preserved": true,
+        "original_task_completed": false,
+        "goal_achieved": false,
+        "source_expected_state_observed": true,
+        "answer_protocol_error": null,
+        "final_protocol_error": null,
+        "interpretation": "Source waiting/completed expectations are data; final public native task association and state determine the goal. No terminal artifact projector is used."
+      },
+      "source_based_expectation_is_validation_condition": false,
+      "valid": true
+    },
+    {
+      "input": "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/runtime.json",
+      "input_sha256": "dc08ccfdc166637a33e77b7a4faef1af275d3a8115e60d7443c7c47fc13ababc",
+      "run_id": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760",
+      "variant": "R4",
+      "capture_outcome": "recorded",
+      "capture_exit_code": 0,
+      "classification": "checked-actual-authored-port-observation",
+      "projection": {
+        "schema_version": "observed-status-trace-projection/1",
+        "source_trace_sha256": "f7824c146fad8d93fe6c467406b405d2b24d5623f7cf91bf5342946da93dcb57",
+        "config": {
+          "goal": "logical-completion-and-original-association"
+        },
+        "analysis_clock": 1792792610,
+        "initial_exchange_id": "mcp-3",
+        "events": [
+          {
+            "state_id": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-3",
+            "exchange_id": "mcp-3",
+            "request_method": "tools/call",
+            "operation": "a2a_send_message",
+            "response_sha256": "56123b77028dc1e2e0ee019f5a054865b9510fe7297622ef4adbb868bff8600d",
+            "evidence_source": "send-acknowledgement",
+            "observable_fields": {
+              "returned_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "returned_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f",
+              "status": "submitted",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "required_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f"
+            }
+          },
+          {
+            "state_id": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-4",
+            "exchange_id": "mcp-4",
+            "request_method": "tools/call",
+            "operation": "a2a_get_task",
+            "response_sha256": "5b67e61663cb4878719a2ec9c19e310b7f0f52030bf37174b0072c6a7be04b19",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "returned_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "required_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f"
+            }
+          },
+          {
+            "state_id": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-5",
+            "exchange_id": "mcp-5",
+            "request_method": "tools/call",
+            "operation": "a2a_request/SendMessage",
+            "response_sha256": "b73f2164d44f612994818486965aec2dba36032a179719f919c8e18997203d18",
+            "evidence_source": "send-acknowledgement",
+            "observable_fields": {
+              "returned_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "returned_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f",
+              "status": "completed",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "required_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f"
+            }
+          },
+          {
+            "state_id": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-6",
+            "exchange_id": "mcp-6",
+            "request_method": "tools/call",
+            "operation": "a2a_request/GetTask",
+            "response_sha256": "aa2f56b25e6e2ffcca1f1ede9b9db941deaa75fd0e892c79ebf4af6b8a8ed9c5",
+            "evidence_source": "peer-refreshed",
+            "observable_fields": {
+              "returned_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "returned_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f",
+              "status": "completed",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "required_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f"
+            }
+          }
+        ],
+        "manifest": {
+          "schema_version": "finite-continuation/1",
+          "id": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760:historical-status",
+          "route": "mgcrea_mcp_a2a historical status observation",
+          "horizon": 3,
+          "provenance": {
+            "kind": "wire-derived",
+            "source": "runtime-wire-observation/1:f7824c146fad8d93fe6c467406b405d2b24d5623f7cf91bf5342946da93dcb57",
+            "review_status": "AI-authored status projection; human review pending"
+          },
+          "evidence": {
+            "complete": false,
+            "observed_at": 1792792610,
+            "valid_until": 1792792610
+          },
+          "initial": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-3",
+          "states": {
+            "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-3": {
+              "returned_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "returned_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f",
+              "status": "submitted",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "required_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f"
+            },
+            "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-4": {
+              "returned_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "returned_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f",
+              "status": "input_required",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "required_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f"
+            },
+            "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-5": {
+              "returned_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "returned_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f",
+              "status": "completed",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "required_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f"
+            },
+            "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-6": {
+              "returned_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "returned_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f",
+              "status": "completed",
+              "task_namespace": "public-native-a2a-id",
+              "request_target_valid": true,
+              "required_task_reference": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+              "required_context_reference": "8e8add8f-f670-408d-a33e-2eef2820b79f"
+            }
+          },
+          "transitions": [
+            {
+              "id": "edge:mcp-4",
+              "source": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-3",
+              "target": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-4",
+              "operation": "a2a_get_task"
+            },
+            {
+              "id": "edge:mcp-5",
+              "source": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-4",
+              "target": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-5",
+              "operation": "a2a_request/SendMessage"
+            },
+            {
+              "id": "edge:mcp-6",
+              "source": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-5",
+              "target": "R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760::mcp-6",
+              "operation": "a2a_request/GetTask"
+            }
+          ],
+          "runtime_contract": {
+            "goal": [
+              {
+                "field": "status",
+                "op": "eq",
+                "value": "completed"
+              },
+              {
+                "field": "returned_task_reference",
+                "op": "eq_field",
+                "other_field": "required_task_reference"
+              },
+              {
+                "field": "returned_context_reference",
+                "op": "eq_field",
+                "other_field": "required_context_reference"
+              }
+            ],
+            "invariants": [
+              {
+                "field": "request_target_valid",
+                "op": "eq",
+                "value": true
+              },
+              {
+                "field": "task_namespace",
+                "op": "eq",
+                "value": "public-native-a2a-id"
+              }
+            ]
+          }
+        }
+      },
+      "baseline": {
+        "decision": "supported",
+        "reason": "bounded_path",
+        "certificate": {
+          "model_sha256": "11f91e2928b0b5d257cbdbbfa130b4276b4d9f58ca278fe071125a452880ee69",
+          "checked_at": 1792792610,
+          "horizon": 3,
+          "valid_until": 1792792610,
+          "kind": "path",
+          "transition_ids": [
+            "edge:mcp-4",
+            "edge:mcp-5"
+          ]
+        },
+        "stats": {
+          "state_visits": 3,
+          "edge_checks": 2
+        }
+      },
+      "independent_finite_oracle": {
+        "decision": "supported",
+        "reason": "A modeled invariant-safe path satisfies the runtime goal within the horizon.",
+        "certificate": {
+          "model_sha256": "11f91e2928b0b5d257cbdbbfa130b4276b4d9f58ca278fe071125a452880ee69",
+          "checked_at": 1792792610,
+          "horizon": 3,
+          "valid_until": 1792792610,
+          "kind": "path",
+          "transition_ids": [
+            "edge:mcp-4",
+            "edge:mcp-5"
+          ]
+        },
+        "stats": {
+          "path_nodes": 3
+        }
+      },
+      "certificates": {
+        "baseline": true,
+        "oracle": true
+      },
+      "checks": {
+        "independent_public_projection": true,
+        "independent_native_correlation": true,
+        "snapshot_hashes": true,
+        "prospective_specification": true,
+        "source_ledger_matches_report": true,
+        "sources_unchanged_during_capture": true,
+        "runtime_configuration_hash": true,
+        "bridge_source_archive": true,
+        "mcp_cost_ledger": true,
+        "specific_children_closed_normally": true,
+        "finite_decision_agreement": true,
+        "certificates": true,
+        "later_clock_abstains": true
+      },
+      "native_sidecar_sha256": "f3daf3596630f542e218e7e5c1a08b5b5c6f90e898857fa645a7b8a098ddb4a2",
+      "native_costs": {
+        "http_requests": 5,
+        "rpc_requests": 4,
+        "request_body_bytes": 1066,
+        "response_body_bytes": 4569
+      },
+      "mcp_costs": {
+        "mcp_rpc_requests": 6,
+        "mcp_notifications_sent": 1,
+        "request_bytes": 1451,
+        "response_bytes": 20150
+      },
+      "tree_checks": {
+        "bridge_source_manifest": true,
+        "bridge_dist_manifest": true
+      },
+      "observed": {
+        "initial_required_observed": true,
+        "initial_artifact_expected_history_observed": true,
+        "answer_sent": true,
+        "answer_attempts": 1,
+        "answer_application_error": false,
+        "final_authoritative_read_received": true,
+        "final_application_error": false,
+        "final_task_id": "b60950bd-97dc-435c-b3a1-013805d3f88c",
+        "final_context_id": "8e8add8f-f670-408d-a33e-2eef2820b79f",
+        "final_state": "completed",
+        "final_state_returned": "TASK_STATE_COMPLETED",
+        "original_task_preserved": true,
+        "original_context_preserved": true,
+        "original_task_completed": true,
+        "goal_achieved": true,
+        "source_expected_state_observed": true,
+        "answer_protocol_error": null,
+        "final_protocol_error": null,
+        "interpretation": "Source waiting/completed expectations are data; final public native task association and state determine the goal. No terminal artifact projector is used."
+      },
+      "source_based_expectation_is_validation_condition": false,
+      "valid": true
+    }
+  ],
+  "archive": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\reference-bridge-observation\\verification-v1.sources",
+  "archive_sha256": {
+    "docs/research/reference-bridge-probe-v1.md": "975730c259dfe4470377baeb9ce8b2f007df048a8559aa3dcd14768e4e800ef4",
+    "docs/research/status-projection-independent-review.md": "6400e80340843405ea30cb702957d973cc5f38b93ebd25d7d7a55ccd1bfc2349",
+    "examples/development/positive.json": "1d15bccea72aae5e2b1eb01f3e310aa06eefc38504e7a4552182f87838cc54f7",
+    "examples/development/README.md": "6751e5cf3fcb2433a7032af04eb9f8ba93459d8077d7a56763248e6121e77b4a",
+    "examples/development/unknown-observable.json": "35146cd141ffa61ee3abdc96ab3f9d6dc4129b9f7407e847266744221cb1827d",
+    "examples/development/unsupported-binding.json": "2c247444b4b15be36c659110679ad6d348a520b89c0f551d6025d83aef0482c0",
+    "examples/development/unsupported-safety.json": "d55c8b2e9d1d3d77ef14944a74bf915e87099e5a189af1d5238b7dfdc365f7fa",
+    "external/source-lock.json": "93075b3e0a9fe293d33595d23749218c8a206f9788efe620e16dd49a9dae5efe",
+    "runs/native-reference-continuation/carol-prepare-20261023T204454418495Z-29896/driver-source.py": "ae02b4e7545e865b42c6bd63335c559ce5afaa01d44396761cd5f867a91a8b9e",
+    "runs/native-reference-continuation/carol-prepare-20261023T204454418495Z-29896/report.json": "fdce87d3c16890de9b66bcde1c83b4a6be20e958747b60c4995707bb56252483",
+    "runs/native-reference-continuation/carol-run-20261023T204701107557Z-24356/driver-source.py": "c9f285bb478025a0a5ebad79684e7ecc54476b50cf2a9725f637846a65952071",
+    "runs/native-reference-continuation/carol-run-20261023T204701107557Z-24356/report.json": "c3301eada86fc0155515809fd52b6fe56708d60168c64039b70a61a4172613c2",
+    "runs/native-reference-continuation/carol-run-20261023T204701107557Z-24356/validation-summary.json": "c6ff15c25af60cb3298d16b3a88855636fd8a8a88bfc49ccfd79cc6286ad8c78",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/bridge-config.json": "7584570b470cb34042acc37f94b6b4a873ff5bc19e6dfc9ac7cf1aafd34484d7",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-bridge-runtime-config.json": "b161e1283a91b90b339dd1d4deb7a9e888c62dea8ec37eb66f5328783b99ea6b",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-ledger.json": "de108133eab78796839bd023c6b9cb26358e05fee90279e5593738a19cc2f8c5",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/01-capture-reference-bridge-v1.mjs": "c27b2aa223451768d4a96ca407ac2c2bae6f1d7558a5a9de6acf8c9b1a48d42f",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/02-log-reference-http.mjs": "c274b60dbd3dedc67f4df9d37dde14a8c4150ee4b5e06304e0e104e595fbf1eb",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/03-reference-mgcrea-v1.mjs": "85f6224a0c49c65072adcc3cc464536e5684fc2dbd39763249bc861f84ca589c",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/04-carol-reference-v1.mjs": "b6b6492ee5c27cf5db0474054b0f18a8feafe0859d9faaa4fd67946c7768626d",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/05-reference-bridge-probe-v1.md": "975730c259dfe4470377baeb9ce8b2f007df048a8559aa3dcd14768e4e800ef4",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/06-source-lock.json": "93075b3e0a9fe293d33595d23749218c8a206f9788efe620e16dd49a9dae5efe",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/07-package.json": "6bc71117129e076b3b1d0110648ffe94feb5af259a3785e75a205c6207b980a5",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/08-package-lock.json": "3e3c7e550d7166bd7f32e4e8e27811eaaf678bf3c3a1157b974f87734037b4da",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/09-package.json": "beb9929d3775a1c32b171e273b0fac9a2fed7fdcd61934a3dac3223d69234d07",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/10-package.json": "faa28d9e4362c02c81ce4c7a3b62443495343830c53de2efcbd8c1088e4ba931",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/11-change-map.json": "49d78091344f416972ec065c615170a3de06a8d72e0cf9ff60b478563650ac38",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/12-ATTRIBUTION.md": "f20fb8fe6a579634cfac93ccd11c9fe77bb4d2507228de6e8f2125beabb72983",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/13-status_projection.py": "648e18cb6f1e2cbf3ff31f3dab70a29b473701d10df3f1758065bd5d4da8debf",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/14-status_projection_checker.py": "3bb82daa320fbb40ac96391c19460e3730a10aef3b0da8c2b39d467cf89d6dea",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/15-test_status_projection.py": "762636e9be51a537eb51ae21f670fd84f2b2abfc59595e49eb2c840e6683e1f7",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/16-test_status_projection_checker.py": "050efdc2d104499c5816533471a4f86437be924f87e8cd9517c23b6f336bdb6f",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/17-status-projection-independent-review.md": "6400e80340843405ea30cb702957d973cc5f38b93ebd25d7d7a55ccd1bfc2349",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/18-verify_reference_bridge.py": "1904f80cb2bf61632635bc0ea2440a5fd6bf354ae46f2c519185eb35f859cf59",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/a2a-client.d.ts": "331c1ac70f01b68858bdafccf5b5445d911937e99f9a968f75565c539f150479",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/a2a-client.js": "7b7576babec9210e3b877982fbd856329cb3b40ae9632152038b47d4159a7ebe",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/agent-card.d.ts": "0a54b2d1c57207f887ce8a925ba1836c263eba1ca20ecd096b6e90a4c82a1d15",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/agent-card.js": "1cdbcecc8ecfcfb12aee5e24739ed4193be85975716ec5f2a5e4d57e20abe968",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/cli.d.ts": "5838eec4adcf297a41377edf6f86ca05f8d38c9203b4aabc165a1db79ea9f257",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/cli.js": "ea5482c8859b68e323659420706045c5d5b7485c8577abef933071cf6559c497",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/config.d.ts": "b2a7b000022b40799660a561a7594732ebd1f872a34c79749c06b3ea04873322",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/config.js": "ed832ed5411118fea93063aa395a4df56bd774bf5bd70c5696caecf3ee2737de",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/envelope.d.ts": "9e633ec7588772856df791b52d1d553839eba38f91efd49ff4a3b6ebc0f63ab9",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/envelope.js": "0bbdfd96eb3ed2e35fd2c0b944551d5dd979dbb4583263c7431cb9cd255c4e15",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/handles.d.ts": "b735a911ad043803bfe979e6cae3cf5206a99954dfccd04ee630008e445ef2ac",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/handles.js": "f935eb0e0cc0eba27ae6959e76b81d2231b4f9e8e21d9893e866f93cc9cd4272",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/http.d.ts": "7672164001609a3701c5b8d729c69da25e96b4374b9d2e48e99695437eaa6ba8",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/http.js": "9bbc041875ba600aaa768e469322c0c7aed5ffa713f501467c1668ae5ed8605b",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/index.d.ts": "4a92d4ca21a7d718a2067724c1f51de6f2ab09e7c18ed3dbf1acdd8d3641a4f0",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/index.js": "4a92d4ca21a7d718a2067724c1f51de6f2ab09e7c18ed3dbf1acdd8d3641a4f0",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/lifecycle.d.ts": "74d89431d2c26a26f153a97d880bfa2ab1d36293e741c252e728d6684d12e9f6",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/lifecycle.js": "cedd7c8523b48b2c60c9fe429b3b814b5ea96718811e897ac3ae4ed82ed9af1b",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/mrtr.d.ts": "4c9915ab8e48208d1c0f483bf7b65221cedcbadff51075817b219d84218985a4",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/mrtr.js": "6823021b89e536808e2f934974a716b69de4a1ae4f6e5512e90672ebe8b7f77f",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/parts.d.ts": "714cb878636d5fb1108cd663c661b54d7e749a74bfb60b72714e243411dd355d",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/parts.js": "e925f85fd8b150a319f95a90fe9da7624e60ac108cfb871ebd40d3eaf2ed44cd",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/server.d.ts": "2ba89b1c8760024a1ac3c614be6ded5b86eeab4d8dc3e745c46e387395e54ae9",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/server.js": "f5c38f823c23ffb14e5b1b6c6eb32b6b2b04342550365ceee76c2d9231f7517a",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/tasks/handlers.d.ts": "3949dd49d1f6ee7231e4bc18c7631fff2fdaf601cf6b72e95081e6c195036561",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/tasks/handlers.js": "1cca905050028f75de6b02e9c36a3028ab6c25bf5036dfb7a47ec81ba9d4300e",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/tasks/intercept.d.ts": "8b03d59264e93e2d8bbc608fbb2a867559159c9d1e299c7aad76d5146e907ed4",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/tasks/intercept.js": "518a0832e93b513ade288279c892dc8d229df2880cbf695a1ab27e33be8ad817",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/tasks/store.d.ts": "dcf99dfbc3ee0aa4c2e1133ffef0d486762e2df40c045fb41cfa68d9c7fe061c",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/tasks/store.js": "8c2b9fa687d08d5b47b451b0866509340eae6b59cc65a832118edda424891356",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/tasks/stream.d.ts": "996d3e74cef209b7d8c3a28f7515d037924333a6e77378f0577ddf11e7eb1e53",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/tasks/stream.js": "a486856260e710ced83b1a52312e57a8c5897adf0a3e7695396a2a8cdf66be21",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/tools.d.ts": "d01345ebc342b493a093ab765222f1ae6f7516cb68834a959701245bad60601d",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-dist/tools.js": "f63650b7b206d746581a1b5c2628455002cabd37bc687f693aa053ee2ca3fa32",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/a2a-client.ts": "38cca90108c057823c823fac881bba074bc6df99e2ac07746ad2426550815b06",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/agent-card.ts": "69f6bf59c45bc490493f7a18a9e8c500bb2b3970a019948b1423720266cd2cba",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/cli.ts": "79c5b3b210b2dee418b077b7793ec8a09de2dce02233e4edccfd4392fd1d4211",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/config.ts": "dfbc33783e81b1867e03d82c7d9117b73f0f95260d574d7cfd8b39eaa9a2b467",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/envelope.ts": "ce218cbf0ddca4fb7ddcb5861eafd11e94ea5ac9530672d3b4a1c282c30ae8b1",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/handles.ts": "18fd7d218f9a0c9110add689a58273b8dffa18e30c85e507aa7e9deac764c6dc",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/http.ts": "cba6a0bd04e14739e7b6bf9a066055642161a73f0edf48e7392ac59f96889836",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/index.ts": "13484fb3cc0a7e02055ffff9f4ff2d8c50e164ebf04c32131e69feccd700d8ae",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/lifecycle.ts": "88e55e6aa464ec7d8e1039b2a47b16a4a1ea4f6a3805e999301e45c9d0a915e7",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/mrtr.ts": "5852c8e953035de7e505c5cd818dee9cd15c8df27990e5304678d3449909c2f8",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/parts.ts": "c4b20e2227a1024cf29bcbac5d9811bf7011046253ebe0fddbc2217c36ef3dad",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/server.ts": "23e573935bb4ac7a700da2f6a6be6f6a56aba3c1c1165a93cb963163be3c3199",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/tasks/handlers.ts": "c084b0a6857c8f990875cc04ab8f2a5c9072ca969ed5db67589c597b8dda5f02",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/tasks/intercept.ts": "5346f865e14f105b3f28428d82ca4f3fb8b1c2bcee58efde98d95f200feebd5f",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/tasks/store.ts": "aa9acdd39d91b68971497439f5aefae95cd7a96d754426fa6ca599a76aa1ae87",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/tasks/stream.ts": "bc4068d80375b8ec3433188a55a7b0710ecf9b58229a2bc3695aa614daac8fde",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/pre-execution-snapshots/bridge-source/tools.ts": "9e96fd60b8146a88c575fd63ef07baef532a6fe9c40a650ede390626c71cf659",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/private-native-http.jsonl": "fe6ef7814000bfee4ad559f2362b29d32b536a7e2fda80219571bf00f880cf40",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/private-process-diagnostics.json": "4448ba636251d0fa2b72e9cfd450b93f1fab09068c3c1f51bdbe99cd6acedd23",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/process-lifecycle.jsonl": "323aa2acd37ac6264503e298ff85eb0cb2d812257bb456ecf8aa2cc9396b7999",
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/runtime.json": "e8450de64e1dbb43acd81c1d92850aa8d1e981505818ced54aac1d8733b0135d",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/bridge-config.json": "232f91283c88c1d09d87dae8f2f63b997f184fd017a5bf5b71f15df086c446fc",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-bridge-runtime-config.json": "508e692cdab7f1410925be89cfb08120a3c193835669558e35c7e914328675f2",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-ledger.json": "7fa10956d27f7f88a1b6e943bd7ba9092213ec2c66aa73ecc633afccc14774c0",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/01-capture-reference-bridge-v1.mjs": "c27b2aa223451768d4a96ca407ac2c2bae6f1d7558a5a9de6acf8c9b1a48d42f",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/02-log-reference-http.mjs": "c274b60dbd3dedc67f4df9d37dde14a8c4150ee4b5e06304e0e104e595fbf1eb",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/03-reference-mgcrea-v1.mjs": "85f6224a0c49c65072adcc3cc464536e5684fc2dbd39763249bc861f84ca589c",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/04-carol-reference-v1.mjs": "b6b6492ee5c27cf5db0474054b0f18a8feafe0859d9faaa4fd67946c7768626d",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/05-reference-bridge-probe-v1.md": "975730c259dfe4470377baeb9ce8b2f007df048a8559aa3dcd14768e4e800ef4",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/06-source-lock.json": "93075b3e0a9fe293d33595d23749218c8a206f9788efe620e16dd49a9dae5efe",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/07-package.json": "6bc71117129e076b3b1d0110648ffe94feb5af259a3785e75a205c6207b980a5",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/08-package-lock.json": "3e3c7e550d7166bd7f32e4e8e27811eaaf678bf3c3a1157b974f87734037b4da",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/09-package.json": "beb9929d3775a1c32b171e273b0fac9a2fed7fdcd61934a3dac3223d69234d07",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/10-package.json": "faa28d9e4362c02c81ce4c7a3b62443495343830c53de2efcbd8c1088e4ba931",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/11-change-map.json": "49d78091344f416972ec065c615170a3de06a8d72e0cf9ff60b478563650ac38",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/12-ATTRIBUTION.md": "f20fb8fe6a579634cfac93ccd11c9fe77bb4d2507228de6e8f2125beabb72983",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/13-status_projection.py": "648e18cb6f1e2cbf3ff31f3dab70a29b473701d10df3f1758065bd5d4da8debf",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/14-status_projection_checker.py": "3bb82daa320fbb40ac96391c19460e3730a10aef3b0da8c2b39d467cf89d6dea",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/15-test_status_projection.py": "762636e9be51a537eb51ae21f670fd84f2b2abfc59595e49eb2c840e6683e1f7",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/16-test_status_projection_checker.py": "050efdc2d104499c5816533471a4f86437be924f87e8cd9517c23b6f336bdb6f",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/17-status-projection-independent-review.md": "6400e80340843405ea30cb702957d973cc5f38b93ebd25d7d7a55ccd1bfc2349",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/18-verify_reference_bridge.py": "1904f80cb2bf61632635bc0ea2440a5fd6bf354ae46f2c519185eb35f859cf59",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/a2a-client.d.ts": "331c1ac70f01b68858bdafccf5b5445d911937e99f9a968f75565c539f150479",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/a2a-client.js": "7b7576babec9210e3b877982fbd856329cb3b40ae9632152038b47d4159a7ebe",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/agent-card.d.ts": "0a54b2d1c57207f887ce8a925ba1836c263eba1ca20ecd096b6e90a4c82a1d15",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/agent-card.js": "1cdbcecc8ecfcfb12aee5e24739ed4193be85975716ec5f2a5e4d57e20abe968",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/cli.d.ts": "5838eec4adcf297a41377edf6f86ca05f8d38c9203b4aabc165a1db79ea9f257",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/cli.js": "ea5482c8859b68e323659420706045c5d5b7485c8577abef933071cf6559c497",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/config.d.ts": "b2a7b000022b40799660a561a7594732ebd1f872a34c79749c06b3ea04873322",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/config.js": "ed832ed5411118fea93063aa395a4df56bd774bf5bd70c5696caecf3ee2737de",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/envelope.d.ts": "9e633ec7588772856df791b52d1d553839eba38f91efd49ff4a3b6ebc0f63ab9",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/envelope.js": "0bbdfd96eb3ed2e35fd2c0b944551d5dd979dbb4583263c7431cb9cd255c4e15",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/handles.d.ts": "b735a911ad043803bfe979e6cae3cf5206a99954dfccd04ee630008e445ef2ac",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/handles.js": "f935eb0e0cc0eba27ae6959e76b81d2231b4f9e8e21d9893e866f93cc9cd4272",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/http.d.ts": "7672164001609a3701c5b8d729c69da25e96b4374b9d2e48e99695437eaa6ba8",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/http.js": "9bbc041875ba600aaa768e469322c0c7aed5ffa713f501467c1668ae5ed8605b",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/index.d.ts": "4a92d4ca21a7d718a2067724c1f51de6f2ab09e7c18ed3dbf1acdd8d3641a4f0",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/index.js": "4a92d4ca21a7d718a2067724c1f51de6f2ab09e7c18ed3dbf1acdd8d3641a4f0",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/lifecycle.d.ts": "74d89431d2c26a26f153a97d880bfa2ab1d36293e741c252e728d6684d12e9f6",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/lifecycle.js": "cedd7c8523b48b2c60c9fe429b3b814b5ea96718811e897ac3ae4ed82ed9af1b",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/mrtr.d.ts": "4c9915ab8e48208d1c0f483bf7b65221cedcbadff51075817b219d84218985a4",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/mrtr.js": "6823021b89e536808e2f934974a716b69de4a1ae4f6e5512e90672ebe8b7f77f",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/parts.d.ts": "714cb878636d5fb1108cd663c661b54d7e749a74bfb60b72714e243411dd355d",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/parts.js": "e925f85fd8b150a319f95a90fe9da7624e60ac108cfb871ebd40d3eaf2ed44cd",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/server.d.ts": "2ba89b1c8760024a1ac3c614be6ded5b86eeab4d8dc3e745c46e387395e54ae9",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/server.js": "f5c38f823c23ffb14e5b1b6c6eb32b6b2b04342550365ceee76c2d9231f7517a",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/tasks/handlers.d.ts": "3949dd49d1f6ee7231e4bc18c7631fff2fdaf601cf6b72e95081e6c195036561",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/tasks/handlers.js": "1cca905050028f75de6b02e9c36a3028ab6c25bf5036dfb7a47ec81ba9d4300e",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/tasks/intercept.d.ts": "8b03d59264e93e2d8bbc608fbb2a867559159c9d1e299c7aad76d5146e907ed4",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/tasks/intercept.js": "518a0832e93b513ade288279c892dc8d229df2880cbf695a1ab27e33be8ad817",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/tasks/store.d.ts": "dcf99dfbc3ee0aa4c2e1133ffef0d486762e2df40c045fb41cfa68d9c7fe061c",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/tasks/store.js": "8c2b9fa687d08d5b47b451b0866509340eae6b59cc65a832118edda424891356",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/tasks/stream.d.ts": "996d3e74cef209b7d8c3a28f7515d037924333a6e77378f0577ddf11e7eb1e53",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/tasks/stream.js": "a486856260e710ced83b1a52312e57a8c5897adf0a3e7695396a2a8cdf66be21",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/tools.d.ts": "d01345ebc342b493a093ab765222f1ae6f7516cb68834a959701245bad60601d",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-dist/tools.js": "f63650b7b206d746581a1b5c2628455002cabd37bc687f693aa053ee2ca3fa32",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/a2a-client.ts": "38cca90108c057823c823fac881bba074bc6df99e2ac07746ad2426550815b06",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/agent-card.ts": "69f6bf59c45bc490493f7a18a9e8c500bb2b3970a019948b1423720266cd2cba",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/cli.ts": "79c5b3b210b2dee418b077b7793ec8a09de2dce02233e4edccfd4392fd1d4211",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/config.ts": "dfbc33783e81b1867e03d82c7d9117b73f0f95260d574d7cfd8b39eaa9a2b467",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/envelope.ts": "ce218cbf0ddca4fb7ddcb5861eafd11e94ea5ac9530672d3b4a1c282c30ae8b1",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/handles.ts": "18fd7d218f9a0c9110add689a58273b8dffa18e30c85e507aa7e9deac764c6dc",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/http.ts": "cba6a0bd04e14739e7b6bf9a066055642161a73f0edf48e7392ac59f96889836",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/index.ts": "13484fb3cc0a7e02055ffff9f4ff2d8c50e164ebf04c32131e69feccd700d8ae",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/lifecycle.ts": "88e55e6aa464ec7d8e1039b2a47b16a4a1ea4f6a3805e999301e45c9d0a915e7",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/mrtr.ts": "5852c8e953035de7e505c5cd818dee9cd15c8df27990e5304678d3449909c2f8",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/parts.ts": "c4b20e2227a1024cf29bcbac5d9811bf7011046253ebe0fddbc2217c36ef3dad",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/server.ts": "23e573935bb4ac7a700da2f6a6be6f6a56aba3c1c1165a93cb963163be3c3199",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/tasks/handlers.ts": "c084b0a6857c8f990875cc04ab8f2a5c9072ca969ed5db67589c597b8dda5f02",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/tasks/intercept.ts": "5346f865e14f105b3f28428d82ca4f3fb8b1c2bcee58efde98d95f200feebd5f",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/tasks/store.ts": "aa9acdd39d91b68971497439f5aefae95cd7a96d754426fa6ca599a76aa1ae87",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/tasks/stream.ts": "bc4068d80375b8ec3433188a55a7b0710ecf9b58229a2bc3695aa614daac8fde",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/pre-execution-snapshots/bridge-source/tools.ts": "9e96fd60b8146a88c575fd63ef07baef532a6fe9c40a650ede390626c71cf659",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/private-native-http.jsonl": "17dbf579f0ccc0627c3a88ade84ae25671e001cdd2fa2bfc74e7b2dd56bcdc91",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/private-process-diagnostics.json": "0792834475445745291b12de5dde70c7c95855908ddf0cef0a9511068eee8e77",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/process-lifecycle.jsonl": "ad91e2df37adfe5ed1beeb3f3cdc3e4c0317b7e818b49eaa1b10a6d634724804",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/runtime.json": "81478f529d6a838bf759a539b91346e66e14aa63506f2116482edb02b8ea820c",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-bridge-runtime-config.json": "102c1d49f87f52c7eb7666aa8b098604c9f26cbebd49917a1b7c6ae7c4d34e30",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-ledger.json": "3e421a00298f878b382396022e392fce6eee83221598587ffcf66f73b353fac3",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/01-capture-reference-bridge-v1.mjs": "c27b2aa223451768d4a96ca407ac2c2bae6f1d7558a5a9de6acf8c9b1a48d42f",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/02-log-reference-http.mjs": "c274b60dbd3dedc67f4df9d37dde14a8c4150ee4b5e06304e0e104e595fbf1eb",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/03-reference-mgcrea-v1.mjs": "85f6224a0c49c65072adcc3cc464536e5684fc2dbd39763249bc861f84ca589c",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/04-carol-reference-v1.mjs": "b6b6492ee5c27cf5db0474054b0f18a8feafe0859d9faaa4fd67946c7768626d",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/05-reference-bridge-probe-v1.md": "975730c259dfe4470377baeb9ce8b2f007df048a8559aa3dcd14768e4e800ef4",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/06-source-lock.json": "93075b3e0a9fe293d33595d23749218c8a206f9788efe620e16dd49a9dae5efe",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/07-package.json": "a085fac02254627f6b6c559711ca3c78219d54efc17534a9d4edb763dda2c320",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/08-pnpm-lock.yaml": "ae2b80a794c9ab45118f2f9653e96332296b149793cfe6bb14c8170c41c0a3c3",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/09-package-lock.json": "3e3c7e550d7166bd7f32e4e8e27811eaaf678bf3c3a1157b974f87734037b4da",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/10-package.json": "beb9929d3775a1c32b171e273b0fac9a2fed7fdcd61934a3dac3223d69234d07",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/11-package.json": "faa28d9e4362c02c81ce4c7a3b62443495343830c53de2efcbd8c1088e4ba931",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/12-change-map.json": "49d78091344f416972ec065c615170a3de06a8d72e0cf9ff60b478563650ac38",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/13-ATTRIBUTION.md": "f20fb8fe6a579634cfac93ccd11c9fe77bb4d2507228de6e8f2125beabb72983",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/14-status_projection.py": "648e18cb6f1e2cbf3ff31f3dab70a29b473701d10df3f1758065bd5d4da8debf",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/15-status_projection_checker.py": "3bb82daa320fbb40ac96391c19460e3730a10aef3b0da8c2b39d467cf89d6dea",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/16-test_status_projection.py": "762636e9be51a537eb51ae21f670fd84f2b2abfc59595e49eb2c840e6683e1f7",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/17-test_status_projection_checker.py": "050efdc2d104499c5816533471a4f86437be924f87e8cd9517c23b6f336bdb6f",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/18-status-projection-independent-review.md": "6400e80340843405ea30cb702957d973cc5f38b93ebd25d7d7a55ccd1bfc2349",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/19-verify_reference_bridge.py": "1904f80cb2bf61632635bc0ea2440a5fd6bf354ae46f2c519185eb35f859cf59",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/cli.d.ts": "f4c5cf9bb78e85f15dc27180260637cf24b2a24bc39e0788783a3accc4dde614",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/cli.js": "e69e24d9553bc7754b0b3008250d483f87000cf0db754134d812a94313034ba0",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/cli.js.map": "83ad13448800f088aaf3ae01c159edca520fe720d63cb5d21e904e75d59e4b22",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/config-B77d6yRo.js": "b648910353fb8f10db570e7a0ee8b056828c73d919a8b4bc8e72435e6572c4d1",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/config-B77d6yRo.js.map": "ff307f900432106753f9442b2a78cee79ad13429756eac76a789b0109fc2a453",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/daemon-C1vvUBHc.js": "33aeedf89637812fed05087eb349a3d7408c4070e833c9e5ad77312c8e5b483d",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/daemon-C1vvUBHc.js.map": "d43f0b319a4cf71d8773d7eec619c25b6e6b5a0c9f473a2debaf30df7be5540c",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/index.d.ts": "8d9d5e31968d13549a022a966123db20480a56e3538d90cc1c27454ea5dd2d13",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/index.d.ts.map": "8d69c163cdd4d1329c37535ef31a0e5de16f05c34820588bf397d46a5b4d0e83",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/index.js": "60bd72cdb42a4c0e276eddf425b5b69237eebcda6e711937142b4f5542f503c2",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/serve.d.ts": "f4c5cf9bb78e85f15dc27180260637cf24b2a24bc39e0788783a3accc4dde614",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/serve.js": "827e4d8128ff8e034e2fcf3ac198cb46d441e2c06d47557802284715680a2ef5",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/serve.js.map": "64698407c17491f1b458462fbcd2f6cca97de7c7456762c448ad4c91c2d6c671",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/server-Dd272e4l.js": "9afb6e7d97282ddc21866ea6e62c964c5408430a2a542b453e733c13f51aefa2",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-dist/server-Dd272e4l.js.map": "abb6f223533e9773074ec563332756e9556f6fd0f3b63ccf1de186355dc057a5",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/a2a.ts": "87a6f6affd601f9388b2ebd444e10012a23454b28374216c18b116e5aa7b1fa2",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/build-info.ts": "b05b76ea7b975917cd41d399a0bda33109d2a66dcd15dc1813b0a82b87e7bdbe",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/card.ts": "0421a0eb556f04768f17598f49605bf14216e528ab38bff41de7f2fbaa4d4226",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/channel.ts": "6b0092875a4f44149f6dee041cf752d438adce24981527235467cc0bebbb58d5",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/cli.ts": "8562060b85bf234024a1eff5a9daa663f99ceb1c3ce65963510bcdc6d7998555",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/client/auth.ts": "65fbb19e8e8ea6fbdb8ce4c89b7f1562434154b0cdb36bbd597784e750bef2fd",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/client/errors.ts": "82a97ec38b0f3f6d793f7e5c37ee87fb34230be34caf8d1d997cb875f4ea6f1d",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/client/fetch.ts": "9427084ca3907354da603ea2e45e56cba65ec9257e8515b37e3e6c58d61e833d",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/client/peer.ts": "62c36155dd3f2438f4a629fff8cc5b1961d2f7c20bfbc5a620706a2f8218b909",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/client/shape.ts": "9c8df9ca9d02c24179658d276b62be0530e17fb0312acb54c2ee9febff6d4a48",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/config.ts": "0e53589969e8800e720068e47ad3d7f08e9f639d2e5e6d9725c3199fe89b6df6",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/daemon.ts": "9ff76a009ce1f6c881bc5bee31be57a83d0c3ee9237f3a33863cc01b6843ee1b",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/executor.ts": "92938e4b7e7ddf403b39fd9adaaf0d0e5754986e77f33d989b96927bf76b5481",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/index.ts": "4034f45638b82a75caa91516525de4a9612c6b0af153e7e1ce9dd80150ff1f80",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/serve.ts": "8966301e1fafa476ab93042d5951e0a61692c1f0456c87a87e744df35b28dea3",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/server.ts": "4e4662c7bcbf076dfb765955fc69864e31a92bca2d320d9fa7e91ac43b42b12e",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/store/paths.ts": "81acd495cfb20046b39c05cdd065f735a9c0404a722e3e6cea9b5457110716fb",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/store/peers.ts": "11ff45f63f260424e2c12594c59c16fde5e62e4011b57de85385dba2ddf6a61a",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/store/tasks.ts": "487613b2cbbd7c33c0c8fc63e0cfedc0961f237b8b82bb6b5eca1fb053b82099",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/tools/agents.ts": "4c981eab4d5a7651b142da9ee9dfb098c6ea36282bbbc2f0ad18bf108e5bd320",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/tools/auth.ts": "66a8242fe2717d461e42060284191219bcde58bc259763e8c7859916f6020845",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/tools/index.ts": "1dc49e5bd117f172a3bf65fcf77f5dcbc2c51c90a41ff23be444bc4b7d8ccc3d",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/tools/request.ts": "1c9eb49a065f3eac95c0fd2172068443719a29aeca9453a31690c70a61731342",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/tools/tasks.ts": "dc1dd0fe9a4a671b7834e2c999db5b72251e8d960f0dd363bb59652be3c941a1",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/tools/util.ts": "07e26ce405b4c39f86ae4d9d894d92575e8de8f16677f5921f3388ec25e8ead4",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/pre-execution-snapshots/bridge-source/tools/writes.ts": "88870a440cb05882ed0792a656fd1c346c6157d1dd865ab0645746121bef5a35",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/private-native-http.jsonl": "ee0ea47d1cde7ac8d81c2271ba62c34b1477925550f4ba3e8ad8acfa0470523f",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/private-process-diagnostics.json": "a762c49820e0eaca0e0c3b007a73bc9cc37b0cda57bd97826e88e0ed74b5d068",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/process-lifecycle.jsonl": "1e25f27a1d77ee9ad5d0972f0fd6390b9030569bcecba18fe8ecdaf463bf732c",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/runtime.json": "2e9cabd0eaee3b2d6ab33dc70a0f6be76e9bc303bf8eb6114435ee7596c790db",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/state/peers/127-0-0-1-60275-367f75ccd42e.json": "f9c6f6c78a09d7519e2b7e17fb4f74efe257e68d72f70805984c8e77123671c3",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/state/tasks/859c15ce-6082-4311-9404-1f8455cfee77.json": "4e96e9e083515e8798d1cf81793106eeba2844efd564556e519146ade0850503",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-bridge-runtime-config.json": "c395727d23433e12d2b328f08a9ac43b6ac272264dab075d5ab404023c929d08",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-ledger.json": "93e2a98ecde7d7c06d9367abdb1e89508554a7696589a32476cee1eadf3ff424",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/01-capture-reference-bridge-v1.mjs": "c27b2aa223451768d4a96ca407ac2c2bae6f1d7558a5a9de6acf8c9b1a48d42f",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/02-log-reference-http.mjs": "c274b60dbd3dedc67f4df9d37dde14a8c4150ee4b5e06304e0e104e595fbf1eb",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/03-reference-mgcrea-v1.mjs": "85f6224a0c49c65072adcc3cc464536e5684fc2dbd39763249bc861f84ca589c",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/04-carol-reference-v1.mjs": "b6b6492ee5c27cf5db0474054b0f18a8feafe0859d9faaa4fd67946c7768626d",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/05-reference-bridge-probe-v1.md": "975730c259dfe4470377baeb9ce8b2f007df048a8559aa3dcd14768e4e800ef4",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/06-source-lock.json": "93075b3e0a9fe293d33595d23749218c8a206f9788efe620e16dd49a9dae5efe",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/07-package.json": "a085fac02254627f6b6c559711ca3c78219d54efc17534a9d4edb763dda2c320",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/08-pnpm-lock.yaml": "ae2b80a794c9ab45118f2f9653e96332296b149793cfe6bb14c8170c41c0a3c3",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/09-package-lock.json": "3e3c7e550d7166bd7f32e4e8e27811eaaf678bf3c3a1157b974f87734037b4da",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/10-package.json": "beb9929d3775a1c32b171e273b0fac9a2fed7fdcd61934a3dac3223d69234d07",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/11-package.json": "faa28d9e4362c02c81ce4c7a3b62443495343830c53de2efcbd8c1088e4ba931",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/12-change-map.json": "49d78091344f416972ec065c615170a3de06a8d72e0cf9ff60b478563650ac38",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/13-ATTRIBUTION.md": "f20fb8fe6a579634cfac93ccd11c9fe77bb4d2507228de6e8f2125beabb72983",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/14-status_projection.py": "648e18cb6f1e2cbf3ff31f3dab70a29b473701d10df3f1758065bd5d4da8debf",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/15-status_projection_checker.py": "3bb82daa320fbb40ac96391c19460e3730a10aef3b0da8c2b39d467cf89d6dea",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/16-test_status_projection.py": "762636e9be51a537eb51ae21f670fd84f2b2abfc59595e49eb2c840e6683e1f7",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/17-test_status_projection_checker.py": "050efdc2d104499c5816533471a4f86437be924f87e8cd9517c23b6f336bdb6f",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/18-status-projection-independent-review.md": "6400e80340843405ea30cb702957d973cc5f38b93ebd25d7d7a55ccd1bfc2349",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/19-verify_reference_bridge.py": "1904f80cb2bf61632635bc0ea2440a5fd6bf354ae46f2c519185eb35f859cf59",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/cli.d.ts": "f4c5cf9bb78e85f15dc27180260637cf24b2a24bc39e0788783a3accc4dde614",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/cli.js": "e69e24d9553bc7754b0b3008250d483f87000cf0db754134d812a94313034ba0",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/cli.js.map": "83ad13448800f088aaf3ae01c159edca520fe720d63cb5d21e904e75d59e4b22",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/config-B77d6yRo.js": "b648910353fb8f10db570e7a0ee8b056828c73d919a8b4bc8e72435e6572c4d1",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/config-B77d6yRo.js.map": "ff307f900432106753f9442b2a78cee79ad13429756eac76a789b0109fc2a453",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/daemon-C1vvUBHc.js": "33aeedf89637812fed05087eb349a3d7408c4070e833c9e5ad77312c8e5b483d",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/daemon-C1vvUBHc.js.map": "d43f0b319a4cf71d8773d7eec619c25b6e6b5a0c9f473a2debaf30df7be5540c",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/index.d.ts": "8d9d5e31968d13549a022a966123db20480a56e3538d90cc1c27454ea5dd2d13",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/index.d.ts.map": "8d69c163cdd4d1329c37535ef31a0e5de16f05c34820588bf397d46a5b4d0e83",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/index.js": "60bd72cdb42a4c0e276eddf425b5b69237eebcda6e711937142b4f5542f503c2",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/serve.d.ts": "f4c5cf9bb78e85f15dc27180260637cf24b2a24bc39e0788783a3accc4dde614",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/serve.js": "827e4d8128ff8e034e2fcf3ac198cb46d441e2c06d47557802284715680a2ef5",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/serve.js.map": "64698407c17491f1b458462fbcd2f6cca97de7c7456762c448ad4c91c2d6c671",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/server-Dd272e4l.js": "9afb6e7d97282ddc21866ea6e62c964c5408430a2a542b453e733c13f51aefa2",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-dist/server-Dd272e4l.js.map": "abb6f223533e9773074ec563332756e9556f6fd0f3b63ccf1de186355dc057a5",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/a2a.ts": "87a6f6affd601f9388b2ebd444e10012a23454b28374216c18b116e5aa7b1fa2",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/build-info.ts": "b05b76ea7b975917cd41d399a0bda33109d2a66dcd15dc1813b0a82b87e7bdbe",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/card.ts": "0421a0eb556f04768f17598f49605bf14216e528ab38bff41de7f2fbaa4d4226",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/channel.ts": "6b0092875a4f44149f6dee041cf752d438adce24981527235467cc0bebbb58d5",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/cli.ts": "8562060b85bf234024a1eff5a9daa663f99ceb1c3ce65963510bcdc6d7998555",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/client/auth.ts": "65fbb19e8e8ea6fbdb8ce4c89b7f1562434154b0cdb36bbd597784e750bef2fd",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/client/errors.ts": "82a97ec38b0f3f6d793f7e5c37ee87fb34230be34caf8d1d997cb875f4ea6f1d",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/client/fetch.ts": "9427084ca3907354da603ea2e45e56cba65ec9257e8515b37e3e6c58d61e833d",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/client/peer.ts": "62c36155dd3f2438f4a629fff8cc5b1961d2f7c20bfbc5a620706a2f8218b909",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/client/shape.ts": "9c8df9ca9d02c24179658d276b62be0530e17fb0312acb54c2ee9febff6d4a48",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/config.ts": "0e53589969e8800e720068e47ad3d7f08e9f639d2e5e6d9725c3199fe89b6df6",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/daemon.ts": "9ff76a009ce1f6c881bc5bee31be57a83d0c3ee9237f3a33863cc01b6843ee1b",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/executor.ts": "92938e4b7e7ddf403b39fd9adaaf0d0e5754986e77f33d989b96927bf76b5481",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/index.ts": "4034f45638b82a75caa91516525de4a9612c6b0af153e7e1ce9dd80150ff1f80",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/serve.ts": "8966301e1fafa476ab93042d5951e0a61692c1f0456c87a87e744df35b28dea3",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/server.ts": "4e4662c7bcbf076dfb765955fc69864e31a92bca2d320d9fa7e91ac43b42b12e",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/store/paths.ts": "81acd495cfb20046b39c05cdd065f735a9c0404a722e3e6cea9b5457110716fb",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/store/peers.ts": "11ff45f63f260424e2c12594c59c16fde5e62e4011b57de85385dba2ddf6a61a",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/store/tasks.ts": "487613b2cbbd7c33c0c8fc63e0cfedc0961f237b8b82bb6b5eca1fb053b82099",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/tools/agents.ts": "4c981eab4d5a7651b142da9ee9dfb098c6ea36282bbbc2f0ad18bf108e5bd320",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/tools/auth.ts": "66a8242fe2717d461e42060284191219bcde58bc259763e8c7859916f6020845",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/tools/index.ts": "1dc49e5bd117f172a3bf65fcf77f5dcbc2c51c90a41ff23be444bc4b7d8ccc3d",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/tools/request.ts": "1c9eb49a065f3eac95c0fd2172068443719a29aeca9453a31690c70a61731342",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/tools/tasks.ts": "dc1dd0fe9a4a671b7834e2c999db5b72251e8d960f0dd363bb59652be3c941a1",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/tools/util.ts": "07e26ce405b4c39f86ae4d9d894d92575e8de8f16677f5921f3388ec25e8ead4",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/pre-execution-snapshots/bridge-source/tools/writes.ts": "88870a440cb05882ed0792a656fd1c346c6157d1dd865ab0645746121bef5a35",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/private-native-http.jsonl": "f3daf3596630f542e218e7e5c1a08b5b5c6f90e898857fa645a7b8a098ddb4a2",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/private-process-diagnostics.json": "7aa900144ab97600fccf50ac2f680b248e8a76d2f83a403eab098a65f25d1e66",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/process-lifecycle.jsonl": "f4aec93d06b77d82b7cdc0606262755ea44d0fb9e36740e90e60f6a71c9f1b78",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/runtime.json": "dc08ccfdc166637a33e77b7a4faef1af275d3a8115e60d7443c7c47fc13ababc",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/state/peers/127-0-0-1-54247-1d398d7e5447.json": "35bfdcd35e3d632fe4110cf45741bad67a441e05ed556444177fa82422e9a884",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/state/tasks/b60950bd-97dc-435c-b3a1-013805d3f88c.json": "33e302e09c8d4ef4322750e9946bb1b5641d77a08a46eecaa22e060ace25594b",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/capture-integrity.json": "cdbcf6501d23f91e2f0ff82053ae23dd1279b5c0568ba779df4aedd91eb18466",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/native-http.jsonl": "28b89a748777073acad884af6d667703ee031d92f673e69b83551e78f6666784",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/pre-execution-ledger.json": "3d41d471134f1c03aadc9f0e4bbd522f97da0a6d94b861cef08640c1e71c0d58",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/pre-execution-snapshots/01-capture-carol-port-native-v1.mjs": "e9f3a4109aa5ce4e0ce12d73f322372db52c8bde1ed0eb810d16a151c705d185",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/pre-execution-snapshots/02-carol-reference-v1.mjs": "b6b6492ee5c27cf5db0474054b0f18a8feafe0859d9faaa4fd67946c7768626d",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/pre-execution-snapshots/03-reference-port-native-probe-v1.md": "4c783da78c6e4549736d44f7cecad14a57ca75aa2191ffe27a222b62dab949bb",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/pre-execution-snapshots/04-change-map.json": "49d78091344f416972ec065c615170a3de06a8d72e0cf9ff60b478563650ac38",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/pre-execution-snapshots/05-ATTRIBUTION.md": "f20fb8fe6a579634cfac93ccd11c9fe77bb4d2507228de6e8f2125beabb72983",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/pre-execution-snapshots/06-source-lock.json": "93075b3e0a9fe293d33595d23749218c8a206f9788efe620e16dd49a9dae5efe",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/pre-execution-snapshots/07-package-lock.json": "3e3c7e550d7166bd7f32e4e8e27811eaaf678bf3c3a1157b974f87734037b4da",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/pre-execution-snapshots/08-package.json": "beb9929d3775a1c32b171e273b0fac9a2fed7fdcd61934a3dac3223d69234d07",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/pre-execution-snapshots/09-original-source-manifest.json": "3047d4743147c1a1454d989cfd47db4dd187a479d33e331afff6141197a90cad",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/process-diagnostics.json": "270fff031da0762d328e85371fb0980374d36fbb4abb081d21dfb31e638655f7",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/process-lifecycle.jsonl": "3ff0213781911b0315b69b86423d55410dce04d7836a4fda7489f40724324ae2",
+    "runs/reference-port-native/carol-port-native-v1-2026-10-23T21-10-38-290Z-14572/report.json": "fbd4dbedf77c925894089fdc1279c74ba71028e1c53b66046e129ae406642574",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T19-59-06-019Z-34176/bridge-config.json": "219d597894e13b4fc2d3b5e00f4ffeedad9027226d74fccfc61a82e967aa7a1e",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T19-59-06-019Z-34176/private-process-diagnostics.json": "d173bf1100ce8a99650379d5bf7c1ab2d9ae9b8fa61dcd613be9ecf2e7b9fa27",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T19-59-06-019Z-34176/runtime.json": "28ce4488556baebfc13eebba2306aaf17e571dfb42befd634afc092249e36ceb",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-00-06-836Z-33464/bridge-config.json": "bb5e8dfbb32d18ad2b512724347a9a7f7ee6aa331a930e856b5ce247fd377412",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-00-06-836Z-33464/private-native-http.jsonl": "a87cea6c32ee73f7252121601170c9eda15c36bc32289d4a1f1e2eb0d499282a",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-00-06-836Z-33464/private-process-diagnostics.json": "3ee473259f34bbd71db23de60abc9e970e6e7a286a5f2089029ce4d09a5bdb17",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-00-06-836Z-33464/runtime.json": "328d45febb7131cc5698d5049775059843608160806097418b1de037fc2835e3",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828/bridge-config.json": "c638d1a0d12907aa151d7ccd29c28eda0d4a8c047c3d5a447963af2f5018c9bc",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828/driver-capture-amirk-observation.mjs.txt": "bf5d36af8f6548bce551b068033b5bb2da0ddaf6b806faf1cbe739a8098464d4",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828/driver-log-local-http.mjs.txt": "d690a4ab9cbf247b92d5ce1871f5aeb0223914ebe1c4440c8c04389163cdb2d9",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828/private-native-http.jsonl": "36c0da633cb575370d63b47f8338eb4a1e943093284703d30a3a9914086a2d6b",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828/private-process-diagnostics.json": "7ba766cc223e1e9590bff2a3a17519e355416e8d2095cd50c530cbb06173888b",
+    "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828/runtime.json": "8c9ac1b2d0b3d4d8fc665f6656872480fed13cbaff08a3e5a4c41d7b276b58c5",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096/driver-capture-mgcrea-observation.mjs.txt": "05eb0ebecabb86ce421c6973af5900ef7c0fea5df3f6166dd104d916265a6b6c",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096/driver-log-local-http.mjs.txt": "d690a4ab9cbf247b92d5ce1871f5aeb0223914ebe1c4440c8c04389163cdb2d9",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096/private-native-http.jsonl": "5e15fad0a9ebcc153e379194943e502a99d4c84d1049e07d6baae0956daa8822",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096/private-process-diagnostics.json": "3a4ee62eb4633b4b8bf97834a477b3e3c54e39426ab3b3f3266043730f35d477",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096/runtime.json": "9b666da8d7fa6a4ef848d42a30e819f81bbcb57bdcf0c2391ef10e3069615f8f",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096/state/peers/127-0-0-1-51860-de6a420be182.json": "fd88b58f3f0324e78ab10211dd6e37831a4ccc8bf1d20bd587baee1e74e3f4e6",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096/state/tasks/80e99579-154e-47aa-8870-d156cc0a77a0.json": "f5d906ba5dfc662d7c0c4e4a9c06c874088fb51765895a72e1eb45f1f6a2e523",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536/driver-capture-mgcrea-observation.mjs.txt": "f7ec228c16490919cdb762aef931178ee725bf1ec10663c21142e5270da28e8f",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536/driver-log-local-http.mjs.txt": "e9a09ec21efba9007975a41458567d1624dfa656c1fddedcd14f74d62a693ad6",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536/private-native-http.jsonl": "1ddb6c1edb1ad05f21af439bfa2bec6d528ea1ea2389465d2ad0820882c9f94f",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536/private-process-diagnostics.json": "de34abd684409fb4d3cd505565b623c7837c8995fa2f41ac3042ae14b93d2eb0",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536/runtime.json": "13f98e3286a7e46639f7a1ffa4bbe376a18b3c27fef8151a42f441ee1d5f9f54",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536/state/peers/127-0-0-1-57707-517c009cde1d.json": "6e42915802d000f9b71d748a5c04cf29d0c2178bd339e14862add6520b8b973b",
+    "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-06-37-342Z-9536/state/tasks/d3b691d2-253f-4df1-ab07-fbf2e5ed9152.json": "53c400905101a3540c9e8753a0ffa6c2be103c86f0054f8e2b09b011192a6869",
+    "scripts/capture-amirk-observation.mjs": "bf5d36af8f6548bce551b068033b5bb2da0ddaf6b806faf1cbe739a8098464d4",
+    "scripts/capture-carol-native-reference.py": "c9f285bb478025a0a5ebad79684e7ecc54476b50cf2a9725f637846a65952071",
+    "scripts/capture-carol-port-native-v1.mjs": "e9f3a4109aa5ce4e0ce12d73f322372db52c8bde1ed0eb810d16a151c705d185",
+    "scripts/capture-mgcrea-observation.mjs": "f7ec228c16490919cdb762aef931178ee725bf1ec10663c21142e5270da28e8f",
+    "scripts/capture-reference-bridge-v1.mjs": "c27b2aa223451768d4a96ca407ac2c2bae6f1d7558a5a9de6acf8c9b1a48d42f",
+    "scripts/check_carol_port_native.py": "af91b4cf34e5b12db97520882137f1cfedf20e96efb61b47aadcfc9b45512950",
+    "scripts/create_development_fixtures.py": "52cf990d26df1586c2c9eaebd4045f638fd91247f77478df9fdf6512a6260fee",
+    "scripts/fixtures/carol-reference-v1.mjs": "b6b6492ee5c27cf5db0474054b0f18a8feafe0859d9faaa4fd67946c7768626d",
+    "scripts/freeze_scope.py": "79b0afd8c85bfaa1507790b8a91c625323acaf4a3650f7a9f07b6a3580da9629",
+    "scripts/log-local-http.mjs": "e9a09ec21efba9007975a41458567d1624dfa656c1fddedcd14f74d62a693ad6",
+    "scripts/log-reference-http.mjs": "c274b60dbd3dedc67f4df9d37dde14a8c4150ee4b5e06304e0e104e595fbf1eb",
+    "scripts/native-wire-reference.mjs": "d9705a6604122ebca28e50e3ecd81aad7552c7c0e6be771c1f6da79eec6e60b1",
+    "scripts/project_observations.py": "33068aaffe2c68a35377ccc7c24bba84a02bb39dbf13623c24d35f8681178a72",
+    "scripts/reference-mgcrea-v1.mjs": "85f6224a0c49c65072adcc3cc464536e5684fc2dbd39763249bc861f84ca589c",
+    "scripts/replay_historical_verification.py": "d25d77742036204fc865bd8453155ad99cbae7207db9bc732466eda00c45ec8e",
+    "scripts/replay_reference_bridge.py": "dfe878a38e446c505e6934159aa2c8b2b7565a64b281f4d5767f59f3f020cefa",
+    "scripts/replay_reference_verification.py": "badc5efbac53f73af019ddd1398017f83679a5dd1287c9744e7cb1e0b6360b66",
+    "scripts/verify_foundation.py": "0896cddf953da3773a1e9063b0a4147249bc07f94e35de0f470d8530b177d791",
+    "scripts/verify_reference_bridge.py": "1904f80cb2bf61632635bc0ea2440a5fd6bf354ae46f2c519185eb35f859cf59",
+    "scripts/verify_reference_continuation.py": "2296a44866e71cc7c996cf503f648243095b059876db9878b3b39c56df736068",
+    "src/agent_interoperability_research.egg-info/dependency_links.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "src/agent_interoperability_research.egg-info/entry_points.txt": "0f017b579331c1dad26a0d13e30a39ea5e0ce798ab6372910395b5e6911462b9",
+    "src/agent_interoperability_research.egg-info/PKG-INFO": "d7579624c1566aa6ba28ddc165ceb5af63e1a3786fad75923000b327512f1ec4",
+    "src/agent_interoperability_research.egg-info/SOURCES.txt": "747147ea22b9f0180a8be3a9cac4172be281d6f1d81f25cea8b644464ab76c53",
+    "src/agent_interoperability_research.egg-info/top_level.txt": "3c0636b0b063742629b709875218a1bc0cee34fdf8bd502d21572a79f813939f",
+    "src/interoperability/__init__.py": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a",
+    "src/interoperability/__main__.py": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7",
+    "src/interoperability/baseline.py": "c26f4c7db7f89f00f2c781e346aec20a589a862316e34c38a2edd7760407206f",
+    "src/interoperability/cli.py": "7bc56e3e3f036333e46627ced09bac80a737cbac126f0427eb4b2f47cca65922",
+    "src/interoperability/manifest.py": "defc6e9bbc4ea66806beefc9def967d94db8a3856cc121cee13c45ebda70debb",
+    "src/interoperability/oracle.py": "da29829a077da1ef44c2ffc0a6d5dbcd8e4c579b308b49085ea1af077e601b7f",
+    "src/interoperability/projection_checker.py": "5bc96d27428e7fce01b12a8e5ccc946db8e7dc77bbced033e60423e4e769a103",
+    "src/interoperability/reference_checker.py": "87ca2690fcf296961cea024d66da6323031b5306ef54222d48a7ccfdaf662371",
+    "src/interoperability/status_projection.py": "648e18cb6f1e2cbf3ff31f3dab70a29b473701d10df3f1758065bd5d4da8debf",
+    "src/interoperability/status_projection_checker.py": "3bb82daa320fbb40ac96391c19460e3730a10aef3b0da8c2b39d467cf89d6dea",
+    "src/interoperability/wire_projection.py": "88223761710725959157607f4a86829fe1d7aa3e85bfe3ccc53af52c063df89e",
+    "tests/test_baseline.py": "310c9306197b69b50d7372c1de8e3e1234c25f685da28d041aa0bb7d3f1f28de",
+    "tests/test_crosscheck.py": "3985b64097b4b2c62c4f99b8daae2c00e79ebf782f49ec066b2e20a88d727ac7",
+    "tests/test_oracle.py": "66f064435ca9c04eacb000ecbf80254d23bfed856919f15fcdddd0a362cbe4ab",
+    "tests/test_projection_checker.py": "d7ea83cd7f4c2bd02a9a35cb5befeeffad70ca377f28412085bce100c3c12958",
+    "tests/test_reference_checker.py": "b15e461588ac94a111e803167ac5354f34bea6fd8b45e66c547e9c17f54381a9",
+    "tests/test_status_projection.py": "762636e9be51a537eb51ae21f670fd84f2b2abfc59595e49eb2c840e6683e1f7",
+    "tests/test_status_projection_checker.py": "050efdc2d104499c5816533471a4f86437be924f87e8cd9517c23b6f336bdb6f",
+    "tests/test_trace_integrity.py": "d1fb5b7ffea8b18e571e30f9ed9beab2c1e79eb1560f3dbb0cd9d3583e0510f0",
+    "tests/test_wire_projection.py": "c2653723eef3c0e4cdda6932457f3cd45596c547dea1ba0613094c7c8fb8339a"
+  },
+  "archive_unchanged": true,
+  "input_hashes_stable": true,
+  "implementation_sha256": {
+    "scripts/capture-amirk-observation.mjs": "bf5d36af8f6548bce551b068033b5bb2da0ddaf6b806faf1cbe739a8098464d4",
+    "scripts/capture-carol-native-reference.py": "c9f285bb478025a0a5ebad79684e7ecc54476b50cf2a9725f637846a65952071",
+    "scripts/capture-carol-port-native-v1.mjs": "e9f3a4109aa5ce4e0ce12d73f322372db52c8bde1ed0eb810d16a151c705d185",
+    "scripts/capture-mgcrea-observation.mjs": "f7ec228c16490919cdb762aef931178ee725bf1ec10663c21142e5270da28e8f",
+    "scripts/capture-reference-bridge-v1.mjs": "c27b2aa223451768d4a96ca407ac2c2bae6f1d7558a5a9de6acf8c9b1a48d42f",
+    "scripts/check_carol_port_native.py": "af91b4cf34e5b12db97520882137f1cfedf20e96efb61b47aadcfc9b45512950",
+    "scripts/create_development_fixtures.py": "52cf990d26df1586c2c9eaebd4045f638fd91247f77478df9fdf6512a6260fee",
+    "scripts/fixtures/carol-reference-v1.mjs": "b6b6492ee5c27cf5db0474054b0f18a8feafe0859d9faaa4fd67946c7768626d",
+    "scripts/freeze_scope.py": "79b0afd8c85bfaa1507790b8a91c625323acaf4a3650f7a9f07b6a3580da9629",
+    "scripts/log-local-http.mjs": "e9a09ec21efba9007975a41458567d1624dfa656c1fddedcd14f74d62a693ad6",
+    "scripts/log-reference-http.mjs": "c274b60dbd3dedc67f4df9d37dde14a8c4150ee4b5e06304e0e104e595fbf1eb",
+    "scripts/native-wire-reference.mjs": "d9705a6604122ebca28e50e3ecd81aad7552c7c0e6be771c1f6da79eec6e60b1",
+    "scripts/project_observations.py": "33068aaffe2c68a35377ccc7c24bba84a02bb39dbf13623c24d35f8681178a72",
+    "scripts/reference-mgcrea-v1.mjs": "85f6224a0c49c65072adcc3cc464536e5684fc2dbd39763249bc861f84ca589c",
+    "scripts/replay_historical_verification.py": "d25d77742036204fc865bd8453155ad99cbae7207db9bc732466eda00c45ec8e",
+    "scripts/replay_reference_bridge.py": "dfe878a38e446c505e6934159aa2c8b2b7565a64b281f4d5767f59f3f020cefa",
+    "scripts/replay_reference_verification.py": "badc5efbac53f73af019ddd1398017f83679a5dd1287c9744e7cb1e0b6360b66",
+    "scripts/verify_foundation.py": "0896cddf953da3773a1e9063b0a4147249bc07f94e35de0f470d8530b177d791",
+    "scripts/verify_reference_bridge.py": "1904f80cb2bf61632635bc0ea2440a5fd6bf354ae46f2c519185eb35f859cf59",
+    "scripts/verify_reference_continuation.py": "2296a44866e71cc7c996cf503f648243095b059876db9878b3b39c56df736068",
+    "src/agent_interoperability_research.egg-info/dependency_links.txt": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "src/agent_interoperability_research.egg-info/entry_points.txt": "0f017b579331c1dad26a0d13e30a39ea5e0ce798ab6372910395b5e6911462b9",
+    "src/agent_interoperability_research.egg-info/PKG-INFO": "d7579624c1566aa6ba28ddc165ceb5af63e1a3786fad75923000b327512f1ec4",
+    "src/agent_interoperability_research.egg-info/SOURCES.txt": "747147ea22b9f0180a8be3a9cac4172be281d6f1d81f25cea8b644464ab76c53",
+    "src/agent_interoperability_research.egg-info/top_level.txt": "3c0636b0b063742629b709875218a1bc0cee34fdf8bd502d21572a79f813939f",
+    "src/interoperability/__init__.py": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a",
+    "src/interoperability/__main__.py": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7",
+    "src/interoperability/baseline.py": "c26f4c7db7f89f00f2c781e346aec20a589a862316e34c38a2edd7760407206f",
+    "src/interoperability/cli.py": "7bc56e3e3f036333e46627ced09bac80a737cbac126f0427eb4b2f47cca65922",
+    "src/interoperability/manifest.py": "defc6e9bbc4ea66806beefc9def967d94db8a3856cc121cee13c45ebda70debb",
+    "src/interoperability/oracle.py": "da29829a077da1ef44c2ffc0a6d5dbcd8e4c579b308b49085ea1af077e601b7f",
+    "src/interoperability/projection_checker.py": "5bc96d27428e7fce01b12a8e5ccc946db8e7dc77bbced033e60423e4e769a103",
+    "src/interoperability/reference_checker.py": "87ca2690fcf296961cea024d66da6323031b5306ef54222d48a7ccfdaf662371",
+    "src/interoperability/status_projection.py": "648e18cb6f1e2cbf3ff31f3dab70a29b473701d10df3f1758065bd5d4da8debf",
+    "src/interoperability/status_projection_checker.py": "3bb82daa320fbb40ac96391c19460e3730a10aef3b0da8c2b39d467cf89d6dea",
+    "src/interoperability/wire_projection.py": "88223761710725959157607f4a86829fe1d7aa3e85bfe3ccc53af52c063df89e",
+    "tests/test_baseline.py": "310c9306197b69b50d7372c1de8e3e1234c25f685da28d041aa0bb7d3f1f28de",
+    "tests/test_crosscheck.py": "3985b64097b4b2c62c4f99b8daae2c00e79ebf782f49ec066b2e20a88d727ac7",
+    "tests/test_oracle.py": "66f064435ca9c04eacb000ecbf80254d23bfed856919f15fcdddd0a362cbe4ab",
+    "tests/test_projection_checker.py": "d7ea83cd7f4c2bd02a9a35cb5befeeffad70ca377f28412085bce100c3c12958",
+    "tests/test_reference_checker.py": "b15e461588ac94a111e803167ac5354f34bea6fd8b45e66c547e9c17f54381a9",
+    "tests/test_status_projection.py": "762636e9be51a537eb51ae21f670fd84f2b2abfc59595e49eb2c840e6683e1f7",
+    "tests/test_status_projection_checker.py": "050efdc2d104499c5816533471a4f86437be924f87e8cd9517c23b6f336bdb6f",
+    "tests/test_trace_integrity.py": "d1fb5b7ffea8b18e571e30f9ed9beab2c1e79eb1560f3dbb0cd9d3583e0510f0",
+    "tests/test_wire_projection.py": "c2653723eef3c0e4cdda6932457f3cd45596c547dea1ba0613094c7c8fb8339a"
+  },
+  "implementation_matches_archive": true,
+  "tests": {
+    "command": [
+      "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\.venv\\Scripts\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_bool_and_integer_are_not_equal (test_baseline.BaselineSemantics.test_bool_and_integer_are_not_equal) ... ok\ntest_bound_is_number_of_transitions_and_allows_empty_path (test_baseline.BaselineSemantics.test_bound_is_number_of_transitions_and_allows_empty_path) ... ok\ntest_complete_negative_and_partial_abstention (test_baseline.BaselineSemantics.test_complete_negative_and_partial_abstention) ... ok\ntest_cross_field_binding_is_required (test_baseline.BaselineSemantics.test_cross_field_binding_is_required) ... ok\ntest_evidence_freshness_boundaries (test_baseline.BaselineSemantics.test_evidence_freshness_boundaries) ... ok\ntest_known_false_dominates_unknown_conjunction (test_baseline.BaselineSemantics.test_known_false_dominates_unknown_conjunction) ... ok\ntest_may_compatibility_does_not_require_every_branch_to_succeed (test_baseline.BaselineSemantics.test_may_compatibility_does_not_require_every_branch_to_succeed) ... ok\ntest_missing_observables_are_unknown (test_baseline.BaselineSemantics.test_missing_observables_are_unknown) ... ok\ntest_negative_certificate_covers_recurrent_layers (test_baseline.BaselineSemantics.test_negative_certificate_covers_recurrent_layers) ... ok\ntest_ordered_comparison_wrong_type_is_unknown (test_baseline.BaselineSemantics.test_ordered_comparison_wrong_type_is_unknown) ... ok\ntest_partial_positive_is_conditional_support (test_baseline.BaselineSemantics.test_partial_positive_is_conditional_support) ... ok\ntest_unknown_invariant_cannot_hide_possible_goal (test_baseline.BaselineSemantics.test_unknown_invariant_cannot_hide_possible_goal) ... ok\ntest_json_duplicate_keys_are_not_silently_discarded (test_baseline.InputValidation.test_json_duplicate_keys_are_not_silently_discarded) ... ok\ntest_rejects_bad_structure (test_baseline.InputValidation.test_rejects_bad_structure) ... ok\ntest_all_two_state_graphs_three_valued_predicates_and_bounds (test_crosscheck.IndependentCrosscheck.test_all_two_state_graphs_three_valued_predicates_and_bounds) ... ok\ntest_rejects_mutated_binding_and_omitted_cut_state (test_crosscheck.IndependentCrosscheck.test_rejects_mutated_binding_and_omitted_cut_state) ... ok\ntest_certificate_time_must_be_inside_evidence_window_and_not_future (test_oracle.CertificateTests.test_certificate_time_must_be_inside_evidence_window_and_not_future) ... ok\ntest_changed_horizon_validity_digest_or_kind_is_rejected (test_oracle.CertificateTests.test_changed_horizon_validity_digest_or_kind_is_rejected) ... ok\ntest_digest_uses_utf8_sorted_compact_json_and_is_key_order_independent (test_oracle.CertificateTests.test_digest_uses_utf8_sorted_compact_json_and_is_key_order_independent) ... ok\ntest_independently_constructed_positive_and_negative_certificates (test_oracle.CertificateTests.test_independently_constructed_positive_and_negative_certificates) ... ok\ntest_issued_certificate_can_be_replayed_later_inside_validity_window (test_oracle.CertificateTests.test_issued_certificate_can_be_replayed_later_inside_validity_window) ... ok\ntest_model_digest_binds_contract_evidence_route_and_all_observables (test_oracle.CertificateTests.test_model_digest_binds_contract_evidence_route_and_all_observables) ... ok\ntest_negative_certificate_cannot_hide_reachable_goal (test_oracle.CertificateTests.test_negative_certificate_cannot_hide_reachable_goal) ... ok\ntest_negative_certificate_rejects_hidden_branches_wrong_initial_and_recurrence (test_oracle.CertificateTests.test_negative_certificate_rejects_hidden_branches_wrong_initial_and_recurrence) ... ok\ntest_negative_certificate_rejects_noncanonical_or_malformed_layers (test_oracle.CertificateTests.test_negative_certificate_rejects_noncanonical_or_malformed_layers) ... ok\ntest_negative_certificate_rejects_unknown_goal_or_invariant_and_incomplete_evidence (test_oracle.CertificateTests.test_negative_certificate_rejects_unknown_goal_or_invariant_and_incomplete_evidence) ... ok\ntest_positive_certificate_cannot_exceed_horizon (test_oracle.CertificateTests.test_positive_certificate_cannot_exceed_horizon) ... ok\ntest_positive_certificate_rejects_unknown_final_goal (test_oracle.CertificateTests.test_positive_certificate_rejects_unknown_final_goal) ... ok\ntest_positive_certificate_rejects_unsafe_and_unknown_initial_or_successor (test_oracle.CertificateTests.test_positive_certificate_rejects_unsafe_and_unknown_initial_or_successor) ... ok\ntest_replay_rejects_wrong_id_wrong_endpoint_and_non_goal (test_oracle.CertificateTests.test_replay_rejects_wrong_id_wrong_endpoint_and_non_goal) ... ok\ntest_wrong_decision_unknown_and_extra_fields_have_no_valid_certificate (test_oracle.CertificateTests.test_wrong_decision_unknown_and_extra_fields_have_no_valid_certificate) ... ok\ntest_checker_returns_false_for_malformed_result_shapes (test_oracle.MalformedInputTests.test_checker_returns_false_for_malformed_result_shapes) ... ok\ntest_invalid_identity_provenance_initial_and_states (test_oracle.MalformedInputTests.test_invalid_identity_provenance_initial_and_states) ... ok\ntest_invalid_scalar_objects_and_float_are_input_errors (test_oracle.MalformedInputTests.test_invalid_scalar_objects_and_float_are_input_errors) ... ok\ntest_malformed_clock_horizon_and_evidence (test_oracle.MalformedInputTests.test_malformed_clock_horizon_and_evidence) ... ok\ntest_malformed_predicates_raise_valueerror_instead_of_incidental_typeerror (test_oracle.MalformedInputTests.test_malformed_predicates_raise_valueerror_instead_of_incidental_typeerror) ... ok\ntest_malformed_transitions (test_oracle.MalformedInputTests.test_malformed_transitions) ... ok\ntest_nested_unknown_fields_are_input_errors (test_oracle.MalformedInputTests.test_nested_unknown_fields_are_input_errors) ... ok\ntest_top_level_missing_unknown_and_private_gold_are_input_errors (test_oracle.MalformedInputTests.test_top_level_missing_unknown_and_private_gold_are_input_errors) ... ok\ntest_definitely_unsafe_intermediate_blocks_later_goal (test_oracle.OracleDecisionTests.test_definitely_unsafe_intermediate_blocks_later_goal) ... ok\ntest_duplicate_successors_deduplicated_only_within_a_layer (test_oracle.OracleDecisionTests.test_duplicate_successors_deduplicated_only_within_a_layer) ... ok\ntest_empty_contract_lists_are_true (test_oracle.OracleDecisionTests.test_empty_contract_lists_are_true) ... ok\ntest_equality_ne_and_membership_are_type_sensitive (test_oracle.OracleDecisionTests.test_equality_ne_and_membership_are_type_sensitive) ... ok\ntest_false_conjunct_dominates_unknown_goal (test_oracle.OracleDecisionTests.test_false_conjunct_dominates_unknown_goal) ... ok\ntest_false_conjunct_dominates_unknown_invariant (test_oracle.OracleDecisionTests.test_false_conjunct_dominates_unknown_invariant) ... ok\ntest_field_equality_requires_both_fields_and_same_type (test_oracle.OracleDecisionTests.test_field_equality_requires_both_fields_and_same_type) ... ok\ntest_freshness_is_inclusive_and_stale_or_future_abstains (test_oracle.OracleDecisionTests.test_freshness_is_inclusive_and_stale_or_future_abstains) ... ok\ntest_goal_unknown_in_any_potentially_safe_state_prevents_refutation (test_oracle.OracleDecisionTests.test_goal_unknown_in_any_potentially_safe_state_prevents_refutation) ... ok\ntest_horizon_counts_transitions_and_includes_boundary (test_oracle.OracleDecisionTests.test_horizon_counts_transitions_and_includes_boundary) ... ok\ntest_initial_goal_has_zero_transition_witness (test_oracle.OracleDecisionTests.test_initial_goal_has_zero_transition_witness) ... ok\ntest_initial_invariant_blocks_even_initial_goal (test_oracle.OracleDecisionTests.test_initial_invariant_blocks_even_initial_goal) ... ok\ntest_maximum_horizon_chain (test_oracle.OracleDecisionTests.test_maximum_horizon_chain) ... ok\ntest_missing_observable_differs_from_explicit_null (test_oracle.OracleDecisionTests.test_missing_observable_differs_from_explicit_null) ... ok\ntest_nondeterministic_safe_success_branch_is_may_supported (test_oracle.OracleDecisionTests.test_nondeterministic_safe_success_branch_is_may_supported) ... ok\ntest_ordered_comparisons_and_bad_operand_types (test_oracle.OracleDecisionTests.test_ordered_comparisons_and_bad_operand_types) ... ok\ntest_partial_graph_can_support_but_cannot_refute (test_oracle.OracleDecisionTests.test_partial_graph_can_support_but_cannot_refute) ... ok\ntest_recurrence_is_preserved_across_negative_layers (test_oracle.OracleDecisionTests.test_recurrence_is_preserved_across_negative_layers) ... ok\ntest_unknown_branch_does_not_erase_definite_witness (test_oracle.OracleDecisionTests.test_unknown_branch_does_not_erase_definite_witness) ... ok\ntest_unknown_goal_in_definitely_unsafe_state_is_irrelevant (test_oracle.OracleDecisionTests.test_unknown_goal_in_definitely_unsafe_state_is_irrelevant) ... ok\ntest_unknown_invariant_keeps_possible_successor_alive (test_oracle.OracleDecisionTests.test_unknown_invariant_keeps_possible_successor_alive) ... ok\ntest_unreachable_or_out_of_horizon_unknown_does_not_prevent_refutation (test_oracle.OracleDecisionTests.test_unreachable_or_out_of_horizon_unknown_does_not_prevent_refutation) ... ok\ntest_zero_horizon_does_not_take_edge_to_goal (test_oracle.OracleDecisionTests.test_zero_horizon_does_not_take_edge_to_goal) ... ok\ntest_exact_native_correlation (test_projection_checker.PrivateSidecarTests.test_exact_native_correlation) ... ok\ntest_native_cross_run_hash_id_or_context_mutations (test_projection_checker.PrivateSidecarTests.test_native_cross_run_hash_id_or_context_mutations) ... ok\ntest_native_empty_artifacts_errors_states_and_snapshots_cannot_back_success (test_projection_checker.PrivateSidecarTests.test_native_empty_artifacts_errors_states_and_snapshots_cannot_back_success) ... ok\ntest_native_error_can_be_disclosed_as_modern_failed_record (test_projection_checker.PrivateSidecarTests.test_native_error_can_be_disclosed_as_modern_failed_record) ... ok\ntest_stream_headers_after_ack_remain_tied_to_dispatch (test_projection_checker.PrivateSidecarTests.test_stream_headers_after_ack_remain_tied_to_dispatch) ... ok\ntest_ack_cannot_be_projected_as_completion (test_projection_checker.ProjectionCheckerTests.test_ack_cannot_be_projected_as_completion) ... ok\ntest_archival_clock_includes_non_task_error_response (test_projection_checker.ProjectionCheckerTests.test_archival_clock_includes_non_task_error_response) ... ok\ntest_cancellation_after_selected_prefix_cannot_be_skipped (test_projection_checker.ProjectionCheckerTests.test_cancellation_after_selected_prefix_cannot_be_skipped) ... ok\ntest_duplicate_json_keys (test_projection_checker.ProjectionCheckerTests.test_duplicate_json_keys) ... ok\ntest_duplicate_request_exchange_ids_and_overlap (test_projection_checker.ProjectionCheckerTests.test_duplicate_request_exchange_ids_and_overlap) ... ok\ntest_hash_and_parsed_mismatches (test_projection_checker.ProjectionCheckerTests.test_hash_and_parsed_mismatches) ... ok\ntest_historical_evidence_expires_immediately (test_projection_checker.ProjectionCheckerTests.test_historical_evidence_expires_immediately) ... ok\ntest_history_is_never_artifact_delivery (test_projection_checker.ProjectionCheckerTests.test_history_is_never_artifact_delivery) ... ok\ntest_malformed_tool_arguments_return_false (test_projection_checker.ProjectionCheckerTests.test_malformed_tool_arguments_return_false) ... ok\ntest_missing_artifact_body_is_not_false_or_true (test_projection_checker.ProjectionCheckerTests.test_missing_artifact_body_is_not_false_or_true) ... ok\ntest_missing_observable_is_unknown (test_projection_checker.ProjectionCheckerTests.test_missing_observable_is_unknown) ... ok\ntest_model_cannot_gain_branch_complete_evidence_or_ttl (test_projection_checker.ProjectionCheckerTests.test_model_cannot_gain_branch_complete_evidence_or_ttl) ... ok\ntest_modern_ack_and_nested_completion_are_distinct (test_projection_checker.ProjectionCheckerTests.test_modern_ack_and_nested_completion_are_distinct) ... ok\ntest_modern_completed_without_result_is_unknown (test_projection_checker.ProjectionCheckerTests.test_modern_completed_without_result_is_unknown) ... ok\ntest_modern_delivery_completed_does_not_override_logical_failure (test_projection_checker.ProjectionCheckerTests.test_modern_delivery_completed_does_not_override_logical_failure) ... ok\ntest_namespace_and_provenance_cannot_be_rewritten (test_projection_checker.ProjectionCheckerTests.test_namespace_and_provenance_cannot_be_rewritten) ... ok\ntest_nested_task_record_contradiction_is_rejected (test_projection_checker.ProjectionCheckerTests.test_nested_task_record_contradiction_is_rejected) ... ok\ntest_nested_tool_error_requires_separate_recovery_model (test_projection_checker.ProjectionCheckerTests.test_nested_tool_error_requires_separate_recovery_model) ... ok\ntest_no_projector_import_or_shared_extraction (test_projection_checker.ProjectionCheckerTests.test_no_projector_import_or_shared_extraction) ... ok\ntest_normal_task_send_get (test_projection_checker.ProjectionCheckerTests.test_normal_task_send_get) ... ok\ntest_ordinary_status_cannot_contradict_disclosed_a2a_state (test_projection_checker.ProjectionCheckerTests.test_ordinary_status_cannot_contradict_disclosed_a2a_state) ... ok\ntest_pending_ack_local_stale_final_artifact (test_projection_checker.ProjectionCheckerTests.test_pending_ack_local_stale_final_artifact) ... ok\ntest_removed_completion_is_partial_unknown (test_projection_checker.ProjectionCheckerTests.test_removed_completion_is_partial_unknown) ... ok\ntest_returned_reference_mutations_remain_literal (test_projection_checker.ProjectionCheckerTests.test_returned_reference_mutations_remain_literal) ... ok\ntest_task_error_cannot_disappear_between_states (test_projection_checker.ProjectionCheckerTests.test_task_error_cannot_disappear_between_states) ... ok\ntest_unlabelled_expected_text_cannot_satisfy_artifact_ref (test_projection_checker.ProjectionCheckerTests.test_unlabelled_expected_text_cannot_satisfy_artifact_ref) ... ok\ntest_wrong_or_missing_request_target_is_false (test_projection_checker.ProjectionCheckerTests.test_wrong_or_missing_request_target_is_false) ... ok\ntest_wrong_response_id (test_projection_checker.ProjectionCheckerTests.test_wrong_response_id) ... ok\ntest_actual_original_native_capture_checks (test_reference_checker.ReferenceChecker.test_actual_original_native_capture_checks) ... ok\ntest_all_control_summaries_are_required (test_reference_checker.ReferenceChecker.test_all_control_summaries_are_required) ... ok\ntest_body_byte_and_request_costs_are_recomputed (test_reference_checker.ReferenceChecker.test_body_byte_and_request_costs_are_recomputed) ... ok\ntest_bool_is_not_an_integer_cost_or_status (test_reference_checker.ReferenceChecker.test_bool_is_not_an_integer_cost_or_status) ... ok\ntest_chronology_must_match_utc_and_monotonic_clocks (test_reference_checker.ReferenceChecker.test_chronology_must_match_utc_and_monotonic_clocks) ... ok\ntest_context_only_control_cannot_silently_supply_task_id (test_reference_checker.ReferenceChecker.test_context_only_control_cannot_silently_supply_task_id) ... ok\ntest_context_only_new_task_get_cannot_be_an_original_task_get (test_reference_checker.ReferenceChecker.test_context_only_new_task_get_cannot_be_an_original_task_get) ... ok\ntest_deep_malformed_json_returns_false_without_exception (test_reference_checker.ReferenceChecker.test_deep_malformed_json_returns_false_without_exception) ... ok\ntest_deleted_decisive_evidence_is_not_replaced_by_summary (test_reference_checker.ReferenceChecker.test_deleted_decisive_evidence_is_not_replaced_by_summary) ... ok\ntest_duplicate_and_wrong_phase_records_are_rejected (test_reference_checker.ReferenceChecker.test_duplicate_and_wrong_phase_records_are_rejected) ... ok\ntest_failed_control_and_unverified_cleanup_are_rejected (test_reference_checker.ReferenceChecker.test_failed_control_and_unverified_cleanup_are_rejected) ... ok\ntest_false_summary_claims_cannot_override_raw_records (test_reference_checker.ReferenceChecker.test_false_summary_claims_cannot_override_raw_records) ... ok\ntest_invalid_utf8_and_base64_are_rejected (test_reference_checker.ReferenceChecker.test_invalid_utf8_and_base64_are_rejected) ... ok\ntest_malformed_inputs_return_false (test_reference_checker.ReferenceChecker.test_malformed_inputs_return_false) ... ok\ntest_nonfinite_json_constants_are_rejected_after_rehash (test_reference_checker.ReferenceChecker.test_nonfinite_json_constants_are_rejected_after_rehash) ... ok\ntest_omitted_completed_artifacts_do_not_change_status_only_goal (test_reference_checker.ReferenceChecker.test_omitted_completed_artifacts_do_not_change_status_only_goal) ... ok\ntest_raw_duplicate_json_keys_are_rejected_after_rehash (test_reference_checker.ReferenceChecker.test_raw_duplicate_json_keys_are_rejected_after_rehash) ... ok\ntest_raw_parsed_hash_and_base64_consistency_are_all_required (test_reference_checker.ReferenceChecker.test_raw_parsed_hash_and_base64_consistency_are_all_required) ... ok\ntest_rehashed_agent_card_protocol_change_is_rejected (test_reference_checker.ReferenceChecker.test_rehashed_agent_card_protocol_change_is_rejected) ... ok\ntest_rehashed_empty_native_snapshot_cannot_back_a_success (test_reference_checker.ReferenceChecker.test_rehashed_empty_native_snapshot_cannot_back_a_success) ... ok\ntest_rehashed_false_completion_for_near_miss_is_rejected (test_reference_checker.ReferenceChecker.test_rehashed_false_completion_for_near_miss_is_rejected) ... ok\ntest_rehashed_native_error_cannot_back_a_success (test_reference_checker.ReferenceChecker.test_rehashed_native_error_cannot_back_a_success) ... ok\ntest_rehashed_reference_omission_is_rejected (test_reference_checker.ReferenceChecker.test_rehashed_reference_omission_is_rejected) ... ok\ntest_rehashed_reference_to_another_task_is_rejected (test_reference_checker.ReferenceChecker.test_rehashed_reference_to_another_task_is_rejected) ... ok\ntest_rehashed_wrong_answer_text_and_role_are_rejected (test_reference_checker.ReferenceChecker.test_rehashed_wrong_answer_text_and_role_are_rejected) ... ok\ntest_rehashed_wrong_context_is_rejected_even_with_matching_summary (test_reference_checker.ReferenceChecker.test_rehashed_wrong_context_is_rejected_even_with_matching_summary) ... ok\ntest_rehashed_wrong_reply_id_is_rejected (test_reference_checker.ReferenceChecker.test_rehashed_wrong_reply_id_is_rejected) ... ok\ntest_rehashed_wrong_task_is_rejected_even_with_matching_summary (test_reference_checker.ReferenceChecker.test_rehashed_wrong_task_is_rejected_even_with_matching_summary) ... ok\ntest_windows_termination_code_does_not_invalidate_completed_observations (test_reference_checker.ReferenceChecker.test_windows_termination_code_does_not_invalidate_completed_observations) ... ok\ntest_wrong_protocol_source_and_nonloopback_endpoint_are_rejected (test_reference_checker.ReferenceChecker.test_wrong_protocol_source_and_nonloopback_endpoint_are_rejected) ... ok\ntest_wrong_state_schema_and_http_error_are_rejected (test_reference_checker.ReferenceChecker.test_wrong_state_schema_and_http_error_are_rejected) ... ok\ntest_actual_old_public_traces_support_only_historical_status_goal (test_status_projection.StatusProjection.test_actual_old_public_traces_support_only_historical_status_goal) ... ok\ntest_actual_profiles_use_distinct_discovery_and_initialization (test_status_projection.StatusProjection.test_actual_profiles_use_distinct_discovery_and_initialization) ... ok\ntest_cancel_or_unmodelled_mutation_cannot_be_removed (test_status_projection.StatusProjection.test_cancel_or_unmodelled_mutation_cannot_be_removed) ... ok\ntest_changed_discovered_version_is_rejected (test_status_projection.StatusProjection.test_changed_discovered_version_is_rejected) ... ok\ntest_changed_initialize_request_or_reply_is_rejected (test_status_projection.StatusProjection.test_changed_initialize_request_or_reply_is_rejected) ... ok\ntest_complete_trace_corruption_rejected_in_read_only_setup (test_status_projection.StatusProjection.test_complete_trace_corruption_rejected_in_read_only_setup) ... ok\ntest_declined_task_update_requires_separate_model (test_status_projection.StatusProjection.test_declined_task_update_requires_separate_model) ... ok\ntest_early_task_switch_cannot_redefine_original_task (test_status_projection.StatusProjection.test_early_task_switch_cannot_redefine_original_task) ... ok\ntest_header_disagrees_is_rejected (test_status_projection.StatusProjection.test_header_disagrees_is_rejected) ... ok\ntest_missing_initialized_notification_is_rejected (test_status_projection.StatusProjection.test_missing_initialized_notification_is_rejected) ... ok\ntest_missing_modern_envelope_is_rejected (test_status_projection.StatusProjection.test_missing_modern_envelope_is_rejected) ... ok\ntest_missing_returned_context_remains_unknown (test_status_projection.StatusProjection.test_missing_returned_context_remains_unknown) ... ok\ntest_missing_setup_is_rejected (test_status_projection.StatusProjection.test_missing_setup_is_rejected) ... ok\ntest_modern_tasks_requires_actual_declaration (test_status_projection.StatusProjection.test_modern_tasks_requires_actual_declaration) ... ok\ntest_monotonic_corruption_rejected_despite_valid_utc (test_status_projection.StatusProjection.test_monotonic_corruption_rejected_despite_valid_utc) ... ok\ntest_outer_delivery_completed_does_not_invent_logical_completion (test_status_projection.StatusProjection.test_outer_delivery_completed_does_not_invent_logical_completion) ... ok\ntest_r1_cannot_silently_declare_tasks (test_status_projection.StatusProjection.test_r1_cannot_silently_declare_tasks) ... ok\ntest_raw_inner_error_rejected_when_outer_tool_not_error (test_status_projection.StatusProjection.test_raw_inner_error_rejected_when_outer_tool_not_error) ... ok\ntest_raw_parsed_hash_id_or_clock_corruption_rejected (test_status_projection.StatusProjection.test_raw_parsed_hash_id_or_clock_corruption_rejected) ... ok\ntest_raw_software_control_has_native_states_and_action_edges (test_status_projection.StatusProjection.test_raw_software_control_has_native_states_and_action_edges) ... ok\ntest_unmapped_raw_state_rejected (test_status_projection.StatusProjection.test_unmapped_raw_state_rejected) ... ok\ntest_waiting_only_is_unknown (test_status_projection.StatusProjection.test_waiting_only_is_unknown) ... ok\ntest_wrong_decoding_of_unicode_is_rejected_without_altering_archive (test_status_projection.StatusProjection.test_wrong_decoding_of_unicode_is_rejected_without_altering_archive) ... ok\ntest_wrong_task_target_is_explicit_invariant_failure (test_status_projection.StatusProjection.test_wrong_task_target_is_explicit_invariant_failure) ... ok\ntest_archived_sidecars_are_explicit_private_input_controls (test_status_projection_checker.ArchivedControlledDerivativeTests.test_archived_sidecars_are_explicit_private_input_controls) ... ok\ntest_native_port_positive_raw_wrappers_are_constructed_controls (test_status_projection_checker.ArchivedControlledDerivativeTests.test_native_port_positive_raw_wrappers_are_constructed_controls) ... ok\ntest_old_real_capture_status_derivative_remains_labelled (test_status_projection_checker.ArchivedControlledDerivativeTests.test_old_real_capture_status_derivative_remains_labelled) ... ok\ntest_wrong_capture_text_decoding_rejected_without_rebasing_hashes (test_status_projection_checker.ArchivedControlledDerivativeTests.test_wrong_capture_text_decoding_rejected_without_rebasing_hashes) ... ok\ntest_amir_opaque_handles_are_distinct_from_private_native_ids (test_status_projection_checker.NativeStatusCheckerTests.test_amir_opaque_handles_are_distinct_from_private_native_ids) ... ok\ntest_missing_native_get_status_mismatch_and_hash_fail (test_status_projection_checker.NativeStatusCheckerTests.test_missing_native_get_status_mismatch_and_hash_fail) ... ok\ntest_private_native_typed_ids_and_status (test_status_projection_checker.NativeStatusCheckerTests.test_private_native_typed_ids_and_status) ... ok\ntest_raw_absent_header_uses_captured_card_version (test_status_projection_checker.NativeStatusCheckerTests.test_raw_absent_header_uses_captured_card_version) ... ok\ntest_raw_native_inner_correlations_and_actual_target (test_status_projection_checker.NativeStatusCheckerTests.test_raw_native_inner_correlations_and_actual_target) ... ok\ntest_conflicting_earlier_creation_handle_rejects_multi_task_prefix (test_status_projection_checker.StatusProjectionCheckerTests.test_conflicting_earlier_creation_handle_rejects_multi_task_prefix) ... ok\ntest_graph_contract_clock_and_namespace_tampering_rejected (test_status_projection_checker.StatusProjectionCheckerTests.test_graph_contract_clock_and_namespace_tampering_rejected) ... ok\ntest_http_names_case_insensitivity_and_duplicate_header_rejection (test_status_projection_checker.StatusProjectionCheckerTests.test_http_names_case_insensitivity_and_duplicate_header_rejection) ... ok\ntest_known_scalars_are_retained (test_status_projection_checker.StatusProjectionCheckerTests.test_known_scalars_are_retained) ... ok\ntest_missing_context_is_unknown_not_request_filled (test_status_projection_checker.StatusProjectionCheckerTests.test_missing_context_is_unknown_not_request_filled) ... ok\ntest_missing_reply_and_nested_error_rejected (test_status_projection_checker.StatusProjectionCheckerTests.test_missing_reply_and_nested_error_rejected) ... ok\ntest_nested_task_binding_and_ordinary_status_contradiction_rejected (test_status_projection_checker.StatusProjectionCheckerTests.test_nested_task_binding_and_ordinary_status_contradiction_rejected) ... ok\ntest_protocol_version_and_unmodelled_later_read_rejected (test_status_projection_checker.StatusProjectionCheckerTests.test_protocol_version_and_unmodelled_later_read_rejected) ... ok\ntest_public_reference_and_target_mutation_remain_literal (test_status_projection_checker.StatusProjectionCheckerTests.test_public_reference_and_target_mutation_remain_literal) ... ok\ntest_raw_inner_error_is_rejected_even_outer_ok (test_status_projection_checker.StatusProjectionCheckerTests.test_raw_inner_error_is_rejected_even_outer_ok) ... ok\ntest_raw_inner_id_reuse_rejected (test_status_projection_checker.StatusProjectionCheckerTests.test_raw_inner_id_reuse_rejected) ... ok\ntest_raw_null_and_missing_state_are_known_and_unknown (test_status_projection_checker.StatusProjectionCheckerTests.test_raw_null_and_missing_state_are_known_and_unknown) ... ok\ntest_raw_send_and_get_have_different_native_result_paths (test_status_projection_checker.StatusProjectionCheckerTests.test_raw_send_and_get_have_different_native_result_paths) ... ok\ntest_route_specific_setup_is_actual_wire_evidence (test_status_projection_checker.StatusProjectionCheckerTests.test_route_specific_setup_is_actual_wire_evidence) ... ok\ntest_setup_corruption_and_declared_sse_body (test_status_projection_checker.StatusProjectionCheckerTests.test_setup_corruption_and_declared_sse_body) ... ok\ntest_setup_rpc_errors_missing_result_and_tool_errors_rejected (test_status_projection_checker.StatusProjectionCheckerTests.test_setup_rpc_errors_missing_result_and_tool_errors_rejected) ... ok\ntest_sole_a2a_state_does_not_invent_missing_status (test_status_projection_checker.StatusProjectionCheckerTests.test_sole_a2a_state_does_not_invent_missing_status) ... ok\ntest_tasks_delivery_and_ack_are_not_logical_completion (test_status_projection_checker.StatusProjectionCheckerTests.test_tasks_delivery_and_ack_are_not_logical_completion) ... ok\ntest_typed_completion_has_exactly_three_predicates_and_no_artifact (test_status_projection_checker.StatusProjectionCheckerTests.test_typed_completion_has_exactly_three_predicates_and_no_artifact) ... ok\ntest_unknown_and_numeric_native_states_rejected (test_status_projection_checker.StatusProjectionCheckerTests.test_unknown_and_numeric_native_states_rejected) ... ok\ntest_unknown_setup_operations_cannot_disappear_before_prefix (test_status_projection_checker.StatusProjectionCheckerTests.test_unknown_setup_operations_cannot_disappear_before_prefix) ... ok\ntest_unmodelled_mutation_cancel_and_decline_rejected (test_status_projection_checker.StatusProjectionCheckerTests.test_unmodelled_mutation_cancel_and_decline_rejected) ... ok\ntest_variant_route_consistency_and_each_request_tasks_declaration (test_status_projection_checker.StatusProjectionCheckerTests.test_variant_route_consistency_and_each_request_tasks_declaration) ... ok\ntest_waiting_is_unknown_and_later_clock_abstains (test_status_projection_checker.StatusProjectionCheckerTests.test_waiting_is_unknown_and_later_clock_abstains) ... ok\ntest_whole_wire_raw_hash_duplicate_ids_and_overlap (test_status_projection_checker.StatusProjectionCheckerTests.test_whole_wire_raw_hash_duplicate_ids_and_overlap) ... ok\ntest_zero_transition_completion_and_input_immutability (test_status_projection_checker.StatusProjectionCheckerTests.test_zero_transition_completion_and_input_immutability) ... ok\ntest_development_runner_cannot_label_wire_data_as_authored (test_trace_integrity.DevelopmentTraceIntegrity.test_development_runner_cannot_label_wire_data_as_authored) ... ok\ntest_keeps_exact_runtime_manifest_and_actual_checked_result (test_trace_integrity.DevelopmentTraceIntegrity.test_keeps_exact_runtime_manifest_and_actual_checked_result) ... ok\ntest_refuses_overwriting_existing_evidence (test_trace_integrity.DevelopmentTraceIntegrity.test_refuses_overwriting_existing_evidence) ... ok\ntest_cancel_action_cannot_be_silently_removed_from_observed_horizon (test_wire_projection.WireProjection.test_cancel_action_cannot_be_silently_removed_from_observed_horizon) ... ok\ntest_contradictory_nested_task_binding_is_rejected (test_wire_projection.WireProjection.test_contradictory_nested_task_binding_is_rejected) ... ok\ntest_cross_run_and_duplicate_ids_are_rejected (test_wire_projection.WireProjection.test_cross_run_and_duplicate_ids_are_rejected) ... ok\ntest_delivered_error_is_not_a_lifecycle_contradiction_or_success (test_wire_projection.WireProjection.test_delivered_error_is_not_a_lifecycle_contradiction_or_success) ... ok\ntest_delivery_complete_without_task_result_is_not_logical_success (test_wire_projection.WireProjection.test_delivery_complete_without_task_result_is_not_logical_success) ... ok\ntest_exact_a2a_state_cannot_contradict_ordinary_success_label (test_wire_projection.WireProjection.test_exact_a2a_state_cannot_contradict_ordinary_success_label) ... ok\ntest_foreign_returned_context_remains_foreign (test_wire_projection.WireProjection.test_foreign_returned_context_remains_foreign) ... ok\ntest_history_cannot_substitute_for_artifact_body (test_wire_projection.WireProjection.test_history_cannot_substitute_for_artifact_body) ... ok\ntest_mirror_ack_and_history_do_not_become_completed_artifact (test_wire_projection.WireProjection.test_mirror_ack_and_history_do_not_become_completed_artifact) ... ok\ntest_missing_artifact_body_stays_unknown (test_wire_projection.WireProjection.test_missing_artifact_body_stays_unknown) ... ok\ntest_modern_answer_ack_does_not_invent_completed (test_wire_projection.WireProjection.test_modern_answer_ack_does_not_invent_completed) ... ok\ntest_nested_completed_result_is_actual_public_evidence (test_wire_projection.WireProjection.test_nested_completed_result_is_actual_public_evidence) ... ok\ntest_partial_capture_cannot_prove_unsupported (test_wire_projection.WireProjection.test_partial_capture_cannot_prove_unsupported) ... ok\ntest_raw_declared_and_hash_corruption_are_rejected (test_wire_projection.WireProjection.test_raw_declared_and_hash_corruption_are_rejected) ... ok\ntest_real_captures_have_only_observed_edges_and_incomplete_evidence (test_wire_projection.WireProjection.test_real_captures_have_only_observed_edges_and_incomplete_evidence) ... ok\ntest_unmet_text_goal_is_unknown_in_partial_graph (test_wire_projection.WireProjection.test_unmet_text_goal_is_unknown_in_partial_graph) ... ok\ntest_wrong_request_response_pair_is_rejected_even_with_valid_hash (test_wire_projection.WireProjection.test_wrong_request_response_pair_is_rejected_even_with_valid_hash) ... ok\n\n----------------------------------------------------------------------\nRan 205 tests in 2.170s\n\nOK\n"
+  },
+  "valid": true
+}

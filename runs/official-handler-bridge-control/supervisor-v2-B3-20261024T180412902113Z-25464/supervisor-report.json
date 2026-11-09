@@ -1,0 +1,73 @@
+{
+  "schema_version": "python-official-bridge-supervisor/2",
+  "variant": "B3",
+  "pid": 25464,
+  "attempt": "runs\\official-handler-bridge-control\\supervisor-v2-B3-20261024T180412902113Z-25464",
+  "run_dir": "runs\\reference-bridge-observation\\R3-mgcrea_mcp_a2a-reference-v1-2026-10-24T18-04-13-453Z-9912",
+  "final": {
+    "outcome": "recorded",
+    "exit_code": 0,
+    "variant": "R3",
+    "output": "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-24T18-04-13-453Z-9912/runtime.json",
+    "report_sha256": "1018679de97be0a288e8f505e3aae003cd8158aa807c647ad9886b0370ea506f",
+    "observation": {
+      "initial_required_observed": true,
+      "initial_artifact_expected_history_observed": true,
+      "answer_sent": true,
+      "answer_attempts": 1,
+      "answer_application_error": false,
+      "final_authoritative_read_received": true,
+      "final_application_error": false,
+      "final_task_id": "714ee29a-3404-41f6-8216-0ae2bdc24327",
+      "final_context_id": "ac35814a-476f-413f-82f8-da9a2fb27de9",
+      "final_state": "input_required",
+      "final_state_returned": "input_required",
+      "original_task_preserved": true,
+      "original_context_preserved": true,
+      "original_task_completed": false,
+      "goal_achieved": false,
+      "source_expected_state_observed": true,
+      "answer_protocol_error": null,
+      "final_protocol_error": null,
+      "interpretation": "Source waiting/completed expectations are data; final public native task association and state determine the goal. No terminal artifact projector is used."
+    },
+    "cleanup": [
+      {
+        "role": "bridge",
+        "pid": 20860,
+        "requested": {
+          "utc": "2026-10-24T18:04:33.243Z",
+          "monotonic_ns": "10771077160300"
+        },
+        "already_exited": false,
+        "method": "Python supervisor control file emits original CLI SIGTERM handler",
+        "exit": {
+          "code": 0,
+          "signal": null,
+          "observed": {
+            "utc": "2026-10-24T18:04:33.472Z",
+            "monotonic_ns": "10771305968900"
+          }
+        },
+        "normal_exit": true
+      }
+    ]
+  },
+  "cleanup": [
+    {
+      "role": "bridge",
+      "pid": 20860,
+      "already_terminal": true,
+      "exit_code": 0
+    },
+    {
+      "role": "worker",
+      "pid": 9912,
+      "already_terminal": true,
+      "exit_code": 0
+    }
+  ],
+  "model_calls": 0,
+  "remote_network_requests": 0,
+  "claim_limit": "Process orchestration and actual pipe relay; no novel method or human review"
+}

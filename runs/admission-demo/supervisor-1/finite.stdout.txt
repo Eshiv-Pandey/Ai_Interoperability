@@ -1,0 +1,257 @@
+{
+  "schema_version": "admission-benchmark-summary/1",
+  "status": "passed",
+  "cases": 4,
+  "family_labels": [
+    "binding-mismatch",
+    "missing-observable",
+    "positive-continuation",
+    "unsafe-intermediate-state"
+  ],
+  "reference_errors": 0,
+  "candidate_count": 0,
+  "candidate_evaluation_complete": false,
+  "algorithms": {
+    "baseline": {
+      "scheduled": 4,
+      "eligible": 4,
+      "not_applicable": 0,
+      "returned_valid": 4,
+      "errors": 0,
+      "reference_scored": 4,
+      "decision_agreements": 4,
+      "supported": 1,
+      "unsupported": 2,
+      "unknown": 1,
+      "conclusive": 3,
+      "certificates_valid": 3,
+      "certificates_invalid": 0,
+      "certificate_check_errors": 0,
+      "false_support": 0,
+      "false_refusal": 0,
+      "conclusive_on_reference_unknown": 0,
+      "abstained_on_reference_decided": 0,
+      "confusion_reference_by_decision": {
+        "supported": {
+          "supported": 1,
+          "unsupported": 0,
+          "unknown": 0
+        },
+        "unsupported": {
+          "supported": 0,
+          "unsupported": 2,
+          "unknown": 0
+        },
+        "unknown": {
+          "supported": 0,
+          "unsupported": 0,
+          "unknown": 1
+        }
+      },
+      "decision_agreement_rate": 1.0,
+      "decision_coverage": 0.75,
+      "certified_coverage": 0.75,
+      "evaluation_ns": {
+        "samples": [
+          140500,
+          152400,
+          183800,
+          282900
+        ],
+        "observed": 4,
+        "missing": 0,
+        "total": 759600
+      },
+      "worker_wall_ns": {
+        "samples": [
+          139466000,
+          132428100,
+          153818400,
+          203727000
+        ],
+        "observed": 4,
+        "missing": 0,
+        "total": 629439500
+      },
+      "certificate_timing": {
+        "invocations": 3,
+        "evaluation_ns": {
+          "samples": [
+            172500,
+            194000,
+            167700
+          ],
+          "observed": 3,
+          "missing": 0,
+          "total": 534200
+        },
+        "worker_body_ns": {
+          "samples": [
+            7402500,
+            4554400,
+            4565100
+          ],
+          "observed": 3,
+          "missing": 0,
+          "total": 16522000
+        },
+        "worker_wall_ns": {
+          "samples": [
+            139517300,
+            137230900,
+            149858400
+          ],
+          "observed": 3,
+          "missing": 0,
+          "total": 426606600
+        }
+      },
+      "evaluation_and_certificate_timing": {
+        "invocations": 7,
+        "evaluation_ns": {
+          "samples": [
+            140500,
+            152400,
+            183800,
+            282900,
+            172500,
+            194000,
+            167700
+          ],
+          "observed": 7,
+          "missing": 0,
+          "total": 1293800
+        },
+        "worker_body_ns": {
+          "samples": [
+            2023000,
+            2241500,
+            2480900,
+            2954100,
+            7402500,
+            4554400,
+            4565100
+          ],
+          "observed": 7,
+          "missing": 0,
+          "total": 26221500
+        },
+        "worker_wall_ns": {
+          "samples": [
+            139466000,
+            132428100,
+            153818400,
+            203727000,
+            139517300,
+            137230900,
+            149858400
+          ],
+          "observed": 7,
+          "missing": 0,
+          "total": 1056046100
+        }
+      }
+    }
+  },
+  "reference_timing": {
+    "invocations": 4,
+    "evaluation_ns": {
+      "samples": [
+        162000,
+        166400,
+        164600,
+        104800
+      ],
+      "observed": 4,
+      "missing": 0,
+      "total": 597800
+    },
+    "worker_body_ns": {
+      "samples": [
+        4819800,
+        4477700,
+        4722800,
+        4549300
+      ],
+      "observed": 4,
+      "missing": 0,
+      "total": 18569600
+    },
+    "worker_wall_ns": {
+      "samples": [
+        137454600,
+        140198500,
+        137614200,
+        173333600
+      ],
+      "observed": 4,
+      "missing": 0,
+      "total": 588600900
+    }
+  },
+  "all_invocation_timing": {
+    "invocations": 11,
+    "evaluation_ns": {
+      "samples": [
+        162000,
+        166400,
+        164600,
+        104800,
+        140500,
+        152400,
+        183800,
+        282900,
+        172500,
+        194000,
+        167700
+      ],
+      "observed": 11,
+      "missing": 0,
+      "total": 1891600
+    },
+    "worker_body_ns": {
+      "samples": [
+        4819800,
+        4477700,
+        4722800,
+        4549300,
+        2023000,
+        2241500,
+        2480900,
+        2954100,
+        7402500,
+        4554400,
+        4565100
+      ],
+      "observed": 11,
+      "missing": 0,
+      "total": 44791100
+    },
+    "worker_wall_ns": {
+      "samples": [
+        137454600,
+        140198500,
+        137614200,
+        173333600,
+        139466000,
+        132428100,
+        153818400,
+        203727000,
+        139517300,
+        137230900,
+        149858400
+      ],
+      "observed": 11,
+      "missing": 0,
+      "total": 1644647000
+    }
+  },
+  "held_out_cases": 0,
+  "qualified_domains": 0,
+  "novelty_established": false,
+  "claim_limit": "Authored development contracts in registered schemas only; no application task success, domain qualification, statistical independence, novelty or performance advantage established.",
+  "timing_scope": "Every attempted evaluation and certificate check is counted, including failures and timeouts. Unavailable timings stay null; totals sum observed samples only and are null when none were measured. evaluation_ns includes function work and excludes import/startup; worker_wall_ns includes process startup, imports and capture. Reference timing is separate; all_invocation_timing includes references, solvers and checks, not parent-runner overhead. Fresh workers; no persistent warm cache or performance inference.",
+  "snapshot_inputs_unchanged": true,
+  "original_inputs_unchanged": true,
+  "finished_at_epoch_ns": 1793218930986253900
+}

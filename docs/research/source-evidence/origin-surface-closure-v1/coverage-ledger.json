@@ -1,0 +1,140 @@
+{
+  "schema_version": "direct-origin-surface-coverage/1",
+  "date_local": "2026-10-25",
+  "source_revisions": {
+    "amirk": "58eff9da469bccdc432bf164662727947de646b4",
+    "mgcrea": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5"
+  },
+  "source_index": "source-index.json",
+  "source_copies_are_original_local_bytes": true,
+  "source_to_runtime_closure_verified": false,
+  "mgcrea_write_enabled_tools": [
+    "a2a_auth_status",
+    "a2a_list_agents",
+    "a2a_discover_agent",
+    "a2a_list_tasks",
+    "a2a_get_task",
+    "a2a_wait_for_task",
+    "a2a_request",
+    "a2a_send_message",
+    "a2a_respond_to_task",
+    "a2a_cancel_task",
+    "a2a_set_push_notification_config",
+    "a2a_delete_push_notification_config"
+  ],
+  "amirk_tools": [
+    "a2a_discover",
+    "a2a_send_message",
+    "a2a_get_task",
+    "a2a_cancel_task"
+  ],
+  "amirk_task_methods": [
+    "tasks/get",
+    "tasks/update",
+    "tasks/cancel"
+  ],
+  "direct_origin_claims": [
+    {
+      "id": "D1",
+      "claim": "Ordinary form/MRTR accepted string answers go through the same empty-reference message builder.",
+      "evidence": [
+        "sources/amirk/src/mrtr.ts",
+        "sources/amirk/src/tools.ts",
+        "sources/amirk/src/a2a-client.ts"
+      ],
+      "limit": "Source inspected; no new runtime form control."
+    },
+    {
+      "id": "D2",
+      "claim": "Tasks accepted replies choose typed or streaming send through the same message builder.",
+      "evidence": [
+        "sources/amirk/src/tasks/handlers.ts",
+        "sources/amirk/src/a2a-client.ts"
+      ],
+      "limit": "Source branch coverage, not arbitrary all SDK/external dispatch."
+    },
+    {
+      "id": "D3",
+      "claim": "Write-enabled mgcrea tool registration includes all12 literal tool calls, with raw method enum9.",
+      "evidence": [
+        "sources/mgcrea/src/tools/index.ts",
+        "sources/mgcrea/src/tools/auth.ts",
+        "sources/mgcrea/src/tools/agents.ts",
+        "sources/mgcrea/src/tools/tasks.ts",
+        "sources/mgcrea/src/tools/writes.ts",
+        "sources/mgcrea/src/tools/request.ts",
+        "sources/mgcrea/src/tools/util.ts"
+      ],
+      "limit": "Literal registration inventory, not formal source parser proof or full environment closure."
+    },
+    {
+      "id": "D4",
+      "claim": "Outbound local respond writes the mirror; typed peer reply has empty references and raw direct headers omit version.",
+      "evidence": [
+        "sources/mgcrea/src/tools/writes.ts",
+        "sources/mgcrea/src/store/tasks.ts",
+        "sources/mgcrea/src/client/peer.ts",
+        "sources/mgcrea/src/client/fetch.ts"
+      ],
+      "limit": "Direct source paths; no claim that every callback/daemon/peer alternative is covered."
+    },
+    {
+      "id": "D5",
+      "claim": "Isolated Carol completion branch requires nonempty references plus prefix; cancellation is canceled.",
+      "evidence": [
+        "sources/fixture/carol-reference-v1.mjs",
+        "../../official-handler-method-implication-v2.md"
+      ],
+      "limit": "Authored port/fixed strict profile; not natural production impossibility."
+    }
+  ],
+  "open_obligations": [
+    {
+      "id": "C1",
+      "requirement": "Every permitted peer/URL/re-discovery/fallback and original-origin feedback",
+      "reason": "Tool URL input and dynamic card/peer alternatives exceed the restricted direct-origin sequence."
+    },
+    {
+      "id": "C2",
+      "requirement": "All callback/daemon/SDK dispatch and serialization paths",
+      "reason": "Inventory/direct callees do not prove full installed binding and notification effects."
+    },
+    {
+      "id": "C3",
+      "requirement": "Source-to-current installed/dist runtime equality and source transformation fidelity",
+      "reason": "Original control archive closure is historical; no new complete project/build/runtime closure is certified."
+    },
+    {
+      "id": "C4",
+      "requirement": "Frozen original-task/safety/horizon and legal environment outcomes",
+      "reason": "No new independent task/source closure review; preserve timing, concurrency and action alternatives."
+    },
+    {
+      "id": "C5",
+      "requirement": "Independent completion/no-path certificate and human validation",
+      "reason": "This is root analytical source screening, without a formal complete-negative checker or scientific review."
+    }
+  ],
+  "public_surface_coverage_complete": false,
+  "can_certify_supported": false,
+  "can_certify_unsupported": false,
+  "novelty_demonstrated": false,
+  "qualified_second_domain": false,
+  "human_review_completed": false,
+  "checkpoint_progress_percent": 5,
+  "execution": {
+    "application_requests": 0,
+    "software_tests": 0,
+    "archive_replays": 0,
+    "model_calls": 0,
+    "installations": 0,
+    "candidate_performance_trials": 0
+  },
+  "retained_inputs": [
+    "docs/research/official-handler-method-implication-v2.md",
+    "docs/research/official-handler-bridge-probe-v2.md",
+    "external/source-lock.json",
+    "runs/official-handler-bridge-control/group-status-v2.json",
+    "paper/continuation-integrity-v5.json"
+  ]
+}

@@ -1,0 +1,149 @@
+// Local eligibility smoke; no model calls, altered adapters, or mocked transports.
+import assert from 'node:assert/strict';
+import { spawn } from 'node:child_process';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+
+const externalDir = path.dirname(fileURLToPath(import.meta.url));
+const workspace = path.dirname(externalDir);
+const bridgeDir = path.join(externalDir, 'mcp-a2a');
+const fixtureDir = path.join(externalDir, 'a2a-to-mcp');
+const evidenceDir = path.join(workspace, 'docs', 'research', 'bridge-evidence');
+mkdirSync(evidenceDir, { recursive: true });
+const outputPath = path.join(evidenceDir, 'mgcrea-wire-smoke.json');
+const { Client } = await import(pathToFileURL(path.join(bridgeDir, 'node_modules', '@modelcontextprotocol', 'client', 'dist', 'index.mjs')));
+const { StdioClientTransport } = await import(pathToFileURL(path.join(bridgeDir, 'node_modules', '@modelcontextprotocol', 'client', 'dist', 'stdio.mjs')));
+
+const evidence = {
+  kind: 'development_bridge_eligibility_smoke',
+  observed_at_utc: new Date().toISOString(),
+  node: process.version,
+  bridge_commit: 'c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5',
+  fixture_commit: '58eff9da469bccdc432bf164662727947de646b4',
+  converter_source_independence_evidence: 'no shared git commits; distinct converter implementations; shared official A2A SDK family',
+  fixture_shared_with_first_candidate: true,
+  smoke_version: 3,
+  transport: 'actual child-process MCP stdio -> actual loopback HTTP A2A',
+  fixture_label: 'upstream deterministic fixture, not live LLM or independent gold',
+  model_calls: 0,
+  mcp_exchanges: [],
+  fixture_stdout: '', fixture_stderr: '', bridge_stderr: '',
+};
+let transport;
+let client;
+const fixture = spawn(process.execPath, ['node_modules/tsx/dist/cli.mjs', 'fixtures/agent/cli.ts', '--port', '0'], {
+  cwd: fixtureDir, windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'],
+});
+fixture.stdout.on('data', data => { evidence.fixture_stdout += data.toString(); });
+fixture.stderr.on('data', data => { evidence.fixture_stderr += data.toString(); });
+
+function deadline(promise, milliseconds, label) {
+  let timer;
+  return Promise.race([promise, new Promise((_, reject) => { timer = setTimeout(() => reject(new Error(`${label} timed out`)), milliseconds); })])
+    .finally(() => clearTimeout(timer));
+}
+
+try {
+  const fixtureUrl = await deadline(new Promise((resolve, reject) => {
+    fixture.on('exit', code => reject(new Error(`fixture exited ${code}`)));
+    fixture.stdout.on('data', () => {
+      const match = evidence.fixture_stdout.match(/listening on (http:\/\/[^\s]+)/);
+      if (match) resolve(match[1]);
+    });
+  }), 10000, 'fixture startup');
+  evidence.fixture_url = fixtureUrl;
+  // Avoid reading any user's configuration/token or writing their shared task store.
+  const stateDir = path.join(externalDir, 'audit-state', `mgcrea-${Date.now()}`);
+  const env = {
+    PATH: process.env.PATH ?? '', SystemRoot: process.env.SystemRoot ?? 'C:\\Windows',
+    TEMP: process.env.TEMP ?? stateDir, TMP: process.env.TMP ?? stateDir,
+    A2A_CONFIG: path.join(stateDir, 'absent-config.json'),
+    A2A_STATE_DIR: stateDir, A2A_DAEMON_URL: fixtureUrl, A2A_PEERS: fixtureUrl,
+    A2A_ALLOW_WRITES: '1', A2A_CHANNEL: '0', A2A_MAX_RETRIES: '0',
+  };
+  evidence.configuration = { state_dir: stateDir, writes: true, token: 'unset', channel: false };
+  transport = new StdioClientTransport({ command: process.execPath, args: ['dist/cli.js'], cwd: bridgeDir, env, stderr: 'pipe' });
+  transport.stderr.on('data', data => { evidence.bridge_stderr += data.toString(); });
+  const originalSend = transport.send.bind(transport);
+  transport.send = async (message, options) => {
+    evidence.mcp_exchanges.push({ direction: 'client_to_bridge', message });
+    return originalSend(message, options);
+  };
+  const originalStart = transport.start.bind(transport);
+  transport.start = async () => {
+    const originalReceive = transport.onmessage;
+    transport.onmessage = (message, extra) => {
+      evidence.mcp_exchanges.push({ direction: 'bridge_to_client', message });
+      return originalReceive?.(message, extra);
+    };
+    return originalStart();
+  };
+  client = new Client({ name: 'local-bridge-eligibility-audit', version: '0.1.0' });
+  await deadline(client.connect(transport), 15000, 'MCP connect');
+  evidence.bridge_process_pid = transport.pid;
+  evidence.server_version = client.getServerVersion();
+  const tools = await deadline(client.listTools(), 10000, 'list tools');
+  evidence.tools = tools;
+  assert(tools.tools.some(tool => tool.name === 'a2a_send_message'));
+  const result = await deadline(client.callTool({ name: 'a2a_send_message', arguments: { url: fixtureUrl, text: 'task: bridge-eligibility' } }), 10000, 'send tool');
+  evidence.send_result = result;
+  assert(!result.isError && !result.isToolError, JSON.stringify(result));
+  const resultObject = result.structuredContent ?? JSON.parse(result.content.find(block => block.type === 'text').text);
+  assert.equal(resultObject.replied_with, 'task');
+  const taskId = resultObject.task?.id;
+  assert(taskId, JSON.stringify(resultObject));
+  const reread = await deadline(client.callTool({ name: 'a2a_get_task', arguments: { task_id: taskId, refresh: true } }), 10000, 'get task tool');
+  evidence.get_result = reread;
+  assert(!reread.isError && !reread.isToolError, JSON.stringify(reread));
+  const body = reread.structuredContent ?? JSON.parse(reread.content.find(block => block.type === 'text').text);
+  assert.equal(body.id, taskId);
+  assert.equal(body.state, 'completed');
+  assert(JSON.stringify(body).includes('ytilibigile-egdirb'));
+  const taskObject = result => result.structuredContent ?? JSON.parse(result.content.find(block => block.type === 'text').text);
+  async function observeTask(taskId, wanted) {
+    const until = Date.now() + 5000;
+    let result;
+    do {
+      result = await deadline(client.callTool({ name: 'a2a_get_task', arguments: { task_id: taskId, refresh: true } }), 10000, 'observe task');
+      if (taskObject(result).state === wanted) return result;
+      await new Promise(resolve => setTimeout(resolve, 50));
+    } while (Date.now() < until);
+    throw new Error(`task ${taskId} not observed ${wanted}: ${JSON.stringify(result)}`);
+  }
+  const ask = await deadline(client.callTool({ name: 'a2a_send_message', arguments: { url: fixtureUrl, text: 'ask: destination' } }), 10000, 'ask tool');
+  evidence.ask_result = ask;
+  assert(!ask.isError && !ask.isToolError, JSON.stringify(ask));
+  const pending = taskObject(await observeTask(taskObject(ask).task.id, 'input_required'));
+  assert.equal(pending.state, 'input_required');
+  const resumed = await deadline(client.callTool({ name: 'a2a_send_message', arguments: { url: fixtureUrl, text: 'Paris', task_id: pending.id, context_id: pending.context_id } }), 10000, 'resume tool');
+  evidence.resume_result = resumed;
+  assert(!resumed.isError && !resumed.isToolError, JSON.stringify(resumed));
+  assert.equal(taskObject(resumed).task.id, pending.id);
+  const completed = await observeTask(pending.id, 'completed');
+  evidence.resumed_get_result = completed;
+  assert.equal(taskObject(completed).state, 'completed');
+  assert(JSON.stringify(taskObject(completed)).includes('destination = Paris'));
+  const parked = await deadline(client.callTool({ name: 'a2a_send_message', arguments: { url: fixtureUrl, text: 'ask: cancel-me' } }), 10000, 'park for cancel');
+  await observeTask(taskObject(parked).task.id, 'input_required');
+  const cancelled = await deadline(client.callTool({ name: 'a2a_cancel_task', arguments: { task_id: taskObject(parked).task.id, confirm: true } }), 10000, 'cancel tool');
+  evidence.cancel_result = cancelled;
+  assert(!cancelled.isError && !cancelled.isToolError, JSON.stringify(cancelled));
+  assert.equal(taskObject(cancelled).task.state, 'canceled');
+  evidence.tested_mcp_protocol = evidence.mcp_exchanges.find(exchange => exchange.direction === 'bridge_to_client' && exchange.message.result?.protocolVersion)?.message.result.protocolVersion;
+  evidence.outcome = 'passed';
+  evidence.exit_code = 0;
+} catch (error) {
+  evidence.outcome = 'failed';
+  evidence.exit_code = 1;
+  evidence.error = error.stack ?? String(error);
+  process.exitCode = 1;
+} finally {
+  await client?.close().catch(() => {});
+  await transport?.close().catch(() => {});
+  fixture.kill();
+  await deadline(new Promise(resolve => fixture.exitCode !== null ? resolve() : fixture.once('exit', resolve)), 5000, 'fixture cleanup').catch(() => {});
+  evidence.completed_at_utc = new Date().toISOString();
+  writeFileSync(outputPath, JSON.stringify(evidence, null, 2) + '\n', 'utf8');
+  console.log(JSON.stringify({ outcome: evidence.outcome, exit_code: evidence.exit_code, output: outputPath, error: evidence.error }, null, 2));
+}

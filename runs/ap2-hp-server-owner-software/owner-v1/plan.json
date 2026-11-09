@@ -1,0 +1,66 @@
+{
+  "command": [
+    "C:\\Python313\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-c",
+    "\nfrom pathlib import Path\nimport json,os,runpy,sys,unittest\nroot=Path(sys.argv[1])\noutcome=Path(sys.argv[2])\ndef guard(event,args):\n    if event.startswith(\"socket.\") or event in (\"subprocess.Popen\",\"os.system\",\"ctypes.dlopen\"):\n        raise RuntimeError(\"Constructed Server-owner capture denies network/process/native-library operations\")\nsys.addaudithook(guard)\nclass RetainedResult(unittest.TextTestResult):\n    def __init__(self,*args,**kwargs):\n        super().__init__(*args,**kwargs);self.outcomes=[]\n    def addSuccess(self,test):\n        super().addSuccess(test);self.outcomes.append({\"id\":test.id(),\"status\":\"passed\"})\n    def addFailure(self,test,error):\n        super().addFailure(test,error);self.outcomes.append({\"id\":test.id(),\"status\":\"failed\",\"error_type\":error[0].__name__})\n    def addError(self,test,error):\n        super().addError(test,error);self.outcomes.append({\"id\":test.id(),\"status\":\"error\",\"error_type\":error[0].__name__})\n    def addSkip(self,test,reason):\n        super().addSkip(test,reason);self.outcomes.append({\"id\":test.id(),\"status\":\"skipped\"})\nnamespace=runpy.run_path(str(root/\"tests/test_ap2_hp_original_server_owner_v1.py\"),run_name=\"captured_owner_tests\")\nsuite=unittest.defaultTestLoader.loadTestsFromTestCase(namespace[\"OwnerChecks\"])\nresult=unittest.TextTestRunner(verbosity=2,resultclass=RetainedResult).run(suite)\nrecord={\"tests_run\":result.testsRun,\"outcomes\":result.outcomes,\"failures\":len(result.failures),\"errors\":len(result.errors),\n        \"skips\":len(result.skipped),\"expected_failures\":len(result.expectedFailures),\"unexpected_successes\":len(result.unexpectedSuccesses),\n        \"successful\":result.wasSuccessful(),\"isolated_python\":sys.flags.isolated==1,\"site_disabled\":sys.flags.no_site==1,\n        \"bytecode_disabled\":sys.dont_write_bytecode,\"older_test_suites_executed\":False,\n        \"SDK_module_loaded\":any(name.split(\".\",1)[0] in (\"uvicorn\",\"google\",\"a2a\",\"ap2\") for name in sys.modules)}\nwith outcome.open(\"x\",encoding=\"utf-8\") as stream:\n    json.dump(record,stream,sort_keys=True,indent=2);stream.write(\"\\n\");stream.flush();os.fsync(stream.fileno())\nraise SystemExit(0 if result.wasSuccessful() else 1)\n",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-hp-server-owner-software\\owner-v1\\captured-checkout",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-hp-server-owner-software\\owner-v1\\test-outcomes.json"
+  ],
+  "created_at_utc": "2026-10-30T17:50:10.038068+00:00",
+  "declared_test_names": [
+    "test_app_and_instance_method_interference_prevent_stop",
+    "test_compile_only_property_cached_property_and_contextmanager_are_accepted",
+    "test_descriptor_replacements_and_wrapped_closure_drift_are_refused",
+    "test_direct_factory_and_counterfeit_run_globals_are_refused",
+    "test_factory_alias_interference_is_preserved_until_repaired",
+    "test_malformed_returned_original_server_is_retained_without_run_or_stop",
+    "test_once_only_lease_refuses_reinstall_and_new_original_run",
+    "test_original_constructor_error_is_preserved_without_replacement_server",
+    "test_original_instance_config_and_return_identity_are_retained",
+    "test_original_run_error_is_preserved_and_inactive_restore_is_allowed",
+    "test_typed_config_and_preinstall_alias_drift_are_refused",
+    "test_unreviewed_decorators_and_class_hooks_are_refused",
+    "test_unstarted_force_exit_and_inactive_stop_do_not_change_flags"
+  ],
+  "expected_test_count": 13,
+  "inputs_before": {
+    "scripts/capture_ap2_hp_server_owner_tests_v1.py": {
+      "bytes": 11162,
+      "sha256": "a3a55e01e85309b442bc4ec3ebe3aaf9229b70f36b13ae58fdee76116a6a6ed5"
+    },
+    "src/interoperability/ap2_hp_final_asgi_binding_v1.py": {
+      "bytes": 6775,
+      "sha256": "51623f3333c0479a708d05b10b1bac46117cee2c2cde8a8b75d033659445c1d3"
+    },
+    "src/interoperability/ap2_hp_original_binding_v1.py": {
+      "bytes": 24821,
+      "sha256": "27c37938751dfb00f21a3a53043ea2f468814d264df71bb8024dd58cea5ac3af"
+    },
+    "src/interoperability/ap2_hp_original_server_owner_v1.py": {
+      "bytes": 17715,
+      "sha256": "4dc3dde0e602ce7e863c291bf58e1dfb4c2a1b8b6430dec8c7a6beae4cb9ca26"
+    },
+    "src/interoperability/ap2_hp_passive_capture_v1.py": {
+      "bytes": 4350,
+      "sha256": "e3abb063246ee0688b098bba933a74c3c2e6c5789b7c9b39bc59cc12b135a5a8"
+    },
+    "src/interoperability/ap2_hp_reference_execution_v1.py": {
+      "bytes": 16127,
+      "sha256": "821b463c1e8d8500b32774b7c04ace2b865c7089c7a8e0ca1f5e7f20ab5df340"
+    },
+    "tests/test_ap2_hp_original_server_owner_v1.py": {
+      "bytes": 15812,
+      "sha256": "202896abdcac87acfe5a62b9ad8e60bd46e9d7326941eb4c6d2f8a8284038906"
+    }
+  },
+  "interpreter": {
+    "bytes": 105840,
+    "path": "C:\\Python313\\python.exe",
+    "sha256": "03573716a7fcbd8b7fed8fe0163bbfbd3a852546920d6a666123f307c8dac7d9"
+  },
+  "schema_version": "ap2-hp-server-owner-software-plan/1",
+  "scope": "Only new authored OwnerChecks; no original/SDK/planner or consumed suite execution"
+}

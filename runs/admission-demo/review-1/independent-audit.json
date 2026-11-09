@@ -1,0 +1,1495 @@
+{
+  "schema_version": "admission-demo-independent-ai-audit/1",
+  "audited_at_utc": "2026-10-28T19:01:09.044668+00:00",
+  "reviewer": {
+    "type": "AI independent code/output review",
+    "agent": "/root/demo_scope_review",
+    "human_review": false,
+    "independence_scope": "Separate agent read-only review of plan, captured bytes, job inputs/process receipts/replies, result accounting and timing. Does not claim independent human scientific review."
+  },
+  "status": "passed",
+  "scope": "Retained authored-development demonstration only. Existing results reviewed without algorithm execution. Earlier source reading informs limits; this audit does not prove source-to-model fidelity or algorithmic novelty.",
+  "algorithm_executions_during_audit": 0,
+  "application_requests_during_audit": 0,
+  "files_modified_during_audit": [
+    "runs/admission-demo/review-1/independent-audit.json"
+  ],
+  "inspected_artifacts": [
+    {
+      "path": "runs/admission-demo/review-1/plan.json",
+      "bytes": 14074,
+      "sha256": "d0f365dfadb7b64e9d46357450bd580c798d0094793dd92acf70d7895590c81f"
+    },
+    {
+      "path": "runs/admission-demo/review-1/result.json",
+      "bytes": 12417,
+      "sha256": "ad2de13f63cfe58f336a0d3d80219ece1b978f6a3fa46477570a4139ad1fa368"
+    },
+    {
+      "path": "examples/benchmark-development/recipe-v1.json",
+      "bytes": 1438,
+      "sha256": "3ba815a205f2cbe48c269dcd87587fb3eaee6eb6f6910b27ffa50b4a34812101"
+    },
+    {
+      "path": "examples/refinement-development/manifest.json",
+      "bytes": 3980,
+      "sha256": "d81d8e4dff267f03bef0fa9335a5f70086fcc077f511be27a99e0495d68235b3"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/execution.json",
+      "bytes": 5767,
+      "sha256": "7c7064dcbbcc72c0b6f2f5945ff260d509127b1ac45cc46e7c4bcb17acacf425"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/manifest.json",
+      "bytes": 45737,
+      "sha256": "9b5ac40b11e6b503a3cfca997293f95f77ea11f700f5ee5e111c037c7df42d73"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/summary.json",
+      "bytes": 14287,
+      "sha256": "3ec8f40a1b38eaac84e7c9406dc85502ef5c23ac9272aebde183d7e99b915342"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/results.jsonl",
+      "bytes": 67343,
+      "sha256": "b73c7c03009d835e3c9d65a8df4321651c7214383004c83448279579026c29f2"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/replay-suite.json",
+      "bytes": 1179,
+      "sha256": "f775b3f3d064337acd339dacf62ad21139bd7fb030ecaa69b1ce34f276330d4d"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/inputs/original-suite.json",
+      "bytes": 1438,
+      "sha256": "3ba815a205f2cbe48c269dcd87587fb3eaee6eb6f6910b27ffa50b4a34812101"
+    },
+    {
+      "path": "runs/admission-demo/review-1/replay/execution.json",
+      "bytes": 5767,
+      "sha256": "9afe47aa4d08a3938daf96eb429dcefb87d6d9fc844bbcb13ef3cd6be26a44ae"
+    },
+    {
+      "path": "runs/admission-demo/review-1/replay/manifest.json",
+      "bytes": 45737,
+      "sha256": "e1818714481edb6b0106f1dee7d4180538c8ca6d404985ceeab1a0891c380963"
+    },
+    {
+      "path": "runs/admission-demo/review-1/replay/summary.json",
+      "bytes": 14267,
+      "sha256": "9ed5fa895d12825670b2c3ebe9e5604d8dfd9efe46ed659fd9b2986c48f0bbf8"
+    },
+    {
+      "path": "runs/admission-demo/review-1/replay/results.jsonl",
+      "bytes": 66992,
+      "sha256": "449c75f4c349ea9bfd869d9186bd257c97768a5450ab80916474aa5285a4dbe4"
+    },
+    {
+      "path": "runs/admission-demo/review-1/replay/replay-suite.json",
+      "bytes": 1179,
+      "sha256": "f775b3f3d064337acd339dacf62ad21139bd7fb030ecaa69b1ce34f276330d4d"
+    },
+    {
+      "path": "runs/admission-demo/review-1/replay/inputs/original-suite.json",
+      "bytes": 1179,
+      "sha256": "f775b3f3d064337acd339dacf62ad21139bd7fb030ecaa69b1ce34f276330d4d"
+    },
+    {
+      "path": "runs/admission-demo/review-1/verify.stdout.txt",
+      "bytes": 147,
+      "sha256": "4ae11ee11ddaa7f51321db0e90dbb58b44613cb10832e60d0e3c6d4017778c09"
+    },
+    {
+      "path": "runs/admission-demo/review-1/verify-replay.stdout.txt",
+      "bytes": 147,
+      "sha256": "4ae11ee11ddaa7f51321db0e90dbb58b44613cb10832e60d0e3c6d4017778c09"
+    }
+  ],
+  "inspected_command_receipts": [
+    {
+      "path": "runs/admission-demo/review-1/benchmark-command.json",
+      "bytes": 637,
+      "sha256": "2a13588cac7a598c256c3712cc10fb368e87dc66a0fb3c3607533bc36348b207"
+    },
+    {
+      "path": "runs/admission-demo/review-1/direct-command.json",
+      "bytes": 564,
+      "sha256": "f092876b9ec0774afe8b5fdc45e1f49875dae5f2332ff5d70514758de00ecaa0"
+    },
+    {
+      "path": "runs/admission-demo/review-1/finite-command.json",
+      "bytes": 518,
+      "sha256": "47bce152c5daee7c9e82da4367092caa5574c277d9b82f19c676281a40448f42"
+    },
+    {
+      "path": "runs/admission-demo/review-1/replay-command.json",
+      "bytes": 483,
+      "sha256": "c43661e0241f724a4fa0f777829fed9b7aafad8646ebd201aac04da614dc387c"
+    },
+    {
+      "path": "runs/admission-demo/review-1/supported-command.json",
+      "bytes": 574,
+      "sha256": "2cdff6783ef5b6e514b680b428519bcca383ab4ab769eed5471e5c947aa0825a"
+    },
+    {
+      "path": "runs/admission-demo/review-1/unknown-command.json",
+      "bytes": 581,
+      "sha256": "b8683bc05afd3ad12effb82171dc3a6e224910b1e4846baa23cefa4d408f82d4"
+    },
+    {
+      "path": "runs/admission-demo/review-1/unsupported-command.json",
+      "bytes": 578,
+      "sha256": "8f2c53148ad42d949676da1ecae121560883e58e5564e74ffab99bc2b8aec36a"
+    },
+    {
+      "path": "runs/admission-demo/review-1/verify-command.json",
+      "bytes": 369,
+      "sha256": "6f30cf3976dcf80529df62a073166f09595d2a44fb7bf929313a50a44fbdc18f"
+    },
+    {
+      "path": "runs/admission-demo/review-1/verify-finite-command.json",
+      "bytes": 373,
+      "sha256": "03072cb944b18a1c7e420c43785425efdb401dfd5b9800a7a1ae85fe380e7ede"
+    },
+    {
+      "path": "runs/admission-demo/review-1/verify-replay-command.json",
+      "bytes": 373,
+      "sha256": "b8073b96c3a4d4ff31f317f2847bb7838477c440eb1ea2e8e0d50b7241ba7999"
+    }
+  ],
+  "inspected_raw_job_files": [
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-baseline/input.json",
+      "bytes": 3029,
+      "sha256": "2bcb96636792fe079319ab7ed9ed2232eae17c766766e4fe1b7b7362f93836ea"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-baseline/process.json",
+      "bytes": 529,
+      "sha256": "3878a1ec72113dea81f159a789f0b544c2580f85d41523c0cc2308ab2b975cf8"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-baseline/reply.json",
+      "bytes": 1373,
+      "sha256": "257e9d700c10c3f32a09e4b7c94025cf6e63c6606c4a66f776611270cd9eb54b"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-baseline/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-baseline/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-baseline-certificate/input.json",
+      "bytes": 4079,
+      "sha256": "d444693b2db87e9763e1891a881c0c0937ae2a288cd0a7f85ab43965488fdaa0"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-baseline-certificate/process.json",
+      "bytes": 541,
+      "sha256": "033af2151ed15e5a5bfa0b383bd8358fec7536bca52caee4b5354519486c0e9d"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-baseline-certificate/reply.json",
+      "bytes": 314,
+      "sha256": "d7960b83dbf166b4a9b368b095af378e7042ef3247c13944ee40444cc6ca9b56"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-baseline-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-baseline-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-candidate/input.json",
+      "bytes": 3023,
+      "sha256": "25a9c63a7d5161b8e9d78943134a9fa454e98e299df818a2f3810aac501737ab"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-candidate/process.json",
+      "bytes": 530,
+      "sha256": "03da3b46892ff0dc9304eea68b108c93f468af02b7e5e3413881bb44514114c2"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-candidate/reply.json",
+      "bytes": 1532,
+      "sha256": "7c84742ad685737e6dea27c2e933b76bc6fa5658b91e42dbe707937bcbc85b61"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-candidate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-candidate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-candidate-certificate/input.json",
+      "bytes": 4239,
+      "sha256": "1c97ed531bde2e369750e821fd08470f6e57e5a310e5e69ea6cc020bab8e6025"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-candidate-certificate/process.json",
+      "bytes": 542,
+      "sha256": "4abe4e2fab86ed540fa0bf59cea9f2779b1a76eed94930fb9c0a8a2fdbab9e29"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-candidate-certificate/reply.json",
+      "bytes": 314,
+      "sha256": "7f6e525250a0a68f5768af2f6415613e5fc1344ce1f8462b917e94a530e68bc2"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-candidate-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-candidate-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-reference/input.json",
+      "bytes": 3030,
+      "sha256": "81ce194f904798ac1acd39714e73b740cf603bb2a4716970ca5dd0209931d77d"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-reference/process.json",
+      "bytes": 530,
+      "sha256": "f0488c79fb17ab5ef9236a15fe04535a41f8f9182378b99e30cfeb7de0bbc981"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-reference/reply.json",
+      "bytes": 1373,
+      "sha256": "0f7ff72d2ca18942c0c6786636203d4004785fe84f2d34f5b61959b2ae695399"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-reference/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0000-reference/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-baseline/input.json",
+      "bytes": 2900,
+      "sha256": "8b138b3ae5214057bc9fbfe71e017352d77ad0226de7455e40f8b91854b07c41"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-baseline/process.json",
+      "bytes": 529,
+      "sha256": "59fc2c6a32f4ea074049814d06639fbedb4745a35cf38a026d99ab524edd01d0"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-baseline/reply.json",
+      "bytes": 1120,
+      "sha256": "6f25d34cfac7b99161e1a3ee87505d8ae19313a1415857ba580b93598545cbe4"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-baseline/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-baseline/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-baseline-certificate/input.json",
+      "bytes": 3697,
+      "sha256": "a958044963e006be8842faa438a8d2f64a80d8a31e5a0e33b2f95ac864c9bb8d"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-baseline-certificate/process.json",
+      "bytes": 541,
+      "sha256": "a6d1f37df6f93f66d123c8798fc6ac81f44d6377316dd115bd8ae44543329998"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-baseline-certificate/reply.json",
+      "bytes": 314,
+      "sha256": "bc57775fdf56073e331ab3b30eda8d75b756e43c41c5f12d57cfbe0588a21fc4"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-baseline-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-baseline-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-candidate/input.json",
+      "bytes": 2894,
+      "sha256": "dc5a74f93cff47a6b06b6d7db2f8b80d8f68f81377215b2f2fc9c8265f594bf6"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-candidate/process.json",
+      "bytes": 530,
+      "sha256": "5e7b3a3543b31d45385d96b5982b42b56b8cb3491d6704c81ff0612c7c308c66"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-candidate/reply.json",
+      "bytes": 1149,
+      "sha256": "c3e02fa6ccd6acb50f71d20c8ab73a5cf28deb4e429b50170feadcfe882b07ad"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-candidate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-candidate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-candidate-certificate/input.json",
+      "bytes": 3727,
+      "sha256": "75c50c191c5a1bc2f805db4a6e6be5f72a3861766cdc314ef0dc8039593bf2c3"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-candidate-certificate/process.json",
+      "bytes": 542,
+      "sha256": "87eb43260908f657fda8a34a264d511cb96e451a2159862878dd23c2a3dc13c8"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-candidate-certificate/reply.json",
+      "bytes": 314,
+      "sha256": "65fadcfd758cdc8fa50a621bf93fe0784eafe1c26ff9c49f17afef12568ac317"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-candidate-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-candidate-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-reference/input.json",
+      "bytes": 2901,
+      "sha256": "ac4174f610a2b810fda6e8365b021ee01855ba01b3931f1c49a3021e5efa2f47"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-reference/process.json",
+      "bytes": 530,
+      "sha256": "b3723b21dc541e32a13b2b8600a1acdab575d1248d492bf8c284dbedf05c9eba"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-reference/reply.json",
+      "bytes": 1120,
+      "sha256": "5558c63ea58bd498e971a1874cfdc0531d55589949171d9bbb748341d54c1c4f"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-reference/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0001-reference/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-baseline/input.json",
+      "bytes": 3031,
+      "sha256": "41399d0638a14ab68383fcdc9cbe9b075a656b4699fa8a237e98d621adb707d1"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-baseline/process.json",
+      "bytes": 529,
+      "sha256": "49a5b17389119cf1864fce4990e00c7009c1da1b0a277459630fcd81ddee254b"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-baseline/reply.json",
+      "bytes": 706,
+      "sha256": "cce3f21f962fb96e03ea5161fd5c835fdbe3ed2b2f3bd281af9ec356e81d332d"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-baseline/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-baseline/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-candidate/input.json",
+      "bytes": 3025,
+      "sha256": "97309eec488aa5eac3496438a92e913d1eb35d91c26c0d9f8771d7f36f111fb2"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-candidate/process.json",
+      "bytes": 530,
+      "sha256": "9ff751172b7ddf063e3b3ad62dcbca4abfc8f8ec18469ec5bf85774a1a827803"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-candidate/reply.json",
+      "bytes": 863,
+      "sha256": "4fefab657d0d3218a58a36546f0dc3cb3eefce0a8948401ddc5a84972c8963f0"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-candidate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-candidate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-reference/input.json",
+      "bytes": 3032,
+      "sha256": "7cf2e806ad911e4a5791ddaddbcd956c924f39e5e79fc1e7d48c9e88cf6d2629"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-reference/process.json",
+      "bytes": 530,
+      "sha256": "d73f78515fec4cd5593c1df0a1159fefb9938d861cff607f5342ac90291d0f6a"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-reference/reply.json",
+      "bytes": 706,
+      "sha256": "9e728beebc7074f7a598f7dc09abb7a374fe647b26c09bdd98048d81bfd0118f"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-reference/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0002-reference/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-baseline/input.json",
+      "bytes": 4103,
+      "sha256": "8c9e19c7c37dd549539fcf5ee38f62beae391d66aff322d92472df8d9f5d4415"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-baseline/process.json",
+      "bytes": 529,
+      "sha256": "ec601f30921d6e495d172c0bf0b08d7e1704a243eac01b1aa9dec5887c03b9cd"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-baseline/reply.json",
+      "bytes": 1661,
+      "sha256": "0fc0dd44d874b74c20c47e15867c697328f85332fce92ef2c54fa13bc1f5210c"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-baseline/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-baseline/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-baseline-certificate/input.json",
+      "bytes": 5440,
+      "sha256": "543adbdc8d88a92b8bdad8a75579178aa6aa19de53a676eb8cd55169f454beab"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-baseline-certificate/process.json",
+      "bytes": 541,
+      "sha256": "55299fe113014e133625a3c84f5f124325f321dfe5496f4d8c15b2512d5d0637"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-baseline-certificate/reply.json",
+      "bytes": 315,
+      "sha256": "8106cc685c1aa8816e691a525612bb9163773e71a9a977182ce2ef674e19bbbd"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-baseline-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-baseline-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-candidate/input.json",
+      "bytes": 4097,
+      "sha256": "42fb27dc8bfe16f2a3cfb4bb5b198b2725c2559af7c6e0d0c1a6eb4bfa6625be"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-candidate/process.json",
+      "bytes": 530,
+      "sha256": "c81390801b94f371adf838707520bfe39a8dba9e55aea6f7f92a42c1b279a222"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-candidate/reply.json",
+      "bytes": 1820,
+      "sha256": "6ef0a31f7c374c3570476014339eb7ce33b94c4775d6da8f809b3518cb3393d5"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-candidate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-candidate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-candidate-certificate/input.json",
+      "bytes": 5600,
+      "sha256": "c421cf277880d05aad1806afc093455ebf9bab767318d0e981bf946948e2f3d4"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-candidate-certificate/process.json",
+      "bytes": 542,
+      "sha256": "e23d21a5b165518773efc675e83f9dcd95bbbef7b99145591820086dde01a1db"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-candidate-certificate/reply.json",
+      "bytes": 315,
+      "sha256": "ce3e312a304b411f021ef286b56aff21a4b2cf50f56b4a915854d5c96cf17fd2"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-candidate-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-candidate-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-reference/input.json",
+      "bytes": 4104,
+      "sha256": "1a84ab30efd06bebcf1b526569274b05d0be5beceef86f0526e2f378cb83fde4"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-reference/process.json",
+      "bytes": 530,
+      "sha256": "fe061d7cdcb942e9a53e883da0a2c8aeb116787368bccdf4750cd00dc0387733"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-reference/reply.json",
+      "bytes": 1660,
+      "sha256": "a84f8e2d2f7e5cac48914ae5afd82c2ba3d2a29be090daff6c598e4ed00846fa"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-reference/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0003-reference/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-baseline/input.json",
+      "bytes": 3315,
+      "sha256": "56d54d79bc3e8b10ce9f13f1a98d84cab72bdaf793b0f689a350de61a2a4f9ea"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-baseline/process.json",
+      "bytes": 529,
+      "sha256": "1d5113aaa639fa4e5a0be8a83360b358e9e073bf945cbc88ccc6648f71bef9fc"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-baseline/reply.json",
+      "bytes": 1121,
+      "sha256": "48e32efe7a98107ec948a1daa1f55c7d2a96b7fda18d06366e998c22ae077ec6"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-baseline/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-baseline/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-baseline-certificate/input.json",
+      "bytes": 4113,
+      "sha256": "cd8d210f9b81f49224cd120132da637b17a74a7eec6f8e4ba0753e8385f8be23"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-baseline-certificate/process.json",
+      "bytes": 541,
+      "sha256": "2cd0ba0a95e92c631c3eb71e63335d5cda0cbe3c1b0179c71222232645c834e6"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-baseline-certificate/reply.json",
+      "bytes": 314,
+      "sha256": "2c60087f603f12b22ef73c91618e5ad0cc237fd04538dec288855f3b63c24a67"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-baseline-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-baseline-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-candidate/input.json",
+      "bytes": 3309,
+      "sha256": "29254a56619a046b2c7de4d1ec8b77d4fb72ca4e58e23f221105a88b6797f67a"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-candidate/process.json",
+      "bytes": 530,
+      "sha256": "419468b135af65b30c6cf8190c740f9d33a68382ed507523545529475dde84bf"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-candidate/reply.json",
+      "bytes": 1150,
+      "sha256": "b1d831a663a84ecadc89de9948923a8db77c2f2db504fd76b55a0cee1fb8c931"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-candidate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-candidate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-candidate-certificate/input.json",
+      "bytes": 4143,
+      "sha256": "db9bb0801af2e0521d7d5a9285d99d8ef2a0788526d2c83964f7b84eefcb226e"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-candidate-certificate/process.json",
+      "bytes": 542,
+      "sha256": "bb7e74476c841873b5b13696ebb2e2d6fa94db5e029aa99b04696982271ba1f7"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-candidate-certificate/reply.json",
+      "bytes": 315,
+      "sha256": "3812e37e728806e9cdfecd37000402a1b745bfe1471bad24fbb9e48b481369ec"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-candidate-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-candidate-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-reference/input.json",
+      "bytes": 3316,
+      "sha256": "93bad9d2c1a3760a5bba9fa3351da9f76aee41de36db749272b26c5447a503fe"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-reference/process.json",
+      "bytes": 530,
+      "sha256": "f9cb2657cb560b1c38ba2371b60f811b49f605c602c7640c5e36a0d82c530795"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-reference/reply.json",
+      "bytes": 1121,
+      "sha256": "06ea30d1955f2f34f25701bc25e3dec9f8777cfbb69ef8e42342c573db64255e"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-reference/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0004-reference/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-baseline/input.json",
+      "bytes": 3465,
+      "sha256": "8016948e6117ebe666305c655c12e44be02ac9a900997529cf99b3d9e2c6a4e9"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-baseline/process.json",
+      "bytes": 529,
+      "sha256": "0199e383aed5d71879bd1c6e6ff5c6f6870d1d9e0c596ec7da3ec8ba18c76cbe"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-baseline/reply.json",
+      "bytes": 1449,
+      "sha256": "d1105fe5ae67f196f5c1fdf47951465c34a8644aa9ce3e717fc493aaeb53abe0"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-baseline/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-baseline/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-baseline-certificate/input.json",
+      "bytes": 4591,
+      "sha256": "1855e6d5255e5abc873049654a1f65b1bbd21e8fffde752e7ab6af0b734f90fd"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-baseline-certificate/process.json",
+      "bytes": 541,
+      "sha256": "856cf7f584662b94dca9ec1fa0a5f9d95fe6e21389a5a8cc6b025d2a611bd4db"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-baseline-certificate/reply.json",
+      "bytes": 314,
+      "sha256": "f20e3398e11454319788bd4226c263e6447ac9623c975d8a7035483ecd9b6423"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-baseline-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-baseline-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-candidate/input.json",
+      "bytes": 3459,
+      "sha256": "2a0944122bbe1db150da383f304dfcc97ea6d12b1a9ea5969e2c06af982095f7"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-candidate/process.json",
+      "bytes": 530,
+      "sha256": "d05e6baa44e9b40b44dae5280f025aed57c16405ddbca086f0b8947809c2dc06"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-candidate/reply.json",
+      "bytes": 1608,
+      "sha256": "cb562367363ea627297b3e4d277f166a0f48ded37a8a8f9b6e704ed81b46825e"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-candidate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-candidate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-candidate-certificate/input.json",
+      "bytes": 4751,
+      "sha256": "018164f6cba6ccaf562d4ae9126fed7e8f7a581015f8f484280e3a3294d04798"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-candidate-certificate/process.json",
+      "bytes": 542,
+      "sha256": "ffffe7854b0c333f0c72dac058b2bd2fd9032d05a99f90543c9f5dc7d69f31fc"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-candidate-certificate/reply.json",
+      "bytes": 314,
+      "sha256": "68ca6e83ea89296c570ca7ae90c082bea27817363b54ddb983063c87690774ca"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-candidate-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-candidate-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-reference/input.json",
+      "bytes": 3466,
+      "sha256": "2d6e2f49328eb518b11de52900208bce96ebd51bd5c3fce85fc5328d6a1f2a3f"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-reference/process.json",
+      "bytes": 530,
+      "sha256": "d3c6f5476588f41d5a47ef78e0803d0ba3f7aedcab13ab6a0ce2a0f441b6e5d0"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-reference/reply.json",
+      "bytes": 1450,
+      "sha256": "7dd77a58b2d3e5ca6c635062986347002c24d82447d83580a87eb93f1a2567d2"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-reference/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0005-reference/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-baseline/input.json",
+      "bytes": 2821,
+      "sha256": "60d94922679bb33daec45bf8b98c8373190e502b48b6b626c716b81e5cef7bd0"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-baseline/process.json",
+      "bytes": 529,
+      "sha256": "0cb0db77fee1abec6fe5d3d016b8ccd57697d658355e0116fce56c7322377e10"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-baseline/reply.json",
+      "bytes": 707,
+      "sha256": "1513cb0baf4574a13a76ec6c28530e045c9168ed055dda8c696adde9264958c9"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-baseline/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-baseline/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-candidate/input.json",
+      "bytes": 2815,
+      "sha256": "eb322f035b9b71a947ec4c3f5f9d5b4fe009d05e76dfb6927205c63b7b4193ae"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-candidate/process.json",
+      "bytes": 530,
+      "sha256": "0df75bc1578e9fb8823e782b179958736999b6eef54d6496942aafe02f8b12fd"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-candidate/reply.json",
+      "bytes": 856,
+      "sha256": "12d70c425303d8144be1da5c26879d1f5f498ca3204e09bd9aa7d3fdfef05362"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-candidate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-candidate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-reference/input.json",
+      "bytes": 2822,
+      "sha256": "b112c4dbff03338fdc608f4b6233310cbde862f3632a482a2addd5f2390eba38"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-reference/process.json",
+      "bytes": 530,
+      "sha256": "8718fa933d9e21e39fd72e7ad7d00a03af2024692040da21c8c832a7fd7be655"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-reference/reply.json",
+      "bytes": 707,
+      "sha256": "10bd1f95b89840e5de80a8f2864e5f637b4b7f9a303e2df028a5ee033fd0d786"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-reference/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0006-reference/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-baseline/input.json",
+      "bytes": 3200,
+      "sha256": "6af6ef58d410f1523c74751701b73d49c502bdde6d7ba061fc860e9e41fd40f3"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-baseline/process.json",
+      "bytes": 529,
+      "sha256": "d548c964149a7aad2afba78c8c5abaf6d87d17dcf0ee2135bf412f7502ebfa7d"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-baseline/reply.json",
+      "bytes": 707,
+      "sha256": "d055c870fe4570e4f8cc64d52b60ad15927560c6d3d47c218fc218ee525fb177"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-baseline/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-baseline/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-candidate/input.json",
+      "bytes": 3194,
+      "sha256": "dfe5dff6a2786dfcc9768e0451e6d1ce7ae3fb3362c820361b49b800958ffd2e"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-candidate/process.json",
+      "bytes": 530,
+      "sha256": "7987a5bab737844c7b9f65da3df5dbe1fc584a09603aaeeb07228ed67f3ff60c"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-candidate/reply.json",
+      "bytes": 852,
+      "sha256": "b5c4f12cb82ab4a136cadcaaab3f6e90c80f4aecc87185b3a91a119e43e6c209"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-candidate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-candidate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-reference/input.json",
+      "bytes": 3201,
+      "sha256": "db3e8779e7a87403f80cbbb7e722a0627a164a3162deed2be3e021e0ba1fab2a"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-reference/process.json",
+      "bytes": 530,
+      "sha256": "e37c7b95ed1aa0f925e07e9aa4a9c1b16265b270752728b011651f3635b7ddb4"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-reference/reply.json",
+      "bytes": 707,
+      "sha256": "c20341b736a09c4b0718401caba8f5fc62a030abef340dfe69eab2e2d798ffc6"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-reference/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0007-reference/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-baseline/input.json",
+      "bytes": 3139,
+      "sha256": "4ab0d714a8f13e7621884f545c9fa27090e94303c28342bceff0fd6e3a61778a"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-baseline/process.json",
+      "bytes": 529,
+      "sha256": "2171e788f7923a419e5c2d137b0e3944930223ec02bf3566beaf7abe62d1fb7e"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-baseline/reply.json",
+      "bytes": 1529,
+      "sha256": "b15fbfd0733c1046fed04c94ba412018fd4d520583a853100f715f163c17c5ec"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-baseline/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-baseline/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-baseline-certificate/input.json",
+      "bytes": 4345,
+      "sha256": "678d8f175e12ba9f943be7f3826dba89f956c869ff26cfb887d91dfb2bf17704"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-baseline-certificate/process.json",
+      "bytes": 541,
+      "sha256": "26d0daec7053ec02bdff9116db03ea6589f6b461201b1f7b90808103c6f19f55"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-baseline-certificate/reply.json",
+      "bytes": 314,
+      "sha256": "2257c0611943a41e69460dca0d17285602b9b5d5b2b207e1c21f2dcac0cd9735"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-baseline-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-baseline-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-candidate/input.json",
+      "bytes": 3133,
+      "sha256": "1a21d96aaf52630def15cad0df236722310d3a238f21aa43d004052e4234d48f"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-candidate/process.json",
+      "bytes": 530,
+      "sha256": "034510d1da1a5ebc21aa3414052f04f5aa8ecd5f269cfd093d2ab0afdf954d2f"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-candidate/reply.json",
+      "bytes": 1687,
+      "sha256": "cb489016b556419b2fb41030734096f51f982e5ed2aeb7539283c702ce841580"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-candidate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-candidate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-candidate-certificate/input.json",
+      "bytes": 4504,
+      "sha256": "38d1fff2e3fb961556f2dedd748536b651f9688ee955a8f15d7baa33d7b1e246"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-candidate-certificate/process.json",
+      "bytes": 542,
+      "sha256": "f61de769be845281e1fabeb9c71ff9ed37ee164a768f72ad270cdae0957eb005"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-candidate-certificate/reply.json",
+      "bytes": 314,
+      "sha256": "40f691aa82adead1912cd22625fa70fcb34de62c0788f93fcda37cfc32ec9721"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-candidate-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-candidate-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-reference/input.json",
+      "bytes": 3140,
+      "sha256": "d5037d49c0e633bf11de2bfa3c2e2df1fcb12240b80ad9bbd32d6a44a483ee19"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-reference/process.json",
+      "bytes": 530,
+      "sha256": "dfab31a9ff15934a000edf8e66ea0f7b09ac68edaa9023dc69ac46f4f640f35d"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-reference/reply.json",
+      "bytes": 1529,
+      "sha256": "60a5b0943f0b72feba7591303445e4ae9f70f2ed1c5e619b7d551a956980fca3"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-reference/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0008-reference/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-baseline/input.json",
+      "bytes": 3217,
+      "sha256": "b021c48cf732656656b810670cc52efb80d43a7a039de71dfe99371810664e25"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-baseline/process.json",
+      "bytes": 529,
+      "sha256": "370cfc1a7e3abe5983791cc3f47b40215f9175a81016556f8ce14afaf4814c98"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-baseline/reply.json",
+      "bytes": 1267,
+      "sha256": "b6d762a3f5253fbeaf7e69847e173fa023da3a82d8e7a98ede01246378c8e929"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-baseline/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-baseline/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-baseline-certificate/input.json",
+      "bytes": 4160,
+      "sha256": "29b1745112d3b543eb2711187c34ce5f8316adc1585e047da765d3f32c415954"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-baseline-certificate/process.json",
+      "bytes": 541,
+      "sha256": "e99434aba414b17aa6377aa4dac0314df65cb6bcb0799ad9a36f7e36340228ae"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-baseline-certificate/reply.json",
+      "bytes": 314,
+      "sha256": "6f3ddf99a667316b0bf10230160068bf6396be903c03454391650bb90510aed8"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-baseline-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-baseline-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-candidate/input.json",
+      "bytes": 3211,
+      "sha256": "d5373f0a13b4971053cbab676de22184473b575f0af177beedcce82dd10e3798"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-candidate/process.json",
+      "bytes": 530,
+      "sha256": "fcfac0b7e1cffea4ae2356d423fcbca06305f9375d960c10d62dd91a58d590fb"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-candidate/reply.json",
+      "bytes": 1182,
+      "sha256": "ac085e1926eeb44f530adbb8df009c8fe9b135fde6ff288a1558cbe98709c53c"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-candidate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-candidate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-candidate-certificate/input.json",
+      "bytes": 4077,
+      "sha256": "6bff5b6eac0d799873f7c87cd7b80f255c55442c282ff24b4650dc8454789a77"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-candidate-certificate/process.json",
+      "bytes": 542,
+      "sha256": "c94854869d8b3ce57bbcc705626e916df0d92103016573c3a755f2c295e3ebef"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-candidate-certificate/reply.json",
+      "bytes": 314,
+      "sha256": "3a70aff6e191f54696bf86f9cd2601eb6926053988abe9b023add3915c421d5d"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-candidate-certificate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-candidate-certificate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-reference/input.json",
+      "bytes": 3218,
+      "sha256": "71ca2a7d9546eccc087c34a446e4c17d93e2e49de4e90f13abc2143caccf29a2"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-reference/process.json",
+      "bytes": 530,
+      "sha256": "9023644e9796cc279fd6b369ba10e209ad181c1a89ac357e87a4e1e7eebe3841"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-reference/reply.json",
+      "bytes": 1266,
+      "sha256": "612c8023e2223b1a6f5c657822aa4eea453bf13640605c4c297d66990220b163"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-reference/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0009-reference/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-baseline/input.json",
+      "bytes": 3007,
+      "sha256": "bb5a0f6ce0cd91ec88bb8b63bdbeff3d173f3280a09762c10a1cf63ef2520943"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-baseline/process.json",
+      "bytes": 529,
+      "sha256": "6f55afa99b37b099068272cf318b0dea3d1df6456191182dac8255088646326b"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-baseline/reply.json",
+      "bytes": 686,
+      "sha256": "8fb36055c6490448b769f99fb3a102f089460aac0c7076f2cf6826e836c7af2e"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-baseline/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-baseline/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-candidate/input.json",
+      "bytes": 3001,
+      "sha256": "6e0b01ce4fc75b07cdc3e7047149258c5c0b7b5fd41b85bea603682ca8a9f113"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-candidate/process.json",
+      "bytes": 530,
+      "sha256": "d2ca5bde51e296cc7a553691dc954b820217df3dc315384ad1d996c3e6ae2b22"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-candidate/reply.json",
+      "bytes": 843,
+      "sha256": "036f78d649211c1cc286ff31db0844ef21f6a4e0ea102e514a512db91b4db9f0"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-candidate/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-candidate/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-reference/input.json",
+      "bytes": 3008,
+      "sha256": "222bcac38017993197167c060c65d8658bff2d9e1f0659dfdc2afa069d413816"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-reference/process.json",
+      "bytes": 530,
+      "sha256": "f9d828fb397dd1dbfa246c8f766d01d33b50f1edc3573b6f59fd0c3bd80fb01e"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-reference/reply.json",
+      "bytes": 686,
+      "sha256": "87b5f07930aeaf6f89f36f5ae649cdaffd163e676aa2bfd5c2658bdccaa542ac"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-reference/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runs/admission-demo/review-1/benchmark/jobs/case-0010-reference/stdout.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "inspected_bundle_manifest_files": 266,
+  "exact_bundle_inventory_verified": true,
+  "plan_predates_execution": true,
+  "planned_current_input_hashes_verified": 34,
+  "case_table": [
+    {
+      "case_id": "direct-public-binding",
+      "family": "public-binding-construction",
+      "expected_decision": "supported",
+      "candidate_decision": "supported",
+      "candidate_reason": "public_recipe_witness",
+      "candidate_certificate_valid": true
+    },
+    {
+      "case_id": "fixed-text-shape-obstruction",
+      "family": "text-structured-shape",
+      "expected_decision": "unsupported",
+      "candidate_decision": "unsupported",
+      "candidate_reason": "certified_refinement_exhaustion",
+      "candidate_certificate_valid": true
+    },
+    {
+      "case_id": "missing-public-binding-partial-coverage",
+      "family": "missing-public-input",
+      "expected_decision": "unknown",
+      "candidate_decision": "unknown",
+      "candidate_reason": "incomplete_model_or_relation_coverage",
+      "candidate_certificate_valid": null
+    },
+    {
+      "case_id": "correlated-prefix-refinement",
+      "family": "correlated-prefix-refinement",
+      "expected_decision": "supported",
+      "candidate_decision": "supported",
+      "candidate_reason": "public_recipe_witness",
+      "candidate_certificate_valid": true
+    },
+    {
+      "case_id": "raw-parameters-without-version-header",
+      "family": "header-coupling",
+      "expected_decision": "unsupported",
+      "candidate_decision": "unsupported",
+      "candidate_reason": "certified_refinement_exhaustion",
+      "candidate_certificate_valid": true
+    },
+    {
+      "case_id": "explicit-header-configuration",
+      "family": "header-coupling",
+      "expected_decision": "supported",
+      "candidate_decision": "supported",
+      "candidate_reason": "public_recipe_witness",
+      "candidate_certificate_valid": true
+    },
+    {
+      "case_id": "opaque-serialization",
+      "family": "opaque-serialization",
+      "expected_decision": "unknown",
+      "candidate_decision": "unknown",
+      "candidate_reason": "unresolved_relation_or_recipe",
+      "candidate_certificate_valid": null
+    },
+    {
+      "case_id": "conservative-observable-uncertainty",
+      "family": "observable-uncertainty",
+      "expected_decision": "unknown",
+      "candidate_decision": "unknown",
+      "candidate_reason": "indeterminate_observables",
+      "candidate_certificate_valid": null
+    },
+    {
+      "case_id": "atomic-public-binding-updates",
+      "family": "atomic-binding-updates",
+      "expected_decision": "supported",
+      "candidate_decision": "supported",
+      "candidate_reason": "public_recipe_witness",
+      "candidate_certificate_valid": true
+    },
+    {
+      "case_id": "working-state-blocks-second-answer",
+      "family": "asynchronous-working-state",
+      "expected_decision": "unsupported",
+      "candidate_decision": "unsupported",
+      "candidate_reason": "certified_refinement_exhaustion",
+      "candidate_certificate_valid": true
+    },
+    {
+      "case_id": "stale-evidence",
+      "family": "stale-evidence",
+      "expected_decision": "unknown",
+      "candidate_decision": "unknown",
+      "candidate_reason": "evidence_not_fresh",
+      "candidate_certificate_valid": null
+    }
+  ],
+  "counts": {
+    "cases": 11,
+    "family_labels": 10,
+    "candidate_decision_agreements": 11,
+    "per_method": {
+      "supported": 4,
+      "unsupported": 3,
+      "unknown": 4,
+      "conclusive_certificates_valid": 7,
+      "certified_coverage": 0.6363636363636364
+    },
+    "raw_jobs": 47,
+    "raw_job_groups": {
+      "reference": 11,
+      "baseline": 11,
+      "baseline-certificate": 7,
+      "candidate": 11,
+      "candidate-certificate": 7
+    },
+    "worker_errors": 0,
+    "worker_timeouts": 0,
+    "input_mutations": 0,
+    "invalid_certificates": 0,
+    "certificate_check_errors": 0,
+    "nonempty_worker_stderr": 0,
+    "passed_demo_commands": 10
+  },
+  "recomputed_timing_ns": {
+    "all_invocations": {
+      "evaluation_ns": 31025800,
+      "worker_body_ns": 1185027200,
+      "worker_wall_ns": 20429050100
+    },
+    "per_algorithm_including_certificate_checks": {
+      "baseline": {
+        "evaluation_ns": 12366700,
+        "worker_body_ns": 519335700,
+        "worker_wall_ns": 7971325000
+      },
+      "candidate": {
+        "evaluation_ns": 9985200,
+        "worker_body_ns": 361993000,
+        "worker_wall_ns": 7776627600
+      }
+    }
+  },
+  "replay": {
+    "case_count": 11,
+    "source_bytes_identical": true,
+    "input_bytes_identical": true,
+    "decisions_reasons_certificates_identical": true,
+    "semantic_differences": [],
+    "timings_expected_to_differ": true
+  },
+  "discrepancies": [],
+  "limits": [
+    "Eleven authored development profiles, not held-out tasks or qualified domains.",
+    "Direct baseline and reference share the same disclosed implementation module.",
+    "Unknown cases remain uncertified and are retained in coverage accounting.",
+    "No human review, live admission integration, novelty, performance advantage or 70 percent project completion established.",
+    "execution.json is an immutable start record; summary.json and the parent result.json carry terminal status.",
+    "Timing totals sum worker invocations including certificates and reference; parent-runner overhead is excluded."
+  ]
+}

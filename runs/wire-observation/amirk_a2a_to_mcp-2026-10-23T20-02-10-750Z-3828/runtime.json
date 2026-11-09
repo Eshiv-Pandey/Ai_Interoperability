@@ -1,0 +1,1167 @@
+{
+  "schema_version": "runtime-wire-observation/1",
+  "run_id": "amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828",
+  "route_id": "amirk_a2a_to_mcp",
+  "protocol": {
+    "mcp": "2026-07-28",
+    "mcp_transport": "loopback HTTP modern per-request envelope",
+    "extension": "io.modelcontextprotocol/tasks",
+    "a2a": "1.0 JSONRPC and streaming JSONRPC"
+  },
+  "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+  "started_at_utc": "2026-10-23T20:02:10.763Z",
+  "command": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\scripts\\capture-amirk-observation.mjs"
+  ],
+  "node": "v22.13.0",
+  "exchanges": [
+    {
+      "exchange_id": "mcp-1",
+      "phase": "discover_profile",
+      "request": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"server/discover\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientCapabilities\":{\"extensions\":{\"io.modelcontextprotocol/tasks\":{}}},\"io.modelcontextprotocol/clientInfo\":{\"name\":\"local-development-observer\",\"version\":\"0.1.0\"}}}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "method": "server/discover",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientCapabilities": {
+                "extensions": {
+                  "io.modelcontextprotocol/tasks": {}
+                }
+              },
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "local-development-observer",
+                "version": "0.1.0"
+              }
+            }
+          }
+        },
+        "url": "http://127.0.0.1:57298/mcp",
+        "headers": {
+          "Content-Type": "application/json",
+          "Accept": "application/json, text/event-stream",
+          "MCP-Protocol-Version": "2026-07-28",
+          "Mcp-Method": "server/discover"
+        },
+        "started_at_utc": "2026-10-23T20:02:11.898Z",
+        "monotonic_ns": "136683426986600",
+        "sha256": "da89f6e1f94146e663b2c516a247be7212071610a2edba9b580c41494178c261"
+      },
+      "response": {
+        "raw": "{\"result\":{\"supportedVersions\":[\"2026-07-28\"],\"capabilities\":{\"extensions\":{\"io.modelcontextprotocol/tasks\":{}},\"tools\":{\"listChanged\":true}},\"instructions\":\"This server exposes A2A 1.0 agents as MCP tools. The configured agents are: fixture. Every tool takes the agent alias as its first argument when several agents are configured; with a single agent the alias may be omitted and defaults to it. Call a2a_discover on an alias to read that agent card, its skills and its capabilities, then a2a_send_message to talk to it. An agent that opens a task returns a task handle, which a2a_get_task and a2a_cancel_task take.\",\"resultType\":\"complete\",\"ttlMs\":0,\"cacheScope\":\"private\",\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"a2a-to-mcp\",\"version\":\"0.1.0\"}}},\"jsonrpc\":\"2.0\",\"id\":1}",
+        "json": {
+          "result": {
+            "supportedVersions": [
+              "2026-07-28"
+            ],
+            "capabilities": {
+              "extensions": {
+                "io.modelcontextprotocol/tasks": {}
+              },
+              "tools": {
+                "listChanged": true
+              }
+            },
+            "instructions": "This server exposes A2A 1.0 agents as MCP tools. The configured agents are: fixture. Every tool takes the agent alias as its first argument when several agents are configured; with a single agent the alias may be omitted and defaults to it. Call a2a_discover on an alias to read that agent card, its skills and its capabilities, then a2a_send_message to talk to it. An agent that opens a task returns a task handle, which a2a_get_task and a2a_cancel_task take.",
+            "resultType": "complete",
+            "ttlMs": 0,
+            "cacheScope": "private",
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "a2a-to-mcp",
+                "version": "0.1.0"
+              }
+            }
+          },
+          "jsonrpc": "2.0",
+          "id": 1
+        },
+        "status": 200,
+        "headers": {
+          "connection": "keep-alive",
+          "content-type": "application/json",
+          "date": "Fri, 23 Oct 2026 20:02:12 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "observed_at_utc": "2026-10-23T20:02:12.034Z",
+        "monotonic_ns": "136683563255400",
+        "sha256": "d43c4976024b8b8a256d3efd83bd8bd951e3e3fd21327a7a630776883fe5a91b"
+      },
+      "elapsed_ms": 136.2688
+    },
+    {
+      "exchange_id": "mcp-2",
+      "phase": "discover_tools",
+      "request": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/list\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientCapabilities\":{\"extensions\":{\"io.modelcontextprotocol/tasks\":{}}},\"io.modelcontextprotocol/clientInfo\":{\"name\":\"local-development-observer\",\"version\":\"0.1.0\"}}}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 2,
+          "method": "tools/list",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientCapabilities": {
+                "extensions": {
+                  "io.modelcontextprotocol/tasks": {}
+                }
+              },
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "local-development-observer",
+                "version": "0.1.0"
+              }
+            }
+          }
+        },
+        "url": "http://127.0.0.1:57298/mcp",
+        "headers": {
+          "Content-Type": "application/json",
+          "Accept": "application/json, text/event-stream",
+          "MCP-Protocol-Version": "2026-07-28",
+          "Mcp-Method": "tools/list"
+        },
+        "started_at_utc": "2026-10-23T20:02:12.035Z",
+        "monotonic_ns": "136683563954300",
+        "sha256": "967848d058ac84aeed7e3a7d0100bbc3e897be92e9b40d17b5a4c0d209a8e66b"
+      },
+      "response": {
+        "raw": "{\"result\":{\"tools\":[{\"name\":\"a2a_discover\",\"title\":\"Discover an A2A agent\",\"description\":\"Fetches and returns the agent card of one configured A2A agent: its name, description, transport interfaces, capabilities and skills. Call it before the other tools to learn what the agent can be asked for. The card is served from a short-lived cache, so repeated calls do not hit the agent.\",\"inputSchema\":{\"type\":\"object\",\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"properties\":{\"agent\":{\"description\":\"Alias of the A2A agent to talk to. Only fixture is configured, so this argument may be omitted.\",\"default\":\"fixture\",\"type\":\"string\",\"enum\":[\"fixture\"]}}}},{\"name\":\"a2a_send_message\",\"title\":\"Send a message to an A2A agent\",\"description\":\"Sends one text message to an A2A agent and returns its answer, which is either a direct message or a task. The reply carries a context handle, and a task handle when the agent opened a task. Pass contextHandle back to continue the same conversation, and taskHandle back to answer a task the agent left waiting for input. Handles live in memory for 15 minutes after their last use; an expired handle returns an explicit error.\",\"inputSchema\":{\"type\":\"object\",\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"properties\":{\"agent\":{\"description\":\"Alias of the A2A agent to talk to. Only fixture is configured, so this argument may be omitted.\",\"default\":\"fixture\",\"type\":\"string\",\"enum\":[\"fixture\"]},\"text\":{\"description\":\"The message text to send to the agent.\",\"type\":\"string\",\"minLength\":1},\"contextHandle\":{\"description\":\"Context handle returned by an earlier call, to continue that conversation.\",\"type\":\"string\"},\"taskHandle\":{\"description\":\"Task handle returned by an earlier call, to answer a task awaiting input.\",\"type\":\"string\"}},\"required\":[\"text\"]}},{\"name\":\"a2a_get_task\",\"title\":\"Read an A2A task\",\"description\":\"Reads the current state of a task an A2A agent opened, by the task handle an earlier call returned. Use historyLength to limit how many past messages come back. Handles live in memory for 15 minutes after their last use; an expired handle returns an explicit error.\",\"inputSchema\":{\"type\":\"object\",\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"properties\":{\"agent\":{\"description\":\"Alias of the A2A agent to talk to. Only fixture is configured, so this argument may be omitted.\",\"default\":\"fixture\",\"type\":\"string\",\"enum\":[\"fixture\"]},\"taskHandle\":{\"description\":\"Task handle returned by an earlier call.\",\"type\":\"string\"},\"historyLength\":{\"description\":\"Maximum number of recent messages to include. Zero asks for none.\",\"type\":\"integer\",\"minimum\":0,\"maximum\":9007199254740991}},\"required\":[\"taskHandle\"]}},{\"name\":\"a2a_cancel_task\",\"title\":\"Cancel an A2A task\",\"description\":\"Asks an A2A agent to cancel a task, by the task handle an earlier call returned. Cancellation is cooperative in A2A: the agent acknowledges the request but may still finish the work, so read the state that comes back. Handles live in memory for 15 minutes after their last use; an expired handle returns an explicit error.\",\"inputSchema\":{\"type\":\"object\",\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"properties\":{\"agent\":{\"description\":\"Alias of the A2A agent to talk to. Only fixture is configured, so this argument may be omitted.\",\"default\":\"fixture\",\"type\":\"string\",\"enum\":[\"fixture\"]},\"taskHandle\":{\"description\":\"Task handle returned by an earlier call.\",\"type\":\"string\"}},\"required\":[\"taskHandle\"]}}],\"resultType\":\"complete\",\"ttlMs\":60000,\"cacheScope\":\"private\",\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"a2a-to-mcp\",\"version\":\"0.1.0\"}}},\"jsonrpc\":\"2.0\",\"id\":2}",
+        "json": {
+          "result": {
+            "tools": [
+              {
+                "name": "a2a_discover",
+                "title": "Discover an A2A agent",
+                "description": "Fetches and returns the agent card of one configured A2A agent: its name, description, transport interfaces, capabilities and skills. Call it before the other tools to learn what the agent can be asked for. The card is served from a short-lived cache, so repeated calls do not hit the agent.",
+                "inputSchema": {
+                  "type": "object",
+                  "$schema": "https://json-schema.org/draft/2020-12/schema",
+                  "properties": {
+                    "agent": {
+                      "description": "Alias of the A2A agent to talk to. Only fixture is configured, so this argument may be omitted.",
+                      "default": "fixture",
+                      "type": "string",
+                      "enum": [
+                        "fixture"
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "name": "a2a_send_message",
+                "title": "Send a message to an A2A agent",
+                "description": "Sends one text message to an A2A agent and returns its answer, which is either a direct message or a task. The reply carries a context handle, and a task handle when the agent opened a task. Pass contextHandle back to continue the same conversation, and taskHandle back to answer a task the agent left waiting for input. Handles live in memory for 15 minutes after their last use; an expired handle returns an explicit error.",
+                "inputSchema": {
+                  "type": "object",
+                  "$schema": "https://json-schema.org/draft/2020-12/schema",
+                  "properties": {
+                    "agent": {
+                      "description": "Alias of the A2A agent to talk to. Only fixture is configured, so this argument may be omitted.",
+                      "default": "fixture",
+                      "type": "string",
+                      "enum": [
+                        "fixture"
+                      ]
+                    },
+                    "text": {
+                      "description": "The message text to send to the agent.",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "contextHandle": {
+                      "description": "Context handle returned by an earlier call, to continue that conversation.",
+                      "type": "string"
+                    },
+                    "taskHandle": {
+                      "description": "Task handle returned by an earlier call, to answer a task awaiting input.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text"
+                  ]
+                }
+              },
+              {
+                "name": "a2a_get_task",
+                "title": "Read an A2A task",
+                "description": "Reads the current state of a task an A2A agent opened, by the task handle an earlier call returned. Use historyLength to limit how many past messages come back. Handles live in memory for 15 minutes after their last use; an expired handle returns an explicit error.",
+                "inputSchema": {
+                  "type": "object",
+                  "$schema": "https://json-schema.org/draft/2020-12/schema",
+                  "properties": {
+                    "agent": {
+                      "description": "Alias of the A2A agent to talk to. Only fixture is configured, so this argument may be omitted.",
+                      "default": "fixture",
+                      "type": "string",
+                      "enum": [
+                        "fixture"
+                      ]
+                    },
+                    "taskHandle": {
+                      "description": "Task handle returned by an earlier call.",
+                      "type": "string"
+                    },
+                    "historyLength": {
+                      "description": "Maximum number of recent messages to include. Zero asks for none.",
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "required": [
+                    "taskHandle"
+                  ]
+                }
+              },
+              {
+                "name": "a2a_cancel_task",
+                "title": "Cancel an A2A task",
+                "description": "Asks an A2A agent to cancel a task, by the task handle an earlier call returned. Cancellation is cooperative in A2A: the agent acknowledges the request but may still finish the work, so read the state that comes back. Handles live in memory for 15 minutes after their last use; an expired handle returns an explicit error.",
+                "inputSchema": {
+                  "type": "object",
+                  "$schema": "https://json-schema.org/draft/2020-12/schema",
+                  "properties": {
+                    "agent": {
+                      "description": "Alias of the A2A agent to talk to. Only fixture is configured, so this argument may be omitted.",
+                      "default": "fixture",
+                      "type": "string",
+                      "enum": [
+                        "fixture"
+                      ]
+                    },
+                    "taskHandle": {
+                      "description": "Task handle returned by an earlier call.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "taskHandle"
+                  ]
+                }
+              }
+            ],
+            "resultType": "complete",
+            "ttlMs": 60000,
+            "cacheScope": "private",
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "a2a-to-mcp",
+                "version": "0.1.0"
+              }
+            }
+          },
+          "jsonrpc": "2.0",
+          "id": 2
+        },
+        "status": 200,
+        "headers": {
+          "connection": "keep-alive",
+          "content-type": "application/json",
+          "date": "Fri, 23 Oct 2026 20:02:12 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "observed_at_utc": "2026-10-23T20:02:12.048Z",
+        "monotonic_ns": "136683576988700",
+        "sha256": "e6deee6886bbfae66d10c9c3bb65db7f05b7ad249757217bd28b3de6caacceb4"
+      },
+      "elapsed_ms": 13.0344
+    },
+    {
+      "exchange_id": "mcp-3",
+      "phase": "create_ask",
+      "request": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientCapabilities\":{\"extensions\":{\"io.modelcontextprotocol/tasks\":{}}},\"io.modelcontextprotocol/clientInfo\":{\"name\":\"local-development-observer\",\"version\":\"0.1.0\"}},\"name\":\"a2a_send_message\",\"arguments\":{\"agent\":\"fixture\",\"text\":\"ask: development-destination\"}}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 3,
+          "method": "tools/call",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientCapabilities": {
+                "extensions": {
+                  "io.modelcontextprotocol/tasks": {}
+                }
+              },
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "local-development-observer",
+                "version": "0.1.0"
+              }
+            },
+            "name": "a2a_send_message",
+            "arguments": {
+              "agent": "fixture",
+              "text": "ask: development-destination"
+            }
+          }
+        },
+        "url": "http://127.0.0.1:57298/mcp",
+        "headers": {
+          "Content-Type": "application/json",
+          "Accept": "application/json, text/event-stream",
+          "MCP-Protocol-Version": "2026-07-28",
+          "Mcp-Method": "tools/call",
+          "Mcp-Name": "a2a_send_message"
+        },
+        "started_at_utc": "2026-10-23T20:02:12.048Z",
+        "monotonic_ns": "136683577343600",
+        "sha256": "889d5111e99241474d0830f02aba9e0cedb81b346fb4832a46bc11515df2afb5"
+      },
+      "response": {
+        "raw": "{\"result\":{\"content\":[],\"resultType\":\"task\",\"taskId\":\"tk_6KAdnYzC6k4daNyHaHuggQ\",\"status\":\"working\",\"statusMessage\":\"A2A state TASK_STATE_SUBMITTED\",\"createdAt\":\"2026-10-23T20:02:12.117Z\",\"lastUpdatedAt\":\"2026-10-23T20:02:12.117Z\",\"ttlMs\":900000,\"pollIntervalMs\":500,\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"a2a-to-mcp\",\"version\":\"0.1.0\"}}},\"jsonrpc\":\"2.0\",\"id\":3}",
+        "json": {
+          "result": {
+            "content": [],
+            "resultType": "task",
+            "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ",
+            "status": "working",
+            "statusMessage": "A2A state TASK_STATE_SUBMITTED",
+            "createdAt": "2026-10-23T20:02:12.117Z",
+            "lastUpdatedAt": "2026-10-23T20:02:12.117Z",
+            "ttlMs": 900000,
+            "pollIntervalMs": 500,
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "a2a-to-mcp",
+                "version": "0.1.0"
+              }
+            }
+          },
+          "jsonrpc": "2.0",
+          "id": 3
+        },
+        "status": 200,
+        "headers": {
+          "connection": "keep-alive",
+          "content-type": "application/json",
+          "date": "Fri, 23 Oct 2026 20:02:12 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "observed_at_utc": "2026-10-23T20:02:12.123Z",
+        "monotonic_ns": "136683652026100",
+        "sha256": "6e2310d66d423d222ab9beea62195398720e7e25c38028c6a282d9bce529261d"
+      },
+      "elapsed_ms": 74.6825
+    },
+    {
+      "exchange_id": "mcp-4",
+      "phase": "get_input_required",
+      "request": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":4,\"method\":\"tasks/get\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientCapabilities\":{\"extensions\":{\"io.modelcontextprotocol/tasks\":{}}},\"io.modelcontextprotocol/clientInfo\":{\"name\":\"local-development-observer\",\"version\":\"0.1.0\"}},\"taskId\":\"tk_6KAdnYzC6k4daNyHaHuggQ\"}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 4,
+          "method": "tasks/get",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientCapabilities": {
+                "extensions": {
+                  "io.modelcontextprotocol/tasks": {}
+                }
+              },
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "local-development-observer",
+                "version": "0.1.0"
+              }
+            },
+            "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ"
+          }
+        },
+        "url": "http://127.0.0.1:57298/mcp",
+        "headers": {
+          "Content-Type": "application/json",
+          "Accept": "application/json, text/event-stream",
+          "MCP-Protocol-Version": "2026-07-28",
+          "Mcp-Method": "tasks/get",
+          "Mcp-Name": "tk_6KAdnYzC6k4daNyHaHuggQ"
+        },
+        "started_at_utc": "2026-10-23T20:02:12.123Z",
+        "monotonic_ns": "136683652502000",
+        "sha256": "214afda0b79edf5e20d1459b94e4581df80e7f0af7e24e9e1c813fc480d4a8c0"
+      },
+      "response": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":4,\"result\":{\"resultType\":\"complete\",\"taskId\":\"tk_6KAdnYzC6k4daNyHaHuggQ\",\"status\":\"input_required\",\"createdAt\":\"2026-10-23T20:02:12.117Z\",\"lastUpdatedAt\":\"2026-10-23T20:02:12.146Z\",\"ttlMs\":900000,\"pollIntervalMs\":500,\"statusMessage\":\"A2A asks for more input as free text in the task statusMessage, with no schema. The bridge reports input_required and the elicitation form is synthesized from that text, so the wording the agent chose survives only in the statusMessage.\",\"inputRequests\":{\"answer\":{\"method\":\"elicitation/create\",\"params\":{\"mode\":\"form\",\"message\":\"What value should I use for development-destination?\",\"requestedSchema\":{\"type\":\"object\",\"properties\":{\"answer\":{\"type\":\"string\",\"description\":\"Your answer to the agent\"}},\"required\":[\"answer\"]}}}},\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"a2a-to-mcp\",\"version\":\"0.1.0\"}}}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 4,
+          "result": {
+            "resultType": "complete",
+            "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ",
+            "status": "input_required",
+            "createdAt": "2026-10-23T20:02:12.117Z",
+            "lastUpdatedAt": "2026-10-23T20:02:12.146Z",
+            "ttlMs": 900000,
+            "pollIntervalMs": 500,
+            "statusMessage": "A2A asks for more input as free text in the task statusMessage, with no schema. The bridge reports input_required and the elicitation form is synthesized from that text, so the wording the agent chose survives only in the statusMessage.",
+            "inputRequests": {
+              "answer": {
+                "method": "elicitation/create",
+                "params": {
+                  "mode": "form",
+                  "message": "What value should I use for development-destination?",
+                  "requestedSchema": {
+                    "type": "object",
+                    "properties": {
+                      "answer": {
+                        "type": "string",
+                        "description": "Your answer to the agent"
+                      }
+                    },
+                    "required": [
+                      "answer"
+                    ]
+                  }
+                }
+              }
+            },
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "a2a-to-mcp",
+                "version": "0.1.0"
+              }
+            }
+          }
+        },
+        "status": 200,
+        "headers": {
+          "connection": "keep-alive",
+          "content-type": "application/json",
+          "date": "Fri, 23 Oct 2026 20:02:12 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "observed_at_utc": "2026-10-23T20:02:12.148Z",
+        "monotonic_ns": "136683677391000",
+        "sha256": "0c4b1765b1283456245504c67599dcd43bbcb42147a1f22a12dff6f7332d1247"
+      },
+      "elapsed_ms": 24.889
+    },
+    {
+      "exchange_id": "mcp-5",
+      "phase": "authoritative_get_pending",
+      "request": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":5,\"method\":\"tools/call\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientCapabilities\":{\"extensions\":{\"io.modelcontextprotocol/tasks\":{}}},\"io.modelcontextprotocol/clientInfo\":{\"name\":\"local-development-observer\",\"version\":\"0.1.0\"}},\"name\":\"a2a_get_task\",\"arguments\":{\"agent\":\"fixture\",\"taskHandle\":\"tk_6KAdnYzC6k4daNyHaHuggQ\"}}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 5,
+          "method": "tools/call",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientCapabilities": {
+                "extensions": {
+                  "io.modelcontextprotocol/tasks": {}
+                }
+              },
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "local-development-observer",
+                "version": "0.1.0"
+              }
+            },
+            "name": "a2a_get_task",
+            "arguments": {
+              "agent": "fixture",
+              "taskHandle": "tk_6KAdnYzC6k4daNyHaHuggQ"
+            }
+          }
+        },
+        "url": "http://127.0.0.1:57298/mcp",
+        "headers": {
+          "Content-Type": "application/json",
+          "Accept": "application/json, text/event-stream",
+          "MCP-Protocol-Version": "2026-07-28",
+          "Mcp-Method": "tools/call",
+          "Mcp-Name": "a2a_get_task"
+        },
+        "started_at_utc": "2026-10-23T20:02:12.149Z",
+        "monotonic_ns": "136683678179300",
+        "sha256": "4ce7457231b00a66b8f8af96f1d10cb267565ef0934876cea27a54f41d949fd0"
+      },
+      "response": {
+        "raw": "{\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"What value should I use for development-destination?\",\"_meta\":{\"io.github.amirk-s/a2a\":{\"partKind\":\"text\",\"mediaType\":\"text/plain\",\"messageId\":\"3f1e4272-6df9-4ca4-8ddb-8a1665b6e4bc\",\"contextId\":\"a4c3e63c-651f-482f-8eec-b109beb36f4f\",\"taskId\":\"81ba58c9-a936-42c3-addd-08a3bd61a4f1\"}}}],\"structuredContent\":{\"kind\":\"task\",\"contextHandle\":\"cx_eDhqxKAcelv12vsPbwJbMA\",\"taskHandle\":\"tk_6KAdnYzC6k4daNyHaHuggQ\",\"a2aState\":\"TASK_STATE_INPUT_REQUIRED\",\"status\":\"input_required\",\"note\":\"A2A asks for more input as free text in the task statusMessage, with no schema. The bridge reports input_required and the elicitation form is synthesized from that text, so the wording the agent chose survives only in the statusMessage.\",\"history\":[{\"role\":\"user\",\"text\":\"ask: development-destination\"},{\"role\":\"agent\",\"text\":\"What value should I use for development-destination?\"}]},\"resultType\":\"complete\",\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"a2a-to-mcp\",\"version\":\"0.1.0\"}}},\"jsonrpc\":\"2.0\",\"id\":5}",
+        "json": {
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "What value should I use for development-destination?",
+                "_meta": {
+                  "io.github.amirk-s/a2a": {
+                    "partKind": "text",
+                    "mediaType": "text/plain",
+                    "messageId": "3f1e4272-6df9-4ca4-8ddb-8a1665b6e4bc",
+                    "contextId": "a4c3e63c-651f-482f-8eec-b109beb36f4f",
+                    "taskId": "81ba58c9-a936-42c3-addd-08a3bd61a4f1"
+                  }
+                }
+              }
+            ],
+            "structuredContent": {
+              "kind": "task",
+              "contextHandle": "cx_eDhqxKAcelv12vsPbwJbMA",
+              "taskHandle": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "a2aState": "TASK_STATE_INPUT_REQUIRED",
+              "status": "input_required",
+              "note": "A2A asks for more input as free text in the task statusMessage, with no schema. The bridge reports input_required and the elicitation form is synthesized from that text, so the wording the agent chose survives only in the statusMessage.",
+              "history": [
+                {
+                  "role": "user",
+                  "text": "ask: development-destination"
+                },
+                {
+                  "role": "agent",
+                  "text": "What value should I use for development-destination?"
+                }
+              ]
+            },
+            "resultType": "complete",
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "a2a-to-mcp",
+                "version": "0.1.0"
+              }
+            }
+          },
+          "jsonrpc": "2.0",
+          "id": 5
+        },
+        "status": 200,
+        "headers": {
+          "connection": "keep-alive",
+          "content-type": "application/json",
+          "date": "Fri, 23 Oct 2026 20:02:12 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "observed_at_utc": "2026-10-23T20:02:12.169Z",
+        "monotonic_ns": "136683698444300",
+        "sha256": "a9ec84df6d61e40304ea647b8981bccfd4e1dbe5db8eca5bbecfd1fdf02a6b9e"
+      },
+      "elapsed_ms": 20.265
+    },
+    {
+      "exchange_id": "mcp-6",
+      "phase": "same_task_answer",
+      "request": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":6,\"method\":\"tasks/update\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientCapabilities\":{\"extensions\":{\"io.modelcontextprotocol/tasks\":{}}},\"io.modelcontextprotocol/clientInfo\":{\"name\":\"local-development-observer\",\"version\":\"0.1.0\"}},\"taskId\":\"tk_6KAdnYzC6k4daNyHaHuggQ\",\"inputResponses\":{\"answer\":{\"action\":\"accept\",\"content\":{\"answer\":\"Paris\"}}}}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 6,
+          "method": "tasks/update",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientCapabilities": {
+                "extensions": {
+                  "io.modelcontextprotocol/tasks": {}
+                }
+              },
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "local-development-observer",
+                "version": "0.1.0"
+              }
+            },
+            "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ",
+            "inputResponses": {
+              "answer": {
+                "action": "accept",
+                "content": {
+                  "answer": "Paris"
+                }
+              }
+            }
+          }
+        },
+        "url": "http://127.0.0.1:57298/mcp",
+        "headers": {
+          "Content-Type": "application/json",
+          "Accept": "application/json, text/event-stream",
+          "MCP-Protocol-Version": "2026-07-28",
+          "Mcp-Method": "tasks/update",
+          "Mcp-Name": "tk_6KAdnYzC6k4daNyHaHuggQ"
+        },
+        "started_at_utc": "2026-10-23T20:02:12.170Z",
+        "monotonic_ns": "136683698755600",
+        "sha256": "e5cc4fb8153a9f56196ca3b05d7245ec3f175f73204502fe2a7057570cfd833d"
+      },
+      "response": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":6,\"result\":{\"resultType\":\"complete\",\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"a2a-to-mcp\",\"version\":\"0.1.0\"}}}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 6,
+          "result": {
+            "resultType": "complete",
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "a2a-to-mcp",
+                "version": "0.1.0"
+              }
+            }
+          }
+        },
+        "status": 200,
+        "headers": {
+          "connection": "keep-alive",
+          "content-type": "application/json",
+          "date": "Fri, 23 Oct 2026 20:02:12 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "observed_at_utc": "2026-10-23T20:02:12.182Z",
+        "monotonic_ns": "136683711138300",
+        "sha256": "68157815e9508d5e35b17d60a699dc95a24d01b7a5581706b558b9c5a2f82da5"
+      },
+      "elapsed_ms": 12.3827
+    },
+    {
+      "exchange_id": "mcp-7",
+      "phase": "get_completed_extension",
+      "request": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":7,\"method\":\"tasks/get\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientCapabilities\":{\"extensions\":{\"io.modelcontextprotocol/tasks\":{}}},\"io.modelcontextprotocol/clientInfo\":{\"name\":\"local-development-observer\",\"version\":\"0.1.0\"}},\"taskId\":\"tk_6KAdnYzC6k4daNyHaHuggQ\"}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 7,
+          "method": "tasks/get",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientCapabilities": {
+                "extensions": {
+                  "io.modelcontextprotocol/tasks": {}
+                }
+              },
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "local-development-observer",
+                "version": "0.1.0"
+              }
+            },
+            "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ"
+          }
+        },
+        "url": "http://127.0.0.1:57298/mcp",
+        "headers": {
+          "Content-Type": "application/json",
+          "Accept": "application/json, text/event-stream",
+          "MCP-Protocol-Version": "2026-07-28",
+          "Mcp-Method": "tasks/get",
+          "Mcp-Name": "tk_6KAdnYzC6k4daNyHaHuggQ"
+        },
+        "started_at_utc": "2026-10-23T20:02:12.182Z",
+        "monotonic_ns": "136683711478700",
+        "sha256": "761b2e1235f944e7b95c48e0a039341c56fe8419b882d86aa63f0ee551c80f7d"
+      },
+      "response": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":7,\"result\":{\"resultType\":\"complete\",\"taskId\":\"tk_6KAdnYzC6k4daNyHaHuggQ\",\"status\":\"working\",\"createdAt\":\"2026-10-23T20:02:12.117Z\",\"lastUpdatedAt\":\"2026-10-23T20:02:12.191Z\",\"ttlMs\":900000,\"pollIntervalMs\":500,\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"a2a-to-mcp\",\"version\":\"0.1.0\"}}}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 7,
+          "result": {
+            "resultType": "complete",
+            "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ",
+            "status": "working",
+            "createdAt": "2026-10-23T20:02:12.117Z",
+            "lastUpdatedAt": "2026-10-23T20:02:12.191Z",
+            "ttlMs": 900000,
+            "pollIntervalMs": 500,
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "a2a-to-mcp",
+                "version": "0.1.0"
+              }
+            }
+          }
+        },
+        "status": 200,
+        "headers": {
+          "connection": "keep-alive",
+          "content-type": "application/json",
+          "date": "Fri, 23 Oct 2026 20:02:12 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "observed_at_utc": "2026-10-23T20:02:12.193Z",
+        "monotonic_ns": "136683721792200",
+        "sha256": "57c9fe140927724f7b57e68d7088c0940eeefea1d7b0302223e895d7a59053e5"
+      },
+      "elapsed_ms": 10.3135
+    },
+    {
+      "exchange_id": "mcp-8",
+      "phase": "get_completed_extension",
+      "request": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":8,\"method\":\"tasks/get\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientCapabilities\":{\"extensions\":{\"io.modelcontextprotocol/tasks\":{}}},\"io.modelcontextprotocol/clientInfo\":{\"name\":\"local-development-observer\",\"version\":\"0.1.0\"}},\"taskId\":\"tk_6KAdnYzC6k4daNyHaHuggQ\"}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 8,
+          "method": "tasks/get",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientCapabilities": {
+                "extensions": {
+                  "io.modelcontextprotocol/tasks": {}
+                }
+              },
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "local-development-observer",
+                "version": "0.1.0"
+              }
+            },
+            "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ"
+          }
+        },
+        "url": "http://127.0.0.1:57298/mcp",
+        "headers": {
+          "Content-Type": "application/json",
+          "Accept": "application/json, text/event-stream",
+          "MCP-Protocol-Version": "2026-07-28",
+          "Mcp-Method": "tasks/get",
+          "Mcp-Name": "tk_6KAdnYzC6k4daNyHaHuggQ"
+        },
+        "started_at_utc": "2026-10-23T20:02:12.697Z",
+        "monotonic_ns": "136684226099100",
+        "sha256": "97dbb7bd1aeecf50557e9cef46b3c9547515dbdf6494d19d59bd0338f21e91ce"
+      },
+      "response": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":8,\"result\":{\"resultType\":\"complete\",\"taskId\":\"tk_6KAdnYzC6k4daNyHaHuggQ\",\"status\":\"completed\",\"createdAt\":\"2026-10-23T20:02:12.117Z\",\"lastUpdatedAt\":\"2026-10-23T20:02:12.700Z\",\"ttlMs\":900000,\"pollIntervalMs\":500,\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"development-destination = Paris\",\"_meta\":{\"io.github.amirk-s/a2a\":{\"partKind\":\"text\",\"mediaType\":\"text/plain\",\"artifactId\":\"b74d4864-3895-4c5f-8ba7-a14e04a608e1\",\"artifactName\":\"result\"}}}],\"structuredContent\":{\"kind\":\"task\",\"contextHandle\":\"cx_eDhqxKAcelv12vsPbwJbMA\",\"taskHandle\":\"tk_6KAdnYzC6k4daNyHaHuggQ\",\"a2aState\":\"TASK_STATE_COMPLETED\",\"status\":\"completed\",\"artifacts\":[{\"artifactId\":\"b74d4864-3895-4c5f-8ba7-a14e04a608e1\",\"name\":\"result\"}]},\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"a2a-to-mcp\",\"version\":\"0.1.0\"}}},\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"a2a-to-mcp\",\"version\":\"0.1.0\"}}}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 8,
+          "result": {
+            "resultType": "complete",
+            "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ",
+            "status": "completed",
+            "createdAt": "2026-10-23T20:02:12.117Z",
+            "lastUpdatedAt": "2026-10-23T20:02:12.700Z",
+            "ttlMs": 900000,
+            "pollIntervalMs": 500,
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "development-destination = Paris",
+                  "_meta": {
+                    "io.github.amirk-s/a2a": {
+                      "partKind": "text",
+                      "mediaType": "text/plain",
+                      "artifactId": "b74d4864-3895-4c5f-8ba7-a14e04a608e1",
+                      "artifactName": "result"
+                    }
+                  }
+                }
+              ],
+              "structuredContent": {
+                "kind": "task",
+                "contextHandle": "cx_eDhqxKAcelv12vsPbwJbMA",
+                "taskHandle": "tk_6KAdnYzC6k4daNyHaHuggQ",
+                "a2aState": "TASK_STATE_COMPLETED",
+                "status": "completed",
+                "artifacts": [
+                  {
+                    "artifactId": "b74d4864-3895-4c5f-8ba7-a14e04a608e1",
+                    "name": "result"
+                  }
+                ]
+              },
+              "_meta": {
+                "io.modelcontextprotocol/serverInfo": {
+                  "name": "a2a-to-mcp",
+                  "version": "0.1.0"
+                }
+              }
+            },
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "a2a-to-mcp",
+                "version": "0.1.0"
+              }
+            }
+          }
+        },
+        "status": 200,
+        "headers": {
+          "connection": "keep-alive",
+          "content-type": "application/json",
+          "date": "Fri, 23 Oct 2026 20:02:12 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "observed_at_utc": "2026-10-23T20:02:12.701Z",
+        "monotonic_ns": "136684229929200",
+        "sha256": "883869bb5b87cde831ef3a33cffa60a23f016d78c958fdd7fdd9f285fac3655f"
+      },
+      "elapsed_ms": 3.8301
+    },
+    {
+      "exchange_id": "mcp-9",
+      "phase": "authoritative_get_completed",
+      "request": {
+        "raw": "{\"jsonrpc\":\"2.0\",\"id\":9,\"method\":\"tools/call\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientCapabilities\":{\"extensions\":{\"io.modelcontextprotocol/tasks\":{}}},\"io.modelcontextprotocol/clientInfo\":{\"name\":\"local-development-observer\",\"version\":\"0.1.0\"}},\"name\":\"a2a_get_task\",\"arguments\":{\"agent\":\"fixture\",\"taskHandle\":\"tk_6KAdnYzC6k4daNyHaHuggQ\"}}}",
+        "json": {
+          "jsonrpc": "2.0",
+          "id": 9,
+          "method": "tools/call",
+          "params": {
+            "_meta": {
+              "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+              "io.modelcontextprotocol/clientCapabilities": {
+                "extensions": {
+                  "io.modelcontextprotocol/tasks": {}
+                }
+              },
+              "io.modelcontextprotocol/clientInfo": {
+                "name": "local-development-observer",
+                "version": "0.1.0"
+              }
+            },
+            "name": "a2a_get_task",
+            "arguments": {
+              "agent": "fixture",
+              "taskHandle": "tk_6KAdnYzC6k4daNyHaHuggQ"
+            }
+          }
+        },
+        "url": "http://127.0.0.1:57298/mcp",
+        "headers": {
+          "Content-Type": "application/json",
+          "Accept": "application/json, text/event-stream",
+          "MCP-Protocol-Version": "2026-07-28",
+          "Mcp-Method": "tools/call",
+          "Mcp-Name": "a2a_get_task"
+        },
+        "started_at_utc": "2026-10-23T20:02:12.701Z",
+        "monotonic_ns": "136684230079100",
+        "sha256": "54f84c44f43edee7a75df3c2eeeda8883d8c87647db7b596c5f426c8ea1f6d3b"
+      },
+      "response": {
+        "raw": "{\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"development-destination = Paris\",\"_meta\":{\"io.github.amirk-s/a2a\":{\"partKind\":\"text\",\"mediaType\":\"text/plain\",\"artifactId\":\"b74d4864-3895-4c5f-8ba7-a14e04a608e1\",\"artifactName\":\"result\"}}}],\"structuredContent\":{\"kind\":\"task\",\"contextHandle\":\"cx_eDhqxKAcelv12vsPbwJbMA\",\"taskHandle\":\"tk_6KAdnYzC6k4daNyHaHuggQ\",\"a2aState\":\"TASK_STATE_COMPLETED\",\"status\":\"completed\",\"artifacts\":[{\"artifactId\":\"b74d4864-3895-4c5f-8ba7-a14e04a608e1\",\"name\":\"result\"}],\"history\":[{\"role\":\"user\",\"text\":\"ask: development-destination\"},{\"role\":\"agent\",\"text\":\"What value should I use for development-destination?\"},{\"role\":\"user\",\"text\":\"Paris\"}]},\"resultType\":\"complete\",\"_meta\":{\"io.modelcontextprotocol/serverInfo\":{\"name\":\"a2a-to-mcp\",\"version\":\"0.1.0\"}}},\"jsonrpc\":\"2.0\",\"id\":9}",
+        "json": {
+          "result": {
+            "content": [
+              {
+                "type": "text",
+                "text": "development-destination = Paris",
+                "_meta": {
+                  "io.github.amirk-s/a2a": {
+                    "partKind": "text",
+                    "mediaType": "text/plain",
+                    "artifactId": "b74d4864-3895-4c5f-8ba7-a14e04a608e1",
+                    "artifactName": "result"
+                  }
+                }
+              }
+            ],
+            "structuredContent": {
+              "kind": "task",
+              "contextHandle": "cx_eDhqxKAcelv12vsPbwJbMA",
+              "taskHandle": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "a2aState": "TASK_STATE_COMPLETED",
+              "status": "completed",
+              "artifacts": [
+                {
+                  "artifactId": "b74d4864-3895-4c5f-8ba7-a14e04a608e1",
+                  "name": "result"
+                }
+              ],
+              "history": [
+                {
+                  "role": "user",
+                  "text": "ask: development-destination"
+                },
+                {
+                  "role": "agent",
+                  "text": "What value should I use for development-destination?"
+                },
+                {
+                  "role": "user",
+                  "text": "Paris"
+                }
+              ]
+            },
+            "resultType": "complete",
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "a2a-to-mcp",
+                "version": "0.1.0"
+              }
+            }
+          },
+          "jsonrpc": "2.0",
+          "id": 9
+        },
+        "status": 200,
+        "headers": {
+          "connection": "keep-alive",
+          "content-type": "application/json",
+          "date": "Fri, 23 Oct 2026 20:02:12 GMT",
+          "keep-alive": "timeout=5",
+          "transfer-encoding": "chunked"
+        },
+        "observed_at_utc": "2026-10-23T20:02:12.712Z",
+        "monotonic_ns": "136684240623500",
+        "sha256": "4675e5b3273a46e9f6ecee05e35995f29d10ca0c61c0405a57e5bde864b3fb6c"
+      },
+      "elapsed_ms": 10.5444
+    }
+  ],
+  "receipts": [
+    {
+      "receipt_id": "mcp-4-receipt",
+      "exchange_id": "mcp-4",
+      "role": "bridge_task_record",
+      "protocol": {
+        "mcp": "2026-07-28",
+        "mcp_transport": "loopback HTTP modern per-request envelope",
+        "extension": "io.modelcontextprotocol/tasks",
+        "a2a": "1.0 JSONRPC and streaming JSONRPC"
+      },
+      "task_namespace": "AmirK-S bridge opaque tk_ MCP task handle; native task ID is not revealed by this projection",
+      "task_id": "tk_6KAdnYzC6k4daNyHaHuggQ",
+      "context_namespace": "AmirK-S bridge opaque cx_ context handle; native context ID is private sidecar data",
+      "context_id": null,
+      "source": {
+        "endpoint": "http://127.0.0.1:57298/mcp",
+        "method": "tasks/get",
+        "tool": null,
+        "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+        "response_sha256": "0c4b1765b1283456245504c67599dcd43bbcb42147a1f22a12dff6f7332d1247"
+      },
+      "observed_at_utc": "2026-10-23T20:02:12.148Z",
+      "returned_field_paths": [
+        "result.taskId",
+        "result.status",
+        "result.inputRequests",
+        "result.result",
+        "result.ttlMs",
+        "result.lastUpdatedAt"
+      ],
+      "request_cost": 1,
+      "freshness_basis": "Returned extension task record; may be fed by active stream or frozen after terminal state; native evidence determines any refresh",
+      "validity_interval": null,
+      "recipient_authority": null
+    },
+    {
+      "receipt_id": "mcp-5-receipt",
+      "exchange_id": "mcp-5",
+      "role": "explicit_peer_task_query",
+      "protocol": {
+        "mcp": "2026-07-28",
+        "mcp_transport": "loopback HTTP modern per-request envelope",
+        "extension": "io.modelcontextprotocol/tasks",
+        "a2a": "1.0 JSONRPC and streaming JSONRPC"
+      },
+      "task_namespace": "AmirK-S bridge opaque tk_ MCP task handle; native task ID is not revealed by this projection",
+      "task_id": "tk_6KAdnYzC6k4daNyHaHuggQ",
+      "context_namespace": "AmirK-S bridge opaque cx_ context handle; native context ID is private sidecar data",
+      "context_id": "cx_eDhqxKAcelv12vsPbwJbMA",
+      "source": {
+        "endpoint": "http://127.0.0.1:57298/mcp",
+        "method": "tools/call",
+        "tool": "a2a_get_task",
+        "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+        "response_sha256": "a9ec84df6d61e40304ea647b8981bccfd4e1dbe5db8eca5bbecfd1fdf02a6b9e"
+      },
+      "observed_at_utc": "2026-10-23T20:02:12.169Z",
+      "returned_field_paths": [
+        "result.structuredContent.taskHandle",
+        "result.structuredContent.contextHandle",
+        "result.structuredContent.status",
+        "result.structuredContent.a2aState",
+        "result.content",
+        "result.structuredContent.artifacts"
+      ],
+      "request_cost": 1,
+      "freshness_basis": "Explicit supported task read; only captured peer GetTask establishes refreshed origin",
+      "validity_interval": null,
+      "recipient_authority": null
+    },
+    {
+      "receipt_id": "mcp-7-receipt",
+      "exchange_id": "mcp-7",
+      "role": "bridge_task_record",
+      "protocol": {
+        "mcp": "2026-07-28",
+        "mcp_transport": "loopback HTTP modern per-request envelope",
+        "extension": "io.modelcontextprotocol/tasks",
+        "a2a": "1.0 JSONRPC and streaming JSONRPC"
+      },
+      "task_namespace": "AmirK-S bridge opaque tk_ MCP task handle; native task ID is not revealed by this projection",
+      "task_id": "tk_6KAdnYzC6k4daNyHaHuggQ",
+      "context_namespace": "AmirK-S bridge opaque cx_ context handle; native context ID is private sidecar data",
+      "context_id": null,
+      "source": {
+        "endpoint": "http://127.0.0.1:57298/mcp",
+        "method": "tasks/get",
+        "tool": null,
+        "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+        "response_sha256": "57c9fe140927724f7b57e68d7088c0940eeefea1d7b0302223e895d7a59053e5"
+      },
+      "observed_at_utc": "2026-10-23T20:02:12.193Z",
+      "returned_field_paths": [
+        "result.taskId",
+        "result.status",
+        "result.inputRequests",
+        "result.result",
+        "result.ttlMs",
+        "result.lastUpdatedAt"
+      ],
+      "request_cost": 1,
+      "freshness_basis": "Returned extension task record; may be fed by active stream or frozen after terminal state; native evidence determines any refresh",
+      "validity_interval": null,
+      "recipient_authority": null
+    },
+    {
+      "receipt_id": "mcp-8-receipt",
+      "exchange_id": "mcp-8",
+      "role": "bridge_task_record",
+      "protocol": {
+        "mcp": "2026-07-28",
+        "mcp_transport": "loopback HTTP modern per-request envelope",
+        "extension": "io.modelcontextprotocol/tasks",
+        "a2a": "1.0 JSONRPC and streaming JSONRPC"
+      },
+      "task_namespace": "AmirK-S bridge opaque tk_ MCP task handle; native task ID is not revealed by this projection",
+      "task_id": "tk_6KAdnYzC6k4daNyHaHuggQ",
+      "context_namespace": "AmirK-S bridge opaque cx_ context handle; native context ID is private sidecar data",
+      "context_id": null,
+      "source": {
+        "endpoint": "http://127.0.0.1:57298/mcp",
+        "method": "tasks/get",
+        "tool": null,
+        "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+        "response_sha256": "883869bb5b87cde831ef3a33cffa60a23f016d78c958fdd7fdd9f285fac3655f"
+      },
+      "observed_at_utc": "2026-10-23T20:02:12.701Z",
+      "returned_field_paths": [
+        "result.taskId",
+        "result.status",
+        "result.inputRequests",
+        "result.result",
+        "result.ttlMs",
+        "result.lastUpdatedAt"
+      ],
+      "request_cost": 1,
+      "freshness_basis": "Returned extension task record; may be fed by active stream or frozen after terminal state; native evidence determines any refresh",
+      "validity_interval": null,
+      "recipient_authority": null
+    },
+    {
+      "receipt_id": "mcp-9-receipt",
+      "exchange_id": "mcp-9",
+      "role": "explicit_peer_task_query",
+      "protocol": {
+        "mcp": "2026-07-28",
+        "mcp_transport": "loopback HTTP modern per-request envelope",
+        "extension": "io.modelcontextprotocol/tasks",
+        "a2a": "1.0 JSONRPC and streaming JSONRPC"
+      },
+      "task_namespace": "AmirK-S bridge opaque tk_ MCP task handle; native task ID is not revealed by this projection",
+      "task_id": "tk_6KAdnYzC6k4daNyHaHuggQ",
+      "context_namespace": "AmirK-S bridge opaque cx_ context handle; native context ID is private sidecar data",
+      "context_id": "cx_eDhqxKAcelv12vsPbwJbMA",
+      "source": {
+        "endpoint": "http://127.0.0.1:57298/mcp",
+        "method": "tools/call",
+        "tool": "a2a_get_task",
+        "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+        "response_sha256": "4675e5b3273a46e9f6ecee05e35995f29d10ca0c61c0405a57e5bde864b3fb6c"
+      },
+      "observed_at_utc": "2026-10-23T20:02:12.712Z",
+      "returned_field_paths": [
+        "result.structuredContent.taskHandle",
+        "result.structuredContent.contextHandle",
+        "result.structuredContent.status",
+        "result.structuredContent.a2aState",
+        "result.content",
+        "result.structuredContent.artifacts"
+      ],
+      "request_cost": 1,
+      "freshness_basis": "Explicit supported task read; only captured peer GetTask establishes refreshed origin",
+      "validity_interval": null,
+      "recipient_authority": null
+    }
+  ],
+  "provenance": {
+    "kind": "wire-derived-development",
+    "fixture": {
+      "repository": "AmirK-S/a2a-to-mcp",
+      "commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "label": "Original upstream deterministic fixture; shared between routes, no model inference or independent gold",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/tsx/dist/cli.mjs",
+        "fixtures/agent/cli.ts",
+        "--port",
+        "0"
+      ]
+    },
+    "instrumentation": {
+      "native_http": "Read-only global fetch wrapper in original bridge child; no replacement transport, request mutation, correlation header, injected faults or delays",
+      "overhead": "Wrapper stamps and hashes, clones response bodies asynchronously, and appends native records synchronously. Scheduling, memory and file-I/O overhead is measured as part of elapsed time; no uninstrumented latency claim.",
+      "raw_mcp": "Exact application JSON-RPC bytes on genuine loopback HTTP or child-process stdio, with paired matching IDs",
+      "native_bytes": "Fetch-visible request input and response entity body, not TLS/TCP framing or implicit HTTP request headers"
+    },
+    "model_calls": 0,
+    "held_out": false,
+    "evidence_complete": false,
+    "bridge_command": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "--import",
+      "file:///P:/JUNKK/Also%20Junk/sem_7/Ai_Interoperability/scripts/log-local-http.mjs",
+      "dist/cli.js",
+      "--config",
+      "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\wire-observation\\amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828\\bridge-config.json",
+      "--port",
+      "0"
+    ],
+    "source_sha256": {
+      "external/source-lock.json": "93075b3e0a9fe293d33595d23749218c8a206f9788efe620e16dd49a9dae5efe",
+      "scripts/log-local-http.mjs": "d690a4ab9cbf247b92d5ce1871f5aeb0223914ebe1c4440c8c04389163cdb2d9",
+      "scripts/capture-amirk-observation.mjs": "bf5d36af8f6548bce551b068033b5bb2da0ddaf6b806faf1cbe739a8098464d4"
+    }
+  },
+  "namespaces": {
+    "task": "AmirK-S bridge opaque tk_ MCP task handle; native task ID is not revealed by this projection",
+    "context": "AmirK-S bridge opaque cx_ context handle; native context ID is private sidecar data",
+    "principal": "unidentified unauthenticated local development caller; no authority grant inferred",
+    "scope": "loopback fixture",
+    "credential_epoch": "not applicable; no credentials supplied",
+    "policy_epoch": "not observed",
+    "validity_interval": "not established; no service freshness lease inferred"
+  },
+  "endpoint": "http://127.0.0.1:57298/mcp",
+  "contract": {
+    "task_id": "tk_6KAdnYzC6k4daNyHaHuggQ",
+    "context_handle": "cx_eDhqxKAcelv12vsPbwJbMA",
+    "input_request_key": "answer",
+    "requested_field": "answer",
+    "answer": "Paris",
+    "expected_receiver_text": "development-destination = Paris",
+    "horizon_meaning": "One actual request and paired observed response per exchange; polling observes progression",
+    "answer_ack_is_completion": false
+  },
+  "outcome": "passed",
+  "exit_code": 0,
+  "completed_at_utc": "2026-10-23T20:02:12.808Z",
+  "costs": {
+    "mcp_rpc_requests": 9,
+    "mcp_notifications_sent": 0,
+    "request_bytes": 3323,
+    "response_bytes": 8920
+  },
+  "private_sidecars": {
+    "native_http": "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828/private-native-http.jsonl",
+    "native_capture_available": true,
+    "diagnostics": "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828/private-process-diagnostics.json"
+  }
+}

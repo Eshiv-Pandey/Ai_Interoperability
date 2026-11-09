@@ -1,0 +1,14 @@
+{
+  "schema_version": "local-auditor-failure-transcript/1",
+  "date_local": "2026-10-25",
+  "command": ".\\.venv\\Scripts\\python.exe scripts\\audit_paper_draft_v1.py",
+  "exit_code": 1,
+  "representation": "Exact visible error text transcribed from exec result; not binary stdout/stderr capture",
+  "error_text": "Traceback (most recent call last):\r\n  File \"P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\scripts\\audit_paper_draft_v1.py\", line 145, in <module>\r\n    assert canon(item['fields']['title']) in canon(raw), item['key']\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: cheval2018deepsec\r\n",
+  "cause": "Metadata normalizer retained formatted PDF line labels, interrupting the multi-line title.",
+  "output_report_written": false,
+  "application_requests": 0,
+  "model_calls": 0,
+  "preserved_source": "paper/draft-audit-initial-source-v1.txt",
+  "correction": "Strip formatted line labels before title/ordered-author matching; preserve original source and failed result."
+}

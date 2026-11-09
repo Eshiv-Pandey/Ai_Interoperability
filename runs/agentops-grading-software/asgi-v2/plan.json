@@ -1,0 +1,64 @@
+{
+  "application_processes_launched": 0,
+  "command": [
+    "C:\\Python313\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-c",
+    "\nimport json\nfrom pathlib import Path\nimport runpy\nimport sys\nimport types\nimport unittest\n\nroot = Path(sys.argv[1]).resolve()\ntests = json.loads(sys.argv[2])\nexecution_path = Path(sys.argv[3])\nsys.path.insert(0, str(root / \"scripts\"))\nsys.path.insert(0, str(root / \"src\"))\nsys.argv = [\"captured_upstream_agentops_validation\"]\nloader = unittest.TestLoader()\nsuite = unittest.TestSuite()\nfor index, relative in enumerate(tests):\n    module_name = \"captured_validation_test_\" + str(index)\n    values = runpy.run_path(str(root / relative), run_name=module_name)\n    module = types.ModuleType(module_name)\n    module.__dict__.update(values)\n    sys.modules[module_name] = module\n    suite.addTests(loader.loadTestsFromModule(module))\nresult = unittest.TextTestRunner(verbosity=2).run(suite)\nrecord = {\"tests_run\": result.testsRun, \"failures\": len(result.failures), \"errors\": len(result.errors),\n          \"skips\": len(result.skipped), \"expected_failures\": len(result.expectedFailures),\n          \"unexpected_successes\": len(result.unexpectedSuccesses), \"successful\": result.wasSuccessful(),\n          \"isolated_python\": sys.flags.isolated == 1, \"site_disabled\": sys.flags.no_site == 1,\n          \"bytecode_disabled\": sys.dont_write_bytecode, \"executed_test_files\": tests}\nwith execution_path.open(\"x\", encoding=\"utf-8\") as stream:\n    json.dump(record, stream, sort_keys=True, indent=2)\n    stream.write(\"\\n\")\nraise SystemExit(0 if result.wasSuccessful() else 1)\n",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\agentops-grading-software\\asgi-v2\\workspace",
+    "[\"tests/test_agentops_asgi_capture_v2.py\"]",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\agentops-grading-software\\asgi-v2\\execution.json"
+  ],
+  "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\agentops-grading-software\\asgi-v2\\workspace",
+  "direct_model_calls": 0,
+  "driver_digest": {
+    "bytes": 12940,
+    "sha256": "b98dcdd7dbfe604c878679a69f7a1ee6155b3e5ad156768db4d9df6c338d1034"
+  },
+  "no_site_packages": true,
+  "original_archives_exported": 0,
+  "schema_version": "agentops-grading-validation-plan/1",
+  "source_files": {
+    "scripts/agentops_asgi_capture_v1.py": {
+      "bytes": 5152,
+      "sha256": "f3578e4777652dec85a50a3f4ca785c534b5acff2cad41227a3e64602f73f61a"
+    },
+    "scripts/agentops_asgi_capture_v2.py": {
+      "bytes": 2092,
+      "sha256": "3b010e6c393cebe81e623bba4d77ccd5d07b9039dfcec66dedd15faceec389bf"
+    },
+    "scripts/agentops_native_probe_v2.py": {
+      "bytes": 16488,
+      "sha256": "61a668e2742e3fcbf943f3c81ff914379e5d1a258f7c12de62e3c91d9cfaad95"
+    },
+    "src/interoperability/__init__.py": {
+      "bytes": 172,
+      "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+    },
+    "src/interoperability/agentops_memory_evidence_v1.py": {
+      "bytes": 12372,
+      "sha256": "a7989553aa007955718eb3a1f1e24f26c3bd86cff67336d4b24282458d157773"
+    },
+    "tests/test_agentops_asgi_capture_v2.py": {
+      "bytes": 8079,
+      "sha256": "37e45f571643e8edb5b7431cf5b5c675443206bec69f9cd491908dabde94dd51"
+    }
+  },
+  "source_inputs_and_tests_are_software_evidence_only": true,
+  "source_membership": [
+    "src/interoperability/__init__.py",
+    "src/interoperability/agentops_memory_evidence_v1.py",
+    "scripts/agentops_asgi_capture_v1.py",
+    "scripts/agentops_asgi_capture_v2.py",
+    "scripts/agentops_native_probe_v2.py",
+    "tests/test_agentops_asgi_capture_v2.py"
+  ],
+  "started_at_utc": "2026-10-29T18:03:26.596178+00:00",
+  "suite": "asgi-v2",
+  "test_files": [
+    "tests/test_agentops_asgi_capture_v2.py"
+  ],
+  "timeout_seconds": 120
+}

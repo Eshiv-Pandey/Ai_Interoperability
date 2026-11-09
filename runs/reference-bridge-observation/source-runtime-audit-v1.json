@@ -1,0 +1,144 @@
+{
+  "schema_version": "reference-bridge-live-state-audit/1",
+  "recorded_at": "2026-10-23T22:06:36.748869+00:00",
+  "claim_limit": "Current source/dependency hash and process-absence observation only; no conformance, future availability, method advantage or native service rerun",
+  "inputs": {
+    "runs/reference-bridge-observation/R1-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-54-32-840Z-11416/runtime.json": "e8450de64e1dbb43acd81c1d92850aa8d1e981505818ced54aac1d8733b0135d",
+    "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-23T21-55-11-573Z-32780/runtime.json": "81478f529d6a838bf759a539b91346e66e14aa63506f2116482edb02b8ea820c",
+    "runs/reference-bridge-observation/R3-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-55-48-985Z-20692/runtime.json": "2e9cabd0eaee3b2d6ab33dc70a0f6be76e9bc303bf8eb6114435ee7596c790db",
+    "runs/reference-bridge-observation/R4-mgcrea_mcp_a2a-reference-v1-2026-10-23T21-56-46-830Z-30760/runtime.json": "dc08ccfdc166637a33e77b7a4faef1af275d3a8115e60d7443c7c47fc13ababc"
+  },
+  "manifest_conflicts": [],
+  "tree_checks": [
+    {
+      "root": "external/a2a-to-mcp/dist",
+      "file_count": 34,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/a2a-to-mcp/node_modules/@a2a-js/sdk",
+      "file_count": 81,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/a2a-to-mcp/node_modules/@modelcontextprotocol/server",
+      "file_count": 85,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/a2a-to-mcp/node_modules/jose",
+      "file_count": 80,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/a2a-to-mcp/node_modules/zod",
+      "file_count": 681,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/a2a-to-mcp/src",
+      "file_count": 17,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/mcp-a2a/dist",
+      "file_count": 15,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/mcp-a2a/node_modules/@a2a-js/sdk",
+      "file_count": 96,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/mcp-a2a/node_modules/@hono/node-server",
+      "file_count": 29,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/mcp-a2a/node_modules/@modelcontextprotocol/hono",
+      "file_count": 11,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/mcp-a2a/node_modules/@modelcontextprotocol/server",
+      "file_count": 85,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/mcp-a2a/node_modules/hono",
+      "file_count": 574,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/mcp-a2a/node_modules/zod",
+      "file_count": 840,
+      "matches_pre_execution": true
+    },
+    {
+      "root": "external/mcp-a2a/src",
+      "file_count": 26,
+      "matches_pre_execution": true
+    }
+  ],
+  "source_checks": [
+    {
+      "source": "a2a-to-mcp",
+      "head": "58eff9da469bccdc432bf164662727947de646b4",
+      "expected_head": "58eff9da469bccdc432bf164662727947de646b4",
+      "head_matches": true,
+      "tracked_source_package_lock_unchanged": true,
+      "diff_stdout": "",
+      "diff_stderr": ""
+    },
+    {
+      "source": "mcp-a2a",
+      "head": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "expected_head": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "head_matches": true,
+      "tracked_source_package_lock_unchanged": true,
+      "diff_stdout": "",
+      "diff_stderr": ""
+    }
+  ],
+  "node_checks": [
+    {
+      "path": "C:\\Program Files\\nodejs\\node.exe",
+      "matches_pre_execution": true
+    },
+    {
+      "path": "C:\\Program Files\\nodejs\\node.exe",
+      "matches_pre_execution": true
+    },
+    {
+      "path": "C:\\Program Files\\nodejs\\node.exe",
+      "matches_pre_execution": true
+    },
+    {
+      "path": "C:\\Program Files\\nodejs\\node.exe",
+      "matches_pre_execution": true
+    }
+  ],
+  "recorded_pids": [
+    11416,
+    33892,
+    30080,
+    32780,
+    21164,
+    12744,
+    20692,
+    18708,
+    26424,
+    30760,
+    5420,
+    25212
+  ],
+  "active_captured_processes": [],
+  "process_query_exit": 0,
+  "process_query_stdout": "[]\n",
+  "process_query_stderr": "",
+  "process_query_command": "$observedProcessIds=@(11416,33892,30080,32780,21164,12744,20692,18708,26424,30760,5420,25212); $activeCapturedProcesses=@(Get-Process -Id $observedProcessIds -ErrorAction SilentlyContinue | Select-Object Id,ProcessName); ConvertTo-Json -InputObject $activeCapturedProcesses -Compress",
+  "driver": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\reference-bridge-observation\\source-runtime-audit-v1.driver.py",
+  "driver_sha256": "b70df4eade50b4c0dae10e1ab0b06ec2c4697670db4aee862c52751b3ea65c80",
+  "valid": true
+}

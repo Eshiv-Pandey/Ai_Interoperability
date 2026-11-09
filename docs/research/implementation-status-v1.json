@@ -1,0 +1,1819 @@
+{
+  "schema_version": "admission-benchmark-implementation-status/1",
+  "as_of": "2026-10-30",
+  "supervisor_target": "2026-10-31",
+  "required_this_week": [
+    "new admission algorithm",
+    "implemented benchmark",
+    "running demonstration"
+  ],
+  "paper_required_this_week": false,
+  "algorithm_requirement_retained": true,
+  "artifact_only_route_selected": false,
+  "target_project_completion_percent": 70,
+  "target_completion_rubric": "full_research_project_checkpoints",
+  "target_rubric_user_confirmation_date": "2026-10-30",
+  "target_rubric_reference": "checkpoints.md",
+  "target_progress_guide": "research-progress-target-v1.md",
+  "verified_project_completion_percent": 5,
+  "checkpoint_status_as_of": "2026-10-30",
+  "verified_implementation_percent": null,
+  "percentage_reason": "The user confirmed the full research-project rubric for the 70 percent target. The current tracker awards 5 percent for CP1 only; software implementation is reported by components without a separate invented percentage.",
+  "extension_granted": false,
+  "research_gate_progress_percent": 5,
+  "research_gate_meaning": "User-confirmed full research-project deliverable gates; no fractional implementation credit.",
+  "components": [
+    {
+      "id": "runtime_contract",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../src/interoperability/manifest.py",
+        "finite-model-v1.md",
+        "../../runs/admission-benchmark-software/v3/result.json"
+      ],
+      "limit": "Explicit finite model; source-to-model fidelity remains separate."
+    },
+    {
+      "id": "baseline_and_independent_checker",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../src/interoperability/baseline.py",
+        "../../src/interoperability/oracle.py",
+        "../../src/interoperability/refinement_oracle.py",
+        "../../runs/admission-benchmark-software/v3/result.json",
+        "../../src/interoperability/direct_goal_pruned_v2.py",
+        "direct-goal-pruning-fairness-v2.md",
+        "../../runs/direct-comparison-software/windows-v1/result.json"
+      ],
+      "limit": "Versioned goal-pruned direct comparator and independent negative-closure checker are implemented. Legacy language/topology primitives are shared and disclosed; novelty remains open."
+    },
+    {
+      "id": "candidate_mechanism",
+      "status": "implemented_adaptation_novelty_open",
+      "evidence": [
+        "admission-refinement-v1.md",
+        "../../src/interoperability/refinement.py",
+        "shared-lifting-design-v2.md",
+        "../../src/interoperability/refinement_shared_lift_v2.py"
+      ],
+      "limit": "Original refinement is preserved. Invocation-local completed-prefix and whole-frame relation reuse is implemented and focused-software verified; no established novelty or measured advantage."
+    },
+    {
+      "id": "candidate_code",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../src/interoperability/refinement.py",
+        "../../src/interoperability/admission_cli.py",
+        "../../runs/admission-demo/review-1/supported.json",
+        "../../src/interoperability/refinement_shared_lift_v2.py",
+        "../../runs/refinement-shared-lift-software/v2/validation-1/result.json",
+        "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0003-shared_lift/reply.json",
+        "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0001-shared_lift/reply.json",
+        "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0006-shared_lift/reply.json",
+        "../../src/interoperability/shared_admission_v1.py",
+        "../../runs/shared-admission-software/windows-v2/result.json"
+      ],
+      "limit": "Model-relative candidate and public-state controller implemented; fresh admitted application completion remains unverified."
+    },
+    {
+      "id": "candidate_independent_validation",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../tests/test_refinement.py",
+        "../../src/interoperability/refinement_oracle.py",
+        "../../runs/admission-benchmark-software/v3/result.json",
+        "../../tests/test_refinement_shared_lift_v2.py",
+        "../../runs/refinement-shared-lift-software/v2/validation-1/result.json",
+        "../../runs/refinement-shared-lift-software/v2/source-review-v1.json"
+      ],
+      "limit": "Original 32 refinement tests remain within their historical 69-test receipt. Shared lifting separately passed 23 captured focused tests and source review; no human acceptance or source-fidelity proof."
+    },
+    {
+      "id": "comparison_benchmark",
+      "status": "prior_v2_and_shared_lifting_engineering_pilot_executed",
+      "evidence": [
+        "../../src/interoperability/benchmark.py",
+        "../../tests/test_benchmark.py",
+        "../../runs/admission-demo/review-1/benchmark/summary.json",
+        "../../src/interoperability/direct_comparison_v2.py",
+        "../../runs/refinement-scaling/v1/result.json",
+        "../../runs/refinement-scaling/v2/plan.json",
+        "../../runs/refinement-scaling/v2/result.json",
+        "refinement-scaling-results-v2.md",
+        "../../src/interoperability/shared_lifting_comparison_v3.py",
+        "../../src/interoperability/benchmark_resources_v1.py",
+        "../../runs/shared-lifting-comparison-software/validation-1/result.json",
+        "../../runs/shared-lifting-comparison-software/source-review-v1.json",
+        "shared-lifting-comparison-v3.md",
+        "../../runs/shared-lifting-pilot/v1/result.json",
+        "shared-lifting-pilot-results-v1.md",
+        "../../runs/shared-lifting-pilot/independent-result-review-v1.json"
+      ],
+      "limit": "Completed v2 covers three original methods on 66 development variants at four budgets. Shared-lifting pilot covers 12 authored cases, four budgets and four arms; all bundles verified, independent result audit passed. No certified-coverage advantage, speed claim or qualified empirical study."
+    },
+    {
+      "id": "development_inputs",
+      "status": "implemented_development_only",
+      "evidence": [
+        "../../examples/refinement-development/manifest.json",
+        "../../examples/benchmark-development/recipe-v1.json",
+        "../../examples/benchmark-development/suite.json",
+        "../../scripts/generate_refinement_scaling_v1.py",
+        "../../runs/refinement-scaling/v2/inputs/manifest.json"
+      ],
+      "limit": "Eleven original authored recipes, 66 related scaling variants and four separate finite smoke examples. No held-out or second-domain qualification."
+    },
+    {
+      "id": "protocol_execution_harness",
+      "status": "implemented_bounded_controls",
+      "evidence": [
+        "agentops-bridge-results-v10.md",
+        "agentops-bridge-diagnostic-results-v12.md",
+        "pending-admission-live-results-v1.md",
+        "pending-admission-live-results-v2.md",
+        "pending-admission-live-results-v3.md"
+      ],
+      "limit": "Latest v4 native prerequisite failed readiness before client launch. Sixteen startup samples retained; forced SIGTERM/-15 with reaped child and empty group. B7 skipped; no fresh admitted application result. Import phase observed, root cause unproved."
+    },
+    {
+      "id": "candidate_benchmark_demo",
+      "status": "shared_single_launch_executed_and_replay_matched",
+      "evidence": [
+        "../../scripts/run_admission_demo.py",
+        "implementation-demo-v1.md",
+        "../../runs/admission-demo/review-1/result.json",
+        "../../runs/admission-demo/review-1/replay/summary.json",
+        "../../runs/admission-demo/supervisor-1/result.json",
+        "../../runs/admission-demo/supervisor-1/replay/summary.json",
+        "../../runs/shared-lifting-pilot/v1/result.json",
+        "../../runs/shared-lifting-pilot/independent-result-review-v1.json",
+        "shared-admission-command-v1.md",
+        "../../scripts/run_shared_admission_demo_v1.py",
+        "../../runs/admission-demo/shared-rehearsal-1/result.json",
+        "../../runs/admission-demo/shared-rehearsal-1/inspection.json",
+        "../../runs/admission-demo/shared-rehearsal-1/replay-comparison.json"
+      ],
+      "limit": "Eight-command shared-solver software rehearsal passed with eleven-case four-method comparison and captured replay equality. This is separate from live application qualification and human acceptance."
+    },
+    {
+      "id": "candidate_live_route_integration",
+      "status": "implemented_software_verified_live_control_failed",
+      "evidence": [
+        "../../src/interoperability/pending_admission.py",
+        "../../scripts/agentops_admission_controller_v1.mjs",
+        "../../scripts/agentops_admission_client_v1.mjs",
+        "pending-admission-source-map-v1.md",
+        "pending-admission-results-v1.md",
+        "../../runs/pending-admission-software/v1/result.json",
+        "../../runs/pending-admission-development/v2/result.json",
+        "pending-admission-live-results-v1.md",
+        "../../scripts/check_agentops_admitted_client_v1.py",
+        "../../scripts/agentops_admission_control_v1.py",
+        "pending-admission-live-results-v2.md",
+        "../../scripts/agentops_admission_control_v2.py",
+        "../../runs/agentops-admission-execution/v3/independent-review/result.json",
+        "pending-admission-live-results-v3.md"
+      ],
+      "limit": "Latest v4 native prerequisite failed readiness before client launch. Sixteen startup samples retained; forced SIGTERM/-15 with reaped child and empty group. B7 skipped; no fresh admitted application result. Import phase observed, root cause unproved."
+    },
+    {
+      "id": "supervisor_acceptance",
+      "status": "pending",
+      "evidence": [],
+      "limit": "No reviewer approval, project percentage or extension inferred."
+    },
+    {
+      "id": "upstream_service_operations_case_loader",
+      "status": "implemented_exported_independently_audited",
+      "evidence": [
+        "upstream-agentops-cases-v1.md",
+        "../../runs/upstream-agentops-cases/v1/result.json",
+        "../../runs/upstream-agentops-cases/software-v1-assessment.json",
+        "../../runs/upstream-agentops-cases/v1-independent-review.json"
+      ],
+      "limit": "Public source-derived development cases with overlap. Native runner and source-case grading software are implemented; held-out inputs, actual source-case outcomes, faithful native admission and a second domain remain unverified."
+    },
+    {
+      "id": "raw_adk_event_evidence_exporter",
+      "status": "implemented_software_verified_archived_native_export_audited",
+      "evidence": [
+        "agentops-raw-events-v1.md",
+        "../../runs/agentops-event-evidence/native-v12-v1/result.json",
+        "../../runs/agentops-event-evidence/software-v2/result.json",
+        "../../runs/agentops-event-evidence/native-v12-v1-independent-review.json"
+      ],
+      "limit": "Read-only evaluator evidence from the original historical one-step Restart inventory fixture; not executions of the 21 upstream cases, client observations, new native admission, a novel method or independent human acceptance."
+    },
+    {
+      "id": "public_a2a_event_normalizer",
+      "status": "implemented_software_verified_archived_export_independently_audited",
+      "evidence": [
+        "agentops-public-events-v1.md",
+        "../../runs/agentops-public-event-evidence/software-v1/result.json",
+        "../../runs/agentops-public-event-evidence/native-v12-N11-v1/result.json",
+        "../../runs/agentops-public-event-evidence/native-v12-N11-v1-independent-review.json"
+      ],
+      "limit": "Server-observed public protocol evidence from the historical Restart inventory fixture. Normalization and preservation only; no fresh native execution, upstream-case grade, method novelty or human acceptance."
+    },
+    {
+      "id": "public_private_event_binder",
+      "status": "implemented_software_verified_archived_comparison_independently_audited",
+      "evidence": [
+        "agentops-event-binding-v1.md",
+        "../../runs/agentops-event-binding/software-v1/result.json",
+        "../../runs/agentops-event-binding/native-v12-N11-v1/result.json",
+        "../../runs/agentops-event-binding/native-v12-N11-v1-independent-review.json"
+      ],
+      "limit": "Consistency of the independently audited historical raw/public copies; no source authentication, client receipt, causality, fresh native execution, upstream-case/effect grade, novelty or human acceptance."
+    },
+    {
+      "id": "historical_restart_effect_consistency_checker",
+      "status": "implemented_software_verified_archived_consistency_assessment_independently_audited",
+      "evidence": [
+        "agentops-restart-effects-v1.md",
+        "../../runs/agentops-restart-effects/software-v2/result.json",
+        "../../runs/agentops-restart-effects/native-v12-N11-v1/result.json",
+        "../../runs/agentops-restart-effects/native-v12-N11-v1-independent-review.json"
+      ],
+      "limit": "Logical consistency of a single bound historical clean-text inventory mock restart, including sampled state/audit effects. No general sanitizer, complete phase/causal proof, memory-store/terminal check, native source-case grade, live admission, source authentication or human acceptance."
+    },
+    {
+      "id": "native_source_case_runner",
+      "status": "implemented_software_verified_native_resource_gate_refused",
+      "evidence": [
+        "upstream-agentops-native-runner-v1.md",
+        "../../runs/upstream-agentops-native-software/runner-v3/result.json",
+        "../../runs/upstream-agentops-native-software/source-review-v1.json",
+        "../../runs/upstream-agentops-native/inventory-status-v1/result.json",
+        "../../runs/upstream-agentops-native/inventory-status-v2/result.json",
+        "../../runs/upstream-agentops-native/inventory-status-v2-independent-review.json"
+      ],
+      "limit": "Original 21-case path implemented; no original case/model/application execution or general benchmark grade. Fixed resource minimums unchanged."
+    }
+  ],
+  "last_demonstration": "../../runs/admission-demo/supervisor-1/result.json",
+  "latest_results": "shared-lifting-pilot-results-v1.md",
+  "verification": {
+    "tests_passed": 69,
+    "test_receipt": "../../runs/admission-benchmark-software/v3/result.json",
+    "recipe_cases": 11,
+    "candidate_reference_agreements": 11,
+    "candidate_supported": 4,
+    "candidate_unsupported": 3,
+    "candidate_unknown": 4,
+    "candidate_conclusive_certificates_valid": 7,
+    "captured_replay_passed": true,
+    "finite_smoke_cases": 4,
+    "live_candidate_application_runs": 0,
+    "latest_native_control_runs": 1,
+    "latest_native_strict_successes": 0,
+    "latest_candidate_cases_skipped": 1,
+    "supervisor_rehearsal_steps_passed": 10,
+    "supervisor_rehearsal_inputs_unchanged": true,
+    "supervisor_rehearsal_independent_audit": "../../runs/admission-demo/supervisor-1/independent-audit.json",
+    "comparison_v2_focused_tests_passed": 21,
+    "comparison_v2_test_receipt": "../../runs/direct-comparison-software/windows-v1/result.json",
+    "comparison_v2_test_receipt_provenance": "Transcribed earlier tool outputs; not raw test logs or a fresh rerun.",
+    "test_count_scope": "tests_passed and test_receipt refer to the original 69-test admission demo suite; later Linux and comparison suites are separately scoped."
+  },
+  "remaining_critical_work": [
+    "Present the eight-minute review using the passed shared-solver rehearsal and retained adverse pilot evidence; keep caching experimental and defaults unchanged",
+    "Wait for sustained external host-resource improvement before a fresh live allocation; unrelated apps or services still require permission before stopping",
+    "Investigate readiness under the fixed resource plan and the earlier post-asyncio stall if reached",
+    "Execute a separately allocated admitted control only after its native prerequisite qualifies; verify actual task/effect/process outcomes",
+    "Establish and review distinct algorithm contribution against strong comparators",
+    "Use the independently receipt-audited v2 source-case grader on fresh qualified retained source-case evidence; complete semantic/sanitizer and source-authenticated workflow observations",
+    "Implement and qualify the source-faithful AP2 human-present merchant-front-door/reference and original-client paths; complete its combined dependency lock, passive capture, reset/gold and independent evaluation inputs",
+    "Obtain actual supervisor assessment of completion and any extension"
+  ],
+  "latest_controller_results": "pending-admission-results-v1.md",
+  "controller_verification": {
+    "python_tests_passed": 57,
+    "python_adapter_tests": 25,
+    "node_tests_passed": 26,
+    "software_receipt": "../../runs/pending-admission-software/v1/result.json",
+    "retrospective_receipt": "../../runs/pending-admission-development/v2/result.json",
+    "historical_request_equivalence": true,
+    "source_mapped_files": 30,
+    "candidate_live_application_runs": 0,
+    "latest_focused_python_tests_passed": 188,
+    "latest_focused_node_tests_passed": 26,
+    "latest_software_receipt": "../../runs/agentops-admission-execution/v4/export/workspace/runs/agentops-admission-live-v1/phase-software/result.json",
+    "latest_group_status": "attempts_recorded",
+    "latest_native_status": "failed",
+    "latest_candidate_status": "skipped",
+    "latest_independent_export_review": "../../runs/agentops-admission-execution/v4/independent-review/result.json",
+    "latest_exported_workspace_files_verified": 850,
+    "latest_independent_export_review_status": "verified_recorded_outcome",
+    "latest_staged_inputs_verified": 726,
+    "latest_native_failure": "Fixture readiness deadline; sixteen samples show dependency imports/module initialization",
+    "latest_child_reaped_before_group_inspection": true,
+    "latest_process_group_empty": true,
+    "latest_cleanup_errors": 0,
+    "historical_v3_host_configuration_restored": true,
+    "historical_v3_host_restoration_receipt": "../../runs/agentops-admission-execution/v3/host-resource-adjustment/restoration.json",
+    "latest_host_configuration_changed": false
+  },
+  "latest_live_results": "pending-admission-live-results-v3.md",
+  "weekly_plan": "three-day-implementation-plan-v2.md",
+  "comparison_v2_verification": {
+    "status": "passed",
+    "receipt": "../../runs/refinement-scaling/v2/result.json",
+    "case_count": 66,
+    "budgets": [
+      32,
+      256,
+      4096,
+      100000
+    ],
+    "methods": [
+      "baseline",
+      "direct_pruned",
+      "candidate"
+    ],
+    "worker_invocations": 1591,
+    "accepted_certificate_checks": 535,
+    "rejected_certificate_checks": 0,
+    "worker_errors": 0,
+    "frozen_inputs_package_and_plan_unchanged": true,
+    "largest_budget_outcomes_per_method": {
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12
+    },
+    "candidate_certified_by_budget": {
+      "32": 24,
+      "256": 50,
+      "4096": 53,
+      "100000": 54
+    },
+    "direct_pruned_certified_by_budget": {
+      "32": 20,
+      "256": 54,
+      "4096": 54,
+      "100000": 54
+    },
+    "independent_audit_status": "verified",
+    "claim_limit": "Related authored development variants; no general superiority, novelty, application ground truth or domain qualification.",
+    "independent_audit": "../../runs/refinement-scaling/v2/independent-review/result.json",
+    "independent_audit_files": 8451,
+    "legacy_v1_outcome_differences": 0
+  },
+  "startup_diagnostics_verification": {
+    "status": "executed_valid_partial_readiness_missing",
+    "tests_passed": 11,
+    "receipt": "../../runs/agentops-startup-software/windows-v1/result.json",
+    "source": "../../scripts/agentops_startup_diagnostics_v1.py",
+    "wrapper": "../../scripts/serve_agentops_bridge_diagnostic_v4.py",
+    "application_launches": 1,
+    "cause_established": false,
+    "next_dependency": "Prospective resource decision and fresh plan before a new allocation; v4 is consumed and must not be rerun.",
+    "scope_note": "agentops-startup-diagnostics-v1.md",
+    "independent_review": "Source review passed; independent v4 export audit verified the recorded readiness failure. No candidate live application success.",
+    "completed_startup_samples": 16,
+    "live_result": "pending-admission-live-results-v3.md",
+    "sample_analysis": "../../runs/agentops-admission-execution/v4/startup-analysis-v1.json",
+    "candidate_application_launches": 0,
+    "host_configuration_changed": false
+  },
+  "startup_pipeline_verification": {
+    "status": "software_verified_live_prerequisite_failed",
+    "prospective_plan": "pending-admission-live-plan-v3.md",
+    "initial_receipt": "../../runs/agentops-startup-pipeline-software/windows-v1/result.json",
+    "initial_tests_passed": 62,
+    "initial_windows_symlink_skips": 3,
+    "final_changed_tests_passed": 20,
+    "final_receipt": "../../runs/agentops-startup-pipeline-software/windows-v2/result.json",
+    "outer_recorder": "../../runs/agentops-admission-execution/tools-v3/record_attempt.py",
+    "outer_recorder_sha256": "43a1850d2e8de18f7e61b4b14f056b58bcb1546c39d84d9fcddd224217bc2720",
+    "source_review": "Independent AI review; no unresolved blocker, not human approval.",
+    "new_allocation_staged": true,
+    "new_application_launches": 1,
+    "linux_python_tests_passed": 188,
+    "linux_python_tests_skipped": 0,
+    "linux_node_tests_passed": 26,
+    "linux_receipt": "../../runs/agentops-admission-execution/v4/export/workspace/runs/agentops-admission-live-v1/phase-software/result.json",
+    "independent_export_review": "../../runs/agentops-admission-execution/v4/independent-review/result.json"
+  },
+  "latest_prelaunch_resource_probe": {
+    "receipt": "../../runs/agentops-admission-execution/v4-resource-probe/result.json",
+    "status": "failed_before_any_application",
+    "command": "wsl.exe -d Ubuntu -- /bin/true",
+    "error": "Wsl/Service/CreateInstance/CreateVm/HCS/0x800705aa",
+    "host_configuration_changed": false,
+    "application_launches": 0,
+    "followup_receipt": "../../runs/agentops-admission-execution/v4-resource-probe-2/result.json",
+    "followup_status": "passed_then_v4_executed"
+  },
+  "shared_lifting_v2": {
+    "status": "implemented_focused_verified_engineering_pilot_completed",
+    "design": "shared-lifting-design-v2.md",
+    "source": "../../src/interoperability/refinement_shared_lift_v2.py",
+    "source_sha256": "927538f7ddcb21120913c6c4257754b65a45703db384eec8cd6a28ba9e9b280b",
+    "tests": "../../tests/test_refinement_shared_lift_v2.py",
+    "tests_passed": 23,
+    "test_receipt": "../../runs/refinement-shared-lift-software/v2/validation-1/result.json",
+    "source_review": "../../runs/refinement-shared-lift-software/v2/source-review-v1.json",
+    "source_review_status": "no_blocking_source_findings",
+    "claim_limit": "Invocation-local memoization engineering with completed 12-case pilot. Relation reuse increases charged work on the stress case; no certified-coverage advantage, speed claim or established novelty. Experimental; defaults unchanged.",
+    "engineering_pilot_executed": true,
+    "new_66_case_matrix_executed": false,
+    "engineering_pilot_receipt": "../../runs/shared-lifting-pilot/v1/result.json",
+    "experimental": true,
+    "defaults_changed": false
+  },
+  "response_binding_followup": {
+    "as_of": "2026-10-29",
+    "status": "source_assessed_no_new_extension_justified",
+    "note": "response-binding-design-v1.md",
+    "existing_later_public_binding_and_revalidation": true,
+    "residual_wrapper_recommended": false,
+    "future_response_admission_model_frozen": false,
+    "new_algorithm_implemented": false,
+    "claim_limit": "A possible response-parametric preflight capability needs justified response/effect relations and independent proof semantics; copied fields alone do not supply them."
+  },
+  "latest_startup_followup": {
+    "as_of": "2026-10-29",
+    "status": "source_import_boundaries_identified_host_resources_still_insufficient",
+    "note": "agentops-startup-import-boundaries-v1.md",
+    "evidence_scope": "Captured source/stack inspection and current-turn Windows tool observations; no retained raw host-command files are claimed.",
+    "root_observed_free_physical_kib": 15652,
+    "root_observed_total_physical_kib": 6139972,
+    "running_wsl_inventory": "Read-only query returned exit 0 with empty output; point-in-time observation only.",
+    "new_application_launches": 0,
+    "new_wsl_runtime_launches": 0,
+    "host_or_application_settings_changed": false,
+    "root_cause_established": false,
+    "next_dependency": "Measurable host-resource improvement and a new prospective allocation; do not rerun consumed live outputs."
+  },
+  "next_live_outputs": {
+    "stage": "../../runs/agentops-admission-execution/v6",
+    "parent_invocation": "../../runs/agentops-admission-execution/v6-invocation",
+    "both_unused": true,
+    "prerequisite": "Sustained external resource improvement and a new prospective resource decision; v5-invocation is consumed, v5 stage was never created."
+  },
+  "shared_lifting_comparison_v3": {
+    "status": "implemented_focused_verified_engineering_pilot_completed",
+    "guide": "shared-lifting-comparison-v3.md",
+    "source": "../../src/interoperability/shared_lifting_comparison_v3.py",
+    "source_sha256": "d5175683cedecd7f901136086b3294f972d9a19524e4bcd4e416b9120542e100",
+    "resource_source": "../../src/interoperability/benchmark_resources_v1.py",
+    "resource_source_sha256": "b58eaec738a7cd69a54dbd105465c1544390e3de51a3737a0eeea1ee6575fdf9",
+    "test_sources": [
+      "../../tests/test_benchmark_resources_v1.py",
+      "../../tests/test_shared_lifting_comparison_v3.py"
+    ],
+    "resource_tests_passed": 3,
+    "comparison_tests_passed": 5,
+    "test_receipt": "../../runs/shared-lifting-comparison-software/validation-1/result.json",
+    "captured_two_profile_run_and_replay": true,
+    "source_review": "../../runs/shared-lifting-comparison-software/source-review-v1.json",
+    "source_review_status": "no_blocking_source_findings",
+    "live_application_executed": false,
+    "measurement_scope": "Overlapping timings are not additive. Process peaks include interpreter/import/input overhead and are maximized across workers, not summed or called solver-only memory.",
+    "engineering_pilot_executed": true,
+    "new_66_case_matrix_executed": false,
+    "engineering_pilot_receipt": "../../runs/shared-lifting-pilot/v1/result.json"
+  },
+  "shared_lifting_engineering_pilot": {
+    "status": "completed_independently_audited",
+    "case_count": 12,
+    "inputs": "All eleven original recipe examples plus motivating scale-0031",
+    "budgets": [
+      32,
+      256,
+      4096,
+      100000
+    ],
+    "methods": [
+      "baseline",
+      "direct_pruned",
+      "candidate",
+      "shared_lift"
+    ],
+    "executed": true,
+    "claim_limit": "Selected authored 12-case engineering pilot, not a new 66-case matrix or held-out study. No certified-coverage advantage or speed claim. Caching stays experimental; defaults unchanged.",
+    "engineering_pilot_executed": true,
+    "new_66_case_matrix_executed": false,
+    "receipt": "../../runs/shared-lifting-pilot/v1/result.json",
+    "results": "shared-lifting-pilot-results-v1.md",
+    "finished_at": "2026-10-29T00:30:03.662022+00:00",
+    "commands_returned_zero": 8,
+    "all_four_bundles_verified": true,
+    "guards_unchanged": true,
+    "worker_invocations": 349,
+    "accepted_certificate_checks": 109,
+    "rejected_certificate_checks": 0,
+    "algorithm_worker_errors": 0,
+    "certificate_check_errors": 0,
+    "certified_counts_over_12_by_budget": {
+      "32": {
+        "baseline": 6,
+        "direct_pruned": 6,
+        "candidate": 6,
+        "shared_lift": 0
+      },
+      "256": {
+        "baseline": 8,
+        "direct_pruned": 8,
+        "candidate": 7,
+        "shared_lift": 6
+      },
+      "4096": {
+        "baseline": 8,
+        "direct_pruned": 8,
+        "candidate": 7,
+        "shared_lift": 7
+      },
+      "100000": {
+        "baseline": 8,
+        "direct_pruned": 8,
+        "candidate": 8,
+        "shared_lift": 8
+      }
+    },
+    "largest_budget_outcomes_per_method": {
+      "supported": 4,
+      "unsupported": 4,
+      "unknown": 4
+    },
+    "independent_result_audit_status": "passed",
+    "stress_case": {
+      "id": "scale-0031",
+      "candidate": {
+        "relation_checks": 1024,
+        "work_units": 5566,
+        "abstract_paths": 256
+      },
+      "shared_lift": {
+        "relation_checks": 16,
+        "work_units": 14773,
+        "abstract_paths": 256
+      },
+      "direct_pruned": {
+        "argument_assignments": 16,
+        "work_units": 134
+      }
+    },
+    "independent_result_audit": "../../runs/shared-lifting-pilot/independent-result-review-v1.json",
+    "independent_result_audit_sha256": "fbf07438a0f58aa921a309f7a27705e45c76dc73b6f3d97c8608b71e634e69b7",
+    "independent_audit_manifest_files": 1897,
+    "independent_audit_allocation_files_unchanged": 1989,
+    "independent_audit_evaluation_workers": 240,
+    "independent_audit_certificate_workers": 109,
+    "independent_audit_memory_observations": 349,
+    "independent_audit_missing_memory_observations": 0,
+    "independent_audit_human_approval_established": false,
+    "review_examples": [
+      {
+        "profile_id": "correlated-prefix-refinement",
+        "job_input": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0003-shared_lift/input.json",
+        "reply": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0003-shared_lift/reply.json",
+        "decision": "supported",
+        "certificate_kind": "recipe-path",
+        "certificate_reply": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0003-shared_lift-certificate/reply.json",
+        "certificate_accepted": true
+      },
+      {
+        "profile_id": "fixed-text-shape-obstruction",
+        "job_input": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0001-shared_lift/input.json",
+        "reply": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0001-shared_lift/reply.json",
+        "decision": "unsupported",
+        "certificate_kind": "refinement-exhaustion",
+        "certificate_reply": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0001-shared_lift-certificate/reply.json",
+        "certificate_accepted": true
+      },
+      {
+        "profile_id": "opaque-serialization",
+        "job_input": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0006-shared_lift/input.json",
+        "reply": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0006-shared_lift/reply.json",
+        "decision": "unknown",
+        "reason": "unresolved_relation_or_recipe",
+        "certificate_kind": null
+      }
+    ]
+  },
+  "next_shared_demonstration": {
+    "output": "../../runs/admission-demo/shared-supervisor-1",
+    "unused_at_document_update": true,
+    "executed": false,
+    "entrypoint": "interoperability.shared_lifting_comparison_v3",
+    "source_package": "../../src",
+    "case_count": 11,
+    "guide": "shared-lifting-comparison-v3.md"
+  },
+  "comparison_v2_results": "refinement-scaling-results-v2.md",
+  "shared_admission_command": {
+    "status": "implemented_focused_verified",
+    "guide": "shared-admission-command-v1.md",
+    "source": "../../src/interoperability/shared_admission_v1.py",
+    "source_sha256": "7c37baa751bb8f0e437b02e87b9da47db011449be13a7256dcf43b08ca4cd3ec",
+    "methods": [
+      "shared_lift",
+      "direct_pruned"
+    ],
+    "explicit_work_budget_and_clock": true,
+    "tests_passed": 11,
+    "tests_skipped": 0,
+    "test_receipt": "../../runs/shared-admission-software/windows-v2/result.json",
+    "preliminary_test_receipt": "../../runs/shared-admission-software/windows-v1/result.json",
+    "source_review": "../../runs/shared-admission-software/source-review-v1.json",
+    "source_review_status": "no_unresolved_source_findings",
+    "existing_cli_or_solver_defaults_changed": false,
+    "claim_limit": "Single supplied-model interface; malformed replies and rejected certificates fail closed. No fresh live application or novelty claim."
+  },
+  "shared_admission_rehearsal": {
+    "status": "executed_replay_matched_independently_audited",
+    "receipt": "../../runs/admission-demo/shared-rehearsal-1/result.json",
+    "inspection": "../../runs/admission-demo/shared-rehearsal-1/inspection.json",
+    "launcher": "../../scripts/run_shared_admission_demo_v1.py",
+    "launcher_sha256": "59be1ab11b61196ea5a2c6dcfa8b22bd62bdbc40dc337737ead692c1eb78605f",
+    "finished_at_utc": "2026-10-29T02:06:43.009969+00:00",
+    "commands_passed": 8,
+    "single_profile_examples": [
+      "supported",
+      "unsupported",
+      "opaque_unknown",
+      "work_budget_exhausted_unknown"
+    ],
+    "benchmark_cases": 11,
+    "methods": [
+      "baseline",
+      "direct_pruned",
+      "candidate",
+      "shared_lift"
+    ],
+    "work_budget": 100000,
+    "evaluation_clock": 100,
+    "source_and_inputs_unchanged": true,
+    "outcomes_per_method": {
+      "supported": 4,
+      "unsupported": 3,
+      "unknown": 4,
+      "accepted_certificates": 7
+    },
+    "workers_per_bundle": 83,
+    "accepted_certificate_workers_per_bundle": 28,
+    "benchmark_and_replay_verified": true,
+    "replay_algorithm_results_matched": 44,
+    "replay_reference_results_matched": 11,
+    "excluded_result_fields": [
+      "stats.elapsed_ns"
+    ],
+    "replay_comparison": "../../runs/admission-demo/shared-rehearsal-1/replay-comparison.json",
+    "independent_result_audit_status": "passed",
+    "application_requests": 0,
+    "live_model_calls": 0,
+    "claim_limit": "Eleven original authored cases; separate from the twelve-case pilot and sixty-six-case matrix. No live task/effect qualification, speed advantage, novelty or 70 percent claim.",
+    "independent_result_audit": "../../runs/admission-demo/shared-rehearsal-1-independent-review.json",
+    "independent_result_audit_sha256": "68efe747124a2a7cbf659baf6f08eb9ddcd4d0029eed51913794e4bac52dcfb0",
+    "independent_audit_manifest_files": 906,
+    "independent_audit_allocation_files_unchanged": 975,
+    "independent_audit_discrepancies": 0,
+    "independent_audit_human_approval_established": false
+  },
+  "next_single_launch_demonstration": {
+    "output": "../../runs/admission-demo/shared-rehearsal-2",
+    "unused_at_document_update": true,
+    "executed": false,
+    "launcher": "../../scripts/run_shared_admission_demo_v1.py",
+    "command": "python -B scripts/run_shared_admission_demo_v1.py --output runs/admission-demo/shared-rehearsal-2 --replay",
+    "guide": "shared-admission-command-v1.md"
+  },
+  "latest_resource_decision": {
+    "as_of": "2026-10-29",
+    "status": "withheld_before_stage",
+    "note": "pending-admission-resource-decision-v5.md",
+    "plan": "../../runs/agentops-admission-execution/v5-invocation/plan.json",
+    "receipt": "../../runs/agentops-admission-execution/v5-invocation/result.json",
+    "prospective_available_physical_minimum_bytes": 1073741824,
+    "prospective_available_commit_minimum_bytes": 2147483648,
+    "prestage_samples_passed": 0,
+    "prestage_samples": 2,
+    "staging_attempts": 0,
+    "application_launches": 0,
+    "wsl_runtime_launches": 0,
+    "v5_invocation_consumed": true,
+    "v5_stage_created": false,
+    "source_and_host_configuration_unchanged": true,
+    "next_dependency": "Sustained external resource improvement before a fresh allocation; do not relax the stop rule or repeat staging.",
+    "later_single_host_observation": {
+      "observed_at_utc": "2026-10-29T15:03:36.389958+00:00",
+      "api": "GlobalMemoryStatusEx",
+      "available_physical_bytes": 482201600,
+      "available_commit_bytes": 4300140544,
+      "single_sample_meets_existing_rules": false,
+      "raw_capture_retained": false,
+      "evidence_scope": "Read-only current-turn tool observation after offline validation/audits; physical counter fails the 1 GiB minimum. No staging, WSL-runtime or application launch. User said they would close unused apps; no unrelated workload was stopped."
+    },
+    "user_resource_action_reply": "User will close unused apps; no agent stopped an unrelated app/service and eligibility still requires measurement."
+  },
+  "ap2_procurement_followup": {
+    "status": "human_present_source_path_reassessed_public_observer_implemented_no_native_qualification",
+    "note": "ap2-procurement-source-screen-v1.md",
+    "commit": "e1ea56db72a6385bce3e5c1112b3a56ce60acb43",
+    "source_files_acquired": 134,
+    "source_bytes": 651106,
+    "acquisition": "source-evidence/ap2-procurement-screen-v1/source-result.json",
+    "pinned_sdk_source_acquisition": "source-evidence/ap2-procurement-screen-v1/adk-task-mapping-v1/result.json",
+    "task_mapping_followup": "source-evidence/ap2-procurement-screen-v1/adk-task-mapping-v1/followup-result.json",
+    "human_present_a2a_otp_source_path": true,
+    "human_present_real_order_commit_established": false,
+    "mcp_backed_original_a2a_frontdoor_source_path": true,
+    "mcp_local_token_order_mutation_source_supported": true,
+    "same_original_task_purchase_established": false,
+    "native_or_bridge_runs": 0,
+    "model_calls": 0,
+    "application_dependencies_installed": true,
+    "claim_limit": "Original HP synthetic receipt/credential path and disclosed scripted merchant-front-door design are separate from whole ADK-web shopper and the MCP shopping variant. Public observer software checks supplied observations only. Source authentication, complete dependency lock, native task continuation, signature/credential/reset/semantic qualification and independent domain/corpus validity remain open.",
+    "source_reassessment": "ap2-human-present-source-reassessment-v1.md",
+    "source_reassessment_sha256": "15f43bf7c99442cfcc473c88342de4de774dce12e39a2fb87068d6cca605eb7a",
+    "native_runner_design": "ap2-human-present-native-runner-design-v1.md",
+    "native_runner_design_sha256": "30bed1d43174923d99bb52e44845c942676c95040163f91cd600a3b8c2ae6f74",
+    "dependency_plan": "ap2-human-present-dependency-plan-v1.md",
+    "dependency_plan_sha256": "f96bcd137624de5ad4baf823d2c59c89af2165c12ea90c2c11e6483bf40ede03",
+    "selected_x402_commit": "125db5526a965d2325459d1a9df2e274a7e42396",
+    "dependency_source_verification": "source-evidence/ap2-x402-dependency-screen-v1/source-verification-v2.json",
+    "dependency_source_verification_sha256": "a070e92809986420a56c96b4b11cc0a8cc55fb58ef0c3103e4ea2ae882996e56",
+    "human_present_credential_transaction_lookup_source_supported": true,
+    "human_present_synthetic_receipt_source_supported": true,
+    "real_money_debit_ledger_required_by_current_rubric": false,
+    "whole_adk_web_shopping_qualified": false,
+    "scripted_merchant_frontdoor_native_qualified": false,
+    "combined_dependency_lock_established": false,
+    "public_observer": {
+      "guide": "ap2-human-present-public-assessor-v1.md",
+      "module": "../../src/interoperability/ap2_hp_public_assessment_v1.py",
+      "module_sha256": "2d675b1043671dc3319ce55df43b7b1bd3a967c650a35aff1a50e6fc47d5345e",
+      "design": "ap2-human-present-public-assessor-design-v1.md",
+      "source_review": "ap2-human-present-public-assessor-source-review-v1.md",
+      "source_review_sha256": "4083d03d8d14688ff4473015f4991913f61c24a8c0b4b57db6cda2cef409c5f9",
+      "receipt": "../../runs/ap2-hp-public-software/validation-v1/result.json",
+      "receipt_sha256": "a92a1c01455492c63b75f38b03a0a412c7c611fc33ea8e4ea12744e60295492e",
+      "status": "software_passed_independently_receipt_audited",
+      "tests_passed": 33,
+      "primary_test_skips": 0,
+      "independent_review": "../../runs/ap2-hp-public-software/validation-v1-independent-review.json",
+      "independent_review_sha256": "eb892d9e6e97090bab6ed1e9b6429ea6bdab17c66b10f912afd559d04ff75ea7",
+      "independent_review_status": "verified",
+      "independent_checks_passed": 87,
+      "native_qualification_established": false,
+      "aggregate_task_grade": null
+    },
+    "dependency_source_independent_review": "../../runs/ap2-dependency-source-review/v1/result.json",
+    "dependency_source_independent_review_sha256": "d6c349dd7ea50462ab9c1b0a0293d683fb313b8affc1a2218b634b8c9db13a79",
+    "dependency_source_independent_review_status": "verified",
+    "dependency_source_independent_checks_passed": 153,
+    "dependency_source_independent_review_guide": "ap2-human-present-dependency-independent-review-v1.md",
+    "complete_pinned_x402_package": {
+      "guide": "ap2-human-present-x402-package-v1.md",
+      "manifest": "source-evidence/ap2-x402-package-v1/manifest.json",
+      "manifest_sha256": "74db7661df834b7d05371d84aa4a6f0e6d9d243f344204923cef65e15b449d07",
+      "package_files": 23,
+      "package_bytes": 672591,
+      "supplementary_root_license_files": 1,
+      "postcapture_verification": "../../runs/ap2-dependency-source-review/package-v1/result.json",
+      "postcapture_verification_sha256": "76e31f53bcf7cadd31efe6b2b62b2f61cb0d28bba0ee2edbe1dad0cbb5b8bc32",
+      "postcapture_checks_passed": 69,
+      "postcapture_review_scope": "Capture-agent source recheck, not separate peer or human audit",
+      "combined_lock_established": false,
+      "wheel_build_executed": true,
+      "environment_installed": true
+    },
+    "bridge_profile_source_gaps": "ap2-bridge-profile-source-gaps-v1.md",
+    "bridge_profile_source_gaps_sha256": "228e09dfb96d1ee098943652fee2fa1e906cd1987ca7bec7c04379a8e9d6d715",
+    "reference_preparation": {
+      "status": "pure_planner_and_planning_cli_software_verified_bounded_receipt_audited",
+      "guide": "ap2-human-present-reference-plan-v1.md",
+      "guide_sha256": "1e55d7aee5cb09e0d924981262b0a4bf99acd52523f6e22f1550e58df5ce475e",
+      "module": "../../src/interoperability/ap2_hp_reference_plan_v1.py",
+      "module_sha256": "4699f8aba9c8adfdc6c07ee8558b9ea356d64f1a80eb5d07f64e586f5aa0a8e0",
+      "planning_cli": "../../scripts/ap2_hp_reference_client_v1.py",
+      "planning_cli_sha256": "7258d93c0f8951f28178e2ee74d1c7ea16a052e7894bfcb003b0c12ae2904d96",
+      "source_review": "ap2-human-present-reference-plan-source-review-v1.md",
+      "source_review_sha256": "618922a474cce76161978ddd5d15f7e5b4d5c3361d300f4ae08f61ce759bd8fc",
+      "software_validation": {
+        "reference-plan-v1": {
+          "receipt": "../../runs/ap2-hp-reference-software/reference-plan-v1/result.json",
+          "receipt_sha256": "2fa78c465bbfae37523cca363439dbe7784dbb500353e49fd40fa353000ce134",
+          "tests_passed": 24,
+          "primary_test_skips": 0,
+          "independent_review": "../../runs/ap2-hp-reference-software/reference-plan-v1-independent-review.json",
+          "independent_review_sha256": "73a6e7adeac7d48682d033dc793a518f95d9c712384b47525386f2aa1638396c",
+          "independent_review_status": "verified_bounded_retained_receipt",
+          "independent_checks_passed": 44,
+          "capture_driver_or_plan_retained": false,
+          "isolated_captured_replay_proven": false
+        },
+        "reference-cli-v1": {
+          "receipt": "../../runs/ap2-hp-reference-software/reference-cli-v1/result.json",
+          "receipt_sha256": "3370f6b290b189bba8fa1a63b4b7824a13e90e131a0382d659ef05d8409ec139",
+          "tests_passed": 3,
+          "primary_test_skips": 0,
+          "independent_review": "../../runs/ap2-hp-reference-software/reference-cli-v1-independent-review.json",
+          "independent_review_sha256": "457043d45c372461cb4c50ef328c9359741dce878715b9a1cee83c86f0d5341b",
+          "independent_review_status": "verified_bounded_retained_receipt",
+          "independent_checks_passed": 36,
+          "capture_driver_or_plan_retained": false,
+          "isolated_captured_replay_proven": false
+        }
+      },
+      "native_execution_enabled": false,
+      "bootstrap_environment_usage_contract_implemented": false,
+      "complete_native_runner_implemented": false,
+      "aggregate_task_grade": null,
+      "capture_scope": "Each suite retains three own code/test copies; planner additionally binds four current/before-after original file hashes without copies. No retained capture driver/plan or isolated snapshot replay is established.",
+      "claim_limit": "Pure source-derived prelude/approval/message planning on supplied observations only; no original source/SDK/key/client/model execution or domain qualification. Native bootstrap/dependency/usage/ownership/passive capture and actual task/effect/reference validity remain open."
+    },
+    "environment_preparation": {
+      "status": "runtime_installed_source_identity_verified_with_documented_docs_collisions",
+      "guide": "ap2-human-present-environment-preparation-v1.md",
+      "guide_sha256": "698fba5d86970d1b6842fb637c1efbc3528ba54b655f8ba98e4a40d9f1351d8e",
+      "input_export": {
+        "receipt": "../../runs/ap2-dependency-resolution/input-v1/result.json",
+        "sha256": "c18051856084954d1d08b24701d7ab2fc981ed9f9a44441e7fef84c8890ab12d"
+      },
+      "input_independent_review": {
+        "receipt": "../../runs/ap2-dependency-resolution/input-v1-independent-review.json",
+        "sha256": "39198e478381c4567345461441beb10e93296404008232102806aeab68f4adcc"
+      },
+      "runtime_dryrun": {
+        "receipt": "../../runs/ap2-dependency-resolution/windows-cp313-dry-run-v1/result.json",
+        "sha256": "886f1505ee37355fb09e45377fda65b11ecc77595c57b8e397d9786abec176ba"
+      },
+      "runtime_distributions": 184,
+      "backend_dryrun": {
+        "receipt": "../../runs/ap2-dependency-resolution/build-backend-dry-run-v1/result.json",
+        "sha256": "8f9eaa97e2c9365bcfc2c78035a59cda676b46aa29798435dace73c224633b0e"
+      },
+      "backend_distributions": 7,
+      "runtime_artifact_lock": {
+        "receipt": "../../runs/ap2-dependency-resolution/indexed-wheel-lock-v1/manifest.json",
+        "sha256": "d1ed29b81ae3dfd6bc4d89d95d2130e88c0e287a320c77032cbf80888abde106"
+      },
+      "backend_artifact_lock": {
+        "receipt": "../../runs/ap2-dependency-resolution/build-backend-wheel-lock-v1/manifest.json",
+        "sha256": "d304cf5a3c8671bccd52fa3c4d5a7b357792aa25c5973a2ae8c2f24946da4078"
+      },
+      "wheel_byte_capture": {
+        "receipt": "../../runs/ap2-environment-preparation/wheel-store-v1/manifest.json",
+        "sha256": "ac4e3883891a108b141eed6f5bf4cb1e2b97439316f003bd6baeb89ca7ff8689"
+      },
+      "unique_wheels": 189,
+      "verified_wheels": 189,
+      "wheel_bytes": 111982465,
+      "preallocation_failure": {
+        "receipt": "../../runs/ap2-environment-preparation/wheel-fetch-preallocation-failure-v1/result.json",
+        "sha256": "15ecdf60c28e50d1aa79c67860b5001e3d6df621e1a624901a9becfae8039fea"
+      },
+      "supplementary_original_cert_assets": {
+        "receipt": "source-evidence/ap2-hp-cert-assets-v1/manifest.json",
+        "sha256": "ee7016f043e5334bfd08dc65cc61cda503d233b9c455382e4f055cf6c970f105",
+        "files": 2,
+        "git_blob_identities_match": true
+      },
+      "source_stage": {
+        "receipt": "../../runs/ap2-environment-preparation/source-stage-v1/manifest.json",
+        "sha256": "78828cea09bdd387230a2fc0772b542beabfe07b72c3a2f24b24c02c1a2f4463"
+      },
+      "ap2_staged_files": 136,
+      "x402_staged_files": 24,
+      "source_wheels_built": true,
+      "environment_installed": true,
+      "original_application_imported": false,
+      "native_application_executed": false,
+      "model_requests": 0,
+      "complete_combined_environment_established": false,
+      "claim_limit": "Installed source/wheel/file identity and dependency consistency with five explicit documentation collisions; original imports, real provider-usage guard, native task/domain/corpus qualification remain open.",
+      "first_local_build": {
+        "receipt": "../../runs/ap2-environment-preparation/local-build-v1/result.json",
+        "sha256": "bd9d4e52a4305de811b720f1fa92919434462a252fe33dad9f574e93a4db0852",
+        "status": "incomplete",
+        "backend_environment_installed": true,
+        "backend_distributions": 7,
+        "dynamic_hooks_passed": 3,
+        "source_builds_attempted": 1,
+        "source_wheels_produced": 0,
+        "failure": "Offline backend guard denied subprocess.Popen during AP2 backend import",
+        "owned_job_authority_remaining": false,
+        "pristine_backend_inputs_unchanged": 171,
+        "source_copy_originals_unchanged": 296,
+        "exact_denied_call_attribution_established": false,
+        "original_application_imported": false,
+        "model_requests": 0
+      },
+      "successful_local_build": {
+        "receipt": "../../runs/ap2-environment-preparation/local-build-v2/result.json",
+        "sha256": "554f4cea03f8153daac9b65117c445581bb725e1d3eea9ce8f93d96f7116c7d0",
+        "schema": "ap2-isolated-local-wheel-build-result/2",
+        "source_wheels": 3,
+        "commands_passed": 12,
+        "python_modules_source_exact": 129,
+        "original_requires_dist_and_python_exact": true,
+        "pristine_backend_inputs_unchanged": 177,
+        "source_copy_originals_unchanged": 296,
+        "original_agent_json_omissions": 3,
+        "source_root_retains_agent_json": true,
+        "owned_job_authority_remaining": false,
+        "allowed_windows_version_probes_observed": 0,
+        "prior_failure_cause_confirmed": false,
+        "original_application_imported": false,
+        "model_requests": 0,
+        "independent_review": {
+          "receipt": "../../runs/ap2-environment-preparation/local-build-v2-independent-review.json",
+          "sha256": "fad56b9961c00cd0f0ec8208179f74060ace887ea2fa61e65d4ceaca2c988a46",
+          "checks_passed": 9,
+          "replays": 0
+        }
+      },
+      "runtime_installation": {
+        "prepared_plan": {
+          "receipt": "../../runs/ap2-environment-preparation/installed-environment-v1/plan.json",
+          "sha256": "90595ab31a3198d7cb7e811aa2ee35fe83fd2497f12a5cf6fdfd48312f4bfb0b"
+        },
+        "first_prepare_failure": {
+          "receipt": "../../runs/ap2-environment-preparation/installer-prepare-failure-v1/failure.json",
+          "sha256": "ae34a0edc10a8cc029fd3df6262770234fee979c16f49e87b21ab750b8ba24cd"
+        },
+        "initial_install_result": {
+          "receipt": "../../runs/ap2-environment-preparation/installed-environment-v1/result.json",
+          "sha256": "a0da20bed66d81c372affa54c40703d382d09bdbff911fd3419e7ea21a315608"
+        },
+        "installer_report": {
+          "receipt": "../../runs/ap2-environment-preparation/installed-environment-v1/installer-report.json",
+          "sha256": "6b692f4235601e6c54e29962399df57f5b5d14afad2419964ee11305fc3c137b"
+        },
+        "read_only_assessment": {
+          "receipt": "../../runs/ap2-environment-preparation/installed-assessment-v1/result.json",
+          "sha256": "3a18891491b0fc126ecb085ac4a961634b6d25ec35b9902216f3ddbc4a165bb7"
+        },
+        "environment_manifest": {
+          "receipt": "../../runs/ap2-environment-preparation/installed-assessment-v1/environment-manifest.json",
+          "sha256": "4d6efdd2e4003b82517f45aead140a7afd6f1e180b3ce518904d87c96e5adeb5"
+        },
+        "total_distributions": 187,
+        "environment_files": 15276,
+        "exact_source_payload_files": 14491,
+        "exact_code_payload_files": 10991,
+        "record_mismatch_count": 10,
+        "documentation_collision_paths": 5,
+        "documentation_winner": "eth-abi==6.0.0",
+        "all_record_entries_match": false,
+        "pip_consistency_passed": true,
+        "environment_repaired_or_reinstalled": false,
+        "environment_unchanged_during_assessment": true,
+        "original_application_imported": false,
+        "original_runtime_compatibility_established": false,
+        "model_requests": 0,
+        "owned_job_authority_remaining": false,
+        "external_base_runtime_fully_inventoried": false
+      }
+    },
+    "native_bootstrap_software": {
+      "status": "implemented_source_review_closed_constructed_tests_passed_native_unexecuted",
+      "guide": "ap2-human-present-native-runner-software-v1.md",
+      "guide_sha256": "ba2ea611c8363df8e3451ef4e49abba3afaf8f490023407acc5a70405c6b61e8",
+      "gate": {
+        "file": "../../src/interoperability/ap2_hp_native_gate_v1.py",
+        "sha256": "5282f1f7d921818fc7dc6b2caa2e7e0a086416ef66d0512f4a94b6fd6634ab10"
+      },
+      "windows_adapter": {
+        "file": "../../src/interoperability/ap2_hp_windows_runtime_v1.py",
+        "sha256": "8cc07d5149e345918590564111620f259946996451e199feb66afeb834e9106e"
+      },
+      "bootstrap": {
+        "file": "../../scripts/boot_ap2_hp_service_v1.py",
+        "sha256": "b257df00c1b4162fe3d698678c2f00432ed4aa3749a28375252e04e38a55c453"
+      },
+      "capture": {
+        "file": "../../runs/ap2-hp-reference-software/native-gate-v1/result.json",
+        "sha256": "68d9601e8fb6ee589bd7445835385378ec06376cac6f337c01044cd237041d22"
+      },
+      "tests_passed": 28,
+      "captured_inputs": 147,
+      "copied_checkout_matches_precopy_inputs": true,
+      "original_and_captured_inputs_unchanged": true,
+      "source_review_status": "closed_before_capture",
+      "independent_receipt_audit_status": "verified",
+      "original_source_imported": false,
+      "credential_opened": false,
+      "native_startup_executed": false,
+      "model_requests": 0,
+      "claim_limit": "Constructed gate/ownership sequencing and filesystem publication behavior only; real Windows Job/TCP/resource/startup, complete environment and genuine usage guard remain open.",
+      "independent_receipt_review": {
+        "file": "../../runs/ap2-hp-reference-software/native-gate-v1-independent-review.json",
+        "sha256": "6debffc0e5079edfe9231e476ee9d5c6d470899bc50261a1b87d857f9232eb8d",
+        "checks_passed": 10,
+        "test_reruns": 0
+      }
+    }
+  },
+  "gemini_local_setup": {
+    "status": "configured_metadata_and_synthetic_forced_tool_access_confirmed",
+    "user_offered_free_tier_key": true,
+    "guide": "gemini-local-setup.md",
+    "launcher": "../../Configure Gemini.cmd",
+    "configure_script": "../../scripts/configure_gemini_key.ps1",
+    "child_launcher": "../../scripts/with_gemini_key.ps1",
+    "storage": "Windows current-user DPAPI under LocalApplicationData outside workspace",
+    "last_configuration_check": true,
+    "last_checked_on": "2026-10-29",
+    "syntax_checks_passed": true,
+    "synthetic_dpapi_round_trip_passed": true,
+    "synthetic_child_environment_arguments_exit_and_restore_passed": true,
+    "network_requests_by_setup_or_checks": 2,
+    "billing_enabled_by_setup": false,
+    "scope": "Native Windows child; exact-model metadata and one synthetic forced-tool request verified. No native AP2, billing-tier or future-quota claim.",
+    "local_entry_session_exit_code": 0,
+    "masked_window_closed": true,
+    "setup_and_synthetic_check_api_requests": 0,
+    "real_key_used_in_synthetic_tests": false,
+    "real_key_used_in_metadata_probe": true,
+    "provider_metadata_requests": 1,
+    "provider_generation_smoke_requests": 1,
+    "real_key_used_in_synthetic_provider_smoke": true
+  },
+  "gemini_model_access": {
+    "schema_version": "gemini-model-metadata-access/1",
+    "started_at_utc": "2026-10-29T05:56:32.731088+00:00",
+    "method": "GET",
+    "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview",
+    "requested_model": "gemini-3.1-flash-lite-preview",
+    "backend": "Gemini Developer API",
+    "maximum_requests": 1,
+    "retries": 0,
+    "redirects_allowed": false,
+    "content_generation_requested": false,
+    "request_attempted": true,
+    "generation_quota_verified": false,
+    "free_tier_or_billing_verified": false,
+    "tool_calling_verified": false,
+    "native_ap2_execution_verified": false,
+    "probe_source_sha256": "a4c4378311d93a03bb29e0d89500dd4efbd8525cf66c54e95d773ad9a5ee3498",
+    "status": "metadata_access_confirmed",
+    "http_status": 200,
+    "returned_model_name_matches": true,
+    "generate_content_advertised": true,
+    "elapsed_ns": 713508200,
+    "finished_at_utc": "2026-10-29T05:56:33.481268+00:00",
+    "receipt": "../../runs/gemini-access/metadata-v1/result.json",
+    "probe": "../../scripts/check_gemini_model_access_v1.py",
+    "claim_limit": "One metadata GET; zero content generation or application runs. This does not establish generation quota, forced tool calls, free-tier billing or qualified AP2 admission."
+  },
+  "upstream_agentops_cases": {
+    "status": "loader_implemented_exported_independently_audited",
+    "guide": "upstream-agentops-cases-v1.md",
+    "source": "../../src/interoperability/upstream_agentops_cases_v1.py",
+    "source_sha256": "b87d5e6a1f86962cfe85981c60e868cac6ac46950599ffa6667db23a8126b0e3",
+    "receipt": "../../runs/upstream-agentops-cases/v1/result.json",
+    "application_inputs": "../../runs/upstream-agentops-cases/v1/application/cases.json",
+    "evaluator_expectations": "../../runs/upstream-agentops-cases/v1/evaluator/expectations.json",
+    "source_cases": 21,
+    "source_user_turns": 22,
+    "selected_sources_verified": 7,
+    "tests_passed": 11,
+    "test_skips": 0,
+    "software_raw_receipt": "../../runs/upstream-agentops-cases/software-v1/result.json",
+    "software_assessment": "../../runs/upstream-agentops-cases/software-v1-assessment.json",
+    "software_recorder_status": "failed_due_to_CRLF_success_match",
+    "software_process_exit_code": 0,
+    "independent_audit": "../../runs/upstream-agentops-cases/v1-independent-review.json",
+    "independent_audit_sha256": "5bdd97afd537d2ba90afe1de0bd22befd557646342a5472c899ceccfa0b12533",
+    "application_requests": 0,
+    "model_calls": 0,
+    "graded_task_outcomes": 0,
+    "next_output": "../../runs/upstream-agentops-cases/v2",
+    "next_output_unused_at_update": true,
+    "claim_limit": "Public source-derived development cases with overlap; not independently reviewed held-out inputs, observed outcomes, native admission or a second domain. A source-justified native runner and public trajectory/effect grader remain required.",
+    "grading_contract": "upstream-agentops-grading-contract-v1.md",
+    "raw_event_evidence": "agentops-raw-events-v1.md"
+  },
+  "gemini_tool_access": {
+    "schema_version": "gemini-synthetic-forced-tool-access/1",
+    "started_at_utc": "2026-10-29T12:45:11.925027+00:00",
+    "requested_model": "gemini-3.1-flash-lite-preview",
+    "method": "POST",
+    "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent",
+    "maximum_requests": 1,
+    "retries": 0,
+    "redirects_allowed": false,
+    "content_generation_requested": true,
+    "maximum_output_tokens": 32,
+    "function_calling_mode": "ANY",
+    "function_execution_count": 0,
+    "request_attempted": true,
+    "native_ap2_execution_verified": false,
+    "free_tier_or_billing_verified": false,
+    "claim_limit": "One synthetic provider routing smoke; no original AP2 router/application import or execution, no native task/effect qualification, no future quota guarantee.",
+    "probe_source_sha256": "f63cbe1d0f2f477929213d73ef6159a4a6d4d8ce689f8a28007c158596e10ab6",
+    "metadata_helper_sha256": "a4c4378311d93a03bb29e0d89500dd4efbd8525cf66c54e95d773ad9a5ee3498",
+    "request_payload": {
+      "systemInstruction": {
+        "parts": [
+          {
+            "text": "Select the connectivity function for this fixed API check."
+          }
+        ]
+      },
+      "contents": [
+        {
+          "role": "user",
+          "parts": [
+            {
+              "text": "Acknowledge connectivity by selecting the available function."
+            }
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "functionDeclarations": [
+            {
+              "name": "acknowledge_connectivity",
+              "description": "A harmless connectivity acknowledgement. This function takes no arguments."
+            }
+          ]
+        }
+      ],
+      "toolConfig": {
+        "functionCallingConfig": {
+          "mode": "ANY"
+        }
+      },
+      "generationConfig": {
+        "maxOutputTokens": 32,
+        "candidateCount": 1
+      }
+    },
+    "status": "synthetic_forced_tool_access_confirmed",
+    "http_status": 200,
+    "expected_function_call_received": true,
+    "empty_arguments_received": true,
+    "function_calls_received": 1,
+    "token_usage": {
+      "promptTokenCount": 45,
+      "candidatesTokenCount": 10,
+      "totalTokenCount": 55
+    },
+    "elapsed_ns": 2544862500,
+    "finished_at_utc": "2026-10-29T12:45:14.494066+00:00",
+    "receipt": "../../runs/gemini-access/tool-smoke-v1/result.json",
+    "probe": "../../scripts/check_gemini_tool_access_v1.py",
+    "source_review_status": "passed",
+    "offline_synthetic_http_paths_checked": 8,
+    "offline_malformed_function_responses_rejected": 6,
+    "offline_setup_write_escape_paths_checked": 4,
+    "offline_network_requests": 0,
+    "receipt_sha256": "ce377d9a6169da4993efb2f929ecb87cdb8bd6ba2811d551a7ac7da1e130e17b"
+  },
+  "raw_event_evidence": {
+    "status": "implemented_software_verified_archived_native_export_audited",
+    "guide": "agentops-raw-events-v1.md",
+    "grading_contract": "upstream-agentops-grading-contract-v1.md",
+    "source": "../../src/interoperability/agentops_raw_events_v1.py",
+    "source_sha256": "de196858e75738e1976df39c077b4ab5b4c45d53298cf885cda212e82eba421b",
+    "tests": "../../tests/test_agentops_raw_events_v1.py",
+    "software_validation": "../../runs/agentops-event-evidence/software-v2/result.json",
+    "software_tests_passed": 13,
+    "software_test_skips": 0,
+    "preliminary_failed_software_capture": "../../runs/agentops-event-evidence/software-v1/result.json",
+    "preliminary_failure": "SQLite context managers did not close connections, causing Windows temporary-file cleanup failures; explicit closure fixed the leak. Captures overlap and counts are not additive.",
+    "archived_export": "../../runs/agentops-event-evidence/native-v12-v1/result.json",
+    "archived_events": 7,
+    "archived_function_calls": 2,
+    "archived_function_responses": 3,
+    "selected_sdk_tables": 6,
+    "selected_sdk_indexes": 3,
+    "independent_audit": "../../runs/agentops-event-evidence/native-v12-v1-independent-review.json",
+    "independent_audit_sha256": "62c302343ca3612d15d62b8680d4be4796f3a2fa9b8a0dfc598be5eb53581642",
+    "manifest_files_checked": 8,
+    "export_allocation_files_checked": 9,
+    "software_allocation_files_checked": 7,
+    "monitored_files_unchanged": 20,
+    "new_application_requests": 0,
+    "new_model_calls": 0,
+    "upstream_cases_executed": 0,
+    "graded_task_outcomes": 0,
+    "causal_order_proven": false,
+    "complete_event_stream_proven": false,
+    "claim_limit": "Read-only evaluator evidence from the original historical one-step Restart inventory fixture; not executions of the 21 upstream cases, client observations, new native admission, a novel method or independent human acceptance.",
+    "public_binding_evidence": "agentops-event-binding-v1.md",
+    "limited_restart_effect_evidence": "agentops-restart-effects-v1.md"
+  },
+  "public_event_evidence": {
+    "status": "implemented_software_verified_archived_export_independently_audited",
+    "guide": "agentops-public-events-v1.md",
+    "source": "../../src/interoperability/agentops_public_events_v1.py",
+    "source_sha256": "c008b818befafa4c212a8978ecbc28e927a54d3720fd8fe34ab1f873252f53e5",
+    "helper_sha256": "de196858e75738e1976df39c077b4ab5b4c45d53298cf885cda212e82eba421b",
+    "tests": "../../tests/test_agentops_public_events_v1.py",
+    "software_validation": "../../runs/agentops-public-event-evidence/software-v1/result.json",
+    "software_tests_passed": 17,
+    "software_test_skips": 0,
+    "archived_export": "../../runs/agentops-public-event-evidence/native-v12-N11-v1/result.json",
+    "capture_exchanges": 9,
+    "task_replies": 8,
+    "unique_parts": 7,
+    "distinct_messages": 4,
+    "function_calls": 2,
+    "function_responses": 3,
+    "identical_repeated_parts": 26,
+    "original_wire_files_preserved": 45,
+    "independent_audit": "../../runs/agentops-public-event-evidence/native-v12-N11-v1-independent-review.json",
+    "independent_audit_sha256": "96d00d341fd9aab87d0aa58bd30f7bbbdf0cca888f9a33a20b1f0301b7230dcd",
+    "independent_checks_passed": 160,
+    "independent_checks_failed": 0,
+    "monitored_files_unchanged": 108,
+    "client_receipt_proven": false,
+    "causal_order_proven": false,
+    "complete_event_stream_proven": false,
+    "new_application_requests": 0,
+    "new_model_calls": 0,
+    "upstream_cases_executed": 0,
+    "graded_task_outcomes": 0,
+    "claim_limit": "Server-observed public protocol evidence from the historical Restart inventory fixture. Normalization and preservation only; no fresh native execution, upstream-case grade, method novelty or human acceptance."
+  },
+  "upstream_native_runner_design": {
+    "status": "source_supported_design_implemented_software_verified_native_run_withheld",
+    "guide": "upstream-agentops-native-runner-design-v1.md",
+    "first_case_id": "inventory-status",
+    "first_case_user_prompt": "What is the status of the inventory service?",
+    "case_family": "core",
+    "application_agent": "original conversational root_agent",
+    "original_default_model": "gemini-3.5-flash",
+    "previously_probed_distinct_model": "gemini-3.1-flash-lite-preview",
+    "supported_model_selection_setting": "AGENT_MODEL",
+    "key_setting": "GOOGLE_API_KEY",
+    "report_and_workflow_a2a": "Explicit unchanged-object embedding has source support; native behavior unverified. Default Workflow A2A selection fails BaseAgent guard.",
+    "outer_retention_required": true,
+    "native_runner_implemented": true,
+    "native_source_cases_executed": 0,
+    "claim_limit": "Original source-supported surfaces are now implemented and captured-software verified. First diagnostic refused the physical-memory gate before source staging/native launch; zero original source cases or benchmark grades.",
+    "implementation_guide": "upstream-agentops-native-runner-v1.md"
+  },
+  "event_binding_evidence": {
+    "status": "implemented_software_verified_archived_comparison_independently_audited",
+    "guide": "agentops-event-binding-v1.md",
+    "source": "../../src/interoperability/agentops_event_binding_v1.py",
+    "source_sha256": "d3beb0f2440d5698124bc7aedf27a8beb34136f60e15e70be1c7b6745da08fa5",
+    "tests": "../../tests/test_agentops_event_binding_v1.py",
+    "software_validation": "../../runs/agentops-event-binding/software-v1/result.json",
+    "software_tests_passed": 15,
+    "software_test_skips": 0,
+    "archived_comparison": "../../runs/agentops-event-binding/native-v12-N11-v1/result.json",
+    "verified_function_pairs": 5,
+    "artifact_recorded_identity_pairs": 3,
+    "message_payload_only_pairs": 2,
+    "unresolved_pairs": 0,
+    "exact_function_representations": 21,
+    "raw_input_files": 9,
+    "public_input_files": 50,
+    "independent_audit": "../../runs/agentops-event-binding/native-v12-N11-v1-independent-review.json",
+    "independent_audit_sha256": "669e9a4718ca643625dd8ccd28461845f812cc2fb91dac96b6cb6bc69025fe45",
+    "independent_checks_passed": 109,
+    "independent_checks_failed": 0,
+    "monitored_files_unchanged": 135,
+    "causal_order_proven": false,
+    "client_receipt_proven": false,
+    "complete_event_stream_proven": false,
+    "source_authenticity_proven": false,
+    "new_native_runs": 0,
+    "new_model_calls": 0,
+    "upstream_cases_executed": 0,
+    "graded_task_outcomes": 0,
+    "claim_limit": "Consistency of the independently audited historical raw/public copies; no source authentication, client receipt, causality, fresh native execution, upstream-case/effect grade, novelty or human acceptance."
+  },
+  "restart_effect_evidence": {
+    "status": "implemented_software_verified_archived_consistency_assessment_independently_audited",
+    "guide": "agentops-restart-effects-v1.md",
+    "design": "agentops-confirmation-evidence-design-v1.md",
+    "source": "../../src/interoperability/agentops_restart_effects_v1.py",
+    "source_sha256": "d04fde3c70b6028eb8b71bc72351a28d34fd0ae62cccb100fde39a150cd2750f",
+    "capture_driver": "../../scripts/capture_restart_effect_example_v1.py",
+    "capture_driver_sha256": "aec3118ac58c7cbdf8010f780d0fd8bd37c71f429b48e770963577ab6b856aae",
+    "software_validation": "../../runs/agentops-restart-effects/software-v2/result.json",
+    "software_tests_passed": 66,
+    "api_test_methods": 60,
+    "capture_driver_test_methods": 6,
+    "software_test_skips": 0,
+    "preliminary_software_validation": "../../runs/agentops-restart-effects/software-v1/result.json",
+    "preliminary_tests_passed": 43,
+    "preliminary_limit": "Passing preliminary tests preceded four source-review findings in context, endpoint precision, transform scope and idempotency. Both captures are preserved and overlap; counts are not additive.",
+    "archived_assessment": "../../runs/agentops-restart-effects/native-v12-N11-v1/result.json",
+    "assessment_status": "consistent",
+    "consistent_dimensions": 13,
+    "approval_sequence": 7,
+    "service_rows": 8,
+    "preserved_incident_rows": 10,
+    "appended_audit_rows": 1,
+    "independent_audit": "../../runs/agentops-restart-effects/native-v12-N11-v1-independent-review.json",
+    "independent_audit_sha256": "ab008721ae556b7fa8f70443ad98e9a0edfd82f44cd0909806158eb121b54e8c",
+    "independent_checks_passed": 251,
+    "effect_allocation_files_checked": 69,
+    "binding_allocation_files_checked": 63,
+    "software_allocation_files_checked": 10,
+    "original_and_copied_software_sources_checked": 6,
+    "monitored_inputs_unchanged": true,
+    "rationale_scope": "declared_clean_fixture_texts_only",
+    "source_clean_transforms_proven": false,
+    "phase_linkage_checked_by_pure_api": false,
+    "supplied_confirmation_payload_links_checked_by_driver": true,
+    "continuous_absence_of_mutation_proven": false,
+    "causal_order_proven": false,
+    "source_authenticity_proven": false,
+    "client_receipt_proven": false,
+    "complete_event_stream_proven": false,
+    "qualification_established": false,
+    "new_native_runs": 0,
+    "new_model_calls": 0,
+    "graded_upstream_cases": 0,
+    "claim_limit": "Logical consistency of a single bound historical clean-text inventory mock restart, including sampled state/audit effects. No general sanitizer, complete phase/causal proof, memory-store/terminal check, native source-case grade, live admission, source authentication or human acceptance."
+  },
+  "upstream_native_runner": {
+    "status": "implemented_software_verified_independently_reviewed_native_gate_refused",
+    "guide": "upstream-agentops-native-runner-v1.md",
+    "source": "../../src/interoperability/upstream_agentops_native_runner_v1.py",
+    "source_sha256": "a15c50ce38f6311c620e4681672a49a5f0c401f604bdc5fba28dd82109c12f98",
+    "tests": "../../tests/test_upstream_agentops_native_runner_v1.py",
+    "software_validation": {
+      "client-v1": {
+        "receipt": "../../runs/upstream-agentops-native-software/client-v1/result.json",
+        "receipt_sha256": "832b62dca9e47e5c16447b3af2e547c9a07f1a5a6b3be9135c98cb9dcc069b0f",
+        "status": "passed",
+        "tests_passed": 30,
+        "test_skips": 0,
+        "independent_review": "../../runs/upstream-agentops-native-software/client-v1-independent-review.json",
+        "independent_review_sha256": "76786125396e1cd6fde836db86bed21835dc19dbb16b7b43225075a31d4cc9b8",
+        "independent_checks_passed": 51
+      },
+      "bootstrap-v2": {
+        "receipt": "../../runs/upstream-agentops-native-software/bootstrap-v2/result.json",
+        "receipt_sha256": "d6235141148a4ff21581980b475c77efde7193e0979d9bb097062e375a365dc4",
+        "status": "passed",
+        "tests_passed": 51,
+        "test_skips": 0,
+        "independent_review": "../../runs/upstream-agentops-native-software/bootstrap-v2-independent-review.json",
+        "independent_review_sha256": "74be6cad1fe3be6d23da21db47f77bd70716cc77dafc66f923aba911578bd8ee",
+        "independent_checks_passed": 44
+      },
+      "owned-job-v2": {
+        "receipt": "../../runs/upstream-agentops-native-software/owned-job-v2/result.json",
+        "receipt_sha256": "018500d1fd421cd7e02665443c615f5ec06f1debb4d15e47677f7d98f2075115",
+        "status": "passed",
+        "tests_passed": 23,
+        "test_skips": 0,
+        "independent_review": "../../runs/upstream-agentops-native-software/owned-job-v2-independent-review.json",
+        "independent_review_sha256": "2d45691d60581f4a3329a36cbb4484a48b7c1bc6f8ffa9220ebd0b5a684245e5",
+        "independent_checks_passed": 48
+      },
+      "runner-v3": {
+        "receipt": "../../runs/upstream-agentops-native-software/runner-v3/result.json",
+        "receipt_sha256": "43c25773f8c0745216cd59d1361c4cbc7a20cd862693c3622266e93ab6d89960",
+        "status": "passed",
+        "tests_passed": 33,
+        "test_skips": 0,
+        "independent_review": "../../runs/upstream-agentops-native-software/runner-v3-independent-review.json",
+        "independent_review_sha256": "295dd123a9143b67785f69b9191c1fa76a0aae85e7af7a364aedfa77e61350bf",
+        "independent_checks_passed": 84
+      }
+    },
+    "source_review": "../../runs/upstream-agentops-native-software/source-review-v1.json",
+    "source_review_sha256": "ef84a6a86ed31252382378af50cb9368e63298f21f1002355984d25deb139cf2",
+    "source_review_checks_passed": 49,
+    "original_case_count": 21,
+    "original_user_turn_count": 22,
+    "default_schedule_instances": 33,
+    "default_schedule_user_turns": 34,
+    "native_source_cases_executed": 0,
+    "native_upstream_case_grades": 0,
+    "automatic_confirmations_sent": 0,
+    "native_qualification_established": false,
+    "resource_decision": {
+      "status": "refused_before_staging",
+      "receipt": "../../runs/upstream-agentops-native/inventory-status-v1/result.json",
+      "receipt_sha256": "f1ca4fdda05b37657bea4ac3c041b44798991ed0d47dbace6117a2f6403941a8",
+      "gate": "../../runs/upstream-agentops-native/inventory-status-v1/prestage-gate.json",
+      "minimums": {
+        "commit_available_bytes": 2147483648,
+        "physical_available_bytes": 1073741824
+      },
+      "samples": [
+        {
+          "commit_available_bytes": 3473227776,
+          "monotonic_ns": 14144345590000,
+          "observed_at_utc": "2026-10-29T16:50:31.025865+00:00",
+          "physical_available_bytes": 684273664
+        },
+        {
+          "commit_available_bytes": 3495751680,
+          "monotonic_ns": 14154446090800,
+          "observed_at_utc": "2026-10-29T16:50:41.126364+00:00",
+          "physical_available_bytes": 769675264
+        }
+      ],
+      "native_launch_attempts": 0,
+      "client_attempts": 0,
+      "stage_created": false,
+      "allocation_consumed": true,
+      "independent_review": "../../runs/upstream-agentops-native/inventory-status-v1-independent-review.json",
+      "independent_review_sha256": "183a9f25ea6333350a290a21f4a4dad2d3b4cca7f1c64a42484acb919f7c103d",
+      "independent_checks_passed": 67,
+      "scope": "Recorded prestage refusal only; source staging, native application, SDK/model execution and credential injection were not reached. Unchecked preservation fields establish no mutation or preservation."
+    },
+    "next_unused_diagnostic_output": "../../runs/upstream-agentops-native/inventory-status-v3",
+    "successor_requires_new_prospective_plan": true,
+    "preserved_intermediate_generations": [
+      "bootstrap-v1",
+      "owned-job-v1",
+      "runner-v1",
+      "runner-v2"
+    ],
+    "test_count_scope": "Each terminal suite is separately scoped. Intermediate and final suites overlap; their test counts are not additive.",
+    "claim_limit": "Implemented source-case execution/retention and mocked ownership path only; first source case never launched. General trajectory/effect grader, source authentication, causal completeness, live admission, second domain, contribution and human acceptance remain open."
+  },
+  "upstream_grading_implementation": {
+    "status": "integrated_v2_software_verified_independently_receipt_audited_no_native_cases",
+    "peer_audit_note": "agentops-grading-peer-audit-v6.md",
+    "guide": "upstream-agentops-grading-implementation-v1.md",
+    "stronger_guide": "agentops-stronger-grading-v1.md",
+    "reply_dependency_assessor": "../../src/interoperability/agentops_reply_dependencies_v1.py",
+    "source_case_state_assessor": "../../src/interoperability/agentops_source_case_effects_v1.py",
+    "case_boundary_collector": "../../src/interoperability/agentops_case_boundary_evidence_v1.py",
+    "all_case_obligations": "upstream-agentops-grading-obligations-v1.json",
+    "source_review": "agentops-grading-source-review-v3.md",
+    "source_review_sha256": "54c22c74079a25e4e16ed6339186486eed374e47b3edd5b9ce1153f94bab5cbc",
+    "original_metric_source_review": "agentops-grading-source-review-v2.md",
+    "v2_runner_guide": "upstream-agentops-native-runner-v2.md",
+    "v2_runner_source": "../../src/interoperability/upstream_agentops_native_runner_v2.py",
+    "original_metric_assessor_v1": "../../src/interoperability/agentops_source_case_assessment_v1.py",
+    "original_metric_evaluator_cli_v1": "../../scripts/assess_upstream_agentops_case_v1.py",
+    "source_case_assessor": "../../src/interoperability/agentops_source_case_assessment_v2.py",
+    "evaluator_cli": "../../scripts/assess_upstream_agentops_case_v2.py",
+    "answer_schema_assessor": "../../src/interoperability/agentops_answer_schema_v1.py",
+    "original_case_count": 21,
+    "original_user_turn_count": 22,
+    "original_metric": "tool_trajectory_avg_score",
+    "original_metric_threshold": 1.0,
+    "original_answer_judge_configured": false,
+    "original_metric_separate_from_effects_and_answer_grounding": true,
+    "software_validation": {
+      "trajectory-v1": {
+        "receipt": "../../runs/agentops-grading-software/trajectory-v1/result.json",
+        "tests_passed": 16,
+        "independent_review": "../../runs/agentops-grading-software/trajectory-v1-independent-review.json",
+        "independent_review_status": "verified"
+      },
+      "memory-v1": {
+        "receipt": "../../runs/agentops-grading-software/memory-v1/result.json",
+        "tests_passed": 20,
+        "independent_review": "../../runs/agentops-grading-software/memory-v1-independent-review.json",
+        "independent_review_status": "verified"
+      },
+      "stream-v1": {
+        "receipt": "../../runs/agentops-grading-software/stream-v1/result.json",
+        "tests_passed": 37,
+        "independent_review": "../../runs/agentops-grading-software/stream-v1-independent-review.json",
+        "independent_review_status": "verified"
+      },
+      "asgi-v2": {
+        "receipt": "../../runs/agentops-grading-software/asgi-v2/result.json",
+        "tests_passed": 8,
+        "independent_review": "../../runs/agentops-grading-software/asgi-v2-independent-review.json",
+        "independent_review_status": "verified"
+      },
+      "bootstrap-v2": {
+        "receipt": "../../runs/agentops-grading-software/bootstrap-v2/result.json",
+        "tests_passed": 65,
+        "independent_source_review_status": "closed_no_remaining_blocker",
+        "independent_review": "../../runs/agentops-grading-software/bootstrap-v2-independent-review.json",
+        "independent_result_review_status": "verified"
+      },
+      "stream-evidence-v1": {
+        "receipt": "../../runs/agentops-grading-software/stream-evidence-v1/result.json",
+        "tests_passed": 26,
+        "independent_source_review_status": "closed_no_remaining_blocker",
+        "independent_review": "../../runs/agentops-grading-software/stream-evidence-v1-independent-review.json",
+        "independent_result_review_status": "verified"
+      },
+      "case-assessment-v1": {
+        "receipt": "../../runs/agentops-grading-software/case-assessment-v1/result.json",
+        "tests_passed": 21,
+        "independent_review": "../../runs/agentops-grading-software/case-assessment-v1-independent-review.json",
+        "independent_result_review_status": "verified"
+      },
+      "runner-v2": {
+        "receipt": "../../runs/agentops-grading-software/runner-v2/result.json",
+        "tests_passed": 45,
+        "independent_review": "../../runs/agentops-grading-software/runner-v2-independent-review.json",
+        "independent_result_review_status": "verified"
+      },
+      "evaluator-cli-v1": {
+        "receipt": "../../runs/agentops-grading-software/evaluator-cli-v1/result.json",
+        "tests_passed": 8,
+        "independent_source_review_status": "closed_no_remaining_blocker",
+        "independent_review": "../../runs/agentops-grading-software/evaluator-cli-v1-independent-review.json",
+        "independent_result_review_status": "verified"
+      },
+      "reply-dependencies-v1": {
+        "receipt": "../../runs/agentops-grading-software/reply-dependencies-v1/result.json",
+        "tests_passed": 41,
+        "independent_source_review_status": "closed_no_remaining_blocker",
+        "independent_review": "../../runs/agentops-grading-software/reply-dependencies-v1-independent-review.json",
+        "independent_result_review_status": "verified"
+      },
+      "source-case-effects-v1": {
+        "receipt": "../../runs/agentops-grading-software/source-case-effects-v1/result.json",
+        "tests_passed": 24,
+        "independent_source_review_status": "closed_no_remaining_blocker",
+        "independent_review": "../../runs/agentops-grading-software/source-case-effects-v1-independent-review.json",
+        "independent_result_review_status": "verified"
+      },
+      "case-boundaries-v1": {
+        "receipt": "../../runs/agentops-grading-software/case-boundaries-v1/result.json",
+        "tests_passed": 16,
+        "independent_source_review_status": "closed_no_remaining_blocker",
+        "independent_review": "../../runs/agentops-grading-software/case-boundaries-v1-independent-review.json",
+        "independent_result_review_status": "verified"
+      },
+      "answer-schema-v1": {
+        "receipt": "../../runs/agentops-grading-software/answer-schema-v1/result.json",
+        "tests_passed": 35,
+        "source_review_status": "closed_bounded_separate_ai_source_review",
+        "static_review": "../../runs/agentops-grading-software/answer-schema-v1-static-review.json",
+        "static_review_status": "verified",
+        "independent_review": "../../runs/agentops-grading-software/answer-schema-v1-independent-review.json",
+        "independent_result_review_status": "verified"
+      },
+      "case-assessment-v2": {
+        "receipt": "../../runs/agentops-grading-software/case-assessment-v2/result.json",
+        "tests_passed": 13,
+        "source_review_status": "closed_bounded_root_review_of_peer_implementation",
+        "static_review": "../../runs/agentops-grading-software/case-assessment-v2-static-review.json",
+        "static_review_status": "verified",
+        "independent_review": "../../runs/agentops-grading-software/case-assessment-v2-independent-review.json",
+        "independent_result_review_status": "verified"
+      },
+      "evaluator-cli-v2": {
+        "receipt": "../../runs/agentops-grading-software/evaluator-cli-v2/result.json",
+        "tests_passed": 7,
+        "source_review_status": "closed_bounded_root_review_of_peer_implementation",
+        "static_review": "../../runs/agentops-grading-software/evaluator-cli-v2-static-review.json",
+        "static_review_status": "verified",
+        "independent_review": "../../runs/agentops-grading-software/evaluator-cli-v2-independent-review.json",
+        "independent_result_review_status": "verified"
+      }
+    },
+    "source_case_native_executions": 0,
+    "source_case_grades": 0,
+    "native_qualification_established": false,
+    "scientific_novelty_established": false,
+    "faithful_live_admission_established": false,
+    "latest_diagnostic_physical_available_bytes": 575496192,
+    "latest_diagnostic_commit_available_bytes": 2239348736,
+    "latest_diagnostic_observed_at_utc": "2026-10-30T11:06:13.717793+00:00",
+    "latest_diagnostic_is_retained_prospective_resource_gate": false,
+    "test_count_scope": "Each terminal suite is scoped separately; overlap with legacy/preliminary suites is not added to completion credit.",
+    "remaining": [
+      "Present the supervisor review using the retained admission demo and benchmark results; record actual acceptance and any extension",
+      "Establish fresh prospective resource eligibility before an unused source-case native allocation",
+      "Complete semantic/sanitizer and source-authenticated workflow mapping evidence on fresh qualified source cases; all stronger software receipt audits are now verified",
+      "Complete live admission, substantive second-domain, contribution and human/supervisor acceptance requirements"
+    ]
+  },
+  "latest_host_resource_diagnostic": {
+    "receipt": "../../runs/resource-diagnostics/ap2-continuation-20261030-v3.json",
+    "sha256": "1afbcb6eeead71dd3e2fa8de4dcee3c63b7f9577eede224dea5c5cf63ea48218",
+    "schema_version": "read-only-memory-diagnostic/1",
+    "observed_at_utc": "2026-10-30T17:29:16.955472+00:00",
+    "physical_available_bytes": 472776704,
+    "commit_available_bytes": 6961418240,
+    "physical_minimum_bytes": 1073741824,
+    "commit_minimum_bytes": 2147483648,
+    "physical_minimum_met": false,
+    "commit_minimum_met": true,
+    "prospective_gate": false,
+    "native_case_allocation_followed": false,
+    "claim_limit": "Single read-only Windows sample; physical headroom below fixed minimum. No timed gate, SDK construction probe, source-case allocation, credential access or original application launch."
+  },
+  "latest_source_case_resource_decision": {
+    "allocation": "../../runs/upstream-agentops-native/inventory-status-v2",
+    "status": "refused_before_staging",
+    "result": "../../runs/upstream-agentops-native/inventory-status-v2/result.json",
+    "result_sha256": "b3e037050afebfae4850590746971d9c2f493a6865f5ed31f4e40b74cf0ee4b4",
+    "gate": "../../runs/upstream-agentops-native/inventory-status-v2/prestage-gate.json",
+    "gate_sha256": "973d6de067f8d59428fc182092954051bc765b51f1a9551bf675dc265306504c",
+    "physical_available_bytes": [82698240, 134684672],
+    "commit_available_bytes": [7125397504, 6890741760],
+    "observed_at_utc": ["2026-10-30T15:58:38.411029+00:00", "2026-10-30T15:58:48.519662+00:00"],
+    "physical_minimum_met": false,
+    "commit_minimum_met": true,
+    "allocation_consumed": true,
+    "stage_created": false,
+    "native_launch_attempts": 0,
+    "client_attempts": 0,
+    "native_upstream_case_grades": 0,
+    "independent_review": "../../runs/upstream-agentops-native/inventory-status-v2-independent-review.json",
+    "independent_review_sha256": "dbf057a1187caabc5a0272a7ffbac4a79a778b1315e03ace3d4096946dd065b7",
+    "independent_checks_passed": 26,
+    "claim_limit": "Bound timed prestage refusal only. A preceding 1.11 GiB single physical diagnostic did not persist. Source/dependency baselines were not reached; no preservation or mutation conclusion follows from unassessed false fields."
+  },
+  "deadline_marker": {
+    "date": "2026-10-31",
+    "percent_required": 70,
+    "rubric": "full_research_project_checkpoints",
+    "user_reiterated_hard_deadline": "2026-10-30",
+    "verified_percent": 5,
+    "target_not_achieved": true,
+    "paper_deferred_this_week": true
+  },
+  "human_review_preparation": {
+    "supervisor_contribution_review_status": "not_reviewed_user_confirmed",
+    "user_confirmation_date": "2026-10-30",
+    "reviewer_file_index": "reviewer-files-v2.md",
+    "blank_feedback_form": "reviewer-feedback-v1.md",
+    "review_archive": "../../review-packages/reviewer-2026-10-30-v2.zip",
+    "archive_manifest": "../../review-packages/reviewer-2026-10-30-v2/manifest.json",
+    "archive_sha256": "ba9a40b3511e1f8da76d83ff54cde99fb34a4348aa0087cae44352379cada353",
+    "archive_bytes": 400469,
+    "selected_files": 180,
+    "preserved_v1_archive": "../../review-packages/reviewer-2026-10-30-v1.zip",
+    "human_review_returns_received": 0,
+    "task_bank_complete": false,
+    "user_will_forward_files": true
+  },
+  "partial_observation_grader_correction": {
+    "guide": "agentops-partial-observation-correction-v2.md",
+    "reply_module": "../../src/interoperability/agentops_reply_dependencies_v2.py",
+    "reply_sha256": "0475d55ba2a4aa84d0dacd77fefaa357440f35c27020d43d747879e3df39d2b3",
+    "integration_api": "../../src/interoperability/agentops_source_case_assessment_v3.py",
+    "integration_sha256": "3b6b1ec0a7c274590562ddd6a66bd06bf9ad5b79f78baecdaa58f1f07d175aa3",
+    "focused_reply_tests_passed": 11,
+    "final_integration_tests_passed": 5,
+    "test_scope": "Direct terminal synthetic software tests, not retained source-copy captures or native grades. The five integration tests reran only after a wrapper input-equality correction.",
+    "frozen_native_cli_integrated": false,
+    "frozen_v2_cli_unchanged": true,
+    "source_bound_v3_cli_integrated": true,
+    "corrected_cli_successor": "../../scripts/assess_upstream_agentops_case_v3.py",
+    "corrected_cli_sha256": "dc405bc5940438e40a911a32525d06e93bb051d6684e7e1dfdd5ffb4b2fa6e1f",
+    "corrected_cli_guide": "upstream-agentops-evaluator-v3.md",
+    "corrected_cli_result": "../../runs/agentops-grading-software/evaluator-cli-v3-3/result.json",
+    "corrected_cli_result_sha256": "e40400ac9ee1f3b5355b0adb3de5a5f4d53f12ba6e4cd7a2933e8cd2055734e8",
+    "corrected_cli_constructed_tests_passed": 10,
+    "corrected_cli_captured_inputs": 62,
+    "corrected_cli_original_and_copied_inputs_unchanged": true,
+    "preserved_prior_captures": [
+      "../../runs/agentops-grading-software/evaluator-cli-v3-1/result.json",
+      "../../runs/agentops-grading-software/evaluator-cli-v3-2/result.json"
+    ],
+    "original_metric_unchanged": true,
+    "native_grades": 0,
+    "claim_limit": "Corrected pure APIs and source-bound CLI v3 are software verified on constructed inputs. Frozen v2 remains unchanged; zero original application/model executions or native grades."
+  },
+  "ap2_gemini_accounting_software": {
+    "guide": "ap2-gemini-quota-guard-v1.md",
+    "module": "../../src/interoperability/ap2_hp_gemini_usage_v1.py",
+    "module_sha256": "0475f889a5825626adaec6fc1b2477c15972a9c09138c795343538c3b391fe45",
+    "result": "../../runs/ap2-gemini-usage-software/core-v1/result.json",
+    "result_sha256": "9ac7c2d724c46f82e76b871fd88c03b7000170cbd96724d62f97391f5db12cb1",
+    "focused_tests_passed": 21,
+    "source_and_driver_unchanged": true,
+    "peer_source_review_closed": true,
+    "actual_quota_reserved": false,
+    "native_guard_installed": false,
+    "claim_limit": "Atomic conservative local accounting and refusal, tested only with synthetic limits; no provider entitlement or native SDK interception."
+  },
+  "ap2_gemini_transport_software": {
+    "guide": "ap2-gemini-transport-software-v1.md",
+    "module": "../../src/interoperability/ap2_hp_gemini_transport_v1.py",
+    "module_sha256": "cfa1ebfbec3b99f7ecd0b4be996359bf01d075160e08397dbf66a4041a2b7627",
+    "result": "../../runs/ap2-gemini-transport-software/transport-v2/result.json",
+    "result_sha256": "bc477dc2c13678fd539871ba16988e27d8d8f2fb0c62a90783eddabb26ab7a55",
+    "constructed_tests_passed": 26,
+    "original_and_copied_inputs_unchanged": true,
+    "peer_source_and_driver_review_closed": true,
+    "preserved_failed_capture": "../../runs/ap2-gemini-transport-software/transport-v1/result.json",
+    "preserved_failed_capture_passes": 25,
+    "preserved_failed_capture_failures": 1,
+    "failure_reason": "Unfiltered fixture event query selected ledger initialization; successor driver binds the reservation event to attempt 1. Production source unchanged.",
+    "provider_requests": 0,
+    "sdk_imports": 0,
+    "original_application_imports": 0,
+    "actual_quota_reserved": false,
+    "native_guard_installed": false,
+    "native_client_construction_verified": false,
+    "native_qualification_established": false,
+    "claim_limit": "Constructed per-transmission ordering, conservative accounting, same-object/error behavior and refusal only. Native installation refuses before SDK imports until original client/transitive alias fidelity is established, in addition to missing genuine quota/bound evidence."
+  },
+  "ap2_gemini_client_state_software": {
+    "guide": "ap2-gemini-client-construction-design-v1.md",
+    "module": "../../src/interoperability/ap2_hp_gemini_client_state_v1.py",
+    "module_sha256": "058ce68e4d0cf605ee0641c7b6e6dc51163242120e845e1472652f5b2822337e",
+    "result": "../../runs/ap2-gemini-client-state-software/state-v1/result.json",
+    "result_sha256": "87cbad5c4a301824e10a78316a654c76505b222923271ec9ac0aacc74f7ae090",
+    "constructed_tests_passed": 19,
+    "source_copies_with_driver": 3,
+    "source_and_driver_inputs_unchanged": true,
+    "declared_test_membership_verified": true,
+    "peer_source_and_driver_review_closed": true,
+    "original_default_nonvertex_none_supported": true,
+    "sdk_imports": 0,
+    "provider_requests": 0,
+    "original_application_imports": 0,
+    "actual_quota_reserved": false,
+    "native_guard_installed": false,
+    "source_identity_verified_by_module": false,
+    "transitive_sdk_fidelity_verified": false,
+    "claim_limit": "Constructor-owned object identity and repeated supplied-class/live-state validation only. Complete original genai/HTTPX/HTTPcore source/global/connection binding and actual SDK observations remain required; frozen transport v1 is unchanged and native installation stays refused."
+  },
+  "ap2_injected_reference_execution": {
+    "guide": "ap2-human-present-reference-execution-software-v1.md",
+    "execution_module": "../../src/interoperability/ap2_hp_reference_execution_v1.py",
+    "execution_sha256": "821b463c1e8d8500b32774b7c04ace2b865c7089c7a8e0ca1f5e7f20ab5df340",
+    "passive_capture_module": "../../src/interoperability/ap2_hp_passive_capture_v1.py",
+    "passive_capture_sha256": "e3abb063246ee0688b098bba933a74c3c2e6c5789b7c9b39bc59cc12b135a5a8",
+    "result": "../../runs/ap2-hp-reference-software/reference-execution-v1/result.json",
+    "result_sha256": "9e7c30d92abf2cd448d8131410bdc896ffdd707101d549586c2b57599c053719",
+    "constructed_tests_passed": 15,
+    "copied_inputs": 11,
+    "original_and_copied_inputs_unchanged": true,
+    "root_retained_receipt_checks_passed": 9,
+    "original_imports_or_model_requests": 0,
+    "native_execution_qualified": false,
+    "claim_limit": "Injected orchestration and same-object passive ASGI behavior only. Caller/final-app alias adapters are now separately constructed-software verified; original native imports, actual final capture placement, durable recording, owned Server shutdown and transport ownership remain open."
+  },
+  "ap2_original_binding_software": {
+    "guide": "ap2-human-present-original-binding-software-v1.md",
+    "caller_module": "../../src/interoperability/ap2_hp_original_binding_v1.py",
+    "caller_sha256": "27c37938751dfb00f21a3a53043ea2f468814d264df71bb8024dd58cea5ac3af",
+    "final_app_module": "../../src/interoperability/ap2_hp_final_asgi_binding_v1.py",
+    "final_app_sha256": "51623f3333c0479a708d05b10b1bac46117cee2c2cde8a8b75d033659445c1d3",
+    "result": "../../runs/ap2-hp-reference-software/original-bindings-v1/result.json",
+    "result_sha256": "122a3246c11b0a5d3a3180f8e81f903e6084d72233bb419f2c5855150497f963",
+    "constructed_tests_passed": 22,
+    "source_closure_count": 5,
+    "captured_file_count_with_driver": 6,
+    "source_and_driver_inputs_unchanged": true,
+    "declared_test_membership_verified": true,
+    "isolated_child_policy_verified": true,
+    "peer_source_review_closed": true,
+    "original_source_imported": false,
+    "native_application_executed": false,
+    "credential_opened": false,
+    "model_requests": 0,
+    "transitive_sdk_fidelity_verified": false,
+    "durable_capture_installed": false,
+    "graceful_server_stop_installed": false,
+    "native_qualification_established": false,
+    "claim_limit": "Synthetic source/default/member verification and mocked seven-alias/final-app placement, original return/error delegation and owned restoration only. Already imported original modules must still be gated and bound; no native SDK construction, Server ownership or transport qualification."
+  },
+  "ap2_original_server_owner_software": {
+    "guide": "ap2-human-present-original-server-owner-software-v1.md",
+    "module": "../../src/interoperability/ap2_hp_original_server_owner_v1.py",
+    "module_sha256": "4dc3dde0e602ce7e863c291bf58e1dfb4c2a1b8b6430dec8c7a6beae4cb9ca26",
+    "result": "../../runs/ap2-hp-server-owner-software/owner-v1/result.json",
+    "result_sha256": "e4cbf97c0d095db0b665a310bdfc3d8b4cf7a20335bb10fc6624da4e85e33777",
+    "constructed_tests_passed": 13,
+    "captured_source_files_with_driver": 7,
+    "original_and_captured_inputs_unchanged": true,
+    "declared_test_membership_verified": true,
+    "constructed_artifact_membership_verified": true,
+    "execution_scope_flags_verified": true,
+    "root_source_and_driver_review_closed": true,
+    "original_server_instance_retention_implemented": true,
+    "owned_should_exit_request_implemented": true,
+    "sdk_imports": 0,
+    "native_application_execution": false,
+    "model_requests": 0,
+    "credential_read": false,
+    "graceful_native_shutdown_proven": false,
+    "native_qualification_established": false,
+    "claim_limit": "Compile-only original descriptor consistency and synthetic/mocked original Server factory retention, should_exit request and restoration authority. Actual Uvicorn/runtime construction, native shutdown, Windows Job/PID/TCP ownership and process exit remain unverified."
+  },
+  "ap2_durable_observer_software": {
+    "guide": "ap2-human-present-durable-observation-software-v1.md",
+    "module": "../../src/interoperability/ap2_hp_durable_observer_v1.py",
+    "module_sha256": "3ba610b079af528cca7301c8357de5cbd609dbf5cedd9460bdf843ce05e8f6bc",
+    "result": "../../runs/ap2-hp-reference-software/durable-observer-v1/result.json",
+    "result_sha256": "d0c327b08d74935c7708374179ea35adf28839580dccfaf019cf11a98705c511",
+    "constructed_tests_passed": 22,
+    "source_closure_count": 4,
+    "captured_file_count_with_driver": 5,
+    "source_and_driver_inputs_unchanged": true,
+    "declared_test_membership_verified": true,
+    "interpreter_unchanged": true,
+    "policy_complete": true,
+    "peer_source_review_closed": true,
+    "root_driver_review_closed": true,
+    "raw_asgi_wrapper_implemented": true,
+    "durable_file_content_acknowledgment_implemented": true,
+    "pending_original_io_tracked": true,
+    "directory_entry_crash_durability_verified": false,
+    "hostile_filesystem_or_runtime_authentication_verified": false,
+    "original_source_imported": false,
+    "native_application_executed": false,
+    "credential_opened": false,
+    "model_requests": 0,
+    "native_qualification_established": false,
+    "claim_limit": "Constructed typed snapshot, file append/fsync, raw object/error preservation and closed local interval completeness/partial seals. Raw test streams/outcomes are retained; temporary synthetic per-case journals were cleaned by tests. Actual native placement, authenticated wire capture, directory crash durability and task completion remain unverified."
+  }
+}

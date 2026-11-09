@@ -1,0 +1,145 @@
+{
+  "schema_version": "admission-benchmark-implementation-status/1",
+  "as_of": "2026-10-29",
+  "supervisor_target": "2026-10-31",
+  "required_this_week": [
+    "new admission algorithm",
+    "implemented benchmark",
+    "running demonstration"
+  ],
+  "paper_required_this_week": false,
+  "algorithm_requirement_retained": true,
+  "artifact_only_route_selected": false,
+  "target_project_completion_percent": 70,
+  "verified_implementation_percent": null,
+  "percentage_reason": "A supervisor-agreed implementation denominator and complete acceptance evidence are not yet available; no 70 percent claim is made.",
+  "extension_granted": false,
+  "research_gate_progress_percent": 5,
+  "research_gate_meaning": "Historical full research-and-paper deliverable rubric; separate from implementation completeness.",
+  "components": [
+    {
+      "id": "runtime_contract",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../src/interoperability/manifest.py",
+        "finite-model-v1.md",
+        "../../runs/admission-benchmark-software/v3/result.json"
+      ],
+      "limit": "Explicit finite model; source-to-model fidelity remains separate."
+    },
+    {
+      "id": "baseline_and_independent_checker",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../src/interoperability/baseline.py",
+        "../../src/interoperability/oracle.py",
+        "../../src/interoperability/refinement_oracle.py",
+        "../../runs/admission-benchmark-software/v3/result.json"
+      ],
+      "limit": "Direct same-input relational solver is the recipe comparator; shared reference module is disclosed."
+    },
+    {
+      "id": "candidate_mechanism",
+      "status": "implemented_adaptation_novelty_open",
+      "evidence": [
+        "admission-refinement-v1.md",
+        "../../src/interoperability/refinement.py"
+      ],
+      "limit": "Witness lifting and context-specific failed-prefix refinement run; no established scientific novelty or advantage."
+    },
+    {
+      "id": "candidate_code",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../src/interoperability/refinement.py",
+        "../../src/interoperability/admission_cli.py",
+        "../../runs/admission-demo/review-1/supported.json"
+      ],
+      "limit": "Model-relative candidate, not live application admission."
+    },
+    {
+      "id": "candidate_independent_validation",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../tests/test_refinement.py",
+        "../../src/interoperability/refinement_oracle.py",
+        "../../runs/admission-benchmark-software/v3/result.json"
+      ],
+      "limit": "32 focused refinement tests within the 69-test receipt; separate code logic, no human validation or source-fidelity proof."
+    },
+    {
+      "id": "comparison_benchmark",
+      "status": "implemented_and_development_executed",
+      "evidence": [
+        "../../src/interoperability/benchmark.py",
+        "../../tests/test_benchmark.py",
+        "../../runs/admission-demo/review-1/benchmark/summary.json"
+      ],
+      "limit": "11 authored recipe cases with resource/certificate accounting; no qualified empirical study."
+    },
+    {
+      "id": "development_inputs",
+      "status": "implemented_development_only",
+      "evidence": [
+        "../../examples/refinement-development/manifest.json",
+        "../../examples/benchmark-development/recipe-v1.json",
+        "../../examples/benchmark-development/suite.json"
+      ],
+      "limit": "Eleven authored recipe examples plus four separate finite examples; two-domain/held-out qualification remains missing."
+    },
+    {
+      "id": "protocol_execution_harness",
+      "status": "implemented_bounded_controls",
+      "evidence": [
+        "agentops-bridge-results-v10.md",
+        "agentops-bridge-diagnostic-results-v12.md"
+      ],
+      "limit": "Real retained local controls; candidate admission is not yet integrated and procurement is unqualified."
+    },
+    {
+      "id": "candidate_benchmark_demo",
+      "status": "implemented_and_replay_verified",
+      "evidence": [
+        "../../scripts/run_admission_demo.py",
+        "implementation-demo-v1.md",
+        "../../runs/admission-demo/review-1/result.json",
+        "../../runs/admission-demo/review-1/replay/summary.json"
+      ],
+      "limit": "Terminal demonstration verified; candidate-driven live route execution is not integrated."
+    },
+    {
+      "id": "candidate_live_route_integration",
+      "status": "not_implemented",
+      "evidence": [],
+      "limit": "Needs public pending-state source mapping, witness-driven controller and a new prospective live control."
+    },
+    {
+      "id": "supervisor_acceptance",
+      "status": "pending",
+      "evidence": [],
+      "limit": "No reviewer approval, project percentage or extension inferred."
+    }
+  ],
+  "last_demonstration": "../../runs/admission-demo/review-1/result.json",
+  "latest_results": "admission-benchmark-results-v1.md",
+  "verification": {
+    "tests_passed": 69,
+    "test_receipt": "../../runs/admission-benchmark-software/v3/result.json",
+    "recipe_cases": 11,
+    "candidate_reference_agreements": 11,
+    "candidate_supported": 4,
+    "candidate_unsupported": 3,
+    "candidate_unknown": 4,
+    "candidate_conclusive_certificates_valid": 7,
+    "captured_replay_passed": true,
+    "finite_smoke_cases": 4,
+    "live_candidate_application_runs": 0
+  },
+  "remaining_critical_work": [
+    "Establish and review distinct algorithm contribution against strong comparators",
+    "Map public route observations and service effects faithfully into candidate profiles",
+    "Implement and verify candidate-driven live continuation dispatch in a new allocation",
+    "Qualify substantive second domain and independent evaluation inputs",
+    "Obtain actual supervisor assessment of completion and extension"
+  ]
+}

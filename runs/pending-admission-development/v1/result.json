@@ -1,0 +1,49 @@
+{
+  "schema_version": "pending-admission-retrospective/1",
+  "status": "passed",
+  "decision": "supported",
+  "certificate_valid": true,
+  "request_matches_retained_dispatch": true,
+  "retained_dispatch_seq": 54,
+  "inputs_unchanged": true,
+  "sources_unchanged": true,
+  "application_requests": 0,
+  "live_admission_verified": false,
+  "scope": "Historical public input/request equivalence only; no new service effect or prospective success",
+  "input_snapshot_sha256": "fa4fdff597d00e82e48c71c06d75233d483004e75d1229ecec4101d2d63f375a",
+  "historical_request": {
+    "method": "tools/call",
+    "params": {
+      "name": "a2a_request",
+      "arguments": {
+        "url": "http://127.0.0.1:18764/",
+        "method": "SendMessage",
+        "params": {
+          "message": {
+            "messageId": "agentops-public-confirmation",
+            "role": "ROLE_USER",
+            "taskId": "1c6cee67-ddca-4af8-bae1-460898509577",
+            "contextId": "298360d6-49b4-4999-8d48-4dc9e0f8bc61",
+            "parts": [
+              {
+                "data": {
+                  "id": "adk-3d91dfd7-2049-4510-8b8c-a17e7c2b6d20",
+                  "name": "adk_request_confirmation",
+                  "response": {
+                    "confirmed": true,
+                    "payload": {
+                      "rationale": "Inventory is down and INC-002 matches the service-down runbook."
+                    }
+                  }
+                },
+                "metadata": {
+                  "adk_type": "function_response"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

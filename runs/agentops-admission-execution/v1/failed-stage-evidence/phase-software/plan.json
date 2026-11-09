@@ -1,0 +1,75 @@
+{
+  "phase": "software",
+  "created_at_utc": "2026-10-28T20:08:00.248029+00:00",
+  "commands": [
+    {
+      "name": "test_agentops_admitted_client_v1",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_agentops_admitted_client_v1"
+      ],
+      "cwd": "/var/tmp/agentops-admission-live-v1-0e3612fb6592436a"
+    },
+    {
+      "name": "test_agentops_admission_live_plan_v1",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_agentops_admission_live_plan_v1"
+      ],
+      "cwd": "/var/tmp/agentops-admission-live-v1-0e3612fb6592436a"
+    },
+    {
+      "name": "test_export_agentops_admission_v1",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_export_agentops_admission_v1"
+      ],
+      "cwd": "/var/tmp/agentops-admission-live-v1-0e3612fb6592436a"
+    },
+    {
+      "name": "test_pending_admission",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_pending_admission"
+      ],
+      "cwd": "/var/tmp/agentops-admission-live-v1-0e3612fb6592436a"
+    },
+    {
+      "name": "test_refinement",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_refinement"
+      ],
+      "cwd": "/var/tmp/agentops-admission-live-v1-0e3612fb6592436a"
+    },
+    {
+      "name": "node-controller",
+      "argv": [
+        "/usr/bin/node",
+        "--test",
+        "tests/test_agentops_admission_controller_v1.mjs"
+      ],
+      "cwd": "/var/tmp/agentops-admission-live-v1-0e3612fb6592436a"
+    }
+  ]
+}

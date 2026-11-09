@@ -1,0 +1,65 @@
+Running python-runtime-after
+python-runtime-after: 0
+Running verify-prepared-inputs
+verify-prepared-inputs: 0
+{
+  "phase": "after",
+  "started_at_utc": "2026-10-28T20:19:07.897472+00:00",
+  "commands": [
+    {
+      "name": "python-runtime-after",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-I",
+        "-B",
+        "/var/tmp/agentops-research-v7-gs9r5her/scripts/inspect_agentops_runtime_v6.py"
+      ],
+      "cwd": "/var/tmp/agentops-research-v7-gs9r5her",
+      "started_at_utc": "2026-10-28T20:19:07.898181+00:00",
+      "pid": 790,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-28T20:19:18.458418+00:00",
+      "streams": [
+        {
+          "path": "python-runtime-after.stdout.bin",
+          "sha256": "123164d5179338607d7b8ea357f1886e71030f25a080de1070f83831bb021b7e"
+        },
+        {
+          "path": "python-runtime-after.stderr.bin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "verify-prepared-inputs",
+      "argv": [
+        "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/venv/bin/python",
+        "-B",
+        "scripts/agentops_admission_live_plan_v1.py",
+        "--verify",
+        "/var/tmp/agentops-admission-live-v1-3b27100aec7d4609/runs/agentops-admission-live-v1/preparation/plan.json"
+      ],
+      "cwd": "/var/tmp/agentops-admission-live-v1-3b27100aec7d4609",
+      "started_at_utc": "2026-10-28T20:19:18.482033+00:00",
+      "pid": 861,
+      "returncode": 0,
+      "finished_at_utc": "2026-10-28T20:19:29.605735+00:00",
+      "streams": [
+        {
+          "path": "verify-prepared-inputs.stdout.bin",
+          "sha256": "de4c9145cf2448e57531119a8309113cbd3a96189d631f3bcef9e49566ab581a"
+        },
+        {
+          "path": "verify-prepared-inputs.stderr.bin",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "finished_at_utc": "2026-10-28T20:19:29.789075+00:00",
+  "staged_sources_unchanged": true,
+  "changed_sources": [],
+  "python_runtime_equal": true,
+  "python_runtime_differing_keys": [],
+  "status": "passed"
+}

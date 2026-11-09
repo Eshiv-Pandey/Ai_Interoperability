@@ -1,0 +1,547 @@
+{
+  "adk_internal_metadata": [
+    {
+      "key": "schema_version",
+      "sqlite_rowid": 1,
+      "value": "1"
+    }
+  ],
+  "app_states": [
+    {
+      "app_name": "agentops-agent",
+      "sqlite_rowid": 1,
+      "state": {},
+      "update_time": "2026-10-28 10:39:15"
+    }
+  ],
+  "events": [
+    {
+      "app_name": "agentops-agent",
+      "event_data": {
+        "actions": {
+          "artifact_delta": {},
+          "requested_auth_configs": {},
+          "requested_tool_confirmations": {},
+          "state_delta": {}
+        },
+        "author": "user",
+        "content": {
+          "parts": [
+            {
+              "text": "Restart inventory."
+            }
+          ],
+          "role": "user"
+        },
+        "id": "97b88974-f8d8-45be-8117-d229891a055b",
+        "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+        "node_info": {
+          "path": ""
+        },
+        "timestamp": 1793183956.1625798
+      },
+      "id": "97b88974-f8d8-45be-8117-d229891a055b",
+      "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+      "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+      "sqlite_rowid": 1,
+      "timestamp": "2026-10-28 10:39:16.162580",
+      "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+    },
+    {
+      "app_name": "agentops-agent",
+      "event_data": {
+        "actions": {
+          "artifact_delta": {},
+          "requested_auth_configs": {},
+          "requested_tool_confirmations": {},
+          "state_delta": {}
+        },
+        "author": "confirmation_test_agent",
+        "content": {
+          "parts": [
+            {
+              "function_call": {
+                "args": {
+                  "name": "inventory"
+                },
+                "id": "restart-inventory-call",
+                "name": "restart_service"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        "id": "870042c5-8236-42e0-bfd5-760462c676aa",
+        "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+        "long_running_tool_ids": [],
+        "node_info": {
+          "path": "confirmation_test_agent@1"
+        },
+        "timestamp": 1793183956.4018342
+      },
+      "id": "870042c5-8236-42e0-bfd5-760462c676aa",
+      "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+      "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+      "sqlite_rowid": 2,
+      "timestamp": "2026-10-28 10:39:16.401834",
+      "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+    },
+    {
+      "app_name": "agentops-agent",
+      "event_data": {
+        "actions": {
+          "artifact_delta": {},
+          "requested_auth_configs": {},
+          "requested_tool_confirmations": {},
+          "state_delta": {}
+        },
+        "author": "confirmation_test_agent",
+        "content": {
+          "parts": [
+            {
+              "function_call": {
+                "args": {
+                  "originalFunctionCall": {
+                    "args": {
+                      "name": "inventory"
+                    },
+                    "id": "restart-inventory-call",
+                    "name": "restart_service"
+                  },
+                  "toolConfirmation": {
+                    "confirmed": false,
+                    "hint": "Please approve or reject the tool call restart_service() by responding with a FunctionResponse with an expected ToolConfirmation payload."
+                  }
+                },
+                "id": "adk-99d59d44-7188-44fb-8a53-479d397d9842",
+                "name": "adk_request_confirmation"
+              }
+            }
+          ],
+          "role": "model"
+        },
+        "id": "01f98665-46e0-4397-99e0-b9bebe8174f2",
+        "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+        "long_running_tool_ids": [
+          "adk-99d59d44-7188-44fb-8a53-479d397d9842"
+        ],
+        "node_info": {
+          "path": "confirmation_test_agent@1"
+        },
+        "timestamp": 1793183960.6727788
+      },
+      "id": "01f98665-46e0-4397-99e0-b9bebe8174f2",
+      "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+      "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+      "sqlite_rowid": 3,
+      "timestamp": "2026-10-28 10:39:20.672779",
+      "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+    },
+    {
+      "app_name": "agentops-agent",
+      "event_data": {
+        "actions": {
+          "artifact_delta": {},
+          "requested_auth_configs": {},
+          "requested_tool_confirmations": {
+            "restart-inventory-call": {
+              "confirmed": false,
+              "hint": "Please approve or reject the tool call restart_service() by responding with a FunctionResponse with an expected ToolConfirmation payload."
+            }
+          },
+          "skip_summarization": true,
+          "state_delta": {}
+        },
+        "author": "confirmation_test_agent",
+        "content": {
+          "parts": [
+            {
+              "function_response": {
+                "id": "restart-inventory-call",
+                "name": "restart_service",
+                "response": {
+                  "error": "This tool call requires confirmation, please approve or reject."
+                }
+              }
+            }
+          ],
+          "role": "user"
+        },
+        "id": "d276a6ec-e69d-4c41-8eaf-7586cfa83051",
+        "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+        "node_info": {
+          "path": "confirmation_test_agent@1"
+        },
+        "timestamp": 1793183960.6576025
+      },
+      "id": "d276a6ec-e69d-4c41-8eaf-7586cfa83051",
+      "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+      "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+      "sqlite_rowid": 4,
+      "timestamp": "2026-10-28 10:39:20.657603",
+      "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+    },
+    {
+      "app_name": "agentops-agent",
+      "event_data": {
+        "actions": {
+          "artifact_delta": {},
+          "requested_auth_configs": {},
+          "requested_tool_confirmations": {},
+          "state_delta": {}
+        },
+        "author": "user",
+        "content": {
+          "parts": [
+            {
+              "function_response": {
+                "id": "adk-99d59d44-7188-44fb-8a53-479d397d9842",
+                "name": "adk_request_confirmation",
+                "response": {
+                  "confirmed": true,
+                  "payload": {
+                    "rationale": "Inventory is down and INC-002 matches the service-down runbook."
+                  }
+                }
+              },
+              "part_metadata": {
+                "adk_type": "function_response"
+              }
+            }
+          ],
+          "role": "user"
+        },
+        "id": "42ce022a-20c8-4724-ab56-a8b2a0dbe9ea",
+        "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+        "node_info": {
+          "path": ""
+        },
+        "timestamp": 1793183963.260999
+      },
+      "id": "42ce022a-20c8-4724-ab56-a8b2a0dbe9ea",
+      "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+      "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+      "sqlite_rowid": 5,
+      "timestamp": "2026-10-28 10:39:23.260999",
+      "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+    },
+    {
+      "app_name": "agentops-agent",
+      "event_data": {
+        "actions": {
+          "artifact_delta": {},
+          "requested_auth_configs": {},
+          "requested_tool_confirmations": {},
+          "state_delta": {}
+        },
+        "author": "confirmation_test_agent",
+        "content": {
+          "parts": [
+            {
+              "function_response": {
+                "id": "restart-inventory-call",
+                "name": "restart_service",
+                "response": {
+                  "audit": {
+                    "action": "restart_service",
+                    "actor": "agentops-agent",
+                    "approved_by": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+                    "context_summary": "<<<TOOL_DATA data-not-instructions>>>\nservice inventory was down; open incidents: INC-002\n<<<END_TOOL_DATA>>>",
+                    "detail": "<<<TOOL_DATA data-not-instructions>>>\nservice restarted and marked operational (mock)\n<<<END_TOOL_DATA>>>",
+                    "id": 1,
+                    "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+                    "rationale": "<<<TOOL_DATA data-not-instructions>>>\nInventory is down and INC-002 matches the service-down runbook.\n<<<END_TOOL_DATA>>>",
+                    "schema_version": 1,
+                    "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+                    "target": "inventory",
+                    "ts": "2026-10-28T10:39:24Z"
+                  },
+                  "result": "Service 'inventory' restarted and marked operational."
+                }
+              }
+            }
+          ],
+          "role": "user"
+        },
+        "id": "3627138c-685e-49dd-a6dd-4c55c5f5fd31",
+        "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+        "node_info": {
+          "path": "confirmation_test_agent@1"
+        },
+        "timestamp": 1793183965.394662
+      },
+      "id": "3627138c-685e-49dd-a6dd-4c55c5f5fd31",
+      "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+      "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+      "sqlite_rowid": 6,
+      "timestamp": "2026-10-28 10:39:25.394662",
+      "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+    },
+    {
+      "app_name": "agentops-agent",
+      "event_data": {
+        "actions": {
+          "artifact_delta": {},
+          "requested_auth_configs": {},
+          "requested_tool_confirmations": {},
+          "state_delta": {}
+        },
+        "author": "confirmation_test_agent",
+        "content": {
+          "parts": [
+            {
+              "text": "The approved inventory restart completed and was audited."
+            }
+          ],
+          "role": "model"
+        },
+        "id": "3160223a-6646-41da-adcb-429d0078c5ac",
+        "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+        "node_info": {
+          "path": "confirmation_test_agent@1"
+        },
+        "timestamp": 1793183965.664279
+      },
+      "id": "3160223a-6646-41da-adcb-429d0078c5ac",
+      "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+      "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+      "sqlite_rowid": 7,
+      "timestamp": "2026-10-28 10:39:25.664279",
+      "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+    }
+  ],
+  "sessions": [
+    {
+      "app_name": "agentops-agent",
+      "create_time": "2026-10-28 10:39:15.945984",
+      "id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+      "sqlite_rowid": 1,
+      "state": {},
+      "update_time": "2026-10-28 10:39:25.664279",
+      "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+    }
+  ],
+  "tasks": [
+    {
+      "artifacts": [
+        {
+          "artifactId": "4c7fb52a-f94d-43a6-93ca-98c950687c01",
+          "metadata": {
+            "adk_actions": {
+              "stateDelta": {}
+            },
+            "adk_author": "confirmation_test_agent",
+            "adk_event_id": "870042c5-8236-42e0-bfd5-760462c676aa",
+            "adk_invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf"
+          },
+          "parts": [
+            {
+              "data": {
+                "args": {
+                  "name": "inventory"
+                },
+                "id": "restart-inventory-call",
+                "name": "restart_service"
+              },
+              "metadata": {
+                "adk_type": "function_call"
+              }
+            }
+          ]
+        },
+        {
+          "artifactId": "cf4ce75f-058c-4f06-b077-5cf325632725",
+          "metadata": {
+            "adk_actions": {
+              "requestedToolConfirmations": {
+                "restart-inventory-call": {
+                  "hint": "Please approve or reject the tool call restart_service() by responding with a FunctionResponse with an expected ToolConfirmation payload."
+                }
+              },
+              "skipSummarization": true,
+              "stateDelta": {}
+            },
+            "adk_author": "confirmation_test_agent",
+            "adk_event_id": "d276a6ec-e69d-4c41-8eaf-7586cfa83051",
+            "adk_invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf"
+          },
+          "parts": [
+            {
+              "data": {
+                "id": "restart-inventory-call",
+                "name": "restart_service",
+                "response": {
+                  "error": "This tool call requires confirmation, please approve or reject."
+                }
+              },
+              "metadata": {
+                "adk_type": "function_response"
+              }
+            }
+          ]
+        },
+        {
+          "artifactId": "697474b6-dffe-4e26-acca-e4d472c15543",
+          "metadata": {
+            "adk_actions": {
+              "stateDelta": {}
+            },
+            "adk_author": "confirmation_test_agent",
+            "adk_event_id": "3627138c-685e-49dd-a6dd-4c55c5f5fd31",
+            "adk_invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf"
+          },
+          "parts": [
+            {
+              "data": {
+                "id": "restart-inventory-call",
+                "name": "restart_service",
+                "response": {
+                  "audit": {
+                    "action": "restart_service",
+                    "actor": "agentops-agent",
+                    "approved_by": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+                    "context_summary": "<<<TOOL_DATA data-not-instructions>>>\nservice inventory was down; open incidents: INC-002\n<<<END_TOOL_DATA>>>",
+                    "detail": "<<<TOOL_DATA data-not-instructions>>>\nservice restarted and marked operational (mock)\n<<<END_TOOL_DATA>>>",
+                    "id": 1.0,
+                    "invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf",
+                    "rationale": "<<<TOOL_DATA data-not-instructions>>>\nInventory is down and INC-002 matches the service-down runbook.\n<<<END_TOOL_DATA>>>",
+                    "schema_version": 1.0,
+                    "session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+                    "target": "inventory",
+                    "ts": "2026-10-28T10:39:24Z"
+                  },
+                  "result": "Service 'inventory' restarted and marked operational."
+                }
+              },
+              "metadata": {
+                "adk_type": "function_response"
+              }
+            }
+          ]
+        },
+        {
+          "artifactId": "bef33136-d950-48f7-b53b-d4dde8312900",
+          "metadata": {
+            "adk_actions": {
+              "stateDelta": {}
+            },
+            "adk_author": "confirmation_test_agent",
+            "adk_event_id": "3160223a-6646-41da-adcb-429d0078c5ac",
+            "adk_invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf"
+          },
+          "parts": [
+            {
+              "text": "The approved inventory restart completed and was audited."
+            }
+          ]
+        }
+      ],
+      "context_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+      "history": [
+        {
+          "contextId": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+          "messageId": "msg-mvrzffg1-4lte3pva",
+          "parts": [
+            {
+              "mediaType": "text/plain",
+              "text": "Restart inventory."
+            }
+          ],
+          "role": "ROLE_USER",
+          "taskId": "19999b00-7208-40f0-8c15-27532887184d"
+        },
+        {
+          "messageId": "5aace59d-861b-47d7-a09b-76eeeba761d1",
+          "metadata": {
+            "adk_actions": {
+              "stateDelta": {}
+            },
+            "adk_author": "confirmation_test_agent",
+            "adk_event_id": "01f98665-46e0-4397-99e0-b9bebe8174f2",
+            "adk_invocation_id": "e-e7ccebff-5743-4a06-9069-d9e17ae801bf"
+          },
+          "role": "ROLE_AGENT"
+        },
+        {
+          "messageId": "7aa05760-d466-4138-a2ea-668dcf9a7e27",
+          "parts": [
+            {
+              "data": {
+                "args": {
+                  "originalFunctionCall": {
+                    "args": {
+                      "name": "inventory"
+                    },
+                    "id": "restart-inventory-call",
+                    "name": "restart_service"
+                  },
+                  "toolConfirmation": {
+                    "confirmed": false,
+                    "hint": "Please approve or reject the tool call restart_service() by responding with a FunctionResponse with an expected ToolConfirmation payload."
+                  }
+                },
+                "id": "adk-99d59d44-7188-44fb-8a53-479d397d9842",
+                "name": "adk_request_confirmation"
+              },
+              "metadata": {
+                "adk_is_long_running": true,
+                "adk_type": "function_call"
+              }
+            }
+          ],
+          "role": "ROLE_AGENT"
+        },
+        {
+          "contextId": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+          "messageId": "msg-mvrzfl28-y5zr7p1w",
+          "parts": [
+            {
+              "data": {
+                "id": "adk-99d59d44-7188-44fb-8a53-479d397d9842",
+                "name": "adk_request_confirmation",
+                "response": {
+                  "confirmed": true,
+                  "payload": {
+                    "rationale": "Inventory is down and INC-002 matches the service-down runbook."
+                  }
+                }
+              },
+              "metadata": {
+                "adk_type": "function_response"
+              }
+            }
+          ],
+          "role": "ROLE_USER",
+          "taskId": "19999b00-7208-40f0-8c15-27532887184d"
+        }
+      ],
+      "id": "19999b00-7208-40f0-8c15-27532887184d",
+      "kind": "task",
+      "last_updated": "2026-10-28 10:39:26.082239",
+      "metadata": {
+        "adk_app_name": "agentops-agent",
+        "adk_session_id": "e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+        "adk_user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00",
+        "https://google.github.io/adk-docs/a2a/a2a-extension/": {
+          "adk_agent_executor_v2": true
+        }
+      },
+      "owner": "",
+      "protocol_version": "1.0",
+      "sqlite_rowid": 1,
+      "status": {
+        "state": "TASK_STATE_COMPLETED",
+        "timestamp": "2026-10-28T10:39:26.082239Z"
+      }
+    }
+  ],
+  "user_states": [
+    {
+      "app_name": "agentops-agent",
+      "sqlite_rowid": 1,
+      "state": {},
+      "update_time": "2026-10-28 10:39:15",
+      "user_id": "A2A_USER_e15640ab-7fa4-41de-b3d5-5f6c3e33ba00"
+    }
+  ]
+}

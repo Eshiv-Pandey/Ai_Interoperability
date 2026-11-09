@@ -1,0 +1,929 @@
+{
+  "kind": "read_only_source_query_feasibility_index",
+  "prepared_at_utc": "2026-10-23T20:10:08.070844+00:00",
+  "scope": "pinned local implementations and existing development wire evidence; no candidate efficacy measurement",
+  "model_calls": 0,
+  "source_files": [
+    {
+      "path": "external/a2a-to-mcp/src/tools.ts",
+      "bridge_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "sha256": "9e96fd60b8146a88c575fd63ef07baef532a6fe9c40a650ede390626c71cf659",
+      "line_count": 486,
+      "excerpts": [
+        {
+          "start": 254,
+          "end": 300,
+          "text": "async function sendMessage(\n  args: Record<string, unknown>,\n  deps: ToolDeps,\n  context: CallContext,\n): Promise<CallToolResult | InputRequiredResult> {\n  const alias = String(args[\"agent\"]);\n  // Validates the alias without a fetch: a handle is checked before the\n  // network, so an unknown handle is reported as such even when the agent\n  // card happens to be unreachable.\n  deps.cards.cardUrlOf(alias);\n\n  if (context.requestState !== undefined) {\n    // A later round of a multi-round-trip: the arguments are the ones the\n    // first round was called with, and what matters is the answer the client\n    // collected and the task the verified state names.\n    return deps.mrtr.resume(alias, context.requestState, context.inputResponses);\n  }\n\n  let contextId: string | undefined;\n  let taskId: string | undefined;\n\n  const taskHandle = args[\"taskHandle\"];\n  if (typeof taskHandle === \"string\") {\n    const record = deps.handles.tasks.resolve(taskHandle);\n    assertSameAgent(alias, record.alias, taskHandle);\n    taskId = record.a2aTaskId;\n    contextId = record.contextId;\n  }\n\n  const contextHandle = args[\"contextHandle\"];\n  if (typeof contextHandle === \"string\") {\n    const record = deps.handles.resolveContext(contextHandle);\n    assertSameAgent(alias, record.alias, contextHandle);\n    contextId = record.contextId;\n  }\n\n  const input = {\n    text: String(args[\"text\"]),\n    ...(contextId === undefined ? {} : { contextId }),\n    ...(taskId === undefined ? {} : { taskId }),\n  };\n\n  if (context.tasksExtension) {\n    // The client can hold an MCP task, so an A2A task becomes one instead of\n    // being waited out inside the tool call.\n    const outcome = await deps.tasks.createTask(alias, input);\n    if (outcome.kind === \"task\") {"
+        },
+        {
+          "start": 357,
+          "end": 386,
+          "text": "async function getTask(args: Record<string, unknown>, deps: ToolDeps): Promise<CallToolResult> {\n  const alias = String(args[\"agent\"]);\n  const handle = String(args[\"taskHandle\"]);\n  deps.cards.cardUrlOf(alias);\n  const record = deps.handles.tasks.resolve(handle);\n  assertSameAgent(alias, record.alias, handle);\n  const historyLength = args[\"historyLength\"];\n  const task = await deps.agents.getTask(\n    alias,\n    record.a2aTaskId,\n    typeof historyLength === \"number\" ? historyLength : undefined,\n  );\n  deps.handles.tasks.markUpdated(handle);\n  return taskEnvelope(deps.handles, alias, task, { includeHistory: true }) as CallToolResult;\n}\n\nasync function cancelTask(args: Record<string, unknown>, deps: ToolDeps): Promise<CallToolResult> {\n  const alias = String(args[\"agent\"]);\n  const handle = String(args[\"taskHandle\"]);\n  deps.cards.cardUrlOf(alias);\n  const record = deps.handles.tasks.resolve(handle);\n  assertSameAgent(alias, record.alias, handle);\n  const task = await deps.agents.cancelTask(alias, record.a2aTaskId);\n  deps.handles.tasks.markUpdated(handle);\n  return taskEnvelope(deps.handles, alias, task) as CallToolResult;\n}\n\n/** Raised when a handle minted for one agent is replayed against another. */\nclass WrongAgentError extends Error {\n  constructor(expected: string, actual: string, handle: string) {"
+        }
+      ]
+    },
+    {
+      "path": "external/a2a-to-mcp/src/envelope.ts",
+      "bridge_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "sha256": "ce218cbf0ddca4fb7ddcb5861eafd11e94ea5ac9530672d3b4a1c282c30ae8b1",
+      "line_count": 220,
+      "excerpts": [
+        {
+          "start": 150,
+          "end": 190,
+          "text": "/** Builds the tool result for a Task, whatever state it is in. */\nexport function taskEnvelope(\n  handles: BridgeHandles,\n  alias: string,\n  task: Task,\n  options: TaskEnvelopeOptions = {},\n): EnvelopeResult {\n  const state = task.status?.state ?? TaskState.TASK_STATE_UNSPECIFIED;\n  const mapping = toMcpStatus(state);\n  const artifacts = task.artifacts ?? [];\n  const parts: Part[] = artifacts.flatMap((artifact) => artifact.parts);\n\n  const content: ContentBlock[] = artifacts.flatMap((artifact) => artifactToContent(artifact));\n  const statusMessage = task.status?.message;\n  if (statusMessage !== undefined) {\n    content.push(...messageToContent(statusMessage));\n  }\n\n  const refs: ArtifactRef[] = artifacts.map((artifact) => ({\n    artifactId: artifact.artifactId,\n    name: artifact.name,\n  }));\n  const data = structuredContentFromParts(parts);\n\n  const envelope: BridgeEnvelope = {\n    kind: \"task\",\n    contextHandle: handles.mintContext(alias, task.contextId),\n    taskHandle: handles.tasks.mintFor(alias, task, isTerminalA2AState(state)),\n    a2aState: taskStateToJSON(state),\n    status: mapping.status,\n    ...(mapping.lossy && mapping.note !== undefined ? { note: mapping.note } : {}),\n    ...(refs.length > 0 ? { artifacts: refs } : {}),\n    ...(data === undefined ? {} : { data }),\n    ...(options.includeHistory === true ? { history: historyOf(task) } : {}),\n  };\n\n  return {\n    content,\n    structuredContent: envelope,\n    ...(ERROR_STATES.includes(state) ? { isError: true } : {}),\n  };"
+        }
+      ]
+    },
+    {
+      "path": "external/a2a-to-mcp/src/parts.ts",
+      "bridge_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "sha256": "c4b20e2227a1024cf29bcbac5d9811bf7011046253ebe0fddbc2217c36ef3dad",
+      "line_count": 291,
+      "excerpts": [
+        {
+          "start": 55,
+          "end": 90,
+          "text": "/** Maps one A2A part onto the MCP content block that carries it best. */\nexport function partToContent(part: Part, origin: A2APartOrigin = {}): ContentBlock {\n  assertModernPart(part);\n  const content = part.content;\n  if (content === undefined) {\n    throw new InvalidPartError(\"A2A Part has no content set: the oneof is empty.\");\n  }\n\n  switch (content.$case) {\n    case \"text\":\n      return withMeta<TextContent>({ type: \"text\", text: content.value }, part, origin);\n    case \"data\":\n      return withMeta<TextContent>(\n        { type: \"text\", text: JSON.stringify(content.value) },\n        part,\n        origin,\n      );\n    case \"url\":\n      return withMeta<ResourceLink>(\n        {\n          type: \"resource_link\",\n          uri: content.value,\n          name: part.filename !== \"\" ? part.filename : content.value,\n          ...(part.mediaType !== \"\" ? { mimeType: part.mediaType } : {}),\n        },\n        part,\n        origin,\n      );\n    case \"raw\":\n      return rawToContent(part, content.value, origin);\n    default:\n      throw new InvalidPartError(\n        `A2A Part has an unsupported oneof case: ${String((content as { $case: string }).$case)}.`,\n      );\n  }\n}"
+        },
+        {
+          "start": 149,
+          "end": 166,
+          "text": "/** Maps every part of an artifact, keeping order and artifact identity. */\nexport function artifactToContent(artifact: Artifact): ContentBlock[] {\n  const origin: A2APartOrigin = {\n    ...(artifact.artifactId !== \"\" ? { artifactId: artifact.artifactId } : {}),\n    ...(artifact.name !== \"\" ? { artifactName: artifact.name } : {}),\n    ...(artifact.description !== \"\" ? { artifactDescription: artifact.description } : {}),\n  };\n  return artifact.parts.map((part) => partToContent(part, origin));\n}\n\n/** Maps every part of a message, keeping order and message identity. */\nexport function messageToContent(message: Message): ContentBlock[] {\n  const origin: A2APartOrigin = {\n    ...(message.messageId !== \"\" ? { messageId: message.messageId } : {}),\n    ...(message.contextId !== \"\" ? { contextId: message.contextId } : {}),\n    ...(message.taskId !== \"\" ? { taskId: message.taskId } : {}),\n  };\n  return message.parts.map((part) => partToContent(part, origin));"
+        },
+        {
+          "start": 188,
+          "end": 207,
+          "text": "function rawToContent(part: Part, bytes: Buffer, origin: A2APartOrigin): ContentBlock {\n  const data = Buffer.from(bytes).toString(\"base64\");\n  if (part.mediaType.startsWith(\"image/\")) {\n    return withMeta<ImageContent>({ type: \"image\", data, mimeType: part.mediaType }, part, origin);\n  }\n  if (part.mediaType.startsWith(\"audio/\")) {\n    return withMeta<AudioContent>({ type: \"audio\", data, mimeType: part.mediaType }, part, origin);\n  }\n  return withMeta<EmbeddedResource>(\n    {\n      type: \"resource\",\n      resource: {\n        uri: blobUri(part, bytes),\n        blob: data,\n        mimeType: part.mediaType !== \"\" ? part.mediaType : DEFAULT_BLOB_MEDIA_TYPE,\n      },\n    },\n    part,\n    origin,\n  );"
+        }
+      ]
+    },
+    {
+      "path": "external/a2a-to-mcp/src/tasks/handlers.ts",
+      "bridge_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "sha256": "c084b0a6857c8f990875cc04ab8f2a5c9072ca969ed5db67589c597b8dda5f02",
+      "line_count": 585,
+      "excerpts": [
+        {
+          "start": 31,
+          "end": 38,
+          "text": "/** Identifier of the tasks extension, as clients declare it. */\nexport const TASKS_EXTENSION_ID = \"io.modelcontextprotocol/tasks\";\n\n/** The only MCP revision on which the bridge serves the extension. */\nexport const MODERN_REVISION = \"2026-07-28\";\n\n/** The three methods the extension defines on the 2026-07-28 revision. */\nexport const TASKS_METHODS = [\"tasks/get\", \"tasks/update\", \"tasks/cancel\"] as const;"
+        },
+        {
+          "start": 193,
+          "end": 241,
+          "text": "  /** tasks/get: the current state of the task, in the DetailedTask shape. */\n  async #get(record: TaskRecord): Promise<Record<string, unknown>> {\n    await this.#refresh(record);\n    const updated = this.#handles.tasks.markUpdated(record.handle);\n    const state = stateOf(record.snapshot);\n\n    const base: Record<string, unknown> = {\n      resultType: \"complete\",\n      taskId: record.handle,\n      status: record.bridgeError === undefined ? toTaskExtensionStatus(state) : \"failed\",\n      createdAt: updated.createdAt,\n      lastUpdatedAt: updated.lastUpdatedAt,\n      ttlMs: this.#ttlMs,\n      pollIntervalMs: POLL_INTERVAL_MS,\n    };\n\n    if (record.bridgeError !== undefined) {\n      base[\"statusMessage\"] = record.bridgeError.message;\n      base[\"error\"] = {\n        code: record.bridgeError.code,\n        message: record.bridgeError.message,\n        data: record.bridgeError.data,\n      };\n      return base;\n    }\n\n    const statusMessage = statusMessageOf(record.snapshot);\n    if (statusMessage !== \"\") {\n      base[\"statusMessage\"] = statusMessage;\n    }\n\n    switch (base[\"status\"]) {\n      case \"input_required\":\n        // A2A asks in free text and MCP wants a schema, so the form is\n        // synthesized here and the loss is stated in the statusMessage.\n        base[\"statusMessage\"] = toMcpStatus(TaskState.TASK_STATE_INPUT_REQUIRED).note;\n        base[\"inputRequests\"] = inputRequestsFor(statusMessage);\n        return base;\n      case \"completed\":\n        // The extension asks for exactly what the underlying request would\n        // have returned, so the CallToolResult of a2a_send_message goes back\n        // verbatim, built once and then frozen.\n        base[\"result\"] = this.#frozenResult(record);\n        return base;\n      default:\n        // working and cancelled carry nothing beyond the base fields.\n        return base;\n    }\n  }"
+        },
+        {
+          "start": 252,
+          "end": 267,
+          "text": "  async #update(record: TaskRecord, params: unknown): Promise<Record<string, unknown>> {\n    const view = inputResponse(readInputResponses(params), ANSWER_KEY);\n    if (view.kind === \"elicit\" && this.#isWaiting(record)) {\n      if (view.action === \"accept\") {\n        const answer = readAnswer(view.content);\n        if (answer !== undefined) {\n          await this.#answer(record, answer);\n        }\n      } else {\n        // decline and cancel both say the client will not answer, so the A2A\n        // task is cancelled rather than left waiting until its handle expires.\n        await this.#cancelUpstream(record);\n      }\n    }\n    this.#handles.tasks.markUpdated(record.handle);\n    return { resultType: \"complete\" };"
+        },
+        {
+          "start": 287,
+          "end": 307,
+          "text": "  async #answer(record: TaskRecord, answer: string): Promise<void> {\n    const input: SendMessageInput = {\n      text: answer,\n      contextId: record.contextId,\n      taskId: record.a2aTaskId,\n    };\n    this.#markWorking(record);\n    if (!(await this.#agents.supportsStreaming(record.alias))) {\n      await this.#upstream(record, () =>\n        this.#agents.sendMessage(record.alias, input, { returnImmediately: true }),\n      );\n      await this.#refresh(record);\n      return;\n    }\n    const stream = await this.#upstream(record, () =>\n      this.#agents.sendMessageStream(record.alias, input),\n    );\n    record.streaming = true;\n    // Not awaited on purpose: the client is acknowledged now, and the stream\n    // keeps writing into the record until it closes.\n    void this.#consume(record, stream[Symbol.asyncIterator]());"
+        },
+        {
+          "start": 388,
+          "end": 403,
+          "text": "  /**\n   * Brings a record up to date before answering. A terminal record is frozen,\n   * a record a stream is still feeding is already current, and a record the\n   * bridge has already failed on is not asked again.\n   */\n  async #refresh(record: TaskRecord): Promise<void> {\n    if (record.terminal || record.streaming || record.bridgeError !== undefined) {\n      return;\n    }\n    try {\n      // historyLength is left unset: the extension reports a lifecycle, and\n      // the conversation is what a2a_get_task is for.\n      this.#adopt(record, await this.#agents.getTask(record.alias, record.a2aTaskId));\n    } catch (error) {\n      record.bridgeError = bridgeErrorOf(record.alias, error);\n    }"
+        },
+        {
+          "start": 406,
+          "end": 441,
+          "text": "  /** The terminal CallToolResult, built once and handed back unchanged. */\n  #frozenResult(record: TaskRecord): Record<string, unknown> {\n    const held = record.frozenResult;\n    if (held !== undefined) {\n      return held;\n    }\n    const built: Record<string, unknown> = {\n      ...(taskEnvelope(this.#handles, record.alias, record.snapshot) as unknown as Record<\n        string,\n        unknown\n      >),\n      // The same identity the 2026-07-28 encode seam stamps on a tools/call\n      // result, and no related-task key: the result is inlined here, not\n      // pointed at.\n      _meta: { [SERVER_INFO_META_KEY]: this.#serverInfo },\n    };\n    record.frozenResult = built;\n    return built;\n  }\n\n  /** The CreateTaskResult of a freshly opened task, flat as the schema asks. */\n  #createTaskResult(record: TaskRecord): Record<string, unknown> {\n    const statusMessage = statusMessageOf(record.snapshot);\n    return {\n      resultType: \"task\",\n      taskId: record.handle,\n      status: toTaskExtensionStatus(stateOf(record.snapshot)),\n      ...(statusMessage === \"\" ? {} : { statusMessage }),\n      createdAt: record.createdAt,\n      lastUpdatedAt: record.lastUpdatedAt,\n      ttlMs: this.#ttlMs,\n      pollIntervalMs: POLL_INTERVAL_MS,\n      // Required by the tools/call seam of the SDK, empty because the result\n      // of the task is not known yet.\n      content: [],\n    };"
+        }
+      ]
+    },
+    {
+      "path": "external/a2a-to-mcp/src/tasks/store.ts",
+      "bridge_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "sha256": "aa9acdd39d91b68971497439f5aefae95cd7a96d754426fa6ca599a76aa1ae87",
+      "line_count": 189,
+      "excerpts": [
+        {
+          "start": 78,
+          "end": 120,
+          "text": "  /**\n   * Mints the handle of an A2A task, or refreshes the one already minted for\n   * it. The idempotency key is the alias and the A2A task id together, because\n   * two agents may well use the same task id.\n   *\n   * A record that already reached a terminal state keeps the snapshot it\n   * settled on: the extension requires tasks/get to answer identically once\n   * the task is finished.\n   */\n  mintFor(alias: string, task: Task, terminal = false): string {\n    const key = `${alias}:${task.id}`;\n    const stamp = this.#stamp();\n    const known = this.#byKey.get(key);\n    if (known !== undefined) {\n      const record = this.#peek(known);\n      if (record !== undefined) {\n        // The stored object is handed back by reference, so the record is\n        // updated in place and the creation date survives.\n        record.contextId = task.contextId;\n        record.lastUpdatedAt = stamp;\n        if (!record.terminal) {\n          record.snapshot = task;\n          record.terminal = terminal;\n        }\n        this.#table.touch(known);\n        return known;\n      }\n      this.#byKey.delete(key);\n    }\n    const handle = this.#table.mint({\n      handle: \"\",\n      alias,\n      a2aTaskId: task.id,\n      contextId: task.contextId,\n      createdAt: stamp,\n      lastUpdatedAt: stamp,\n      snapshot: task,\n      terminal,\n      streaming: false,\n    });\n    this.#table.resolve(handle).handle = handle;\n    this.#byKey.set(key, handle);\n    return handle;"
+        }
+      ]
+    },
+    {
+      "path": "external/a2a-to-mcp/src/handles.ts",
+      "bridge_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "sha256": "18fd7d218f9a0c9110add689a58273b8dffa18e30c85e507aa7e9deac764c6dc",
+      "line_count": 213,
+      "excerpts": [
+        {
+          "start": 1,
+          "end": 45,
+          "text": "/**\n * Handle table for stateful MCP tools.\n *\n * The bridge never hands an A2A task id or context id to an MCP client. It\n * mints an opaque handle, keeps the real reference in memory for a bounded\n * time, and answers an explicit error once the handle has expired, as MCP\n * 2026-07-28 asks of stateful tools.\n */\nimport { randomBytes } from \"node:crypto\";\n\n/** Raised when a handle was never minted, or was deleted. */\nexport class UnknownHandleError extends Error {\n  readonly handle: string;\n\n  constructor(handle: string) {\n    super(`Unknown handle ${JSON.stringify(handle)}: it was never minted, or it was deleted.`);\n    this.name = \"UnknownHandleError\";\n    this.handle = handle;\n  }\n}\n\n/** Raised when a handle exists but its lifetime has elapsed. */\nexport class HandleExpiredError extends Error {\n  readonly handle: string;\n\n  constructor(handle: string, ttlMs: number) {\n    super(\n      `Handle ${JSON.stringify(handle)} has expired after ${ttlMs} ms of inactivity. ` +\n        \"Start again from the call that produced it.\",\n    );\n    this.name = \"HandleExpiredError\";\n    this.handle = handle;\n  }\n}\n\nexport interface HandleTableOptions {\n  /**\n   * Lifetime of a handle, restarted by touch and by minting again for the\n   * same idempotency key. Must be strictly positive.\n   */\n  ttlMs: number;\n  /** Clock, injectable for tests. Defaults to Date.now. */\n  now?: () => number;\n  /** Handle prefix, so handles are recognisable in a transcript. */\n  prefix?: string;"
+        }
+      ]
+    },
+    {
+      "path": "external/a2a-to-mcp/src/agent-card.ts",
+      "bridge_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "sha256": "69f6bf59c45bc490493f7a18a9e8c500bb2b3970a019948b1423720266cd2cba",
+      "line_count": 259,
+      "excerpts": [
+        {
+          "start": 1,
+          "end": 25,
+          "text": "/**\n * Agent card resolution, one entry per configured alias.\n *\n * The bridge fetches the card itself rather than letting the A2A client do it\n * through ClientFactory.createFromUrl, for three reasons: the card is the\n * structuredContent of a2a_discover and must reach the client unmodified; the\n * bridge picks the JSON-RPC interface explicitly instead of taking the first\n * entry of supportedInterfaces (which is what the SDK does by default); and a\n * card fetched once has to be reused across tool calls, so the cache and its\n * TTL live here.\n *\n * Validation is deliberately minimal. The bridge refuses a payload that could\n * not possibly be an A2A v1.0 card, and passes everything else through: a card\n * the bridge does not understand is still useful to the model reading it.\n */\nimport type { AgentCard, AgentInterface } from \"@a2a-js/sdk\";\n\n/** Default lifetime of a cached agent card: one minute. */\nexport const DEFAULT_CARD_TTL_MS = 60_000;\n\n/** The A2A protocol version the bridge speaks. */\nexport const A2A_VERSION = \"1.0\";\n\n/** The protocolBinding value of the JSON-RPC interface, compared case-insensitively. */\nconst JSONRPC_BINDING = \"jsonrpc\";"
+        },
+        {
+          "start": 110,
+          "end": 155,
+          "text": "      throw new UnknownAgentError(alias, this.aliases);\n    }\n    return entry.cardUrl;\n  }\n\n  /** The card of an alias, already resolved and still fresh, if there is one. */\n  peek(alias: string): ResolvedAgent | undefined {\n    const cached = this.#cache.get(alias);\n    if (cached === undefined || cached.expiresAt <= this.#now()) {\n      return undefined;\n    }\n    return cached.resolved;\n  }\n\n  /** Resolves an alias, fetching the card at most once per TTL window. */\n  async get(alias: string): Promise<ResolvedAgent> {\n    const cardUrl = this.cardUrlOf(alias);\n    const fresh = this.peek(alias);\n    if (fresh !== undefined) {\n      return fresh;\n    }\n    // Two tool calls racing on a cold cache must still fetch only once.\n    const pending = this.#inFlight.get(alias);\n    if (pending !== undefined) {\n      return pending;\n    }\n    const attempt = this.#load(alias, cardUrl).finally(() => {\n      this.#inFlight.delete(alias);\n    });\n    this.#inFlight.set(alias, attempt);\n    return attempt;\n  }\n\n  /** Drops the cached card of an alias, so the next get refetches. */\n  invalidate(alias: string): void {\n    this.#cache.delete(alias);\n  }\n\n  async #load(alias: string, cardUrl: string): Promise<ResolvedAgent> {\n    const card = await this.#fetchCard(alias, cardUrl);\n    const resolved: ResolvedAgent = {\n      alias,\n      cardUrl,\n      card,\n      agentInterface: pickJsonRpcInterface(alias, cardUrl, card),\n    };"
+        }
+      ]
+    },
+    {
+      "path": "external/a2a-to-mcp/src/a2a-client.ts",
+      "bridge_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "sha256": "38cca90108c057823c823fac881bba074bc6df99e2ac07746ad2426550815b06",
+      "line_count": 237,
+      "excerpts": [
+        {
+          "start": 138,
+          "end": 156,
+          "text": "  async getTask(alias: string, taskId: string, historyLength?: number): Promise<Task> {\n    const client = await this.#clientFor(alias);\n    return this.#call(alias, \"GetTask\", () =>\n      client.getTask({\n        tenant: \"\",\n        id: taskId,\n        ...(historyLength === undefined ? {} : { historyLength }),\n      }),\n    );\n  }\n\n  /** Asks the agent to cancel a task. Cancellation is cooperative in A2A. */\n  async cancelTask(alias: string, taskId: string): Promise<Task> {\n    const client = await this.#clientFor(alias);\n    return this.#call(alias, \"CancelTask\", () =>\n      client.cancelTask({ tenant: \"\", id: taskId, metadata: undefined }),\n    );\n  }\n"
+        },
+        {
+          "start": 168,
+          "end": 193,
+          "text": "    // Only the JSON-RPC factory is registered, so an agent that stopped\n    // offering that binding fails loudly instead of silently switching.\n    const factory = new ClientFactory({\n      transports: [new JsonRpcTransportFactory()],\n      preferredTransports: [\"JSONRPC\"],\n    });\n    const client = await factory.createFromAgentCard(resolved.card);\n    this.#clients.set(alias, { client, interfaceUrl: resolved.agentInterface.url });\n    return client;\n  }\n\n  async #call<T>(alias: string, operation: string, run: () => Promise<T>): Promise<T> {\n    try {\n      return await run();\n    } catch (error) {\n      throw toBridgeError(alias, operation, error);\n    }\n  }\n}\n\n/** Builds the single text part user message the bridge sends. */\n/**\n * The configuration asking an agent to answer as soon as the task exists.\n * Undefined keeps the SDK default, which waits for a terminal or interrupted\n * state.\n */"
+        }
+      ]
+    },
+    {
+      "path": "external/a2a-to-mcp/src/server.ts",
+      "bridge_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "sha256": "23e573935bb4ac7a700da2f6a6be6f6a56aba3c1c1165a93cb963163be3c3199",
+      "line_count": 248,
+      "excerpts": [
+        {
+          "start": 38,
+          "end": 53,
+          "text": "/** Path the MCP endpoint is mounted at. */\nexport const MCP_PATH = \"/mcp\";\n\n/** Cache hint published for tools/list: the tool set only changes on restart. */\nconst TOOLS_LIST_TTL_MS = 60_000;\n\nconst require = createRequire(import.meta.url);\nconst manifest = require(\"../package.json\") as { name: string; version: string };\n\nexport interface BridgeOptions {\n  /** The A2A agents to expose, by alias. */\n  agents: Record<string, { cardUrl: string }>;\n  /** Lifetime of a task or context handle. Defaults to fifteen minutes. */\n  handleTtlMs?: number;\n  /** Lifetime of a cached agent card. Defaults to one minute. */\n  cardTtlMs?: number;"
+        },
+        {
+          "start": 77,
+          "end": 115,
+          "text": "/** Builds a bridge over the configured A2A agents. */\nexport async function createBridge(options: BridgeOptions): Promise<Bridge> {\n  const aliases = Object.keys(options.agents);\n  if (aliases.length === 0) {\n    throw new Error(\"A bridge needs at least one A2A agent. None was configured.\");\n  }\n\n  const handleTtlMs = options.handleTtlMs ?? DEFAULT_HANDLE_TTL_MS;\n  const cards = new AgentCardResolver({\n    agents: options.agents,\n    ttlMs: options.cardTtlMs ?? DEFAULT_CARD_TTL_MS,\n  });\n  const agents = new A2AClientPool(cards);\n  const handles = new BridgeHandles({ ttlMs: handleTtlMs });\n  const serverInfo = { name: manifest.name, version: manifest.version };\n  const tasks = new TasksService({ handles, agents, ttlMs: handleTtlMs, serverInfo });\n  // One codec for the whole process: the 2026-07-28 route serves every request\n  // from a fresh server instance, so the key cannot live on the instance, and\n  // the state must outlive it exactly as long as the handle it names.\n  const requestState = createBridgeRequestStateCodec(handleTtlMs);\n  const mrtr = new MrtrService({ handles, agents, requestState });\n\n  const handler = createMcpHandler(\n    () => {\n      const mcp = new McpServer(serverInfo, {\n        instructions: buildInstructions(cards),\n        cacheHints: { \"tools/list\": { ttlMs: TOOLS_LIST_TTL_MS, cacheScope: \"private\" } },\n        // The seam runs this before the handler on every round that echoes a\n        // requestState, and answers -32602 when the HMAC or the TTL fails, so\n        // a tampered state never reaches a2a_send_message.\n        requestState: { verify: requestState.verify },\n      });\n      mcp.server.registerCapabilities({ extensions: { [TASKS_EXTENSION_ID]: {} } });\n      registerBridgeTools(mcp, { cards, agents, handles, tasks, mrtr });\n      registerTasksHandlers(mcp, tasks);\n      return mcp;\n    },\n    { legacy: \"stateless\" },\n  );"
+        }
+      ]
+    },
+    {
+      "path": "external/a2a-to-mcp/README.md",
+      "bridge_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "sha256": "c6f10b337bf3ec46102a9c937906b63745ed5333df06e9310885576c38d4c97c",
+      "line_count": 208,
+      "excerpts": [
+        {
+          "start": 44,
+          "end": 46,
+          "text": "```\n\nThe bridge listens on `http://127.0.0.1:8931/mcp`. Only loopback hosts are accepted in the `Host` and `Origin` headers unless `allowedHosts` is set in the configuration. There is no authentication in this version, on either side."
+        },
+        {
+          "start": 179,
+          "end": 182,
+          "text": "## Conformance\n\nRead the score with its cause: on the `2026-07-28` run, 32 of the 37 scored scenarios have at least one check that is not green, 29 with a failure and 3 with warnings only. Nineteen call tool names written into the suite, and 13 exercise prompts, resources or completions, which a bridge to A2A agents does not declare; `logging` is not among them, it is only scored on `2025-11-25`. The suite counts both families as failures on purpose, and points at the expected-failures baseline as the answer ([`modelcontextprotocol/conformance#248`](https://github.com/modelcontextprotocol/conformance/issues/248)). The run records 67 failing checks and 5 warnings in all, every one of them in the committed baseline with its reason; the suite exits 0 on both revisions, and the protocol checks that apply to a bridge are green: wire schema, `server/discover`, the match between the capabilities announced and the handlers mounted, the `subscriptions/listen` acknowledgement, SEP-2243 headers, DNS rebinding protection. The numbers are in [`conformance/REPORT.md`](conformance/REPORT.md), regenerated by the command below.\n"
+        }
+      ]
+    },
+    {
+      "path": "external/a2a-to-mcp/fixtures/agent/executor.ts",
+      "bridge_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "sha256": "f761f9a8df7f038ad9f084573fbb3a6f610ef9e82db7824562452cc7882a774f",
+      "line_count": 496,
+      "excerpts": [
+        {
+          "start": 155,
+          "end": 169,
+          "text": "    // A follow-up turn answering a question left by `ask:` is matched on\n    // the taskId, so the whole text is taken as the answer rather than\n    // being parsed as a command.\n    const pending = this.pendingQuestions.get(taskId);\n    if (requestContext.task && pending !== undefined) {\n      this.pendingQuestions.delete(taskId);\n      eventBus.publish(AgentEvent.task(requestContext.task));\n      eventBus.publish(\n        this.artifactEvent(taskId, contextId, \"result\", [\n          textPart(`${pending.question} = ${text.trim()}`),\n        ]),\n      );\n      eventBus.publish(\n        this.statusEvent(taskId, contextId, TaskState.TASK_STATE_COMPLETED),\n      );"
+        },
+        {
+          "start": 213,
+          "end": 225,
+          "text": "      case \"task\":\n        this.runTaskCommand(eventBus, taskId, contextId, argument);\n        return;\n      case \"ask\":\n        this.pendingQuestions.set(taskId, { question: argument, contextId });\n        eventBus.publish(\n          this.statusEvent(\n            taskId,\n            contextId,\n            TaskState.TASK_STATE_INPUT_REQUIRED,\n            `What value should I use for ${argument}?`,\n          ),\n        );"
+        },
+        {
+          "start": 264,
+          "end": 287,
+          "text": "        return;\n      case \"data\":\n        this.completeWithPart(\n          eventBus,\n          taskId,\n          contextId,\n          \"data\",\n          dataPart({ answer: 42, echo: argument }),\n        );\n        return;\n      case \"file\":\n        this.completeWithPart(\n          eventBus,\n          taskId,\n          contextId,\n          \"file\",\n          urlPart(\n            \"https://example.invalid/files/report.pdf\",\n            \"report.pdf\",\n            \"application/pdf\",\n          ),\n        );\n        return;\n      case \"vanish\":"
+        }
+      ]
+    },
+    {
+      "path": "external/mcp-a2a/src/tools/tasks.ts",
+      "bridge_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "sha256": "dc1dd0fe9a4a671b7834e2c999db5b72251e8d960f0dd363bb59652be3c941a1",
+      "line_count": 190,
+      "excerpts": [
+        {
+          "start": 17,
+          "end": 44,
+          "text": "  server.registerTool(\n    \"a2a_list_tasks\",\n    {\n      title: \"A2A: List Tasks\",\n      description:\n        \"List A2A tasks in the local store, newest change first. Reads the shared store on \" +\n        \"disk and makes no network calls. Returns one summary row per task — state, peer, the \" +\n        \"request text and the COUNTS of history and artifacts, not their contents — so use \" +\n        'a2a_get_task for a body. Filter by `state: \"submitted\"` and ' +\n        '`direction: \"inbound\"` to see exactly the proposals nobody has answered yet.',\n      inputSchema: { direction: directionArg, state: stateArg, limit: limitArg },\n      annotations: { readOnlyHint: true },\n    },\n    async ({ direction, state, limit }) =>\n      wrap(async () => {\n        const wanted = state === undefined ? undefined : stateFromShort(state);\n        const all = ctx.store.records(direction ? { direction } : {});\n        const matching =\n          wanted === undefined ? all : all.filter((record) => readState(record) === wanted);\n        return {\n          tasks: matching.slice(0, limit).map(summarizeTask),\n          returned: Math.min(matching.length, limit),\n          total: matching.length,\n          ...(matching.length > limit\n            ? { note: `Showing ${limit} of ${matching.length}. Raise limit or filter by state.` }\n            : {}),\n        };\n      }),"
+        },
+        {
+          "start": 47,
+          "end": 82,
+          "text": "  server.registerTool(\n    \"a2a_get_task\",\n    {\n      title: \"A2A: Get Task\",\n      description:\n        \"One task in full: its state, the conversation so far, and every artifact's text. Use \" +\n        \"this once a2a_list_tasks or a2a_wait_for_task has told you which id you care about. \" +\n        \"For a task you delegated (direction `outbound`), pass `refresh: true` to re-read it \" +\n        \"from the peer that owns it — the local copy is only a mirror and does not update \" +\n        \"itself.\",\n      inputSchema: {\n        task_id: taskIdArg,\n        history_length: historyLengthArg,\n        refresh: z\n          .boolean()\n          .default(false)\n          .describe(\n            \"Re-read the task from the peer that owns it and update the local mirror. Only \" +\n              \"meaningful for an outbound task; ignored for an inbound one, where this machine \" +\n              \"already holds the authoritative copy. Defaults to false.\",\n          ),\n      },\n      // Refreshing rewrites a LOCAL mirror and nothing else — no remote state is\n      // touched, which is the line the write gate draws. Gating it behind writes\n      // would mean checking on delegated work required permission to create it.\n      annotations: { readOnlyHint: true },\n    },\n    async ({ task_id, history_length, refresh }) =>\n      wrap(async () => {\n        let record = ctx.store.require(task_id);\n        if (refresh && record.direction === \"outbound\") {\n          const task = await ctx.peers.getTask(record.peer, task_id, history_length);\n          record = ctx.store.put(task, { direction: \"outbound\", peer: record.peer });\n        }\n        return describeTask(record, { historyLength: history_length });\n      }),"
+        }
+      ]
+    },
+    {
+      "path": "external/mcp-a2a/src/client/shape.ts",
+      "bridge_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "sha256": "9c8df9ca9d02c24179658d276b62be0530e17fb0312acb54c2ee9febff6d4a48",
+      "line_count": 248,
+      "excerpts": [
+        {
+          "start": 80,
+          "end": 128,
+          "text": "export const summarizeTask = (record: TaskRecord): Rec => {\n  const task = record.task;\n  const status = isRecord(task.status) ? task.status : {};\n  const message = isRecord(status.message) ? status.message : undefined;\n  const history = Array.isArray(task.history) ? task.history : [];\n  const artifacts = Array.isArray(task.artifacts) ? task.artifacts : [];\n  return {\n    id: task.id,\n    direction: record.direction,\n    peer: record.peer,\n    state: shortStateFromWire(status.state),\n    updated_at: record.updatedAt,\n    ...(typeof task.contextId === \"string\" && task.contextId ? { context_id: task.contextId } : {}),\n    /** The most recent thing said, which is what \"what is this task\" means. */\n    ...(summary(record) ? { summary: summary(record) } : {}),\n    ...(message ? { status_message: truncate(textOfWireMessage(message), 400) } : {}),\n    /** Counts, not contents — `a2a_get_task` is where the bodies live. */\n    history_length: history.length,\n    artifact_count: artifacts.length,\n  };\n};\n\n/**\n * The full task, for `a2a_get_task`. History is bounded by an argument rather\n * than by a constant, and when it is trimmed the response says so — a caller who\n * does not know 40 turns were dropped will draw conclusions from the 5 they got.\n */\nexport const describeTask = (record: TaskRecord, opts: { historyLength: number }): Rec => {\n  const task = record.task;\n  const history = Array.isArray(task.history) ? task.history : [];\n  const artifacts = Array.isArray(task.artifacts) ? task.artifacts : [];\n  const kept = opts.historyLength <= 0 ? [] : history.slice(-opts.historyLength);\n  const status = isRecord(task.status) ? task.status : {};\n  return {\n    ...summarizeTask(record),\n    created_at: record.createdAt,\n    ...(isRecord(status.message) ? { status_message: textOfWireMessage(status.message) } : {}),\n    history: kept.map((entry) => (isRecord(entry) ? summarizeWireMessage(entry) : entry)),\n    ...(kept.length < history.length\n      ? { history_truncated: `Showing the last ${kept.length} of ${history.length} messages.` }\n      : {}),\n    artifacts: artifacts.map((artifact) =>\n      isRecord(artifact) ? summarizeWireArtifact(artifact) : artifact,\n    ),\n    ...(isRecord(task.metadata) ? { metadata: task.metadata } : {}),\n  };\n};\n\n/**"
+        },
+        {
+          "start": 202,
+          "end": 246,
+          "text": "};\n\n// ── The wire forms ──────────────────────────────────────────────────────────\n// A record on disk holds protobuf JSON, not the SDK's decoded objects, so these\n// read it without a `fromJSON` round trip. Cheaper, and it cannot throw on a\n// field a newer peer added.\n\nconst shortStateFromWire = (state: unknown): string => {\n  if (typeof state === \"string\") return state.replace(/^TASK_STATE_/, \"\").toLowerCase();\n  if (typeof state === \"number\") return shortState(state);\n  return \"unspecified\";\n};\n\nconst textOfWireMessage = (message: Rec): string => {\n  const parts = Array.isArray(message.parts) ? message.parts : [];\n  return parts\n    .map((part) => {\n      if (!isRecord(part)) return \"\";\n      // Protobuf JSON writes a oneof as the field name, so a text part is\n      // `{\"text\":\"…\"}` on the wire and `{content:{$case:\"text\"}}` in memory.\n      if (typeof part.text === \"string\") return part.text;\n      const content = part.content;\n      if (isRecord(content) && content.$case === \"text\" && typeof content.value === \"string\") {\n        return content.value;\n      }\n      return \"\";\n    })\n    .filter((text) => text.length > 0)\n    .join(\"\\n\");\n};\n\nconst summarizeWireMessage = (message: Rec): Rec => ({\n  message_id: message.messageId,\n  role:\n    typeof message.role === \"string\"\n      ? message.role.replace(/^ROLE_/, \"\").toLowerCase()\n      : message.role,\n  text: textOfWireMessage(message),\n});\n\nconst summarizeWireArtifact = (artifact: Rec): Rec => ({\n  artifact_id: artifact.artifactId,\n  ...(artifact.name ? { name: artifact.name } : {}),\n  text: textOfWireMessage(artifact),\n});"
+        }
+      ]
+    },
+    {
+      "path": "external/mcp-a2a/src/tools/request.ts",
+      "bridge_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "sha256": "1c9eb49a065f3eac95c0fd2172068443719a29aeca9453a31690c70a61731342",
+      "line_count": 79,
+      "excerpts": [
+        {
+          "start": 7,
+          "end": 17,
+          "text": "/**\n * The A2A RPCs that only read. The method enum narrows to these when writes are\n * off, so the escape hatch cannot become a way around the gate.\n */\nconst READ_METHODS = [\n  \"GetTask\",\n  \"ListTasks\",\n  \"GetTaskPushNotificationConfig\",\n  \"ListTaskPushNotificationConfigs\",\n  \"GetExtendedAgentCard\",\n] as const;"
+        },
+        {
+          "start": 26,
+          "end": 34,
+          "text": "/**\n * The escape hatch: any A2A JSON-RPC method against any peer, so an RPC nobody\n * wrapped stays reachable without a code change.\n *\n * Two things constrain it. The method list is an enum rather than a free string,\n * and it narrows to the read-only half when `A2A_ALLOW_WRITES` is off — belt and\n * braces on top of the write tools simply not existing. And the endpoint comes\n * from the peer's own agent card, never from an argument, so this cannot be\n * pointed at an arbitrary URL: it is an A2A client, not a fetch primitive."
+        },
+        {
+          "start": 39,
+          "end": 77,
+          "text": "  server.registerTool(\n    \"a2a_request\",\n    {\n      title: \"A2A: Request\",\n      description:\n        \"Escape hatch: call an A2A JSON-RPC method directly on a peer and return its raw \" +\n        \"reply, unshaped. Use this only for something the typed tools do not cover — they \" +\n        \"shape their responses, and a raw A2A reply is protobuf JSON, so a `Part` arrives as \" +\n        '`{\"text\":\"…\"}` and a state as `\"TASK_STATE_SUBMITTED\"`. The endpoint always comes ' +\n        \"from the peer's own agent card, so this cannot be aimed at an arbitrary URL. \" +\n        (ctx.allowWrites\n          ? \"Writes are ENABLED, so the mutating methods are permitted — there is no \" +\n            \"confirmation step, so check the method and params before you call it.\"\n          : \"Writes are DISABLED: only the read-only methods are offered. Set \" +\n            \"A2A_ALLOW_WRITES=1 to allow the mutating ones.\"),\n      inputSchema: {\n        url: peerUrlArg,\n        method: z\n          .enum(methods)\n          .describe(\n            \"The A2A v1.0 RPC name, PascalCase — `GetTask`, `ListTasks`, `SendMessage`. NOT \" +\n              \"the 0.x names (`tasks/get`, `message/send`): v1.0 renamed all of them, and an \" +\n              \"0.x name comes back as -32601 method not found.\" +\n              (ctx.allowWrites ? \"\" : \" Only the read-only methods are available right now.\"),\n          ),\n        params: z\n          .record(z.string(), z.unknown())\n          .default({})\n          .describe(\n            'The method\\'s params object, e.g. `{\"id\": \"task-abc\"}` for GetTask or ' +\n              '`{\"pageSize\": 10}` for ListTasks. Field names are camelCase (`historyLength`, ' +\n              \"`pageToken`) because the wire format is protobuf JSON.\",\n          ),\n      },\n      // Read-only exactly when the gate is off, which is what the enum enforces.\n      annotations: { readOnlyHint: !ctx.allowWrites, destructiveHint: ctx.allowWrites },\n    },\n    async ({ url, method, params }) =>\n      wrap(async () => await ctx.peers.rawRpc(url, method, params)),"
+        }
+      ]
+    },
+    {
+      "path": "external/mcp-a2a/src/client/peer.ts",
+      "bridge_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "sha256": "62c36155dd3f2438f4a629fff8cc5b1961d2f7c20bfbc5a620706a2f8218b909",
+      "line_count": 353,
+      "excerpts": [
+        {
+          "start": 102,
+          "end": 126,
+          "text": "  /** Fetch a peer's card, cache it, and return it. Always refetches. */\n  async discover(url: string): Promise<AgentCard> {\n    const base = normalizeBase(url);\n    try {\n      const card = await this.resolver.resolve(base);\n      this.cache.put(base, card);\n      this.clients.delete(base);\n      return card;\n    } catch (err) {\n      throw new PeerUnreachableError(base, err);\n    }\n  }\n\n  /** The card from cache, or a fresh fetch when nothing is cached yet. */\n  async card(url: string): Promise<AgentCard> {\n    const base = normalizeBase(url);\n    const cached = this.cache.get(base);\n    if (cached) {\n      try {\n        return this.resolver.normalizeAgentCard(cached.card);\n      } catch {\n        /* a cached card this build cannot read is worth refetching */\n      }\n    }\n    return await this.discover(base);"
+        },
+        {
+          "start": 198,
+          "end": 213,
+          "text": "    const client = await this.clientFor(url);\n    return await this.call(\n      url,\n      async () =>\n        await client.getTask({\n          tenant: \"\",\n          id: taskId,\n          ...(historyLength === undefined ? {} : { historyLength }),\n        }),\n    );\n  }\n\n  async cancelTask(url: string, taskId: string): Promise<Task> {\n    const client = await this.clientFor(url);\n    return await this.call(\n      url,"
+        },
+        {
+          "start": 251,
+          "end": 318,
+          "text": "\n  /**\n   * One raw A2A JSON-RPC call, for the escape hatch: an RPC nobody wrapped stays\n   * reachable without a code change.\n   *\n   * It goes through the same authenticating `fetch` as everything else, and the\n   * URL comes from the peer's own card rather than being composed — a peer is\n   * free to serve the binding at any path, and guessing `/a2a/v1` would work\n   * against this implementation and quietly fail against others.\n   */\n  async rawRpc(url: string, method: string, params: Record<string, unknown>): Promise<unknown> {\n    const card = await this.card(url);\n    const iface = card.supportedInterfaces.find(\n      (candidate) => candidate.protocolBinding === \"JSONRPC\",\n    );\n    if (!iface) {\n      throw new A2AApiError(`${normalizeBase(url)} advertises no JSON-RPC interface.`, {\n        status: 0,\n        remedy:\n          \"Its card lists \" +\n          (card.supportedInterfaces.map((i) => i.protocolBinding).join(\", \") || \"nothing\") +\n          \". The escape hatch speaks JSON-RPC only; use the typed tools for the other bindings.\",\n      });\n    }\n    const res = await this.rpcFetch(iface.url, {\n      method: \"POST\",\n      headers: { \"content-type\": \"application/json\" },\n      body: JSON.stringify({ jsonrpc: \"2.0\", id: randomId(\"rpc\"), method, params }),\n    });\n    const text = await res.text();\n    if (!res.ok) {\n      const remedy = remedyForStatus(res.status, this.opts.token !== undefined);\n      throw new A2AApiError(`${iface.url} answered HTTP ${res.status}: ${text.slice(0, 400)}`, {\n        status: res.status,\n        ...(remedy ? { remedy } : {}),\n      });\n    }\n    try {\n      return JSON.parse(text) as unknown;\n    } catch {\n      throw new A2AApiError(`${iface.url} answered with something that is not JSON.`, {\n        status: res.status,\n        errors: text.slice(0, 400),\n      });\n    }\n  }\n\n  /**\n   * Is a peer answering at all? Used by `a2a_auth_status` against our own\n   * daemon, where \"is it running\" is the first question and an exception is the\n   * wrong way to answer it.\n   */\n  async probe(url: string): Promise<{ reachable: boolean; card?: AgentCard; error?: string }> {\n    try {\n      return { reachable: true, card: await this.discover(url) };\n    } catch (err) {\n      return { reachable: false, error: err instanceof Error ? err.message : String(err) };\n    }\n  }\n\n  private async clientFor(url: string): Promise<A2APeerClient> {\n    const base = normalizeBase(url);\n    const existing = this.clients.get(base);\n    if (existing) return existing;\n    const client = await this.factory.createFromAgentCard(await this.card(base));\n    this.clients.set(base, client);\n    return client;\n  }"
+        }
+      ]
+    },
+    {
+      "path": "external/mcp-a2a/src/tools/agents.ts",
+      "bridge_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "sha256": "4c981eab4d5a7651b142da9ee9dfb098c6ea36282bbbc2f0ad18bf108e5bd320",
+      "line_count": 58,
+      "excerpts": [
+        {
+          "start": 38,
+          "end": 56,
+          "text": "  server.registerTool(\n    \"a2a_discover_agent\",\n    {\n      title: \"A2A: Discover Agent\",\n      description:\n        \"Fetch a peer's agent card from /.well-known/agent-card.json, cache it locally, and \" +\n        \"return its skills and transports. Always refetches, so it is also how you check \" +\n        \"whether a peer is up and what it can do NOW — a cached card goes stale the moment the \" +\n        \"peer restarts. Do this before a2a_send_message to a peer you have not used: the card \" +\n        \"is what says which A2A binding and URL to speak, and its skill list is what says \" +\n        \"whether the peer can do the thing at all.\",\n      inputSchema: { url: peerUrlArg },\n      annotations: { readOnlyHint: true },\n    },\n    async ({ url }) =>\n      wrap(async () => ({\n        url,\n        card: summarizeCard(await ctx.peers.discover(url)),\n      })),"
+        }
+      ]
+    },
+    {
+      "path": "external/mcp-a2a/src/tools/writes.ts",
+      "bridge_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "sha256": "88870a440cb05882ed0792a656fd1c346c6157d1dd865ab0645746121bef5a35",
+      "line_count": 282,
+      "excerpts": [
+        {
+          "start": 19,
+          "end": 99,
+          "text": "  server.registerTool(\n    \"a2a_send_message\",\n    {\n      title: \"A2A: Send Message\",\n      description:\n        \"Delegate work to another agent over A2A, and record the resulting task locally so \" +\n        \"a2a_list_tasks can track it. Call a2a_discover_agent first for a peer you have not \" +\n        \"used — its skill list is what says whether it can do the thing, and its card is what \" +\n        \"says which binding to speak. Returns as soon as the peer has acknowledged the task, \" +\n        \"WITHOUT waiting for an answer: a peer on this mesh queues work for a \" +\n        \"human-supervised agent, so a blocking send would block for as long as a person takes. \" +\n        \"Poll with `a2a_get_task(refresh: true)`, or park on a2a_wait_for_task. Pass `task_id` \" +\n        \"to add a turn to a task that already exists rather than starting a new one.\",\n      inputSchema: {\n        url: peerUrlArg,\n        text: z\n          .string()\n          .min(1)\n          .max(32_000)\n          .describe(\n            \"What you are asking the other agent to do, in plain prose. Be specific about \" +\n              \"absolute paths and repositories — the peer is a different agent with a \" +\n              'different working directory, e.g. \"Run the tests in ~/Projects/example and ' +\n              'report which fail\". Put bulk content in a file and name the path rather than ' +\n              \"pasting it: the daemon caps a request body at 1 MB.\",\n          ),\n        task_id: z\n          .string()\n          .max(128)\n          .optional()\n          .describe(\n            \"Continue an existing task by id, instead of creating a new one. Use this to \" +\n              \"answer a peer that moved its task to `input_required`.\",\n          ),\n        context_id: z\n          .string()\n          .max(128)\n          .optional()\n          .describe(\n            \"Group this message with an existing conversation by context id. Omit to let the \" +\n              \"peer assign one.\",\n          ),\n      },\n      annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false },\n    },\n    async ({ url, text, task_id, context_id }) =>\n      wrap(async () => {\n        const peer = normalizeBase(url);\n        const { result, sent } = await ctx.peers.sendMessage(peer, {\n          text,\n          ...(task_id ? { taskId: task_id } : {}),\n          ...(context_id ? { contextId: context_id } : {}),\n        });\n\n        // A peer may answer with a bare Message instead of a Task — legal in A2A\n        // for something it handled without creating one. There is nothing to\n        // mirror in that case, and pretending otherwise would put a task id in\n        // the store that no peer knows.\n        if (!(\"id\" in result)) {\n          return {\n            peer,\n            replied_with: \"message\",\n            text: messageText(result as Message),\n            note: \"The peer answered directly without creating a task, so nothing was recorded.\",\n          };\n        }\n\n        const task = result as Task;\n        // The peer's acknowledgement usually arrives with an empty history — see\n        // `PeerClient.sendMessage`. Our own request is the one thing we know for\n        // certain, so it goes into the mirror rather than being lost.\n        const mirrored: Task = task.history.length === 0 ? { ...task, history: [sent] } : task;\n        const record = ctx.store.put(mirrored, { direction: \"outbound\", peer });\n        return {\n          peer,\n          replied_with: \"task\",\n          task: summarizeTask(record),\n          note:\n            \"Recorded locally as an outbound task. Read the answer later with \" +\n            \"a2a_get_task(refresh: true) — the local copy is a mirror and does not update itself.\",\n        };"
+        }
+      ]
+    },
+    {
+      "path": "external/mcp-a2a/src/store/tasks.ts",
+      "bridge_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "sha256": "487613b2cbbd7c33c0c8fc63e0cfedc0961f237b8b82bb6b5eca1fb053b82099",
+      "line_count": 410,
+      "excerpts": [
+        {
+          "start": 90,
+          "end": 110,
+          "text": "/**\n * A `TaskStore` on disk, one JSON file per task, shared by both processes.\n *\n * Deliberately not SQLite: `node:sqlite` is still experimental on Node 22, a\n * second copy of the data would need migrating, and the volumes here are a\n * handful of tasks. What the filesystem gives for free is the part that matters\n * — an atomic `rename` is a publish, so a reader in the other process never\n * sees a partial record.\n *\n * ⚠ The one thing it does not give is a cross-process lock. The SDK's\n * `ResultManager` serialises writes within a process, and the two processes here\n * touch a task at different points in its life (the daemon creates it, the stdio\n * server answers it), so the read-modify-write window is narrow rather than\n * closed. A genuinely concurrent write to the same task can lose the earlier of\n * the two. That is a known limitation, written down rather than papered over.\n *\n * `ServerCallContext` is accepted because the interface requires it and ignored\n * because this store has one tenant and one owner by construction: it is a\n * single user's machine, reachable only over loopback. A multi-user deployment\n * would need `context.user` folded into the path, which is exactly the change\n * that also needs real per-peer auth."
+        }
+      ]
+    },
+    {
+      "path": "external/mcp-a2a/src/tools/index.ts",
+      "bridge_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "sha256": "1dc49e5bd117f172a3bf65fcf77f5dcbc2c51c90a41ff23be444bc4b7d8ccc3d",
+      "line_count": 50,
+      "excerpts": [
+        {
+          "start": 41,
+          "end": 49,
+          "text": "export const registerTools = (server: McpServer, ctx: ToolContext): void => {\n  // First and unconditionally: an unconfigured server must still be able to say\n  // what it needs, rather than being a connection that closes.\n  registerAuthTools(server, ctx);\n  registerAgentTools(server, ctx);\n  registerTaskTools(server, ctx);\n  registerRequestTool(server, ctx);\n\n  if (ctx.allowWrites) registerWriteTools(server, ctx);"
+        }
+      ]
+    },
+    {
+      "path": "external/mcp-a2a/src/server.ts",
+      "bridge_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "sha256": "4e4662c7bcbf076dfb765955fc69864e31a92bca2d320d9fa7e91ac43b42b12e",
+      "line_count": 88,
+      "excerpts": [
+        {
+          "start": 41,
+          "end": 88,
+          "text": "export const createServer = (opts: CreateServerOptions): CreatedServer => {\n  const { config } = opts;\n  const server = new McpServer({ name: SERVER_NAME, version: SERVER_VERSION });\n\n  // Before `connect`: `registerCapabilities` refuses to run once a transport is\n  // attached, because capabilities are part of the `initialize` result.\n  if (config.channel) declareChannelCapability(server);\n\n  const store = new FileTaskStore({\n    stateDir: config.stateDir,\n    // The stdio server creates outbound tasks; anything it finds that it did not\n    // create came from the daemon and is inbound.\n    defaultDirection: \"inbound\",\n    defaultPeer: \"unknown\",\n    ...(opts.logger ? { logger: opts.logger } : {}),\n  });\n\n  const peers = new PeerClient({\n    stateDir: config.stateDir,\n    configuredPeers: config.peers,\n    daemonUrl: config.daemonUrl,\n    token: config.token,\n    maxRetries: config.maxRetries,\n    userAgent: USER_AGENT,\n    ...(opts.fetch ? { fetch: opts.fetch } : {}),\n    ...(opts.logger ? { logger: opts.logger } : {}),\n  });\n\n  registerTools(server, {\n    config,\n    store,\n    peers,\n    allowWrites: config.allowWrites,\n    ...(opts.logger ? { logger: opts.logger } : {}),\n  });\n\n  const channel =\n    config.channel && opts.watchChannel !== false\n      ? startChannelWatcher({\n          server,\n          store,\n          config,\n          ...(opts.logger ? { logger: opts.logger } : {}),\n        })\n      : undefined;\n\n  return { server, store, peers, channel };\n};"
+        }
+      ]
+    }
+  ],
+  "existing_wire": {
+    "path": "docs/research/bridge-evidence/mgcrea-wire-smoke.json",
+    "sha256": "18fa96d496a18491e49149df083bd3b515b9df739191d56488537df6a483eb16",
+    "observed_at_utc": "2026-10-23T19:39:04.675Z",
+    "initialize_result": {
+      "protocolVersion": "2025-11-25",
+      "capabilities": {
+        "tools": {
+          "listChanged": true
+        }
+      },
+      "serverInfo": {
+        "name": "@mgcrea/mcp-a2a",
+        "version": "0.1.0"
+      }
+    }
+  },
+  "development_wire_observations": [
+    {
+      "path": "runs/wire-observation/amirk_a2a_to_mcp-2026-10-23T20-02-10-750Z-3828/runtime.json",
+      "sha256": "8c9ac1b2d0b3d4d8fc665f6656872480fed13cbaff08a3e5a4c41d7b276b58c5",
+      "route_id": "amirk_a2a_to_mcp",
+      "protocol": {
+        "mcp": "2026-07-28",
+        "mcp_transport": "loopback HTTP modern per-request envelope",
+        "extension": "io.modelcontextprotocol/tasks",
+        "a2a": "1.0 JSONRPC and streaming JSONRPC"
+      },
+      "source_commit": "58eff9da469bccdc432bf164662727947de646b4",
+      "label": "observed upstream-authored development fixture; not independent gold, performance comparison or fresh-state lease",
+      "queries": [
+        {
+          "exchange_id": "mcp-4",
+          "phase": "get_input_required",
+          "request": {
+            "jsonrpc": "2.0",
+            "id": 4,
+            "method": "tasks/get",
+            "params": {
+              "_meta": {
+                "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+                "io.modelcontextprotocol/clientCapabilities": {
+                  "extensions": {
+                    "io.modelcontextprotocol/tasks": {}
+                  }
+                },
+                "io.modelcontextprotocol/clientInfo": {
+                  "name": "local-development-observer",
+                  "version": "0.1.0"
+                }
+              },
+              "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ"
+            }
+          },
+          "response": {
+            "jsonrpc": "2.0",
+            "id": 4,
+            "result": {
+              "resultType": "complete",
+              "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "status": "input_required",
+              "createdAt": "2026-10-23T20:02:12.117Z",
+              "lastUpdatedAt": "2026-10-23T20:02:12.146Z",
+              "ttlMs": 900000,
+              "pollIntervalMs": 500,
+              "statusMessage": "A2A asks for more input as free text in the task statusMessage, with no schema. The bridge reports input_required and the elicitation form is synthesized from that text, so the wording the agent chose survives only in the statusMessage.",
+              "inputRequests": {
+                "answer": {
+                  "method": "elicitation/create",
+                  "params": {
+                    "mode": "form",
+                    "message": "What value should I use for development-destination?",
+                    "requestedSchema": {
+                      "type": "object",
+                      "properties": {
+                        "answer": {
+                          "type": "string",
+                          "description": "Your answer to the agent"
+                        }
+                      },
+                      "required": [
+                        "answer"
+                      ]
+                    }
+                  }
+                }
+              },
+              "_meta": {
+                "io.modelcontextprotocol/serverInfo": {
+                  "name": "a2a-to-mcp",
+                  "version": "0.1.0"
+                }
+              }
+            }
+          },
+          "response_sha256": "0c4b1765b1283456245504c67599dcd43bbcb42147a1f22a12dff6f7332d1247",
+          "observed_at_utc": "2026-10-23T20:02:12.148Z",
+          "elapsed_ms": 24.889
+        },
+        {
+          "exchange_id": "mcp-5",
+          "phase": "authoritative_get_pending",
+          "request": {
+            "jsonrpc": "2.0",
+            "id": 5,
+            "method": "tools/call",
+            "params": {
+              "_meta": {
+                "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+                "io.modelcontextprotocol/clientCapabilities": {
+                  "extensions": {
+                    "io.modelcontextprotocol/tasks": {}
+                  }
+                },
+                "io.modelcontextprotocol/clientInfo": {
+                  "name": "local-development-observer",
+                  "version": "0.1.0"
+                }
+              },
+              "name": "a2a_get_task",
+              "arguments": {
+                "agent": "fixture",
+                "taskHandle": "tk_6KAdnYzC6k4daNyHaHuggQ"
+              }
+            }
+          },
+          "response": {
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "What value should I use for development-destination?",
+                  "_meta": {
+                    "io.github.amirk-s/a2a": {
+                      "partKind": "text",
+                      "mediaType": "text/plain",
+                      "messageId": "3f1e4272-6df9-4ca4-8ddb-8a1665b6e4bc",
+                      "contextId": "a4c3e63c-651f-482f-8eec-b109beb36f4f",
+                      "taskId": "81ba58c9-a936-42c3-addd-08a3bd61a4f1"
+                    }
+                  }
+                }
+              ],
+              "structuredContent": {
+                "kind": "task",
+                "contextHandle": "cx_eDhqxKAcelv12vsPbwJbMA",
+                "taskHandle": "tk_6KAdnYzC6k4daNyHaHuggQ",
+                "a2aState": "TASK_STATE_INPUT_REQUIRED",
+                "status": "input_required",
+                "note": "A2A asks for more input as free text in the task statusMessage, with no schema. The bridge reports input_required and the elicitation form is synthesized from that text, so the wording the agent chose survives only in the statusMessage.",
+                "history": [
+                  {
+                    "role": "user",
+                    "text": "ask: development-destination"
+                  },
+                  {
+                    "role": "agent",
+                    "text": "What value should I use for development-destination?"
+                  }
+                ]
+              },
+              "resultType": "complete",
+              "_meta": {
+                "io.modelcontextprotocol/serverInfo": {
+                  "name": "a2a-to-mcp",
+                  "version": "0.1.0"
+                }
+              }
+            },
+            "jsonrpc": "2.0",
+            "id": 5
+          },
+          "response_sha256": "a9ec84df6d61e40304ea647b8981bccfd4e1dbe5db8eca5bbecfd1fdf02a6b9e",
+          "observed_at_utc": "2026-10-23T20:02:12.169Z",
+          "elapsed_ms": 20.265
+        },
+        {
+          "exchange_id": "mcp-7",
+          "phase": "get_completed_extension",
+          "request": {
+            "jsonrpc": "2.0",
+            "id": 7,
+            "method": "tasks/get",
+            "params": {
+              "_meta": {
+                "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+                "io.modelcontextprotocol/clientCapabilities": {
+                  "extensions": {
+                    "io.modelcontextprotocol/tasks": {}
+                  }
+                },
+                "io.modelcontextprotocol/clientInfo": {
+                  "name": "local-development-observer",
+                  "version": "0.1.0"
+                }
+              },
+              "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ"
+            }
+          },
+          "response": {
+            "jsonrpc": "2.0",
+            "id": 7,
+            "result": {
+              "resultType": "complete",
+              "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "status": "working",
+              "createdAt": "2026-10-23T20:02:12.117Z",
+              "lastUpdatedAt": "2026-10-23T20:02:12.191Z",
+              "ttlMs": 900000,
+              "pollIntervalMs": 500,
+              "_meta": {
+                "io.modelcontextprotocol/serverInfo": {
+                  "name": "a2a-to-mcp",
+                  "version": "0.1.0"
+                }
+              }
+            }
+          },
+          "response_sha256": "57c9fe140927724f7b57e68d7088c0940eeefea1d7b0302223e895d7a59053e5",
+          "observed_at_utc": "2026-10-23T20:02:12.193Z",
+          "elapsed_ms": 10.3135
+        },
+        {
+          "exchange_id": "mcp-8",
+          "phase": "get_completed_extension",
+          "request": {
+            "jsonrpc": "2.0",
+            "id": 8,
+            "method": "tasks/get",
+            "params": {
+              "_meta": {
+                "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+                "io.modelcontextprotocol/clientCapabilities": {
+                  "extensions": {
+                    "io.modelcontextprotocol/tasks": {}
+                  }
+                },
+                "io.modelcontextprotocol/clientInfo": {
+                  "name": "local-development-observer",
+                  "version": "0.1.0"
+                }
+              },
+              "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ"
+            }
+          },
+          "response": {
+            "jsonrpc": "2.0",
+            "id": 8,
+            "result": {
+              "resultType": "complete",
+              "taskId": "tk_6KAdnYzC6k4daNyHaHuggQ",
+              "status": "completed",
+              "createdAt": "2026-10-23T20:02:12.117Z",
+              "lastUpdatedAt": "2026-10-23T20:02:12.700Z",
+              "ttlMs": 900000,
+              "pollIntervalMs": 500,
+              "result": {
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "development-destination = Paris",
+                    "_meta": {
+                      "io.github.amirk-s/a2a": {
+                        "partKind": "text",
+                        "mediaType": "text/plain",
+                        "artifactId": "b74d4864-3895-4c5f-8ba7-a14e04a608e1",
+                        "artifactName": "result"
+                      }
+                    }
+                  }
+                ],
+                "structuredContent": {
+                  "kind": "task",
+                  "contextHandle": "cx_eDhqxKAcelv12vsPbwJbMA",
+                  "taskHandle": "tk_6KAdnYzC6k4daNyHaHuggQ",
+                  "a2aState": "TASK_STATE_COMPLETED",
+                  "status": "completed",
+                  "artifacts": [
+                    {
+                      "artifactId": "b74d4864-3895-4c5f-8ba7-a14e04a608e1",
+                      "name": "result"
+                    }
+                  ]
+                },
+                "_meta": {
+                  "io.modelcontextprotocol/serverInfo": {
+                    "name": "a2a-to-mcp",
+                    "version": "0.1.0"
+                  }
+                }
+              },
+              "_meta": {
+                "io.modelcontextprotocol/serverInfo": {
+                  "name": "a2a-to-mcp",
+                  "version": "0.1.0"
+                }
+              }
+            }
+          },
+          "response_sha256": "883869bb5b87cde831ef3a33cffa60a23f016d78c958fdd7fdd9f285fac3655f",
+          "observed_at_utc": "2026-10-23T20:02:12.701Z",
+          "elapsed_ms": 3.8301
+        },
+        {
+          "exchange_id": "mcp-9",
+          "phase": "authoritative_get_completed",
+          "request": {
+            "jsonrpc": "2.0",
+            "id": 9,
+            "method": "tools/call",
+            "params": {
+              "_meta": {
+                "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+                "io.modelcontextprotocol/clientCapabilities": {
+                  "extensions": {
+                    "io.modelcontextprotocol/tasks": {}
+                  }
+                },
+                "io.modelcontextprotocol/clientInfo": {
+                  "name": "local-development-observer",
+                  "version": "0.1.0"
+                }
+              },
+              "name": "a2a_get_task",
+              "arguments": {
+                "agent": "fixture",
+                "taskHandle": "tk_6KAdnYzC6k4daNyHaHuggQ"
+              }
+            }
+          },
+          "response": {
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "development-destination = Paris",
+                  "_meta": {
+                    "io.github.amirk-s/a2a": {
+                      "partKind": "text",
+                      "mediaType": "text/plain",
+                      "artifactId": "b74d4864-3895-4c5f-8ba7-a14e04a608e1",
+                      "artifactName": "result"
+                    }
+                  }
+                }
+              ],
+              "structuredContent": {
+                "kind": "task",
+                "contextHandle": "cx_eDhqxKAcelv12vsPbwJbMA",
+                "taskHandle": "tk_6KAdnYzC6k4daNyHaHuggQ",
+                "a2aState": "TASK_STATE_COMPLETED",
+                "status": "completed",
+                "artifacts": [
+                  {
+                    "artifactId": "b74d4864-3895-4c5f-8ba7-a14e04a608e1",
+                    "name": "result"
+                  }
+                ],
+                "history": [
+                  {
+                    "role": "user",
+                    "text": "ask: development-destination"
+                  },
+                  {
+                    "role": "agent",
+                    "text": "What value should I use for development-destination?"
+                  },
+                  {
+                    "role": "user",
+                    "text": "Paris"
+                  }
+                ]
+              },
+              "resultType": "complete",
+              "_meta": {
+                "io.modelcontextprotocol/serverInfo": {
+                  "name": "a2a-to-mcp",
+                  "version": "0.1.0"
+                }
+              }
+            },
+            "jsonrpc": "2.0",
+            "id": 9
+          },
+          "response_sha256": "4675e5b3273a46e9f6ecee05e35995f29d10ca0c61c0405a57e5bde864b3fb6c",
+          "observed_at_utc": "2026-10-23T20:02:12.712Z",
+          "elapsed_ms": 10.5444
+        }
+      ]
+    },
+    {
+      "path": "runs/wire-observation/mgcrea_mcp_a2a-2026-10-23T20-03-35-396Z-23096/runtime.json",
+      "sha256": "9b666da8d7fa6a4ef848d42a30e819f81bbcb57bdcf0c2391ef10e3069615f8f",
+      "route_id": "mgcrea_mcp_a2a",
+      "protocol": {
+        "mcp": "2025-11-25",
+        "mcp_transport": "actual child-process stdio",
+        "extension": "not used; ordinary tools",
+        "a2a": "1.0 JSONRPC over real loopback HTTP"
+      },
+      "source_commit": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+      "label": "observed upstream-authored development fixture; not independent gold, performance comparison or fresh-state lease",
+      "queries": [
+        {
+          "exchange_id": "mcp-4",
+          "phase": "local_mirror_before_pending_refresh",
+          "request": {
+            "jsonrpc": "2.0",
+            "id": 4,
+            "method": "tools/call",
+            "params": {
+              "name": "a2a_get_task",
+              "arguments": {
+                "task_id": "80e99579-154e-47aa-8870-d156cc0a77a0",
+                "refresh": false
+              }
+            }
+          },
+          "response": {
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"id\":\"80e99579-154e-47aa-8870-d156cc0a77a0\",\"direction\":\"outbound\",\"peer\":\"http://127.0.0.1:51860\",\"state\":\"submitted\",\"updated_at\":\"2026-10-23T20:03:36.614Z\",\"context_id\":\"9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3\",\"summary\":\"ask: development-destination\",\"history_length\":1,\"artifact_count\":0,\"created_at\":\"2026-10-23T20:03:36.614Z\",\"history\":[{\"message_id\":\"msg-mvledxcn-0gin8adg\",\"role\":\"user\",\"text\":\"ask: development-destination\"}],\"artifacts\":[]}"
+                }
+              ]
+            },
+            "jsonrpc": "2.0",
+            "id": 4
+          },
+          "response_sha256": "8b95050cfc93558f4e1b2b181b0c7370be8effe38be3002a0374117ef43c09b1",
+          "observed_at_utc": "2026-10-23T20:03:36.622Z",
+          "elapsed_ms": 2.8078
+        },
+        {
+          "exchange_id": "mcp-5",
+          "phase": "authoritative_get_input_required",
+          "request": {
+            "jsonrpc": "2.0",
+            "id": 5,
+            "method": "tools/call",
+            "params": {
+              "name": "a2a_get_task",
+              "arguments": {
+                "task_id": "80e99579-154e-47aa-8870-d156cc0a77a0",
+                "refresh": true
+              }
+            }
+          },
+          "response": {
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"id\":\"80e99579-154e-47aa-8870-d156cc0a77a0\",\"direction\":\"outbound\",\"peer\":\"http://127.0.0.1:51860\",\"state\":\"input_required\",\"updated_at\":\"2026-10-23T20:03:36.628Z\",\"context_id\":\"9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3\",\"summary\":\"ask: development-destination\",\"status_message\":\"What value should I use for development-destination?\",\"history_length\":2,\"artifact_count\":0,\"created_at\":\"2026-10-23T20:03:36.614Z\",\"history\":[{\"message_id\":\"msg-mvledxcn-0gin8adg\",\"role\":\"user\",\"text\":\"ask: development-destination\"},{\"message_id\":\"54df1ea9-ce90-4d97-ba34-5ab54c28888f\",\"role\":\"agent\",\"text\":\"What value should I use for development-destination?\"}],\"artifacts\":[]}"
+                }
+              ]
+            },
+            "jsonrpc": "2.0",
+            "id": 5
+          },
+          "response_sha256": "f65dda1fb3d4082fca39616dff09734e1d1724c68e857345ea1ad2b747877d2c",
+          "observed_at_utc": "2026-10-23T20:03:36.630Z",
+          "elapsed_ms": 7.8033
+        },
+        {
+          "exchange_id": "mcp-7",
+          "phase": "local_mirror_after_answer_before_refresh",
+          "request": {
+            "jsonrpc": "2.0",
+            "id": 7,
+            "method": "tools/call",
+            "params": {
+              "name": "a2a_get_task",
+              "arguments": {
+                "task_id": "80e99579-154e-47aa-8870-d156cc0a77a0",
+                "refresh": false
+              }
+            }
+          },
+          "response": {
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"id\":\"80e99579-154e-47aa-8870-d156cc0a77a0\",\"direction\":\"outbound\",\"peer\":\"http://127.0.0.1:51860\",\"state\":\"input_required\",\"updated_at\":\"2026-10-23T20:03:36.637Z\",\"context_id\":\"9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3\",\"summary\":\"ask: development-destination\",\"status_message\":\"What value should I use for development-destination?\",\"history_length\":3,\"artifact_count\":0,\"created_at\":\"2026-10-23T20:03:36.614Z\",\"history\":[{\"message_id\":\"msg-mvledxcn-0gin8adg\",\"role\":\"user\",\"text\":\"ask: development-destination\"},{\"message_id\":\"54df1ea9-ce90-4d97-ba34-5ab54c28888f\",\"role\":\"agent\",\"text\":\"What value should I use for development-destination?\"},{\"message_id\":\"msg-mvledxdj-1rwbjnbk\",\"role\":\"user\",\"text\":\"Paris\"}],\"artifacts\":[]}"
+                }
+              ]
+            },
+            "jsonrpc": "2.0",
+            "id": 7
+          },
+          "response_sha256": "d06bc9732faae607ac19aa2f7da7c4d382e8a37c07ca2405567bfda2183796ab",
+          "observed_at_utc": "2026-10-23T20:03:36.641Z",
+          "elapsed_ms": 1.7356
+        },
+        {
+          "exchange_id": "mcp-8",
+          "phase": "authoritative_get_completed",
+          "request": {
+            "jsonrpc": "2.0",
+            "id": 8,
+            "method": "tools/call",
+            "params": {
+              "name": "a2a_get_task",
+              "arguments": {
+                "task_id": "80e99579-154e-47aa-8870-d156cc0a77a0",
+                "refresh": true
+              }
+            }
+          },
+          "response": {
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"id\":\"80e99579-154e-47aa-8870-d156cc0a77a0\",\"direction\":\"outbound\",\"peer\":\"http://127.0.0.1:51860\",\"state\":\"completed\",\"updated_at\":\"2026-10-23T20:03:36.647Z\",\"context_id\":\"9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3\",\"summary\":\"ask: development-destination\",\"history_length\":3,\"artifact_count\":1,\"created_at\":\"2026-10-23T20:03:36.614Z\",\"history\":[{\"message_id\":\"msg-mvledxcn-0gin8adg\",\"role\":\"user\",\"text\":\"ask: development-destination\"},{\"message_id\":\"54df1ea9-ce90-4d97-ba34-5ab54c28888f\",\"role\":\"agent\",\"text\":\"What value should I use for development-destination?\"},{\"message_id\":\"msg-mvledxdj-1rwbjnbk\",\"role\":\"user\",\"text\":\"Paris\"}],\"artifacts\":[{\"artifact_id\":\"3cbf00ab-4141-46ff-9864-3c0c3ad25433\",\"name\":\"result\",\"text\":\"development-destination = Paris\"}]}"
+                }
+              ]
+            },
+            "jsonrpc": "2.0",
+            "id": 8
+          },
+          "response_sha256": "7b86ee3b4ebdee2516252de7d485d6dc6a045f5351836d7a3cd2026592512bf2",
+          "observed_at_utc": "2026-10-23T20:03:36.649Z",
+          "elapsed_ms": 8.0498
+        },
+        {
+          "exchange_id": "mcp-9",
+          "phase": "local_mirror_after_completed_refresh",
+          "request": {
+            "jsonrpc": "2.0",
+            "id": 9,
+            "method": "tools/call",
+            "params": {
+              "name": "a2a_get_task",
+              "arguments": {
+                "task_id": "80e99579-154e-47aa-8870-d156cc0a77a0",
+                "refresh": false
+              }
+            }
+          },
+          "response": {
+            "result": {
+              "content": [
+                {
+                  "type": "text",
+                  "text": "{\"id\":\"80e99579-154e-47aa-8870-d156cc0a77a0\",\"direction\":\"outbound\",\"peer\":\"http://127.0.0.1:51860\",\"state\":\"completed\",\"updated_at\":\"2026-10-23T20:03:36.647Z\",\"context_id\":\"9bbd3d51-9f1d-4ce9-8cde-8556fe0da4e3\",\"summary\":\"ask: development-destination\",\"history_length\":3,\"artifact_count\":1,\"created_at\":\"2026-10-23T20:03:36.614Z\",\"history\":[{\"message_id\":\"msg-mvledxcn-0gin8adg\",\"role\":\"user\",\"text\":\"ask: development-destination\"},{\"message_id\":\"54df1ea9-ce90-4d97-ba34-5ab54c28888f\",\"role\":\"agent\",\"text\":\"What value should I use for development-destination?\"},{\"message_id\":\"msg-mvledxdj-1rwbjnbk\",\"role\":\"user\",\"text\":\"Paris\"}],\"artifacts\":[{\"artifact_id\":\"3cbf00ab-4141-46ff-9864-3c0c3ad25433\",\"name\":\"result\",\"text\":\"development-destination = Paris\"}]}"
+                }
+              ]
+            },
+            "jsonrpc": "2.0",
+            "id": 9
+          },
+          "response_sha256": "3b4680e2346eb0b7eeb1c193e1b5492d13ae2646de90a4d0c880482f0f1d38c5",
+          "observed_at_utc": "2026-10-23T20:03:36.652Z",
+          "elapsed_ms": 2.3571
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "test": "_ap2_injected_execution_tests.ReferenceExecutionTests.test_asgi_exact_scope_events_chunk_order_and_public_field_projection",
+  "constructed_artifacts": [
+    {
+      "schema_version": "ap2-hp-passive-public-capture/1",
+      "records": [
+        {
+          "sequence": 0,
+          "exchange": 0,
+          "boundary": "scope",
+          "value": {
+            "type": "http",
+            "method": "POST",
+            "path": "/a2a/merchant_agent",
+            "raw_path": {
+              "encoding": "base64",
+              "bytes": 21,
+              "sha256": "61f32cda258c4db543925ab1d9ba41cc7dc5da8f9fae772df7d3d9a2f584aec6",
+              "data": "L2EyYS8lNmRlcmNoYW50X2FnZW50"
+            },
+            "query_string": {
+              "encoding": "base64",
+              "bytes": 7,
+              "sha256": "5a654810c98641eed5c11c28d20b12fe9c1835c0e32523b5ffc46d64fb15fa4b",
+              "data": "YT0xJmE9Mg=="
+            },
+            "headers": [
+              {
+                "encoding": "tuple",
+                "items": [
+                  {
+                    "encoding": "base64",
+                    "bytes": 16,
+                    "sha256": "ea594090c58c5a0a0dd564291faf46fc9e09acc7dbc6e4de0e30e83eeb6f4df4",
+                    "data": "eC1hMmEtZXh0ZW5zaW9ucw=="
+                  },
+                  {
+                    "encoding": "base64",
+                    "bytes": 49,
+                    "sha256": "3eea2f0d09d944b0c5123e87660cd285657db866747be4882714e1a94222785c",
+                    "data": "aHR0cHM6Ly9naXRodWIuY29tL2dvb2dsZS1hZ2VudGljLWNvbW1lcmNlL2FwMi92MQ=="
+                  }
+                ]
+              },
+              {
+                "encoding": "tuple",
+                "items": [
+                  {
+                    "encoding": "base64",
+                    "bytes": 8,
+                    "sha256": "76654192c54dfff1e9f75fdb9a887b23ed1a592842db4ce22860611e022e452b",
+                    "data": "eC1yZXBlYXQ="
+                  },
+                  {
+                    "encoding": "base64",
+                    "bytes": 1,
+                    "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+                    "data": "MQ=="
+                  }
+                ]
+              },
+              {
+                "encoding": "tuple",
+                "items": [
+                  {
+                    "encoding": "base64",
+                    "bytes": 8,
+                    "sha256": "76654192c54dfff1e9f75fdb9a887b23ed1a592842db4ce22860611e022e452b",
+                    "data": "eC1yZXBlYXQ="
+                  },
+                  {
+                    "encoding": "base64",
+                    "bytes": 1,
+                    "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+                    "data": "Mg=="
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "sequence": 1,
+          "exchange": 0,
+          "boundary": "receive_attempt",
+          "value": null
+        },
+        {
+          "sequence": 2,
+          "exchange": 0,
+          "boundary": "receive_returned",
+          "value": {
+            "type": "http.request",
+            "body": {
+              "encoding": "base64",
+              "bytes": 6,
+              "sha256": "a1af030231ca2fd20ecf30c5294baf8f69321d09bb16ac53885ccd17a385280d",
+              "data": "AGZpcnN0"
+            },
+            "more_body": true
+          }
+        },
+        {
+          "sequence": 3,
+          "exchange": 0,
+          "boundary": "receive_attempt",
+          "value": null
+        },
+        {
+          "sequence": 4,
+          "exchange": 0,
+          "boundary": "receive_returned",
+          "value": {
+            "type": "http.request",
+            "body": {
+              "encoding": "base64",
+              "bytes": 5,
+              "sha256": "f9c447c7601638d0d7c985f1134dda2bfaac75b1dd16ef1338d3af0aa5503aac",
+              "data": "bGFzdP8="
+            },
+            "more_body": false
+          }
+        },
+        {
+          "sequence": 5,
+          "exchange": 0,
+          "boundary": "send_attempt",
+          "value": {
+            "type": "http.response.start",
+            "status": 200,
+            "headers": [
+              {
+                "encoding": "tuple",
+                "items": [
+                  {
+                    "encoding": "base64",
+                    "bytes": 8,
+                    "sha256": "76654192c54dfff1e9f75fdb9a887b23ed1a592842db4ce22860611e022e452b",
+                    "data": "eC1yZXBlYXQ="
+                  },
+                  {
+                    "encoding": "base64",
+                    "bytes": 1,
+                    "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+                    "data": "MQ=="
+                  }
+                ]
+              },
+              {
+                "encoding": "tuple",
+                "items": [
+                  {
+                    "encoding": "base64",
+                    "bytes": 8,
+                    "sha256": "76654192c54dfff1e9f75fdb9a887b23ed1a592842db4ce22860611e022e452b",
+                    "data": "eC1yZXBlYXQ="
+                  },
+                  {
+                    "encoding": "base64",
+                    "bytes": 1,
+                    "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+                    "data": "Mg=="
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "sequence": 6,
+          "exchange": 0,
+          "boundary": "send_completed",
+          "value": {
+            "type": "http.response.start",
+            "status": 200,
+            "headers": [
+              {
+                "encoding": "tuple",
+                "items": [
+                  {
+                    "encoding": "base64",
+                    "bytes": 8,
+                    "sha256": "76654192c54dfff1e9f75fdb9a887b23ed1a592842db4ce22860611e022e452b",
+                    "data": "eC1yZXBlYXQ="
+                  },
+                  {
+                    "encoding": "base64",
+                    "bytes": 1,
+                    "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+                    "data": "MQ=="
+                  }
+                ]
+              },
+              {
+                "encoding": "tuple",
+                "items": [
+                  {
+                    "encoding": "base64",
+                    "bytes": 8,
+                    "sha256": "76654192c54dfff1e9f75fdb9a887b23ed1a592842db4ce22860611e022e452b",
+                    "data": "eC1yZXBlYXQ="
+                  },
+                  {
+                    "encoding": "base64",
+                    "bytes": 1,
+                    "sha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+                    "data": "Mg=="
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "sequence": 7,
+          "exchange": 0,
+          "boundary": "send_attempt",
+          "value": {
+            "type": "http.response.body",
+            "body": {
+              "encoding": "base64",
+              "bytes": 2,
+              "sha256": "ffe9aaeaa2a2d5048174df0b80599ef0197ec024c4b051bc9860cff58ef7f9f3",
+              "data": "YQA="
+            },
+            "more_body": true
+          }
+        },
+        {
+          "sequence": 8,
+          "exchange": 0,
+          "boundary": "send_completed",
+          "value": {
+            "type": "http.response.body",
+            "body": {
+              "encoding": "base64",
+              "bytes": 2,
+              "sha256": "ffe9aaeaa2a2d5048174df0b80599ef0197ec024c4b051bc9860cff58ef7f9f3",
+              "data": "YQA="
+            },
+            "more_body": true
+          }
+        },
+        {
+          "sequence": 9,
+          "exchange": 0,
+          "boundary": "send_attempt",
+          "value": {
+            "type": "http.response.body",
+            "body": {
+              "encoding": "base64",
+              "bytes": 2,
+              "sha256": "8007c0cd7c10b626e9e1ef4124d7603638d648662ba4001854c9268990b2bd21",
+              "data": "/2I="
+            },
+            "more_body": false
+          }
+        },
+        {
+          "sequence": 10,
+          "exchange": 0,
+          "boundary": "send_completed",
+          "value": {
+            "type": "http.response.body",
+            "body": {
+              "encoding": "base64",
+              "bytes": 2,
+              "sha256": "8007c0cd7c10b626e9e1ef4124d7603638d648662ba4001854c9268990b2bd21",
+              "data": "/2I="
+            },
+            "more_body": false
+          }
+        },
+        {
+          "sequence": 11,
+          "exchange": 0,
+          "boundary": "application_returned",
+          "value": null
+        }
+      ],
+      "observation_errors": [],
+      "observation_complete_at_wrapper": true,
+      "native_hook_placement_verified": false,
+      "transport_peer_ownership_verified": false,
+      "native_qualification_established": false
+    }
+  ]
+}

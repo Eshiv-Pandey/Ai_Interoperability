@@ -1,0 +1,187 @@
+test_both_constructed_profiles (test_agentops_protocol_v1.ProtocolChecks.test_both_constructed_profiles) ... ERROR
+test_changed_approver_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_changed_approver_is_rejected) ... ERROR
+test_early_effect_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_early_effect_is_rejected) ... ERROR
+test_extra_or_unrelated_domain_write_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_extra_or_unrelated_domain_write_is_rejected) ... ERROR
+test_header_mutations_rejected (test_agentops_protocol_v1.ProtocolChecks.test_header_mutations_rejected) ... ERROR
+test_incomplete_capture_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_incomplete_capture_is_rejected) ... ERROR
+test_invalid_transport_choices (test_agentops_protocol_v1.ProtocolChecks.test_invalid_transport_choices) ... ok
+test_literal_header_is_the_only_paired_request_difference (test_agentops_protocol_v1.ProtocolChecks.test_literal_header_is_the_only_paired_request_difference) ... ERROR
+test_network_attempt_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_network_attempt_is_rejected) ... ERROR
+test_streaming_error_or_truncation_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_streaming_error_or_truncation_is_rejected) ... ERROR
+test_unbound_stream_event_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_unbound_stream_event_is_rejected) ... ERROR
+test_wrong_call_id_or_task_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_wrong_call_id_or_task_is_rejected) ... ERROR
+test_wrong_negative_result_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_wrong_negative_result_is_rejected) ... ERROR
+
+======================================================================
+ERROR: test_both_constructed_profiles (test_agentops_protocol_v1.ProtocolChecks.test_both_constructed_profiles)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 114, in test_both_constructed_profiles
+    self.write(constructed_files(self.seed, case))
+               ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+======================================================================
+ERROR: test_changed_approver_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_changed_approver_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 198, in test_changed_approver_is_rejected
+    files = constructed_files(self.seed, 'sync')
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+======================================================================
+ERROR: test_early_effect_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_early_effect_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 168, in test_early_effect_is_rejected
+    files = constructed_files(self.seed, 'sync')
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+======================================================================
+ERROR: test_extra_or_unrelated_domain_write_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_extra_or_unrelated_domain_write_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 157, in test_extra_or_unrelated_domain_write_is_rejected
+    files = constructed_files(self.seed, 'sync')
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+======================================================================
+ERROR: test_header_mutations_rejected (test_agentops_protocol_v1.ProtocolChecks.test_header_mutations_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 131, in test_header_mutations_rejected
+    files = constructed_files(self.seed, 'sync')
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+======================================================================
+ERROR: test_incomplete_capture_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_incomplete_capture_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 189, in test_incomplete_capture_is_rejected
+    files = constructed_files(self.seed, 'sync')
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+======================================================================
+ERROR: test_literal_header_is_the_only_paired_request_difference (test_agentops_protocol_v1.ProtocolChecks.test_literal_header_is_the_only_paired_request_difference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 121, in test_literal_header_is_the_only_paired_request_difference
+    files = constructed_files(self.seed, 'sync')
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+======================================================================
+ERROR: test_network_attempt_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_network_attempt_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 209, in test_network_attempt_is_rejected
+    files = constructed_files(self.seed, 'sync')
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+======================================================================
+ERROR: test_streaming_error_or_truncation_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_streaming_error_or_truncation_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 219, in test_streaming_error_or_truncation_is_rejected
+    files = constructed_files(self.seed, 'stream')
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+======================================================================
+ERROR: test_unbound_stream_event_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_unbound_stream_event_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 178, in test_unbound_stream_event_is_rejected
+    files = constructed_files(self.seed, 'stream')
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+======================================================================
+ERROR: test_wrong_call_id_or_task_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_wrong_call_id_or_task_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 143, in test_wrong_call_id_or_task_is_rejected
+    files = constructed_files(self.seed, 'sync')
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+======================================================================
+ERROR: test_wrong_negative_result_is_rejected (test_agentops_protocol_v1.ProtocolChecks.test_wrong_negative_result_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 150, in test_wrong_negative_result_is_rejected
+    files = constructed_files(self.seed, 'sync')
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 36, in constructed_files
+    events = {name: [canonical_event(v) for v in profile['observations'][index]['results']]
+                     ~~~~~~~~~~~~~~~^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_protocol_v1.py", line 29, in canonical_event
+    for part in row['artifact'].get('parts', []):
+                ~~~^^^^^^^^^^^^
+KeyError: 'artifact'
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.058s
+
+FAILED (errors=12)

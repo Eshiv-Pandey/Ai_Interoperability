@@ -1,0 +1,52 @@
+test_empty_and_globalized_refutations_cannot_cover_a_real_witness (test_refinement.RefinementCertificates.test_empty_and_globalized_refutations_cannot_cover_a_real_witness) ... ok
+test_forged_positive_fields_and_stale_clock_are_rejected (test_refinement.RefinementCertificates.test_forged_positive_fields_and_stale_clock_are_rejected) ... ok
+test_late_tuple_membership_checks_domains_without_cartesian_enumeration (test_refinement.RefinementCertificates.test_late_tuple_membership_checks_domains_without_cartesian_enumeration) ... ok
+test_negative_refutations_need_complete_coverage_and_truthful_prefixes (test_refinement.RefinementCertificates.test_negative_refutations_need_complete_coverage_and_truthful_prefixes) ... ok
+test_reference_product_certificate_rejects_omitted_states (test_refinement.RefinementCertificates.test_reference_product_certificate_rejects_omitted_states) ... ok
+test_unknown_provides_no_certificate (test_refinement.RefinementCertificates.test_unknown_provides_no_certificate) ... ok
+test_unreachable_prefixes_still_consume_the_checker_work_budget (test_refinement.RefinementCertificates.test_unreachable_prefixes_still_consume_the_checker_work_budget) ... ok
+test_frozen_authored_profiles_match_manifest (test_refinement.RefinementInputValidation.test_frozen_authored_profiles_match_manifest) ... ERROR
+test_missing_relations_unknown_constructor_bad_argument_and_forbidden_emit_path (test_refinement.RefinementInputValidation.test_missing_relations_unknown_constructor_bad_argument_and_forbidden_emit_path) ... ok
+test_shared_profile_limits_are_enforced_independently (test_refinement.RefinementInputValidation.test_shared_profile_limits_are_enforced_independently) ... ok
+test_atomic_updates_use_old_frame_not_prior_update_in_dict (test_refinement.RefinementSemantics.test_atomic_updates_use_old_frame_not_prior_update_in_dict) ... ok
+test_authored_development_profiles_have_declared_outcomes (test_refinement.RefinementSemantics.test_authored_development_profiles_have_declared_outcomes) ... ok
+test_bindings_cannot_be_mixed_across_alternative_frames (test_refinement.RefinementSemantics.test_bindings_cannot_be_mixed_across_alternative_frames) ... ok
+test_deterministic_small_relational_models_crosscheck (test_refinement.RefinementSemantics.test_deterministic_small_relational_models_crosscheck) ... ok
+test_false_is_not_integer_zero_in_nested_json_guards (test_refinement.RefinementSemantics.test_false_is_not_integer_zero_in_nested_json_guards) ... ok
+test_incomplete_positive_still_has_checked_conditional_witness (test_refinement.RefinementSemantics.test_incomplete_positive_still_has_checked_conditional_witness) ... ok
+test_known_false_guard_dominates_unknown_request (test_refinement.RefinementSemantics.test_known_false_guard_dominates_unknown_request) ... ok
+test_low_work_budget_abstains_and_budget_is_reported (test_refinement.RefinementSemantics.test_low_work_budget_abstains_and_budget_is_reported) ... ok
+test_missing_null_and_scalar_types_are_distinct (test_refinement.RefinementSemantics.test_missing_null_and_scalar_types_are_distinct) ... ok
+test_missing_recipe_is_unavailable_only_in_declared_finite_domain (test_refinement.RefinementSemantics.test_missing_recipe_is_unavailable_only_in_declared_finite_domain) ... ok
+test_non_scalar_binding_update_is_indeterminate (test_refinement.RefinementSemantics.test_non_scalar_binding_update_is_indeterminate) ... ok
+test_private_or_generated_recipe_constructor_is_rejected (test_refinement.RefinementSemantics.test_private_or_generated_recipe_constructor_is_rejected) ... ok
+test_reference_collapses_equal_frames_and_reuses_relations_on_cycles (test_refinement.RefinementSemantics.test_reference_collapses_equal_frames_and_reuses_relations_on_cycles) ... ok
+test_refinement_is_prefix_scoped_not_global_edge_deletion (test_refinement.RefinementSemantics.test_refinement_is_prefix_scoped_not_global_edge_deletion) ... ok
+test_replaying_cached_relations_still_consumes_the_work_budget (test_refinement.RefinementSemantics.test_replaying_cached_relations_still_consumes_the_work_budget) ... ok
+test_uncertainty_is_not_cleared_by_a_later_false_guard (test_refinement.RefinementSemantics.test_uncertainty_is_not_cleared_by_a_later_false_guard) ... ok
+test_unknown_alternative_prefix_does_not_hide_known_witness (test_refinement.RefinementSemantics.test_unknown_alternative_prefix_does_not_hide_known_witness) ... ok
+test_unknown_generated_field_is_not_a_free_existential_variable (test_refinement.RefinementSemantics.test_unknown_generated_field_is_not_a_free_existential_variable) ... ok
+test_unknown_on_a_no_goal_suffix_does_not_poison_relation_result (test_refinement.RefinementSemantics.test_unknown_on_a_no_goal_suffix_does_not_poison_relation_result) ... ok
+test_unsafe_initial_state_blocks_all_recipes (test_refinement.RefinementSemantics.test_unsafe_initial_state_blocks_all_recipes) ... ok
+test_wide_domain_first_valid_goal_does_not_require_full_cartesian_scan (test_refinement.RefinementSemantics.test_wide_domain_first_valid_goal_does_not_require_full_cartesian_scan) ... ok
+test_zero_horizon_and_initial_goal (test_refinement.RefinementSemantics.test_zero_horizon_and_initial_goal) ... ok
+
+======================================================================
+ERROR: test_frozen_authored_profiles_match_manifest (test_refinement.RefinementInputValidation.test_frozen_authored_profiles_match_manifest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/var/tmp/agentops-admission-live-v1-0e3612fb6592436a/tests/test_refinement.py", line 447, in test_frozen_authored_profiles_match_manifest
+    index = json.loads((folder / 'manifest.json').read_bytes())
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/python/cpython-3.13.1-linux-x86_64-gnu/lib/python3.13/pathlib/_abc.py", line 625, in read_bytes
+    with self.open(mode='rb') as f:
+         ~~~~~~~~~^^^^^^^^^^^
+  File "/var/tmp/agentops-research-v7-gs9r5her/external/runtime-agentops-linux-v7/python/cpython-3.13.1-linux-x86_64-gnu/lib/python3.13/pathlib/_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/var/tmp/agentops-admission-live-v1-0e3612fb6592436a/examples/refinement-development/manifest.json'
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.184s
+
+FAILED (errors=1)

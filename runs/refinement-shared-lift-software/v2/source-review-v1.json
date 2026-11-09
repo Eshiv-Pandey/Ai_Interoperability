@@ -1,0 +1,79 @@
+{
+  "schema_version": "shared-lift-independent-source-review/1",
+  "reviewer": "/root/refinement_final_review",
+  "review_date": "2026-10-29",
+  "status": "no_blocking_source_findings",
+  "reviewed_source": {
+    "path": "src/interoperability/refinement_shared_lift_v2.py",
+    "sha256": "927538f7ddcb21120913c6c4257754b65a45703db384eec8cd6a28ba9e9b280b"
+  },
+  "preserved_dependency_comparison": {
+    "captured_receipt": "runs/refinement-scaling/v2/budget-100000/execution.json",
+    "field": "captured_inputs",
+    "method": "Compared current SHA256 with the retained captured-source SHA256 records; no solver or checker execution.",
+    "files": [
+      {
+        "path": "src/interoperability/refinement.py",
+        "captured_path": "source/interoperability/refinement.py",
+        "sha256": "11175edcb99dbec231390ae767ba97dce2e919810844ed544a1ddd109f4b5b3b",
+        "matches": true
+      },
+      {
+        "path": "src/interoperability/refinement_oracle.py",
+        "captured_path": "source/interoperability/refinement_oracle.py",
+        "sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e",
+        "matches": true
+      }
+    ]
+  },
+  "design_reference": "docs/research/shared-lifting-design-v2.md",
+  "findings": [
+    {
+      "lines": "99-144",
+      "finding": "Exact transition-prefix tuples preserve path and depth context. Edge identity plus canonical whole-frame JSON preserves correlations and boolean/integer/null/absent-key distinctions within a call."
+    },
+    {
+      "lines": "146-160, 229-246",
+      "finding": "Cached relation steps contain no previous path history. Replay attaches steps to the current prefix history; witness materialization copies JSON payloads before returning them."
+    },
+    {
+      "lines": "162-217",
+      "finding": "Relation summaries publish only after complete assignment enumeration and successful construction charges. Early final-goal success and budget exceptions leave incomplete entries unpublished."
+    },
+    {
+      "lines": "219-252",
+      "finding": "Sticky uncertainty remains separate from contract_known. Empty uncertain prefixes remain unknown; a known safe existential witness can still succeed. Complete prefix summaries preserve endpoint, frontier and exact history."
+    },
+    {
+      "lines": "255-339",
+      "finding": "Abstract enumeration, prefix-refinement learning, conservative observable traversal and terminal decision rules preserve the original structure. Added cache/history/witness work intentionally changes budget outcomes."
+    },
+    {
+      "lines": "21-32, 74-160, 162-217, 310-312",
+      "finding": "Explicit method-specific categories account for cache keys/lookups/statuses/publication/replay and history/witness construction. These are not uniform hardware units; preparation, string-byte costs, process memory and independent checker costs require separately scoped runtime measurements."
+    },
+    {
+      "path": "src/interoperability/refinement_oracle.py",
+      "lines": "425-536",
+      "finding": "The retained checker independently reconstructs recipe-path witnesses and re-lifts refuted prefixes without consuming the candidate cache. No new certificate kind or trusted cache proof was introduced."
+    }
+  ],
+  "blocking_findings": [],
+  "coverage_recommendations_sent_to_author": [
+    "Exercise a previously complete nonempty relation summary as the final early-goal edge, verifying current-history attachment. The author subsequently reported adding a valid uncertain-route then safe-route reconvergence case; this reviewer did not execute it.",
+    "Exercise sticky uncertainty with surviving frames followed by an empty suffix where the language admits the construction. The author identified an existing invariant-uncertainty case and noted mixed known/unknown assignments under one exact relation/frame may not be expressible. This was a coverage recommendation, not a demonstrated source defect."
+  ],
+  "external_test_evidence": {
+    "receipt": "runs/refinement-shared-lift-software/v2/validation-1/result.json",
+    "reported_by": "/root/shared_lifting_design",
+    "reported_tests_passed": 23,
+    "reviewer_reran_tests": false,
+    "note": "Receipt location and passing count were reported by the implementation owner after the source review; they are not independent runtime evidence supplied by this review."
+  },
+  "scope_limits": [
+    "Read-only source/design/test inspection and dependency hash comparison; the only authored output is this new review record.",
+    "No application, solver, checker, benchmark, matrix, test or WSL execution was performed for this review.",
+    "Source inspection found no blocker; it is not a proof of exhaustive semantic equivalence or a passing runtime test claim.",
+    "No comparative efficiency, novelty, application/domain qualification, supervisor acceptance or project percentage is established."
+  ]
+}

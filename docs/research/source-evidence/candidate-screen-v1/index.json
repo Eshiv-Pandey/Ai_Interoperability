@@ -1,0 +1,167 @@
+{
+  "schema_version": "bounded-candidate-screen-index/1",
+  "kind": "independent-primary-source-screen-unexecuted",
+  "recorded_at_utc": "2026-10-23T22:14:00.923431+00:00",
+  "status": "closed-no-additional-application-selected",
+  "eligible_additional_continuation_witnesses": 0,
+  "selected_applications": [],
+  "scope": "Bounded official JS/.NET SDK examples and official-samples Calculator/Echo plus one Python framework-free lead; no expansion beyond these leads. Carol/deepresearch reused, not new candidates.",
+  "applications_executed": false,
+  "dependencies_installed": false,
+  "model_calls": 0,
+  "new_native_or_bridge_captures": false,
+  "source_ledgers": [
+    {
+      "path": "docs/research/source-evidence/candidate-screen-v1/screen-20261023T220651194519Z-4428/tree-fetch-ledger.json",
+      "sha256": "013c65a9b9aec7a995679aa711c93cc500b2bb93dc5439676779034613077552"
+    },
+    {
+      "path": "docs/research/source-evidence/candidate-screen-v1/screen-20261023T220651194519Z-4428/sdk-and-dotnet-screen/ledger.json",
+      "sha256": "e8a3be966db4a1a6f75f3a8a675ade85501bb1a99393dce90072b8fc4e314c56"
+    },
+    {
+      "path": "docs/research/source-evidence/candidate-screen-v1/screen-20261023T220651194519Z-4428/sdk-and-dotnet-screen/eligibility-findings.json",
+      "sha256": "0388b739c6d40db388bf615804e7adeedb518f5f9d1020467ffdcd3c04635170"
+    },
+    {
+      "path": "docs/research/source-evidence/candidate-screen-v1/screen-20261023T220651194519Z-4428/python-no-framework-screen/ledger.json",
+      "sha256": "a890e9743e82f9daf18bcc0e3c6ce0b7a462ccad47f3ba6e56e7a4a8b4fa813a"
+    }
+  ],
+  "retained_source_body_count": 29,
+  "retained_source_integrity": {
+    "hash_and_bytes_match": true,
+    "mismatches": []
+  },
+  "pins": {
+    "a2a-js": {
+      "repository": "https://github.com/a2aproject/a2a-js",
+      "commit": "d305950c6a804ee2fd147aa865ada9fe6c7e1688"
+    },
+    "a2a-dotnet": {
+      "repository": "https://github.com/a2aproject/a2a-dotnet",
+      "commit": "f192d704e3eae60843d894c3d028c2bfac728ca6"
+    },
+    "a2a-samples": {
+      "repository": "https://github.com/a2aproject/a2a-samples",
+      "commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3"
+    }
+  },
+  "candidates": [
+    {
+      "application": "Official JS SDK Sample Agent",
+      "repository": "https://github.com/a2aproject/a2a-js",
+      "commit": "d305950c6a804ee2fd147aa865ada9fe6c7e1688",
+      "license": "Apache-2.0 (archived LICENSE)",
+      "protocol": "A2A1.0 JSONRPC; constants.ts:13; sample index.ts:18-24,70-71",
+      "declared_dependencies": "SDK package1.3.0; samples/package.json includes Express/tsx plus unrelated Genkit/movie-agent dependencies. This executor imports no model provider.",
+      "no_model_application_source": true,
+      "eligible": false,
+      "reason": "Explicit task-flow simulator, no task-dependent input-required/continuation guard; completes every noncancelled execution. Simulated1s processing is original sample behavior, not an observed latency advantage.",
+      "source_anchors": [
+        "src/samples/agents/sample-agent/index.ts:14-24,45",
+        "src/samples/agents/sample-agent/agent_executor.ts:96-100,147-158,166-185"
+      ]
+    },
+    {
+      "application": "Official .NET SDK EchoAgentWithTasks",
+      "repository": "https://github.com/a2aproject/a2a-dotnet",
+      "commit": "f192d704e3eae60843d894c3d028c2bfac728ca6",
+      "license": "Apache-2.0 (archived LICENSE)",
+      "protocol": "Card explicitly JSONRPC/A2A1.0 at EchoAgentWithTasks.cs:55-62; Program maps /echotasks and root well-known card.",
+      "declared_dependencies": "Application targets net10.0, references SDK source via A2A.AspNetCore project and OpenTelemetry packages. No paid model call in inspected handler/Program. Runtime installation/execution not verified.",
+      "no_model_application_source": true,
+      "eligible": false,
+      "reason": "Metadata task-target-state directly selects output status; not a prior-task/data-dependent continuation guard. Original3s simulated work conditional on returnImmediately is a test-control behavior.",
+      "source_anchors": [
+        "samples/AgentServer/EchoAgentWithTasks.cs:10,15-20,26-45,83-94",
+        "samples/AgentServer/AgentServer.csproj:4,10-18",
+        "samples/AgentServer/Program.cs:43-44,93,100-104"
+      ]
+    },
+    {
+      "application": "Official samples BasicA2ADemo Calculator",
+      "repository": "https://github.com/a2aproject/a2a-samples",
+      "commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3",
+      "license": "Apache-2.0 (archived LICENSE)",
+      "protocol": "JSONRPC endpoint explicitly mapped by Program.cs:20; legacy Url-shaped AgentCard and /.well-known/agent.json discovery. Version1.0.0 is application version, not declaration of wire1.0; unchanged1.0 compatibility unverified.",
+      "declared_dependencies": "net9.0; A2A and A2A.AspNetCore0.1.0-preview.2",
+      "no_model_application_source": true,
+      "eligible": false,
+      "reason": "Genuine deterministic arithmetic business logic, but only reads first TextPart and returns bare Message preserving context. No task/input-required state, task-ID/reference/metadata-dependent continuation, or structured-part requirement.",
+      "source_anchors": [
+        "samples/dotnet/BasicA2ADemo/CalculatorServer/CalculatorAgent.cs:12-15,21-64,77-86,92-95,102-127",
+        "samples/dotnet/BasicA2ADemo/CalculatorServer/CalculatorServer.csproj:4,10-11"
+      ]
+    },
+    {
+      "application": "Official samples BasicA2ADemo Echo",
+      "repository": "https://github.com/a2aproject/a2a-samples",
+      "commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3",
+      "license": "Apache-2.0 (archived LICENSE)",
+      "protocol": "JSONRPC endpoint Program.cs:20; legacy Url-shaped card, no explicit A2A1.0 wire declaration.",
+      "declared_dependencies": "net9.0; A2A and A2A.AspNetCore0.1.0-preview.2",
+      "no_model_application_source": true,
+      "eligible": false,
+      "reason": "First-text echo returning bare Message/context; no meaningful guarded task continuation.",
+      "source_anchors": [
+        "samples/dotnet/BasicA2ADemo/EchoServer/EchoAgent.cs:11-14,20-45,58-66,73-76",
+        "samples/dotnet/BasicA2ADemo/EchoServer/EchoServer.csproj:4,10-11"
+      ]
+    },
+    {
+      "application": "Official Python A2A/MCP without an LLM framework",
+      "repository": "https://github.com/a2aproject/a2a-samples",
+      "commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3",
+      "license": "Apache-2.0, shared pinned repository LICENSE archived in sdk-and-dotnet-screen",
+      "declared_dependencies": "a2a-sdk>=1.0.0a1; google-genai and other dependencies; no dependency install/resolution performed",
+      "protocol": "Modern SDK constraint; actual card/binding not established by the four inspected files",
+      "no_model_application_source": false,
+      "selected": false,
+      "eligible": false,
+      "reason": "Framework-free, not model-free: server streams Gemini gemini-2.5-flash-lite using an API key and contacts external MCP. No no-model execution branch was established. Paid versus free service availability was not verified and is not inferred from requiring an API key.",
+      "source_anchors": [
+        "README.md:14,34-40",
+        "src/no_llm_framework/server/agent.py:29-40,68,80,94",
+        "pyproject.toml:9,13"
+      ]
+    }
+  ],
+  "reused_prior_findings": {
+    "Carol": "Original and separate authored1.0 reference-guard controls are already recorded; no rescreen or new case.",
+    "Deepresearch": "Source reference ingestion is already archived; model/infrastructure and original REST profile limits remain; no execution or new case."
+  },
+  "whole_bridge_interface": {
+    "source_pins": {
+      "AmirK-S/a2a-to-mcp": "58eff9da469bccdc432bf164662727947de646b4",
+      "mgcrea/mcp-a2a": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5"
+    },
+    "source_hashes": {
+      "external/a2a-to-mcp/src/tools.ts": "9e96fd60b8146a88c575fd63ef07baef532a6fe9c40a650ede390626c71cf659",
+      "external/a2a-to-mcp/src/a2a-client.ts": "38cca90108c057823c823fac881bba074bc6df99e2ac07746ad2426550815b06",
+      "external/a2a-to-mcp/src/mrtr.ts": "5852c8e953035de7e505c5cd818dee9cd15c8df27990e5304678d3449909c2f8",
+      "external/a2a-to-mcp/src/tasks/handlers.ts": "c084b0a6857c8f990875cc04ab8f2a5c9072ca969ed5db67589c597b8dda5f02",
+      "external/mcp-a2a/src/tools/request.ts": "1c9eb49a065f3eac95c0fd2172068443719a29aeca9453a31690c70a61731342",
+      "external/mcp-a2a/src/client/peer.ts": "62c36155dd3f2438f4a629fff8cc5b1961d2f7c20bfbc5a620706a2f8218b909"
+    },
+    "Amir": "Four ordinary tools; ordinary send, MRTR resumption and modern Tasks answers all construct text plus task/context association and empty references. No declared raw SendMessage/parts/metadata alternative. Source tools.ts plus mrtr.ts:179-182 and tasks/handlers.ts:284-300 reuse a2a-client.ts:207-224. This is action-space evidence, not a new defect on any screened application.",
+    "mgcrea": "Typed text/ID send constructs empty references; write-enabled a2a_request permits SendMessage/GetTask and arbitrary native params, forwarding them unchanged. Native references/parts/metadata must be assessed with that permitted raw path, equally available to strong comparators. Source tools/request.ts:8-24,37-77 and client/peer.ts:182/rawRpc. No whole-interface field loss is concluded.",
+    "screened_applications": "Calculator/Echo consume first text and do not require structured parts/refs/metadata; ordinary text is sufficient at source level if version/transport fit. SDK metadata status selection is a simulator control, not independently existing continuation behavior. No actionable discriminating native continuation control selected."
+  },
+  "scientific_limit": "No C1/CP2 gate passed, no algorithmic novelty, natural bridge defect, efficacy or efficiency finding, and no human approval. This negative screen supports the next human scope decision only.",
+  "historical_fetch_limits": "Earlier exploratory read-only requests returned source text/hash summaries but had no recorded request timestamps and did not preserve response bytes. These are new exact-pin preservation fetches, not reconstructed historical captures. Two earlier Agent.cs guesses returned404; corrected official tree filenames are CalculatorAgent.cs and EchoAgent.cs.",
+  "earlier_untimed_failures": [
+    {
+      "url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/dotnet/BasicA2ADemo/CalculatorServer/Agent.cs",
+      "status": 404,
+      "body_retained": false,
+      "timing_available": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/a2aproject/a2a-samples/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3/samples/dotnet/BasicA2ADemo/EchoServer/Agent.cs",
+      "status": 404,
+      "body_retained": false,
+      "timing_available": false
+    }
+  ]
+}

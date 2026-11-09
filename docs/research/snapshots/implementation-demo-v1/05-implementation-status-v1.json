@@ -1,0 +1,27 @@
+{
+  "schema_version": "admission-benchmark-implementation-status/1",
+  "as_of": "2026-10-28",
+  "supervisor_target": "2026-10-31",
+  "required_this_week": ["new admission algorithm", "implemented benchmark", "running demonstration"],
+  "paper_required_this_week": false,
+  "algorithm_requirement_retained": true,
+  "artifact_only_route_selected": false,
+  "target_project_completion_percent": 70,
+  "verified_implementation_percent": null,
+  "percentage_reason": "A supervisor-agreed implementation denominator and complete acceptance evidence are not yet available; no 70 percent claim is made.",
+  "extension_granted": false,
+  "research_gate_progress_percent": 5,
+  "research_gate_meaning": "Historical full research-and-paper deliverable rubric; separate from implementation completeness.",
+  "components": [
+    {"id": "runtime_contract", "status": "implemented_with_prior_tests", "evidence": ["../../src/interoperability/manifest.py", "finite-model-v1.md"], "limit": "Explicit finite model; source-to-model fidelity is separate."},
+    {"id": "baseline_and_independent_checker", "status": "implemented_with_prior_tests", "evidence": ["../../src/interoperability/baseline.py", "../../src/interoperability/oracle.py", "../../tests/test_crosscheck.py"], "limit": "Established reachability; not the required new method."},
+    {"id": "candidate_mechanism", "status": "in_progress", "evidence": [], "limit": "Prior candidate screens established no distinct C1 step."},
+    {"id": "candidate_code", "status": "not_implemented", "evidence": []},
+    {"id": "candidate_independent_validation", "status": "not_implemented", "evidence": []},
+    {"id": "comparison_benchmark", "status": "in_progress", "evidence": [], "limit": "Current CLI has only baseline/oracle development replay."},
+    {"id": "development_inputs", "status": "partial", "evidence": ["../../examples/development/positive.json", "../../examples/development/unsupported-binding.json", "../../examples/development/unsupported-safety.json", "../../examples/development/unknown-observable.json"], "limit": "Four authored semantic examples are not a qualified two-domain corpus."},
+    {"id": "protocol_execution_harness", "status": "implemented_bounded_controls", "evidence": ["agentops-bridge-results-v10.md", "agentops-bridge-diagnostic-results-v12.md"], "limit": "Real retained local controls; candidate admission is not yet integrated and procurement is unqualified."},
+    {"id": "candidate_benchmark_demo", "status": "not_implemented", "evidence": [], "limit": "The archived replay is supporting evidence, not execution of a new algorithm."},
+    {"id": "supervisor_acceptance", "status": "pending", "evidence": [], "limit": "No reviewer approval, project percentage or extension inferred."}
+  ]
+}

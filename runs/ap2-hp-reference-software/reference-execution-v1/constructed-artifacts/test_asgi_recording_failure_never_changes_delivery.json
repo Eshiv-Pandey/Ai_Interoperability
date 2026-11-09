@@ -1,0 +1,78 @@
+{
+  "test": "_ap2_injected_execution_tests.ReferenceExecutionTests.test_asgi_recording_failure_never_changes_delivery",
+  "constructed_artifacts": [
+    {
+      "schema_version": "ap2-hp-passive-public-capture/1",
+      "records": [
+        {
+          "sequence": 0,
+          "exchange": 0,
+          "boundary": "scope",
+          "value": {
+            "type": "http"
+          }
+        },
+        {
+          "sequence": 1,
+          "exchange": 0,
+          "boundary": "send_attempt",
+          "value": {
+            "type": "http.response.body",
+            "body": {
+              "encoding": "base64",
+              "bytes": 4,
+              "sha256": "0967115f2813a3541eaef77de9d9d5773f1c0c04314b0bbfe4ff3b3b1c55b5d5",
+              "data": "c2FtZQ=="
+            }
+          }
+        },
+        {
+          "sequence": 2,
+          "exchange": 0,
+          "boundary": "send_completed",
+          "value": {
+            "type": "http.response.body",
+            "body": {
+              "encoding": "base64",
+              "bytes": 4,
+              "sha256": "0967115f2813a3541eaef77de9d9d5773f1c0c04314b0bbfe4ff3b3b1c55b5d5",
+              "data": "c2FtZQ=="
+            }
+          }
+        },
+        {
+          "sequence": 3,
+          "exchange": 0,
+          "boundary": "application_returned",
+          "value": null
+        }
+      ],
+      "observation_errors": [
+        {
+          "exchange": 0,
+          "boundary": "scope",
+          "error_type": "OSError"
+        },
+        {
+          "exchange": 0,
+          "boundary": "send_attempt",
+          "error_type": "OSError"
+        },
+        {
+          "exchange": 0,
+          "boundary": "send_completed",
+          "error_type": "OSError"
+        },
+        {
+          "exchange": 0,
+          "boundary": "application_returned",
+          "error_type": "OSError"
+        }
+      ],
+      "observation_complete_at_wrapper": false,
+      "native_hook_placement_verified": false,
+      "transport_peer_ownership_verified": false,
+      "native_qualification_established": false
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "case_id": "D1",
+    "requested_version_property_present": false,
+    "headers": {},
+    "expected_effective_version": "0.3",
+    "expected_acceptance": false
+  },
+  {
+    "case_id": "D2",
+    "requested_version_property_present": true,
+    "requested_version": "",
+    "headers": {
+      "a2a-version": ""
+    },
+    "expected_effective_version": "0.3",
+    "expected_acceptance": false
+  },
+  {
+    "case_id": "D3",
+    "requested_version_property_present": true,
+    "requested_version": "1.0",
+    "headers": {
+      "a2a-version": "1.0"
+    },
+    "expected_effective_version": "1.0",
+    "expected_acceptance": true
+  },
+  {
+    "case_id": "D4",
+    "requested_version_property_present": true,
+    "requested_version": "0.3",
+    "headers": {
+      "a2a-version": "0.3"
+    },
+    "expected_effective_version": "0.3",
+    "expected_acceptance": false
+  }
+]

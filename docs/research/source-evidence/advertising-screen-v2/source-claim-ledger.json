@@ -1,0 +1,166 @@
+{
+  "schema_version": "advertising-domain-claim-ledger/2",
+  "recorded_date_local": "2026-10-25",
+  "original_source_bytes_for_web_records": false,
+  "applications": [
+    {
+      "repository": "IABTechLab/agentic-mobile",
+      "pin": null,
+      "decision": "not selected: inspected custom/legacy facade; exact modern binding and runnable source unestablished",
+      "evidence": [
+        "ad_domain_primary",
+        "ad_domain_binding",
+        "advertising_binding_search",
+        "advertising_guard_find",
+        "advertising_application_core"
+      ]
+    },
+    {
+      "repository": "prebid/salesagent",
+      "former_repository": "adcontextprotocol/salesagent",
+      "release": "v2.0.0",
+      "web_resolved_commit": "17ebfb0841b0affc85f2796460503bda699e09b9",
+      "local_commit_verified": false,
+      "license_observation": "Apache-2.0 at pinned web source",
+      "decision": "not selected: same-A2A-task native continuation unestablished; typed transaction input and authentication limits; actual card/runtime unresolved",
+      "evidence": [
+        "adcp_domain_open",
+        "advertising_pinned_source",
+        "salesagent_runtime_source",
+        "salesagent_app_normalization",
+        "salesagent_transport_source",
+        "salesagent_sdk_and_continuation",
+        "salesagent_boundary_guards"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "A1",
+      "status": "source-only",
+      "claim": "Agentic Mobile uses tagged data parts, legacy/custom method names and top-level task/context fields.",
+      "evidence": [
+        "advertising_application_core.result.json",
+        "advertising_guard_find.result.json"
+      ],
+      "limit": "Unpinned main and no runtime; no universal protocol-defect claim."
+    },
+    {
+      "id": "A2",
+      "status": "source-only",
+      "claim": "Prebid card constructor omits explicit binding; app performs dynamic URL copy and SDK card conversion.",
+      "evidence": [
+        "salesagent_app_normalization.result.json",
+        "salesagent_sdk_and_continuation.result.json"
+      ],
+      "limit": "Actual resulting card and bridge binding selection remain unknown."
+    },
+    {
+      "id": "A3",
+      "status": "source-only",
+      "claim": "Prebid app explicitly enables v0.3 compatibility through its SDK route factory.",
+      "evidence": [
+        "salesagent_app_normalization.result.json",
+        "salesagent_boundary_guards.result.json"
+      ],
+      "limit": "No concrete missing-header request was run; strict JS-handler outcome does not transfer."
+    },
+    {
+      "id": "A4",
+      "status": "source-only",
+      "claim": "Prebid structured skills and natural-language create are distinct; native same-task continuation is not established.",
+      "evidence": [
+        "salesagent_transport_source.result.json",
+        "salesagent_app_normalization.result.json",
+        "advertising_application_core.result.json"
+      ],
+      "limit": "Task allocation source is not a measured failure; business IDs/context are not interchangeable with original A2A task IDs."
+    },
+    {
+      "id": "A5",
+      "status": "source-only with original local snapshots",
+      "claim": "Prebid non-discovery skills require Bearer auth; inspected Amir config/client offers no token input, mgcrea fetch can add a configured token.",
+      "evidence": [
+        "salesagent_transport_source.result.json",
+        "local-sources/amirk-config.ts",
+        "local-sources/amirk-a2a-client.ts",
+        "local-sources/mgcrea-fetch.ts"
+      ],
+      "limit": "No native/bridge authenticated transaction, auth bypass or added proxy was executed."
+    },
+    {
+      "id": "A6",
+      "status": "source-only",
+      "claim": "Prebid business updates require object identity, principal ownership and valid actions.",
+      "evidence": [
+        "salesagent_boundary_guards.result.json"
+      ],
+      "limit": "Prospective contract only; not selected native continuation or independent gold."
+    },
+    {
+      "id": "A7",
+      "status": "source-only",
+      "claim": "Pinned uv.lock has SDK1.0.1/adcp5.7.0 but project1.7.0; pinned pyproject has project2.0.0.",
+      "evidence": [
+        "salesagent_sdk_and_continuation.result.json",
+        "salesagent_transport_source.result.json"
+      ],
+      "limit": "No frozen install attempted; no lockfile failure or repair claimed."
+    },
+    {
+      "id": "A8",
+      "status": "source-only",
+      "claim": "Create uses scoped canonical-payload idempotency; source warns of possible orphan adapter-side orders after a race.",
+      "evidence": [
+        "salesagent_runtime_source.result.json"
+      ],
+      "limit": "No universal exactly-once property, injected race, measured duplicate or C1 novelty is established."
+    },
+    {
+      "id": "A9",
+      "status": "observed acquisition failure",
+      "claim": "Two direct GitHub API requests failed with connection-refused errors.",
+      "evidence": [
+        "../advertising-screen-v2-20261024T192359210164Z-9868/screen.json"
+      ],
+      "limit": "No original remote source bodies; no approval rejection or changed network/proxy configuration."
+    },
+    {
+      "id": "A10",
+      "status": "observed local prerequisite inventory",
+      "claim": "Python3.13.1 exists; four selected Python distributions absent; docker command found; uv not found by recorded discovery.",
+      "evidence": [
+        "local-prerequisite-receipt.json"
+      ],
+      "limit": "Aggregate shell exit1 retained; no database/Docker daemon/app readiness test."
+    },
+    {
+      "id": "A11",
+      "status": "retrieval limitation",
+      "claim": "The internal-reference protocol_binding find returned a different source reference/failed path; explicit-URL follow-up returned no substantive excerpt.",
+      "evidence": [
+        "salesagent_boundary_guards.query.json",
+        "salesagent_boundary_guards.result.json",
+        "salesagent_explicit_url_binding.query.json",
+        "salesagent_explicit_url_binding.result.json"
+      ],
+      "limit": "These records do not prove absence of SDK normalization."
+    },
+    {
+      "id": "A12",
+      "status": "research decision",
+      "claim": "Neither domain qualifies in this screen and no extra C1 method step has been demonstrated.",
+      "evidence": [
+        "decision.md"
+      ],
+      "limit": "Not a proof research is impossible; method objective and actual human review remain pending."
+    }
+  ],
+  "model_calls": 0,
+  "application_executions": 0,
+  "paid_transactions": 0,
+  "qualified_second_domain": false,
+  "novelty_demonstrated": false,
+  "human_review_completed": false,
+  "progress_percent": 5
+}

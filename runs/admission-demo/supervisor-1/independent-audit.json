@@ -1,0 +1,223 @@
+{
+  "schema_version": "admission-demonstration-independent-audit/1",
+  "status": "passed",
+  "audited_at_utc": "2026-10-28T20:26:36.106016+00:00",
+  "auditor": "benchmark_final_review",
+  "audit_method": "Read and hash retained files; independently cross-check plan, receipts, worker inputs/replies/process evidence, decision and certificate counts, timing sums and replay outputs. No project code imported or executed.",
+  "result_sha256": "da588f196495ccc90fe6a9d47b9e6942a618dd586b21834dc209395d83a804af",
+  "plan_sha256": "d779334cf1fab5d7d82f7e5374bb595f2625d1b0606b5f9ee28e9356673c136a",
+  "steps": [
+    {
+      "name": "supported",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "direct",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "unsupported",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "unknown",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "benchmark",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "verify",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "finite",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "verify-finite",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "replay",
+      "status": "passed",
+      "returncode": 0
+    },
+    {
+      "name": "verify-replay",
+      "status": "passed",
+      "returncode": 0
+    }
+  ],
+  "source_and_input_hashes": {
+    "records_verified": 35,
+    "source_files_verified": 16,
+    "plan_before_equals_result_after_equals_current": true,
+    "inventory_sha256": "e79839248379fc1efda340e0c4150f64c4d3d34ded2ce773c2ec80b612c419b7",
+    "core_sources": {
+      "refinement.py": "11175edcb99dbec231390ae767ba97dce2e919810844ed544a1ddd109f4b5b3b",
+      "refinement_oracle.py": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e",
+      "benchmark.py": "38b6cb4e6fd9ff4a48b0a9d45ca44156c8e714663f6c4a73060f44259a9c3a7e"
+    }
+  },
+  "admission_examples": [
+    {
+      "step": "supported",
+      "decision": "supported",
+      "certificate_valid": true,
+      "reason": "public_recipe_witness",
+      "refinements": 1
+    },
+    {
+      "step": "direct",
+      "decision": "supported",
+      "certificate_valid": true,
+      "reason": "concrete_recipe_path",
+      "refinements": null
+    },
+    {
+      "step": "unsupported",
+      "decision": "unsupported",
+      "certificate_valid": true,
+      "reason": "certified_refinement_exhaustion",
+      "refinements": 1
+    },
+    {
+      "step": "unknown",
+      "decision": "unknown",
+      "certificate_valid": null,
+      "reason": "incomplete_model_or_relation_coverage",
+      "refinements": 1
+    }
+  ],
+  "bundles": {
+    "benchmark": {
+      "cases": 11,
+      "manifest_files_verified": 267,
+      "tree_file_count": 268,
+      "tree_inventory_sha256": "db0f57729321874be1b9bc524516162bb0b90a06063db8d36ce2c6627b73a2ff",
+      "manifest_sha256": "41a1426a6330b7b4714e27587106c2da39f0eabfbc898584e2ec0004ab78881d",
+      "attempts_verified": 47,
+      "algorithms": {
+        "baseline": {
+          "decisions": {
+            "supported": 4,
+            "unsupported": 3,
+            "unknown": 4
+          },
+          "decision_agreements": 11,
+          "accepted_certificates": 7,
+          "invalid_certificates": 0,
+          "errors": 0
+        },
+        "candidate": {
+          "decisions": {
+            "supported": 4,
+            "unsupported": 3,
+            "unknown": 4
+          },
+          "decision_agreements": 11,
+          "accepted_certificates": 7,
+          "invalid_certificates": 0,
+          "errors": 0
+        }
+      },
+      "source_files_match_current_and_plan": true,
+      "timing_aggregates_match_attempts": true
+    },
+    "replay": {
+      "cases": 11,
+      "manifest_files_verified": 267,
+      "tree_file_count": 268,
+      "tree_inventory_sha256": "a4ddd55b89b238eb9064efaf9dc5154103f88becbaa30271d0da20c85b1c33c9",
+      "manifest_sha256": "ca66a44208b64b2d5cadc1943458791fdeaa2e3361f6b2237e95cbf0616bc3bd",
+      "attempts_verified": 47,
+      "algorithms": {
+        "baseline": {
+          "decisions": {
+            "supported": 4,
+            "unsupported": 3,
+            "unknown": 4
+          },
+          "decision_agreements": 11,
+          "accepted_certificates": 7,
+          "invalid_certificates": 0,
+          "errors": 0
+        },
+        "candidate": {
+          "decisions": {
+            "supported": 4,
+            "unsupported": 3,
+            "unknown": 4
+          },
+          "decision_agreements": 11,
+          "accepted_certificates": 7,
+          "invalid_certificates": 0,
+          "errors": 0
+        }
+      },
+      "source_files_match_current_and_plan": true,
+      "timing_aggregates_match_attempts": true
+    },
+    "finite": {
+      "cases": 4,
+      "manifest_files_verified": 80,
+      "tree_file_count": 81,
+      "tree_inventory_sha256": "743a49755017b9a7a64d75c5cf2d3837173f79d9362332cb07597d148dd7fce2",
+      "manifest_sha256": "553bd1b15a3ae305780b0f0190aedfae84cff671f5adddeef4d9db9783ff4882",
+      "attempts_verified": 11,
+      "algorithms": {
+        "baseline": {
+          "decisions": {
+            "supported": 1,
+            "unsupported": 2,
+            "unknown": 1
+          },
+          "decision_agreements": 4,
+          "accepted_certificates": 3,
+          "invalid_certificates": 0,
+          "errors": 0
+        }
+      },
+      "source_files_match_current_and_plan": true,
+      "timing_aggregates_match_attempts": true
+    }
+  },
+  "replay_equivalence": {
+    "all_11_cases_match": true,
+    "case_order_family_inputs_and_clock_match": true,
+    "decisions_certificates_reasons_and_nontiming_work_stats_match": true,
+    "timings_expected_to_differ": true
+  },
+  "preservation": {
+    "preexisting_files": 653,
+    "existing_demo_inventory_before_sha256": "62bf263d785f9ba009f0c7e10a1889a0da2d455b5ed28cc194ac86f032417d98",
+    "existing_demo_inventory_after_sha256": "62bf263d785f9ba009f0c7e10a1889a0da2d455b5ed28cc194ac86f032417d98",
+    "all_preexisting_bytes_unchanged": true,
+    "audit_written_outside_captured_benchmark_trees": true
+  },
+  "limits": {
+    "authored_development_only": true,
+    "fresh_algorithm_or_application_execution_during_audit": false,
+    "recorded_application_runs": 0,
+    "recorded_live_model_calls": 0,
+    "held_out_cases": 0,
+    "qualified_domains": 0,
+    "novelty_established": false,
+    "speedup_established": false,
+    "project_70_percent_established": false,
+    "recipe_reference_and_baseline_share_implementation": true,
+    "finite4_has_candidate": false,
+    "certificate_checks_reviewed_from_retained_receipts_not_rerun": true,
+    "local_file_integrity_not_authenticated_provenance": true
+  }
+}

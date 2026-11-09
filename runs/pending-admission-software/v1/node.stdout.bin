@@ -1,0 +1,140 @@
+TAP version 13
+# Subtest: supported independent witness sends exactly its request after four public rechecks
+ok 1 - supported independent witness sends exactly its request after four public rechecks
+  ---
+  duration_ms: 11.7496
+  ...
+# Subtest: unknown causes zero continuation dispatch and overrides optimistic legacy flags
+ok 2 - unknown causes zero continuation dispatch and overrides optimistic legacy flags
+  ---
+  duration_ms: 2.1244
+  ...
+# Subtest: unsupported causes zero continuation dispatch and overrides optimistic legacy flags
+ok 3 - unsupported causes zero continuation dispatch and overrides optimistic legacy flags
+  ---
+  duration_ms: 1.8656
+  ...
+# Subtest: invalid certificate causes zero continuation dispatch and overrides optimistic legacy flags
+ok 4 - invalid certificate causes zero continuation dispatch and overrides optimistic legacy flags
+  ---
+  duration_ms: 2.9388
+  ...
+# Subtest: failed runner receipt causes zero continuation dispatch and overrides optimistic legacy flags
+ok 5 - failed runner receipt causes zero continuation dispatch and overrides optimistic legacy flags
+  ---
+  duration_ms: 1.9323
+  ...
+# Subtest: dispatch forbidden causes zero continuation dispatch and overrides optimistic legacy flags
+ok 6 - dispatch forbidden causes zero continuation dispatch and overrides optimistic legacy flags
+  ---
+  duration_ms: 2.122
+  ...
+# Subtest: different snapshot causes zero continuation dispatch and overrides optimistic legacy flags
+ok 7 - different snapshot causes zero continuation dispatch and overrides optimistic legacy flags
+  ---
+  duration_ms: 1.9676
+  ...
+# Subtest: different witness binding causes zero continuation dispatch and overrides optimistic legacy flags
+ok 8 - different witness binding causes zero continuation dispatch and overrides optimistic legacy flags
+  ---
+  duration_ms: 2.6849
+  ...
+# Subtest: a changed working state after admission blocks the certified request
+ok 9 - a changed working state after admission blocks the certified request
+  ---
+  duration_ms: 3.402
+  ...
+# Subtest: a changed confirmation binding after admission blocks the certified request
+ok 10 - a changed confirmation binding after admission blocks the certified request
+  ---
+  duration_ms: 4.943
+  ...
+# Subtest: a changed raw tool schema after admission blocks the certified request
+ok 11 - a changed raw tool schema after admission blocks the certified request
+  ---
+  duration_ms: 3.0603
+  ...
+# Subtest: a changed discovered endpoint after admission blocks the certified request
+ok 12 - a changed discovered endpoint after admission blocks the certified request
+  ---
+  duration_ms: 3.1023
+  ...
+# Subtest: configured route mutation during runner blocks before recheck or send
+ok 13 - configured route mutation during runner blocks before recheck or send
+  ---
+  duration_ms: 1.9434
+  ...
+# Subtest: expired evidence and bounded runner timeout both dispatch nothing
+ok 14 - expired evidence and bounded runner timeout both dispatch nothing
+  ---
+  duration_ms: 20.4299
+  ...
+# Subtest: missing public call never reaches admission or sends a continuation
+ok 15 - missing public call never reaches admission or sends a continuation
+  ---
+  duration_ms: 1.7186
+  ...
+# Subtest: same controller refuses a second continuation even after a successful first dispatch
+ok 16 - same controller refuses a second continuation even after a successful first dispatch
+  ---
+  duration_ms: 3.2769
+  ...
+# Subtest: a forwarded transport error is one attempted dispatch and zero replies, with no retry
+ok 17 - a forwarded transport error is one attempted dispatch and zero replies, with no retry
+  ---
+  duration_ms: 2.7846
+  ...
+# Subtest: non-raw episode arms are rejected before any application request
+ok 18 - non-raw episode arms are rejected before any application request
+  ---
+  duration_ms: 0.7381
+  ...
+# Subtest: unexpected typed continuation, alternative raw mutation and answer phases cannot bypass admission
+ok 19 - unexpected typed continuation, alternative raw mutation and answer phases cannot bypass admission
+  ---
+  duration_ms: 2.3275
+  ...
+# Subtest: the transport seam permits only one exact initial send
+ok 20 - the transport seam permits only one exact initial send
+  ---
+  duration_ms: 0.8084
+  ...
+# Subtest: dispatch event failure does not claim an unforwarded transport attempt
+ok 21 - dispatch event failure does not claim an unforwarded transport attempt
+  ---
+  duration_ms: 2.1647
+  ...
+# Subtest: rationale mutation during public rechecks blocks dispatch
+ok 22 - rationale mutation during public rechecks blocks dispatch
+  ---
+  duration_ms: 2.0911
+  ...
+# Subtest: runner result mutation during rechecks cannot replace the frozen certified request
+ok 23 - runner result mutation during rechecks cannot replace the frozen certified request
+  ---
+  duration_ms: 3.3907
+  ...
+# Subtest: default Python candidate and independent checker gate mocked transport and retain new receipts
+ok 24 - default Python candidate and independent checker gate mocked transport and retain new receipts
+  ---
+  duration_ms: 580.3095
+  ...
+# Subtest: new stdio client completes a constructed MCP-process lifecycle through Python admission
+ok 25 - new stdio client completes a constructed MCP-process lifecycle through Python admission
+  ---
+  duration_ms: 454.8588
+  ...
+# Subtest: a Python receipt larger than the configured bound is retained but cannot dispatch
+ok 26 - a Python receipt larger than the configured bound is retained but cannot dispatch
+  ---
+  duration_ms: 203.8475
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1440.5005

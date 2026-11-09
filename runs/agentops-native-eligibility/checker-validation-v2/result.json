@@ -1,0 +1,43 @@
+{
+  "schema_version": "agentops-authored-checker-validation/2",
+  "at_utc": "2026-10-25T09:40:20.689344+00:00",
+  "scope": "Authored evidence and malformed-input checks only; no application or SDK execution",
+  "command": [
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\.venv\\Scripts\\python.exe",
+    "-B",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "tests.test_agentops_effect_checker",
+    "-v"
+  ],
+  "files": [
+    {
+      "path": "scripts/check_agentops_effect_v2.py",
+      "sha256": "3c0312123adcf94460b8e802f3734c6c216a942de997a50f9cb0f0c34f908041"
+    },
+    {
+      "path": "tests/test_agentops_effect_checker.py",
+      "sha256": "7cae1e1abba48d1f47dc53fc8573ee7c70886283cfcbaef7c49388f2170762f2"
+    }
+  ],
+  "exit_code": 0,
+  "status": "passed",
+  "tests": 3,
+  "altered_evidence_cases": 29,
+  "malformed_or_missing_input_cli_cases": 5,
+  "application_requests": 0,
+  "model_calls": 0,
+  "prior_failure": "Earlier TemporaryDirectory test failed with sandbox PermissionError/WinError5 and an unclosed sqlite ResourceWarning. Failed tmp/agentops-checker-pzblgwfs left untouched. Database closure fixed; test-only temp directory uses ordinary mkdir and retains diagnostics. This note is a visible-output narrative, not original binary streams.",
+  "streams": [
+    {
+      "path": "stdout.bin",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "stderr.bin",
+      "sha256": "af0034bf6246e403a1eb976bf302de9ea2dcdb11290a8dc2cb1943f3ce0e4334"
+    }
+  ]
+}

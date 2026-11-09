@@ -1,0 +1,97 @@
+{
+  "application_imports_authorized": false,
+  "argv": [
+    "C:\\Python313\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_ap2_hp_public_assessment_v1.py",
+    "-v"
+  ],
+  "native_application_launches_authorized": false,
+  "primary_tests": [
+    "test_bool_timestamp_is_not_original_integer",
+    "test_changed_forwarded_otp_or_mandate_is_discrepant",
+    "test_changed_mandate_reference_is_current_mandate",
+    "test_closed_leaf_not_whole_presentation",
+    "test_correct_otp_failed_downstream_is_unmet_target",
+    "test_duplicate_mandates_cannot_be_selected",
+    "test_duplicate_receipts_cannot_be_selected",
+    "test_equal_non_uuid_ids_are_separate_constructor_discrepancy",
+    "test_error_receipt_missing_required_error_is_discrepant",
+    "test_error_receipt_schema_and_propagation_are_not_payment_success",
+    "test_hex_ids_without_uuid4_bits_do_not_match_constructor",
+    "test_incorrect_otp_pending_with_success_receipt_is_discrepant",
+    "test_inputs_remain_unchanged",
+    "test_invalid_otp_does_not_expect_completion",
+    "test_invalid_otp_with_completion_is_discrepant",
+    "test_malformed_part_cannot_hide_duplicate_mandate",
+    "test_malformed_part_cannot_prove_receipt_absence",
+    "test_matching_malformed_receipts_cannot_pass_propagation",
+    "test_missing_continuation_identity_unknown",
+    "test_missing_identity_unknown",
+    "test_non_json_values_rejected_before_assessment",
+    "test_old_frontend_challenge_field_is_not_public_data",
+    "test_optional_fields_and_extra_json_are_preserved",
+    "test_optional_processor_receipt_propagation",
+    "test_pending_receipt_is_discrepant",
+    "test_rewritten_child_message_identity_is_discrepant",
+    "test_source_confirmation_ids_have_same_value",
+    "test_success_optional_error_strings_are_schema_admissible_only",
+    "test_success_projection_and_empty_issuer_without_task_grade",
+    "test_typed_receipt_propagation_does_not_merge_bool_with_integer",
+    "test_wrong_context",
+    "test_wrong_merchant_task",
+    "test_wrong_receipt_reference"
+  ],
+  "schema_version": "ap2-hp-public-validation-plan/1",
+  "scope": "constructed_public_observer_tests_only",
+  "source_files": {
+    "docs/research/ap2-human-present-public-assessor-design-v1.md": {
+      "bytes": 9261,
+      "sha256": "30752cf40579d0f63c2fbfe2771dffaf44619d1e0541e90f4e22a4dc2d7f181d"
+    },
+    "docs/research/ap2-human-present-source-reassessment-v1.md": {
+      "bytes": 15270,
+      "sha256": "15f43bf7c99442cfcc473c88342de4de774dce12e39a2fb87068d6cca605eb7a"
+    },
+    "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/tools.py": {
+      "bytes": 15584,
+      "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3"
+    },
+    "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_payment_processor_agent/tools.py": {
+      "bytes": 11483,
+      "sha256": "41a11923ae38798099c39a25d95d358ab1845320f64f8833b4955fa09b04e12d"
+    },
+    "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/sdk/python/ap2/sdk/generated/payment_receipt.py": {
+      "bytes": 3255,
+      "sha256": "78db7cd258eedd66a1f4e891e1b704df7cff78183249de94e4e77b2df3bb8aae"
+    },
+    "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/sdk/python/ap2/sdk/mandate.py": {
+      "bytes": 15226,
+      "sha256": "6251ec83622192805cd3cd8a4830f9ab922260c3089d4ff9323b9eb2ec27b1f5"
+    },
+    "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/sdk/python/ap2/sdk/utils.py": {
+      "bytes": 1641,
+      "sha256": "92920007d190f68cad6b9899f0133ae511332196f59e3255d68be08dbc1e2a2f"
+    },
+    "scripts/capture_ap2_hp_public_validation_v1.py": {
+      "bytes": 5790,
+      "sha256": "518c60cb94bf337560b5b7c0177b46d9e70edcf1b2a07c289378fffef1cfd9a9"
+    },
+    "src/interoperability/ap2_hp_public_assessment_v1.py": {
+      "bytes": 17392,
+      "sha256": "2d675b1043671dc3319ce55df43b7b1bd3a967c650a35aff1a50e6fc47d5345e"
+    },
+    "tests/test_ap2_hp_public_assessment_v1.py": {
+      "bytes": 13143,
+      "sha256": "d5ec2ec51bcd00987e0b7217f7a87ff37868396e4ef105a6ee94e9b45a3ad78e"
+    }
+  }
+}

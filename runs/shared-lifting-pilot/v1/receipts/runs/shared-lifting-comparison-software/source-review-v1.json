@@ -1,0 +1,64 @@
+{
+  "schema_version": "shared-lifting-comparison-independent-source-review/1",
+  "reviewer": "/root/refinement_final_review",
+  "review_date": "2026-10-29",
+  "status": "no_blocking_source_findings",
+  "reviewed_sources": [
+    {
+      "path": "src/interoperability/benchmark_resources_v1.py",
+      "sha256": "b58eaec738a7cd69a54dbd105465c1544390e3de51a3737a0eeea1ee6575fdf9"
+    },
+    {
+      "path": "src/interoperability/shared_lifting_comparison_v3.py",
+      "sha256": "d5175683cedecd7f901136086b3294f972d9a19524e4bcd4e416b9120542e100"
+    }
+  ],
+  "fixed_blocker": {
+    "issue": "Verification previously bound worker replies but trusted separately recorded validity, certificate validity, required-check presence and decision-agreement fields. Recomputed summaries could therefore retain contradictory outcome flags.",
+    "resolution": "shared_lifting_comparison_v3._validate_outcomes, lines 98-122, now derives reference and algorithm validity, requires exactly the expected certificate-check presence, derives certificate validity from the retained checker reply and derives decision agreement. Strict bool/None comparisons preserve field types.",
+    "review_verdict": "Fixed in the reviewed source; no execution claim is made."
+  },
+  "review_observations": [
+    "Windows GetProcessMemoryInfo structure/signatures and PeakWorkingSetSize selection are consistent with a process working-set peak. Linux ru_maxrss is converted from KiB to bytes; macOS ru_maxrss remains bytes. Unsupported platforms and observation exceptions remain explicitly unavailable.",
+    "Memory scope includes worker interpreter/import/input overhead up to the observation before final reply output. Aggregation retains missing samples and reports maxima rather than summing process peaks or presenting them as solver-only allocation.",
+    "Timing scope now explicitly separates worker-entry preparation, function evaluation, result JSON serialization and input post-check. Worker-body time includes observation but excludes final reply output; wall time includes process startup/output. Overlapping metrics are not additive.",
+    "Canonical-digest comparison binds expected job payloads and recorded arm executions to retained reply/process records, preserving JSON type distinctions. Process argv and recorded source/input/reply paths are reconciled; all expected worker jobs are accounted for.",
+    "Verification exposes benchmark_status separately from local consistency status. It does not claim authenticated execution provenance.",
+    "The adapter and worker boot are scoped and restored on ordinary call exceptions. Concurrent caller threads remain explicitly unsupported.",
+    "Replay starts an isolated interpreter importing the captured comparison package, reuses captured suite/budget/timeouts, refuses existing output, and verifies the resulting bundle. This is source inspection of the replay path, not a replay execution result."
+  ],
+  "preserved_dependencies": {
+    "compared_against": "runs/refinement-scaling/v2/budget-100000/execution.json:captured_inputs",
+    "all_current_hashes_match_captured_records": true,
+    "files": [
+      {
+        "path": "src/interoperability/benchmark.py",
+        "sha256": "38b6cb4e6fd9ff4a48b0a9d45ca44156c8e714663f6c4a73060f44259a9c3a7e"
+      },
+      {
+        "path": "src/interoperability/direct_comparison_v2.py",
+        "sha256": "610c082233dcf44b58bb0b0bf68bfc4ca7fec307e380be21699ec3db39e60eb9"
+      },
+      {
+        "path": "src/interoperability/direct_goal_pruned_v2.py",
+        "sha256": "1fba2d0bd747f965056279bbda40b9c28f50f1200b7e9a6869f343ab6f64de51"
+      },
+      {
+        "path": "src/interoperability/refinement.py",
+        "sha256": "11175edcb99dbec231390ae767ba97dce2e919810844ed544a1ddd109f4b5b3b"
+      },
+      {
+        "path": "src/interoperability/refinement_oracle.py",
+        "sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e"
+      }
+    ]
+  },
+  "blocking_findings": [],
+  "remaining_optional_recommendations": [],
+  "scope_limits": [
+    "Independent read-only source/test inspection and file-hash comparison; this new review record is the only authored output for this review.",
+    "No test, solver, checker, benchmark, replay, pilot, matrix, application or WSL process was executed by this reviewer.",
+    "The review supplies no runtime test count, supervisor/human validation, domain qualification, novelty or comparative performance claim.",
+    "No-blocker source review is not exhaustive correctness proof, authenticated provenance or approval of any future experimental allocation."
+  ]
+}

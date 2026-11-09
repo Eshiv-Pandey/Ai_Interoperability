@@ -1,0 +1,73 @@
+{
+  "schema_version": "python-official-bridge-supervisor/2",
+  "variant": "B2",
+  "pid": 2256,
+  "attempt": "runs\\official-handler-bridge-control\\supervisor-v2-B2-20261024T180350697770Z-2256",
+  "run_dir": "runs\\reference-bridge-observation\\R2-amirk_a2a_to_mcp-reference-v1-2026-10-24T18-03-51-242Z-23884",
+  "final": {
+    "outcome": "recorded",
+    "exit_code": 0,
+    "variant": "R2",
+    "output": "runs/reference-bridge-observation/R2-amirk_a2a_to_mcp-reference-v1-2026-10-24T18-03-51-242Z-23884/runtime.json",
+    "report_sha256": "307d1e4d524adb458c10cc42bf5d315a32f3f24c323692baca496a3fc271da08",
+    "observation": {
+      "initial_required_observed": true,
+      "answer_sent": true,
+      "answer_attempts": 1,
+      "final_authoritative_read_received": true,
+      "final_application_error": false,
+      "final_task_handle": "tk_9Ud9PkGS2Kz7FIP1Etih5A",
+      "final_context_handle": "cx_-3SnowvsmaKkqd8TXdynxQ",
+      "final_state": "TASK_STATE_INPUT_REQUIRED",
+      "final_status": "input_required",
+      "original_task_preserved": true,
+      "original_context_preserved": true,
+      "goal_achieved": false,
+      "outer_answer_result_type": "complete",
+      "outer_answer_is_goal_evidence": false,
+      "extension_status_after_answer": "input_required",
+      "source_expected_state_observed": true,
+      "answer_protocol_error": null,
+      "extension_protocol_error": null,
+      "final_protocol_error": null
+    },
+    "cleanup": [
+      {
+        "role": "bridge",
+        "pid": 21276,
+        "requested": {
+          "utc": "2026-10-24T18:03:58.356Z",
+          "monotonic_ns": "10736189887800"
+        },
+        "already_exited": false,
+        "method": "Python supervisor control file emits original CLI SIGTERM handler",
+        "exit": {
+          "code": 0,
+          "signal": null,
+          "observed": {
+            "utc": "2026-10-24T18:03:58.544Z",
+            "monotonic_ns": "10736377478900"
+          }
+        },
+        "normal_exit": true
+      }
+    ]
+  },
+  "cleanup": [
+    {
+      "role": "bridge",
+      "pid": 21276,
+      "already_terminal": true,
+      "exit_code": 0
+    },
+    {
+      "role": "worker",
+      "pid": 23884,
+      "already_terminal": true,
+      "exit_code": 0
+    }
+  ],
+  "model_calls": 0,
+  "remote_network_requests": 0,
+  "claim_limit": "Process orchestration and actual pipe relay; no novel method or human review"
+}

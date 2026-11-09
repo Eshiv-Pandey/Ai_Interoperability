@@ -1,0 +1,141 @@
+{
+  "schema_version": "admission-benchmark-execution/1",
+  "status": "started",
+  "started_at_epoch_ns": 1793218929104833500,
+  "suite_id": "existing-finite-development-smoke-v1",
+  "split": "development",
+  "evaluation_clock": 1793145600,
+  "timeout_seconds": 30.0,
+  "input_schema": "finite-continuation/1",
+  "work_budget": null,
+  "schema_adapter": {
+    "baseline": "interoperability.baseline",
+    "reference": "interoperability.oracle",
+    "checker": "interoperability.oracle",
+    "supports_budget": false
+  },
+  "reference_implementation_is_baseline": false,
+  "algorithms": [
+    {
+      "name": "baseline",
+      "module": "interoperability.baseline",
+      "entrypoint": "evaluate",
+      "input_schema": "finite-continuation/1"
+    }
+  ],
+  "runtime": {
+    "python": "3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]",
+    "implementation": "CPython",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "executable": "C:\\Python313\\python.exe"
+  },
+  "captured_inputs": [
+    {
+      "path": "source/interoperability/__init__.py",
+      "bytes": 172,
+      "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+    },
+    {
+      "path": "source/interoperability/__main__.py",
+      "bytes": 49,
+      "sha256": "76fa916e93e0ae1a6c1bb51dcc0bcf289c014e9f760a47165f8a84401ccf41d7"
+    },
+    {
+      "path": "source/interoperability/admission_cli.py",
+      "bytes": 5703,
+      "sha256": "4c4a01e177bf7d3a326a2da422981d2607906b82fb5074add092079bb550727b"
+    },
+    {
+      "path": "source/interoperability/baseline.py",
+      "bytes": 3268,
+      "sha256": "c26f4c7db7f89f00f2c781e346aec20a589a862316e34c38a2edd7760407206f"
+    },
+    {
+      "path": "source/interoperability/benchmark.py",
+      "bytes": 34981,
+      "sha256": "38b6cb4e6fd9ff4a48b0a9d45ca44156c8e714663f6c4a73060f44259a9c3a7e"
+    },
+    {
+      "path": "source/interoperability/cli.py",
+      "bytes": 4935,
+      "sha256": "1c3113908d036099b42b8adf939e701c8a21a082b2bc614479aaefadc214e0f1"
+    },
+    {
+      "path": "source/interoperability/manifest.py",
+      "bytes": 7117,
+      "sha256": "defc6e9bbc4ea66806beefc9def967d94db8a3856cc121cee13c45ebda70debb"
+    },
+    {
+      "path": "source/interoperability/oracle.py",
+      "bytes": 16255,
+      "sha256": "da29829a077da1ef44c2ffc0a6d5dbcd8e4c579b308b49085ea1af077e601b7f"
+    },
+    {
+      "path": "source/interoperability/pending_admission.py",
+      "bytes": 22633,
+      "sha256": "4adb8f4cfb4b4a517053bbd49e3b9a14a03dda7eba33d66808a832fcb25a2132"
+    },
+    {
+      "path": "source/interoperability/projection_checker.py",
+      "bytes": 41904,
+      "sha256": "5bc96d27428e7fce01b12a8e5ccc946db8e7dc77bbced033e60423e4e769a103"
+    },
+    {
+      "path": "source/interoperability/reference_checker.py",
+      "bytes": 17484,
+      "sha256": "87ca2690fcf296961cea024d66da6323031b5306ef54222d48a7ccfdaf662371"
+    },
+    {
+      "path": "source/interoperability/refinement.py",
+      "bytes": 18566,
+      "sha256": "11175edcb99dbec231390ae767ba97dce2e919810844ed544a1ddd109f4b5b3b"
+    },
+    {
+      "path": "source/interoperability/refinement_oracle.py",
+      "bytes": 25050,
+      "sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e"
+    },
+    {
+      "path": "source/interoperability/status_projection.py",
+      "bytes": 21038,
+      "sha256": "648e18cb6f1e2cbf3ff31f3dab70a29b473701d10df3f1758065bd5d4da8debf"
+    },
+    {
+      "path": "source/interoperability/status_projection_checker.py",
+      "bytes": 37950,
+      "sha256": "3bb82daa320fbb40ac96391c19460e3730a10aef3b0da8c2b39d467cf89d6dea"
+    },
+    {
+      "path": "source/interoperability/wire_projection.py",
+      "bytes": 18564,
+      "sha256": "88223761710725959157607f4a86829fe1d7aa3e85bfe3ccc53af52c063df89e"
+    },
+    {
+      "path": "inputs/original-suite.json",
+      "bytes": 530,
+      "sha256": "9c5bddb4525591a607bb344d06080efbc9f2766f3a0e4845a10be9b42f201e82"
+    },
+    {
+      "path": "inputs/case-0000.json",
+      "bytes": 2787,
+      "sha256": "1d15bccea72aae5e2b1eb01f3e310aa06eefc38504e7a4552182f87838cc54f7"
+    },
+    {
+      "path": "inputs/case-0001.json",
+      "bytes": 2798,
+      "sha256": "2c247444b4b15be36c659110679ad6d348a520b89c0f551d6025d83aef0482c0"
+    },
+    {
+      "path": "inputs/case-0002.json",
+      "bytes": 2796,
+      "sha256": "d55c8b2e9d1d3d77ef14944a74bf915e87099e5a189af1d5238b7dfdc365f7fa"
+    },
+    {
+      "path": "inputs/case-0003.json",
+      "bytes": 2757,
+      "sha256": "35146cd141ffa61ee3abdc96ab3f9d6dc4129b9f7407e847266744221cb1827d"
+    }
+  ],
+  "live_application_runs": 0,
+  "live_model_calls": 0
+}

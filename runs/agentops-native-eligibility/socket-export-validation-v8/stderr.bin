@@ -1,0 +1,29 @@
+setUpClass (test_agentops_socket_export_v8.ResumeExportTests) ... ERROR
+
+======================================================================
+ERROR: setUpClass (test_agentops_socket_export_v8.ResumeExportTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_socket_export_v8.py", line 192, in setUpClass
+    cls.run_dir, cls.expected, cls.linux = fixture(ROOT / "tmp" / ("authored-resume-export-" + uuid.uuid4().hex))
+                                           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\tests\test_agentops_socket_export_v8.py", line 123, in fixture
+    plan.update(controller_version="agentops-http-control/5", source_files=sources, harness_files=http.harness(runtime),
+                                                                                                  ~~~~~~~~~~~~^^^^^^^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\agentops_http_control_v5.py", line 57, in harness
+    return native.harness() + [evidence.digest(path) for path in paths]
+                               ~~~~~~~~~~~~~~~^^^^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\check_agentops_socket_resume_v8.py", line 118, in digest
+    return record(path, exported)
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\run_agentops_linux_workspace_v5.py", line 50, in record
+    with path.open("rb") as stream:
+         ~~~~~~~~~^^^^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\tmp\\authored-resume-export-8e2620c92e604b2a90a1535bede33c2c\\authored-source\\external\\runtime-agentops-linux-v7\\venv\\lib\\python3.13\\site-packages\\a2a\\server\\routes\\jsonrpc_dispatcher.py'
+
+----------------------------------------------------------------------
+Ran 0 tests in 10.644s
+
+FAILED (errors=1)

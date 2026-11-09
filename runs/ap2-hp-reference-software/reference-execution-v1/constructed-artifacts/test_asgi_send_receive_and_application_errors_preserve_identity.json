@@ -1,0 +1,114 @@
+{
+  "test": "_ap2_injected_execution_tests.ReferenceExecutionTests.test_asgi_send_receive_and_application_errors_preserve_identity",
+  "constructed_artifacts": [
+    {
+      "schema_version": "ap2-hp-passive-public-capture/1",
+      "records": [
+        {
+          "sequence": 0,
+          "exchange": 0,
+          "boundary": "scope",
+          "value": {
+            "type": "http"
+          }
+        },
+        {
+          "sequence": 1,
+          "exchange": 0,
+          "boundary": "send_attempt",
+          "value": {
+            "type": "http.response.body",
+            "body": {
+              "encoding": "base64",
+              "bytes": 9,
+              "sha256": "6436fecfc458363a95a10a7c96654c3e6b4488b9d7ef3fde32cca949b7185a10",
+              "data": "YXR0ZW1wdGVk"
+            }
+          }
+        },
+        {
+          "sequence": 2,
+          "exchange": 0,
+          "boundary": "send_error",
+          "value": null,
+          "error_type": "RuntimeError"
+        },
+        {
+          "sequence": 3,
+          "exchange": 0,
+          "boundary": "application_error",
+          "value": null,
+          "error_type": "RuntimeError"
+        }
+      ],
+      "observation_errors": [],
+      "observation_complete_at_wrapper": true,
+      "native_hook_placement_verified": false,
+      "transport_peer_ownership_verified": false,
+      "native_qualification_established": false
+    },
+    {
+      "schema_version": "ap2-hp-passive-public-capture/1",
+      "records": [
+        {
+          "sequence": 0,
+          "exchange": 0,
+          "boundary": "scope",
+          "value": {
+            "type": "http"
+          }
+        },
+        {
+          "sequence": 1,
+          "exchange": 0,
+          "boundary": "receive_attempt",
+          "value": null
+        },
+        {
+          "sequence": 2,
+          "exchange": 0,
+          "boundary": "receive_error",
+          "value": null,
+          "error_type": "RuntimeError"
+        },
+        {
+          "sequence": 3,
+          "exchange": 0,
+          "boundary": "application_error",
+          "value": null,
+          "error_type": "RuntimeError"
+        }
+      ],
+      "observation_errors": [],
+      "observation_complete_at_wrapper": true,
+      "native_hook_placement_verified": false,
+      "transport_peer_ownership_verified": false,
+      "native_qualification_established": false
+    },
+    {
+      "schema_version": "ap2-hp-passive-public-capture/1",
+      "records": [
+        {
+          "sequence": 0,
+          "exchange": 0,
+          "boundary": "scope",
+          "value": {
+            "type": "http"
+          }
+        },
+        {
+          "sequence": 1,
+          "exchange": 0,
+          "boundary": "application_error",
+          "value": null,
+          "error_type": "RuntimeError"
+        }
+      ],
+      "observation_errors": [],
+      "observation_complete_at_wrapper": true,
+      "native_hook_placement_verified": false,
+      "transport_peer_ownership_verified": false,
+      "native_qualification_established": false
+    }
+  ]
+}

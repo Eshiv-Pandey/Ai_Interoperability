@@ -1,0 +1,3887 @@
+{
+  "schema_version": "all-text-reference-source-search/1",
+  "repository": "https://github.com/a2aproject/a2a-samples",
+  "commit": "6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3",
+  "archive": {
+    "url": "https://codeload.github.com/a2aproject/a2a-samples/tar.gz/6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3",
+    "retrieval_started_at_utc": "2026-10-23T20:48:42.109Z",
+    "retrieval_completed_at_utc": "2026-10-23T20:48:43.901Z",
+    "headers": {
+      "access-control-allow-origin": "https://render.githubusercontent.com",
+      "content-disposition": "attachment; filename=a2a-samples-6603ba3f2c31a7ef33e70b9d8b5b5f8be42ac9a3.tar.gz",
+      "content-length": "20049453",
+      "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+      "content-type": "application/x-gzip",
+      "cross-origin-resource-policy": "cross-origin",
+      "date": "Fri, 23 Oct 2026 20:48:43 GMT",
+      "etag": "W/\"b549040d599a4ce5b6b9c4717959dc45babf0ce7537cc88930bb5a9ea9d0c139\"",
+      "strict-transport-security": "max-age=31536000",
+      "vary": "Authorization,Accept-Encoding",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "deny",
+      "x-github-edge-region": "centralindia",
+      "x-github-request-id": "F2C6:2109B3:876E:22989:6ADBC82B",
+      "x-xss-protection": "1; mode=block"
+    },
+    "status": 200,
+    "compressed_bytes": 20049453,
+    "compressed_sha256": "11dda8b3c16108e7b9e4771c2c2932ed8f4ecb1ac835b5db8d493207e5216d4d",
+    "uncompressed_tar_bytes": 29665280,
+    "uncompressed_tar_sha256": "c5078639d1ed8c3bb18bf2f2c8182b13979a59a5320331b8ac1112aea5c76d3d"
+  },
+  "scope": {
+    "method": "All regular archive files; scan every UTF8-decodable non-NUL file, no extension restriction",
+    "regular_files": 866,
+    "text_files_scanned": 845,
+    "binary_or_invalid_utf8": 21,
+    "reference_regex": "referenceTaskIds|reference_task_ids|reference_task_id|ReferenceTaskIds|ReferenceTaskIDs|GetReferenceTask|ReferencedTask|ReferenceTasks|referenceTasks",
+    "history_regex": "\\btask(?:\\??)?\\.history\\b|\\btask\\[['\"]history['\"]\\]|\\bgetHistory\\s*\\(|\\bGetHistory\\s*\\(|\\b\\.History\\b|historyLength|history_length|GetTaskHistory|TaskHistory",
+    "correction": "Earlier root-folder lexical index omitted Go SDK property ReferenceTasks. Preserve earlier index; this supplemental archive widens spellings and includes templates/configs."
+  },
+  "matches": [
+    {
+      "path": "demo/ui/service/server/adk_host_manager.py",
+      "sha256": "e9d29e1daf277a24a61b2170d1004092c62e154503c9e2e32ee50b7d6020f286",
+      "bytes": 25356,
+      "hits": [
+        {
+          "line": 327,
+          "categories": [
+            "history"
+          ],
+          "text": "        if task.history is None:"
+        },
+        {
+          "line": 328,
+          "categories": [
+            "history"
+          ],
+          "text": "            task.history = []"
+        },
+        {
+          "line": 332,
+          "categories": [
+            "history"
+          ],
+          "text": "        if task.history and ("
+        },
+        {
+          "line": 334,
+          "categories": [
+            "history"
+          ],
+          "text": "            and task.status.message.message_id not in [x.message_id for x in task.history]"
+        },
+        {
+          "line": 336,
+          "categories": [
+            "history"
+          ],
+          "text": "            task.history.append(task.status.message)"
+        },
+        {
+          "line": 337,
+          "categories": [
+            "history"
+          ],
+          "text": "        elif not task.history and task.status.message:"
+        },
+        {
+          "line": 338,
+          "categories": [
+            "history"
+          ],
+          "text": "            task.history = [task.status.message]"
+        },
+        {
+          "line": 343,
+          "categories": [
+            "history"
+          ],
+          "text": "                task.history,"
+        },
+        {
+          "line": 427,
+          "categories": [
+            "history"
+          ],
+          "text": "                elif task.history and task.history[-1].parts:"
+        },
+        {
+          "line": 428,
+          "categories": [
+            "history"
+          ],
+          "text": "                    if len(task.history) == 1:"
+        },
+        {
+          "line": 431,
+          "categories": [
+            "history"
+          ],
+          "text": "                        part = task.history[-1].parts[0]"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 324,
+          "text": "        \"\"\"Insert a message into the task's history.\"\"\""
+        },
+        {
+          "line": 325,
+          "text": "        if not message:"
+        },
+        {
+          "line": 326,
+          "text": "            return"
+        },
+        {
+          "line": 327,
+          "text": "        if task.history is None:"
+        },
+        {
+          "line": 328,
+          "text": "            task.history = []"
+        },
+        {
+          "line": 329,
+          "text": "        message_id = message.message_id"
+        },
+        {
+          "line": 330,
+          "text": "        if not message_id:"
+        },
+        {
+          "line": 331,
+          "text": "            return"
+        },
+        {
+          "line": 332,
+          "text": "        if task.history and ("
+        },
+        {
+          "line": 333,
+          "text": "            task.status.message"
+        },
+        {
+          "line": 334,
+          "text": "            and task.status.message.message_id not in [x.message_id for x in task.history]"
+        },
+        {
+          "line": 335,
+          "text": "        ):"
+        },
+        {
+          "line": 336,
+          "text": "            task.history.append(task.status.message)"
+        },
+        {
+          "line": 337,
+          "text": "        elif not task.history and task.status.message:"
+        },
+        {
+          "line": 338,
+          "text": "            task.history = [task.status.message]"
+        },
+        {
+          "line": 339,
+          "text": "        else:"
+        },
+        {
+          "line": 340,
+          "text": "            print("
+        },
+        {
+          "line": 341,
+          "text": "                'Message id already in history',"
+        },
+        {
+          "line": 342,
+          "text": "                task.status.message.message_id if task.status.message else '',"
+        },
+        {
+          "line": 343,
+          "text": "                task.history,"
+        },
+        {
+          "line": 344,
+          "text": "            )"
+        },
+        {
+          "line": 345,
+          "text": ""
+        },
+        {
+          "line": 346,
+          "text": "    def add_or_get_task(self, event: TaskCallbackArg) -> Task:"
+        },
+        {
+          "line": 347,
+          "text": "        \"\"\"Get an existing task or create a new one from the event.\"\"\""
+        },
+        {
+          "line": 424,
+          "text": "                task = next(filter(lambda x: x.id == task_id, self._tasks), None)"
+        },
+        {
+          "line": 425,
+          "text": "                if not task:"
+        },
+        {
+          "line": 426,
+          "text": "                    rval.append((message_id, ''))"
+        },
+        {
+          "line": 427,
+          "text": "                elif task.history and task.history[-1].parts:"
+        },
+        {
+          "line": 428,
+          "text": "                    if len(task.history) == 1:"
+        },
+        {
+          "line": 429,
+          "text": "                        rval.append((message_id, 'Working...'))"
+        },
+        {
+          "line": 430,
+          "text": "                    else:"
+        },
+        {
+          "line": 431,
+          "text": "                        part = task.history[-1].parts[0]"
+        },
+        {
+          "line": 432,
+          "text": "                        rval.append("
+        },
+        {
+          "line": 433,
+          "text": "                            ("
+        },
+        {
+          "line": 434,
+          "text": "                                message_id,"
+        },
+        {
+          "line": 435,
+          "text": "                                part.root.text if part.root.kind == 'text' else 'Working...',"
+        }
+      ]
+    },
+    {
+      "path": "demo/ui/service/server/in_memory_manager.py",
+      "sha256": "8b24e3aff8db9760b4256ad12b210c9c031bf3f51b469caa64b8c771b968b50f",
+      "bytes": 8955,
+      "hits": [
+        {
+          "line": 130,
+          "categories": [
+            "history"
+          ],
+          "text": "            if not task.history:"
+        },
+        {
+          "line": 131,
+          "categories": [
+            "history"
+          ],
+          "text": "                task.history = [response]"
+        },
+        {
+          "line": 133,
+          "categories": [
+            "history"
+          ],
+          "text": "                task.history.append(response)"
+        },
+        {
+          "line": 178,
+          "categories": [
+            "history"
+          ],
+          "text": "                elif task.history and task.history[-1].parts:"
+        },
+        {
+          "line": 179,
+          "categories": [
+            "history"
+          ],
+          "text": "                    if len(task.history) == 1:"
+        },
+        {
+          "line": 182,
+          "categories": [
+            "history"
+          ],
+          "text": "                        part = task.history[-1].parts[0]"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 127,
+          "text": "                    artifact_id=str(uuid.uuid4()),"
+        },
+        {
+          "line": 128,
+          "text": "                )"
+        },
+        {
+          "line": 129,
+          "text": "            ]"
+        },
+        {
+          "line": 130,
+          "text": "            if not task.history:"
+        },
+        {
+          "line": 131,
+          "text": "                task.history = [response]"
+        },
+        {
+          "line": 132,
+          "text": "            else:"
+        },
+        {
+          "line": 133,
+          "text": "                task.history.append(response)"
+        },
+        {
+          "line": 134,
+          "text": "            self.update_task(task)"
+        },
+        {
+          "line": 135,
+          "text": ""
+        },
+        {
+          "line": 136,
+          "text": "    def add_task(self, task: Task):"
+        },
+        {
+          "line": 137,
+          "text": "        self._tasks.append(task)"
+        },
+        {
+          "line": 175,
+          "text": "                )"
+        },
+        {
+          "line": 176,
+          "text": "                if not task:"
+        },
+        {
+          "line": 177,
+          "text": "                    rval.append((message_id, ''))"
+        },
+        {
+          "line": 178,
+          "text": "                elif task.history and task.history[-1].parts:"
+        },
+        {
+          "line": 179,
+          "text": "                    if len(task.history) == 1:"
+        },
+        {
+          "line": 180,
+          "text": "                        rval.append((message_id, 'Working...'))"
+        },
+        {
+          "line": 181,
+          "text": "                    else:"
+        },
+        {
+          "line": 182,
+          "text": "                        part = task.history[-1].parts[0]"
+        },
+        {
+          "line": 183,
+          "text": "                        rval.append("
+        },
+        {
+          "line": 184,
+          "text": "                            ("
+        },
+        {
+          "line": 185,
+          "text": "                                message_id,"
+        },
+        {
+          "line": 186,
+          "text": "                                part.root.text"
+        }
+      ]
+    },
+    {
+      "path": "demo/ui/state/host_agent_service.py",
+      "sha256": "3a5efaa0ce4080d16f5197a75faebada29d9eccaccd6dc1b8fa9ee51d4e7bc23",
+      "bytes": 8906,
+      "hits": [
+        {
+          "line": 220,
+          "categories": [
+            "history"
+          ],
+          "text": "    if not task.history:"
+        },
+        {
+          "line": 234,
+          "categories": [
+            "history"
+          ],
+          "text": "    message = task.history[0]"
+        },
+        {
+          "line": 235,
+          "categories": [
+            "history"
+          ],
+          "text": "    last_message = task.history[-1]"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 217,
+          "text": "        if task.artifacts"
+        },
+        {
+          "line": 218,
+          "text": "        else []"
+        },
+        {
+          "line": 219,
+          "text": "    )"
+        },
+        {
+          "line": 220,
+          "text": "    if not task.history:"
+        },
+        {
+          "line": 221,
+          "text": "        return StateTask("
+        },
+        {
+          "line": 222,
+          "text": "            task_id=task.id,"
+        },
+        {
+          "line": 223,
+          "text": "            context_id=task.context_id,"
+        },
+        {
+          "line": 224,
+          "text": "            state=TaskState.failed.name,"
+        },
+        {
+          "line": 231,
+          "text": "            ),"
+        },
+        {
+          "line": 232,
+          "text": "            artifacts=output,"
+        },
+        {
+          "line": 233,
+          "text": "        )"
+        },
+        {
+          "line": 234,
+          "text": "    message = task.history[0]"
+        },
+        {
+          "line": 235,
+          "text": "    last_message = task.history[-1]"
+        },
+        {
+          "line": 236,
+          "text": "    if last_message != message:"
+        },
+        {
+          "line": 237,
+          "text": "        output = [extract_content(last_message.parts)] + output"
+        },
+        {
+          "line": 238,
+          "text": "    return StateTask("
+        },
+        {
+          "line": 239,
+          "text": "        task_id=task.id,"
+        }
+      ]
+    },
+    {
+      "path": "samples/go/agents/deepresearch/README.md",
+      "sha256": "7d0cd04619fcb783b833912195a3f799c3be0f68bd9652b8d24410c166669c75",
+      "bytes": 3357,
+      "hits": [
+        {
+          "line": 40,
+          "categories": [
+            "reference"
+          ],
+          "text": "3.  Analysis: The orchestrator dispatches the research task IDs as `ReferenceTasks` to the Analyzer. The Analyzer decorator fetches the findings from the NATS `EVENTS` stream by ID to check for contradictions and gaps."
+        },
+        {
+          "line": 42,
+          "categories": [
+            "reference"
+          ],
+          "text": "5.  Synthesis: The orchestrator dispatches all research task references as `ReferenceTasks` to the Synthesizer. The Synthesizer similarly fetches the findings from NATS by ID, compiles a unified HTML report, and writes it to the store."
+        },
+        {
+          "line": 47,
+          "categories": [
+            "reference"
+          ],
+          "text": "*   Task References: Downstream agents (Analyzer and Synthesizer) **do not** receive large text payloads. Instead, they receive a list of task IDs (`ReferenceTasks`) in the request, and use a decorator to fetch the corresponding raw artifacts from the NATS `EVENTS` stream before executing."
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 37,
+          "text": ""
+        },
+        {
+          "line": 38,
+          "text": "1.  Planning: An LLM planner decomposes the user's initial question into 3–5 independent subtask messages."
+        },
+        {
+          "line": 39,
+          "text": "2.  Initial Research: The orchestrator dispatches these subtasks to the Researcher workers. The researchers run Google Search tools, save findings as task artifacts in NATS, and report completion via push notifications."
+        },
+        {
+          "line": 40,
+          "text": "3.  Analysis: The orchestrator dispatches the research task IDs as `ReferenceTasks` to the Analyzer. The Analyzer decorator fetches the findings from the NATS `EVENTS` stream by ID to check for contradictions and gaps."
+        },
+        {
+          "line": 41,
+          "text": "4.  Follow-up Research: The orchestrator triggers a targeted second round of research to resolve contradictions and gaps."
+        },
+        {
+          "line": 42,
+          "text": "5.  Synthesis: The orchestrator dispatches all research task references as `ReferenceTasks` to the Synthesizer. The Synthesizer similarly fetches the findings from NATS by ID, compiles a unified HTML report, and writes it to the store."
+        },
+        {
+          "line": 43,
+          "text": "6.  Completion: The orchestrator returns the final HTML report URL to the user and marks the task as completed."
+        },
+        {
+          "line": 44,
+          "text": ""
+        },
+        {
+          "line": 45,
+          "text": "### `a2a` Communication and Storage Patterns"
+        },
+        {
+          "line": 46,
+          "text": ""
+        },
+        {
+          "line": 47,
+          "text": "*   Task References: Downstream agents (Analyzer and Synthesizer) **do not** receive large text payloads. Instead, they receive a list of task IDs (`ReferenceTasks`) in the request, and use a decorator to fetch the corresponding raw artifacts from the NATS `EVENTS` stream before executing."
+        },
+        {
+          "line": 48,
+          "text": "*   Transactional Outbox: To guarantee database and message queue consistency, inserting task updates and writing outbox records happen in a single SQL transaction. A leader-elected outbox daemon polls MySQL and publishes events to NATS."
+        },
+        {
+          "line": 49,
+          "text": "*   Event-Sourced Replay: If the orchestrator node restarts, it reconstructs its internal stage checklist state (replaying events like `MessagePrepare` and `MessageCommit` from NATS `STATES` stream) to resume the workflow from the exact stage where it left off."
+        },
+        {
+          "line": 50,
+          "text": ""
+        },
+        {
+          "line": 51,
+          "text": "<img src=\"./assets/sample_output.png\" width=\"740\" alt=\"Sample output of the deep research agent\"/>"
+        }
+      ]
+    },
+    {
+      "path": "samples/go/agents/deepresearch/internal/agents/common.go",
+      "sha256": "7cfed1e4b7c3ade637ed582b412304acf6d47712c8a9be295e55a448d1724ecf",
+      "bytes": 2880,
+      "hits": [
+        {
+          "line": 61,
+          "categories": [
+            "reference"
+          ],
+          "text": "\t\tlog.Info(ctx, \"task loader\", \"tasks\", len(execCtx.Message.ReferenceTasks))"
+        },
+        {
+          "line": 63,
+          "categories": [
+            "reference"
+          ],
+          "text": "\t\ttasks, err := e.loader.Load(ctx, execCtx.Message.ReferenceTasks)"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 58,
+          "text": "// to [a2a.Message] contents before delegating to the actual [a2asrv.AgentExecutor]."
+        },
+        {
+          "line": 59,
+          "text": "func (e *referencedTaskLoader) Execute(ctx context.Context, execCtx *a2asrv.ExecutorContext) iter.Seq2[a2a.Event, error] {"
+        },
+        {
+          "line": 60,
+          "text": "\treturn func(yield func(a2a.Event, error) bool) {"
+        },
+        {
+          "line": 61,
+          "text": "\t\tlog.Info(ctx, \"task loader\", \"tasks\", len(execCtx.Message.ReferenceTasks))"
+        },
+        {
+          "line": 62,
+          "text": ""
+        },
+        {
+          "line": 63,
+          "text": "\t\ttasks, err := e.loader.Load(ctx, execCtx.Message.ReferenceTasks)"
+        },
+        {
+          "line": 64,
+          "text": "\t\tif err != nil {"
+        },
+        {
+          "line": 65,
+          "text": "\t\t\tyield(nil, err)"
+        },
+        {
+          "line": 66,
+          "text": "\t\t\treturn"
+        },
+        {
+          "line": 67,
+          "text": "\t\t}"
+        }
+      ]
+    },
+    {
+      "path": "samples/go/agents/deepresearch/internal/agents/orchestrator.go",
+      "sha256": "09460f285c452ddff0b935a9fd8b19a46888d5287ad7eb7ed3450032f93426d5",
+      "bytes": 9240,
+      "hits": [
+        {
+          "line": 212,
+          "categories": [
+            "reference"
+          ],
+          "text": "\t\tmessage.ReferenceTasks = append(message.ReferenceTasks, tid)"
+        },
+        {
+          "line": 225,
+          "categories": [
+            "reference"
+          ],
+          "text": "\t\t\t\tmessage.ReferenceTasks = append(message.ReferenceTasks, tid)"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 209,
+          "text": "\t}"
+        },
+        {
+          "line": 210,
+          "text": "\tmessage := a2a.NewMessage(a2a.MessageRoleUser, a2a.NewTextPart(\"Find contradictions and controversial parts in these research findings.\"))"
+        },
+        {
+          "line": 211,
+          "text": "\tfor tid := range prevStage.tasks {"
+        },
+        {
+          "line": 212,
+          "text": "\t\tmessage.ReferenceTasks = append(message.ReferenceTasks, tid)"
+        },
+        {
+          "line": 213,
+          "text": "\t}"
+        },
+        {
+          "line": 214,
+          "text": "\treturn e.send(ctx, o.Analyzer, stageAnalysis, prevStage.id, []*a2a.Message{message})"
+        },
+        {
+          "line": 215,
+          "text": "}"
+        },
+        {
+          "line": 216,
+          "text": ""
+        },
+        {
+          "line": 222,
+          "text": "\tfor stage := e.state.activeStage(); stage != nil; stage = e.state.previousStage(stage) {"
+        },
+        {
+          "line": 223,
+          "text": "\t\tif stage.message.Type == stageResearch {"
+        },
+        {
+          "line": 224,
+          "text": "\t\t\tfor tid := range stage.tasks {"
+        },
+        {
+          "line": 225,
+          "text": "\t\t\t\tmessage.ReferenceTasks = append(message.ReferenceTasks, tid)"
+        },
+        {
+          "line": 226,
+          "text": "\t\t\t}"
+        },
+        {
+          "line": 227,
+          "text": "\t\t}"
+        },
+        {
+          "line": 228,
+          "text": "\t}"
+        },
+        {
+          "line": 229,
+          "text": "\treturn e.send(ctx, o.Synthesizer, stageSynthesiz, e.state.activeStage().id, []*a2a.Message{message})"
+        }
+      ]
+    },
+    {
+      "path": "samples/go/agents/deepresearch/internal/store/taskstore.go",
+      "sha256": "298c95a6d1ed9c39a89671aeed2332fde8412f06a88019a44e66c5fc66a77468",
+      "bytes": 6654,
+      "hits": [
+        {
+          "line": 144,
+          "categories": [
+            "history"
+          ],
+          "text": "\t\tif req.HistoryLength != nil && len(task.History) > *req.HistoryLength {"
+        },
+        {
+          "line": 145,
+          "categories": [
+            "history"
+          ],
+          "text": "\t\t\ttask.History = task.History[len(task.History)-*req.HistoryLength:]"
+        },
+        {
+          "line": 222,
+          "categories": [
+            "history"
+          ],
+          "text": "\t\ttask.History = append(task.History, task.Status.Message)"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 141,
+          "text": "\t\tif !req.IncludeArtifacts {"
+        },
+        {
+          "line": 142,
+          "text": "\t\t\ttask.Artifacts = nil"
+        },
+        {
+          "line": 143,
+          "text": "\t\t}"
+        },
+        {
+          "line": 144,
+          "text": "\t\tif req.HistoryLength != nil && len(task.History) > *req.HistoryLength {"
+        },
+        {
+          "line": 145,
+          "text": "\t\t\ttask.History = task.History[len(task.History)-*req.HistoryLength:]"
+        },
+        {
+          "line": 146,
+          "text": "\t\t}"
+        },
+        {
+          "line": 147,
+          "text": "\t\tfiltered = append(filtered, task)"
+        },
+        {
+          "line": 148,
+          "text": "\t}"
+        },
+        {
+          "line": 149,
+          "text": "\treturn &a2a.ListTasksResponse{"
+        },
+        {
+          "line": 219,
+          "text": ""
+        },
+        {
+          "line": 220,
+          "text": "func applyStatusUpdate(task *a2a.Task, event *a2a.TaskStatusUpdateEvent) {"
+        },
+        {
+          "line": 221,
+          "text": "\tif task.Status.Message != nil {"
+        },
+        {
+          "line": 222,
+          "text": "\t\ttask.History = append(task.History, task.Status.Message)"
+        },
+        {
+          "line": 223,
+          "text": "\t}"
+        },
+        {
+          "line": 224,
+          "text": "\ttask.Status = event.Status"
+        },
+        {
+          "line": 225,
+          "text": "\tif task.Metadata == nil {"
+        },
+        {
+          "line": 226,
+          "text": "\t\ttask.Metadata = event.Metadata"
+        }
+      ]
+    },
+    {
+      "path": "samples/go/archived/models/requests.go",
+      "sha256": "959011a736fb622078afb1d9a8f611fc58654ff02e0b42ffe51dd692b07a19f9",
+      "bytes": 3802,
+      "hits": [
+        {
+          "line": 14,
+          "categories": [
+            "history"
+          ],
+          "text": "\tHistoryLength *int `json:\"historyLength,omitempty\"`"
+        },
+        {
+          "line": 31,
+          "categories": [
+            "history"
+          ],
+          "text": "\tHistoryLength *int `json:\"historyLength,omitempty\"`"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 11,
+          "text": "\t// PushNotification is optional push notification information for receiving notifications"
+        },
+        {
+          "line": 12,
+          "text": "\tPushNotification *PushNotificationConfig `json:\"pushNotification,omitempty\"`"
+        },
+        {
+          "line": 13,
+          "text": "\t// HistoryLength is an optional parameter to specify how much message history to include"
+        },
+        {
+          "line": 14,
+          "text": "\tHistoryLength *int `json:\"historyLength,omitempty\"`"
+        },
+        {
+          "line": 15,
+          "text": "\t// Metadata is optional metadata associated with sending this message"
+        },
+        {
+          "line": 16,
+          "text": "\tMetadata map[string]interface{} `json:\"metadata,omitempty\"`"
+        },
+        {
+          "line": 17,
+          "text": "}"
+        },
+        {
+          "line": 18,
+          "text": ""
+        },
+        {
+          "line": 28,
+          "text": "type TaskQueryParams struct {"
+        },
+        {
+          "line": 29,
+          "text": "\tTaskIDParams"
+        },
+        {
+          "line": 30,
+          "text": "\t// HistoryLength is an optional parameter to specify how much history to retrieve"
+        },
+        {
+          "line": 31,
+          "text": "\tHistoryLength *int `json:\"historyLength,omitempty\"`"
+        },
+        {
+          "line": 32,
+          "text": "}"
+        },
+        {
+          "line": 33,
+          "text": ""
+        },
+        {
+          "line": 34,
+          "text": "// PushNotificationConfig represents the configuration for push notifications"
+        },
+        {
+          "line": 35,
+          "text": "type PushNotificationConfig struct {"
+        }
+      ]
+    },
+    {
+      "path": "samples/go/archived/models/responses.go",
+      "sha256": "7e081651232a64f87aec8cff242111f8ab6eb9f4b3048bdb279aec99b13fc2a8",
+      "bytes": 2436,
+      "hits": [
+        {
+          "line": 52,
+          "categories": [
+            "history"
+          ],
+          "text": "// GetTaskHistoryResponse represents a response to a get task history request"
+        },
+        {
+          "line": 53,
+          "categories": [
+            "history"
+          ],
+          "text": "type GetTaskHistoryResponse struct {"
+        },
+        {
+          "line": 55,
+          "categories": [
+            "history"
+          ],
+          "text": "\tResult *TaskHistory `json:\"result,omitempty\"`"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 49,
+          "text": "\tError  *A2AError `json:\"error,omitempty\"`"
+        },
+        {
+          "line": 50,
+          "text": "}"
+        },
+        {
+          "line": 51,
+          "text": ""
+        },
+        {
+          "line": 52,
+          "text": "// GetTaskHistoryResponse represents a response to a get task history request"
+        },
+        {
+          "line": 53,
+          "text": "type GetTaskHistoryResponse struct {"
+        },
+        {
+          "line": 54,
+          "text": "\tJSONRPCResponse"
+        },
+        {
+          "line": 55,
+          "text": "\tResult *TaskHistory `json:\"result,omitempty\"`"
+        },
+        {
+          "line": 56,
+          "text": "\tError  *A2AError    `json:\"error,omitempty\"`"
+        },
+        {
+          "line": 57,
+          "text": "}"
+        },
+        {
+          "line": 58,
+          "text": ""
+        },
+        {
+          "line": 59,
+          "text": "// SetTaskPushNotificationResponse represents a response to a set task push notification request"
+        }
+      ]
+    },
+    {
+      "path": "samples/go/archived/models/task.go",
+      "sha256": "218a9565039eae27feb13cb6070b8fafc3552cda87e9667e5d2cb49feb523405",
+      "bytes": 3795,
+      "hits": [
+        {
+          "line": 82,
+          "categories": [
+            "history"
+          ],
+          "text": "// TaskHistory represents the history of a task"
+        },
+        {
+          "line": 83,
+          "categories": [
+            "history"
+          ],
+          "text": "type TaskHistory struct {"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 79,
+          "text": "\tParts []Part `json:\"parts\"`"
+        },
+        {
+          "line": 80,
+          "text": "}"
+        },
+        {
+          "line": 81,
+          "text": ""
+        },
+        {
+          "line": 82,
+          "text": "// TaskHistory represents the history of a task"
+        },
+        {
+          "line": 83,
+          "text": "type TaskHistory struct {"
+        },
+        {
+          "line": 84,
+          "text": "\t// MessageHistory is the list of messages in chronological order"
+        },
+        {
+          "line": 85,
+          "text": "\tMessageHistory []Message `json:\"messageHistory,omitempty\"`"
+        },
+        {
+          "line": 86,
+          "text": "}"
+        },
+        {
+          "line": 87,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "path": "samples/go/extensions/timestamp/timestamp_ext/core.go",
+      "sha256": "37a2c86b3f4ed27f34ce8c62856296e1481f35bd1293137335a789a07142eb29",
+      "bytes": 3654,
+      "hits": [
+        {
+          "line": 129,
+          "categories": [
+            "history"
+          ],
+          "text": "\tfor _, m := range t.History {"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 126,
+          "text": "\tfor _, a := range t.Artifacts {"
+        },
+        {
+          "line": 127,
+          "text": "\t\tresult = append(result, a)"
+        },
+        {
+          "line": 128,
+          "text": "\t}"
+        },
+        {
+          "line": 129,
+          "text": "\tfor _, m := range t.History {"
+        },
+        {
+          "line": 130,
+          "text": "\t\tif m.Role == a2a.MessageRoleAgent {"
+        },
+        {
+          "line": 131,
+          "text": "\t\t\tresult = append(result, m)"
+        },
+        {
+          "line": 132,
+          "text": "\t\t}"
+        },
+        {
+          "line": 133,
+          "text": "\t}"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/client/src/main/java/com/google/a2a/client/A2AClientExample.java",
+      "sha256": "c0a7854f120220d53cd6709d979216837c98ac62f64762466fb2c961fff994cc",
+      "bytes": 10272,
+      "hits": [
+        {
+          "line": 43,
+          "categories": [
+            "reference"
+          ],
+          "text": "                null,                         // referenceTaskIds"
+        },
+        {
+          "line": 52,
+          "categories": [
+            "history"
+          ],
+          "text": "                null,  // historyLength"
+        },
+        {
+          "line": 86,
+          "categories": [
+            "reference"
+          ],
+          "text": "                null,                         // referenceTaskIds"
+        },
+        {
+          "line": 95,
+          "categories": [
+            "history"
+          ],
+          "text": "                null,  // historyLength"
+        },
+        {
+          "line": 134,
+          "categories": [
+            "history"
+          ],
+          "text": "                null,  // historyLength"
+        },
+        {
+          "line": 194,
+          "categories": [
+            "history"
+          ],
+          "text": "                null,  // historyLength"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 40,
+          "text": "                List.of(frenchToChinesePart), // parts"
+        },
+        {
+          "line": 41,
+          "text": "                null,                         // contextId"
+        },
+        {
+          "line": 42,
+          "text": "                null,                         // taskId"
+        },
+        {
+          "line": 43,
+          "text": "                null,                         // referenceTaskIds"
+        },
+        {
+          "line": 44,
+          "text": "                null                          // metadata"
+        },
+        {
+          "line": 45,
+          "text": "            );"
+        },
+        {
+          "line": 46,
+          "text": "            "
+        },
+        {
+          "line": 47,
+          "text": "            TaskSendParams frenchToChineseParams = new TaskSendParams("
+        },
+        {
+          "line": 49,
+          "text": "                null,  // sessionId"
+        },
+        {
+          "line": 50,
+          "text": "                frenchToChineseMessage,"
+        },
+        {
+          "line": 51,
+          "text": "                null,  // pushNotification"
+        },
+        {
+          "line": 52,
+          "text": "                null,  // historyLength"
+        },
+        {
+          "line": 53,
+          "text": "                Map.of()  // metadata"
+        },
+        {
+          "line": 54,
+          "text": "            );"
+        },
+        {
+          "line": 55,
+          "text": "            "
+        },
+        {
+          "line": 56,
+          "text": "            JSONRPCResponse frenchToChineseResponse = client.sendTask(frenchToChineseParams);"
+        },
+        {
+          "line": 83,
+          "text": "                List.of(chineseTextPart),     // parts"
+        },
+        {
+          "line": 84,
+          "text": "                null,                         // contextId"
+        },
+        {
+          "line": 85,
+          "text": "                null,                         // taskId"
+        },
+        {
+          "line": 86,
+          "text": "                null,                         // referenceTaskIds"
+        },
+        {
+          "line": 87,
+          "text": "                null                          // metadata"
+        },
+        {
+          "line": 88,
+          "text": "            );"
+        },
+        {
+          "line": 89,
+          "text": "            "
+        },
+        {
+          "line": 90,
+          "text": "            TaskSendParams chineseParams = new TaskSendParams("
+        },
+        {
+          "line": 92,
+          "text": "                null,  // sessionId"
+        },
+        {
+          "line": 93,
+          "text": "                chineseMessage,"
+        },
+        {
+          "line": 94,
+          "text": "                null,  // pushNotification"
+        },
+        {
+          "line": 95,
+          "text": "                null,  // historyLength"
+        },
+        {
+          "line": 96,
+          "text": "                Map.of()  // metadata"
+        },
+        {
+          "line": 97,
+          "text": "            );"
+        },
+        {
+          "line": 98,
+          "text": "            "
+        },
+        {
+          "line": 99,
+          "text": "            JSONRPCResponse chineseResponse = client.sendTask(chineseParams);"
+        },
+        {
+          "line": 131,
+          "text": "                null,  // sessionId"
+        },
+        {
+          "line": 132,
+          "text": "                frenchMessage,"
+        },
+        {
+          "line": 133,
+          "text": "                null,  // pushNotification"
+        },
+        {
+          "line": 134,
+          "text": "                null,  // historyLength"
+        },
+        {
+          "line": 135,
+          "text": "                Map.of()  // metadata"
+        },
+        {
+          "line": 136,
+          "text": "            );"
+        },
+        {
+          "line": 137,
+          "text": "            "
+        },
+        {
+          "line": 138,
+          "text": "            CountDownLatch streamingLatch = new CountDownLatch(1);"
+        },
+        {
+          "line": 191,
+          "text": "                null,  // sessionId"
+        },
+        {
+          "line": 192,
+          "text": "                cancelMessage,"
+        },
+        {
+          "line": 193,
+          "text": "                null,  // pushNotification"
+        },
+        {
+          "line": 194,
+          "text": "                null,  // historyLength"
+        },
+        {
+          "line": 195,
+          "text": "                Map.of()  // metadata"
+        },
+        {
+          "line": 196,
+          "text": "            );"
+        },
+        {
+          "line": 197,
+          "text": "            "
+        },
+        {
+          "line": 198,
+          "text": "            // Send task to be canceled"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/client/src/test/java/com/google/a2a/client/A2AClientTest.java",
+      "sha256": "6a97d519abc77d43a91b46cdea084ea6baf8beb4d72eb4026a3e06a3b557aece",
+      "bytes": 12942,
+      "hits": [
+        {
+          "line": 88,
+          "categories": [
+            "history"
+          ],
+          "text": "            null,  // historyLength"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 85,
+          "text": "            null,  // sessionId"
+        },
+        {
+          "line": 86,
+          "text": "            message,"
+        },
+        {
+          "line": 87,
+          "text": "            null,  // pushNotification"
+        },
+        {
+          "line": 88,
+          "text": "            null,  // historyLength"
+        },
+        {
+          "line": 89,
+          "text": "            Map.of()  // metadata"
+        },
+        {
+          "line": 90,
+          "text": "        );"
+        },
+        {
+          "line": 91,
+          "text": "        "
+        },
+        {
+          "line": 92,
+          "text": "        // Execute test"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/client/src/test/java/com/google/a2a/client/SimpleA2AClientTest.java",
+      "sha256": "6cc47286a57f8307f9e37786b7daeb468c80cae32a684302d8bd1321d45e57e7",
+      "bytes": 2536,
+      "hits": [
+        {
+          "line": 46,
+          "categories": [
+            "reference"
+          ],
+          "text": "            null,                         // referenceTaskIds"
+        },
+        {
+          "line": 67,
+          "categories": [
+            "history"
+          ],
+          "text": "            null,  // historyLength"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 43,
+          "text": "            List.of(textPart),            // parts"
+        },
+        {
+          "line": 44,
+          "text": "            null,                         // contextId"
+        },
+        {
+          "line": 45,
+          "text": "            null,                         // taskId"
+        },
+        {
+          "line": 46,
+          "text": "            null,                         // referenceTaskIds"
+        },
+        {
+          "line": 47,
+          "text": "            null                          // metadata"
+        },
+        {
+          "line": 48,
+          "text": "        );"
+        },
+        {
+          "line": 49,
+          "text": "        "
+        },
+        {
+          "line": 50,
+          "text": "        assertNotNull(message);"
+        },
+        {
+          "line": 64,
+          "text": "            null,  // sessionId"
+        },
+        {
+          "line": 65,
+          "text": "            message,"
+        },
+        {
+          "line": 66,
+          "text": "            null,  // pushNotification"
+        },
+        {
+          "line": 67,
+          "text": "            null,  // historyLength"
+        },
+        {
+          "line": 68,
+          "text": "            Map.of()  // metadata"
+        },
+        {
+          "line": 69,
+          "text": "        );"
+        },
+        {
+          "line": 70,
+          "text": "        "
+        },
+        {
+          "line": 71,
+          "text": "        assertNotNull(params);"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/model/README.md",
+      "sha256": "71c00949ad62e09a253cb7e398d38736b89a72c6e5751c652d5aace40c492cae",
+      "bytes": 3776,
+      "hits": [
+        {
+          "line": 40,
+          "categories": [
+            "history"
+          ],
+          "text": "- `TaskHistory` - Task history"
+        },
+        {
+          "line": 82,
+          "categories": [
+            "history"
+          ],
+          "text": "- `GetTaskHistoryResponse` - Get task history response"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 37,
+          "text": "- `Message` - Message in the A2A protocol"
+        },
+        {
+          "line": 38,
+          "text": "- `Task` - A2A task"
+        },
+        {
+          "line": 39,
+          "text": "- `TaskStatus` - Task status"
+        },
+        {
+          "line": 40,
+          "text": "- `TaskHistory` - Task history"
+        },
+        {
+          "line": 41,
+          "text": ""
+        },
+        {
+          "line": 42,
+          "text": "#### Event Related"
+        },
+        {
+          "line": 43,
+          "text": "- `TaskStatusUpdateEvent` - Task status update event"
+        },
+        {
+          "line": 44,
+          "text": "- `TaskArtifactUpdateEvent` - Task artifact update event"
+        },
+        {
+          "line": 79,
+          "text": "- `SendTaskStreamingResponse` - Streaming task response"
+        },
+        {
+          "line": 80,
+          "text": "- `GetTaskResponse` - Get task response"
+        },
+        {
+          "line": 81,
+          "text": "- `CancelTaskResponse` - Cancel task response"
+        },
+        {
+          "line": 82,
+          "text": "- `GetTaskHistoryResponse` - Get task history response"
+        },
+        {
+          "line": 83,
+          "text": "- `SetTaskPushNotificationResponse` - Set task push notification response"
+        },
+        {
+          "line": 84,
+          "text": "- `GetTaskPushNotificationResponse` - Get task push notification response"
+        },
+        {
+          "line": 85,
+          "text": ""
+        },
+        {
+          "line": 86,
+          "text": "## Jackson Annotations"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/model/src/main/java/com/google/a2a/model/GetTaskHistoryResponse.java",
+      "sha256": "04b48adbb028a6695e8ac05322830d63d8fbae57412658c4a5afc3215e2926dd",
+      "bytes": 1144,
+      "hits": [
+        {
+          "line": 7,
+          "categories": [
+            "history"
+          ],
+          "text": " * GetTaskHistoryResponse represents a response to a get task history request"
+        },
+        {
+          "line": 10,
+          "categories": [
+            "history"
+          ],
+          "text": "public record GetTaskHistoryResponse("
+        },
+        {
+          "line": 27,
+          "categories": [
+            "history"
+          ],
+          "text": "    @JsonProperty(\"result\") TaskHistory result,"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 4,
+          "text": "import com.fasterxml.jackson.annotation.JsonProperty;"
+        },
+        {
+          "line": 5,
+          "text": ""
+        },
+        {
+          "line": 6,
+          "text": "/**"
+        },
+        {
+          "line": 7,
+          "text": " * GetTaskHistoryResponse represents a response to a get task history request"
+        },
+        {
+          "line": 8,
+          "text": " */"
+        },
+        {
+          "line": 9,
+          "text": "@JsonInclude(JsonInclude.Include.NON_NULL)"
+        },
+        {
+          "line": 10,
+          "text": "public record GetTaskHistoryResponse("
+        },
+        {
+          "line": 11,
+          "text": "    /**"
+        },
+        {
+          "line": 12,
+          "text": "     * ID is the request identifier. Can be a string, number, or null."
+        },
+        {
+          "line": 13,
+          "text": "     * Responses must have the same ID as the request they relate to."
+        },
+        {
+          "line": 14,
+          "text": "     * Notifications (requests without an expected response) should omit the ID or use null."
+        },
+        {
+          "line": 24,
+          "text": "     * Result is the result of the method invocation. Required on success."
+        },
+        {
+          "line": 25,
+          "text": "     * Should be null or omitted if an error occurred."
+        },
+        {
+          "line": 26,
+          "text": "     */"
+        },
+        {
+          "line": 27,
+          "text": "    @JsonProperty(\"result\") TaskHistory result,"
+        },
+        {
+          "line": 28,
+          "text": "    "
+        },
+        {
+          "line": 29,
+          "text": "    /**"
+        },
+        {
+          "line": 30,
+          "text": "     * Error is an error object if an error occurred during the request."
+        },
+        {
+          "line": 31,
+          "text": "     * Required on failure. Should be null or omitted if the request was successful."
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/model/src/main/java/com/google/a2a/model/Message.java",
+      "sha256": "1f7c224dbad70911a0b6b4f70731700a901b5907f797ece6470b27ce19960191",
+      "bytes": 1685,
+      "hits": [
+        {
+          "line": 44,
+          "categories": [
+            "reference"
+          ],
+          "text": "     * ReferenceTaskIds is the list of tasks referenced as context by this message"
+        },
+        {
+          "line": 46,
+          "categories": [
+            "reference"
+          ],
+          "text": "    @JsonProperty(\"referenceTaskIds\") List<String> referenceTaskIds,"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 41,
+          "text": "    @JsonProperty(\"taskId\") String taskId,"
+        },
+        {
+          "line": 42,
+          "text": "    "
+        },
+        {
+          "line": 43,
+          "text": "    /**"
+        },
+        {
+          "line": 44,
+          "text": "     * ReferenceTaskIds is the list of tasks referenced as context by this message"
+        },
+        {
+          "line": 45,
+          "text": "     */"
+        },
+        {
+          "line": 46,
+          "text": "    @JsonProperty(\"referenceTaskIds\") List<String> referenceTaskIds,"
+        },
+        {
+          "line": 47,
+          "text": "    "
+        },
+        {
+          "line": 48,
+          "text": "    /**"
+        },
+        {
+          "line": 49,
+          "text": "     * Metadata is extension metadata"
+        },
+        {
+          "line": 50,
+          "text": "     */"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/model/src/main/java/com/google/a2a/model/MessageSendConfiguration.java",
+      "sha256": "2a7d821ce13fa37d0d9f6fe60cfafcce3c9360fac12149c3ca5eb088e2eb1e8f",
+      "bytes": 1017,
+      "hits": [
+        {
+          "line": 25,
+          "categories": [
+            "history"
+          ],
+          "text": "    @JsonProperty(\"historyLength\") Integer historyLength,"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 22,
+          "text": "    /**"
+        },
+        {
+          "line": 23,
+          "text": "     * HistoryLength is the number of recent messages to be retrieved"
+        },
+        {
+          "line": 24,
+          "text": "     */"
+        },
+        {
+          "line": 25,
+          "text": "    @JsonProperty(\"historyLength\") Integer historyLength,"
+        },
+        {
+          "line": 26,
+          "text": "    "
+        },
+        {
+          "line": 27,
+          "text": "    /**"
+        },
+        {
+          "line": 28,
+          "text": "     * PushNotificationConfig is where the server should send notifications when disconnected"
+        },
+        {
+          "line": 29,
+          "text": "     */"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/model/src/main/java/com/google/a2a/model/TaskHistory.java",
+      "sha256": "14ded7dbaf4e303c85e68d05ea8fdb98f224618da9c4a3e3d983e8f09c689db7",
+      "bytes": 444,
+      "hits": [
+        {
+          "line": 8,
+          "categories": [
+            "history"
+          ],
+          "text": " * TaskHistory represents the history of a task"
+        },
+        {
+          "line": 11,
+          "categories": [
+            "history"
+          ],
+          "text": "public record TaskHistory("
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 5,
+          "text": "import java.util.List;"
+        },
+        {
+          "line": 6,
+          "text": ""
+        },
+        {
+          "line": 7,
+          "text": "/**"
+        },
+        {
+          "line": 8,
+          "text": " * TaskHistory represents the history of a task"
+        },
+        {
+          "line": 9,
+          "text": " */"
+        },
+        {
+          "line": 10,
+          "text": "@JsonInclude(JsonInclude.Include.NON_NULL)"
+        },
+        {
+          "line": 11,
+          "text": "public record TaskHistory("
+        },
+        {
+          "line": 12,
+          "text": "    /**"
+        },
+        {
+          "line": 13,
+          "text": "     * MessageHistory is the list of messages in chronological order"
+        },
+        {
+          "line": 14,
+          "text": "     */"
+        },
+        {
+          "line": 15,
+          "text": "    @JsonProperty(\"messageHistory\") List<Message> messageHistory"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/model/src/main/java/com/google/a2a/model/TaskQueryParams.java",
+      "sha256": "3fee2dfb7ec5c317165f23678818b2986d6f93f864e2557e0677e9bbb8803d5d",
+      "bytes": 734,
+      "hits": [
+        {
+          "line": 25,
+          "categories": [
+            "history"
+          ],
+          "text": "    @JsonProperty(\"historyLength\") Integer historyLength"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 22,
+          "text": "    /**"
+        },
+        {
+          "line": 23,
+          "text": "     * HistoryLength is an optional parameter to specify how much history to retrieve"
+        },
+        {
+          "line": 24,
+          "text": "     */"
+        },
+        {
+          "line": 25,
+          "text": "    @JsonProperty(\"historyLength\") Integer historyLength"
+        },
+        {
+          "line": 26,
+          "text": ") {"
+        },
+        {
+          "line": 27,
+          "text": "} "
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/model/src/main/java/com/google/a2a/model/TaskSendParams.java",
+      "sha256": "5921db8de92320526387eb3388392cbb12dd34c8c343b3f71f375a43cf5039e4",
+      "bytes": 1258,
+      "hits": [
+        {
+          "line": 35,
+          "categories": [
+            "history"
+          ],
+          "text": "    @JsonProperty(\"historyLength\") Integer historyLength,"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 32,
+          "text": "    /**"
+        },
+        {
+          "line": 33,
+          "text": "     * HistoryLength is an optional parameter to specify how much message history to include"
+        },
+        {
+          "line": 34,
+          "text": "     */"
+        },
+        {
+          "line": 35,
+          "text": "    @JsonProperty(\"historyLength\") Integer historyLength,"
+        },
+        {
+          "line": 36,
+          "text": "    "
+        },
+        {
+          "line": 37,
+          "text": "    /**"
+        },
+        {
+          "line": 38,
+          "text": "     * Metadata is optional metadata associated with sending this message"
+        },
+        {
+          "line": 39,
+          "text": "     */"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/server/src/main/java/com/google/a2a/server/A2AServer.java",
+      "sha256": "1abec3e5f9d84e763c3c2934c7d2f22515730a4d7184a272d388df821d3bc698",
+      "bytes": 6735,
+      "hits": [
+        {
+          "line": 89,
+          "categories": [
+            "history"
+          ],
+          "text": "            if (params.historyLength() != null && params.historyLength() > 0) {"
+        },
+        {
+          "line": 90,
+          "categories": [
+            "history"
+          ],
+          "text": "                List<Message> history = getTaskHistory(params.id());"
+        },
+        {
+          "line": 91,
+          "categories": [
+            "history"
+          ],
+          "text": "                int limit = Math.min(params.historyLength(), history.size());"
+        },
+        {
+          "line": 148,
+          "categories": [
+            "history"
+          ],
+          "text": "                task.history(),"
+        },
+        {
+          "line": 171,
+          "categories": [
+            "history"
+          ],
+          "text": "    public List<Message> getTaskHistory(String taskId) {"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 86,
+          "text": "            }"
+        },
+        {
+          "line": 87,
+          "text": ""
+        },
+        {
+          "line": 88,
+          "text": "            // Include history if requested"
+        },
+        {
+          "line": 89,
+          "text": "            if (params.historyLength() != null && params.historyLength() > 0) {"
+        },
+        {
+          "line": 90,
+          "text": "                List<Message> history = getTaskHistory(params.id());"
+        },
+        {
+          "line": 91,
+          "text": "                int limit = Math.min(params.historyLength(), history.size());"
+        },
+        {
+          "line": 92,
+          "text": "                List<Message> limitedHistory = history.subList(Math.max(0, history.size() - limit), history.size());"
+        },
+        {
+          "line": 93,
+          "text": "                "
+        },
+        {
+          "line": 94,
+          "text": "                // Create task with history"
+        },
+        {
+          "line": 95,
+          "text": "                Task taskWithHistory = new Task("
+        },
+        {
+          "line": 145,
+          "text": "                task.kind(),"
+        },
+        {
+          "line": 146,
+          "text": "                canceledStatus,"
+        },
+        {
+          "line": 147,
+          "text": "                task.artifacts(),"
+        },
+        {
+          "line": 148,
+          "text": "                task.history(),"
+        },
+        {
+          "line": 149,
+          "text": "                task.metadata()"
+        },
+        {
+          "line": 150,
+          "text": "            );"
+        },
+        {
+          "line": 151,
+          "text": "            "
+        },
+        {
+          "line": 152,
+          "text": "            taskStore.put(params.id(), canceledTask);"
+        },
+        {
+          "line": 168,
+          "text": "    /**"
+        },
+        {
+          "line": 169,
+          "text": "     * Get task history"
+        },
+        {
+          "line": 170,
+          "text": "     */"
+        },
+        {
+          "line": 171,
+          "text": "    public List<Message> getTaskHistory(String taskId) {"
+        },
+        {
+          "line": 172,
+          "text": "        return taskHistory.getOrDefault(taskId, List.of());"
+        },
+        {
+          "line": 173,
+          "text": "    }"
+        },
+        {
+          "line": 174,
+          "text": ""
+        },
+        {
+          "line": 175,
+          "text": "    /**"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/server/src/main/java/com/google/a2a/server/A2AServerConfiguration.java",
+      "sha256": "4e018e1610b851e5e86ced410f0c12753c2453dcc5ca0aff5bcfd9976cffaf3d",
+      "bytes": 7439,
+      "hits": [
+        {
+          "line": 129,
+          "categories": [
+            "history"
+          ],
+          "text": "                List<Message> updatedHistory = task.history() != null ?"
+        },
+        {
+          "line": 130,
+          "categories": [
+            "history"
+          ],
+          "text": "                    List.of(task.history().toArray(new Message[0])) :"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 126,
+          "text": "                );"
+        },
+        {
+          "line": 127,
+          "text": ""
+        },
+        {
+          "line": 128,
+          "text": "                // Add response to history"
+        },
+        {
+          "line": 129,
+          "text": "                List<Message> updatedHistory = task.history() != null ?"
+        },
+        {
+          "line": 130,
+          "text": "                    List.of(task.history().toArray(new Message[0])) :"
+        },
+        {
+          "line": 131,
+          "text": "                    List.of();"
+        },
+        {
+          "line": 132,
+          "text": "                updatedHistory = List.of("
+        },
+        {
+          "line": 133,
+          "text": "                    java.util.stream.Stream.concat("
+        },
+        {
+          "line": 134,
+          "text": "                        updatedHistory.stream(),"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/custom_java_impl/server/src/test/java/com/google/a2a/server/A2AServerTest.java",
+      "sha256": "1b866c6dd5fea11529135a8c019165c6aa016a48d15eb17e9dc9613148a1b9d4",
+      "bytes": 8880,
+      "hits": [
+        {
+          "line": 64,
+          "categories": [
+            "history"
+          ],
+          "text": "                task.history(),"
+        },
+        {
+          "line": 85,
+          "categories": [
+            "reference"
+          ],
+          "text": "            null,                         // referenceTaskIds"
+        },
+        {
+          "line": 278,
+          "categories": [
+            "history"
+          ],
+          "text": "    void testGetTaskHistory() {"
+        },
+        {
+          "line": 279,
+          "categories": [
+            "history"
+          ],
+          "text": "        List<Message> history = server.getTaskHistory(\"non-existent-task\");"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 61,
+          "text": "                task.kind(),"
+        },
+        {
+          "line": 62,
+          "text": "                status,"
+        },
+        {
+          "line": 63,
+          "text": "                task.artifacts(),"
+        },
+        {
+          "line": 64,
+          "text": "                task.history(),"
+        },
+        {
+          "line": 65,
+          "text": "                task.metadata()"
+        },
+        {
+          "line": 66,
+          "text": "            );"
+        },
+        {
+          "line": 67,
+          "text": "        };"
+        },
+        {
+          "line": 68,
+          "text": "        "
+        },
+        {
+          "line": 82,
+          "text": "            List.of(textPart),            // parts"
+        },
+        {
+          "line": 83,
+          "text": "            null,                         // contextId"
+        },
+        {
+          "line": 84,
+          "text": "            null,                         // taskId"
+        },
+        {
+          "line": 85,
+          "text": "            null,                         // referenceTaskIds"
+        },
+        {
+          "line": 86,
+          "text": "            null                          // metadata"
+        },
+        {
+          "line": 87,
+          "text": "        );"
+        },
+        {
+          "line": 88,
+          "text": "        "
+        },
+        {
+          "line": 89,
+          "text": "        // Prepare test data"
+        },
+        {
+          "line": 275,
+          "text": "    }"
+        },
+        {
+          "line": 276,
+          "text": "    "
+        },
+        {
+          "line": 277,
+          "text": "    @Test"
+        },
+        {
+          "line": 278,
+          "text": "    void testGetTaskHistory() {"
+        },
+        {
+          "line": 279,
+          "text": "        List<Message> history = server.getTaskHistory(\"non-existent-task\");"
+        },
+        {
+          "line": 280,
+          "text": "        assertNotNull(history);"
+        },
+        {
+          "line": 281,
+          "text": "        assertTrue(history.isEmpty());"
+        },
+        {
+          "line": 282,
+          "text": "    }"
+        },
+        {
+          "line": 283,
+          "text": "} "
+        }
+      ]
+    },
+    {
+      "path": "samples/java/koog/src/main/kotlin/ai/koog/example/advancedjoke/JokeWriterAgentExecutor.kt",
+      "sha256": "642e086849c302e21b282c906ebd397dad9b30de40cbf17fbcdd8cb60e9dd87a",
+      "bytes": 17006,
+      "hits": [
+        {
+          "line": 111,
+          "categories": [
+            "reference"
+          ],
+          "text": "            if (!userInput.referenceTaskIds.isNullOrEmpty()) {"
+        },
+        {
+          "line": 113,
+          "categories": [
+            "reference"
+          ],
+          "text": "                    \"This agent doesn't understand task references in referenceTaskIds yet.\""
+        },
+        {
+          "line": 140,
+          "categories": [
+            "history"
+          ],
+          "text": "                        context.taskStorage.get(id, historyLength = null)"
+        },
+        {
+          "line": 146,
+          "categories": [
+            "history"
+          ],
+          "text": "                    (task.history.orEmpty() + listOfNotNull(task.status.message) + userInput)"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 108,
+          "text": "    strategy<A2AMessage, Unit>(\"joke-writer\") {"
+        },
+        {
+          "line": 109,
+          "text": "        // Node: Load conversation history from message storage"
+        },
+        {
+          "line": 110,
+          "text": "        val setupMessageContext by node<A2AMessage, A2AMessage> { userInput ->"
+        },
+        {
+          "line": 111,
+          "text": "            if (!userInput.referenceTaskIds.isNullOrEmpty()) {"
+        },
+        {
+          "line": 112,
+          "text": "                throw A2AUnsupportedOperationException("
+        },
+        {
+          "line": 113,
+          "text": "                    \"This agent doesn't understand task references in referenceTaskIds yet.\""
+        },
+        {
+          "line": 114,
+          "text": "                )"
+        },
+        {
+          "line": 115,
+          "text": "            }"
+        },
+        {
+          "line": 116,
+          "text": ""
+        },
+        {
+          "line": 117,
+          "text": "            // Load current context messages"
+        },
+        {
+          "line": 137,
+          "text": "                withA2AAgentServer {"
+        },
+        {
+          "line": 138,
+          "text": "                    context.task?.id?.let { id ->"
+        },
+        {
+          "line": 139,
+          "text": "                        // Load task with full conversation history to continue working on it"
+        },
+        {
+          "line": 140,
+          "text": "                        context.taskStorage.get(id, historyLength = null)"
+        },
+        {
+          "line": 141,
+          "text": "                    }"
+        },
+        {
+          "line": 142,
+          "text": "                }"
+        },
+        {
+          "line": 143,
+          "text": ""
+        },
+        {
+          "line": 144,
+          "text": "            currentTask?.let { task ->"
+        },
+        {
+          "line": 145,
+          "text": "                val currentTaskMessages ="
+        },
+        {
+          "line": 146,
+          "text": "                    (task.history.orEmpty() + listOfNotNull(task.status.message) + userInput)"
+        },
+        {
+          "line": 147,
+          "text": "                        .map { it.toKoogMessage() }"
+        },
+        {
+          "line": 148,
+          "text": ""
+        },
+        {
+          "line": 149,
+          "text": "                llm.writeSession {"
+        },
+        {
+          "line": 150,
+          "text": "                    updatePrompt {"
+        }
+      ]
+    },
+    {
+      "path": "samples/java/koog/src/main/kotlin/ai/koog/example/simplejoke/SimpleJokeAgentExecutor.kt",
+      "sha256": "541494eca20f158e0337bbf1cdbc7a0c069f1d815ec603ec003c4c303f05a305",
+      "bytes": 3048,
+      "hits": [
+        {
+          "line": 38,
+          "categories": [
+            "reference"
+          ],
+          "text": "        if (context.task != null || !userMessage.referenceTaskIds.isNullOrEmpty()) {"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 35,
+          "text": "    ) {"
+        },
+        {
+          "line": 36,
+          "text": "        val userMessage = context.params.message"
+        },
+        {
+          "line": 37,
+          "text": ""
+        },
+        {
+          "line": 38,
+          "text": "        if (context.task != null || !userMessage.referenceTaskIds.isNullOrEmpty()) {"
+        },
+        {
+          "line": 39,
+          "text": "            throw A2AUnsupportedOperationException(\"This agent doesn't support tasks\")"
+        },
+        {
+          "line": 40,
+          "text": "        }"
+        },
+        {
+          "line": 41,
+          "text": ""
+        },
+        {
+          "line": 42,
+          "text": "        // Save incoming message to the current context"
+        }
+      ]
+    },
+    {
+      "path": "samples/js/agents/helloworld/agent_executor.ts",
+      "sha256": "7da22259f2fac8532f335e0c46d49b31b932ddb3811b144052aff81afeb1a633",
+      "bytes": 6260,
+      "hits": [
+        {
+          "line": 94,
+          "categories": [
+            "reference"
+          ],
+          "text": "                    referenceTaskIds: [],"
+        },
+        {
+          "line": 171,
+          "categories": [
+            "reference"
+          ],
+          "text": "                    referenceTaskIds: [],"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 91,
+          "text": "                    contextId: contextId,"
+        },
+        {
+          "line": 92,
+          "text": "                    extensions: [],"
+        },
+        {
+          "line": 93,
+          "text": "                    metadata: {},"
+        },
+        {
+          "line": 94,
+          "text": "                    referenceTaskIds: [],"
+        },
+        {
+          "line": 95,
+          "text": "                },"
+        },
+        {
+          "line": 96,
+          "text": "                timestamp: new Date().toISOString(),"
+        },
+        {
+          "line": 97,
+          "text": "            },"
+        },
+        {
+          "line": 98,
+          "text": "            metadata: {},"
+        },
+        {
+          "line": 168,
+          "text": "                    contextId: contextId,"
+        },
+        {
+          "line": 169,
+          "text": "                    extensions: [],"
+        },
+        {
+          "line": 170,
+          "text": "                    metadata: {},"
+        },
+        {
+          "line": 171,
+          "text": "                    referenceTaskIds: [],"
+        },
+        {
+          "line": 172,
+          "text": "                },"
+        },
+        {
+          "line": 173,
+          "text": "                timestamp: new Date().toISOString(),"
+        },
+        {
+          "line": 174,
+          "text": "            },"
+        },
+        {
+          "line": 175,
+          "text": "            metadata: undefined,"
+        }
+      ]
+    },
+    {
+      "path": "samples/js/agents/helloworld/test_client.ts",
+      "sha256": "37c56e0c1bd78d65a0af21043166c6873e27939f7b91b9d77b093330c8162bca",
+      "bytes": 5615,
+      "hits": [
+        {
+          "line": 61,
+          "categories": [
+            "reference"
+          ],
+          "text": "            referenceTaskIds: [],"
+        },
+        {
+          "line": 105,
+          "categories": [
+            "reference"
+          ],
+          "text": "            referenceTaskIds: [],"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 58,
+          "text": "            contextId: \"\","
+        },
+        {
+          "line": 59,
+          "text": "            extensions: [],"
+        },
+        {
+          "line": 60,
+          "text": "            metadata: {},"
+        },
+        {
+          "line": 61,
+          "text": "            referenceTaskIds: [],"
+        },
+        {
+          "line": 62,
+          "text": "        },"
+        },
+        {
+          "line": 63,
+          "text": "        configuration: undefined,"
+        },
+        {
+          "line": 64,
+          "text": "    };"
+        },
+        {
+          "line": 65,
+          "text": ""
+        },
+        {
+          "line": 102,
+          "text": "            contextId: \"\","
+        },
+        {
+          "line": 103,
+          "text": "            extensions: [],"
+        },
+        {
+          "line": 104,
+          "text": "            metadata: {},"
+        },
+        {
+          "line": 105,
+          "text": "            referenceTaskIds: [],"
+        },
+        {
+          "line": 106,
+          "text": "        },"
+        },
+        {
+          "line": 107,
+          "text": "        configuration: undefined,"
+        },
+        {
+          "line": 108,
+          "text": "    };"
+        },
+        {
+          "line": 109,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "path": "samples/js/agents/sign-and-verify-agent-card/agent_executor.ts",
+      "sha256": "665ae98b6d3ce3ade7ba843f561c0efa24016e4819c8363ef6eab56afca7e8bf",
+      "bytes": 5449,
+      "hits": [
+        {
+          "line": 75,
+          "categories": [
+            "reference"
+          ],
+          "text": "                    referenceTaskIds: [],"
+        },
+        {
+          "line": 146,
+          "categories": [
+            "reference"
+          ],
+          "text": "                    referenceTaskIds: [],"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 72,
+          "text": "                    contextId: contextId,"
+        },
+        {
+          "line": 73,
+          "text": "                    extensions: [],"
+        },
+        {
+          "line": 74,
+          "text": "                    metadata: {},"
+        },
+        {
+          "line": 75,
+          "text": "                    referenceTaskIds: [],"
+        },
+        {
+          "line": 76,
+          "text": "                },"
+        },
+        {
+          "line": 77,
+          "text": "                timestamp: new Date().toISOString(),"
+        },
+        {
+          "line": 78,
+          "text": "            },"
+        },
+        {
+          "line": 79,
+          "text": "            metadata: {},"
+        },
+        {
+          "line": 143,
+          "text": "                    contextId: contextId,"
+        },
+        {
+          "line": 144,
+          "text": "                    extensions: [],"
+        },
+        {
+          "line": 145,
+          "text": "                    metadata: {},"
+        },
+        {
+          "line": 146,
+          "text": "                    referenceTaskIds: [],"
+        },
+        {
+          "line": 147,
+          "text": "                },"
+        },
+        {
+          "line": 148,
+          "text": "                timestamp: new Date().toISOString(),"
+        },
+        {
+          "line": 149,
+          "text": "            },"
+        },
+        {
+          "line": 150,
+          "text": "            metadata: undefined,"
+        }
+      ]
+    },
+    {
+      "path": "samples/js/extensions/oid4vp-in-task-auth/src/a2a-helpers.ts",
+      "sha256": "a2cc9efa80a10becd34e800e635202528f7d6b05bf1ab2af75d6fc47b544ad32",
+      "bytes": 2288,
+      "hits": [
+        {
+          "line": 52,
+          "categories": [
+            "reference"
+          ],
+          "text": "        referenceTaskIds: [],"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 49,
+          "text": "        parts: [textPart(text)],"
+        },
+        {
+          "line": 50,
+          "text": "        metadata: undefined,"
+        },
+        {
+          "line": 51,
+          "text": "        extensions: [],"
+        },
+        {
+          "line": 52,
+          "text": "        referenceTaskIds: [],"
+        },
+        {
+          "line": 53,
+          "text": "    };"
+        },
+        {
+          "line": 54,
+          "text": "}"
+        },
+        {
+          "line": 55,
+          "text": ""
+        },
+        {
+          "line": 56,
+          "text": "export function statusEvent("
+        }
+      ]
+    },
+    {
+      "path": "samples/js/extensions/oid4vp-in-task-auth/src/assistant/index.ts",
+      "sha256": "6675cc08f59aff8d2fa0def039100fda99c81416fce38ba5ba493a36bddd552a",
+      "bytes": 13880,
+      "hits": [
+        {
+          "line": 224,
+          "categories": [
+            "reference"
+          ],
+          "text": "            referenceTaskIds: [],"
+        },
+        {
+          "line": 367,
+          "categories": [
+            "reference"
+          ],
+          "text": "                        referenceTaskIds: [],"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 221,
+          "text": "            parts: [textPart(userText)],"
+        },
+        {
+          "line": 222,
+          "text": "            metadata: undefined,"
+        },
+        {
+          "line": 223,
+          "text": "            extensions: [IN_TASK_OID4VP_EXTENSION_URI],"
+        },
+        {
+          "line": 224,
+          "text": "            referenceTaskIds: [],"
+        },
+        {
+          "line": 225,
+          "text": "        };"
+        },
+        {
+          "line": 226,
+          "text": ""
+        },
+        {
+          "line": 227,
+          "text": "        for await (const response of merchantClient.sendMessageStream({"
+        },
+        {
+          "line": 228,
+          "text": "            tenant: \"\","
+        },
+        {
+          "line": 364,
+          "text": "                            } satisfies InTaskOpenId4VpMessageMetadata,"
+        },
+        {
+          "line": 365,
+          "text": "                        },"
+        },
+        {
+          "line": 366,
+          "text": "                        extensions: [IN_TASK_OID4VP_EXTENSION_URI],"
+        },
+        {
+          "line": 367,
+          "text": "                        referenceTaskIds: [],"
+        },
+        {
+          "line": 368,
+          "text": "                    },"
+        },
+        {
+          "line": 369,
+          "text": "                    timestamp: new Date().toISOString(),"
+        },
+        {
+          "line": 370,
+          "text": "                },"
+        },
+        {
+          "line": 371,
+          "text": "                metadata: undefined,"
+        }
+      ]
+    },
+    {
+      "path": "samples/js/extensions/oid4vp-in-task-auth/src/cli.ts",
+      "sha256": "35f3c17b30402c225dd8114ea6d57cdee43b8b83143c996e586168f293a4051b",
+      "bytes": 14066,
+      "hits": [
+        {
+          "line": 152,
+          "categories": [
+            "reference"
+          ],
+          "text": "        referenceTaskIds: [],"
+        },
+        {
+          "line": 295,
+          "categories": [
+            "reference"
+          ],
+          "text": "        referenceTaskIds: [],"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 149,
+          "text": "        parts: event.artifact?.parts ?? [],"
+        },
+        {
+          "line": 150,
+          "text": "        metadata: undefined,"
+        },
+        {
+          "line": 151,
+          "text": "        extensions: [],"
+        },
+        {
+          "line": 152,
+          "text": "        referenceTaskIds: [],"
+        },
+        {
+          "line": 153,
+          "text": "    });"
+        },
+        {
+          "line": 154,
+          "text": "}"
+        },
+        {
+          "line": 155,
+          "text": ""
+        },
+        {
+          "line": 156,
+          "text": "async function handleAuthRequest("
+        },
+        {
+          "line": 292,
+          "text": "        parts: [textPart(text)],"
+        },
+        {
+          "line": 293,
+          "text": "        metadata: undefined,"
+        },
+        {
+          "line": 294,
+          "text": "        extensions: [IN_TASK_OID4VP_EXTENSION_URI],"
+        },
+        {
+          "line": 295,
+          "text": "        referenceTaskIds: [],"
+        },
+        {
+          "line": 296,
+          "text": "    };"
+        },
+        {
+          "line": 297,
+          "text": ""
+        },
+        {
+          "line": 298,
+          "text": "    const params: SendMessageRequest = {"
+        },
+        {
+          "line": 299,
+          "text": "        tenant: \"\","
+        }
+      ]
+    },
+    {
+      "path": "samples/js/extensions/oid4vp-in-task-auth/src/merchant/index.ts",
+      "sha256": "3e0340e082f1a4ba7b73a7a9baa47239e6f3725027fc5d654462471ddd283506",
+      "bytes": 18034,
+      "hits": [
+        {
+          "line": 370,
+          "categories": [
+            "reference"
+          ],
+          "text": "                    referenceTaskIds: [],"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 367,
+          "text": "                        } satisfies InTaskOpenId4VpMessageMetadata,"
+        },
+        {
+          "line": 368,
+          "text": "                    },"
+        },
+        {
+          "line": 369,
+          "text": "                    extensions: [IN_TASK_OID4VP_EXTENSION_URI],"
+        },
+        {
+          "line": 370,
+          "text": "                    referenceTaskIds: [],"
+        },
+        {
+          "line": 371,
+          "text": "                },"
+        },
+        {
+          "line": 372,
+          "text": "                timestamp: new Date().toISOString(),"
+        },
+        {
+          "line": 373,
+          "text": "            },"
+        },
+        {
+          "line": 374,
+          "text": "            metadata: undefined,"
+        }
+      ]
+    },
+    {
+      "path": "samples/js/extensions/timestamp/agent_executor.ts",
+      "sha256": "a3bd5e8b7658dad171d6ae9f0a37bb8e2058f4174e8ca2bcecb56de45099179b",
+      "bytes": 4236,
+      "hits": [
+        {
+          "line": 76,
+          "categories": [
+            "reference"
+          ],
+          "text": "                    referenceTaskIds: [],"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 73,
+          "text": "                    contextId: contextId,"
+        },
+        {
+          "line": 74,
+          "text": "                    extensions: [],"
+        },
+        {
+          "line": 75,
+          "text": "                    metadata: {},"
+        },
+        {
+          "line": 76,
+          "text": "                    referenceTaskIds: [],"
+        },
+        {
+          "line": 77,
+          "text": "                },"
+        },
+        {
+          "line": 78,
+          "text": "                timestamp: new Date().toISOString(),"
+        },
+        {
+          "line": 79,
+          "text": "            },"
+        },
+        {
+          "line": 80,
+          "text": "            metadata: {},"
+        }
+      ]
+    },
+    {
+      "path": "samples/js/extensions/timestamp/test_client.ts",
+      "sha256": "2986f767d20db4fc674e65bd933a3e8216472f2084a24cefe7679f92245f8366",
+      "bytes": 4324,
+      "hits": [
+        {
+          "line": 65,
+          "categories": [
+            "reference"
+          ],
+          "text": "            referenceTaskIds: [],"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 62,
+          "text": "            contextId: \"\","
+        },
+        {
+          "line": 63,
+          "text": "            extensions: [],"
+        },
+        {
+          "line": 64,
+          "text": "            metadata: {},"
+        },
+        {
+          "line": 65,
+          "text": "            referenceTaskIds: [],"
+        },
+        {
+          "line": 66,
+          "text": "        },"
+        },
+        {
+          "line": 67,
+          "text": "        configuration: undefined,"
+        },
+        {
+          "line": 68,
+          "text": "    };"
+        },
+        {
+          "line": 69,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "path": "samples/python/agents/a2a-mcp-without-framework/response.xml",
+      "sha256": "18b3e36426d84dacf67bec5120e8e01e79f551e2a94e74e41ef81dc38c5349c2",
+      "bytes": 31202,
+      "hits": [
+        {
+          "line": 123,
+          "categories": [
+            "history"
+          ],
+          "text": "    *   `history`: (`Message[]` | null) (Optional) History of messages exchanged for this task (if requested via `historyLength`)."
+        },
+        {
+          "line": 175,
+          "categories": [
+            "history"
+          ],
+          "text": "    *   `params`: `TaskSendParams` (includes `id`, `sessionId`, `message`, optionally `pushNotification`, `historyLength`, `metadata`)."
+        },
+        {
+          "line": 183,
+          "categories": [
+            "history"
+          ],
+          "text": "    *   `params`: `TaskQueryParams` (includes `id`, optionally `historyLength`)."
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 120,
+          "text": "    *   `sessionId`: (string | null) Groups related tasks."
+        },
+        {
+          "line": 121,
+          "text": "    *   `status`: (`TaskStatus`) Current state and associated message."
+        },
+        {
+          "line": 122,
+          "text": "    *   `artifacts`: (`Artifact[]` | null) Outputs generated by the task."
+        },
+        {
+          "line": 123,
+          "text": "    *   `history`: (`Message[]` | null) (Optional) History of messages exchanged for this task (if requested via `historyLength`)."
+        },
+        {
+          "line": 124,
+          "text": "    *   `metadata`: (object | null) Additional task metadata."
+        },
+        {
+          "line": 125,
+          "text": "*   **`TaskStatus`:**"
+        },
+        {
+          "line": 126,
+          "text": "    *   `state`: (`TaskState`) Current lifecycle state (enum)."
+        },
+        {
+          "line": 127,
+          "text": "    *   `message`: (`Message` | null) Message associated with this status (e.g., progress update, final response text, input prompt)."
+        },
+        {
+          "line": 172,
+          "text": ""
+        },
+        {
+          "line": 173,
+          "text": "*   **`message/send`:** (Request/Response)"
+        },
+        {
+          "line": 174,
+          "text": "    *   Sends a message to initiate or continue a task."
+        },
+        {
+          "line": 175,
+          "text": "    *   `params`: `TaskSendParams` (includes `id`, `sessionId`, `message`, optionally `pushNotification`, `historyLength`, `metadata`)."
+        },
+        {
+          "line": 176,
+          "text": "    *   `result`: `Task` (final state after synchronous processing)."
+        },
+        {
+          "line": 177,
+          "text": "*   **`message/stream`:** (Request/Stream)"
+        },
+        {
+          "line": 178,
+          "text": "    *   Sends a message and subscribes to real-time updates via SSE."
+        },
+        {
+          "line": 179,
+          "text": "    *   `params`: `TaskSendParams`."
+        },
+        {
+          "line": 180,
+          "text": "    *   `result` (stream events): `TaskStatusUpdateEvent` or `TaskArtifactUpdateEvent`. Final event has `final: true`."
+        },
+        {
+          "line": 181,
+          "text": "*   **`tasks/get`:** (Request/Response)"
+        },
+        {
+          "line": 182,
+          "text": "    *   Retrieves the current state of a task."
+        },
+        {
+          "line": 183,
+          "text": "    *   `params`: `TaskQueryParams` (includes `id`, optionally `historyLength`)."
+        },
+        {
+          "line": 184,
+          "text": "    *   `result`: `Task`."
+        },
+        {
+          "line": 185,
+          "text": "*   **`tasks/cancel`:** (Request/Response)"
+        },
+        {
+          "line": 186,
+          "text": "    *   Requests cancellation of a running task."
+        },
+        {
+          "line": 187,
+          "text": "    *   `params`: `TaskIdParams` (includes `id`)."
+        }
+      ]
+    },
+    {
+      "path": "samples/python/agents/adk_skills_agent/test.http",
+      "sha256": "e5e556b6da77ac61d4f21169ab31de65e7445b9ad4fda20f1b342b69a76e9ab2",
+      "bytes": 2420,
+      "hits": [
+        {
+          "line": 122,
+          "categories": [
+            "history"
+          ],
+          "text": "    \"historyLength\": 0"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 119,
+          "text": "  \"method\": \"GetTask\","
+        },
+        {
+          "line": 120,
+          "text": "  \"params\": {"
+        },
+        {
+          "line": 121,
+          "text": "    \"id\":\"e0c139da-0e1d-40a5-811f-9597c562b1b0\","
+        },
+        {
+          "line": 122,
+          "text": "    \"historyLength\": 0"
+        },
+        {
+          "line": 123,
+          "text": "  }"
+        },
+        {
+          "line": 124,
+          "text": "}"
+        },
+        {
+          "line": 125,
+          "text": "###"
+        },
+        {
+          "line": 126,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "path": "samples/python/agents/headless_agent_auth/test_client.py",
+      "sha256": "0e91525886dd787136df1d66b6b7ce755ee5225859e3d567fa24651189025b60",
+      "bytes": 7959,
+      "hits": [
+        {
+          "line": 116,
+          "categories": [
+            "history"
+          ],
+          "text": "                        params=TaskQueryParams(id=task_id, history_length=10),"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 113,
+          "text": "                get_task_response = await client.get_task("
+        },
+        {
+          "line": 114,
+          "text": "                    GetTaskRequest("
+        },
+        {
+          "line": 115,
+          "text": "                        id=str(uuid4()),"
+        },
+        {
+          "line": 116,
+          "text": "                        params=TaskQueryParams(id=task_id, history_length=10),"
+        },
+        {
+          "line": 117,
+          "text": "                    )"
+        },
+        {
+          "line": 118,
+          "text": "                )"
+        },
+        {
+          "line": 119,
+          "text": "                print("
+        },
+        {
+          "line": 120,
+          "text": "                    get_task_response.root.model_dump_json("
+        }
+      ]
+    },
+    {
+      "path": "samples/python/agents/number_guessing_game/agent_Carol.py",
+      "sha256": "d5a35d2a9e2be96d948c369f1523cb23b25bc82b8f3392db8f65880324b441d3",
+      "bytes": 7558,
+      "hits": [
+        {
+          "line": 100,
+          "categories": [
+            "reference"
+          ],
+          "text": "            context.message.reference_task_ids[0]  # type: ignore[index]"
+        },
+        {
+          "line": 101,
+          "categories": [
+            "reference"
+          ],
+          "text": "            if context.message and context.message.reference_task_ids"
+        },
+        {
+          "line": 172,
+          "categories": [
+            "reference"
+          ],
+          "text": "            context.message and context.message.reference_task_ids"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 97,
+          "text": "    ) -> None:"
+        },
+        {
+          "line": 98,
+          "text": "        \"\"\"Handle a follow-up message that references an existing task.\"\"\""
+        },
+        {
+          "line": 99,
+          "text": "        task_id = context.task_id or ("
+        },
+        {
+          "line": 100,
+          "text": "            context.message.reference_task_ids[0]  # type: ignore[index]"
+        },
+        {
+          "line": 101,
+          "text": "            if context.message and context.message.reference_task_ids"
+        },
+        {
+          "line": 102,
+          "text": "            else str(uuid.uuid4())"
+        },
+        {
+          "line": 103,
+          "text": "        )"
+        },
+        {
+          "line": 104,
+          "text": "        updater = TaskUpdater("
+        },
+        {
+          "line": 105,
+          "text": "            event_queue,"
+        },
+        {
+          "line": 169,
+          "text": "        \"\"\"Process an incoming message and dispatch to the appropriate handler.\"\"\""
+        },
+        {
+          "line": 170,
+          "text": "        raw_text = get_message_text(context.message) if context.message else ''"
+        },
+        {
+          "line": 171,
+          "text": "        is_followup = bool("
+        },
+        {
+          "line": 172,
+          "text": "            context.message and context.message.reference_task_ids"
+        },
+        {
+          "line": 173,
+          "text": "        )"
+        },
+        {
+          "line": 174,
+          "text": ""
+        },
+        {
+          "line": 175,
+          "text": "        if is_followup:"
+        },
+        {
+          "line": 176,
+          "text": "            await self._handle_followup(context, raw_text, event_queue)"
+        }
+      ]
+    },
+    {
+      "path": "samples/python/agents/number_guessing_game/utils/protocol_wrappers.py",
+      "sha256": "b2147424eeb816ddec8d1592e418edb5b55ed60178126737a2d915166884b2ef",
+      "bytes": 6819,
+      "hits": [
+        {
+          "line": 39,
+          "categories": [
+            "reference"
+          ],
+          "text": "    reference_task_ids: list[str] | None = None,"
+        },
+        {
+          "line": 48,
+          "categories": [
+            "reference"
+          ],
+          "text": "        reference_task_ids: Optional list of task IDs this message replies to."
+        },
+        {
+          "line": 63,
+          "categories": [
+            "reference"
+          ],
+          "text": "        reference_task_ids=reference_task_ids or [],"
+        },
+        {
+          "line": 93,
+          "categories": [
+            "reference"
+          ],
+          "text": "    reference_task_ids: list[str] | None = None,"
+        },
+        {
+          "line": 106,
+          "categories": [
+            "reference"
+          ],
+          "text": "        reference_task_ids: Optional list of task IDs this message replies to."
+        },
+        {
+          "line": 118,
+          "categories": [
+            "reference"
+          ],
+          "text": "                reference_task_ids=reference_task_ids,"
+        },
+        {
+          "line": 131,
+          "categories": [
+            "reference"
+          ],
+          "text": "                    reference_task_ids=reference_task_ids,"
+        },
+        {
+          "line": 164,
+          "categories": [
+            "reference"
+          ],
+          "text": "        reference_task_ids=[resp_task.id],"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 36,
+          "text": "    text: str,"
+        },
+        {
+          "line": 37,
+          "text": "    *,"
+        },
+        {
+          "line": 38,
+          "text": "    context_id: str | None = None,"
+        },
+        {
+          "line": 39,
+          "text": "    reference_task_ids: list[str] | None = None,"
+        },
+        {
+          "line": 40,
+          "text": "    task_id: str | None = None,"
+        },
+        {
+          "line": 41,
+          "text": "):"
+        },
+        {
+          "line": 42,
+          "text": "    \"\"\"Send *text* to the target agent via the A2A ``message/send`` operation."
+        },
+        {
+          "line": 43,
+          "text": ""
+        },
+        {
+          "line": 45,
+          "text": "        port: TCP port where the target agent is listening."
+        },
+        {
+          "line": 46,
+          "text": "        text: Payload to send as a plain-text message."
+        },
+        {
+          "line": 47,
+          "text": "        context_id: Optional conversation context ID to maintain multi-turn state."
+        },
+        {
+          "line": 48,
+          "text": "        reference_task_ids: Optional list of task IDs this message replies to."
+        },
+        {
+          "line": 49,
+          "text": "        task_id: Explicit task ID to reuse (follow-up scenarios)."
+        },
+        {
+          "line": 50,
+          "text": ""
+        },
+        {
+          "line": 51,
+          "text": "    Returns:"
+        },
+        {
+          "line": 52,
+          "text": "        Union[Task, Message]: The final object produced by the agent—normally a"
+        },
+        {
+          "line": 60,
+          "text": "        role=Role.user,"
+        },
+        {
+          "line": 61,
+          "text": "        message_id=uuid.uuid4().hex,"
+        },
+        {
+          "line": 62,
+          "text": "        context_id=context_id,"
+        },
+        {
+          "line": 63,
+          "text": "        reference_task_ids=reference_task_ids or [],"
+        },
+        {
+          "line": 64,
+          "text": "        parts=[TextPart(text=text)],"
+        },
+        {
+          "line": 65,
+          "text": "        task_id=task_id,"
+        },
+        {
+          "line": 66,
+          "text": "    )"
+        },
+        {
+          "line": 67,
+          "text": ""
+        },
+        {
+          "line": 90,
+          "text": "    text: str,"
+        },
+        {
+          "line": 91,
+          "text": "    *,"
+        },
+        {
+          "line": 92,
+          "text": "    context_id: str | None = None,"
+        },
+        {
+          "line": 93,
+          "text": "    reference_task_ids: list[str] | None = None,"
+        },
+        {
+          "line": 94,
+          "text": "    task_id: str | None = None,"
+        },
+        {
+          "line": 95,
+          "text": "):"
+        },
+        {
+          "line": 96,
+          "text": "    \"\"\"Synchronous helper that delegates to :func:`send_text_async`."
+        },
+        {
+          "line": 97,
+          "text": ""
+        },
+        {
+          "line": 103,
+          "text": "        port: TCP port where the target agent is listening."
+        },
+        {
+          "line": 104,
+          "text": "        text: Payload to send as a plain-text message."
+        },
+        {
+          "line": 105,
+          "text": "        context_id: Optional conversation context ID."
+        },
+        {
+          "line": 106,
+          "text": "        reference_task_ids: Optional list of task IDs this message replies to."
+        },
+        {
+          "line": 107,
+          "text": "        task_id: Explicit task ID to reuse (follow-up scenarios)."
+        },
+        {
+          "line": 108,
+          "text": ""
+        },
+        {
+          "line": 109,
+          "text": "    Returns:"
+        },
+        {
+          "line": 110,
+          "text": "        Union[Task, Message]: See :func:`send_text_async`."
+        },
+        {
+          "line": 115,
+          "text": "                port,"
+        },
+        {
+          "line": 116,
+          "text": "                text,"
+        },
+        {
+          "line": 117,
+          "text": "                context_id=context_id,"
+        },
+        {
+          "line": 118,
+          "text": "                reference_task_ids=reference_task_ids,"
+        },
+        {
+          "line": 119,
+          "text": "                task_id=task_id,"
+        },
+        {
+          "line": 120,
+          "text": "            )"
+        },
+        {
+          "line": 121,
+          "text": "        )"
+        },
+        {
+          "line": 122,
+          "text": "    except RuntimeError:"
+        },
+        {
+          "line": 128,
+          "text": "                    port,"
+        },
+        {
+          "line": 129,
+          "text": "                    text,"
+        },
+        {
+          "line": 130,
+          "text": "                    context_id=context_id,"
+        },
+        {
+          "line": 131,
+          "text": "                    reference_task_ids=reference_task_ids,"
+        },
+        {
+          "line": 132,
+          "text": "                    task_id=task_id,"
+        },
+        {
+          "line": 133,
+          "text": "                )"
+        },
+        {
+          "line": 134,
+          "text": "            )"
+        },
+        {
+          "line": 135,
+          "text": "        raise"
+        },
+        {
+          "line": 161,
+          "text": "        port,"
+        },
+        {
+          "line": 162,
+          "text": "        text,"
+        },
+        {
+          "line": 163,
+          "text": "        context_id=resp_task.context_id,"
+        },
+        {
+          "line": 164,
+          "text": "        reference_task_ids=[resp_task.id],"
+        },
+        {
+          "line": 165,
+          "text": "        task_id=resp_task.id,"
+        },
+        {
+          "line": 166,
+          "text": "    )"
+        },
+        {
+          "line": 167,
+          "text": ""
+        },
+        {
+          "line": 168,
+          "text": ""
+        }
+      ]
+    },
+    {
+      "path": "samples/python/hosts/cli/__main__.py",
+      "sha256": "ec1443b398b0df2715c17db2aef7e82697539d9e38c0721a81b863b31d9cf392",
+      "bytes": 9635,
+      "hits": [
+        {
+          "line": 123,
+          "categories": [
+            "history"
+          ],
+          "text": "                    {'id': task_id, 'historyLength': 10}"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 120,
+          "text": "            if history and continue_loop:"
+        },
+        {
+          "line": 121,
+          "text": "                print('========= history ======== ')"
+        },
+        {
+          "line": 122,
+          "text": "                task_response = await client.get_task("
+        },
+        {
+          "line": 123,
+          "text": "                    {'id': task_id, 'historyLength': 10}"
+        },
+        {
+          "line": 124,
+          "text": "                )"
+        },
+        {
+          "line": 125,
+          "text": "                print("
+        },
+        {
+          "line": 126,
+          "text": "                    task_response.model_dump_json("
+        },
+        {
+          "line": 127,
+          "text": "                        include={'result': {'history': True}}"
+        }
+      ]
+    },
+    {
+      "path": "samples/python/refactor_camel_to_snake.sh",
+      "sha256": "8ba1385e42ca2f18194915c558bcf1943afce1eab243fbaa3cf6088ee0ba373b",
+      "bytes": 4180,
+      "hits": [
+        {
+          "line": 13,
+          "categories": [
+            "reference"
+          ],
+          "text": "    'referenceTaskIds'"
+        },
+        {
+          "line": 22,
+          "categories": [
+            "history"
+          ],
+          "text": "    'historyLength'"
+        }
+      ],
+      "excerpts": [
+        {
+          "line": 10,
+          "text": "    'messageId'"
+        },
+        {
+          "line": 11,
+          "text": "    'taskId'"
+        },
+        {
+          "line": 12,
+          "text": "    'contextId'"
+        },
+        {
+          "line": 13,
+          "text": "    'referenceTaskIds'"
+        },
+        {
+          "line": 14,
+          "text": "    'supportsAuthenticatedExtendedCard'"
+        },
+        {
+          "line": 15,
+          "text": "    'inputModes'"
+        },
+        {
+          "line": 16,
+          "text": "    'outputModes'"
+        },
+        {
+          "line": 17,
+          "text": "    'authorizationUrl'"
+        },
+        {
+          "line": 19,
+          "text": "    'tokenUrl'"
+        },
+        {
+          "line": 20,
+          "text": "    'bearerFormat'"
+        },
+        {
+          "line": 21,
+          "text": "    'openIdConnectUrl'"
+        },
+        {
+          "line": 22,
+          "text": "    'historyLength'"
+        },
+        {
+          "line": 23,
+          "text": "    'pushNotifications'"
+        },
+        {
+          "line": 24,
+          "text": "    'stateTransitionHistory'"
+        },
+        {
+          "line": 25,
+          "text": "    'acceptedOutputModes'"
+        },
+        {
+          "line": 26,
+          "text": "    'pushNotificationConfig'"
+        }
+      ]
+    }
+  ],
+  "limits": "Lexical hits are source evidence; not native wire successes, conformance, model access or application output correctness",
+  "completed_at_utc": "2026-10-23T20:48:44.010Z"
+}

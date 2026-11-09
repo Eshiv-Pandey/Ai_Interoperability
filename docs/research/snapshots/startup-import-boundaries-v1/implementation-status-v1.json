@@ -1,0 +1,500 @@
+{
+  "schema_version": "admission-benchmark-implementation-status/1",
+  "as_of": "2026-10-29",
+  "supervisor_target": "2026-10-31",
+  "required_this_week": [
+    "new admission algorithm",
+    "implemented benchmark",
+    "running demonstration"
+  ],
+  "paper_required_this_week": false,
+  "algorithm_requirement_retained": true,
+  "artifact_only_route_selected": false,
+  "target_project_completion_percent": 70,
+  "verified_implementation_percent": null,
+  "percentage_reason": "A supervisor-agreed implementation denominator and complete acceptance evidence are not yet available; no 70 percent claim is made.",
+  "extension_granted": false,
+  "research_gate_progress_percent": 5,
+  "research_gate_meaning": "Historical full research-and-paper deliverable rubric; separate from implementation completeness.",
+  "components": [
+    {
+      "id": "runtime_contract",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../src/interoperability/manifest.py",
+        "finite-model-v1.md",
+        "../../runs/admission-benchmark-software/v3/result.json"
+      ],
+      "limit": "Explicit finite model; source-to-model fidelity remains separate."
+    },
+    {
+      "id": "baseline_and_independent_checker",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../src/interoperability/baseline.py",
+        "../../src/interoperability/oracle.py",
+        "../../src/interoperability/refinement_oracle.py",
+        "../../runs/admission-benchmark-software/v3/result.json",
+        "../../src/interoperability/direct_goal_pruned_v2.py",
+        "direct-goal-pruning-fairness-v2.md",
+        "../../runs/direct-comparison-software/windows-v1/result.json"
+      ],
+      "limit": "Versioned goal-pruned direct comparator and independent negative-closure checker are implemented. Legacy language/topology primitives are shared and disclosed; novelty remains open."
+    },
+    {
+      "id": "candidate_mechanism",
+      "status": "implemented_adaptation_novelty_open",
+      "evidence": [
+        "admission-refinement-v1.md",
+        "../../src/interoperability/refinement.py",
+        "shared-lifting-design-v2.md",
+        "../../src/interoperability/refinement_shared_lift_v2.py"
+      ],
+      "limit": "Original refinement is preserved. Invocation-local completed-prefix and whole-frame relation reuse is implemented and focused-software verified; no established novelty or measured advantage."
+    },
+    {
+      "id": "candidate_code",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../src/interoperability/refinement.py",
+        "../../src/interoperability/admission_cli.py",
+        "../../runs/admission-demo/review-1/supported.json",
+        "../../src/interoperability/refinement_shared_lift_v2.py",
+        "../../runs/refinement-shared-lift-software/v2/validation-1/result.json",
+        "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0003-shared_lift/reply.json",
+        "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0001-shared_lift/reply.json",
+        "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0006-shared_lift/reply.json"
+      ],
+      "limit": "Model-relative candidate and public-state controller implemented; fresh admitted application completion remains unverified."
+    },
+    {
+      "id": "candidate_independent_validation",
+      "status": "implemented_and_development_verified",
+      "evidence": [
+        "../../tests/test_refinement.py",
+        "../../src/interoperability/refinement_oracle.py",
+        "../../runs/admission-benchmark-software/v3/result.json",
+        "../../tests/test_refinement_shared_lift_v2.py",
+        "../../runs/refinement-shared-lift-software/v2/validation-1/result.json",
+        "../../runs/refinement-shared-lift-software/v2/source-review-v1.json"
+      ],
+      "limit": "Original 32 refinement tests remain within their historical 69-test receipt. Shared lifting separately passed 23 captured focused tests and source review; no human acceptance or source-fidelity proof."
+    },
+    {
+      "id": "comparison_benchmark",
+      "status": "prior_v2_and_shared_lifting_engineering_pilot_executed",
+      "evidence": [
+        "../../src/interoperability/benchmark.py",
+        "../../tests/test_benchmark.py",
+        "../../runs/admission-demo/review-1/benchmark/summary.json",
+        "../../src/interoperability/direct_comparison_v2.py",
+        "../../runs/refinement-scaling/v1/result.json",
+        "../../runs/refinement-scaling/v2/plan.json",
+        "../../runs/refinement-scaling/v2/result.json",
+        "refinement-scaling-results-v2.md",
+        "../../src/interoperability/shared_lifting_comparison_v3.py",
+        "../../src/interoperability/benchmark_resources_v1.py",
+        "../../runs/shared-lifting-comparison-software/validation-1/result.json",
+        "../../runs/shared-lifting-comparison-software/source-review-v1.json",
+        "shared-lifting-comparison-v3.md",
+        "../../runs/shared-lifting-pilot/v1/result.json",
+        "shared-lifting-pilot-results-v1.md",
+        "../../runs/shared-lifting-pilot/independent-result-review-v1.json"
+      ],
+      "limit": "Completed v2 covers three original methods on 66 development variants at four budgets. Shared-lifting pilot covers 12 authored cases, four budgets and four arms; all bundles verified, independent result audit passed. No certified-coverage advantage, speed claim or qualified empirical study."
+    },
+    {
+      "id": "development_inputs",
+      "status": "implemented_development_only",
+      "evidence": [
+        "../../examples/refinement-development/manifest.json",
+        "../../examples/benchmark-development/recipe-v1.json",
+        "../../examples/benchmark-development/suite.json",
+        "../../scripts/generate_refinement_scaling_v1.py",
+        "../../runs/refinement-scaling/v2/inputs/manifest.json"
+      ],
+      "limit": "Eleven original authored recipes, 66 related scaling variants and four separate finite smoke examples. No held-out or second-domain qualification."
+    },
+    {
+      "id": "protocol_execution_harness",
+      "status": "implemented_bounded_controls",
+      "evidence": [
+        "agentops-bridge-results-v10.md",
+        "agentops-bridge-diagnostic-results-v12.md",
+        "pending-admission-live-results-v1.md",
+        "pending-admission-live-results-v2.md",
+        "pending-admission-live-results-v3.md"
+      ],
+      "limit": "Latest v4 native prerequisite failed readiness before client launch. Sixteen startup samples retained; forced SIGTERM/-15 with reaped child and empty group. B7 skipped; no fresh admitted application result. Import phase observed, root cause unproved."
+    },
+    {
+      "id": "candidate_benchmark_demo",
+      "status": "implemented_and_replay_verified",
+      "evidence": [
+        "../../scripts/run_admission_demo.py",
+        "implementation-demo-v1.md",
+        "../../runs/admission-demo/review-1/result.json",
+        "../../runs/admission-demo/review-1/replay/summary.json",
+        "../../runs/admission-demo/supervisor-1/result.json",
+        "../../runs/admission-demo/supervisor-1/replay/summary.json",
+        "../../runs/shared-lifting-pilot/v1/result.json",
+        "../../runs/shared-lifting-pilot/independent-result-review-v1.json"
+      ],
+      "limit": "Original-candidate ten-step supervisor rehearsal and captured replay passed. Retained 12-case shared-lifting engineering pilot is completed and bundle-verified; independent result audit passed. Optional shared-supervisor-1 demonstration remains unused; fresh candidate application execution remains unverified."
+    },
+    {
+      "id": "candidate_live_route_integration",
+      "status": "implemented_software_verified_live_control_failed",
+      "evidence": [
+        "../../src/interoperability/pending_admission.py",
+        "../../scripts/agentops_admission_controller_v1.mjs",
+        "../../scripts/agentops_admission_client_v1.mjs",
+        "pending-admission-source-map-v1.md",
+        "pending-admission-results-v1.md",
+        "../../runs/pending-admission-software/v1/result.json",
+        "../../runs/pending-admission-development/v2/result.json",
+        "pending-admission-live-results-v1.md",
+        "../../scripts/check_agentops_admitted_client_v1.py",
+        "../../scripts/agentops_admission_control_v1.py",
+        "pending-admission-live-results-v2.md",
+        "../../scripts/agentops_admission_control_v2.py",
+        "../../runs/agentops-admission-execution/v3/independent-review/result.json",
+        "pending-admission-live-results-v3.md"
+      ],
+      "limit": "Latest v4 native prerequisite failed readiness before client launch. Sixteen startup samples retained; forced SIGTERM/-15 with reaped child and empty group. B7 skipped; no fresh admitted application result. Import phase observed, root cause unproved."
+    },
+    {
+      "id": "supervisor_acceptance",
+      "status": "pending",
+      "evidence": [],
+      "limit": "No reviewer approval, project percentage or extension inferred."
+    }
+  ],
+  "last_demonstration": "../../runs/admission-demo/supervisor-1/result.json",
+  "latest_results": "shared-lifting-pilot-results-v1.md",
+  "verification": {
+    "tests_passed": 69,
+    "test_receipt": "../../runs/admission-benchmark-software/v3/result.json",
+    "recipe_cases": 11,
+    "candidate_reference_agreements": 11,
+    "candidate_supported": 4,
+    "candidate_unsupported": 3,
+    "candidate_unknown": 4,
+    "candidate_conclusive_certificates_valid": 7,
+    "captured_replay_passed": true,
+    "finite_smoke_cases": 4,
+    "live_candidate_application_runs": 0,
+    "latest_native_control_runs": 1,
+    "latest_native_strict_successes": 0,
+    "latest_candidate_cases_skipped": 1,
+    "supervisor_rehearsal_steps_passed": 10,
+    "supervisor_rehearsal_inputs_unchanged": true,
+    "supervisor_rehearsal_independent_audit": "../../runs/admission-demo/supervisor-1/independent-audit.json",
+    "comparison_v2_focused_tests_passed": 21,
+    "comparison_v2_test_receipt": "../../runs/direct-comparison-software/windows-v1/result.json",
+    "comparison_v2_test_receipt_provenance": "Transcribed earlier tool outputs; not raw test logs or a fresh rerun.",
+    "test_count_scope": "tests_passed and test_receipt refer to the original 69-test admission demo suite; later Linux and comparison suites are separately scoped."
+  },
+  "remaining_critical_work": [
+    "Rehearse the single eight-minute review using retained pilot evidence, including adverse coverage/work results; keep caching experimental and defaults unchanged",
+    "Agree a prospective resource plan before further live work; stopping the unrelated cluster requires the pending user decision",
+    "Investigate readiness under the fixed resource plan and the earlier post-asyncio stall if reached",
+    "Execute a separately allocated admitted control only after its native prerequisite qualifies; verify actual task/effect/process outcomes",
+    "Establish and review distinct algorithm contribution against strong comparators",
+    "Qualify substantive second domain and independent evaluation inputs",
+    "Obtain actual supervisor assessment of completion and any extension"
+  ],
+  "latest_controller_results": "pending-admission-results-v1.md",
+  "controller_verification": {
+    "python_tests_passed": 57,
+    "python_adapter_tests": 25,
+    "node_tests_passed": 26,
+    "software_receipt": "../../runs/pending-admission-software/v1/result.json",
+    "retrospective_receipt": "../../runs/pending-admission-development/v2/result.json",
+    "historical_request_equivalence": true,
+    "source_mapped_files": 30,
+    "candidate_live_application_runs": 0,
+    "latest_focused_python_tests_passed": 188,
+    "latest_focused_node_tests_passed": 26,
+    "latest_software_receipt": "../../runs/agentops-admission-execution/v4/export/workspace/runs/agentops-admission-live-v1/phase-software/result.json",
+    "latest_group_status": "attempts_recorded",
+    "latest_native_status": "failed",
+    "latest_candidate_status": "skipped",
+    "latest_independent_export_review": "../../runs/agentops-admission-execution/v4/independent-review/result.json",
+    "latest_exported_workspace_files_verified": 850,
+    "latest_independent_export_review_status": "verified_recorded_outcome",
+    "latest_staged_inputs_verified": 726,
+    "latest_native_failure": "Fixture readiness deadline; sixteen samples show dependency imports/module initialization",
+    "latest_child_reaped_before_group_inspection": true,
+    "latest_process_group_empty": true,
+    "latest_cleanup_errors": 0,
+    "historical_v3_host_configuration_restored": true,
+    "historical_v3_host_restoration_receipt": "../../runs/agentops-admission-execution/v3/host-resource-adjustment/restoration.json",
+    "latest_host_configuration_changed": false
+  },
+  "latest_live_results": "pending-admission-live-results-v3.md",
+  "weekly_plan": "three-day-implementation-plan-v2.md",
+  "comparison_v2_verification": {
+    "status": "passed",
+    "receipt": "../../runs/refinement-scaling/v2/result.json",
+    "case_count": 66,
+    "budgets": [
+      32,
+      256,
+      4096,
+      100000
+    ],
+    "methods": [
+      "baseline",
+      "direct_pruned",
+      "candidate"
+    ],
+    "worker_invocations": 1591,
+    "accepted_certificate_checks": 535,
+    "rejected_certificate_checks": 0,
+    "worker_errors": 0,
+    "frozen_inputs_package_and_plan_unchanged": true,
+    "largest_budget_outcomes_per_method": {
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12
+    },
+    "candidate_certified_by_budget": {
+      "32": 24,
+      "256": 50,
+      "4096": 53,
+      "100000": 54
+    },
+    "direct_pruned_certified_by_budget": {
+      "32": 20,
+      "256": 54,
+      "4096": 54,
+      "100000": 54
+    },
+    "independent_audit_status": "verified",
+    "claim_limit": "Related authored development variants; no general superiority, novelty, application ground truth or domain qualification.",
+    "independent_audit": "../../runs/refinement-scaling/v2/independent-review/result.json",
+    "independent_audit_files": 8451,
+    "legacy_v1_outcome_differences": 0
+  },
+  "startup_diagnostics_verification": {
+    "status": "executed_valid_partial_readiness_missing",
+    "tests_passed": 11,
+    "receipt": "../../runs/agentops-startup-software/windows-v1/result.json",
+    "source": "../../scripts/agentops_startup_diagnostics_v1.py",
+    "wrapper": "../../scripts/serve_agentops_bridge_diagnostic_v4.py",
+    "application_launches": 1,
+    "cause_established": false,
+    "next_dependency": "Prospective resource decision and fresh plan before a new allocation; v4 is consumed and must not be rerun.",
+    "scope_note": "agentops-startup-diagnostics-v1.md",
+    "independent_review": "Source review passed; independent v4 export audit verified the recorded readiness failure. No candidate live application success.",
+    "completed_startup_samples": 16,
+    "live_result": "pending-admission-live-results-v3.md",
+    "sample_analysis": "../../runs/agentops-admission-execution/v4/startup-analysis-v1.json",
+    "candidate_application_launches": 0,
+    "host_configuration_changed": false
+  },
+  "startup_pipeline_verification": {
+    "status": "software_verified_live_prerequisite_failed",
+    "prospective_plan": "pending-admission-live-plan-v3.md",
+    "initial_receipt": "../../runs/agentops-startup-pipeline-software/windows-v1/result.json",
+    "initial_tests_passed": 62,
+    "initial_windows_symlink_skips": 3,
+    "final_changed_tests_passed": 20,
+    "final_receipt": "../../runs/agentops-startup-pipeline-software/windows-v2/result.json",
+    "outer_recorder": "../../runs/agentops-admission-execution/tools-v3/record_attempt.py",
+    "outer_recorder_sha256": "43a1850d2e8de18f7e61b4b14f056b58bcb1546c39d84d9fcddd224217bc2720",
+    "source_review": "Independent AI review; no unresolved blocker, not human approval.",
+    "new_allocation_staged": true,
+    "new_application_launches": 1,
+    "linux_python_tests_passed": 188,
+    "linux_python_tests_skipped": 0,
+    "linux_node_tests_passed": 26,
+    "linux_receipt": "../../runs/agentops-admission-execution/v4/export/workspace/runs/agentops-admission-live-v1/phase-software/result.json",
+    "independent_export_review": "../../runs/agentops-admission-execution/v4/independent-review/result.json"
+  },
+  "latest_prelaunch_resource_probe": {
+    "receipt": "../../runs/agentops-admission-execution/v4-resource-probe/result.json",
+    "status": "failed_before_any_application",
+    "command": "wsl.exe -d Ubuntu -- /bin/true",
+    "error": "Wsl/Service/CreateInstance/CreateVm/HCS/0x800705aa",
+    "host_configuration_changed": false,
+    "application_launches": 0,
+    "followup_receipt": "../../runs/agentops-admission-execution/v4-resource-probe-2/result.json",
+    "followup_status": "passed_then_v4_executed"
+  },
+  "shared_lifting_v2": {
+    "status": "implemented_focused_verified_engineering_pilot_completed",
+    "design": "shared-lifting-design-v2.md",
+    "source": "../../src/interoperability/refinement_shared_lift_v2.py",
+    "source_sha256": "927538f7ddcb21120913c6c4257754b65a45703db384eec8cd6a28ba9e9b280b",
+    "tests": "../../tests/test_refinement_shared_lift_v2.py",
+    "tests_passed": 23,
+    "test_receipt": "../../runs/refinement-shared-lift-software/v2/validation-1/result.json",
+    "source_review": "../../runs/refinement-shared-lift-software/v2/source-review-v1.json",
+    "source_review_status": "no_blocking_source_findings",
+    "claim_limit": "Invocation-local memoization engineering with completed 12-case pilot. Relation reuse increases charged work on the stress case; no certified-coverage advantage, speed claim or established novelty. Experimental; defaults unchanged.",
+    "engineering_pilot_executed": true,
+    "new_66_case_matrix_executed": false,
+    "engineering_pilot_receipt": "../../runs/shared-lifting-pilot/v1/result.json",
+    "experimental": true,
+    "defaults_changed": false
+  },
+  "next_live_outputs": {
+    "stage": "../../runs/agentops-admission-execution/v5",
+    "parent_invocation": "../../runs/agentops-admission-execution/v5-invocation",
+    "both_unused": true,
+    "prerequisite": "Prospective resource decision and fresh plan; v4 is consumed and cannot be rerun."
+  },
+  "shared_lifting_comparison_v3": {
+    "status": "implemented_focused_verified_engineering_pilot_completed",
+    "guide": "shared-lifting-comparison-v3.md",
+    "source": "../../src/interoperability/shared_lifting_comparison_v3.py",
+    "source_sha256": "d5175683cedecd7f901136086b3294f972d9a19524e4bcd4e416b9120542e100",
+    "resource_source": "../../src/interoperability/benchmark_resources_v1.py",
+    "resource_source_sha256": "b58eaec738a7cd69a54dbd105465c1544390e3de51a3737a0eeea1ee6575fdf9",
+    "test_sources": [
+      "../../tests/test_benchmark_resources_v1.py",
+      "../../tests/test_shared_lifting_comparison_v3.py"
+    ],
+    "resource_tests_passed": 3,
+    "comparison_tests_passed": 5,
+    "test_receipt": "../../runs/shared-lifting-comparison-software/validation-1/result.json",
+    "captured_two_profile_run_and_replay": true,
+    "source_review": "../../runs/shared-lifting-comparison-software/source-review-v1.json",
+    "source_review_status": "no_blocking_source_findings",
+    "live_application_executed": false,
+    "measurement_scope": "Overlapping timings are not additive. Process peaks include interpreter/import/input overhead and are maximized across workers, not summed or called solver-only memory.",
+    "engineering_pilot_executed": true,
+    "new_66_case_matrix_executed": false,
+    "engineering_pilot_receipt": "../../runs/shared-lifting-pilot/v1/result.json"
+  },
+  "shared_lifting_engineering_pilot": {
+    "status": "completed_independently_audited",
+    "case_count": 12,
+    "inputs": "All eleven original recipe examples plus motivating scale-0031",
+    "budgets": [
+      32,
+      256,
+      4096,
+      100000
+    ],
+    "methods": [
+      "baseline",
+      "direct_pruned",
+      "candidate",
+      "shared_lift"
+    ],
+    "executed": true,
+    "claim_limit": "Selected authored 12-case engineering pilot, not a new 66-case matrix or held-out study. No certified-coverage advantage or speed claim. Caching stays experimental; defaults unchanged.",
+    "engineering_pilot_executed": true,
+    "new_66_case_matrix_executed": false,
+    "receipt": "../../runs/shared-lifting-pilot/v1/result.json",
+    "results": "shared-lifting-pilot-results-v1.md",
+    "finished_at": "2026-10-29T00:30:03.662022+00:00",
+    "commands_returned_zero": 8,
+    "all_four_bundles_verified": true,
+    "guards_unchanged": true,
+    "worker_invocations": 349,
+    "accepted_certificate_checks": 109,
+    "rejected_certificate_checks": 0,
+    "algorithm_worker_errors": 0,
+    "certificate_check_errors": 0,
+    "certified_counts_over_12_by_budget": {
+      "32": {
+        "baseline": 6,
+        "direct_pruned": 6,
+        "candidate": 6,
+        "shared_lift": 0
+      },
+      "256": {
+        "baseline": 8,
+        "direct_pruned": 8,
+        "candidate": 7,
+        "shared_lift": 6
+      },
+      "4096": {
+        "baseline": 8,
+        "direct_pruned": 8,
+        "candidate": 7,
+        "shared_lift": 7
+      },
+      "100000": {
+        "baseline": 8,
+        "direct_pruned": 8,
+        "candidate": 8,
+        "shared_lift": 8
+      }
+    },
+    "largest_budget_outcomes_per_method": {
+      "supported": 4,
+      "unsupported": 4,
+      "unknown": 4
+    },
+    "independent_result_audit_status": "passed",
+    "stress_case": {
+      "id": "scale-0031",
+      "candidate": {
+        "relation_checks": 1024,
+        "work_units": 5566,
+        "abstract_paths": 256
+      },
+      "shared_lift": {
+        "relation_checks": 16,
+        "work_units": 14773,
+        "abstract_paths": 256
+      },
+      "direct_pruned": {
+        "argument_assignments": 16,
+        "work_units": 134
+      }
+    },
+    "independent_result_audit": "../../runs/shared-lifting-pilot/independent-result-review-v1.json",
+    "independent_result_audit_sha256": "fbf07438a0f58aa921a309f7a27705e45c76dc73b6f3d97c8608b71e634e69b7",
+    "independent_audit_manifest_files": 1897,
+    "independent_audit_allocation_files_unchanged": 1989,
+    "independent_audit_evaluation_workers": 240,
+    "independent_audit_certificate_workers": 109,
+    "independent_audit_memory_observations": 349,
+    "independent_audit_missing_memory_observations": 0,
+    "independent_audit_human_approval_established": false,
+    "review_examples": [
+      {
+        "profile_id": "correlated-prefix-refinement",
+        "job_input": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0003-shared_lift/input.json",
+        "reply": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0003-shared_lift/reply.json",
+        "decision": "supported",
+        "certificate_kind": "recipe-path",
+        "certificate_reply": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0003-shared_lift-certificate/reply.json",
+        "certificate_accepted": true
+      },
+      {
+        "profile_id": "fixed-text-shape-obstruction",
+        "job_input": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0001-shared_lift/input.json",
+        "reply": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0001-shared_lift/reply.json",
+        "decision": "unsupported",
+        "certificate_kind": "refinement-exhaustion",
+        "certificate_reply": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0001-shared_lift-certificate/reply.json",
+        "certificate_accepted": true
+      },
+      {
+        "profile_id": "opaque-serialization",
+        "job_input": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0006-shared_lift/input.json",
+        "reply": "../../runs/shared-lifting-pilot/v1/budget-100000/jobs/case-0006-shared_lift/reply.json",
+        "decision": "unknown",
+        "reason": "unresolved_relation_or_recipe",
+        "certificate_kind": null
+      }
+    ]
+  },
+  "next_shared_demonstration": {
+    "output": "../../runs/admission-demo/shared-supervisor-1",
+    "unused_at_document_update": true,
+    "executed": false,
+    "entrypoint": "interoperability.shared_lifting_comparison_v3",
+    "source_package": "../../src",
+    "case_count": 11,
+    "guide": "shared-lifting-comparison-v3.md"
+  },
+  "comparison_v2_results": "refinement-scaling-results-v2.md"
+}
