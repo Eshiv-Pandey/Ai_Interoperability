@@ -20,7 +20,7 @@ complete standalone archive of every frozen native execution. Some links and
 capture manifests refer to files retained only in the local workspace. Preserve
 those originals and their consumed output allocations.
 
-Research implementation is waiting for the user's review. The current target
-is concrete, verified research results within two days of continuation, followed
-by three days of further validation for the research paper. That target is not
-an achieved result or a change to the full research rubric.
+Research implementation is waiting for the user's review. The latest requested
+schedule is two days for concrete, verified research results, followed by three
+days of further validation for the research paper. That target is not an
+achieved result or a change to the full research rubric.
