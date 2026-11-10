@@ -1,3 +1,42 @@
+# Active research execution: 11 November 2026, verified native matrix and common-cost experiment
+
+Whole-project work remains approximately **75%** pending reassessment from completed
+reviewed work under unchanged weights and original scope.
+
+V13 run [42918421487](https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/42918421487)
+completed at b96517f89be8ccc6755f78d2eb80b6e1c300f4e6. Its exact 265,648,891-byte archive
+is retained at `runs/ap2-native-bridge-development/v13/retained-42918421487-4`,
+with API and independent PowerShell SHA-256
+`07579b8221502f433adaf8aba3f96aee07501ba7914dfc443d417843efe0e988`.
+Eight streaming public archive parts reconstruct the original bytes.
+
+The [actual analysis](ap2-native-bridge-development-analysis-v13.md) and separate
+raw peer reconstruction agree on all 104 verified captures: 65 native policy
+cells and 39 repeated legal bridge initiation cells. Native cells contain 36
+purchase observations, 31 error-free owned-cell purchases and zero changed
+purchase/error-free indicators across the 65 preserved ASGI/TCP pairs. All 39
+bridge cells retain actual MCP initiation errors and unrealized later continuations.
+These are development observations across 13 authored cases. Original launcher,
+provider, whole-task and human-gold qualification remain open.
+
+The separate [common-cost protocol](common-cost-benchmark-v1.md) is frozen at
+`d058c2a05e278b71ad5969e49ecdd344576cf166`. Root dispatched
+[42927208534](https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/42927208534)
+once: five unchanged methods, the same 66 authored development profiles and five
+balanced repeats, totaling 1,650 serial capped allocations. It measures full
+child CPU, peak RSS and launch-to-reap wall time, including independent checking.
+Retain every timeout, failure, unknown and interrupted allocation. Hosted Linux
+controls, execution, archive retention and independent raw cost review must finish
+before any cost or completion claim. Do not dispatch a duplicate.
+
+Root alone handles Git, dispatch and retention. The cost owner prepares an
+artifact-only auditor, a separate peer reviews raw native/cost records, and the
+manuscript agent integrates completed evidence. The original 96-task/three-path
+and additional 96-crossing study, human gold, untouched holdout, contribution
+assessment and accountable final scientific review remain unresolved.
+
+The entries below are historical.
+
 # Active research execution: 11 November 2026, V13 native matrix
 
 Whole-project work remains approximately **75%**, under the unchanged
