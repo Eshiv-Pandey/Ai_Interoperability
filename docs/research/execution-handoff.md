@@ -1,3 +1,24 @@
+# Latest verified research handoff: 11 November 2026, native bootstrap continuation
+
+Whole-project work completion remains approximately **75%**, rounded from73.5
+under unchanged weights and scope, with about10percentage points uncertainty.
+[Estimate v7](whole-project-progress-estimate-v7.json) adds reproducible failure
+evidence without crediting unexecuted native experiments. The80%target remains
+open.
+
+The [actual V8 smoke failure](ap2-v8-actual-smoke-failure-peer-audit-v1.md) retains
+code3and a guard PermissionError before application observation. All104matrix
+cells remained unexecuted. The [failure appendix](../../paper/ap2-v8-native-smoke-failure-appendix-v1.md)
+passed14independent checks; a [fresh hosted checkout](ap2-v8-failure-fresh-checkout-results-v1.md)
+restored56567files from both original archives and reproduced all14checks. No
+native performance, original task success or provider credit is added.
+
+Continue the separate V9 public-certificate guard repair, bounded actual denial
+diagnostics, focused independent guard review, fresh smokes and native matrix.
+Preserve V8 allocations, missing outcomes and every failed replay. V7 remains
+the latest completed manuscript; V8 native matrix prose is still prepared.
+The entries below are historical.
+
 # Latest verified research handoff: 11 November 2026, 01:30 IST update
 
 Whole-project work completion is approximately **75%**, rounded from73.5 under

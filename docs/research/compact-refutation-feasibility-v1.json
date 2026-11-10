@@ -1,0 +1,127 @@
+{
+  "concrete_closure_DAG_reduces_to_existing_product_comparator": true,
+  "concrete_replay_may_remain_exponential": true,
+  "counterexample": {
+    "bad_join_frame": {
+      "call": "call-A",
+      "target": "B"
+    },
+    "bad_prefix": [
+      "a_bad_binding",
+      "finish"
+    ],
+    "failure": "Bad-path empty finish cached and reused on good-path frame falsely certifies unsupported",
+    "good_join_frame": {
+      "call": "call-B",
+      "target": "B"
+    },
+    "good_witness": [
+      "b_good_binding",
+      "finish"
+    ],
+    "horizon": 2,
+    "source": "tests/test_refinement.py::correlated_profile",
+    "unsafe_key": [
+      "graph_state",
+      "edge_id"
+    ]
+  },
+  "coverage_checker_reduction": "Bounded language inclusion via abstract graph/proof DAG product after every represented refutation is validated",
+  "document": {
+    "bytes": 10532,
+    "path": "docs/research/compact-refutation-feasibility-v1.md",
+    "sha256": "8f85c69c10a573591ffb3ed9610321300b2cf23a878541402fe973711ad3b5c8"
+  },
+  "empirical_advantage_established": false,
+  "expansion_can_still_be_exponential": true,
+  "human_scientific_review": false,
+  "inputs": [
+    {
+      "bytes": 15518,
+      "path": "docs/research/method-contribution-assessment-v2.md",
+      "sha256": "0782c390c0bdeda7a53f138f1df6fda5f8e62549bddfc5969d96c81e2b30451d"
+    },
+    {
+      "bytes": 15366,
+      "path": "src/interoperability/refinement_shared_lift_v2.py",
+      "sha256": "927538f7ddcb21120913c6c4257754b65a45703db384eec8cd6a28ba9e9b280b"
+    },
+    {
+      "bytes": 25050,
+      "path": "src/interoperability/refinement_oracle.py",
+      "sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e"
+    },
+    {
+      "bytes": 16255,
+      "path": "src/interoperability/oracle.py",
+      "sha256": "da29829a077da1ef44c2ffc0a6d5dbcd8e4c579b308b49085ea1af077e601b7f"
+    },
+    {
+      "bytes": 18566,
+      "path": "src/interoperability/refinement.py",
+      "sha256": "11175edcb99dbec231390ae767ba97dce2e919810844ed544a1ddd109f4b5b3b"
+    },
+    {
+      "bytes": 10620,
+      "path": "src/interoperability/direct_goal_pruned_v2.py",
+      "sha256": "1fba2d0bd747f965056279bbda40b9c28f50f1200b7e9a6869f343ab6f64de51"
+    },
+    {
+      "bytes": 25805,
+      "path": "tests/test_refinement.py",
+      "sha256": "114762ad6de4b9336f2c996fbf87e7366942485fb08e09e7b95c97790a0b0f08"
+    },
+    {
+      "bytes": 21286,
+      "path": "tests/test_refinement_shared_lift_v2.py",
+      "sha256": "d0378383be48abcee894feae27cbe307acd797012cf2cb77102c43b855abd9e8"
+    },
+    {
+      "bytes": 27091,
+      "path": "scripts/run_shared_lifting_scaling_v3.py",
+      "sha256": "b51acb7094d390446c0210103f8b64e400f750e144e4378e9a74c3a909c080c8"
+    }
+  ],
+  "lossless_expansion_possible": true,
+  "negative_obligations": [
+    "Every represented prefix has empty independently recomputed correlated frontier and no sticky unknown",
+    "All bounded invariant-permitted possible goal paths have a validated refuted prefix",
+    "Fresh profile-bound header, complete evidence/relation coverage, conservative global contract uncertainty",
+    "Concrete replay cache only after full enumeration; full typed frontier/state/horizon context; no implicit history equivalence"
+  ],
+  "new_implementation_or_experiment_results": false,
+  "new_solver_checker_application_provider_or_network_calls": 0,
+  "novelty_established": false,
+  "project_completion_credit_claimed": false,
+  "proposed_certificate_kind": "refutation-cover-dag/1",
+  "proposed_schema": {
+    "accepted_word_length": "1 through bound profile horizon",
+    "additional_fields": [
+      "root",
+      "nodes"
+    ],
+    "arc_fields": [
+      "edge",
+      "next"
+    ],
+    "header_fields": [
+      "kind",
+      "profile_sha256",
+      "checked_at",
+      "horizon",
+      "valid_until"
+    ],
+    "node_fields": [
+      "terminal",
+      "arcs"
+    ],
+    "reference_rule": "next > current_index; all nodes reachable; unique sorted declared edge arcs; no terminal root or terminal outgoing arcs",
+    "root": 0
+  },
+  "reviewed_utc": "2026-11-10T21:01:53.079814+00:00",
+  "reviewer": "Codex AI /root/compact_refutation_feasibility",
+  "schema_version": "compact-refutation-static-feasibility/1",
+  "status": "engineering_design_feasible_original_method_contribution_unestablished",
+  "strongest_existing_comparator": "src/interoperability/direct_goal_pruned_v2.py",
+  "unchanged_checker_accepts_new_kind": false
+}
