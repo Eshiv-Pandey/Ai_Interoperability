@@ -38,6 +38,15 @@ nulls; the full original model dump is retained separately. Original task values
 tool objects, state and public observer serializers remain unchanged. The failed
 raw/public capture and its source snapshots are preserved.
 
+Hosted run 42841728808 reached original checkout, both buyer mandate signers,
+credential-provider signature/transaction association and the public merchant OTP
+challenge. It stopped before continuation because the owned planner expected the
+constructed label input_required while A2A 0.3.24 serializes input-required.
+The next successor adapts only the owned state's comparison labels to the actual
+SDK enum value. Raw tasks/statuses/IDs, original functions and public observers
+remain unchanged. Continuation uses the actual merchant task/context and the
+public demo challenge response. A repeated or failed continuation is retained.
+
 The runner chooses only returned carts and payment aliases, approves the actual
 checkout summary, and supplies 123 only when the original public merchant task
 requests a challenge. It resumes that merchant task and preserves an actual

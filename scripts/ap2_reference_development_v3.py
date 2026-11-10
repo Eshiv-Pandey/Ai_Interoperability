@@ -142,6 +142,37 @@ def recursive_public_json(value, *, model_base=None, explicitly_set_model=None):
     return project(value, 0)
 
 
+def make_wire_reference_plan(planner, input_required):
+    """Adapt the owned comparison to SDK wire labels without rewriting Tasks."""
+    need(type(input_required) is str and input_required == 'input-required', 'unsupported_task_state_wire_value')
+
+    class WireReferencePlan(planner.ReferencePlan):
+        def observe(self, phase, value):
+            if phase not in {'payment_start', 'payment_resume'}:
+                return super().observe(phase, value)
+            original_task = planner._task
+
+            def wire_task(task, context=None, states=('completed',)):
+                allowed = tuple(input_required if state == 'input_required' else state for state in states)
+                return original_task(task, context, allowed)
+
+            # observe is synchronous and pure. Restore the owned helper slot even
+            # when its context/task/phase guard refuses the actual public value.
+            planner._task = wire_task
+            try:
+                result = super().observe(phase, value)
+            finally:
+                planner._task = original_task
+            if phase == 'payment_resume':
+                target = 'completed' if self.state['challenge_response'] == '123' else input_required
+                self.state['source_branch_requested_target'] = target
+                self.state['supplied_continuation_target_observed'] = (
+                    self.state['supplied_merchant_after']['status']['state'] == target)
+            return result
+
+    return WireReferencePlan
+
+
 def write(path, value):
     raw = (json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + '\n').encode()
     need(len(raw) <= 16 * 1024 * 1024, 'report_size_bound')
@@ -268,7 +299,8 @@ async def application(output, site_packages, private):
     from interoperability import ap2_hp_original_binding_v1 as binding
     from interoperability import ap2_hp_reference_execution_v1 as execution
     from interoperability.ap2_hp_reference_execution_v1 import ReferenceCoordinator
-    from interoperability.ap2_hp_reference_plan_v1 import ReferencePlan
+    from interoperability import ap2_hp_reference_plan_v1 as planner
+    from a2a.types import TaskState
     from pydantic import BaseModel
     ContactAddress = importlib.import_module('ap2.models.contact_picker').ContactAddress
     original_public_json = execution.public_json
@@ -377,7 +409,8 @@ async def application(output, site_packages, private):
         lease.install()
         need(lease.installed and lease.error is None, 'original_caller_lease_incomplete')
         execution.public_json = coordinator_public_json
-        coordinator = ReferenceCoordinator(lease.bindings, ReferencePlan, CONTRACT)
+        wire_plan = make_wire_reference_plan(planner, TaskState.input_required.value)
+        coordinator = ReferenceCoordinator(lease.bindings, wire_plan, CONTRACT)
         outcome = await coordinator.run(choose_cart=lambda carts: carts[0]['cart_id'],
                                         choose_alias=lambda aliases: aliases[0],
                                         approve=lambda summary: {'approved': True, 'summary': summary},
@@ -427,6 +460,10 @@ async def application(output, site_packages, private):
                                       'owned_validator_intervention': 'portable source and fresh site-packages inventory; legacy native environment claim not used',
                                       'owned_code_comparison_intervention': 'full recursive structural code identity, typed constants, filename/line/position/exception metadata; legacy globals/default/closure/alias guards retained',
                                       'owned_public_projection_intervention': 'bounded recursive explicit BaseModel dumps; shipping comparison uses explicit original model fields and retains full original return separately',
+                                      'owned_task_state_comparison_intervention': {
+                                          'input_required_wire_value': TaskState.input_required.value,
+                                          'raw_task_status_values_unchanged': True,
+                                          'task_context_identity_guards_preserved': True},
                                       'public_observer_serializer_unchanged': lease is None or all(
                                           observer.serializer is original_public_json for observer in
                                           (lease.bindings.merchant, lease.bindings.credentials)),

@@ -15,6 +15,56 @@ spec.loader.exec_module(runner)
 
 
 class DevelopmentTests(unittest.TestCase):
+    def wire_case(self):
+        spec = importlib.util.spec_from_file_location('_ap2_constructed_wire_cases',
+                                                       ROOT / 'tests/test_ap2_hp_reference_plan_v1.py')
+        fixture = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(fixture)
+        case = fixture.ReferencePlanTests()
+        case.setUp()
+        case.plan = runner.make_wire_reference_plan(fixture.module, 'input-required')(case.plan.contract)
+        case.payment_prefix()
+        return fixture, case
+
+    def test_sdk_wire_challenge_and_adverse_continuation_keep_actual_labels_and_ids(self):
+        fixture, case = self.wire_case()
+        pending = case.pending()
+        pending['status']['state'] = 'input-required'
+        original_validator = fixture.module._task
+        case.plan.observe('payment_start', pending)
+        self.assertEqual(pending['status']['state'], 'input-required')
+        self.assertIs(fixture.module._task, original_validator)
+        case.plan.observe('otp_response', '123')
+        case.plan.observe('payment_resume', pending)
+        self.assertEqual(case.plan.state['supplied_merchant_after']['id'], pending['id'])
+        self.assertEqual(case.plan.state['supplied_merchant_after']['status']['state'], 'input-required')
+        self.assertFalse(case.plan.state['supplied_continuation_target_observed'])
+        self.assertEqual(case.plan.state['source_branch_requested_target'], 'completed')
+
+    def test_bad_otp_wire_target_and_wrong_task_guard_remain_exact(self):
+        fixture, case = self.wire_case()
+        pending = case.pending()
+        pending['status']['state'] = 'input-required'
+        case.plan.observe('payment_start', pending)
+        case.plan.observe('otp_response', 'incorrect')
+        wrong = {**pending, 'id': 'different-task'}
+        original_validator = fixture.module._task
+        with self.assertRaises(fixture.module.PlanningError):
+            case.plan.observe('payment_resume', wrong)
+        self.assertIs(fixture.module._task, original_validator)
+        self.assertEqual(case.plan.phase, 'payment_resume')
+        case.plan.observe('payment_resume', pending)
+        self.assertTrue(case.plan.state['supplied_continuation_target_observed'])
+        self.assertEqual(case.plan.state['source_branch_requested_target'], 'input-required')
+
+    def test_legacy_underscore_label_is_refused_as_actual_sdk_wire_status(self):
+        fixture, case = self.wire_case()
+        original_validator = fixture.module._task
+        with self.assertRaises(fixture.module.PlanningError):
+            case.plan.observe('payment_start', case.pending())
+        self.assertIs(fixture.module._task, original_validator)
+        self.assertEqual(case.plan.phase, 'payment_start')
+
     def test_recursive_projection_retains_nested_public_models_without_mutating_objects(self):
         class PublicModel:
             def __init__(self, value):
