@@ -1,0 +1,56 @@
+name: Common end-to-end cost development benchmark v1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: common-cost-development-v1
+  cancel-in-progress: false
+
+jobs:
+  one-serial-linux-runner:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.1'
+      - name: Verify common caps, actual child resources, balanced order and stopped allocation controls
+        run: python -I -S -B tests/test_common_cost_benchmark_v1.py -v
+      - name: Freeze all source, profiles, balanced order and 1650 jobs before execution
+        run: >-
+          python -I -S -B scripts/run_common_cost_benchmark_v1.py --prepare-only
+          --output "${{ runner.temp }}/common-cost-v1"
+      - name: Execute all 1650 serial capped allocations with actual independent checking
+        run: >-
+          python -I -S -B scripts/run_common_cost_benchmark_v1.py --execute-prepared
+          --output "${{ runner.temp }}/common-cost-v1"
+      - name: Preserve stopped and adverse allocations without rerunning any worker
+        if: always()
+        shell: bash
+        run: |
+          if [ -f "${{ runner.temp }}/common-cost-v1/allocation.json" ]; then
+            python -I -S -B scripts/run_common_cost_benchmark_v1.py --finalize-only --output "${{ runner.temp }}/common-cost-v1"
+          fi
+      - name: Verify captured source, allocated census, closing receipts and derived costs
+        if: always()
+        shell: bash
+        run: |
+          if [ -f "${{ runner.temp }}/common-cost-v1/manifest.json" ]; then
+            python -I -S -B scripts/run_common_cost_benchmark_v1.py --verify-only --output "${{ runner.temp }}/common-cost-v1"
+          fi
+      - name: Retain full public inputs, source, all attempted results and raw adverse output
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: common-cost-development-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/common-cost-v1/
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 30
