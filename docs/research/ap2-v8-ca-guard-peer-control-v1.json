@@ -1,0 +1,68 @@
+{
+  "actual_actor_or_bridge_processes_executed": 0,
+  "actual_application_or_provider_calls": 0,
+  "actual_key_or_evaluator_file_reads": 0,
+  "controls": {
+    "dotenv_denied": {
+      "allowed": false,
+      "passed": true,
+      "reason": "actor_private_evaluator_or_saved_credential_read_denied"
+    },
+    "exactly_two_installed_public_paths": {
+      "passed": true,
+      "relative_paths": [
+        "certifi/cacert.pem",
+        "grpc/_cython/_credentials/roots.pem"
+      ]
+    },
+    "installed_certifi_public_CA_allowed": {
+      "allowed": true,
+      "passed": true,
+      "reason": null
+    },
+    "installed_grpc_public_CA_allowed": {
+      "allowed": true,
+      "passed": true,
+      "reason": null
+    },
+    "owned_profile_signing_behavior_preserved": {
+      "allowed": true,
+      "passed": true
+    },
+    "private_evaluator_denied": {
+      "allowed": false,
+      "passed": true,
+      "reason": "actor_private_evaluator_or_saved_credential_read_denied"
+    },
+    "same_certifi_basename_elsewhere_denied": {
+      "allowed": false,
+      "passed": true,
+      "reason": "actor_private_evaluator_or_saved_credential_read_denied"
+    },
+    "saved_Gemini_key_name_denied": {
+      "allowed": false,
+      "passed": true,
+      "reason": "actor_private_evaluator_or_saved_credential_read_denied"
+    },
+    "saved_private_KEY_denied": {
+      "allowed": false,
+      "passed": true,
+      "reason": "actor_private_evaluator_or_saved_credential_read_denied"
+    },
+    "saved_private_PEM_denied": {
+      "allowed": false,
+      "passed": true,
+      "reason": "actor_private_evaluator_or_saved_credential_read_denied"
+    },
+    "third_CA_bundle_path_denied": {
+      "allowed": false,
+      "passed": true,
+      "reason": "actor_private_evaluator_or_saved_credential_read_denied"
+    }
+  },
+  "passed": true,
+  "reviewed_utc": "2026-11-10T20:34:37.760811+00:00",
+  "runner_sha256": "b29d67818b6fa799077e00e0ab1106c9815ea4e9ffdea0560eca44747bdff19f",
+  "schema_version": "ap2-v8-public-CA-guard-constructed-peer-control/1",
+  "scope": "Executes only extracted exact production CA-set declaration and audit-hook function with supplied synthetic open-event paths. Installs no audit hook and opens no represented key/evaluator/CA file. Source-bound controls are not an OS sandbox."
+}

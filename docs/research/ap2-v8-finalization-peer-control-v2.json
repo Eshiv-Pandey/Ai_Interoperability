@@ -1,0 +1,92 @@
+{
+  "actual_actor_processes_executed": 0,
+  "actual_application_or_provider_calls": 0,
+  "closed_cell": {
+    "allocation_status": "actor_process_finished",
+    "arm_id": "reference",
+    "business_goal_decided_by_actor": false,
+    "case_id": "natural_hint_loss",
+    "elapsed_seconds": 1.0,
+    "ended_utc": "2026-11-11T00:00:01+00:00",
+    "finalization_evidence": [
+      {
+        "identity": {
+          "bytes": 254,
+          "sha256": "f0ebfa8de9cc87753b70a34ee6e5cd436bbc0aace0e211f54ae511968ac126dc"
+        },
+        "kind": "before",
+        "path": "attempts/natural_hint_loss--reference/before-dispatch.json"
+      },
+      {
+        "identity": {
+          "bytes": 297,
+          "sha256": "7873f77f7da4e9b89f2d23d450f0e08b7bf2b087a326daa640790d060b0dd7ea"
+        },
+        "kind": "after",
+        "path": "attempts/natural_hint_loss--reference/after-dispatch.json"
+      }
+    ],
+    "id": "natural_hint_loss--reference",
+    "index": 0,
+    "reconstructed_from_retained_after_dispatch": true,
+    "returncode": 0
+  },
+  "constructed_fixture_only": true,
+  "controls": {
+    "all_104_cells_retained": true,
+    "closed_dispatch_keeps_actual_finished_status": true,
+    "closed_dispatch_keeps_actual_returncode": true,
+    "prior_closed_receipt_not_rewritten": true,
+    "started_only_not_labelled_unexecuted": true,
+    "truly_untouched_stays_unexecuted": true
+  },
+  "failure_meaning": "Existing completed and started allocations must not be relabelled as untouched when finalizing an interrupted matrix.",
+  "orchestrator_sha256": "c21633a90327d0b87a1878f3a838960f3892eb1e088d5e20c32e4cd63f504527",
+  "passed": true,
+  "reviewed_utc": "2026-11-10T20:12:54.277992+00:00",
+  "schema_version": "ap2-v8-partial-finalization-peer-control/1",
+  "started_only_cell": {
+    "allocation_status": "dispatch_intent_recorded_without_closing_receipt",
+    "arm_id": "conventional",
+    "business_goal_decided_by_actor": false,
+    "captured_cell_output_present": false,
+    "case_id": "natural_hint_loss",
+    "finalization_evidence": [
+      {
+        "identity": {
+          "bytes": 260,
+          "sha256": "597ac46de13954849ce2a184e7b1977004678c9b22489acb20670f1a12c4534c"
+        },
+        "kind": "before",
+        "path": "attempts/natural_hint_loss--conventional/before-dispatch.json"
+      }
+    ],
+    "id": "natural_hint_loss--conventional",
+    "index": 1,
+    "matrix_after_dispatch_receipt_present": false,
+    "returncode": null
+  },
+  "synthetic_closed_receipt": {
+    "allocation_status": "actor_process_finished",
+    "arm_id": "reference",
+    "business_goal_decided_by_actor": false,
+    "case_id": "natural_hint_loss",
+    "elapsed_seconds": 1.0,
+    "ended_utc": "2026-11-11T00:00:01+00:00",
+    "id": "natural_hint_loss--reference",
+    "index": 0,
+    "returncode": 0
+  },
+  "untouched_cell": {
+    "allocation_status": "not_executed_before_workflow_finalization",
+    "arm_id": "recovery",
+    "business_goal_decided_by_actor": false,
+    "captured_cell_output_present": false,
+    "case_id": "natural_hint_loss",
+    "finalization_evidence": [],
+    "id": "natural_hint_loss--recovery",
+    "index": 2,
+    "matrix_after_dispatch_receipt_present": false,
+    "returncode": null
+  }
+}

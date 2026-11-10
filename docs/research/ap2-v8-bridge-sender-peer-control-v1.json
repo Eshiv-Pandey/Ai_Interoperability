@@ -1,0 +1,62 @@
+{
+  "actual_actor_or_bridge_processes_executed": 0,
+  "actual_application_or_provider_calls": 0,
+  "cases": {
+    "duplicate_false_intercept": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "native_unjustified_false_dispatch_row"
+    },
+    "matching_Node_header_subset_and_unique_intercept": {
+      "Node_original_fetch_witnesses": 1,
+      "accepted": true,
+      "native_tcp_capture_verified": true
+    },
+    "missing_Node_fetch_witness": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "original_Node_fetch_observation_incomplete"
+    },
+    "unattributed_extra_native_receive": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "native_received_exchange_without_retained_Python_or_Node_sender_witness"
+    },
+    "wrong_Node_explicit_header": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "unattributed_Node_request_response_or_extra_native_receive"
+    },
+    "wrong_Node_query_target": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "unattributed_Node_request_response_or_extra_native_receive"
+    },
+    "wrong_Node_response_entity": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "unattributed_Node_request_response_or_extra_native_receive"
+    },
+    "wrong_intercept_entity": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "bridge_false_dispatch_not_actual_unique_original_sender_intercept"
+    }
+  },
+  "constructed_fixture_only": true,
+  "controls": {
+    "duplicate_false_intercept_rejected": true,
+    "matching_Node_header_subset_and_unique_intercept_accepted": true,
+    "missing_Node_fetch_witness_rejected": true,
+    "unattributed_extra_native_receive_rejected": true,
+    "wrong_Node_explicit_header_rejected": true,
+    "wrong_Node_query_target_rejected": true,
+    "wrong_Node_response_entity_rejected": true,
+    "wrong_intercept_entity_rejected": true
+  },
+  "evaluator_sha256": "11868a224bf0c5a429236cd6d5eff477558c0d393f42b3f06d4b4085dff99257",
+  "passed": true,
+  "reviewed_utc": "2026-11-10T20:24:53.116491+00:00",
+  "schema_version": "ap2-v8-bridge-sender-evidence-constructed-peer-control/1",
+  "scope": "Synthetic independent evaluator fixtures only. Positive fixture attributes one original sender intercept and one supplied Node discovery exchange with extra generated wire headers; it is not an observed original application or bridge outcome."
+}

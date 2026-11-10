@@ -1,0 +1,55 @@
+{
+  "actual_actor_or_bridge_processes_executed": 0,
+  "actual_application_or_provider_calls": 0,
+  "cases": {
+    "arbitrary_false_dispatch_row": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "native_unjustified_false_dispatch_row"
+    },
+    "empty_sender_log": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "native_outgoing_request_gap_or_missing_witness"
+    },
+    "matching_sender_witness": {
+      "accepted": true,
+      "native_tcp_capture_verified": true
+    },
+    "unaccounted_native_received_exchange": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "native_received_exchange_without_retained_Python_or_Node_sender_witness"
+    },
+    "wrong_body_byte_count": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "actual_native_sender_target_headers_size_or_entity_not_received_by_original_app"
+    },
+    "wrong_explicit_headers": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "actual_native_sender_target_headers_size_or_entity_not_received_by_original_app"
+    },
+    "wrong_query": {
+      "accepted": false,
+      "error_type": "ValueError",
+      "reason": "native_sender_target_query_or_peer_changed"
+    }
+  },
+  "constructed_fixture_only": true,
+  "controls": {
+    "arbitrary_false_dispatch_row_rejected": true,
+    "empty_sender_log_rejected": true,
+    "matching_sender_witness_accepted": true,
+    "unaccounted_native_received_exchange_rejected": true,
+    "wrong_body_byte_count_rejected": true,
+    "wrong_explicit_headers_rejected": true,
+    "wrong_query_rejected": true
+  },
+  "evaluator_sha256": "11868a224bf0c5a429236cd6d5eff477558c0d393f42b3f06d4b4085dff99257",
+  "passed": true,
+  "reviewed_utc": "2026-11-10T20:23:51.152546+00:00",
+  "schema_version": "ap2-v8-native-sender-evidence-constructed-peer-control/2",
+  "scope": "Independent evaluator only, with synthetic metadata/events. No actual socket or original application was executed. Baseline v1 failure evidence is preserved separately. These checks do not prove hosted outcomes or a hostile-code sandbox."
+}
