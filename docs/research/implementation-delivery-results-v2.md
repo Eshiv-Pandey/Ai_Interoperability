@@ -43,3 +43,5 @@ extracted-function AP2 control do not complete those deliverables.
 The earlier all-or-nothing scientific-gate register is retained as historical
 readiness evidence. The user explicitly replaced it as the completion measure;
 the current percentage measures concrete implementation completion.
+
+The [AP2 supporting subset](ap2-reference-development-v2.md) and [independent review](ap2-reference-development-independent-review-v2.md) retain the failed original-function trial and successful zero-new-trial output analysis. Fourteen software tests and11 retained-output checks pass; this earns no full AP2 integration credit. The [versioned timeout successor](ci-research-core-timeout-results-v2.md) separately passed five actual Linux cleanup checks without rerunning the complete matrix.

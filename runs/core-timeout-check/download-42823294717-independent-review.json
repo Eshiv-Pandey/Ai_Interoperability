@@ -1,0 +1,214 @@
+{
+  "schema_version": "ci-research-core-timeout-independent-review/2",
+  "status": "passed",
+  "reviewed_at": "2026-11-10T13:27:24.729770+00:00",
+  "run": {
+    "conclusion": "success",
+    "createdAt": "2026-11-10T13:18:18Z",
+    "headSha": "bee78c1214333de70e63eaa3f1e4ac2635ef3391",
+    "jobs": [
+      {
+        "completedAt": "2026-11-10T13:18:45Z",
+        "conclusion": "success",
+        "databaseId": 129854011483,
+        "name": "timeout-check",
+        "startedAt": "2026-11-10T13:18:21Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-11-10T13:18:22Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-11-10T13:18:21Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-10T13:18:28Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+            "number": 2,
+            "startedAt": "2026-11-10T13:18:22Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-10T13:18:37Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "number": 3,
+            "startedAt": "2026-11-10T13:18:28Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-10T13:18:41Z",
+            "conclusion": "success",
+            "name": "Verify actual coordinator and delayed-child cleanup",
+            "number": 4,
+            "startedAt": "2026-11-10T13:18:37Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-10T13:18:42Z",
+            "conclusion": "success",
+            "name": "Retain raw test streams and owned-process evidence",
+            "number": 5,
+            "startedAt": "2026-11-10T13:18:41Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-10T13:18:42Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+            "number": 9,
+            "startedAt": "2026-11-10T13:18:42Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-10T13:18:43Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683",
+            "number": 10,
+            "startedAt": "2026-11-10T13:18:42Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-11-10T13:18:43Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 11,
+            "startedAt": "2026-11-10T13:18:43Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/42823294717/job/129854011483"
+      }
+    ],
+    "status": "completed",
+    "updatedAt": "2026-11-10T13:18:46Z",
+    "url": "https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/42823294717"
+  },
+  "artifact_id": 13767119268,
+  "artifact_name": "core-timeout-42823294717-1",
+  "published_archive_bytes": 25633,
+  "published_archive_digest": "sha256:001b21084faabec891952e117a4f85e0141bfc9b5f5d57ba3dd1132acf81e5e3",
+  "published_archive_digest_independently_recomputed": true,
+  "manifest_files_verified": 19,
+  "manifest_bytes_verified": 71342,
+  "manifest_binding": {
+    "path": "retained-manifest.json",
+    "bytes": 3753,
+    "sha256": "a093e3b336eb1c3859dfbe2f23a7a976c8d8a6aec3b7d164f46d21adcd6ad7ae"
+  },
+  "result_binding": {
+    "path": "result.json",
+    "bytes": 4240,
+    "sha256": "9521d2e0f7078932489fd16a94e2332c0f71ba314fc5fb18919295d0dda9738b"
+  },
+  "source_bindings_match_executed_git_commit": [
+    {
+      "path": "scripts/ci_research_core_v1.py",
+      "bytes": 18988,
+      "sha256": "e9515ab7a897c4c7225deced5ac21f46775c99c85245490437168c84ce43e400"
+    },
+    {
+      "path": "scripts/ci_research_core_v2.py",
+      "bytes": 14879,
+      "sha256": "e9f62bd970e6759d2f3167ca214041e07a4225a50d7e68d64b106d51fe97d249"
+    },
+    {
+      "path": "tests/test_ci_research_core_timeout_v2.py",
+      "bytes": 5643,
+      "sha256": "182a086575eb101681729e79aad6896acd7c1e322d0bfe13b809700c3c17db83"
+    },
+    {
+      "path": ".github/workflows/research-core-timeout-check.yml",
+      "bytes": 1120,
+      "sha256": "8e8b8940a173f35b6b08ea97a093c778e1aa7ddd24e9a36823d1f6a21d9936d9"
+    },
+    {
+      "path": "docs/research/ci-research-core-timeout-v2.md",
+      "bytes": 3118,
+      "sha256": "4f52fb49a60c90635aac60985b4d2cebc016411df2a5e749a1b78be16d0899b3"
+    }
+  ],
+  "tests": {
+    "count": 5,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "raw_reported_seconds": 4.283,
+    "passed_names": [
+      "test_normal_output_and_return_code_are_preserved",
+      "test_sigterm_ignoring_group_is_killed_and_reaped",
+      "test_timeout_reaps_coordinator_and_delayed_child_before_return",
+      "test_unconfirmed_ownership_blocks_new_commands_and_manifest_sealing",
+      "test_windows_execution_is_rejected_before_allocation"
+    ]
+  },
+  "actual_timeout_groups": [
+    {
+      "test": "test_sigterm_ignoring_group_is_killed_and_reaped",
+      "coordinator_pid": 2444,
+      "child_pid": 2445,
+      "signals": [
+        "SIGTERM",
+        "SIGKILL"
+      ],
+      "coordinator_returncode": -9,
+      "adopted_child_wait_status": 9,
+      "parent_reaped": true,
+      "group_final_empty": true,
+      "subreaper_original_state": 0,
+      "subreaper_restored": true,
+      "post_return_wait_seconds_observed": 1.504978,
+      "marker_absent_after_wait": true,
+      "coordinator_wall_ns": 872372204
+    },
+    {
+      "test": "test_timeout_reaps_coordinator_and_delayed_child_before_return",
+      "coordinator_pid": 2447,
+      "child_pid": 2448,
+      "signals": [
+        "SIGTERM"
+      ],
+      "coordinator_returncode": -15,
+      "adopted_child_wait_status": 15,
+      "parent_reaped": true,
+      "group_final_empty": true,
+      "subreaper_original_state": 0,
+      "subreaper_restored": true,
+      "post_return_wait_seconds_observed": 1.504537,
+      "marker_absent_after_wait": true,
+      "coordinator_wall_ns": 358062422
+    }
+  ],
+  "normal_command_verified": true,
+  "blocked_command_and_manifest_allocation_absent": true,
+  "windows_platform_guard_reported_passed": true,
+  "process_receipt_bindings": [
+    {
+      "path": "test_sigterm_ignoring_group_is_killed_and_reaped/commands/timeout/process.json",
+      "bytes": 14564,
+      "sha256": "ff9639bddb3721734b86c07038c5657901f47625b89eb290670648cfb874bd50"
+    },
+    {
+      "path": "test_timeout_reaps_coordinator_and_delayed_child_before_return/commands/timeout/process.json",
+      "bytes": 4734,
+      "sha256": "beba2bc04ec62f22f1916729d7eb561313ea549212f0ba6fc09bd38d525adaed"
+    },
+    {
+      "path": "test_normal_output_and_return_code_are_preserved/commands/normal/process.json",
+      "bytes": 2390,
+      "sha256": "122e4023306bd35f83a9cebce4fdf28305adbb71b2d588f7dcfdedfa8c941ecd"
+    }
+  ],
+  "application_runs": 0,
+  "model_calls": 0,
+  "scope": "Focused Linux stdlib timeout cleanup. No v2 full-matrix or application/model run; unchanged v1 successful full reproduction remains separate. Blocked ownership and Windows guard tests use explicit mocks.",
+  "archive_binding": {
+    "path": "runs/core-timeout-check/core-timeout-42823294717-1.zip",
+    "bytes": 25633,
+    "sha256": "001b21084faabec891952e117a4f85e0141bfc9b5f5d57ba3dd1132acf81e5e3"
+  },
+  "archive_files_byte_identical_to_extracted_artifact": 20
+}
