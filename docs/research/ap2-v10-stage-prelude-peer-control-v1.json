@@ -1,0 +1,88 @@
+{
+  "append_now_writer_and_certificate_admission_stubbed": false,
+  "constructed_stage_records": [
+    {
+      "stage": "before_declared_public_certificate_admission",
+      "utc": "2026-11-10T21:23:55.961971+00:00"
+    },
+    {
+      "stage": "declared_public_certificate_admission_completed",
+      "utc": "2026-11-10T21:23:56.019634+00:00"
+    },
+    {
+      "stage": "application_entry",
+      "utc": "2026-11-10T21:23:56.058002+00:00"
+    },
+    {
+      "stage": "original_mandate_import_completed",
+      "utc": "2026-11-10T21:23:56.059366+00:00"
+    },
+    {
+      "stage": "ADK_tool_context_import_completed",
+      "utc": "2026-11-10T21:23:56.061606+00:00"
+    },
+    {
+      "stage": "before_original_source_inventory",
+      "utc": "2026-11-10T21:23:56.062901+00:00"
+    },
+    {
+      "stage": "original_source_inventory_completed",
+      "utc": "2026-11-10T21:23:56.064102+00:00"
+    },
+    {
+      "stage": "installed_runtime_inventory_completed",
+      "utc": "2026-11-10T21:23:56.065482+00:00"
+    },
+    {
+      "stage": "before_guarded_application_event_loop",
+      "utc": "2026-11-10T21:23:56.066441+00:00"
+    }
+  ],
+  "controls": {
+    "V10_real_append_and_now_globals_resolve": true,
+    "all_nine_exact_journal_call_sites_execute_with_real_globals": true,
+    "all_stage_records_have_only_stage_and_valid_UTC_timestamp": true,
+    "certificate_guard_semantics_unchanged_after_version_labels": true,
+    "exact_three_production_prelude_statements_execute": true,
+    "frozen_V9_first_stage_reproduces_append_NameError": true,
+    "frozen_V9_now_also_missing": true,
+    "real_public_certificate_admission_executed_between_stages": true,
+    "strict_zero_external_network_operation_gate_preserved": true
+  },
+  "covered_V10_journal_source_lines": [
+    435,
+    440,
+    445,
+    469,
+    471,
+    473,
+    720,
+    722,
+    800
+  ],
+  "frozen_V9_constructed_error_name": "append",
+  "new_actor_or_bridge_processes_executed": 0,
+  "new_application_or_provider_calls": 0,
+  "passed": true,
+  "reviewed_utc": "2026-11-10T21:23:56.086330+00:00",
+  "schema_version": "ap2-v10-exact-stage-prelude-independent-peer-control/1",
+  "scope": "Executes exact extracted new journal/admission statements against owned public source/CA fixtures using actual actor globals and actual certificate helper. The remaining journal calls are independent dependency controls, not execution of original application/SDK/guarded worker. V9 stays frozen; V8 unknown external operation remains unqualified.",
+  "source_identities": {
+    "scripts/ap2_public_certificate_guard_v10.py": {
+      "bytes": 7462,
+      "sha256": "8953692f13703dad564beb0247a4926df54773ae97e3871293ca116d0df38c9c"
+    },
+    "scripts/ap2_reference_development_v10.py": {
+      "bytes": 57479,
+      "sha256": "1aa0d11195c4cc4784c95cd0a294e5c6c8790226f34fb36614e0f35e3c450a3f"
+    },
+    "scripts/ap2_reference_development_v9.py": {
+      "bytes": 57097,
+      "sha256": "7850a1cf35106be9bcc2bba788f25f9db68a31bb993b750aa02a4d055ec2ae74"
+    },
+    "scripts/evaluate_ap2_native_bridge_matrix_v10.py": {
+      "bytes": 58700,
+      "sha256": "ede2d494e4232cfd8997dfe60b0b81c8d45ca90050c8d81e60e9b91839e29ff3"
+    }
+  }
+}
