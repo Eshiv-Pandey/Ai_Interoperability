@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/paper/audit_draft_v7.py", line 87, in <module>
+    result = audit()
+             ^^^^^^^
+  File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/paper/audit_draft_v7.py", line 37, in audit
+    inherited = module("audit_draft_v6").audit()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/paper/audit_draft_v6.py", line 33, in audit
+    require(record(ROOT / item["path"]) == item, "Changed new claim evidence: " + item["path"])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/paper/audit_draft_v5.py", line 33, in record
+    data = path.read_bytes()
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1021, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/Ai_Interoperability/Ai_Interoperability/docs/research/ap2-reference-development-v4-independent-signature-review.md'
