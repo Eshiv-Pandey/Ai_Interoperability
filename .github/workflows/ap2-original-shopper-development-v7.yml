@@ -1,0 +1,93 @@
+name: AP2 original ADK shopper and source-bank feasibility v7
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-adk-shopper-bank:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.1'
+      - name: Prepare exact original source and pinned runtime
+        shell: bash
+        run: |
+          python -I -S -B scripts/ap2_reference_development_v7.py prepare --output "$RUNNER_TEMP/ap2-v7/prepared"
+          python -m venv "$RUNNER_TEMP/ap2-v7-environment"
+      - name: Install one fresh pinned runtime for original ADK workers
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/ap2-v7-environment/bin/python" -m pip install --report "$RUNNER_TEMP/ap2-v7/pip-install-report.json" -r "$RUNNER_TEMP/ap2-v7/prepared/requirements.txt"
+          "$RUNNER_TEMP/ap2-v7-environment/bin/python" -m pip check > "$RUNNER_TEMP/ap2-v7/pip-check.txt"
+      - name: Retain all 34 candidate denominators before runtime smoke
+        shell: bash
+        run: |
+          python -I -S -B scripts/run_ap2_original_shopper_bank_v7.py \
+            --output "$RUNNER_TEMP/ap2-v7/prospective-bank" \
+            --site-packages "$RUNNER_TEMP/ap2-v7-environment/lib/python3.13/site-packages" \
+            --prepare-only
+      - name: Check human timing, original generic-status and private-read controls
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/ap2-v7-environment/bin/python" -B -m unittest discover -s tests -p test_ap2_reference_development_v7.py -v
+      - name: Execute original ADK manual-shipping smoke and independent prefix evaluation
+        shell: bash
+        run: |
+          python -I -S -B scripts/ap2_reference_development_v7.py execute \
+            --output "$RUNNER_TEMP/ap2-v7/smoke/manual" \
+            --site-packages "$RUNNER_TEMP/ap2-v7-environment/lib/python3.13/site-packages" --case ap2-dev-001
+          python -I -S -B scripts/evaluate_ap2_original_shopper_bank_v7.py \
+            --cell "$RUNNER_TEMP/ap2-v7/smoke/manual" --candidate ap2-dev-001 \
+            --output "$RUNNER_TEMP/ap2-v7/smoke/manual-independent" \
+            --site-packages "$RUNNER_TEMP/ap2-v7-environment/lib/python3.13/site-packages"
+      - name: Execute original wallet-consent and withheld-confirmation smoke
+        shell: bash
+        run: |
+          python -I -S -B scripts/ap2_reference_development_v7.py execute \
+            --output "$RUNNER_TEMP/ap2-v7/smoke/wallet" \
+            --site-packages "$RUNNER_TEMP/ap2-v7-environment/lib/python3.13/site-packages" --case ap2-ho-003
+          python -I -S -B scripts/evaluate_ap2_original_shopper_bank_v7.py \
+            --cell "$RUNNER_TEMP/ap2-v7/smoke/wallet" --candidate ap2-ho-003 \
+            --output "$RUNNER_TEMP/ap2-v7/smoke/wallet-independent" \
+            --site-packages "$RUNNER_TEMP/ap2-v7-environment/lib/python3.13/site-packages"
+          python -I -S -B scripts/ap2_reference_development_v7.py execute \
+            --output "$RUNNER_TEMP/ap2-v7/smoke/withheld" \
+            --site-packages "$RUNNER_TEMP/ap2-v7-environment/lib/python3.13/site-packages" --case ap2-ho-005
+          python -I -S -B scripts/evaluate_ap2_original_shopper_bank_v7.py \
+            --cell "$RUNNER_TEMP/ap2-v7/smoke/withheld" --candidate ap2-ho-005 \
+            --output "$RUNNER_TEMP/ap2-v7/smoke/withheld-independent" \
+            --site-packages "$RUNNER_TEMP/ap2-v7-environment/lib/python3.13/site-packages"
+      - name: Execute bounded original ADK source-bank feasibility allocation
+        shell: bash
+        run: |
+          python -I -S -B scripts/run_ap2_original_shopper_bank_v7.py \
+            --output "$RUNNER_TEMP/ap2-v7/bank" \
+            --site-packages "$RUNNER_TEMP/ap2-v7-environment/lib/python3.13/site-packages"
+      - name: Independently evaluate every original candidate and retained adverse branch
+        if: always()
+        shell: bash
+        run: |
+          if [ -f "$RUNNER_TEMP/ap2-v7/bank/execution-results.json" ]; then
+            selected="$RUNNER_TEMP/ap2-v7/bank"
+          else
+            selected="$RUNNER_TEMP/ap2-v7/prospective-bank"
+          fi
+          python -I -S -B scripts/evaluate_ap2_original_shopper_bank_v7.py \
+            --allocation "$selected" --output "$RUNNER_TEMP/ap2-v7/independent-bank-evaluation" \
+            --site-packages "$RUNNER_TEMP/ap2-v7-environment/lib/python3.13/site-packages"
+      - name: Retain whole allocation, source failures and all original ADK traces
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ap2-original-adk-shopper-bank-feasibility-v7
+          path: ${{ runner.temp }}/ap2-v7/
+          if-no-files-found: error
+          retention-days: 30
