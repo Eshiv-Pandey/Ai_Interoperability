@@ -87,7 +87,8 @@ module. Tests also check literal normalization, changed source rejection,
 cached metadata without descendants, unchanged application/guard ASTs,
 independent receipt mutations and bounded diagnostic output.
 
-Hosted V12 outcomes and independent peer review are pending. This candidate
+Independent source review found no implementation blockers. Hosted V12
+outcomes, including the two positive POSIX controls, remain pending. This candidate
 provides no full ADK shopper, canonical launcher, live-provider, held-out
 comparison, human-gold or complete bidirectional bridge qualification.
 
