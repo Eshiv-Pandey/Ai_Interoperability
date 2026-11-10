@@ -1,3 +1,33 @@
+# Latest verified research handoff: 11 November 2026, actual V11 guard diagnosis
+
+Whole-project work remains approximately **75%**, under the unchanged
+[version 7 estimate](whole-project-progress-estimate-v7.json). The 80% target
+remains open; a failed smoke and prepared successor do not complete experiments.
+
+The [actual V11 analysis](ap2-native-bridge-development-analysis-v11.md) binds
+run 42911850107 at f6aa8926 to its completed retention and exact GitHub artifact
+digest f3760855cf0af7074b2a2c75dad058ef66834f2b3c2fc4a3cef9b91fcfd08154.
+The conventional smoke actor returned 0, but its original prefix was incomplete
+and independent evaluation refused unexpected guard interference. All 104
+matrix cells remain unexecuted and all 65 ASGI/TCP pairs unresolved.
+
+Actual retained frames identify an urllib3 import-time IPv6 capability bind
+and a platform metadata subprocess probe. A third getaddrinfo denial has a
+redacted host, so its original type is not established. All five public CA
+admissions succeeded and stayed unchanged. V8 through V11 allocations and
+every adverse outcome remain frozen.
+
+Parallel work prepares a separate V12 with a single exact source/code-bound
+IPv6 capability bind, pre-guard platform metadata caching, exact owned
+loopback string/bytes normalization and independent receipt validation.
+The application body, strict unexpected-denial gates, source pin, cases and
+104-cell allocation stay unchanged. Root alone commits, dispatches and retains
+the completed hosted run. Continue the native and legal bridge matrix before
+raising the work estimate. Manuscript V11 integrates actual retained results;
+prepared prose or pending captures receive no execution credit.
+
+The entries below are historical.
+
 # Latest verified research handoff: 11 November 2026, native bootstrap and proof codec
 
 Whole-project work remains approximately **75%**. The preserved estimate is

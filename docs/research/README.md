@@ -1,5 +1,7 @@
 # Research planning and evidence record
 
+**Current work status (11 November 2026): approximately 75%.** The [project register](project-completion-status-v1.json) and [unchanged work estimate](whole-project-progress-estimate-v7.json) track the complete research objective. Start with [manuscript v7](../../paper/working-draft-v7.md), its [artifact guide](paper-artifact-guide-v7.md) and the [latest execution handoff](execution-handoff.md). The full application study, qualified task/gold bank, native/provider routes and final scientific review remain open. The dated planning and checkpoint descriptions below are historical records.
+
 **Latest diagnostic:** [v12 results](agentops-bridge-diagnostic-results-v12.md) record clean strict N11/configured-B7 completion and partial B6, with complete shutdown diagnostics. V10 is unchanged; no root cause, repair or checkpoint credit is claimed.
 
 Supervisor package (28 October): [presentation, archived replay, manuscript and verification limits](supervisor-package-v1.md). Screen verification remains pending. The replay remains v10 archived evidence; checkpoint credit is unchanged.
