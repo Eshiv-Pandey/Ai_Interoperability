@@ -1,0 +1,38 @@
+name: AgentOps original governed App pilot v1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agentops-governed-app-pilot-v1
+  cancel-in-progress: false
+
+jobs:
+  pilot:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 16
+    steps:
+      - name: Check out the selected research revision
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Check source pins and public development recipes
+        run: |
+          python3 -B scripts/check_agentops_governed_app_pilot_v1.py
+          python3 -B scripts/ci_agentops_governed_app_pilot_v1.py --check-inputs
+      - name: Execute original governed App and actual SDK task lifecycle
+        run: >-
+          python3 -B scripts/ci_agentops_governed_app_pilot_v1.py --execute
+          --output runs/ci-agentops-governed-app-pilot/${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Retain raw pilot evidence including failed attempts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: agentops-governed-app-pilot-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runs/ci-agentops-governed-app-pilot/${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: warn
+          retention-days: 3
+          include-hidden-files: true
