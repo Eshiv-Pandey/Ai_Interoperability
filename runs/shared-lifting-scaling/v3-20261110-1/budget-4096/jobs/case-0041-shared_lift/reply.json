@@ -1,0 +1,98 @@
+{
+  "status": "returned",
+  "input_sha256_before": "2e65a0c13730e3ec1a482bf2e3cf548ec08558aa357ca7467bc122911f798c66",
+  "evaluation_ns": 632400,
+  "result": {
+    "decision": "supported",
+    "reason": "public_recipe_witness",
+    "certificate": {
+      "profile_sha256": "2e65a0c13730e3ec1a482bf2e3cf548ec08558aa357ca7467bc122911f798c66",
+      "checked_at": 100,
+      "horizon": 2,
+      "valid_until": 4102444800,
+      "kind": "recipe-path",
+      "transition_ids": [
+        "e0003",
+        "e0004"
+      ],
+      "steps": [
+        {
+          "edge": "e0003",
+          "args": {},
+          "request": {},
+          "bindings_before": {},
+          "bindings_after": {
+            "x": "v0003",
+            "y": "v0003"
+          }
+        },
+        {
+          "edge": "e0004",
+          "args": {
+            "x": "v0003",
+            "y": "v0003"
+          },
+          "request": {
+            "x": "v0003",
+            "y": "v0003"
+          },
+          "bindings_before": {
+            "x": "v0003",
+            "y": "v0003"
+          },
+          "bindings_after": {
+            "x": "v0003",
+            "y": "v0003"
+          }
+        }
+      ]
+    },
+    "method": "witness-lift-refine-shared-v2",
+    "novelty_established": false,
+    "stats": {
+      "work_units": 509,
+      "budget": 4096,
+      "abstract_state_visits": 12,
+      "abstract_edge_checks": 13,
+      "abstract_paths": 4,
+      "relation_checks": 8,
+      "expression_evaluations": 40,
+      "refinement_lookups": 8,
+      "refinement_edges": 6,
+      "refinements": 3,
+      "peak_frames": 1,
+      "cache_lookups": 28,
+      "cache_key_nodes": 114,
+      "cache_insertions": 15,
+      "cache_payload_nodes": 200,
+      "cache_status_checks": 3,
+      "cached_prefix_frames": 3,
+      "cached_relation_outcomes": 0,
+      "history_nodes": 5,
+      "witness_nodes": 50,
+      "prefix_cache_hits": 3,
+      "relation_cache_hits": 0,
+      "prefix_cache_entries": 8,
+      "relation_cache_entries": 7,
+      "peak_cached_frames": 9,
+      "elapsed_ns": 624700
+    }
+  },
+  "input_sha256_after": "2e65a0c13730e3ec1a482bf2e3cf548ec08558aa357ca7467bc122911f798c66",
+  "input_unchanged": true,
+  "resources": {
+    "schema_version": "benchmark-worker-resources/1",
+    "timings": {
+      "preparation_ns": 18709100,
+      "result_serialization_ns": 18400,
+      "post_validation_ns": 47600
+    },
+    "memory": {
+      "status": "observed",
+      "peak_resident_bytes": 22118400,
+      "source": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "platform": "win32"
+    }
+  },
+  "worker_body_ns": 25950100
+}

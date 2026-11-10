@@ -1,3 +1,5 @@
+**Current results (10 November 2026):** [Research handoff](docs/research/research-results-handoff-20261110-v1.md). The fresh hosted native and admission-gated bridge controls passed independent verification. The four-method scaling experiment and complete pilot replay are verified. Both source-derived task-bank drafts are written; runtime/gold qualification remains open. Full-rubric credit is still 5%; the requested 40% minimum has not been achieved. The current purpose is concrete results for a research paper. Older supervisor dates below are historical.
+
 # Agent interoperability research
 
 **Supervisor review: 31 October 2026.** This week's priority is the implemented admission algorithm and benchmark; no draft paper is required. Start with the [eight-minute supervisor guide](docs/research/supervisor-package-v1.md), [three-day checklist](docs/research/three-day-implementation-plan-v2.md) and [component status](docs/research/implementation-status-v1.json). The target is 70%; reaching it remains unverified, and no extension has been granted.

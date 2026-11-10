@@ -1,0 +1,79 @@
+{
+  "status": "returned",
+  "input_sha256_before": "0c310ec42bf96cea17d1ed5cc0c47832ac7d7246787cf45de3a367a0c5cde8bc",
+  "evaluation_ns": 355700,
+  "result": {
+    "decision": "supported",
+    "reason": "concrete_recipe_path",
+    "certificate": {
+      "profile_sha256": "0c310ec42bf96cea17d1ed5cc0c47832ac7d7246787cf45de3a367a0c5cde8bc",
+      "checked_at": 100,
+      "horizon": 2,
+      "valid_until": 4102444800,
+      "kind": "recipe-path",
+      "transition_ids": [
+        "e0001",
+        "e0002"
+      ],
+      "steps": [
+        {
+          "args": {},
+          "request": {},
+          "bindings_before": {},
+          "bindings_after": {
+            "x": "v0001",
+            "y": "v0001"
+          },
+          "edge": "e0001"
+        },
+        {
+          "args": {
+            "x": "v0001",
+            "y": "v0001"
+          },
+          "request": {
+            "x": "v0001",
+            "y": "v0001"
+          },
+          "bindings_before": {
+            "x": "v0001",
+            "y": "v0001"
+          },
+          "bindings_after": {
+            "x": "v0001",
+            "y": "v0001"
+          },
+          "edge": "e0002"
+        }
+      ]
+    },
+    "stats": {
+      "work_units": 47,
+      "budget": 100000,
+      "state_expansions": 9,
+      "graph_edges": 16,
+      "argument_assignments": 4,
+      "expression_evaluations": 18,
+      "product_states": 3,
+      "cached_relation_outcomes": 0,
+      "certificate_checks": 0
+    }
+  },
+  "input_sha256_after": "0c310ec42bf96cea17d1ed5cc0c47832ac7d7246787cf45de3a367a0c5cde8bc",
+  "input_unchanged": true,
+  "resources": {
+    "schema_version": "benchmark-worker-resources/1",
+    "timings": {
+      "preparation_ns": 18961400,
+      "result_serialization_ns": 13800,
+      "post_validation_ns": 35900
+    },
+    "memory": {
+      "status": "observed",
+      "peak_resident_bytes": 22765568,
+      "source": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "platform": "win32"
+    }
+  },
+  "worker_body_ns": 25442300
+}

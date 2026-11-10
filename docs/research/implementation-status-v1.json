@@ -1,22 +1,21 @@
 {
   "schema_version": "admission-benchmark-implementation-status/1",
-  "as_of": "2026-10-30",
-  "supervisor_target": "2026-10-31",
+  "as_of": "2026-11-10",
+  "supervisor_target": null,
   "required_this_week": [
-    "new admission algorithm",
-    "implemented benchmark",
-    "running demonstration"
+    "concrete verified research results for paper preparation",
+    "implemented admission algorithm and benchmark"
   ],
   "paper_required_this_week": false,
   "algorithm_requirement_retained": true,
   "artifact_only_route_selected": false,
-  "target_project_completion_percent": 70,
+  "target_project_completion_percent": 40,
   "target_completion_rubric": "full_research_project_checkpoints",
   "target_rubric_user_confirmation_date": "2026-10-30",
   "target_rubric_reference": "checkpoints.md",
   "target_progress_guide": "research-progress-target-v1.md",
   "verified_project_completion_percent": 5,
-  "checkpoint_status_as_of": "2026-10-30",
+  "checkpoint_status_as_of": "2026-11-10",
   "verified_implementation_percent": null,
   "percentage_reason": "The user confirmed the full research-project rubric for the 70 percent target. The current tracker awards 5 percent for CP1 only; software implementation is reported by components without a separate invented percentage.",
   "extension_granted": false,
@@ -90,7 +89,7 @@
     },
     {
       "id": "comparison_benchmark",
-      "status": "prior_v2_and_shared_lifting_engineering_pilot_executed",
+      "status": "four_method_66_profile_development_scaling_executed_and_verified",
       "evidence": [
         "../../src/interoperability/benchmark.py",
         "../../tests/test_benchmark.py",
@@ -107,9 +106,11 @@
         "shared-lifting-comparison-v3.md",
         "../../runs/shared-lifting-pilot/v1/result.json",
         "shared-lifting-pilot-results-v1.md",
-        "../../runs/shared-lifting-pilot/independent-result-review-v1.json"
+        "../../runs/shared-lifting-pilot/independent-result-review-v1.json",
+        "shared-lifting-scaling-results-v3.md",
+        "../../runs/shared-lifting-scaling/v3-20261110-1/result.json"
       ],
-      "limit": "Completed v2 covers three original methods on 66 development variants at four budgets. Shared-lifting pilot covers 12 authored cases, four budgets and four arms; all bundles verified, independent result audit passed. No certified-coverage advantage, speed claim or qualified empirical study."
+      "limit": "All66 related development profiles at4 budgets and4 methods verified;2003 workers/683accepted checks. Shared lifting adds no certified case over goal-pruned direct. Not a held-out empirical study."
     },
     {
       "id": "development_inputs",
@@ -125,15 +126,17 @@
     },
     {
       "id": "protocol_execution_harness",
-      "status": "implemented_bounded_controls",
+      "status": "hosted_native_and_admitted_bridge_control_strict_success_verified",
       "evidence": [
         "agentops-bridge-results-v10.md",
         "agentops-bridge-diagnostic-results-v12.md",
         "pending-admission-live-results-v1.md",
         "pending-admission-live-results-v2.md",
-        "pending-admission-live-results-v3.md"
+        "pending-admission-live-results-v3.md",
+        "ci-agentops-native-results-v1.md",
+        "../../runs/ci-agentops-native/download-42808110286-independent-review.json"
       ],
-      "limit": "Latest v4 native prerequisite failed readiness before client launch. Sixteen startup samples retained; forced SIGTERM/-15 with reaped child and empty group. B7 skipped; no fresh admitted application result. Import phase observed, root cause unproved."
+      "limit": "Fresh standard-hosted N11 prerequisite and candidate-gated B7 completed original tasks, exactly1 expected mock effect/audit per case, certificate-to-wire binding and clean shutdown. Fixed fixture only; AP2/full-bank qualification remains open."
     },
     {
       "id": "candidate_benchmark_demo",
@@ -157,7 +160,7 @@
     },
     {
       "id": "candidate_live_route_integration",
-      "status": "implemented_software_verified_live_control_failed",
+      "status": "hosted_native_and_admitted_bridge_control_strict_success_verified",
       "evidence": [
         "../../src/interoperability/pending_admission.py",
         "../../scripts/agentops_admission_controller_v1.mjs",
@@ -172,9 +175,11 @@
         "pending-admission-live-results-v2.md",
         "../../scripts/agentops_admission_control_v2.py",
         "../../runs/agentops-admission-execution/v3/independent-review/result.json",
-        "pending-admission-live-results-v3.md"
+        "pending-admission-live-results-v3.md",
+        "ci-agentops-native-results-v1.md",
+        "../../runs/ci-agentops-native/download-42808110286-independent-review.json"
       ],
-      "limit": "Latest v4 native prerequisite failed readiness before client launch. Sixteen startup samples retained; forced SIGTERM/-15 with reaped child and empty group. B7 skipped; no fresh admitted application result. Import phase observed, root cause unproved."
+      "limit": "Fresh standard-hosted N11 prerequisite and candidate-gated B7 completed original tasks, exactly1 expected mock effect/audit per case, certificate-to-wire binding and clean shutdown. Fixed fixture only; AP2/full-bank qualification remains open."
     },
     {
       "id": "supervisor_acceptance",
@@ -1602,9 +1607,18 @@
     "result_sha256": "b3e037050afebfae4850590746971d9c2f493a6865f5ed31f4e40b74cf0ee4b4",
     "gate": "../../runs/upstream-agentops-native/inventory-status-v2/prestage-gate.json",
     "gate_sha256": "973d6de067f8d59428fc182092954051bc765b51f1a9551bf675dc265306504c",
-    "physical_available_bytes": [82698240, 134684672],
-    "commit_available_bytes": [7125397504, 6890741760],
-    "observed_at_utc": ["2026-10-30T15:58:38.411029+00:00", "2026-10-30T15:58:48.519662+00:00"],
+    "physical_available_bytes": [
+      82698240,
+      134684672
+    ],
+    "commit_available_bytes": [
+      7125397504,
+      6890741760
+    ],
+    "observed_at_utc": [
+      "2026-10-30T15:58:38.411029+00:00",
+      "2026-10-30T15:58:48.519662+00:00"
+    ],
     "physical_minimum_met": false,
     "commit_minimum_met": true,
     "allocation_consumed": true,
@@ -1815,5 +1829,7 @@
     "model_requests": 0,
     "native_qualification_established": false,
     "claim_limit": "Constructed typed snapshot, file append/fsync, raw object/error preservation and closed local interval completeness/partial seals. Raw test streams/outcomes are retained; temporary synthetic per-case journals were cleaned by tests. Actual native placement, authenticated wire capture, directory crash durability and task completion remain unverified."
-  }
+  },
+  "latest_task_bank_validation": "../../runs/task-bank-validation/20261110-v2.json",
+  "paper_delivery_meaning": "Concrete verified results for research-paper preparation; a complete manuscript is not required in this immediate delivery window."
 }

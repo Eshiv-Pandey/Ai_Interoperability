@@ -1,0 +1,2375 @@
+{
+  "schema_version": "shared-lifting-comparison-run/3",
+  "status": "passed",
+  "entrypoint": "interoperability.shared_lifting_comparison_v3",
+  "checker": "interoperability.direct_goal_pruned_v2",
+  "source_package": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\shared-lifting-pilot\\v1\\budget-256\\source\\interoperability",
+  "bundle": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\shared-lifting-pilot\\reproduction-20261110-v1\\budget-256",
+  "summary": {
+    "schema_version": "admission-benchmark-summary/1",
+    "status": "passed",
+    "cases": 12,
+    "family_labels": [
+      "asynchronous-working-state",
+      "atomic-binding-updates",
+      "correlated-prefix-refinement",
+      "header-coupling",
+      "layered_reconvergence",
+      "missing-public-input",
+      "observable-uncertainty",
+      "opaque-serialization",
+      "public-binding-construction",
+      "stale-evidence",
+      "text-structured-shape"
+    ],
+    "reference_errors": 0,
+    "candidate_count": 3,
+    "candidate_evaluation_complete": true,
+    "algorithms": {
+      "baseline": {
+        "scheduled": 12,
+        "eligible": 12,
+        "not_applicable": 0,
+        "returned_valid": 12,
+        "errors": 0,
+        "reference_scored": 12,
+        "decision_agreements": 12,
+        "supported": 4,
+        "unsupported": 4,
+        "unknown": 4,
+        "conclusive": 8,
+        "certificates_valid": 8,
+        "certificates_invalid": 0,
+        "certificate_check_errors": 0,
+        "false_support": 0,
+        "false_refusal": 0,
+        "conclusive_on_reference_unknown": 0,
+        "abstained_on_reference_decided": 0,
+        "confusion_reference_by_decision": {
+          "supported": {
+            "supported": 4,
+            "unsupported": 0,
+            "unknown": 0
+          },
+          "unsupported": {
+            "supported": 0,
+            "unsupported": 4,
+            "unknown": 0
+          },
+          "unknown": {
+            "supported": 0,
+            "unsupported": 0,
+            "unknown": 4
+          }
+        },
+        "decision_agreement_rate": 1.0,
+        "decision_coverage": 0.6666666666666666,
+        "certified_coverage": 0.6666666666666666,
+        "evaluation_ns": {
+          "samples": [
+            246900,
+            409500,
+            153500,
+            356000,
+            238500,
+            257500,
+            170300,
+            184900,
+            275600,
+            286600,
+            95000,
+            738800
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 3413100
+        },
+        "worker_wall_ns": {
+          "samples": [
+            142544900,
+            167684400,
+            148886500,
+            210886800,
+            172706000,
+            150271500,
+            171134800,
+            207085700,
+            145257100,
+            174298500,
+            187016900,
+            177672200
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 2055445300
+        },
+        "certificate_timing": {
+          "invocations": 8,
+          "evaluation_ns": {
+            "samples": [
+              248000,
+              391900,
+              309800,
+              400300,
+              458300,
+              282200,
+              411300,
+              829500
+            ],
+            "observed": 8,
+            "missing": 0,
+            "total": 3331300
+          },
+          "worker_body_ns": {
+            "samples": [
+              26878400,
+              32768300,
+              29749700,
+              31382800,
+              32280900,
+              32622300,
+              27019600,
+              41145300
+            ],
+            "observed": 8,
+            "missing": 0,
+            "total": 253847300
+          },
+          "worker_wall_ns": {
+            "samples": [
+              159188800,
+              164290900,
+              160736100,
+              155923700,
+              167006800,
+              166473500,
+              144517000,
+              179193600
+            ],
+            "observed": 8,
+            "missing": 0,
+            "total": 1297330400
+          }
+        },
+        "evaluation_and_certificate_timing": {
+          "invocations": 20,
+          "evaluation_ns": {
+            "samples": [
+              246900,
+              409500,
+              153500,
+              356000,
+              238500,
+              257500,
+              170300,
+              184900,
+              275600,
+              286600,
+              95000,
+              738800,
+              248000,
+              391900,
+              309800,
+              400300,
+              458300,
+              282200,
+              411300,
+              829500
+            ],
+            "observed": 20,
+            "missing": 0,
+            "total": 6744400
+          },
+          "worker_body_ns": {
+            "samples": [
+              26526600,
+              29969000,
+              27692800,
+              63153300,
+              25074700,
+              24688800,
+              26511000,
+              27795900,
+              25771100,
+              26185400,
+              26561700,
+              29856300,
+              26878400,
+              32768300,
+              29749700,
+              31382800,
+              32280900,
+              32622300,
+              27019600,
+              41145300
+            ],
+            "observed": 20,
+            "missing": 0,
+            "total": 613633900
+          },
+          "worker_wall_ns": {
+            "samples": [
+              142544900,
+              167684400,
+              148886500,
+              210886800,
+              172706000,
+              150271500,
+              171134800,
+              207085700,
+              145257100,
+              174298500,
+              187016900,
+              177672200,
+              159188800,
+              164290900,
+              160736100,
+              155923700,
+              167006800,
+              166473500,
+              144517000,
+              179193600
+            ],
+            "observed": 20,
+            "missing": 0,
+            "total": 3352775700
+          }
+        }
+      },
+      "direct_pruned": {
+        "scheduled": 12,
+        "eligible": 12,
+        "not_applicable": 0,
+        "returned_valid": 12,
+        "errors": 0,
+        "reference_scored": 12,
+        "decision_agreements": 12,
+        "supported": 4,
+        "unsupported": 4,
+        "unknown": 4,
+        "conclusive": 8,
+        "certificates_valid": 8,
+        "certificates_invalid": 0,
+        "certificate_check_errors": 0,
+        "false_support": 0,
+        "false_refusal": 0,
+        "conclusive_on_reference_unknown": 0,
+        "abstained_on_reference_decided": 0,
+        "confusion_reference_by_decision": {
+          "supported": {
+            "supported": 4,
+            "unsupported": 0,
+            "unknown": 0
+          },
+          "unsupported": {
+            "supported": 0,
+            "unsupported": 4,
+            "unknown": 0
+          },
+          "unknown": {
+            "supported": 0,
+            "unsupported": 0,
+            "unknown": 4
+          }
+        },
+        "decision_agreement_rate": 1.0,
+        "decision_coverage": 0.6666666666666666,
+        "certified_coverage": 0.6666666666666666,
+        "evaluation_ns": {
+          "samples": [
+            253900,
+            234700,
+            153000,
+            617000,
+            243900,
+            265000,
+            169000,
+            188400,
+            290800,
+            274400,
+            131100,
+            592300
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 3413500
+        },
+        "worker_wall_ns": {
+          "samples": [
+            154114500,
+            157800600,
+            153939600,
+            163801800,
+            183069000,
+            147558000,
+            153651100,
+            177565200,
+            166169100,
+            148125700,
+            182918100,
+            175929400
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 1964642100
+        },
+        "certificate_timing": {
+          "invocations": 8,
+          "evaluation_ns": {
+            "samples": [
+              271800,
+              232000,
+              361600,
+              251900,
+              279500,
+              279900,
+              275400,
+              555300
+            ],
+            "observed": 8,
+            "missing": 0,
+            "total": 2507400
+          },
+          "worker_body_ns": {
+            "samples": [
+              37374500,
+              26049300,
+              30687100,
+              26896700,
+              31376800,
+              27388600,
+              33298600,
+              34785800
+            ],
+            "observed": 8,
+            "missing": 0,
+            "total": 247857400
+          },
+          "worker_wall_ns": {
+            "samples": [
+              173567600,
+              203801900,
+              150523700,
+              148974600,
+              159126000,
+              161278900,
+              153508900,
+              173904400
+            ],
+            "observed": 8,
+            "missing": 0,
+            "total": 1324686000
+          }
+        },
+        "evaluation_and_certificate_timing": {
+          "invocations": 20,
+          "evaluation_ns": {
+            "samples": [
+              253900,
+              234700,
+              153000,
+              617000,
+              243900,
+              265000,
+              169000,
+              188400,
+              290800,
+              274400,
+              131100,
+              592300,
+              271800,
+              232000,
+              361600,
+              251900,
+              279500,
+              279900,
+              275400,
+              555300
+            ],
+            "observed": 20,
+            "missing": 0,
+            "total": 5920900
+          },
+          "worker_body_ns": {
+            "samples": [
+              28987200,
+              30005500,
+              27292900,
+              30464400,
+              28318700,
+              25214300,
+              28235900,
+              27604600,
+              34732100,
+              27288700,
+              32905900,
+              29986600,
+              37374500,
+              26049300,
+              30687100,
+              26896700,
+              31376800,
+              27388600,
+              33298600,
+              34785800
+            ],
+            "observed": 20,
+            "missing": 0,
+            "total": 598894200
+          },
+          "worker_wall_ns": {
+            "samples": [
+              154114500,
+              157800600,
+              153939600,
+              163801800,
+              183069000,
+              147558000,
+              153651100,
+              177565200,
+              166169100,
+              148125700,
+              182918100,
+              175929400,
+              173567600,
+              203801900,
+              150523700,
+              148974600,
+              159126000,
+              161278900,
+              153508900,
+              173904400
+            ],
+            "observed": 20,
+            "missing": 0,
+            "total": 3289328100
+          }
+        }
+      },
+      "candidate": {
+        "scheduled": 12,
+        "eligible": 12,
+        "not_applicable": 0,
+        "returned_valid": 12,
+        "errors": 0,
+        "reference_scored": 12,
+        "decision_agreements": 11,
+        "supported": 4,
+        "unsupported": 3,
+        "unknown": 5,
+        "conclusive": 7,
+        "certificates_valid": 7,
+        "certificates_invalid": 0,
+        "certificate_check_errors": 0,
+        "false_support": 0,
+        "false_refusal": 0,
+        "conclusive_on_reference_unknown": 0,
+        "abstained_on_reference_decided": 1,
+        "confusion_reference_by_decision": {
+          "supported": {
+            "supported": 4,
+            "unsupported": 0,
+            "unknown": 0
+          },
+          "unsupported": {
+            "supported": 0,
+            "unsupported": 3,
+            "unknown": 1
+          },
+          "unknown": {
+            "supported": 0,
+            "unsupported": 0,
+            "unknown": 4
+          }
+        },
+        "decision_agreement_rate": 0.9166666666666666,
+        "decision_coverage": 0.5833333333333334,
+        "certified_coverage": 0.5833333333333334,
+        "evaluation_ns": {
+          "samples": [
+            244300,
+            180000,
+            171900,
+            264900,
+            195800,
+            314000,
+            164900,
+            1950900,
+            261000,
+            222300,
+            77700,
+            354600
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 4402300
+        },
+        "worker_wall_ns": {
+          "samples": [
+            156840700,
+            154384500,
+            158484600,
+            178647900,
+            177088700,
+            150643700,
+            162760900,
+            186120500,
+            168955300,
+            138299700,
+            160871400,
+            163465200
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 1956563100
+        },
+        "certificate_timing": {
+          "invocations": 7,
+          "evaluation_ns": {
+            "samples": [
+              278300,
+              229200,
+              551000,
+              488800,
+              259000,
+              263800,
+              373400
+            ],
+            "observed": 7,
+            "missing": 0,
+            "total": 2443500
+          },
+          "worker_body_ns": {
+            "samples": [
+              31164000,
+              26215200,
+              29576900,
+              30614800,
+              28851100,
+              28027400,
+              35393200
+            ],
+            "observed": 7,
+            "missing": 0,
+            "total": 209842600
+          },
+          "worker_wall_ns": {
+            "samples": [
+              161920200,
+              156832700,
+              150063700,
+              155736700,
+              164137800,
+              154178200,
+              161742500
+            ],
+            "observed": 7,
+            "missing": 0,
+            "total": 1104611800
+          }
+        },
+        "evaluation_and_certificate_timing": {
+          "invocations": 19,
+          "evaluation_ns": {
+            "samples": [
+              244300,
+              180000,
+              171900,
+              264900,
+              195800,
+              314000,
+              164900,
+              1950900,
+              261000,
+              222300,
+              77700,
+              354600,
+              278300,
+              229200,
+              551000,
+              488800,
+              259000,
+              263800,
+              373400
+            ],
+            "observed": 19,
+            "missing": 0,
+            "total": 6845800
+          },
+          "worker_body_ns": {
+            "samples": [
+              22572300,
+              18764300,
+              21796700,
+              21587400,
+              20280300,
+              29620800,
+              20404100,
+              33638200,
+              28917200,
+              19852100,
+              25255600,
+              25210600,
+              31164000,
+              26215200,
+              29576900,
+              30614800,
+              28851100,
+              28027400,
+              35393200
+            ],
+            "observed": 19,
+            "missing": 0,
+            "total": 497742200
+          },
+          "worker_wall_ns": {
+            "samples": [
+              156840700,
+              154384500,
+              158484600,
+              178647900,
+              177088700,
+              150643700,
+              162760900,
+              186120500,
+              168955300,
+              138299700,
+              160871400,
+              163465200,
+              161920200,
+              156832700,
+              150063700,
+              155736700,
+              164137800,
+              154178200,
+              161742500
+            ],
+            "observed": 19,
+            "missing": 0,
+            "total": 3061174900
+          }
+        }
+      },
+      "shared_lift": {
+        "scheduled": 12,
+        "eligible": 12,
+        "not_applicable": 0,
+        "returned_valid": 12,
+        "errors": 0,
+        "reference_scored": 12,
+        "decision_agreements": 10,
+        "supported": 3,
+        "unsupported": 3,
+        "unknown": 6,
+        "conclusive": 6,
+        "certificates_valid": 6,
+        "certificates_invalid": 0,
+        "certificate_check_errors": 0,
+        "false_support": 0,
+        "false_refusal": 0,
+        "conclusive_on_reference_unknown": 0,
+        "abstained_on_reference_decided": 2,
+        "confusion_reference_by_decision": {
+          "supported": {
+            "supported": 3,
+            "unsupported": 0,
+            "unknown": 1
+          },
+          "unsupported": {
+            "supported": 0,
+            "unsupported": 3,
+            "unknown": 1
+          },
+          "unknown": {
+            "supported": 0,
+            "unsupported": 0,
+            "unknown": 4
+          }
+        },
+        "decision_agreement_rate": 0.8333333333333334,
+        "decision_coverage": 0.5,
+        "certified_coverage": 0.5,
+        "evaluation_ns": {
+          "samples": [
+            513400,
+            363200,
+            285500,
+            456700,
+            350400,
+            268400,
+            238600,
+            288100,
+            447400,
+            406300,
+            81500,
+            370500
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 4070000
+        },
+        "worker_wall_ns": {
+          "samples": [
+            173315000,
+            155419800,
+            157787800,
+            174408500,
+            146885000,
+            173599700,
+            169708000,
+            168587900,
+            151905000,
+            172015000,
+            159703700,
+            167568500
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 1970903900
+        },
+        "certificate_timing": {
+          "invocations": 6,
+          "evaluation_ns": {
+            "samples": [
+              247600,
+              225500,
+              244000,
+              293600,
+              394000,
+              276000
+            ],
+            "observed": 6,
+            "missing": 0,
+            "total": 1680700
+          },
+          "worker_body_ns": {
+            "samples": [
+              27774700,
+              28544100,
+              33652000,
+              34597200,
+              30460500,
+              31809500
+            ],
+            "observed": 6,
+            "missing": 0,
+            "total": 186838000
+          },
+          "worker_wall_ns": {
+            "samples": [
+              161819700,
+              152434200,
+              159758100,
+              154356600,
+              146104500,
+              166348900
+            ],
+            "observed": 6,
+            "missing": 0,
+            "total": 940822000
+          }
+        },
+        "evaluation_and_certificate_timing": {
+          "invocations": 18,
+          "evaluation_ns": {
+            "samples": [
+              513400,
+              363200,
+              285500,
+              456700,
+              350400,
+              268400,
+              238600,
+              288100,
+              447400,
+              406300,
+              81500,
+              370500,
+              247600,
+              225500,
+              244000,
+              293600,
+              394000,
+              276000
+            ],
+            "observed": 18,
+            "missing": 0,
+            "total": 5750700
+          },
+          "worker_body_ns": {
+            "samples": [
+              28822000,
+              35143000,
+              30357400,
+              36019500,
+              31796000,
+              30033200,
+              30594700,
+              27321000,
+              27223000,
+              27752800,
+              28504500,
+              28773600,
+              27774700,
+              28544100,
+              33652000,
+              34597200,
+              30460500,
+              31809500
+            ],
+            "observed": 18,
+            "missing": 0,
+            "total": 549178700
+          },
+          "worker_wall_ns": {
+            "samples": [
+              173315000,
+              155419800,
+              157787800,
+              174408500,
+              146885000,
+              173599700,
+              169708000,
+              168587900,
+              151905000,
+              172015000,
+              159703700,
+              167568500,
+              161819700,
+              152434200,
+              159758100,
+              154356600,
+              146104500,
+              166348900
+            ],
+            "observed": 18,
+            "missing": 0,
+            "total": 2911725900
+          }
+        }
+      }
+    },
+    "reference_timing": {
+      "invocations": 12,
+      "evaluation_ns": {
+        "samples": [
+          245000,
+          212500,
+          147500,
+          360100,
+          241700,
+          292100,
+          191100,
+          193200,
+          290100,
+          265400,
+          93300,
+          573500
+        ],
+        "observed": 12,
+        "missing": 0,
+        "total": 3105500
+      },
+      "worker_body_ns": {
+        "samples": [
+          27767100,
+          25527300,
+          26925300,
+          29079500,
+          33350900,
+          26956100,
+          36470700,
+          31183900,
+          50404200,
+          25588700,
+          29401700,
+          29116600
+        ],
+        "observed": 12,
+        "missing": 0,
+        "total": 371772000
+      },
+      "worker_wall_ns": {
+        "samples": [
+          144992400,
+          148064000,
+          146516100,
+          179312100,
+          153771100,
+          147698000,
+          158259200,
+          180697600,
+          208568000,
+          144666900,
+          164779600,
+          192760400
+        ],
+        "observed": 12,
+        "missing": 0,
+        "total": 1970085400
+      }
+    },
+    "all_invocation_timing": {
+      "invocations": 89,
+      "evaluation_ns": {
+        "samples": [
+          245000,
+          212500,
+          147500,
+          360100,
+          241700,
+          292100,
+          191100,
+          193200,
+          290100,
+          265400,
+          93300,
+          573500,
+          246900,
+          409500,
+          153500,
+          356000,
+          238500,
+          257500,
+          170300,
+          184900,
+          275600,
+          286600,
+          95000,
+          738800,
+          248000,
+          391900,
+          309800,
+          400300,
+          458300,
+          282200,
+          411300,
+          829500,
+          253900,
+          234700,
+          153000,
+          617000,
+          243900,
+          265000,
+          169000,
+          188400,
+          290800,
+          274400,
+          131100,
+          592300,
+          271800,
+          232000,
+          361600,
+          251900,
+          279500,
+          279900,
+          275400,
+          555300,
+          244300,
+          180000,
+          171900,
+          264900,
+          195800,
+          314000,
+          164900,
+          1950900,
+          261000,
+          222300,
+          77700,
+          354600,
+          278300,
+          229200,
+          551000,
+          488800,
+          259000,
+          263800,
+          373400,
+          513400,
+          363200,
+          285500,
+          456700,
+          350400,
+          268400,
+          238600,
+          288100,
+          447400,
+          406300,
+          81500,
+          370500,
+          247600,
+          225500,
+          244000,
+          293600,
+          394000,
+          276000
+        ],
+        "observed": 89,
+        "missing": 0,
+        "total": 28367300
+      },
+      "worker_body_ns": {
+        "samples": [
+          27767100,
+          25527300,
+          26925300,
+          29079500,
+          33350900,
+          26956100,
+          36470700,
+          31183900,
+          50404200,
+          25588700,
+          29401700,
+          29116600,
+          26526600,
+          29969000,
+          27692800,
+          63153300,
+          25074700,
+          24688800,
+          26511000,
+          27795900,
+          25771100,
+          26185400,
+          26561700,
+          29856300,
+          26878400,
+          32768300,
+          29749700,
+          31382800,
+          32280900,
+          32622300,
+          27019600,
+          41145300,
+          28987200,
+          30005500,
+          27292900,
+          30464400,
+          28318700,
+          25214300,
+          28235900,
+          27604600,
+          34732100,
+          27288700,
+          32905900,
+          29986600,
+          37374500,
+          26049300,
+          30687100,
+          26896700,
+          31376800,
+          27388600,
+          33298600,
+          34785800,
+          22572300,
+          18764300,
+          21796700,
+          21587400,
+          20280300,
+          29620800,
+          20404100,
+          33638200,
+          28917200,
+          19852100,
+          25255600,
+          25210600,
+          31164000,
+          26215200,
+          29576900,
+          30614800,
+          28851100,
+          28027400,
+          35393200,
+          28822000,
+          35143000,
+          30357400,
+          36019500,
+          31796000,
+          30033200,
+          30594700,
+          27321000,
+          27223000,
+          27752800,
+          28504500,
+          28773600,
+          27774700,
+          28544100,
+          33652000,
+          34597200,
+          30460500,
+          31809500
+        ],
+        "observed": 89,
+        "missing": 0,
+        "total": 2631221000
+      },
+      "worker_wall_ns": {
+        "samples": [
+          144992400,
+          148064000,
+          146516100,
+          179312100,
+          153771100,
+          147698000,
+          158259200,
+          180697600,
+          208568000,
+          144666900,
+          164779600,
+          192760400,
+          142544900,
+          167684400,
+          148886500,
+          210886800,
+          172706000,
+          150271500,
+          171134800,
+          207085700,
+          145257100,
+          174298500,
+          187016900,
+          177672200,
+          159188800,
+          164290900,
+          160736100,
+          155923700,
+          167006800,
+          166473500,
+          144517000,
+          179193600,
+          154114500,
+          157800600,
+          153939600,
+          163801800,
+          183069000,
+          147558000,
+          153651100,
+          177565200,
+          166169100,
+          148125700,
+          182918100,
+          175929400,
+          173567600,
+          203801900,
+          150523700,
+          148974600,
+          159126000,
+          161278900,
+          153508900,
+          173904400,
+          156840700,
+          154384500,
+          158484600,
+          178647900,
+          177088700,
+          150643700,
+          162760900,
+          186120500,
+          168955300,
+          138299700,
+          160871400,
+          163465200,
+          161920200,
+          156832700,
+          150063700,
+          155736700,
+          164137800,
+          154178200,
+          161742500,
+          173315000,
+          155419800,
+          157787800,
+          174408500,
+          146885000,
+          173599700,
+          169708000,
+          168587900,
+          151905000,
+          172015000,
+          159703700,
+          167568500,
+          161819700,
+          152434200,
+          159758100,
+          154356600,
+          146104500,
+          166348900
+        ],
+        "observed": 89,
+        "missing": 0,
+        "total": 14585090000
+      }
+    },
+    "held_out_cases": 0,
+    "qualified_domains": 0,
+    "novelty_established": false,
+    "claim_limit": "Authored development contracts in registered schemas only; no application task success, domain qualification, statistical independence, novelty or performance advantage established.",
+    "timing_scope": "Every attempted evaluation and certificate check is counted, including failures and timeouts. Unavailable timings stay null; totals sum observed samples only and are null when none were measured. evaluation_ns includes function work and excludes import/startup; worker_wall_ns includes process startup, imports and capture. Reference timing is separate; all_invocation_timing includes references, solvers and checks, not parent-runner overhead. Fresh workers; no persistent warm cache or performance inference.",
+    "snapshot_inputs_unchanged": true,
+    "original_inputs_unchanged": true,
+    "finished_at_epoch_ns": 1794302854757168000
+  },
+  "verification": {
+    "status": "passed",
+    "files_verified": 483,
+    "case_records": 12,
+    "summary_recomputed": true,
+    "fresh_algorithm_execution": false,
+    "schema_version": "shared-lifting-comparison-verification/3",
+    "entrypoint": "interoperability.shared_lifting_comparison_v3",
+    "checker": "interoperability.direct_goal_pruned_v2",
+    "worker_jobs_bound": 89,
+    "benchmark_status": "passed",
+    "certificate_jobs_bound": 29,
+    "sources": [
+      {
+        "path": "source/interoperability/shared_lifting_comparison_v3.py",
+        "bytes": 13342,
+        "sha256": "d5175683cedecd7f901136086b3294f972d9a19524e4bcd4e416b9120542e100"
+      },
+      {
+        "path": "source/interoperability/benchmark_resources_v1.py",
+        "bytes": 8044,
+        "sha256": "b58eaec738a7cd69a54dbd105465c1544390e3de51a3737a0eeea1ee6575fdf9"
+      },
+      {
+        "path": "source/interoperability/refinement_shared_lift_v2.py",
+        "bytes": 15366,
+        "sha256": "927538f7ddcb21120913c6c4257754b65a45703db384eec8cd6a28ba9e9b280b"
+      },
+      {
+        "path": "source/interoperability/direct_comparison_v2.py",
+        "bytes": 9565,
+        "sha256": "610c082233dcf44b58bb0b0bf68bfc4ca7fec307e380be21699ec3db39e60eb9"
+      },
+      {
+        "path": "source/interoperability/direct_goal_pruned_v2.py",
+        "bytes": 10620,
+        "sha256": "1fba2d0bd747f965056279bbda40b9c28f50f1200b7e9a6869f343ab6f64de51"
+      },
+      {
+        "path": "source/interoperability/refinement_oracle.py",
+        "bytes": 25050,
+        "sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e"
+      },
+      {
+        "path": "source/interoperability/refinement.py",
+        "bytes": 18566,
+        "sha256": "11175edcb99dbec231390ae767ba97dce2e919810844ed544a1ddd109f4b5b3b"
+      },
+      {
+        "path": "source/interoperability/benchmark.py",
+        "bytes": 34981,
+        "sha256": "38b6cb4e6fd9ff4a48b0a9d45ca44156c8e714663f6c4a73060f44259a9c3a7e"
+      }
+    ],
+    "resource_summary": {
+      "reference": {
+        "invocations": 12,
+        "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+        "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+        "peak_resident_bytes": {
+          "samples": [
+            22564864,
+            22925312,
+            22847488,
+            22601728,
+            22601728,
+            22724608,
+            22667264,
+            22847488,
+            22679552,
+            22638592,
+            22568960,
+            22888448
+          ],
+          "observed": 12,
+          "missing": 0,
+          "maximum": 22925312
+        },
+        "preparation_ns": {
+          "samples": [
+            18088100,
+            19198800,
+            17921400,
+            21290300,
+            21801800,
+            20605400,
+            26929200,
+            20823600,
+            43437700,
+            18763200,
+            21435600,
+            20686200
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 270981300
+        },
+        "result_serialization_ns": {
+          "samples": [
+            13500,
+            12000,
+            8600,
+            14200,
+            11800,
+            14300,
+            9100,
+            8400,
+            13300,
+            12200,
+            19600,
+            13700
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 150700
+        },
+        "post_validation_ns": {
+          "samples": [
+            29700,
+            30400,
+            56600,
+            37600,
+            41900,
+            34700,
+            57900,
+            57400,
+            32700,
+            31200,
+            52400,
+            71400
+          ],
+          "observed": 12,
+          "missing": 0,
+          "total": 533900
+        }
+      },
+      "algorithms": {
+        "baseline": {
+          "evaluation": {
+            "invocations": 12,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                23093248,
+                22945792,
+                22949888,
+                22999040,
+                22679552,
+                23093248,
+                22978560,
+                22929408,
+                22974464,
+                22728704,
+                22851584,
+                22974464
+              ],
+              "observed": 12,
+              "missing": 0,
+              "maximum": 23093248
+            },
+            "preparation_ns": {
+              "samples": [
+                19899200,
+                20307000,
+                20828600,
+                56465600,
+                18451000,
+                18150500,
+                20165000,
+                21475100,
+                18671500,
+                19532700,
+                19273300,
+                20975200
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 274194700
+            },
+            "result_serialization_ns": {
+              "samples": [
+                13200,
+                21600,
+                8600,
+                14600,
+                12000,
+                13900,
+                8500,
+                8700,
+                13700,
+                12300,
+                18400,
+                24100
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 169600
+            },
+            "post_validation_ns": {
+              "samples": [
+                30400,
+                48700,
+                47000,
+                39000,
+                32500,
+                33200,
+                47400,
+                52400,
+                32500,
+                31300,
+                63900,
+                133000
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 591300
+            }
+          },
+          "certificate": {
+            "invocations": 8,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                22925312,
+                23076864,
+                22638592,
+                23044096,
+                23093248,
+                22982656,
+                22884352,
+                22695936
+              ],
+              "observed": 8,
+              "missing": 0,
+              "maximum": 23093248
+            },
+            "preparation_ns": {
+              "samples": [
+                20614000,
+                25671000,
+                21589700,
+                24179300,
+                25175600,
+                24385800,
+                20436600,
+                31115400
+              ],
+              "observed": 8,
+              "missing": 0,
+              "total": 193167400
+            },
+            "result_serialization_ns": {
+              "samples": [
+                7000,
+                6000,
+                6500,
+                5900,
+                10100,
+                7300,
+                5300,
+                6100
+              ],
+              "observed": 8,
+              "missing": 0,
+              "total": 54200
+            },
+            "post_validation_ns": {
+              "samples": [
+                34400,
+                30700,
+                41000,
+                30700,
+                66000,
+                36700,
+                31600,
+                66600
+              ],
+              "observed": 8,
+              "missing": 0,
+              "total": 337700
+            }
+          },
+          "evaluation_and_certificate": {
+            "invocations": 20,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                23093248,
+                22945792,
+                22949888,
+                22999040,
+                22679552,
+                23093248,
+                22978560,
+                22929408,
+                22974464,
+                22728704,
+                22851584,
+                22974464,
+                22925312,
+                23076864,
+                22638592,
+                23044096,
+                23093248,
+                22982656,
+                22884352,
+                22695936
+              ],
+              "observed": 20,
+              "missing": 0,
+              "maximum": 23093248
+            },
+            "preparation_ns": {
+              "samples": [
+                19899200,
+                20307000,
+                20828600,
+                56465600,
+                18451000,
+                18150500,
+                20165000,
+                21475100,
+                18671500,
+                19532700,
+                19273300,
+                20975200,
+                20614000,
+                25671000,
+                21589700,
+                24179300,
+                25175600,
+                24385800,
+                20436600,
+                31115400
+              ],
+              "observed": 20,
+              "missing": 0,
+              "total": 467362100
+            },
+            "result_serialization_ns": {
+              "samples": [
+                13200,
+                21600,
+                8600,
+                14600,
+                12000,
+                13900,
+                8500,
+                8700,
+                13700,
+                12300,
+                18400,
+                24100,
+                7000,
+                6000,
+                6500,
+                5900,
+                10100,
+                7300,
+                5300,
+                6100
+              ],
+              "observed": 20,
+              "missing": 0,
+              "total": 223800
+            },
+            "post_validation_ns": {
+              "samples": [
+                30400,
+                48700,
+                47000,
+                39000,
+                32500,
+                33200,
+                47400,
+                52400,
+                32500,
+                31300,
+                63900,
+                133000,
+                34400,
+                30700,
+                41000,
+                30700,
+                66000,
+                36700,
+                31600,
+                66600
+              ],
+              "observed": 20,
+              "missing": 0,
+              "total": 929000
+            }
+          }
+        },
+        "direct_pruned": {
+          "evaluation": {
+            "invocations": 12,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                23015424,
+                23093248,
+                23056384,
+                22855680,
+                22675456,
+                23052288,
+                22720512,
+                23265280,
+                22904832,
+                22720512,
+                22786048,
+                23085056
+              ],
+              "observed": 12,
+              "missing": 0,
+              "maximum": 23265280
+            },
+            "preparation_ns": {
+              "samples": [
+                22354200,
+                23303500,
+                19579000,
+                22641700,
+                19874500,
+                18834200,
+                19854200,
+                20386500,
+                26060700,
+                20472500,
+                23923900,
+                22070700
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 259355600
+            },
+            "result_serialization_ns": {
+              "samples": [
+                12500,
+                19000,
+                8400,
+                23100,
+                17800,
+                29400,
+                8300,
+                8100,
+                13800,
+                20000,
+                39900,
+                15000
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 215300
+            },
+            "post_validation_ns": {
+              "samples": [
+                30000,
+                31100,
+                48200,
+                45400,
+                33600,
+                35400,
+                49700,
+                56100,
+                30900,
+                33900,
+                78000,
+                76800
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 549100
+            }
+          },
+          "certificate": {
+            "invocations": 8,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                22958080,
+                22675456,
+                22687744,
+                23265280,
+                23171072,
+                22835200,
+                22978560,
+                23048192
+              ],
+              "observed": 8,
+              "missing": 0,
+              "maximum": 23265280
+            },
+            "preparation_ns": {
+              "samples": [
+                30525000,
+                19179100,
+                20358600,
+                19677100,
+                24849800,
+                20981700,
+                24616800,
+                26752700
+              ],
+              "observed": 8,
+              "missing": 0,
+              "total": 186940800
+            },
+            "result_serialization_ns": {
+              "samples": [
+                7200,
+                6100,
+                9200,
+                5800,
+                7400,
+                7000,
+                6000,
+                5300
+              ],
+              "observed": 8,
+              "missing": 0,
+              "total": 54000
+            },
+            "post_validation_ns": {
+              "samples": [
+                37900,
+                32400,
+                52800,
+                34900,
+                37500,
+                36600,
+                35600,
+                71600
+              ],
+              "observed": 8,
+              "missing": 0,
+              "total": 339300
+            }
+          },
+          "evaluation_and_certificate": {
+            "invocations": 20,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                23015424,
+                23093248,
+                23056384,
+                22855680,
+                22675456,
+                23052288,
+                22720512,
+                23265280,
+                22904832,
+                22720512,
+                22786048,
+                23085056,
+                22958080,
+                22675456,
+                22687744,
+                23265280,
+                23171072,
+                22835200,
+                22978560,
+                23048192
+              ],
+              "observed": 20,
+              "missing": 0,
+              "maximum": 23265280
+            },
+            "preparation_ns": {
+              "samples": [
+                22354200,
+                23303500,
+                19579000,
+                22641700,
+                19874500,
+                18834200,
+                19854200,
+                20386500,
+                26060700,
+                20472500,
+                23923900,
+                22070700,
+                30525000,
+                19179100,
+                20358600,
+                19677100,
+                24849800,
+                20981700,
+                24616800,
+                26752700
+              ],
+              "observed": 20,
+              "missing": 0,
+              "total": 446296400
+            },
+            "result_serialization_ns": {
+              "samples": [
+                12500,
+                19000,
+                8400,
+                23100,
+                17800,
+                29400,
+                8300,
+                8100,
+                13800,
+                20000,
+                39900,
+                15000,
+                7200,
+                6100,
+                9200,
+                5800,
+                7400,
+                7000,
+                6000,
+                5300
+              ],
+              "observed": 20,
+              "missing": 0,
+              "total": 269300
+            },
+            "post_validation_ns": {
+              "samples": [
+                30000,
+                31100,
+                48200,
+                45400,
+                33600,
+                35400,
+                49700,
+                56100,
+                30900,
+                33900,
+                78000,
+                76800,
+                37900,
+                32400,
+                52800,
+                34900,
+                37500,
+                36600,
+                35600,
+                71600
+              ],
+              "observed": 20,
+              "missing": 0,
+              "total": 888400
+            }
+          }
+        },
+        "candidate": {
+          "evaluation": {
+            "invocations": 12,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                21782528,
+                22175744,
+                21876736,
+                22134784,
+                22069248,
+                22114304,
+                21807104,
+                22073344,
+                22110208,
+                21876736,
+                22196224,
+                22257664
+              ],
+              "observed": 12,
+              "missing": 0,
+              "maximum": 22257664
+            },
+            "preparation_ns": {
+              "samples": [
+                15155900,
+                12526300,
+                15297500,
+                14693700,
+                12939100,
+                19415300,
+                12446300,
+                18900700,
+                21613600,
+                13533000,
+                16559500,
+                17004200
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 190085100
+            },
+            "result_serialization_ns": {
+              "samples": [
+                15600,
+                14100,
+                11000,
+                15800,
+                13400,
+                26800,
+                11000,
+                71600,
+                15500,
+                12600,
+                25000,
+                11100
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 243500
+            },
+            "post_validation_ns": {
+              "samples": [
+                32200,
+                31600,
+                33600,
+                45700,
+                34800,
+                59700,
+                29500,
+                110700,
+                34000,
+                33300,
+                54000,
+                68700
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 567800
+            }
+          },
+          "certificate": {
+            "invocations": 7,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                22966272,
+                22798336,
+                23121920,
+                22999040,
+                23101440,
+                22896640,
+                22892544
+              ],
+              "observed": 7,
+              "missing": 0,
+              "maximum": 23121920
+            },
+            "preparation_ns": {
+              "samples": [
+                22763000,
+                19163600,
+                20450700,
+                22258800,
+                21966500,
+                20995800,
+                27863500
+              ],
+              "observed": 7,
+              "missing": 0,
+              "total": 155461900
+            },
+            "result_serialization_ns": {
+              "samples": [
+                6900,
+                5600,
+                12900,
+                9400,
+                6200,
+                6600,
+                10700
+              ],
+              "observed": 7,
+              "missing": 0,
+              "total": 58300
+            },
+            "post_validation_ns": {
+              "samples": [
+                33300,
+                31400,
+                54200,
+                52000,
+                35500,
+                34800,
+                39000
+              ],
+              "observed": 7,
+              "missing": 0,
+              "total": 280200
+            }
+          },
+          "evaluation_and_certificate": {
+            "invocations": 19,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                21782528,
+                22175744,
+                21876736,
+                22134784,
+                22069248,
+                22114304,
+                21807104,
+                22073344,
+                22110208,
+                21876736,
+                22196224,
+                22257664,
+                22966272,
+                22798336,
+                23121920,
+                22999040,
+                23101440,
+                22896640,
+                22892544
+              ],
+              "observed": 19,
+              "missing": 0,
+              "maximum": 23121920
+            },
+            "preparation_ns": {
+              "samples": [
+                15155900,
+                12526300,
+                15297500,
+                14693700,
+                12939100,
+                19415300,
+                12446300,
+                18900700,
+                21613600,
+                13533000,
+                16559500,
+                17004200,
+                22763000,
+                19163600,
+                20450700,
+                22258800,
+                21966500,
+                20995800,
+                27863500
+              ],
+              "observed": 19,
+              "missing": 0,
+              "total": 345547000
+            },
+            "result_serialization_ns": {
+              "samples": [
+                15600,
+                14100,
+                11000,
+                15800,
+                13400,
+                26800,
+                11000,
+                71600,
+                15500,
+                12600,
+                25000,
+                11100,
+                6900,
+                5600,
+                12900,
+                9400,
+                6200,
+                6600,
+                10700
+              ],
+              "observed": 19,
+              "missing": 0,
+              "total": 301800
+            },
+            "post_validation_ns": {
+              "samples": [
+                32200,
+                31600,
+                33600,
+                45700,
+                34800,
+                59700,
+                29500,
+                110700,
+                34000,
+                33300,
+                54000,
+                68700,
+                33300,
+                31400,
+                54200,
+                52000,
+                35500,
+                34800,
+                39000
+              ],
+              "observed": 19,
+              "missing": 0,
+              "total": 848000
+            }
+          }
+        },
+        "shared_lift": {
+          "evaluation": {
+            "invocations": 12,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                22114304,
+                22097920,
+                21958656,
+                22233088,
+                22372352,
+                22048768,
+                22302720,
+                22462464,
+                22192128,
+                21905408,
+                22167552,
+                22388736
+              ],
+              "observed": 12,
+              "missing": 0,
+              "maximum": 22462464
+            },
+            "preparation_ns": {
+              "samples": [
+                20361300,
+                26533400,
+                20580400,
+                29315400,
+                22115100,
+                23103600,
+                18909900,
+                20074000,
+                19061100,
+                20392000,
+                21585300,
+                21310200
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 263341700
+            },
+            "result_serialization_ns": {
+              "samples": [
+                33100,
+                29100,
+                16200,
+                12500,
+                17100,
+                17900,
+                12600,
+                20900,
+                18700,
+                75300,
+                33700,
+                13800
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 300900
+            },
+            "post_validation_ns": {
+              "samples": [
+                57000,
+                65800,
+                41400,
+                42700,
+                37700,
+                35500,
+                30100,
+                45200,
+                36700,
+                60100,
+                55200,
+                68600
+              ],
+              "observed": 12,
+              "missing": 0,
+              "total": 576000
+            }
+          },
+          "certificate": {
+            "invocations": 6,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                22736896,
+                23080960,
+                22851584,
+                22929408,
+                23207936,
+                22843392
+              ],
+              "observed": 6,
+              "missing": 0,
+              "maximum": 23207936
+            },
+            "preparation_ns": {
+              "samples": [
+                19965300,
+                21467000,
+                27312500,
+                27937400,
+                21286600,
+                22260900
+              ],
+              "observed": 6,
+              "missing": 0,
+              "total": 140229700
+            },
+            "result_serialization_ns": {
+              "samples": [
+                6700,
+                5400,
+                5700,
+                6600,
+                9900,
+                6100
+              ],
+              "observed": 6,
+              "missing": 0,
+              "total": 40400
+            },
+            "post_validation_ns": {
+              "samples": [
+                34400,
+                31800,
+                35100,
+                42900,
+                46700,
+                34900
+              ],
+              "observed": 6,
+              "missing": 0,
+              "total": 225800
+            }
+          },
+          "evaluation_and_certificate": {
+            "invocations": 18,
+            "memory_scope": "OS process high-water mark observed after input post-check and result JSON serialization, before final reply output. Includes interpreter/import/input overhead; excludes the parent and other workers. Maxima across sequential workers are reported, never summed or called solver-only memory.",
+            "timing_scope": "preparation_ns starts at worker entry and includes job JSON loading, input digest and target import; wrapper/benchmark imports occur before entry. evaluation_ns covers the function attempt, including failures. Result JSON validation/serialization and input post-check are separate. worker_body_ns includes resource observation but excludes final reply serialization/write; worker_wall_ns includes process startup and output. These timings overlap and must not all be added together.",
+            "peak_resident_bytes": {
+              "samples": [
+                22114304,
+                22097920,
+                21958656,
+                22233088,
+                22372352,
+                22048768,
+                22302720,
+                22462464,
+                22192128,
+                21905408,
+                22167552,
+                22388736,
+                22736896,
+                23080960,
+                22851584,
+                22929408,
+                23207936,
+                22843392
+              ],
+              "observed": 18,
+              "missing": 0,
+              "maximum": 23207936
+            },
+            "preparation_ns": {
+              "samples": [
+                20361300,
+                26533400,
+                20580400,
+                29315400,
+                22115100,
+                23103600,
+                18909900,
+                20074000,
+                19061100,
+                20392000,
+                21585300,
+                21310200,
+                19965300,
+                21467000,
+                27312500,
+                27937400,
+                21286600,
+                22260900
+              ],
+              "observed": 18,
+              "missing": 0,
+              "total": 403571400
+            },
+            "result_serialization_ns": {
+              "samples": [
+                33100,
+                29100,
+                16200,
+                12500,
+                17100,
+                17900,
+                12600,
+                20900,
+                18700,
+                75300,
+                33700,
+                13800,
+                6700,
+                5400,
+                5700,
+                6600,
+                9900,
+                6100
+              ],
+              "observed": 18,
+              "missing": 0,
+              "total": 341300
+            },
+            "post_validation_ns": {
+              "samples": [
+                57000,
+                65800,
+                41400,
+                42700,
+                37700,
+                35500,
+                30100,
+                45200,
+                36700,
+                60100,
+                55200,
+                68600,
+                34400,
+                31800,
+                35100,
+                42900,
+                46700,
+                34900
+              ],
+              "observed": 18,
+              "missing": 0,
+              "total": 801800
+            }
+          }
+        }
+      }
+    },
+    "invocation_provenance": "Local record consistency; use the outer receipt for invocation evidence."
+  },
+  "claim_limit": "Authored development comparison; ordinary memoization, no established novelty or superiority.",
+  "replay_of": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\shared-lifting-pilot\\v1\\budget-256"
+}

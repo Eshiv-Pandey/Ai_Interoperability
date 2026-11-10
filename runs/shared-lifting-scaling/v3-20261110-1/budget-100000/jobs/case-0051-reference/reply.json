@@ -1,0 +1,70 @@
+{
+  "status": "returned",
+  "input_sha256_before": "3abf0d93d0afadced9de4ae1f3105b9064a75eaa468452b0ffb605739f1f1987",
+  "evaluation_ns": 294800,
+  "result": {
+    "decision": "unsupported",
+    "reason": "complete_relational_product_exhausted",
+    "certificate": {
+      "profile_sha256": "3abf0d93d0afadced9de4ae1f3105b9064a75eaa468452b0ffb605739f1f1987",
+      "checked_at": 100,
+      "horizon": 3,
+      "valid_until": 4102444800,
+      "kind": "relational-exhaustion",
+      "product_layers": [
+        [
+          {
+            "state": "s000",
+            "bindings": {}
+          }
+        ],
+        [
+          {
+            "state": "s001",
+            "bindings": {}
+          }
+        ],
+        [
+          {
+            "state": "s002",
+            "bindings": {}
+          }
+        ],
+        [
+          {
+            "state": "s003",
+            "bindings": {}
+          }
+        ]
+      ]
+    },
+    "stats": {
+      "work_units": 35,
+      "budget": 100000,
+      "state_expansions": 12,
+      "graph_edges": 17,
+      "argument_assignments": 3,
+      "expression_evaluations": 3,
+      "product_states": 4,
+      "cached_relation_outcomes": 0,
+      "certificate_checks": 0
+    }
+  },
+  "input_sha256_after": "3abf0d93d0afadced9de4ae1f3105b9064a75eaa468452b0ffb605739f1f1987",
+  "input_unchanged": true,
+  "resources": {
+    "schema_version": "benchmark-worker-resources/1",
+    "timings": {
+      "preparation_ns": 19155700,
+      "result_serialization_ns": 12200,
+      "post_validation_ns": 31900
+    },
+    "memory": {
+      "status": "observed",
+      "peak_resident_bytes": 22749184,
+      "source": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "platform": "win32"
+    }
+  },
+  "worker_body_ns": 27961400
+}

@@ -1,0 +1,850 @@
+{
+  "schema_version": "source-task-bank/1",
+  "domain": "ap2",
+  "source_pin": {
+    "repository": "https://github.com/google-agentic-commerce/AP2",
+    "commit": "e1ea56db72a6385bce3e5c1112b3a56ce60acb43",
+    "retained_root": "docs/research/source-evidence/ap2-procurement-screen-v1/source",
+    "a2a_sdk": {
+      "version": "0.3.24",
+      "retained_root": "docs/research/source-evidence/ap2-procurement-screen-v1/adk-task-mapping-v1/a2a-sdk/source"
+    }
+  },
+  "authorship": "AI-authored source-derived candidate templates",
+  "qualification": {
+    "human_review": "pending",
+    "runtime_execution": "not_executed",
+    "gold_validation": "pending"
+  },
+  "records": [
+    {
+      "id": "ap2-dev-001",
+      "split": "development",
+      "template_family": "original_purchase_completion",
+      "distinct_obligation": "Complete the original human-selected, confirmed demo purchase through both suspended child tasks and an authentic simulated receipt trajectory.",
+      "public": {
+        "task": "Buy a publicly offered product through the original human-present demo and report the observed simulated payment outcome.",
+        "prompt": "I want to buy a pair of shoes in this demo. Show me the available choices, collect my shipping and payment choices, and ask me to confirm the cart before starting payment. If the issuer requests a code, ask me for it. When the process finishes, show me the demo payment receipt or explain the actual failure.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "product": "choose an actual shoe cart only after original options are shown",
+            "shipping": "manual US address supplied in the human conversation",
+            "payment": "choose an eligible alias from the original displayed list",
+            "confirmation": "confirm only the displayed selected cart",
+            "otp": "123 only in a human reply after an actual OTP request"
+          },
+          "steps": [
+            "Enter the prompt through the original ADK shopper and provide each public choice after it is requested.",
+            "Retain the complete original shopper prefix and all original child A2A messages through the first pending payment states.",
+            "Provide the demo code only after an actual user-facing request; retain the original generic input_required outcome if no request is surfaced.",
+            "Retain every subsequent credential, receipt-delivery, receipt-artifact and shopper outcome without replacing an unfavorable branch."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-dev-002",
+      "split": "development",
+      "template_family": "first_payment_suspension",
+      "distinct_obligation": "Suspend the original first merchant/processor payment requests for human input before any OTP continuation or receipt completion.",
+      "public": {
+        "task": "Start a confirmed demo payment and stop at the actual OTP request until the human supplies input.",
+        "prompt": "Please start payment for the cart I confirm. If verification is needed, show me the request and wait for my reply before continuing.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {},
+          "steps": [
+            "Follow the unchanged shopper choice and confirmation prefix.",
+            "Observe the first merchant and processor payment requests before sending any OTP reply.",
+            "Retain both pending Tasks and the original processor challenge message; do not create an OTP continuation when the human has not replied."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-dev-003",
+      "split": "development",
+      "template_family": "incorrect_otp_retry",
+      "distinct_obligation": "Preserve the input-required retry target after a human submits a string OTP other than the source literal.",
+      "public": {
+        "task": "Retain the original payment tasks after an incorrect human OTP and request another reply.",
+        "prompt": "For this pending demo payment, my verification code is 000. If it is rejected, tell me and wait for another code.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "otp": "000"
+          },
+          "steps": [
+            "Reach the actual pending OTP step through the original shopper prefix.",
+            "Send the human reply 000 through the original OTP tool only after the request is surfaced.",
+            "Retain the merchant and processor follow-up Messages and subsequent Tasks; stop before providing a replacement code."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-dev-004",
+      "split": "development",
+      "template_family": "correct_otp_remote_credential_failure",
+      "distinct_obligation": "Keep a correct-OTP payment with a noncompleted original credential Task as an unmet completion target.",
+      "public": {
+        "task": "Submit the correct human OTP and truthfully retain an original remote credential failure if it occurs.",
+        "prompt": "My verification code is 123. Continue this payment, but if the demo cannot retrieve my payment credentials, explain the actual failure.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "otp": "123"
+          },
+          "steps": [
+            "Reach the original pending payment through the human-selected and confirmed shopper path.",
+            "Send the human code 123 after the actual OTP request.",
+            "Retain the original credential request, remote Task state/error and resulting processor/merchant outcome if credential retrieval fails."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "conditional original outcome: an actual credential Task must return a noncompleted state; do not inject a provider failure or grade an unobserved branch"
+        }
+      }
+    },
+    {
+      "id": "ap2-dev-005",
+      "split": "development",
+      "template_family": "parent_child_challenge_propagation",
+      "distinct_obligation": "Forward the source processor challenge into the merchant pending status without rewriting child message identity as parent identity.",
+      "public": {
+        "task": "Retain the original issuer-verification request accurately through the merchant suspension.",
+        "prompt": "When verification is requested for my confirmed demo cart, relay the issuer's request accurately and wait for my code.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {},
+          "steps": [
+            "Run the unchanged shopper prefix through the first pending payment.",
+            "Retain the original processor pending status Message and merchant pending status Message as separately supplied public objects.",
+            "Keep message ID, child task/context identity, text and challenge DataPart exactly as returned; do not rewrite a captured Message to resemble its parent Task."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-dev-006",
+      "split": "development",
+      "template_family": "closed_mandate_receipt_reference",
+      "distinct_obligation": "Bind the original receipt reference to SHA256 base64url of the exact supplied closed JWT leaf rather than payload JSON or whole presentation.",
+      "public": {
+        "task": "Complete the demo continuation and retain the original signed mandate/receipt binding.",
+        "prompt": "Use the mandates created for my confirmed cart to finish the demo payment. Show me the payment receipt associated with that payment.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "otp": "123 after an actual request"
+          },
+          "steps": [
+            "Use the original checkout/payment signer helpers; do not invent a presentation token.",
+            "Continue the original pending payment with the human OTP reply.",
+            "Retain the exact processor follow-up presentation string and the actual canonical source receipt for evaluator-only binding assessment."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-cal-001",
+      "split": "calibration",
+      "template_family": "multi_attempt_same_task_continuation",
+      "distinct_obligation": "Resume one original pending payment through a wrong-code retry and a later correct-code continuation while retaining each parent/child identity and outcome.",
+      "public": {
+        "task": "Retry a rejected OTP once on the same original payment before attempting the correct continuation.",
+        "prompt": "After verification is requested, I will first reply with 000. If it is rejected, ask again; my next reply will be 123. Keep working on the payment for this confirmed cart.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "otp_replies": [
+              "000",
+              "123"
+            ],
+            "reply_timing": "each code is a separate human reply after the observed request/retry"
+          },
+          "steps": [
+            "Follow the unchanged shopper prefix and preserve its initial merchant/processor suspension.",
+            "Provide 000 only after the actual OTP request; retain the retry result.",
+            "Provide 123 in a later human reply only if a retry is actually requested; retain both follow-ups and the final original outcome."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-cal-002",
+      "split": "calibration",
+      "template_family": "unchanged_shopper_challenge_visibility",
+      "distinct_obligation": "Retain and diagnose the original outer-shopper challenge-display mismatch without repairing the workflow or injecting an evaluator-provided OTP.",
+      "public": {
+        "task": "Preserve the actual original human-facing result when its pending child challenge is not surfaced.",
+        "prompt": "Start payment for the cart I confirm and ask me for any verification information the original demo requests. If the original shopper does not expose the request, tell me what you can actually observe.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {},
+          "steps": [
+            "Run the original shopper prefix and observe its tool return at the first payment suspension.",
+            "Retain the shopper's exact public tool return and the independently captured original child A2A challenge/status objects.",
+            "Do not patch the shopper, invent task/status fields, silently send an OTP, or pass captured child identifiers or mandates into the user conversation."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-cal-003",
+      "split": "calibration",
+      "template_family": "selected_credential_transaction_association",
+      "distinct_obligation": "Associate the actually human-selected source credential with the checkout-derived transaction before correct-OTP credential retrieval.",
+      "public": {
+        "task": "Complete one selected-card demo purchase with evidence that the original credential lookup uses its signed transaction.",
+        "prompt": "For my selected demo cart, let me choose an eligible payment method before creating its payment credentials. After I confirm the summary and provide verification, use that selected method for this payment.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {},
+          "steps": [
+            "Follow the original product, shipping and displayed-method selection steps for one shopper conversation.",
+            "Allow the original token helper and signed-payment-mandate binding call to run in their prescribed order.",
+            "Retain the selected public method alias, original token/binding requests, signed transaction data, credential lookup request/outcome and later payment result."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-cal-004",
+      "split": "calibration",
+      "template_family": "original_workflow_reset_isolation",
+      "distinct_obligation": "Prove complete independent allocation reset between two original demo purchases rather than equating fresh-looking IDs or tokens with clean state.",
+      "public": {
+        "task": "Run two separate original demo purchase allocations with independently observed reset between them.",
+        "prompt": "I want to perform this demo purchase twice as separate trials. Each trial should ask for its own cart, shipping, payment selection, confirmation and verification choices, and report its own observed result.",
+        "fixture_recipe": {
+          "execution_class": "isolated_original_workflow_pair",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {},
+          "steps": [
+            "Use the original interactive human-present workflow for the first trial and retain its public conversation and child outcomes.",
+            "Use a separately approved original-workflow allocation for the second trial; follow its own public human-selection prompts.",
+            "Retain each allocation's own public objects and outcomes without relabelling or importing prior task/session/mandate identifiers."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "two actual independently allocated original workflows plus validated lifecycle evidence; source reset structure alone cannot realize this template"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-001",
+      "split": "held_out",
+      "template_family": "offered_cart_human_selection",
+      "distinct_obligation": "Use an actual merchant-offered public cart selected by the human, with its chosen ID retained for checkout.",
+      "public": {
+        "task": "Let the human choose among the original merchant's offered products before advancing the purchase.",
+        "prompt": "Find the demo merchant's shoe options, show me their prices and cart choices, and ask which one I want. Continue checkout only for the option I choose.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "product": "an actual cart selected after the original returned list is shown"
+          },
+          "steps": [
+            "Enter the prompt into the unchanged shopper and retain the actual returned cart options.",
+            "Select an offered cart by its displayed choice; let the original select_cart helper run.",
+            "Continue the original shipping/method/confirmation/payment sequence for that chosen cart only."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-002",
+      "split": "held_out",
+      "template_family": "manual_shipping_collection_and_display",
+      "distinct_obligation": "Complete the original manual US shipping-address branch and display its human-supplied address before payment-method collection/confirmation.",
+      "public": {
+        "task": "Use the human's manually entered shipping address in the original purchase summary.",
+        "prompt": "I want to enter my shipping address manually for the demo purchase. Collect the necessary US address information, show me what you recorded, and use it in the cart summary before I confirm.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "shipping": "manual; supply the necessary US address details through the original human conversation"
+          },
+          "steps": [
+            "Choose an actual offered cart through the original shopper.",
+            "Select manual entry when the original shipping collector offers its source branches and supply the address details.",
+            "Retain the address collection/display and later original summary/confirmation before continuing payment."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-003",
+      "split": "held_out",
+      "template_family": "wallet_shipping_account_consent",
+      "distinct_obligation": "Obtain the source wallet-branch human agreement before retrieving the public demo account's shipping address.",
+      "public": {
+        "task": "Follow the original digital-wallet shipping branch with its explicit demo account-access agreement.",
+        "prompt": "For shipping, I prefer the demo's digital-wallet option. Explain the original account-access step and ask for my agreement before retrieving the address.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "shipping": "digital wallet from the original offered options",
+            "account_access": "human agrees only after the original disclosure",
+            "demo_account": "bugsbunny@gmail.com"
+          },
+          "steps": [
+            "Choose an actual offered cart and choose the original digital-wallet shipping branch.",
+            "Retain the collector's separate redirect/demo-account disclosure messages and the actual human agreement.",
+            "Let the original shipping tool retrieve and display the returned canonical address, then continue the prescribed purchase steps."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-004",
+      "split": "held_out",
+      "template_family": "eligible_method_choice_before_tokenization",
+      "distinct_obligation": "Present original card-eligible aliases and obtain the human's selected alias before creating its credential token.",
+      "public": {
+        "task": "Let the human choose from the original card-eligible payment-method list.",
+        "prompt": "Show me which of my demo payment methods this merchant accepts. Let me choose one before requesting its payment credential token.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "payment": "select a listed eligible alias only after the original list is presented"
+          },
+          "steps": [
+            "Follow the original product and shipping steps.",
+            "Retain the original filtered-method request and displayed aliases, then provide the actual human method choice.",
+            "Let the original token helper run with that selected alias and continue the confirmed original payment."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-005",
+      "split": "held_out",
+      "template_family": "withheld_cart_confirmation",
+      "distinct_obligation": "Defer signed-mandate creation and payment when the human has not confirmed the original checkout summary.",
+      "public": {
+        "task": "Prepare the original cart summary while respecting a withheld human confirmation.",
+        "prompt": "Prepare the demo checkout summary for the cart and payment method I choose, then wait. I do not confirm the purchase yet.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "confirmation": "withheld after the actual cart summary is displayed"
+          },
+          "steps": [
+            "Choose an offered cart and complete the original shipping/method-selection steps.",
+            "Retain the merchant-created checkout and the human-readable original cart summary.",
+            "Withhold confirmation in a public human reply and retain what the unchanged shopper does next; do not supply an OTP or an invented approval."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-006",
+      "split": "held_out",
+      "template_family": "checkout_amount_currency_transaction_consistency",
+      "distinct_obligation": "Carry the original selected-cart checkout amount/currency/hash consistently into the signed PaymentMandate and credential transaction.",
+      "public": {
+        "task": "Keep the source checkout-derived transaction data consistent through the confirmed purchase.",
+        "prompt": "Show me the item, price and currency for the demo cart I select. After I confirm, use the checkout created for that cart when creating the payment mandate.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {},
+          "steps": [
+            "Select an actual original public cart and retain its merchant cart/checkout response.",
+            "Let the original checkout and payment mandate helpers create their signed outputs without supplying replacement hashes/amounts.",
+            "Continue the actual pending payment and retain the credential transaction and canonical receipt outcome."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-007",
+      "split": "held_out",
+      "template_family": "missing_method_selection_guard_and_recovery",
+      "distinct_obligation": "Respect the original guard against provider binding without payment_credential_token and recover through human method selection.",
+      "public": {
+        "task": "Defer mandate binding until the original human payment-method choice has produced a token.",
+        "prompt": "Do not choose a payment method for me. If my selection is still missing, ask me to choose an eligible method before sending signed mandates or starting payment.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {},
+          "steps": [
+            "Run the original shopper through product and shipping selection, then withhold a method choice until it is actually requested.",
+            "Retain the original method-collection state/turns and any original guard failure if the shopper attempts binding too early.",
+            "If a recovery occurs, supply a listed eligible method in a public human reply and retain the original collector/token/binding order."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-008",
+      "split": "held_out",
+      "template_family": "merchant_task_identity_continuation",
+      "distinct_obligation": "Bind the actual merchant follow-up message.taskId and resulting Task.id to the originally suspended merchant task independently of RPC request IDs.",
+      "public": {
+        "task": "Continue the original merchant payment task after the human OTP reply.",
+        "prompt": "Here is the verification code for this pending demo purchase: 123. Continue the payment already waiting for my reply.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "otp": "123"
+          },
+          "steps": [
+            "Reach the original pending merchant/processor payment through the human-selected confirmed shopper prefix.",
+            "Reply with 123 through the original OTP path after the actual request.",
+            "Retain original message.taskId and Task.id for the pending/follow-up/result merchant objects separately from any JSON-RPC request ID."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-009",
+      "split": "held_out",
+      "template_family": "merchant_context_identity_continuation",
+      "distinct_obligation": "Preserve actual merchant message.contextId and Task.contextId through OTP continuation independently of ADK session metadata or caller labels.",
+      "public": {
+        "task": "Keep the original public shopping context associated with its resumed merchant payment.",
+        "prompt": "Use my verification reply for the pending purchase we have been discussing. Continue that purchase's original shopping context.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "otp": "123 after the actual request"
+          },
+          "steps": [
+            "Retain the original find_products shopping context, merchant pending Task and later original OTP continuation.",
+            "Keep actual message.contextId and Task.contextId observations separately from outer ADK session identifiers, RPC metadata and caller path labels.",
+            "Continue using only the original source-generated context values; do not add evaluator identifiers to the human conversation."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-010",
+      "split": "held_out",
+      "template_family": "processor_child_mapping_continuation",
+      "distinct_obligation": "Resume the original suspended processor child using actual history-selected identity and context, retaining mapping uncertainty instead of trusting parent labels.",
+      "public": {
+        "task": "Retain the original processor child continuation for the pending merchant payment.",
+        "prompt": "After I provide the verification code, continue the payment that is already pending for my confirmed demo cart.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "otp": "123 after an actual request"
+          },
+          "steps": [
+            "Retain the original merchant pending Task's full unmodified history and the separately observed pending processor Task.",
+            "Submit the human OTP through the unchanged shopper/merchant path.",
+            "Retain the actual processor follow-up Message, returned Task and the merchant history used by the original mapping helper; do not hand-insert a child ID."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-011",
+      "split": "held_out",
+      "template_family": "exact_typed_otp_forwarding",
+      "distinct_obligation": "Preserve one human OTP's exact typed DataPart value from merchant follow-up to processor follow-up rather than normalizing or extracting unrelated metadata.",
+      "public": {
+        "task": "Forward the original human OTP reply accurately through both continuation messages.",
+        "prompt": "My verification code for this pending demo payment is the string 123. Pass that reply through the original payment continuation.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "otp": "123 as the human's string reply"
+          },
+          "steps": [
+            "Reach the original OTP step and retain the human reply actually supplied to the shopper.",
+            "Retain the actual merchant and processor follow-up DataParts, not metadata/text copies or RPC labels.",
+            "Let original builders/forwarding helpers create the messages without changing the captured response's type or value."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-012",
+      "split": "held_out",
+      "template_family": "exact_supplied_mandate_forwarding",
+      "distinct_obligation": "Forward the exact current signed PaymentMandate presentation string between original merchant and processor follow-ups without conflating that equality with original transaction association.",
+      "public": {
+        "task": "Retain the original currently supplied signed payment mandate through the OTP continuation.",
+        "prompt": "Continue this confirmed demo purchase with the signed payment mandate the original workflow created. Do not replace the payment data while forwarding my verification reply.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {},
+          "steps": [
+            "Let the original checkout/payment helpers create the source-compatible valid signed mandates.",
+            "Reach original suspension and send the human OTP through the original continuation.",
+            "Retain the exact mandate strings in actual merchant/processor follow-up DataParts and the optional initial mandate observation separately."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-013",
+      "split": "held_out",
+      "template_family": "completed_but_empty_credential_outcome",
+      "distinct_obligation": "Reject a completed original credential Task with empty artifacts as sufficient payment credentials while retaining contingent model-tool routing.",
+      "public": {
+        "task": "Retain the original missing-credential-data outcome even when a remote Task reports completed.",
+        "prompt": "After I provide the correct demo code, finish the payment only using the actual credential data returned by the original workflow. If it returns a status without credential data, explain that outcome.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "otp": "123 after the actual request"
+          },
+          "steps": [
+            "Run the original selected/confirmed shopper purchase and actual OTP continuation.",
+            "Retain the original credential-provider request and selected handler/outcome where publicly observable.",
+            "If the original remote credential Task completes with empty artifacts, retain its actual error propagation and resulting original payment outcome."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "conditional original outcome: the actual credential Task is completed with empty artifacts; do not force the binding-only route, inject empty data, or grade an unobserved branch"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-014",
+      "split": "held_out",
+      "template_family": "receipt_delivery_failure_before_publication",
+      "distinct_obligation": "Preserve the original failure ordering when receipt delivery to the credentials provider returns a noncompleted Task before public receipt publication.",
+      "public": {
+        "task": "Retain an original receipt-delivery failure after correct OTP rather than reporting completed payment from local construction or logging.",
+        "prompt": "Continue the demo payment with my correct code. If the original workflow fails while delivering its receipt, report the actual result rather than claiming completion from an earlier status.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "otp": "123 after actual verification request"
+          },
+          "steps": [
+            "Follow the original selected/confirmed purchase and correct human OTP continuation.",
+            "Retain actual credential retrieval and the original provider receipt-delivery request/Task.",
+            "If delivery fails, retain its actual error and subsequent processor/merchant outcome without supplying a fabricated public receipt."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "conditional original outcome: the actual receipt-delivery Task returns a noncompleted state; do not inject provider/network failures or grade an unobserved branch"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-015",
+      "split": "held_out",
+      "template_family": "source_success_constructor_identifiers",
+      "distinct_obligation": "Preserve the original Success receipt constructor's common fresh UUID-hex payment/PSP/network confirmation identifiers separately from schema admissibility.",
+      "public": {
+        "task": "Show the actual original demo receipt and its source confirmation identifiers after payment continuation.",
+        "prompt": "After the demo payment finishes, show me the payment receipt and the confirmation identifiers actually returned by the original workflow.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {
+            "otp": "123 after the original request"
+          },
+          "steps": [
+            "Complete the original human-selected and confirmed purchase only through its actual OTP/credential/receipt path.",
+            "Retain the actual processor receipt and merchant/shopper propagation.",
+            "Use actual generated receipt values; do not predeclare a fixed confirmation UUID or timestamp."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-016",
+      "split": "held_out",
+      "template_family": "unassociated_signed_transaction_credential_outcome",
+      "distinct_obligation": "Retain the original signed-transaction credential lookup failure when no previously bound token matches that transaction, rather than accepting signature/OTP alone.",
+      "public": {
+        "task": "Require the current signed transaction's original credential association before completing payment.",
+        "prompt": "Use the payment method selected for my confirmed demo checkout. If the signed transaction has no associated credentials in the original workflow, explain that failure rather than substituting another payment method.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {},
+          "steps": [
+            "Run the unchanged shopper's selected-method and signed-mandate association steps, retaining their actual requests and outcomes.",
+            "Retain the current supplied mandate transaction in the original processor credential request.",
+            "If the original provider cannot find that transaction's associated method, retain its public error and resulting payment outcome; do not hand-bind another token."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "conditional original outcome: original credential lookup for the verified supplied transaction has no prior association; preserve natural original binding/routing failures, do not create an alternate endpoint task to count as a purchase"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-017",
+      "split": "held_out",
+      "template_family": "declared_simulated_payment_effect",
+      "distinct_obligation": "Report the original HP receipt outcome as simulated payment semantics without inventing debit/reservation/durable exactly-once effects.",
+      "public": {
+        "task": "Explain the actual declared effect after an original demo payment completes or fails.",
+        "prompt": "After the demo payment attempt, explain what the original workflow actually completed and show the observed receipt if one exists. Describe the result as a demo outcome.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {},
+          "steps": [
+            "Run the original human-selected, confirmed, OTP-based purchase and preserve every actual child outcome.",
+            "Retain the actual canonical receipt and provider acknowledgment if returned.",
+            "Produce a human-readable explanation grounded in those original objects rather than an asserted external ledger mutation."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-018",
+      "split": "held_out",
+      "template_family": "canonical_receipt_propagation_and_shopper_storage",
+      "distinct_obligation": "Carry the actual single canonical original receipt from processor artifact through merchant artifact into shopper state without substituting text or a different receipt.",
+      "public": {
+        "task": "Display the receipt actually returned for the original payment and retain its complete canonical propagation.",
+        "prompt": "When the original demo payment returns a receipt, show me that payment's receipt accurately. If the original result lacks a usable receipt, explain what is missing.",
+        "fixture_recipe": {
+          "execution_class": "original_shopper_workflow",
+          "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+          "source_compatible_setup": "Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+          "public_choices": {},
+          "steps": [
+            "Use the actual original signed-mandate/OTP/credential path and retain the returned processor Task/artifacts.",
+            "Retain the merchant Task/artifacts and shopper payment_receipt state/output produced by original helpers.",
+            "Preserve each actual DataPart/canonical object and complete values; do not fabricate an artifact from success text or a different snapshot."
+          ],
+          "capture_public_surfaces": [
+            "public human conversation and original tool-call sequence",
+            "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+            "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+          ],
+          "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+        }
+      }
+    }
+  ]
+}

@@ -1,3 +1,9 @@
+# Current handoff: 10 November 2026
+
+See [the current research-results handoff](research-results-handoff-20261110-v1.md). Fresh hosted N11 and admittedB7 achieved independently verified strict success. Complete four-method scaling and full original-pilot reproduction are verified. Source task-bank drafts contain62 candidate templates; six AP2 held-out slots and all application/gold/human qualification remain open. The supplied numerical pilot review is recorded and its corrections applied. Full-rubric credit remains5%; no40% target pass is claimed. The next work is original AP2/model access and qualified task/reference/gold execution, substantive contribution and required scientific review. All consumed prior allocations remain unchanged.
+
+The following30October handoff is historical.
+
 # Current handoff: 30 October 2026
 
 - **Durable raw observation checked; next integration boundary:** the [new durable recorder/raw ASGI wrapper](ap2-human-present-durable-observation-software-v1.md) passed all 22 constructed methods once in [durable-observer-v1](../../runs/ap2-hp-reference-software/durable-observer-v1/result.json), with four source/test inputs, copied driver and interpreter unchanged. It tracks pending original IO through completion/cancellation, binds journal state to the same typed snapshot as persisted bytes, and preserves original objects/errors. Closed-interval completeness and explicit partial seals remain separate from task success or runtime authentication. Test binary streams and per-ID outcomes are retained; temporary synthetic case journals were cleaned, with no reconstruction. Directory crash durability, hostile replacement/authentication and native placement remain unverified. This batch separately passed client-state 19 and original-owner 13 checks; none imported original SDKs, accessed a real key or executed an application/model. All allocations are consumed; no checkpoint credit changes.

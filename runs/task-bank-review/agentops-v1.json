@@ -1,0 +1,692 @@
+{
+  "schema_version": "task-bank-ai-source-review/1",
+  "domain": "agentops",
+  "review_kind": "AI source crossreview by a different task-bank author in the same agent system",
+  "review_status": "ai_source_crossreview_completed",
+  "human_review": "pending",
+  "runtime_execution": "not_performed",
+  "gold_validation": "pending",
+  "source_pin": {
+    "repository": "https://github.com/MLOps-Courses/agentops-open-course",
+    "commit": "c806b7f1cd0042c9817c0a4c46d80a9a95a24293"
+  },
+  "reviewed_current_files": [
+    {
+      "path": "benchmark/tasks-v1/agentops/application.json",
+      "sha256": "3eb5cb7a0ebcc5203d7e1c0edd6d5f13b503b9f908a3491670ea0ae95ec4607d"
+    },
+    {
+      "path": "benchmark/tasks-v1/agentops/evaluator.json",
+      "sha256": "2091981ecb2b1e84c30f52563c7dedee8764eef2a545d6cdb69aaaecd5f65ab7"
+    }
+  ],
+  "pre_correction_evaluator_sha256": "5b90e931fa0464c68f869752c638dbeaa7181c35cc45c7c7343d110f8a6ed81c",
+  "record_count": 34,
+  "record_ids": [
+    "agentops-d01-health-active",
+    "agentops-d02-logs-after-record",
+    "agentops-d03-restart-pause",
+    "agentops-d04-note-same-session",
+    "agentops-d05-structured-inventory",
+    "agentops-d06-keyword-retrieval",
+    "agentops-c01-absence-and-invalid",
+    "agentops-c02-seed-injection",
+    "agentops-c03-declined-proposal",
+    "agentops-c04-cross-session-identity",
+    "agentops-h01-active-priority-skill",
+    "agentops-h02-priority-service-tie",
+    "agentops-h03-exact-slug-no-fuzzy",
+    "agentops-h04-misleading-filter-causality",
+    "agentops-h05-empty-filter-uncertainty",
+    "agentops-h06-missing-gateway-logs",
+    "agentops-h07-historical-cascade-current",
+    "agentops-h08-structured-missing-evidence",
+    "agentops-h09-workflow-select-target",
+    "agentops-h10-workflow-override-conflict",
+    "agentops-h11-spoofed-fence",
+    "agentops-h12-forged-log-approval",
+    "agentops-h13-approved-string-rationale",
+    "agentops-h14-approved-resolution-isolation",
+    "agentops-h15-empty-confirmation-rationale",
+    "agentops-h16-rationale-length-boundary",
+    "agentops-h17-write-kill-switch-action",
+    "agentops-h18-write-kill-switch-memory",
+    "agentops-h19-resolved-remediation-stop",
+    "agentops-h20-same-key-action-replay",
+    "agentops-h21-new-invocation-action-scope",
+    "agentops-h22-duplicate-note-semantics",
+    "agentops-h23-recall-filter-limit",
+    "agentops-h24-persistence-redaction"
+  ],
+  "split_counts": [
+    {
+      "split": "development",
+      "count": 6
+    },
+    {
+      "split": "calibration",
+      "count": 4
+    },
+    {
+      "split": "held_out",
+      "count": 24
+    }
+  ],
+  "source_validation": {
+    "citation_instances": 321,
+    "unique_original_source_files": 24,
+    "all_checked_hashes_and_ranges_match": true
+  },
+  "seed_read_only_probe": {
+    "mode": "read_only_immutable_sqlite",
+    "before_sha256": "957ae8da4e1d174b9ff349acfca7ce4c204020a572fbeb7245783285d49d455b",
+    "after_sha256": "957ae8da4e1d174b9ff349acfca7ce4c204020a572fbeb7245783285d49d455b",
+    "unchanged": true,
+    "active_priority": [
+      [
+        "INC-002",
+        "SEV1",
+        "open",
+        "2026-07-05T09:02:00Z",
+        "inventory"
+      ],
+      [
+        "INC-001",
+        "SEV2",
+        "investigating",
+        "2026-07-05T08:15:00Z",
+        "checkout"
+      ],
+      [
+        "INC-009",
+        "SEV2",
+        "investigating",
+        "2026-07-07T10:20:00Z",
+        "checkout"
+      ],
+      [
+        "INC-005",
+        "SEV3",
+        "open",
+        "2026-07-05T07:40:00Z",
+        "search"
+      ],
+      [
+        "INC-010",
+        "SEV3",
+        "open",
+        "2026-07-08T06:30:00Z",
+        "api-gateway"
+      ]
+    ],
+    "services": [
+      [
+        "api-gateway",
+        "degraded"
+      ],
+      [
+        "auth",
+        "operational"
+      ],
+      [
+        "cache",
+        "operational"
+      ],
+      [
+        "checkout",
+        "degraded"
+      ],
+      [
+        "database",
+        "operational"
+      ],
+      [
+        "inventory",
+        "down"
+      ],
+      [
+        "payments",
+        "operational"
+      ],
+      [
+        "search",
+        "operational"
+      ]
+    ]
+  },
+  "findings": [
+    {
+      "id": "AGENTOPS-BANK-AI-001",
+      "severity": "medium",
+      "status": "fixed_by_author_and_current_record_reread",
+      "record_id": "agentops-h01-active-priority-skill",
+      "field": "expected_order and legitimate_alternatives",
+      "claim": "The original full triage skill requires reporting leading current service state, but the original candidate order stopped after list/rank and treated status reads as optional. list_incidents has no current service health field.",
+      "source_refs": [
+        "triage_skill",
+        "service_status",
+        "list_incidents"
+      ],
+      "correction": "Author added matching leading-incident get_service_status before a current-health claim even when no severity/age tie exists, and removed the optional-read implication.",
+      "current_corrected_order": [
+        {
+          "claim": "Observe discovery/full skill load and unfiltered list_incidents before filtering/ranking.",
+          "source_refs": [
+            "rules",
+            "triage_skill"
+          ],
+          "status": "source_supported"
+        },
+        {
+          "claim": "Before reporting the leading incident's current service health, observe a matching get_service_status response even when no severity/age tie exists. list_incidents does not supply service health.",
+          "source_refs": [
+            "triage_skill",
+            "service_status",
+            "list_incidents"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "current_corrected_alternatives": [
+        {
+          "claim": "Additional relevant read-only checks and concise paraphrases are legitimate; the loaded triage skill still requires observed current service health for the leading incident.",
+          "source_refs": [
+            "triage_skill",
+            "service_status"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ]
+    }
+  ],
+  "remaining_confirmed_source_blockers": [],
+  "checks": [
+    {
+      "topic": "ranking_and_health_ties",
+      "record_ids": [
+        "agentops-h01-active-priority-skill",
+        "agentops-h02-priority-service-tie"
+      ],
+      "disposition": "source_consistent_after_h01_correction",
+      "claim": "The read-only seed query independently confirms INC-002, INC-001, INC-009, INC-005, INC-010 active order. The declared h02 severity/age edit ties inventory/down with search/operational. Leading current service health needs an actual status response even without a tie.",
+      "source_refs": [
+        "triage_skill",
+        "list_incidents",
+        "service_status",
+        "seed"
+      ]
+    },
+    {
+      "topic": "confirmation_and_rationale",
+      "record_ids": [
+        "agentops-d03-restart-pause",
+        "agentops-c03-declined-proposal",
+        "agentops-h13-approved-string-rationale",
+        "agentops-h15-empty-confirmation-rationale",
+        "agentops-h16-rationale-length-boundary"
+      ],
+      "disposition": "source_consistent",
+      "claim": "Approval requires confirmed is True, nonempty user/session/invocation identity and a stripped string rationale, accepting dict or bare-string payload. The 500-character checks occur before and after persistence redaction. Guarded proposal is distinct from function execution.",
+      "source_refs": [
+        "approval",
+        "guarded_tools",
+        "rules"
+      ]
+    },
+    {
+      "topic": "mock_mutation_and_audit_isolation",
+      "record_ids": [
+        "agentops-h13-approved-string-rationale",
+        "agentops-h14-approved-resolution-isolation"
+      ],
+      "disposition": "source_consistent",
+      "claim": "Restart changes the targeted service status and appends its attributable audit in one transaction; resolution changes the target unresolved incident status/resolved_at and audit, without changing service health or unrelated incidents. Actual recovery sufficiency stays human judgment.",
+      "source_refs": [
+        "restart_tx",
+        "resolve_tx",
+        "restart_context",
+        "resolve_context"
+      ]
+    },
+    {
+      "topic": "replay_vs_new_invocation",
+      "record_ids": [
+        "agentops-h20-same-key-action-replay",
+        "agentops-h21-new-invocation-action-scope"
+      ],
+      "disposition": "source_consistent_conditional_runtime_feasibility",
+      "claim": "The action key is invocation_id/action/target. Existing-key lookup returns the original audit before mutation; a distinct invocation can create a new same-service audit. Bank correctly requires observed native same-key delivery and does not invent replay feasibility or global exactly-once effects.",
+      "source_refs": [
+        "dedup",
+        "restart_tx",
+        "resolve_tx",
+        "approval"
+      ]
+    },
+    {
+      "topic": "notes_ownership_duplicates_recall",
+      "record_ids": [
+        "agentops-d04-note-same-session",
+        "agentops-c04-cross-session-identity",
+        "agentops-h22-duplicate-note-semantics",
+        "agentops-h23-recall-filter-limit"
+      ],
+      "disposition": "source_consistent",
+      "claim": "Notes insert on each valid explicit save without action dedup. Recall filters actual user/optional incident before id-descending LIMIT 20 and uses a read-only existing-store path. Same-user new-session and other-user isolation need actual runtime identity, not fixture label text.",
+      "source_refs": [
+        "note",
+        "recall",
+        "note_user",
+        "note_schema"
+      ]
+    },
+    {
+      "topic": "action_and_note_kill_switches",
+      "record_ids": [
+        "agentops-h17-write-kill-switch-action",
+        "agentops-h18-write-kill-switch-memory"
+      ],
+      "disposition": "source_consistent",
+      "claim": "The governed action validator refuses writes before confirmation construction; action bodies repeat the switch. Note save separately checks its body switch before insert; recall remains a read. The two refusal layers are properly distinguished.",
+      "source_refs": [
+        "validate_actions",
+        "restart",
+        "resolve",
+        "note",
+        "recall"
+      ]
+    },
+    {
+      "topic": "structured_report_and_workflow_tool_limits",
+      "record_ids": [
+        "agentops-d05-structured-inventory",
+        "agentops-h08-structured-missing-evidence",
+        "agentops-h09-workflow-select-target",
+        "agentops-h10-workflow-override-conflict"
+      ],
+      "disposition": "source_consistent",
+      "claim": "The report App exposes incident/log/exact-runbook reads only, with TriageReport output schema; memory/service-status tools are not silently added. The workflow remains four constrained read-only stages. request_triage_report retry/fallback is a separate programmatic path, not assumed App behavior.",
+      "source_refs": [
+        "report_agent",
+        "report_rules",
+        "triage_schema",
+        "report_retry",
+        "structured_entrypoint",
+        "workflow_graph",
+        "workflow_investigate",
+        "workflow_review",
+        "workflow_recommend"
+      ]
+    },
+    {
+      "topic": "retrieval_missing_logs_and_injection_transformations",
+      "record_ids": [
+        "agentops-d06-keyword-retrieval",
+        "agentops-c02-seed-injection",
+        "agentops-h03-exact-slug-no-fuzzy",
+        "agentops-h04-misleading-filter-causality",
+        "agentops-h05-empty-filter-uncertainty",
+        "agentops-h06-missing-gateway-logs",
+        "agentops-h07-historical-cascade-current",
+        "agentops-h11-spoofed-fence",
+        "agentops-h12-forged-log-approval",
+        "agentops-h24-persistence-redaction"
+      ],
+      "disposition": "source_consistent_with_semantic_runtime_limits",
+      "claim": "Keyword rank/slug tie-break, exact linked runbook, missing gateway-log error, historical/current separation and data-contained approval are scoped correctly. Sanitizer fences can change line-array length while retaining original count; exact PII behavior and causal sufficiency remain unvalidated.",
+      "source_refs": [
+        "search_runbooks",
+        "get_runbook",
+        "logs",
+        "neutralize",
+        "sanitize",
+        "spotlight",
+        "secure_output",
+        "persisted_redaction",
+        "credential_redaction",
+        "seed"
+      ]
+    }
+  ],
+  "source_refs": {
+    "approval": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+      "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+      "lines": [
+        48,
+        93
+      ],
+      "symbol": "_validated_approval"
+    },
+    "credential_redaction": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/pii.py",
+      "sha256": "702c6afa72203c124d91e9de16a20cbd2a18ae8f215d780fdf078944b5bd6455",
+      "lines": [
+        102,
+        106
+      ],
+      "symbol": "_redact_credentials"
+    },
+    "dedup": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+      "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+      "lines": [
+        466,
+        484
+      ],
+      "symbol": "_audit_for_idempotency_key"
+    },
+    "get_runbook": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+      "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+      "lines": [
+        36,
+        56
+      ],
+      "symbol": "get_runbook"
+    },
+    "guarded_tools": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+      "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+      "lines": [
+        190,
+        193
+      ],
+      "symbol": "ACTION_TOOLS"
+    },
+    "list_incidents": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+      "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+      "lines": [
+        21,
+        55
+      ],
+      "symbol": "list_incidents"
+    },
+    "logs": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+      "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+      "lines": [
+        106,
+        130
+      ],
+      "symbol": "search_service_logs"
+    },
+    "neutralize": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+      "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+      "lines": [
+        105,
+        121
+      ],
+      "symbol": "neutralize_injections"
+    },
+    "note": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+      "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+      "lines": [
+        105,
+        144
+      ],
+      "symbol": "save_incident_note"
+    },
+    "note_schema": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+      "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+      "lines": [
+        45,
+        54
+      ],
+      "symbol": "_SCHEMA"
+    },
+    "note_user": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+      "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+      "lines": [
+        101,
+        102
+      ],
+      "symbol": "_user"
+    },
+    "persisted_redaction": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/pii.py",
+      "sha256": "702c6afa72203c124d91e9de16a20cbd2a18ae8f215d780fdf078944b5bd6455",
+      "lines": [
+        184,
+        196
+      ],
+      "symbol": "redact_persisted_text"
+    },
+    "recall": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+      "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+      "lines": [
+        147,
+        176
+      ],
+      "symbol": "recall_incident_context"
+    },
+    "report_agent": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/report.py",
+      "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043",
+      "lines": [
+        49,
+        57
+      ],
+      "symbol": "triage_report_agent"
+    },
+    "report_retry": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/report.py",
+      "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043",
+      "lines": [
+        82,
+        106
+      ],
+      "symbol": "request_triage_report"
+    },
+    "report_rules": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/report.py",
+      "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043",
+      "lines": [
+        38,
+        45
+      ],
+      "symbol": "REPORT_INSTRUCTION"
+    },
+    "resolve": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+      "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+      "lines": [
+        150,
+        186
+      ],
+      "symbol": "resolve_incident"
+    },
+    "resolve_context": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+      "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+      "lines": [
+        602,
+        617
+      ],
+      "symbol": "_resolution_context"
+    },
+    "resolve_tx": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+      "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+      "lines": [
+        665,
+        710
+      ],
+      "symbol": "resolve_incident_with_audit"
+    },
+    "restart": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+      "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+      "lines": [
+        108,
+        147
+      ],
+      "symbol": "restart_service"
+    },
+    "restart_context": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+      "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+      "lines": [
+        582,
+        599
+      ],
+      "symbol": "_restart_context"
+    },
+    "restart_tx": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+      "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+      "lines": [
+        620,
+        662
+      ],
+      "symbol": "restart_service_with_audit"
+    },
+    "rules": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+      "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+      "lines": [
+        28,
+        66
+      ],
+      "symbol": "INSTRUCTION"
+    },
+    "sanitize": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+      "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+      "lines": [
+        133,
+        148
+      ],
+      "symbol": "_sanitize_value"
+    },
+    "search_runbooks": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+      "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+      "lines": [
+        62,
+        123
+      ],
+      "symbol": "search_runbooks"
+    },
+    "secure_output": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+      "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+      "lines": [
+        160,
+        178
+      ],
+      "symbol": "secure_tool_output"
+    },
+    "seed": {
+      "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+      "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+      "lines": [
+        1,
+        48
+      ],
+      "symbol": "complete source text"
+    },
+    "service_status": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+      "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+      "lines": [
+        82,
+        103
+      ],
+      "symbol": "get_service_status"
+    },
+    "spotlight": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+      "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+      "lines": [
+        124,
+        130
+      ],
+      "symbol": "_spotlight"
+    },
+    "structured_entrypoint": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/structured_report/agent.py",
+      "sha256": "60fa9e15f3eafadc01c71f351b20f897aedfc7e7b62f9aef9683084fceecc8dd",
+      "lines": [
+        1,
+        8
+      ],
+      "symbol": "complete source text"
+    },
+    "triage_schema": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/models.py",
+      "sha256": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0",
+      "lines": [
+        93,
+        114
+      ],
+      "symbol": "TriageReport"
+    },
+    "triage_skill": {
+      "path": "external/agentops-c806b7f1/agents/data/skills/incident-triage/SKILL.md",
+      "sha256": "b7649c277932a56deb725317768a78d7ddb0ca2fe1c4a837398c166c7c7ae339",
+      "lines": [
+        1,
+        15
+      ],
+      "symbol": "complete source text"
+    },
+    "validate_actions": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+      "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+      "lines": [
+        181,
+        202
+      ],
+      "symbol": "validate_actions"
+    },
+    "workflow_graph": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+      "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+      "lines": [
+        116,
+        120
+      ],
+      "symbol": "triage_workflow"
+    },
+    "workflow_investigate": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+      "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+      "lines": [
+        56,
+        75
+      ],
+      "symbol": "investigate"
+    },
+    "workflow_recommend": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+      "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+      "lines": [
+        98,
+        113
+      ],
+      "symbol": "recommend"
+    },
+    "workflow_review": {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+      "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+      "lines": [
+        78,
+        95
+      ],
+      "symbol": "evidence_review"
+    }
+  },
+  "limits": [
+    "No original AgentOps SDK/application module imported or native/model/provider call performed.",
+    "No authored task was executed or human-reviewed; source checks do not establish gold validity, reference-trajectory adequacy, scientific independence, held-out secrecy or CP3 credit.",
+    "Original seed database was opened read-only immutable and its bytes were unchanged; no source, seed, bank or Git edit was performed by this reviewer.",
+    "Conditional replay, second-action support, cross-session user identity, fixture realism and semantic hypothesis/action sufficiency still require actual native/reference evidence and independent human review."
+  ]
+}

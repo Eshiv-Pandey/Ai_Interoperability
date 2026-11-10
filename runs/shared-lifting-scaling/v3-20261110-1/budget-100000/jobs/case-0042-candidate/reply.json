@@ -1,0 +1,67 @@
+{
+  "status": "returned",
+  "input_sha256_before": "01927e891b969b8b6d241184505d8d28d79cfc5d8c0e01f3f3cbc45cdb2fae1e",
+  "evaluation_ns": 383000,
+  "result": {
+    "decision": "unsupported",
+    "reason": "certified_refinement_exhaustion",
+    "certificate": {
+      "profile_sha256": "01927e891b969b8b6d241184505d8d28d79cfc5d8c0e01f3f3cbc45cdb2fae1e",
+      "checked_at": 100,
+      "horizon": 2,
+      "valid_until": 4102444800,
+      "kind": "refinement-exhaustion",
+      "refuted_prefixes": [
+        [
+          "e0000",
+          "e0004"
+        ],
+        [
+          "e0001",
+          "e0004"
+        ],
+        [
+          "e0002",
+          "e0004"
+        ],
+        [
+          "e0003",
+          "e0004"
+        ]
+      ]
+    },
+    "method": "witness-lift-refine-prototype",
+    "novelty_established": false,
+    "stats": {
+      "work_units": 93,
+      "budget": 100000,
+      "abstract_state_visits": 12,
+      "abstract_edge_checks": 13,
+      "abstract_paths": 4,
+      "relation_checks": 8,
+      "expression_evaluations": 40,
+      "refinement_lookups": 8,
+      "refinement_edges": 8,
+      "refinements": 4,
+      "peak_frames": 1,
+      "elapsed_ns": 376200
+    }
+  },
+  "input_sha256_after": "01927e891b969b8b6d241184505d8d28d79cfc5d8c0e01f3f3cbc45cdb2fae1e",
+  "input_unchanged": true,
+  "resources": {
+    "schema_version": "benchmark-worker-resources/1",
+    "timings": {
+      "preparation_ns": 18272200,
+      "result_serialization_ns": 12800,
+      "post_validation_ns": 48200
+    },
+    "memory": {
+      "status": "observed",
+      "peak_resident_bytes": 22007808,
+      "source": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "platform": "win32"
+    }
+  },
+  "worker_body_ns": 25289300
+}

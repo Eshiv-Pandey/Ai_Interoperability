@@ -1,7 +1,7 @@
 # Shared-lifting engineering pilot: 29 October 2026
 
 The shared-lifting implementation and four-method benchmark ran successfully.
-All four bundles passed verification, with **349 worker jobs and 109 accepted
+All four budget bundles passed verification, with **349 worker jobs and 109 accepted
 certificate checks**. The [independent result audit](../../runs/shared-lifting-pilot/independent-result-review-v1.json)
 reconciled all 1,897 manifest-listed files and all 1,989 allocation files stayed
 unchanged during review. No discrepancy, worker error or rejected certificate
@@ -14,6 +14,40 @@ previously observed stress case that motivated caching. That extra case was
 deliberately selected; the twelve cases are authored development inputs, not a
 held-out or representative application study. The existing
 [66-case three-method results](refinement-scaling-results-v2.md) are unchanged.
+
+The mandatory fair comparator is `direct_pruned`: same-input memoized
+relational-product search with remaining-horizon goal-cone pruning. Legacy
+direct (`baseline`) is a historical same-input control and the disclosed
+reference, not the decisive superiority comparator. Both direct arms check
+the supplied relations. A separately labelled abstraction-only finite BFS
+was not run in this pilot; it is not one of the four columns below.
+
+## Demonstration coverage
+
+This map refers to the measured profiles in the retained high-budget bundle
+and their [case results](../../runs/shared-lifting-pilot/v1/budget-100000/results.jsonl).
+Every conclusive result listed here was accepted by its separate checker at
+100,000 units. These are authored finite-model demonstrations; the map does
+not qualify actual typed/raw clients, source-generated values or application
+task identity.
+
+| Prototype demonstration requirement | Measured case evidence | Coverage and remaining limit |
+| --- | --- | --- |
+| Legal typed/raw distinction | [direct-public-binding](../../runs/shared-lifting-pilot/v1/budget-100000/inputs/case-0000.json) is supported; [fixed-text-shape-obstruction](../../runs/shared-lifting-pilot/v1/budget-100000/inputs/case-0001.json) is unsupported | Partial: a structured `data` object satisfies the guard, while JSON-looking text does not create those fields. An actual typed-versus-raw API pair was not demonstrated. |
+| Fixed-header obstruction | [raw-parameters-without-version-header](../../runs/shared-lifting-pilot/v1/budget-100000/inputs/case-0004.json) is unsupported; [explicit-header-configuration](../../runs/shared-lifting-pilot/v1/budget-100000/inputs/case-0005.json) is supported | Covered within supplied models: the first request cannot emit the required `A2A-Version`; the second profile explicitly emits `1.0`. This is a declared configuration contrast, not a live header experiment. |
+| Task/context/call/target correlation | [correlated-prefix-refinement](../../runs/shared-lifting-pilot/v1/budget-100000/inputs/case-0003.json) is supported | Partial: correlated `call` and `target` frames are exercised. The profile contains no task/context identity fields, so those obligations remain missing. |
+| Unavailable public binding | [missing-public-binding-partial-coverage](../../runs/shared-lifting-pilot/v1/budget-100000/inputs/case-0002.json) is unknown | The recipe refers to absent `public_call`, and declared coverage is also incomplete. The result abstains without a certificate; it does not isolate the effect of missing binding from incomplete coverage. |
+| Opaque generated value | [opaque-serialization](../../runs/shared-lifting-pilot/v1/budget-100000/inputs/case-0006.json) is unknown | Partial: an explicitly unknown emitted request prevents a concrete witness. No source-generated identifier or native opaque-value exchange was observed. |
+| Alternative succeeds after another is refuted | [correlated-prefix-refinement](../../runs/shared-lifting-pilot/v1/budget-100000/inputs/case-0003.json) is supported | The declared bad prefix cannot satisfy the final guard. The retained candidate records a refinement and returns the checked `b_good_binding`, `finish` witness. |
+| A previously failing edge becomes legal in another context | [correlated-prefix-refinement](../../runs/shared-lifting-pilot/v1/budget-100000/inputs/case-0003.json) | The same `finish` edge fails for the `call-A`, `B` frame and succeeds for `call-B`, `B`; the edge is not globally deleted. This is binding-frame context, not a demonstration of application task/context identity. |
+
+[working-state-blocks-second-answer](../../runs/shared-lifting-pilot/v1/budget-100000/inputs/case-0009.json)
+separately returns unsupported after the first answer changes `phase` from
+`waiting` to `working`. It demonstrates a phase obstruction, not recovery of
+a previously failing edge. The other cases exercise atomic binding updates,
+uncertain contracted observables, stale evidence and the selected reconvergence
+stress case. Independent adversarial task/context and typed/raw route coverage
+remain work to complete; case names alone do not establish it.
 
 ## Certificate-validated coverage
 
@@ -72,6 +106,10 @@ or memory-superiority evidence.
 | Original refinement | 11.418 | 37.619 | 5.262 | 21.80 |
 | Shared lifting | 16.420 | 27.163 | 4.962 | 21.79 |
 
+The smaller shared-lifting worker-wall total is one fixed-order observation on
+the constrained host. It establishes neither a speed ranking nor a memory
+advantage; this table contains no repetitions or statistical uncertainty estimate.
+
 Function timings are contained within worker wall time; do not add those columns.
 Worker wall includes process startup, imports and output. Process memory is the
 OS high-water observation before final reply output, including interpreter and
@@ -81,6 +119,11 @@ slice have a memory observation. The independent audit confirmed observations
 for all 349 pilot workers, with none missing. Other budgets, reference workers, preparation,
 serialization, missing counts and per-case observations remain in the raw result.
 See the [measurement contract](shared-lifting-comparison-v3.md).
+
+Historical worker records retain their original absolute Windows paths. Those
+paths are not normalized by this documentation update: rewriting retained
+records would change their evidence bytes. Portable path presentation for
+future outputs remains a separate implementation task.
 
 ## Evidence and demonstration
 
@@ -106,10 +149,15 @@ $env:PYTHONPATH = Join-Path (Get-Location).Path 'runs/shared-lifting-pilot/v1/so
 python -B -m interoperability.shared_lifting_comparison_v3 verify runs/shared-lifting-pilot/v1/budget-100000
 ```
 
-Captured-code replay was exercised by the focused two-case harness; the entire
-twelve-case pilot has not been replayed. The independent audit reconciles its
-recorded execution; it does not substitute for a fresh replay or human review.
-Use the [supervisor guide](supervisor-package-v1.md) to present this implementation
-and the preserved larger comparison. The live-startup gap remains in the
+**10 November reproduction:** the [complete twelve-case pilot was replayed at
+all four budgets](shared-lifting-pilot-reproduction-v1.md) from captured source
+in a fresh allocation. All 192 algorithm evaluations matched original decisions,
+reasons, certificates and deterministic counters; 349 fresh worker jobs included
+109 accepted certificate checks. All 1,989 original allocation files stayed
+unchanged. Timing and memory remain separate host observations. The earlier
+two-case harness and read-only audit retain their original scopes; supervisor
+or task/gold approval is not inferred.
+The preserved [larger comparison](refinement-scaling-results-v2.md) provides
+additional development measurements. The live-startup gap remains in the
 [v4 report](pending-admission-live-results-v3.md). No application success,
 algorithmic novelty, 70% completion or supervisor extension follows from this pilot.

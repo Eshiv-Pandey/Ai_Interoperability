@@ -4,8 +4,7 @@ Implementation: [refinement.py](../../src/interoperability/refinement.py).
 This is a **CEGAR/lazy-symbolic adaptation and candidate prototype; scientific
 novelty and comparative advantage are unestablished**. It implements witness
 lifting and checked refinement around the existing finite search. It does not
-rename the existing BFS as a novel algorithm. The paper is deferred under the
-user's current three-day implementation priority.
+rename the existing BFS as a novel algorithm.
 
 ## Decision being implemented
 
@@ -37,6 +36,7 @@ accepted:
 
 | Field | Meaning |
 | --- | --- |
+| `schema_version` | Exactly `recipe-continuation/1` |
 | `id` | Nonempty prototype profile identifier |
 | `model` | An unchanged `finite-continuation/1` manifest, including its original horizon, contract, graph, freshness and completeness fields |
 | `initial_bindings` | Object mapping names to supplied public JSON scalars; no evaluator-private state is an accepted extra field |
@@ -189,7 +189,12 @@ over `(abstract_state, depth, complete_public_frame)`, with memoization of
 repeated relation/frame evaluations and safe backward goal-cone analysis.
 It receives the same constructor language, finite recipes, bounds, bindings,
 freshness and coverage. Give it no pre-expansion or cold-cache handicap.
-An abstraction-only finite BFS is separately labelled as a weaker control.
+The four-method pilot implements this comparator as `direct_pruned`, using
+[direct_goal_pruned_v2.py](../../src/interoperability/direct_goal_pruned_v2.py).
+Its `baseline` arm is the preserved same-input relational-product solver and
+a historical control; it also checks relations and is not abstraction-only.
+A separately labelled abstraction-only finite BFS is a weaker control. It was
+not run as an arm of the four-method pilot.
 
 Demonstrate a legal typed/raw distinction, fixed-header obstruction, correct
 task/context/call/target correlation, an unavailable public binding, an opaque
@@ -197,5 +202,8 @@ generated value, an alternative that succeeds after another is refuted, and
 a context in which a previously failing edge becomes legal. Use independently
 authored adversarial profiles and compare actual decisions/certificates and
 full costs. Keep authored, source-adapted and observed data labels separate.
+The [pilot coverage map](shared-lifting-pilot-results-v1.md#demonstration-coverage)
+identifies which of these obligations the measured examples cover and which
+remain partial or missing; the list above is not a claim of completed coverage.
 No held-out sample, native execution, two-domain qualification, scientific
 novelty, C1 pass or 70% completion follows merely from these examples.

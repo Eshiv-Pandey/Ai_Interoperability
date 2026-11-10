@@ -1,0 +1,41 @@
+{
+  "argv": [
+    "C:\\Python313\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-c",
+    "import sys\ndef deny_network(event, arguments):\n    if event.startswith('socket.') or event in ('http.client.connect', 'urllib.Request'):\n        raise PermissionError('Offline scaling coordinator denies network capabilities')\nsys.addaudithook(deny_network)\nsys.path.insert(0, sys.argv[1])\nfrom interoperability.shared_lifting_comparison_v3 import main\nraise SystemExit(main(sys.argv[2:]))\n",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\shared-lifting-scaling\\v3-20261110-1\\source",
+    "verify",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\shared-lifting-scaling\\v3-20261110-1\\budget-100000"
+  ],
+  "budget": 100000,
+  "coordinator_wall_ns": 2072926500,
+  "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\shared-lifting-scaling\\v3-20261110-1",
+  "environment_keys": [
+    "COMSPEC",
+    "PATH",
+    "PATHEXT",
+    "PYTHONDONTWRITEBYTECODE",
+    "PYTHONNOUSERSITE",
+    "SystemRoot",
+    "TEMP",
+    "TMP",
+    "WINDIR"
+  ],
+  "finished_at": "2026-11-10T10:12:09.681653+00:00",
+  "kind": "verify",
+  "label": "budget-100000-verify",
+  "outer_timeout_seconds": null,
+  "returncode": 0,
+  "started_at": "2026-11-10T10:12:07.608738+00:00",
+  "stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "bytes": 118043,
+    "sha256": "9229bd15cc50618568c1ba2b913f94e19bfb196e16defb2022267d0c4fb327c7"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "status": "returned",
+  "input_sha256_before": "639082fc7316275b02023ab06559f1dd1b1a8759385a0ee35e524c5e0b2428c1",
+  "evaluation_ns": 908300,
+  "result": {
+    "decision": "supported",
+    "reason": "concrete_recipe_path",
+    "certificate": {
+      "profile_sha256": "639082fc7316275b02023ab06559f1dd1b1a8759385a0ee35e524c5e0b2428c1",
+      "checked_at": 100,
+      "horizon": 4,
+      "valid_until": 4102444800,
+      "kind": "recipe-path",
+      "transition_ids": [
+        "e0000",
+        "e0004",
+        "e0005",
+        "e0006"
+      ],
+      "steps": [
+        {
+          "args": {},
+          "request": {},
+          "bindings_before": {},
+          "bindings_after": {
+            "x": "v0000",
+            "y": "v0000"
+          },
+          "edge": "e0000"
+        },
+        {
+          "args": {},
+          "request": {},
+          "bindings_before": {
+            "x": "v0000",
+            "y": "v0000"
+          },
+          "bindings_after": {
+            "x": "v0000",
+            "y": "v0000"
+          },
+          "edge": "e0004"
+        },
+        {
+          "args": {},
+          "request": {},
+          "bindings_before": {
+            "x": "v0000",
+            "y": "v0000"
+          },
+          "bindings_after": {
+            "x": "v0000",
+            "y": "v0000"
+          },
+          "edge": "e0005"
+        },
+        {
+          "args": {
+            "x": "v0000",
+            "y": "v0000"
+          },
+          "request": {
+            "x": "v0000",
+            "y": "v0000"
+          },
+          "bindings_before": {
+            "x": "v0000",
+            "y": "v0000"
+          },
+          "bindings_after": {
+            "x": "v0000",
+            "y": "v0000"
+          },
+          "edge": "e0006"
+        }
+      ]
+    },
+    "stats": {
+      "work_units": 101,
+      "budget": 4096,
+      "state_expansions": 20,
+      "graph_edges": 41,
+      "argument_assignments": 13,
+      "expression_evaluations": 27,
+      "product_states": 10,
+      "cached_relation_outcomes": 0,
+      "certificate_checks": 0
+    }
+  },
+  "input_sha256_after": "639082fc7316275b02023ab06559f1dd1b1a8759385a0ee35e524c5e0b2428c1",
+  "input_unchanged": true,
+  "resources": {
+    "schema_version": "benchmark-worker-resources/1",
+    "timings": {
+      "preparation_ns": 17346600,
+      "result_serialization_ns": 17700,
+      "post_validation_ns": 51100
+    },
+    "memory": {
+      "status": "observed",
+      "peak_resident_bytes": 22933504,
+      "source": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "platform": "win32"
+    }
+  },
+  "worker_body_ns": 24682000
+}

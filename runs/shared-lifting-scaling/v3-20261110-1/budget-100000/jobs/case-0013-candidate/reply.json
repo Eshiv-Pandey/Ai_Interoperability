@@ -1,0 +1,67 @@
+{
+  "status": "returned",
+  "input_sha256_before": "e0c7d03c01f04f9e2b3310c79173a9e3743c0ec8dc490117799f500863eb9d22",
+  "evaluation_ns": 241100,
+  "result": {
+    "decision": "supported",
+    "reason": "public_recipe_witness",
+    "certificate": {
+      "profile_sha256": "e0c7d03c01f04f9e2b3310c79173a9e3743c0ec8dc490117799f500863eb9d22",
+      "checked_at": 100,
+      "horizon": 1,
+      "valid_until": 4102444800,
+      "kind": "recipe-path",
+      "transition_ids": [
+        "e0000"
+      ],
+      "steps": [
+        {
+          "edge": "e0000",
+          "args": {
+            "a000": 3,
+            "a001": 3
+          },
+          "request": {
+            "a000": 3,
+            "a001": 3
+          },
+          "bindings_before": {},
+          "bindings_after": {}
+        }
+      ]
+    },
+    "method": "witness-lift-refine-prototype",
+    "novelty_established": false,
+    "stats": {
+      "work_units": 136,
+      "budget": 100000,
+      "abstract_state_visits": 4,
+      "abstract_edge_checks": 2,
+      "abstract_paths": 1,
+      "relation_checks": 16,
+      "expression_evaluations": 112,
+      "refinement_lookups": 1,
+      "refinement_edges": 0,
+      "refinements": 0,
+      "peak_frames": 1,
+      "elapsed_ns": 236300
+    }
+  },
+  "input_sha256_after": "e0c7d03c01f04f9e2b3310c79173a9e3743c0ec8dc490117799f500863eb9d22",
+  "input_unchanged": true,
+  "resources": {
+    "schema_version": "benchmark-worker-resources/1",
+    "timings": {
+      "preparation_ns": 13797300,
+      "result_serialization_ns": 14200,
+      "post_validation_ns": 31900
+    },
+    "memory": {
+      "status": "observed",
+      "peak_resident_bytes": 22364160,
+      "source": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "platform": "win32"
+    }
+  },
+  "worker_body_ns": 19760300
+}

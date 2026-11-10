@@ -13,10 +13,20 @@ implements four arms on identical supplied recipe profiles:
 
 | Arm | Implementation |
 | --- | --- |
-| `baseline` | Preserved direct solver; also the disclosed reference implementation |
-| `direct_pruned` | Corrected direct solver with goal-cone pruning |
+| `baseline` | Preserved same-input relational-product solver; historical control and disclosed reference implementation |
+| `direct_pruned` | Same-input memoized relational-product search with remaining-horizon goal-cone pruning; mandatory fair comparator |
 | `candidate` | Preserved witness-lift/refine solver |
 | `shared_lift` | New solver with invocation-local shared lifting |
+
+`direct_pruned`, implemented in
+[direct_goal_pruned_v2.py](../../src/interoperability/direct_goal_pruned_v2.py),
+is the fair comparator required by the prototype specification and the
+strongest direct arm in this comparison. It memoizes complete edge/frame
+relation evaluations and receives the same constructors, recipes, bindings,
+horizon, evidence freshness and coverage as the candidate. The `baseline` arm
+is a historical same-input control, not the decisive superiority comparator.
+Neither direct arm is abstraction-only: a separately labelled finite-graph BFS
+was not run in this four-method pilot.
 
 Every conclusive result goes to the existing independent checker in a separate
 worker. Shared lifting retains the original certificate kinds; the checker does

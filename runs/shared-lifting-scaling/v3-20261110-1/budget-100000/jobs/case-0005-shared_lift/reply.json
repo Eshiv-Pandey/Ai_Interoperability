@@ -1,0 +1,81 @@
+{
+  "status": "returned",
+  "input_sha256_before": "4da61b0f834ccd1b45d755820693888a09ce312b3e5121978008dc27d52aca0b",
+  "evaluation_ns": 250900,
+  "result": {
+    "decision": "supported",
+    "reason": "public_recipe_witness",
+    "certificate": {
+      "profile_sha256": "4da61b0f834ccd1b45d755820693888a09ce312b3e5121978008dc27d52aca0b",
+      "checked_at": 100,
+      "horizon": 1,
+      "valid_until": 4102444800,
+      "kind": "recipe-path",
+      "transition_ids": [
+        "e0000"
+      ],
+      "steps": [
+        {
+          "edge": "e0000",
+          "args": {
+            "a000": 1,
+            "a001": 1
+          },
+          "request": {
+            "a000": 1,
+            "a001": 1
+          },
+          "bindings_before": {},
+          "bindings_after": {}
+        }
+      ]
+    },
+    "method": "witness-lift-refine-shared-v2",
+    "novelty_established": false,
+    "stats": {
+      "work_units": 106,
+      "budget": 100000,
+      "abstract_state_visits": 4,
+      "abstract_edge_checks": 2,
+      "abstract_paths": 1,
+      "relation_checks": 4,
+      "expression_evaluations": 28,
+      "refinement_lookups": 1,
+      "refinement_edges": 0,
+      "refinements": 0,
+      "peak_frames": 1,
+      "cache_lookups": 3,
+      "cache_key_nodes": 6,
+      "cache_insertions": 1,
+      "cache_payload_nodes": 31,
+      "cache_status_checks": 0,
+      "cached_prefix_frames": 0,
+      "cached_relation_outcomes": 0,
+      "history_nodes": 1,
+      "witness_nodes": 24,
+      "prefix_cache_hits": 0,
+      "relation_cache_hits": 0,
+      "prefix_cache_entries": 1,
+      "relation_cache_entries": 0,
+      "peak_cached_frames": 1,
+      "elapsed_ns": 245800
+    }
+  },
+  "input_sha256_after": "4da61b0f834ccd1b45d755820693888a09ce312b3e5121978008dc27d52aca0b",
+  "input_unchanged": true,
+  "resources": {
+    "schema_version": "benchmark-worker-resources/1",
+    "timings": {
+      "preparation_ns": 17620800,
+      "result_serialization_ns": 16600,
+      "post_validation_ns": 31700
+    },
+    "memory": {
+      "status": "observed",
+      "peak_resident_bytes": 22380544,
+      "source": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "platform": "win32"
+    }
+  },
+  "worker_body_ns": 23819100
+}

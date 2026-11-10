@@ -1,0 +1,63 @@
+{
+  "status": "returned",
+  "input_sha256_before": "4da61b0f834ccd1b45d755820693888a09ce312b3e5121978008dc27d52aca0b",
+  "evaluation_ns": 255900,
+  "result": {
+    "decision": "supported",
+    "reason": "concrete_recipe_path",
+    "certificate": {
+      "profile_sha256": "4da61b0f834ccd1b45d755820693888a09ce312b3e5121978008dc27d52aca0b",
+      "checked_at": 100,
+      "horizon": 1,
+      "valid_until": 4102444800,
+      "kind": "recipe-path",
+      "transition_ids": [
+        "e0000"
+      ],
+      "steps": [
+        {
+          "args": {
+            "a000": 1,
+            "a001": 1
+          },
+          "request": {
+            "a000": 1,
+            "a001": 1
+          },
+          "bindings_before": {},
+          "bindings_after": {},
+          "edge": "e0000"
+        }
+      ]
+    },
+    "stats": {
+      "work_units": 38,
+      "budget": 4096,
+      "state_expansions": 5,
+      "graph_edges": 5,
+      "argument_assignments": 4,
+      "expression_evaluations": 24,
+      "product_states": 1,
+      "cached_relation_outcomes": 0,
+      "certificate_checks": 0,
+      "goal_pruned_edges": 0
+    }
+  },
+  "input_sha256_after": "4da61b0f834ccd1b45d755820693888a09ce312b3e5121978008dc27d52aca0b",
+  "input_unchanged": true,
+  "resources": {
+    "schema_version": "benchmark-worker-resources/1",
+    "timings": {
+      "preparation_ns": 18714300,
+      "result_serialization_ns": 12700,
+      "post_validation_ns": 29200
+    },
+    "memory": {
+      "status": "observed",
+      "peak_resident_bytes": 22704128,
+      "source": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "platform": "win32"
+    }
+  },
+  "worker_body_ns": 25213800
+}
