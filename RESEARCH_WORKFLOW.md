@@ -1,4 +1,4 @@
-**Current user direction and evidence (10 November 2026):** produce concrete verified research results for a paper, then strengthen them during the following work period. The user now requires at least40% in the current two-hour delivery window. [Current handoff](docs/research/research-results-handoff-20261110-v1.md) records verified application execution, completed scaling/replay, task-bank drafts and remaining requirements. The full research rubric remains unchanged and currently earns5%; the minimum target has not been achieved. Earlier supervisor schedules below are historical.
+**Current user direction and completion (10 November 2026):** use concrete implementation deliverables for progress. [Delivery planv2](docs/research/implementation-delivery-plan-v2.md) fixed eight equal workpackages before this run; five are now verified, giving62.5%. The [current delivery](docs/research/implementation-delivery-results-v2.md) contains fresh clean-Linux reproduction, regenerated analysis/figures and application evidence. Earlier all-or-nothing scientific gates are retained as historical readiness checks.
 
 # Student-budget research workflow v1: approved scope
 

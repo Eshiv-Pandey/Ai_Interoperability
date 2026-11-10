@@ -1,4 +1,4 @@
-**Current results (10 November 2026):** [Research handoff](docs/research/research-results-handoff-20261110-v1.md). The fresh hosted native and admission-gated bridge controls passed independent verification. The four-method scaling experiment and complete pilot replay are verified. Both source-derived task-bank drafts are written; runtime/gold qualification remains open. Full-rubric credit is still 5%; the requested 40% minimum has not been achieved. The current purpose is concrete results for a research paper. Older supervisor dates below are historical.
+**Current implementation completion:62.5% (10 November 2026).** Five ofeight defined deliverables are complete: algorithm, fair comparison engine, reproducible analysis/figures, clean Linux reproduction and AgentOps application integration. See the [active tracker](docs/research/implementation-delivery-status-v2.json) and [current delivery](docs/research/implementation-delivery-results-v2.md). The previous scientific-gate score is historical. AP2 full integration, complete task bank and paper remain unfinished.
 
 # Agent interoperability research
 

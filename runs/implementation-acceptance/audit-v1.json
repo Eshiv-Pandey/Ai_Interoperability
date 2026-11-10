@@ -1,0 +1,517 @@
+{
+  "schema_version": "implementation-acceptance-audit/1",
+  "status": "passed_for_declared_implementation_scope",
+  "audited_at_utc": "2026-11-10T12:48:10.893744+00:00",
+  "reviewer": "independent AI source and execution-evidence review",
+  "source_review": "No unresolved material defect found in the focused reviewed paths",
+  "project_percentage_assigned": null,
+  "percentage_tracker_owned_by": "root implementation workpackage tracker",
+  "focused_tests": {
+    "modules": [
+      "test_refinement_shared_lift_v2",
+      "test_shared_admission_v1",
+      "test_direct_goal_pruned_v2",
+      "test_shared_lifting_comparison_v3",
+      "test_pending_admission"
+    ],
+    "tests_run": 79,
+    "elapsed_seconds": 15.963,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "observed_exit_code": 0,
+    "invocation": "Python unittest loadTestsFromNames with src/scripts/tests paths; -B",
+    "fresh_isolated_comparison_and_captured_replay_included": true,
+    "application_or_model_launch": false,
+    "python": "3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "source_files": [
+    {
+      "path": "src/interoperability/refinement_shared_lift_v2.py",
+      "bytes": 15366,
+      "sha256": "927538f7ddcb21120913c6c4257754b65a45703db384eec8cd6a28ba9e9b280b"
+    },
+    {
+      "path": "src/interoperability/shared_admission_v1.py",
+      "bytes": 7553,
+      "sha256": "7c37baa751bb8f0e437b02e87b9da47db011449be13a7256dcf43b08ca4cd3ec"
+    },
+    {
+      "path": "src/interoperability/direct_goal_pruned_v2.py",
+      "bytes": 10620,
+      "sha256": "1fba2d0bd747f965056279bbda40b9c28f50f1200b7e9a6869f343ab6f64de51"
+    },
+    {
+      "path": "src/interoperability/refinement.py",
+      "bytes": 18566,
+      "sha256": "11175edcb99dbec231390ae767ba97dce2e919810844ed544a1ddd109f4b5b3b"
+    },
+    {
+      "path": "src/interoperability/refinement_oracle.py",
+      "bytes": 25050,
+      "sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e"
+    },
+    {
+      "path": "src/interoperability/pending_admission.py",
+      "bytes": 22633,
+      "sha256": "4adb8f4cfb4b4a517053bbd49e3b9a14a03dda7eba33d66808a832fcb25a2132"
+    },
+    {
+      "path": "src/interoperability/shared_lifting_comparison_v3.py",
+      "bytes": 13342,
+      "sha256": "d5175683cedecd7f901136086b3294f972d9a19524e4bcd4e416b9120542e100"
+    },
+    {
+      "path": "src/interoperability/benchmark.py",
+      "bytes": 34981,
+      "sha256": "38b6cb4e6fd9ff4a48b0a9d45ca44156c8e714663f6c4a73060f44259a9c3a7e"
+    },
+    {
+      "path": "src/interoperability/benchmark_resources_v1.py",
+      "bytes": 8044,
+      "sha256": "b58eaec738a7cd69a54dbd105465c1544390e3de51a3737a0eeea1ee6575fdf9"
+    },
+    {
+      "path": "scripts/agentops_admission_control_v3.py",
+      "bytes": 25598,
+      "sha256": "692636ce8f0951de3fd48bd49c728cb5ab42019ff41f7baba977a330c673d47f"
+    }
+  ],
+  "packages": [
+    {
+      "id": "algorithm_implementation",
+      "status": "accepted",
+      "criteria": [
+        {
+          "id": "A1",
+          "criterion": "Explicit validated finite profile, clock and positive solver work budget",
+          "status": "passed"
+        },
+        {
+          "id": "A2",
+          "criterion": "Supported witness and complete-coverage negative results receive independently accepted certificates",
+          "status": "passed"
+        },
+        {
+          "id": "A3",
+          "criterion": "Unknown has no certificate; stale/opaque/budget cases abstain",
+          "status": "passed"
+        },
+        {
+          "id": "A4",
+          "criterion": "Correlated typed frames, exact histories and complete call-local caches retained; interrupted publication rejected",
+          "status": "passed"
+        },
+        {
+          "id": "A5",
+          "criterion": "Malformed JSON/results and forged certificates fail; existing output cannot be overwritten",
+          "status": "passed"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "tests/test_refinement_shared_lift_v2.py",
+          "bytes": 21286,
+          "sha256": "d0378383be48abcee894feae27cbe307acd797012cf2cb77102c43b855abd9e8"
+        },
+        {
+          "path": "tests/test_shared_admission_v1.py",
+          "bytes": 9825,
+          "sha256": "0b6a5842844376769103d31c59fc5f4369f4ca08c3bd9279d82f9405b42f7ed8"
+        },
+        {
+          "path": "tests/test_direct_goal_pruned_v2.py",
+          "bytes": 11627,
+          "sha256": "6b4a4f431fbd87a7e589c9ee7849f1d0bd411824412e9d871766fe007754d7b1"
+        },
+        {
+          "path": "runs/admission-demo/shared-rehearsal-1/inspection.json",
+          "bytes": 10329,
+          "sha256": "4ed45cdb8eaf4cb8d6c4b27acc0821ee0f55f332b5f0204545e88cbf7f010d35"
+        }
+      ],
+      "scope": "Finite supplied-model implementation; no novelty or model-authenticity assertion"
+    },
+    {
+      "id": "four_method_benchmark",
+      "status": "accepted",
+      "criteria": [
+        {
+          "id": "B1",
+          "criterion": "Four declared solvers receive identical profile bytes, logical clock and per-solver work budgets",
+          "status": "passed"
+        },
+        {
+          "id": "B2",
+          "criterion": "Fresh resource-instrumented workers retain source/input/dispatch/reply/process records",
+          "status": "passed"
+        },
+        {
+          "id": "B3",
+          "criterion": "All conclusive arm results independently checked; unknown remains uncertified in the full denominator",
+          "status": "passed"
+        },
+        {
+          "id": "B4",
+          "criterion": "Read-only verifier reconciles hashes, worker bindings and derived outcome/resource flags",
+          "status": "passed"
+        },
+        {
+          "id": "B5",
+          "criterion": "Forged dispatch/flags are rejected after manifest rehash; captured-source replay preserves deterministic results",
+          "status": "passed"
+        }
+      ],
+      "verified_budgets": [
+        {
+          "budget": 32,
+          "fresh_read_only_verification_observed": "passed",
+          "worker_jobs_bound": 388,
+          "certificate_jobs_bound": 58,
+          "planned_and_recorded_profiles": 66,
+          "arms": {
+            "baseline": {
+              "supported": 8,
+              "unsupported": 4,
+              "unknown": 54,
+              "certificates_valid": 12,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "direct_pruned": {
+              "supported": 12,
+              "unsupported": 8,
+              "unknown": 46,
+              "certificates_valid": 20,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "candidate": {
+              "supported": 16,
+              "unsupported": 8,
+              "unknown": 42,
+              "certificates_valid": 24,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "shared_lift": {
+              "supported": 0,
+              "unsupported": 2,
+              "unknown": 64,
+              "certificates_valid": 2,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            }
+          },
+          "evidence": [
+            {
+              "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-32/manifest.json",
+              "bytes": 348282,
+              "sha256": "58afbcb91bd20d3b60367407dd484fcf19f179f22e3fe3a463a1279b4ce71395"
+            },
+            {
+              "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-32/summary.json",
+              "bytes": 70850,
+              "sha256": "2b9d29eefb5c80999eedac32587eefe1136ee2dcf11fb755c778463293ea8df9"
+            }
+          ]
+        },
+        {
+          "budget": 256,
+          "fresh_read_only_verification_observed": "passed",
+          "worker_jobs_bound": 525,
+          "certificate_jobs_bound": 195,
+          "planned_and_recorded_profiles": 66,
+          "arms": {
+            "baseline": {
+              "supported": 27,
+              "unsupported": 25,
+              "unknown": 14,
+              "certificates_valid": 52,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "direct_pruned": {
+              "supported": 28,
+              "unsupported": 26,
+              "unknown": 12,
+              "certificates_valid": 54,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "candidate": {
+              "supported": 27,
+              "unsupported": 23,
+              "unknown": 16,
+              "certificates_valid": 50,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "shared_lift": {
+              "supported": 20,
+              "unsupported": 19,
+              "unknown": 27,
+              "certificates_valid": 39,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            }
+          },
+          "evidence": [
+            {
+              "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-256/manifest.json",
+              "bytes": 472986,
+              "sha256": "63eb9f2a798791d57846dc40b6c6c4a758c5570d84b843d9f162b87eeb2a6147"
+            },
+            {
+              "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-256/summary.json",
+              "bytes": 95960,
+              "sha256": "62c9c63b406a642ed2f10edbb27e7b5121a71e0b55f09730f5b3a93ae7e10eb8"
+            }
+          ]
+        },
+        {
+          "budget": 4096,
+          "fresh_read_only_verification_observed": "passed",
+          "worker_jobs_bound": 544,
+          "certificate_jobs_bound": 214,
+          "planned_and_recorded_profiles": 66,
+          "arms": {
+            "baseline": {
+              "supported": 28,
+              "unsupported": 26,
+              "unknown": 12,
+              "certificates_valid": 54,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "direct_pruned": {
+              "supported": 28,
+              "unsupported": 26,
+              "unknown": 12,
+              "certificates_valid": 54,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "candidate": {
+              "supported": 28,
+              "unsupported": 25,
+              "unknown": 13,
+              "certificates_valid": 53,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "shared_lift": {
+              "supported": 28,
+              "unsupported": 25,
+              "unknown": 13,
+              "certificates_valid": 53,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            }
+          },
+          "evidence": [
+            {
+              "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-4096/manifest.json",
+              "bytes": 490296,
+              "sha256": "94a2eb52395e6ec5bf21a147b44868543e0e7abf978158caa0b47f9029431b43"
+            },
+            {
+              "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-4096/summary.json",
+              "bytes": 99445,
+              "sha256": "af0a317c16d5dc7e8f751c14b86ad907ca77f194a252ccf8d795722cced6c882"
+            }
+          ]
+        },
+        {
+          "budget": 100000,
+          "fresh_read_only_verification_observed": "passed",
+          "worker_jobs_bound": 546,
+          "certificate_jobs_bound": 216,
+          "planned_and_recorded_profiles": 66,
+          "arms": {
+            "baseline": {
+              "supported": 28,
+              "unsupported": 26,
+              "unknown": 12,
+              "certificates_valid": 54,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "direct_pruned": {
+              "supported": 28,
+              "unsupported": 26,
+              "unknown": 12,
+              "certificates_valid": 54,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "candidate": {
+              "supported": 28,
+              "unsupported": 26,
+              "unknown": 12,
+              "certificates_valid": 54,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            },
+            "shared_lift": {
+              "supported": 28,
+              "unsupported": 26,
+              "unknown": 12,
+              "certificates_valid": 54,
+              "certificates_invalid": 0,
+              "errors": 0,
+              "eligible": 66
+            }
+          },
+          "evidence": [
+            {
+              "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-100000/manifest.json",
+              "bytes": 492118,
+              "sha256": "a87abefad662dff94a715017e1273232fc65892c649c1dcba43b86f1443e713c"
+            },
+            {
+              "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-100000/summary.json",
+              "bytes": 99809,
+              "sha256": "cd2df52fdb67d7edb9bd5d99e309df282916690668cd0ca6931e1e18074169fa"
+            }
+          ]
+        }
+      ],
+      "total_worker_jobs": 2003,
+      "total_accepted_certificate_jobs": 683,
+      "evidence": [
+        {
+          "path": "tests/test_shared_lifting_comparison_v3.py",
+          "bytes": 8560,
+          "sha256": "694b17e3533d41216f261b034313155182dfef6389351e92bdbc0d0beafcb328"
+        },
+        {
+          "path": "runs/shared-lifting-scaling/v3-20261110-1/plan.json",
+          "bytes": 83318,
+          "sha256": "8908356aa597363359084b641bf9ea3f79003c91337431c6671b404e811b5d8e"
+        },
+        {
+          "path": "runs/shared-lifting-scaling/v3-20261110-1/result.json",
+          "bytes": 5796987,
+          "sha256": "f0ec201cf13ed4cacfd1eadc80c2700a9c562f2f5e6f3c4fb2efa02a7ec53401"
+        }
+      ],
+      "scope": "Executed benchmark engine and immutable authored development study; positive candidate advantage is not required for implementation acceptance"
+    },
+    {
+      "id": "agentops_application_route",
+      "status": "accepted",
+      "criteria": [
+        {
+          "id": "C1",
+          "criterion": "Actual original N11 task/effect prerequisite completed before B7 start",
+          "status": "passed"
+        },
+        {
+          "id": "C2",
+          "criterion": "B7 public original task/context and independently valid certificate bound to exactly one actual wire continuation",
+          "status": "passed"
+        },
+        {
+          "id": "C3",
+          "criterion": "Original task completed with exactly one intended inventory effect/audit row and no unrelated-state deviations",
+          "status": "passed"
+        },
+        {
+          "id": "C4",
+          "criterion": "Source/export/runtime checks pass; client/service exits zero, groups empty, no forced cleanup",
+          "status": "passed"
+        },
+        {
+          "id": "C5",
+          "criterion": "Trusted pure validators independently replay retained native/admitted/effect/wire/startup/asyncio/interpreter/process checks",
+          "status": "passed"
+        }
+      ],
+      "native_review": {
+        "path": "runs/ci-agentops-native/download-42808110286-independent-review.json",
+        "bytes": 7272,
+        "sha256": "b887921bfbbb4d9cde17147e15184ef7b84e9be498907e82c7fd509c1c42d15b"
+      },
+      "run_url": "https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/42808110286",
+      "native_and_b7_strict_success": true,
+      "copied_files_hash_checked": 1138,
+      "staged_inputs_hash_checked": 864,
+      "live_model_calls": 0,
+      "executed_candidate": "pending_admission -> refinement.evaluate (witness-lift-refine-prototype)",
+      "shared_lift_v2_executed_in_application": false,
+      "scope": "One deterministic original fixture per arm; conditional one-step relation and separate actual effect verification"
+    }
+  ],
+  "measured_results": {
+    "high_budget_work_and_proof_sizes": {
+      "baseline": {
+        "solver_work_units_all_66_attempts": 4292,
+        "canonical_certificate_bytes": 20064,
+        "largest_certificate_bytes": 879
+      },
+      "direct_pruned": {
+        "solver_work_units_all_66_attempts": 3382,
+        "canonical_certificate_bytes": 19880,
+        "largest_certificate_bytes": 893
+      },
+      "candidate": {
+        "solver_work_units_all_66_attempts": 14518,
+        "canonical_certificate_bytes": 27248,
+        "largest_certificate_bytes": 8895
+      },
+      "shared_lift": {
+        "solver_work_units_all_66_attempts": 46840,
+        "canonical_certificate_bytes": 27248,
+        "largest_certificate_bytes": 8895
+      }
+    },
+    "scale_0031": {
+      "candidate": {
+        "work_units": 5566,
+        "relation_checks": 1024,
+        "certificate_bytes": 8895
+      },
+      "shared_lift": {
+        "work_units": 14773,
+        "relation_checks": 16,
+        "certificate_bytes": 8895
+      },
+      "direct_pruned": {
+        "work_units": 134,
+        "relation_checks": null,
+        "certificate_bytes": 338
+      }
+    },
+    "shared_certified_only_beyond_direct_by_budget": {
+      "32": 0,
+      "256": 0,
+      "4096": 0,
+      "100000": 0
+    }
+  },
+  "limits": [
+    "No algorithmic novelty or comparative superiority established",
+    "66 related authored development profiles are not independent held-out templates or application gold",
+    "Native fixture uses original refinement candidate, not application-executed shared lifting v2",
+    "Independent certificate reconstruction shares documented recipe-language primitives",
+    "Work units are method-specific; fixed-order single-host timing does not establish speed ranking",
+    "No second qualified application, full runtime/capture authentication or completed research paper asserted"
+  ]
+}

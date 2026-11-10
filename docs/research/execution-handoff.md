@@ -1,3 +1,7 @@
+# Current implementation handoff:10 November 2026
+
+Active completion is62.5%: five ofeight fixed implementation deliverables. See [delivery resultv2](implementation-delivery-results-v2.md) and [active tracker](implementation-delivery-status-v2.json). Fresh core reproduction matched1056algorithm/264reference/683checker outputs and passed167tests. Regenerated tables/figures passed independent11640-cell validation. Original AgentOps admission-to-application is verified. Full AP2 integration, complete task bank and paper remain open. Earlier gate-score reports below are historical.
+
 # Current handoff: 10 November 2026
 
 See [the current research-results handoff](research-results-handoff-20261110-v1.md). Fresh hosted N11 and admittedB7 achieved independently verified strict success. Complete four-method scaling and full original-pilot reproduction are verified. Source task-bank drafts contain62 candidate templates; six AP2 held-out slots and all application/gold/human qualification remain open. The supplied numerical pilot review is recorded and its corrections applied. Full-rubric credit remains5%; no40% target pass is claimed. The next work is original AP2/model access and qualified task/reference/gold execution, substantive contribution and required scientific review. All consumed prior allocations remain unchanged.
