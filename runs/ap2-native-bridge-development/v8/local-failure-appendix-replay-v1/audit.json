@@ -1,0 +1,188 @@
+{
+  "appendix": {
+    "bytes": 5062,
+    "path": "paper/ap2-v8-native-smoke-failure-appendix-v1.md",
+    "sha256": "f0b78ff1e2e7ebf299701a7e3f67cb5a17ea804ed833000b8d7e81db38c316d2"
+  },
+  "auditor": {
+    "bytes": 10610,
+    "path": "paper/audit_ap2_v8_native_smoke_failure_appendix_v1.py",
+    "sha256": "0af8b9e2557630da82896beb777b1c85b4ff5ae8092a808ddba8432b9a0c4449"
+  },
+  "checks": [
+    {
+      "evidence": 21,
+      "id": "appendix_and_V7_bound_to_exact_claim_inputs",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "attempt": 1,
+        "run": 42897325489
+      },
+      "id": "real_retained_completed_run",
+      "passed": true
+    },
+    {
+      "evidence": 14,
+      "id": "selected_extracted_evidence_equals_archived_bytes",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "arms": [
+          "reference",
+          "conventional",
+          "recovery",
+          "shared",
+          "recovery_shared",
+          "amir_typed",
+          "mg_typed",
+          "mg_raw"
+        ],
+        "cells": 104
+      },
+      "id": "all_104_original_ordered_identities_retained",
+      "passed": true
+    },
+    {
+      "evidence": 104,
+      "id": "all_matrix_cells_unexecuted_and_missing",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "missing_cells": 104,
+        "verified_captures": 0,
+        "verified_legal_bridge_initiation_cells": 0,
+        "verified_native_cells": 0,
+        "verified_purchases": 0
+      },
+      "id": "independent_matrix_totals_bound",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "amir_typed": 13,
+        "conventional": 13,
+        "mg_raw": 13,
+        "mg_typed": 13,
+        "recovery": 13,
+        "recovery_shared": 13,
+        "reference": 13,
+        "shared": 13
+      },
+      "id": "every_arm_table_recomputed",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "failure": {
+          "error_type": "PermissionError",
+          "native_qualification_established": false,
+          "provider_requests": 0,
+          "reason": "actor_private_evaluator_or_saved_credential_read_denied"
+        },
+        "smoke": {
+          "actual_worker_pid": 3170,
+          "aggregate_task_grade": null,
+          "forced_cleanup_pids": [],
+          "native_qualification_established": false,
+          "provider_requests": 0,
+          "returncode": 3,
+          "schema_version": "ap2-native-bridge-development/8",
+          "status": "retained_failed_or_partial_application_attempt"
+        }
+      },
+      "id": "actual_smoke_case_and_failure_exact",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "denials": {
+          "allowed_allocated_bridge_client_processes": 0,
+          "allowed_owned_loopback_operations": 0,
+          "external_network_operations_blocked": 1,
+          "private_reads_blocked": 2,
+          "unallocated_descendant_processes_blocked": 0
+        },
+        "reported_provider_requests": 0
+      },
+      "id": "all_smoke_counters_exact",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "runtime-manifest.json",
+        "original-callable-code-checks.json",
+        "source-tool-invocations.json",
+        "native-servers-started.json",
+        "native-wire-attempts.jsonl",
+        "native-wire-responses.jsonl",
+        "native-socket-cleanup.json",
+        "original-state-before.json",
+        "original-state-after.json",
+        "observations/events.jsonl",
+        "observations/terminal.json"
+      ],
+      "id": "no_first_callable_or_native_capture_and_no_traceback",
+      "passed": true
+    },
+    {
+      "evidence": [
+        {
+          "bytes": 1066,
+          "path": "code/samples/certs/ds_cert_sdjwt.pem",
+          "private_key_marker": false,
+          "public_certificate": true,
+          "sha256": "a4b92cd66960d4ddcdcb8ca8b2887dafdec06cbcd42bc10fcc8ede41ffef1306",
+          "source_identity_matches": true
+        },
+        {
+          "bytes": 1005,
+          "path": "code/samples/certs/issuer_cert_sdjwt.pem",
+          "private_key_marker": false,
+          "public_certificate": true,
+          "sha256": "120abde3087907911c3c9de00c536657a6a503a88849a24653f6c35030c982ba",
+          "source_identity_matches": true
+        }
+      ],
+      "id": "both_original_public_certificate_identities_exact",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "bytes": 8149,
+        "path": "docs/research/ap2-v8-actual-smoke-failure-peer-audit-v1.json",
+        "sha256": "f64544eeffc6ba5575b464de3828ff8150729c173e0845f87732c595844721f1"
+      },
+      "id": "source_guard_conflict_peer_bound_with_unknown_actual_path",
+      "passed": true
+    },
+    {
+      "evidence": "Unexecuted cells are not measured failed task trials.",
+      "id": "no_native_pair_or_task_success_inference",
+      "passed": true
+    },
+    {
+      "evidence": [],
+      "id": "all_appendix_local_links_resolve",
+      "passed": true
+    }
+  ],
+  "claim_provenance": {
+    "bytes": 8239,
+    "path": "paper/ap2-v8-native-smoke-failure-appendix-v1.json",
+    "sha256": "c7d72f79bda9aa3119d20efbd210045762ca083753ee70688225278ba7194241"
+  },
+  "human_scientific_review": false,
+  "limits": [
+    "Archive/claim audit only. Actual V8 denied path and traceback were not retained; reconstructed obstruction is not recovered actual path.",
+    "No native performance result, original task success, provider utility, human-gold or publication approval."
+  ],
+  "native_performance_credit": false,
+  "new_App_SDK_actor_evaluator_provider_network_calls": 0,
+  "passed": true,
+  "reviewed_utc": "2026-11-10T20:57:43.190310+00:00",
+  "schema_version": "ap2-v8-failure-appendix-independent-audit/1"
+}

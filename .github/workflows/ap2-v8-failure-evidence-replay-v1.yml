@@ -1,0 +1,35 @@
+name: Fresh checkout native V8 failure evidence replay
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Restore exact public archives from hash-bound parts
+        shell: bash
+        run: |
+          mkdir -p runs/ci-ap2-v8-failure-evidence/${{ github.run_id }}-${{ github.run_attempt }}
+          for run in 42897177156 42897325489; do
+            python3 -I -S -B scripts/public_archive_parts_v1.py --restore "runs/ap2-native-bridge-development/v8/retained-$run-1/archive-parts-v1/index.json" > "runs/ci-ap2-v8-failure-evidence/${{ github.run_id }}-${{ github.run_attempt }}/parts-$run.json"
+          done
+          python3 -I -S -B scripts/restore_retained_paper_evidence_v3.py --native-v8-only --restore > runs/ci-ap2-v8-failure-evidence/${{ github.run_id }}-${{ github.run_attempt }}/restore.json
+      - name: Independently audit all 104 unexecuted cells and the actual smoke failure
+        run: |
+          python3 -I -S -B scripts/replay_ap2_v8_failure_appendix_v1.py --output runs/ci-ap2-v8-failure-evidence/${{ github.run_id }}-${{ github.run_attempt }}/audit.json > runs/ci-ap2-v8-failure-evidence/${{ github.run_id }}-${{ github.run_attempt }}/audit.stdout 2> runs/ci-ap2-v8-failure-evidence/${{ github.run_id }}-${{ github.run_attempt }}/audit.stderr
+      - name: Preserve successful and failed replay records
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ap2-v8-failure-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runs/ci-ap2-v8-failure-evidence/${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: warn
+          retention-days: 30

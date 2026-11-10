@@ -23,5 +23,9 @@ restorer.ARCHIVES += (
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--restore", action="store_true")
+    parser.add_argument("--native-v8-only", action="store_true",
+                        help="Check or restore only the two frozen native V8 allocations")
     args = parser.parse_args()
+    if args.native_v8_only:
+        restorer.ARCHIVES = restorer.ARCHIVES[-2:]
     print(json.dumps(restorer.verify_or_restore(args.restore), indent=2))
