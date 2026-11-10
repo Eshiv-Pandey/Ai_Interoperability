@@ -1,0 +1,36 @@
+name: Fresh checkout manuscript v7 evidence audit
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: manuscript-evidence-v7
+  cancel-in-progress: false
+
+jobs:
+  evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out the selected research revision
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Restore only missing hash-bound public archive members
+        run: |
+          mkdir -p runs/ci-manuscript-v7/${{ github.run_id }}-${{ github.run_attempt }}
+          python3 -I -S -B scripts/restore_retained_paper_evidence_v2.py --restore > runs/ci-manuscript-v7/${{ github.run_id }}-${{ github.run_attempt }}/restore.json 2> runs/ci-manuscript-v7/${{ github.run_id }}-${{ github.run_attempt }}/restore.stderr
+      - name: Audit inherited and new manuscript evidence without new experiments
+        run: |
+          python3 -I -S -B paper/audit_draft_v7.py --output runs/ci-manuscript-v7/${{ github.run_id }}-${{ github.run_attempt }}/audit.json > runs/ci-manuscript-v7/${{ github.run_id }}-${{ github.run_attempt }}/audit.stdout 2> runs/ci-manuscript-v7/${{ github.run_id }}-${{ github.run_attempt }}/audit.stderr
+      - name: Retain successful and failed restoration or audit outcomes
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: manuscript-evidence-v7-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runs/ci-manuscript-v7/${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: warn
+          retention-days: 3
