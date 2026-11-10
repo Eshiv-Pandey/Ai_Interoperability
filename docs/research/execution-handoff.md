@@ -1,4 +1,27 @@
-# Current whole-project direction: 10 November 2026
+# Latest verified research handoff: 10 November 2026
+
+Estimated whole-project work completion is about **60%**, rounded from59 under
+the unchanged area allocations with about10percentage points uncertainty. This
+is a work estimate. The full study, source/model route qualification, task/gold
+independence and accountable final scientific review remain open.
+
+[Manuscript v6](../../paper/working-draft-v6.md) and its
+[artifact guide](paper-artifact-guide-v6.md) report the1320-cell five-method
+comparison, independent deterministic reproduction and actual shared-lifting
+admission before the original AP2 demo continuation. The AP2 positive witness,
+pre-send raw binding, same original task completion, demo receipt and fresh
+buyer-signature checks are independently verified. The code retains incomplete
+coverage and establishes no native/provider or cache-performance advantage.
+
+The subsequent [governed AgentOps pilot](agentops-governed-app-pilot-results-v1.md)
+observes d01completed and d03input-required without action effects. Preserve its
+strict0/2result: each capture contains one blocked socket.bind with unknown
+target/stack. Workflow success does not pass either complete test profile.
+All raw archives, earlier failures and AI review limitations remain preserved.
+
+The dated entries below are historical.
+
+# Earlier whole-project direction: 10 November 2026
 
 Continue through the entire research project and paper. The user explicitly
 asked about whole-project completion and then ordered continuation to completion.

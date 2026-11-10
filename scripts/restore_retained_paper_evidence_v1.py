@@ -14,6 +14,10 @@ ARCHIVES = (
      "ae24d4ed85f23100f6e994d26386322d7d7ac781d22d180200c687d611c666fc"),
     ("runs/ap2-reference-development/v3/retained-42845852651.zip", "runs/ap2-reference-development/v3/hosted-42845852651",
      "bd5a9636dbf4534b2512cd05512df057d4d7c3aa34e60b24c7ad49c29a3e6d70"),
+    ("runs/ap2-reference-development/v4/hosted-42858644500/artifact.zip", "runs/ap2-reference-development/v4/hosted-42858644500/extracted",
+     "b169c88da578f70210b01e7e63578ab59ca7e8b236e3c334682053929066f7cf"),
+    ("runs/ci-agentops-governed-app-pilot/hosted-42859288563-2/artifact.zip", "runs/ci-agentops-governed-app-pilot/hosted-42859288563-2/extracted",
+     "4829158200ecef065a7afb4a49baffbce3061532ba53d572cc7236296f6459d6"),
 )
 
 

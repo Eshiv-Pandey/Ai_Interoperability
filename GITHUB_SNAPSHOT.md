@@ -1,7 +1,7 @@
 # GitHub research snapshot
 
-The current research entrypoint is [manuscript v5](paper/working-draft-v5.md)
-and its [artifact guide](docs/research/paper-artifact-guide-v5.md). Verified
+The current research entrypoint is [manuscript v6](paper/working-draft-v6.md)
+and its [artifact guide](docs/research/paper-artifact-guide-v6.md). Verified
 finite-model results, a separately executed fifth comparator, refreshed primary
 references and the original AP2 offline demo sequence are included. The paper's
 audit reconstructs 1,320 raw cell projections without new experiments. The
@@ -12,12 +12,12 @@ paper audit before running it:
 
 ```powershell
 python -I -S -B scripts/restore_retained_paper_evidence_v1.py --restore
-python -I -S -B paper/audit_draft_v5.py --output paper/draft-audit-v5-fresh-checkout-1.json
+python -I -S -B paper/audit_draft_v6.py --output paper/draft-audit-v6-fresh-checkout-1.json
 ```
 
-The restore command validates the three fixed ZIP digests and existing member
+The restore command validates the five fixed ZIP digests and existing member
 bytes, then creates missing files under their documented workspace paths. Its
-read-only check verified all 17,218 currently extracted files. It launches no
+read-only checks verified all 17,499 currently extracted files. It launches no
 application or experiment. Private credentials and installed dependencies remain
 outside these public archives.
 
