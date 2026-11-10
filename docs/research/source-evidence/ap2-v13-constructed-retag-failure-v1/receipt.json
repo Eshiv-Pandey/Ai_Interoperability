@@ -1,0 +1,21 @@
+{
+  "schema_version": "ap2-v13-constructed-retag-failure/1",
+  "stage": "local inherited constructed controls before dispatch",
+  "actual_control_result": "9 inherited V5 tests passed; V13 native controls failed one constructed TCP test and one Node guard test because naive schema version retag changed http://127 URLs to http://137. Existing transport/guard correctly refused those addresses.",
+  "original_AP2_application_or_provider_runs": 0,
+  "source_identities": {
+    "scripts/ap2_reference_development_v13.py": {
+      "bytes": 58196,
+      "sha256": "3dd2d4534525fdb971c348ea841c279e60a74e587abcd4b0643a05e6e73b5524"
+    },
+    "tests/test_ap2_native_bridge_development_v13.py": {
+      "bytes": 16017,
+      "sha256": "42141ccbeab1f101342a382d700b32f1e278ffbd60689486c979f7cfa20236b1"
+    },
+    "tests/ap2_native_bridge_controls_v13.mjs": {
+      "bytes": 5301,
+      "sha256": "06c510008d7b2b5b6181490eeaff9c50f641df8468e2d58142502a29c3229fde"
+    }
+  },
+  "correction": "Schema-only regex retag; preserve URL and host literals; broaden inherited controls before dispatch."
+}
