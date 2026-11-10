@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\agentops_reference_actor_v1.py", line 247, in <module>
+    main()
+    ~~~~^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\agentops_reference_actor_v1.py", line 84, in main
+    modules = {name: importlib.import_module("agent." + name)
+                     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\external\agentops-c806b7f1\agents\python\src\agent\longterm.py", line 32, in <module>
+    from google.adk.tools.tool_context import ToolContext
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\ap2-environment-preparation\installed-environment-v1\environment\Lib\site-packages\google\adk\__init__.py", line 18, in <module>
+    from .agents.context import Context
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\ap2-environment-preparation\installed-environment-v1\environment\Lib\site-packages\google\adk\agents\__init__.py", line 15, in <module>
+    from .base_agent import BaseAgent
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\ap2-environment-preparation\installed-environment-v1\environment\Lib\site-packages\google\adk\agents\base_agent.py", line 45, in <module>
+    from ..telemetry import tracing
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\ap2-environment-preparation\installed-environment-v1\environment\Lib\site-packages\google\adk\telemetry\__init__.py", line 15, in <module>
+    from .tracing import trace_call_llm
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\ap2-environment-preparation\installed-environment-v1\environment\Lib\site-packages\google\adk\telemetry\tracing.py", line 69, in <module>
+    from ._experimental_semconv import is_experimental_semconv
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\ap2-environment-preparation\installed-environment-v1\environment\Lib\site-packages\google\adk\telemetry\_experimental_semconv.py", line 31, in <module>
+    from mcp import ClientSession as McpClientSession
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\ap2-environment-preparation\installed-environment-v1\environment\Lib\site-packages\mcp\__init__.py", line 2, in <module>
+    from .client.session_group import ClientSessionGroup
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\ap2-environment-preparation\installed-environment-v1\environment\Lib\site-packages\mcp\client\session_group.py", line 28, in <module>
+    from mcp.client.stdio import StdioServerParameters
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\ap2-environment-preparation\installed-environment-v1\environment\Lib\site-packages\mcp\client\stdio\__init__.py", line 17, in <module>
+    from mcp.os.win32.utilities import (
+    ...<4 lines>...
+    )
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\runs\ap2-environment-preparation\installed-environment-v1\environment\Lib\site-packages\mcp\os\win32\utilities.py", line 22, in <module>
+    import pywintypes
+ModuleNotFoundError: No module named 'pywintypes'

@@ -1,0 +1,583 @@
+{
+  "aggregate_task_grade": null,
+  "error_type": "ExecutionError",
+  "http_extension_observed": false,
+  "native_execution_enabled": false,
+  "native_qualification_established": false,
+  "original_bindings_authenticated": false,
+  "phase": "payment_methods",
+  "planning_report": {
+    "aggregate_task_grade": null,
+    "bootstrap_environment_gate_contract": "not_implemented",
+    "caller_state": {
+      "available_carts": [
+        {
+          "amount": 12.5,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Walking shoes"
+        },
+        {
+          "amount": 18.0,
+          "cart_id": "cart_2",
+          "currency": "USD",
+          "item_label": "Trail shoes"
+        },
+        {
+          "amount": 23.0,
+          "cart_id": "cart_3",
+          "currency": "USD",
+          "item_label": "Canvas shoes"
+        }
+      ],
+      "chosen_cart_id": "cart_1",
+      "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data",
+      "selected_cart": {
+        "amount": 12.5,
+        "cart_id": "cart_1",
+        "currency": "USD",
+        "item_label": "Walking shoes"
+      },
+      "shipping_address": {
+        "address_line": [
+          "123 Main St"
+        ],
+        "city": "Sample City",
+        "country": "US",
+        "organization": "Sample Organization",
+        "phone_number": "+1-000-000-0000",
+        "postal_code": "00000",
+        "recipient": "Bugs Bunny",
+        "region": "ST"
+      },
+      "shopping_context_id": "6ac8c404-fb6d-46b7-ba3f-e79207d8a547",
+      "supplied_distinct_prelude_task_ids": [
+        "98f95816-2381-4ebb-ba7b-ebc9af2ee9c6",
+        "4a0e3acc-7886-4987-9afa-285ca3184e61"
+      ]
+    },
+    "capture_order_and_completeness": "unknown",
+    "credential_transaction_association": "unknown",
+    "mandate_signatures": "unknown",
+    "model_usage_guard": "not_implemented",
+    "native_execution_enabled": false,
+    "native_qualification_established": false,
+    "next_phase": "payment_methods",
+    "observations": [
+      {
+        "phase": "catalog",
+        "supplied_value": {
+          "artifacts": [
+            {
+              "artifactId": "eee15a09-0925-440c-94a6-2ba80d710269",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "ap2.cart": {
+                      "amount": 12.5,
+                      "cart_id": "cart_1",
+                      "currency": "USD",
+                      "item_label": "Walking shoes"
+                    }
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            },
+            {
+              "artifactId": "7eb16b08-8a54-48b9-8107-3eac1b445c8c",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "ap2.cart": {
+                      "amount": 18.0,
+                      "cart_id": "cart_2",
+                      "currency": "USD",
+                      "item_label": "Trail shoes"
+                    }
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            },
+            {
+              "artifactId": "85fce3c6-0bfe-4be8-8032-247a3ff87a3b",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "ap2.cart": {
+                      "amount": 23.0,
+                      "cart_id": "cart_3",
+                      "currency": "USD",
+                      "item_label": "Canvas shoes"
+                    }
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            },
+            {
+              "artifactId": "91092609-aeaa-4df4-b960-32ab18cb42fa",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            }
+          ],
+          "contextId": "6ac8c404-fb6d-46b7-ba3f-e79207d8a547",
+          "history": [
+            {
+              "contextId": "6ac8c404-fb6d-46b7-ba3f-e79207d8a547",
+              "extensions": null,
+              "kind": "message",
+              "messageId": "f32da8d504cf414e8c3d206c5b358cdf",
+              "metadata": null,
+              "parts": [
+                {
+                  "kind": "text",
+                  "metadata": null,
+                  "text": "Find products that match the user's request."
+                },
+                {
+                  "data": {
+                    "catalog_search": "unbranded walking shoes"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                },
+                {
+                  "data": {
+                    "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                },
+                {
+                  "data": {
+                    "shopping_agent_id": "trusted_shopping_agent"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ],
+              "referenceTaskIds": null,
+              "role": "agent",
+              "taskId": "98f95816-2381-4ebb-ba7b-ebc9af2ee9c6"
+            }
+          ],
+          "id": "98f95816-2381-4ebb-ba7b-ebc9af2ee9c6",
+          "kind": "task",
+          "metadata": null,
+          "status": {
+            "message": null,
+            "state": "completed",
+            "timestamp": "2026-11-10T14:58:50.399393+00:00"
+          }
+        }
+      },
+      {
+        "phase": "cart_selection",
+        "supplied_value": "cart_1"
+      },
+      {
+        "phase": "shipping",
+        "supplied_value": {
+          "artifacts": [
+            {
+              "artifactId": "29d2c112-759d-4fdd-8d9e-3f1ce8b50a5d",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "contact_picker.ContactAddress": {
+                      "address_line": [
+                        "123 Main St"
+                      ],
+                      "city": "Sample City",
+                      "country": "US",
+                      "organization": "Sample Organization",
+                      "phone_number": "+1-000-000-0000",
+                      "postal_code": "00000",
+                      "recipient": "Bugs Bunny",
+                      "region": "ST"
+                    }
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            }
+          ],
+          "contextId": "6ac8c404-fb6d-46b7-ba3f-e79207d8a547",
+          "history": [
+            {
+              "contextId": "6ac8c404-fb6d-46b7-ba3f-e79207d8a547",
+              "extensions": null,
+              "kind": "message",
+              "messageId": "4e4cd014961647999cc772959945a5f9",
+              "metadata": null,
+              "parts": [
+                {
+                  "kind": "text",
+                  "metadata": null,
+                  "text": "Get the user's shipping address."
+                },
+                {
+                  "data": {
+                    "user_email": "bugsbunny@gmail.com"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ],
+              "referenceTaskIds": null,
+              "role": "agent",
+              "taskId": "4a0e3acc-7886-4987-9afa-285ca3184e61"
+            }
+          ],
+          "id": "4a0e3acc-7886-4987-9afa-285ca3184e61",
+          "kind": "task",
+          "metadata": null,
+          "status": {
+            "message": null,
+            "state": "completed",
+            "timestamp": "2026-11-10T14:58:50.413071+00:00"
+          }
+        }
+      }
+    ],
+    "original_source_authenticated": false,
+    "schema_version": "ap2-hp-reference-plan/1",
+    "scope": "pure_source_derived_caller_planning_only",
+    "source_reset_and_effects": "unknown"
+  },
+  "public_record_order": "coordinator_observer_boundary_order",
+  "public_records": [
+    {
+      "boundary": "attempt",
+      "call": 0,
+      "endpoint": "http://localhost:8001/a2a/merchant_agent",
+      "global_sequence": 0,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "contextId": null,
+        "extensions": null,
+        "kind": "message",
+        "messageId": "f32da8d504cf414e8c3d206c5b358cdf",
+        "metadata": null,
+        "parts": [
+          {
+            "kind": "text",
+            "metadata": null,
+            "text": "Find products that match the user's request."
+          },
+          {
+            "data": {
+              "catalog_search": "unbranded walking shoes"
+            },
+            "kind": "data",
+            "metadata": null
+          },
+          {
+            "data": {
+              "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+            },
+            "kind": "data",
+            "metadata": null
+          },
+          {
+            "data": {
+              "shopping_agent_id": "trusted_shopping_agent"
+            },
+            "kind": "data",
+            "metadata": null
+          }
+        ],
+        "referenceTaskIds": null,
+        "role": "agent",
+        "taskId": null
+      },
+      "sequence": 0
+    },
+    {
+      "boundary": "returned",
+      "call": 0,
+      "endpoint": "http://localhost:8001/a2a/merchant_agent",
+      "global_sequence": 1,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "artifacts": [
+          {
+            "artifactId": "eee15a09-0925-440c-94a6-2ba80d710269",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "ap2.cart": {
+                    "amount": 12.5,
+                    "cart_id": "cart_1",
+                    "currency": "USD",
+                    "item_label": "Walking shoes"
+                  }
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          },
+          {
+            "artifactId": "7eb16b08-8a54-48b9-8107-3eac1b445c8c",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "ap2.cart": {
+                    "amount": 18.0,
+                    "cart_id": "cart_2",
+                    "currency": "USD",
+                    "item_label": "Trail shoes"
+                  }
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          },
+          {
+            "artifactId": "85fce3c6-0bfe-4be8-8032-247a3ff87a3b",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "ap2.cart": {
+                    "amount": 23.0,
+                    "cart_id": "cart_3",
+                    "currency": "USD",
+                    "item_label": "Canvas shoes"
+                  }
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          },
+          {
+            "artifactId": "91092609-aeaa-4df4-b960-32ab18cb42fa",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          }
+        ],
+        "contextId": "6ac8c404-fb6d-46b7-ba3f-e79207d8a547",
+        "history": [
+          {
+            "contextId": "6ac8c404-fb6d-46b7-ba3f-e79207d8a547",
+            "extensions": null,
+            "kind": "message",
+            "messageId": "f32da8d504cf414e8c3d206c5b358cdf",
+            "metadata": null,
+            "parts": [
+              {
+                "kind": "text",
+                "metadata": null,
+                "text": "Find products that match the user's request."
+              },
+              {
+                "data": {
+                  "catalog_search": "unbranded walking shoes"
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "shopping_agent_id": "trusted_shopping_agent"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ],
+            "referenceTaskIds": null,
+            "role": "agent",
+            "taskId": "98f95816-2381-4ebb-ba7b-ebc9af2ee9c6"
+          }
+        ],
+        "id": "98f95816-2381-4ebb-ba7b-ebc9af2ee9c6",
+        "kind": "task",
+        "metadata": null,
+        "status": {
+          "message": null,
+          "state": "completed",
+          "timestamp": "2026-11-10T14:58:50.399393+00:00"
+        }
+      },
+      "sequence": 1
+    },
+    {
+      "boundary": "attempt",
+      "call": 0,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 2,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "contextId": "6ac8c404-fb6d-46b7-ba3f-e79207d8a547",
+        "extensions": null,
+        "kind": "message",
+        "messageId": "4e4cd014961647999cc772959945a5f9",
+        "metadata": null,
+        "parts": [
+          {
+            "kind": "text",
+            "metadata": null,
+            "text": "Get the user's shipping address."
+          },
+          {
+            "data": {
+              "user_email": "bugsbunny@gmail.com"
+            },
+            "kind": "data",
+            "metadata": null
+          }
+        ],
+        "referenceTaskIds": null,
+        "role": "agent",
+        "taskId": null
+      },
+      "sequence": 0
+    },
+    {
+      "boundary": "returned",
+      "call": 0,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 3,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "artifacts": [
+          {
+            "artifactId": "29d2c112-759d-4fdd-8d9e-3f1ce8b50a5d",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "contact_picker.ContactAddress": {
+                    "address_line": [
+                      "123 Main St"
+                    ],
+                    "city": "Sample City",
+                    "country": "US",
+                    "organization": "Sample Organization",
+                    "phone_number": "+1-000-000-0000",
+                    "postal_code": "00000",
+                    "recipient": "Bugs Bunny",
+                    "region": "ST"
+                  }
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          }
+        ],
+        "contextId": "6ac8c404-fb6d-46b7-ba3f-e79207d8a547",
+        "history": [
+          {
+            "contextId": "6ac8c404-fb6d-46b7-ba3f-e79207d8a547",
+            "extensions": null,
+            "kind": "message",
+            "messageId": "4e4cd014961647999cc772959945a5f9",
+            "metadata": null,
+            "parts": [
+              {
+                "kind": "text",
+                "metadata": null,
+                "text": "Get the user's shipping address."
+              },
+              {
+                "data": {
+                  "user_email": "bugsbunny@gmail.com"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ],
+            "referenceTaskIds": null,
+            "role": "agent",
+            "taskId": "4a0e3acc-7886-4987-9afa-285ca3184e61"
+          }
+        ],
+        "id": "4a0e3acc-7886-4987-9afa-285ca3184e61",
+        "kind": "task",
+        "metadata": null,
+        "status": {
+          "message": null,
+          "state": "completed",
+          "timestamp": "2026-11-10T14:58:50.413071+00:00"
+        }
+      },
+      "sequence": 1
+    }
+  ],
+  "required_http_extension": {
+    "X-A2A-Extensions": "https://github.com/google-agentic-commerce/ap2/v1"
+  },
+  "schema_version": "ap2-hp-injected-reference-execution/1",
+  "scope": "injected public reference coordination",
+  "status": "refused_or_partial_reference",
+  "transport_peer_ownership_verified": false
+}

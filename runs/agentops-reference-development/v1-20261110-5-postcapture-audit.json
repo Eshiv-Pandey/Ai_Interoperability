@@ -1,0 +1,87 @@
+{
+  "schema_version": "agentops-component-reference-read-audit/1",
+  "status": "retained-component-evidence-rechecked",
+  "sealed_files": 73,
+  "sealed_bytes": 530435,
+  "checks_verified": 95,
+  "checks_total": 95,
+  "fresh_original_recipe_invocations_in_this_audit": 0,
+  "source_and_seed_bindings_match": true,
+  "raw_streams_match_actor_observations": true,
+  "imported_counts": {
+    "agentops-d01-health-active": {
+      "original_files": 8,
+      "dependency_files": 91
+    },
+    "agentops-d02-logs-after-record": {
+      "original_files": 8,
+      "dependency_files": 91
+    },
+    "agentops-d03-restart-pause": {
+      "original_files": 8,
+      "dependency_files": 91
+    },
+    "agentops-d04-note-same-session": {
+      "original_files": 8,
+      "dependency_files": 91
+    },
+    "agentops-d05-structured-inventory": {
+      "original_files": 8,
+      "dependency_files": 91
+    },
+    "agentops-d06-keyword-retrieval": {
+      "original_files": 8,
+      "dependency_files": 91
+    }
+  },
+  "adversarial_controls": {
+    "controls": [
+      {
+        "control": "invented-status",
+        "rejected": true
+      },
+      {
+        "control": "missing-log-observation",
+        "rejected": true
+      },
+      {
+        "control": "forged-pool-log",
+        "rejected": true
+      },
+      {
+        "control": "invented-guarded-request-completion",
+        "rejected": true
+      },
+      {
+        "control": "business-mutation-before-approval",
+        "rejected": true
+      },
+      {
+        "control": "invented-note-store",
+        "rejected": true
+      },
+      {
+        "control": "invented-note-session",
+        "rejected": true
+      },
+      {
+        "control": "schema-extra-allowed",
+        "rejected": true
+      },
+      {
+        "control": "keyword-called-semantic",
+        "rejected": true
+      },
+      {
+        "control": "false-full-application-pass",
+        "rejected": true
+      }
+    ],
+    "all_rejected": true,
+    "scope": "forged component-output controls, not six full application tasks"
+  },
+  "original_App_tasks_passed": 0,
+  "original_App_tasks_unknown": 6,
+  "human_review": "not_reviewed",
+  "independent_evaluator_authorship": false
+}

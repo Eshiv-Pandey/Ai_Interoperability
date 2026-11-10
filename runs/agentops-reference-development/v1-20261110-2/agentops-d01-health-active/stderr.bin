@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\agentops_reference_actor_v1.py", line 251, in <module>
+    main()
+    ~~~~^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\agentops_reference_actor_v1.py", line 87, in main
+    modules = {name: importlib.import_module("agent." + name)
+                     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\external\agentops-c806b7f1\agents\python\src\agent\longterm.py", line 37, in <module>
+    from .pii import redact_persisted_text
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\external\agentops-c806b7f1\agents\python\src\agent\pii.py", line 23, in <module>
+    from presidio_analyzer import AnalyzerEngine, RecognizerResult
+ModuleNotFoundError: No module named 'presidio_analyzer'

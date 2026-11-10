@@ -1,8 +1,10 @@
 # Agent interoperability research
 
-**Whole-project work is continuing (10 November 2026).** The goal is to complete the research project and paper. [The whole-project register](docs/research/project-completion-status-v1.json) records the remaining substantive work. The separate [implementation tracker](docs/research/implementation-delivery-status-v2.json) counts five of eight deliveries, or 62.5% implementation completion; this is not the entire-project percentage. AP2 full integration, benchmark qualification, complete experiments, scientific validation and paper work remain open.
+**Current verified research artifacts (10 November 2026).** [Manuscript v5](paper/working-draft-v5.md) reports all 1,320 five-method development cells, the reproduced original four-method matrix, admitted AgentOps task effects and the original AP2 offline demo receipt. Its [artifact guide](docs/research/paper-artifact-guide-v5.md) and [claim ledger](paper/claim-ledger-v5.json) map results to retained evidence. The fresh [paper audit](paper/draft-audit-v5-5.json) checks five tables, all raw cells, 22 references and evidence hashes. Shared lifting and constraint pruning add no certified case beyond goal-pruned direct in this suite.
 
-The current goal is concrete verified results for a research paper. The records below preserve earlier implementation and supervisor schedules.
+Whole-project work continues. [The project register](docs/research/project-completion-status-v1.json) preserves the remaining scope. The separate eight-delivery implementation score is not a whole-project percentage. AP2 native/provider qualification, independent task/gold validity, the full application study and accountable final scientific review remain open. The reported AP2 v3 sequence uses explicit offline-model/ASGI interventions and no admission gate; later pilot dispatches alone are not execution results.
+
+The current goal is concrete verified results for a research paper. The records below preserve earlier implementation and supervisor schedules; their dates identify historical status snapshots.
 
 **Historical supervisor schedule: 31 October 2026.** This week's priority is the implemented admission algorithm and benchmark; no draft paper is required. Start with the [eight-minute supervisor guide](docs/research/supervisor-package-v1.md), [three-day checklist](docs/research/three-day-implementation-plan-v2.md) and [component status](docs/research/implementation-status-v1.json). The target is 70%; reaching it remains unverified, and no extension has been granted.
 

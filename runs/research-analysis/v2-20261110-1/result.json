@@ -1,0 +1,632 @@
+{
+  "schema_version": "research-development-analysis/2",
+  "status": "verified",
+  "created_at_utc": "2026-11-10T15:50:00.332605+00:00",
+  "new_solver_or_checker_requests": 0,
+  "new_application_or_model_requests": 0,
+  "script_sha256": "732901cbac9a3b9a37a3ee9f14d86fe5d96e17fef1eb4bf0f7a5561fad8b75ad",
+  "original_v1_helper_sha256": "19002ac5cf3b613bf58dd48de304c3f02f7eda7444039f1edbae1f3766df9039",
+  "python_version": [
+    3,
+    13,
+    1
+  ],
+  "python_executable": "C:\\Python313\\python.exe",
+  "input_files": [
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/result.json",
+      "sha256": "f0ec201cf13ed4cacfd1eadc80c2700a9c562f2f5e6f3c4fb2efa02a7ec53401"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-32/manifest.json",
+      "sha256": "58afbcb91bd20d3b60367407dd484fcf19f179f22e3fe3a463a1279b4ce71395"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-32/results.jsonl",
+      "sha256": "b33c6491e0b175e76fff8ae8826ddd039e8d545b0ed28c9d5bc19c6ff2cbedcf"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-32/summary.json",
+      "sha256": "2b9d29eefb5c80999eedac32587eefe1136ee2dcf11fb755c778463293ea8df9"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-32/execution.json",
+      "sha256": "eaf56102d4464ebb61a62c4c688b8ca002c160dde2deff39c7af05b8ad62730c"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-256/manifest.json",
+      "sha256": "63eb9f2a798791d57846dc40b6c6c4a758c5570d84b843d9f162b87eeb2a6147"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-256/results.jsonl",
+      "sha256": "b8465e02cf8bdaf0e9dd6a67bdc982130b7c64d462de69e2cd5fbbc49a6c8399"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-256/summary.json",
+      "sha256": "62c9c63b406a642ed2f10edbb27e7b5121a71e0b55f09730f5b3a93ae7e10eb8"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-256/execution.json",
+      "sha256": "fa7333dcc49a4057d950a387b80b12ceabd46db0ff151fcd96c5a22454a668b0"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-4096/manifest.json",
+      "sha256": "94a2eb52395e6ec5bf21a147b44868543e0e7abf978158caa0b47f9029431b43"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-4096/results.jsonl",
+      "sha256": "de30ac1a2cbc1523a15b2f44a0ca619a2683ce06f572eac3870f1f446b8efcb0"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-4096/summary.json",
+      "sha256": "af0a317c16d5dc7e8f751c14b86ad907ca77f194a252ccf8d795722cced6c882"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-4096/execution.json",
+      "sha256": "5dc9de382b1c819260c0e532e66fb5bc5ac1ba4962eef70b88a85176f25bb282"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-100000/manifest.json",
+      "sha256": "a87abefad662dff94a715017e1273232fc65892c649c1dcba43b86f1443e713c"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-100000/results.jsonl",
+      "sha256": "92137f9cc15feac73fb51b9777cd961be307c6161bf6ad5c797ef3464ff1817c"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-100000/summary.json",
+      "sha256": "cd2df52fdb67d7edb9bd5d99e309df282916690668cd0ca6931e1e18074169fa"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-100000/execution.json",
+      "sha256": "93ed45a2de10848bd848929d60651f0eac7cf1f8876d9f1f9682543a4ef24d5f"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/result.json",
+      "sha256": "28eaddf433170c81251a41bf3d980acc173e6c634fb3827504b15edc974a6147"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/manifest.json",
+      "sha256": "ddb2f9dfa074159e5e9bd85f8f546721f2d0b93985e354c0716afdbffbd6fce3"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/plan.json",
+      "sha256": "055668238a05bea7a1ddc3cae0eabc97e47b1f9b651b746aa85c43d609c6c9d2"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/driver-source.py",
+      "sha256": "07967aeaf51ed69f64597f73ea7d2d36fbd89d4074fede4cdcc5e78bcaad8b5f"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/guard-source.py",
+      "sha256": "3aa025550ea0bcf6974e6eca0fd8c068bbb211e3a49ee40ffd423d3ce7093723"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-32/results.jsonl",
+      "sha256": "fbf4ba93b102d255854c67ef9b3301b91e7edfaaf4d3353089a501412bcd157f"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-32/summary.json",
+      "sha256": "bf5ae7cbd6269f9fe74d1c0a2899deb1f37b8d3d9ec03e34f8655c17ab52ff1b"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-32/execution.json",
+      "sha256": "74c535b1d053ca682bc8595939581d08cb8ca36b0351518fd4203aedae209ce0"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-256/results.jsonl",
+      "sha256": "ac0d9fd095a5d3da01b98becb6722dfd97f46f9e43207af0347e0ec1cfd75b20"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-256/summary.json",
+      "sha256": "590a9fe0c3a0aec95c76628faf316ef8a09815a64582eebfd09f4fcd410d717c"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-256/execution.json",
+      "sha256": "468d0a9ab380fe68b3da14acac92cf30cd88283fa84010d36823a0591a61cce2"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-4096/results.jsonl",
+      "sha256": "4a291a544aaaca24b09646f2365fb99ab264a923ced54b3afa5977a7fac7a5fe"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-4096/summary.json",
+      "sha256": "0ce21e78dacb6f4f4f93e922f547d707f49505143c4b1c1f6ecf6a2397f80a33"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-4096/execution.json",
+      "sha256": "c987bf690d893655cf31a7812520d1a2f6079b4772e0122a203faab062579251"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-100000/results.jsonl",
+      "sha256": "dbbde1206a0baefe6c8773bca50059b84520b0d33e7158718fbc8886a0584c02"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-100000/summary.json",
+      "sha256": "7aca17fd670c711875ecb09ce5afac2411596f32fc141ece82228e194cc66e64"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/download-42836579527/budget-100000/execution.json",
+      "sha256": "8fbfbc5bf5741278a336e108ba3c92dee0c3d48811bb1679de32a0b82201c02a"
+    },
+    {
+      "path": "scripts/analyze_research_results_v2.py",
+      "sha256": "732901cbac9a3b9a37a3ee9f14d86fe5d96e17fef1eb4bf0f7a5561fad8b75ad"
+    },
+    {
+      "path": "scripts/analyze_research_results_v1.py",
+      "sha256": "19002ac5cf3b613bf58dd48de304c3f02f7eda7444039f1edbae1f3766df9039"
+    },
+    {
+      "path": "runs/guard-pruned-comparison/retained-42836579527.zip",
+      "sha256": "ae24d4ed85f23100f6e994d26386322d7d7ac781d22d180200c687d611c666fc"
+    }
+  ],
+  "original_manifest_files_verified": 10383,
+  "guard_manifest_files_verified": 6228,
+  "preserved_original_cells": 1056,
+  "supplemental_guard_cells": 264,
+  "case_method_rows": 1320,
+  "exact_profile_clock_joins": 264,
+  "original_cell_projection_unchanged": true,
+  "unknown_proof_metrics_blank": true,
+  "budget_method_totals": [
+    {
+      "budget": 32,
+      "method": "baseline",
+      "profiles": 66,
+      "certified": 12,
+      "supported": 8,
+      "unsupported": 4,
+      "unknown": 54,
+      "execution_error": 0,
+      "solver_work_units": 1939,
+      "certificate_bytes": 3464
+    },
+    {
+      "budget": 32,
+      "method": "candidate",
+      "profiles": 66,
+      "certified": 24,
+      "supported": 16,
+      "unsupported": 8,
+      "unknown": 42,
+      "execution_error": 0,
+      "solver_work_units": 1811,
+      "certificate_bytes": 7175
+    },
+    {
+      "budget": 32,
+      "method": "direct_pruned",
+      "profiles": 66,
+      "certified": 20,
+      "supported": 12,
+      "unsupported": 8,
+      "unknown": 46,
+      "execution_error": 0,
+      "solver_work_units": 1872,
+      "certificate_bytes": 5504
+    },
+    {
+      "budget": 32,
+      "method": "guard_pruned",
+      "profiles": 66,
+      "certified": 14,
+      "supported": 7,
+      "unsupported": 7,
+      "unknown": 52,
+      "execution_error": 0,
+      "solver_work_units": 1997,
+      "certificate_bytes": 3791
+    },
+    {
+      "budget": 32,
+      "method": "shared_lift",
+      "profiles": 66,
+      "certified": 2,
+      "supported": 0,
+      "unsupported": 2,
+      "unknown": 64,
+      "execution_error": 0,
+      "solver_work_units": 2072,
+      "certificate_bytes": 384
+    },
+    {
+      "budget": 256,
+      "method": "baseline",
+      "profiles": 66,
+      "certified": 52,
+      "supported": 27,
+      "unsupported": 25,
+      "unknown": 14,
+      "execution_error": 0,
+      "solver_work_units": 4222,
+      "certificate_bytes": 19438
+    },
+    {
+      "budget": 256,
+      "method": "candidate",
+      "profiles": 66,
+      "certified": 50,
+      "supported": 27,
+      "unsupported": 23,
+      "unknown": 16,
+      "execution_error": 0,
+      "solver_work_units": 4649,
+      "certificate_bytes": 16842
+    },
+    {
+      "budget": 256,
+      "method": "direct_pruned",
+      "profiles": 66,
+      "certified": 54,
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12,
+      "execution_error": 0,
+      "solver_work_units": 3382,
+      "certificate_bytes": 19880
+    },
+    {
+      "budget": 256,
+      "method": "guard_pruned",
+      "profiles": 66,
+      "certified": 54,
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12,
+      "execution_error": 0,
+      "solver_work_units": 4186,
+      "certificate_bytes": 19880
+    },
+    {
+      "budget": 256,
+      "method": "shared_lift",
+      "profiles": 66,
+      "certified": 39,
+      "supported": 20,
+      "unsupported": 19,
+      "unknown": 27,
+      "execution_error": 0,
+      "solver_work_units": 10493,
+      "certificate_bytes": 10997
+    },
+    {
+      "budget": 4096,
+      "method": "baseline",
+      "profiles": 66,
+      "certified": 54,
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12,
+      "execution_error": 0,
+      "solver_work_units": 4292,
+      "certificate_bytes": 20064
+    },
+    {
+      "budget": 4096,
+      "method": "candidate",
+      "profiles": 66,
+      "certified": 53,
+      "supported": 28,
+      "unsupported": 25,
+      "unknown": 13,
+      "execution_error": 0,
+      "solver_work_units": 13048,
+      "certificate_bytes": 18353
+    },
+    {
+      "budget": 4096,
+      "method": "direct_pruned",
+      "profiles": 66,
+      "certified": 54,
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12,
+      "execution_error": 0,
+      "solver_work_units": 3382,
+      "certificate_bytes": 19880
+    },
+    {
+      "budget": 4096,
+      "method": "guard_pruned",
+      "profiles": 66,
+      "certified": 54,
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12,
+      "execution_error": 0,
+      "solver_work_units": 4186,
+      "certificate_bytes": 19880
+    },
+    {
+      "budget": 4096,
+      "method": "shared_lift",
+      "profiles": 66,
+      "certified": 53,
+      "supported": 28,
+      "unsupported": 25,
+      "unknown": 13,
+      "execution_error": 0,
+      "solver_work_units": 27202,
+      "certificate_bytes": 18353
+    },
+    {
+      "budget": 100000,
+      "method": "baseline",
+      "profiles": 66,
+      "certified": 54,
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12,
+      "execution_error": 0,
+      "solver_work_units": 4292,
+      "certificate_bytes": 20064
+    },
+    {
+      "budget": 100000,
+      "method": "candidate",
+      "profiles": 66,
+      "certified": 54,
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12,
+      "execution_error": 0,
+      "solver_work_units": 14518,
+      "certificate_bytes": 27248
+    },
+    {
+      "budget": 100000,
+      "method": "direct_pruned",
+      "profiles": 66,
+      "certified": 54,
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12,
+      "execution_error": 0,
+      "solver_work_units": 3382,
+      "certificate_bytes": 19880
+    },
+    {
+      "budget": 100000,
+      "method": "guard_pruned",
+      "profiles": 66,
+      "certified": 54,
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12,
+      "execution_error": 0,
+      "solver_work_units": 4186,
+      "certificate_bytes": 19880
+    },
+    {
+      "budget": 100000,
+      "method": "shared_lift",
+      "profiles": 66,
+      "certified": 54,
+      "supported": 28,
+      "unsupported": 26,
+      "unknown": 12,
+      "execution_error": 0,
+      "solver_work_units": 46840,
+      "certificate_bytes": 27248
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "budget": 32,
+      "left_method": "shared_lift",
+      "right_method": "direct_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 2,
+      "left_only": 0,
+      "right_only": 18,
+      "neither_certified": 46,
+      "paired_coverage_difference": -0.2727272727272727,
+      "family_resampling_lower": -0.5483870967741935,
+      "family_resampling_upper": -0.02857142857142857,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    },
+    {
+      "budget": 256,
+      "left_method": "shared_lift",
+      "right_method": "direct_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 39,
+      "left_only": 0,
+      "right_only": 15,
+      "neither_certified": 12,
+      "paired_coverage_difference": -0.22727272727272727,
+      "family_resampling_lower": -0.45,
+      "family_resampling_upper": 0.0,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    },
+    {
+      "budget": 4096,
+      "left_method": "shared_lift",
+      "right_method": "direct_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 53,
+      "left_only": 0,
+      "right_only": 1,
+      "neither_certified": 12,
+      "paired_coverage_difference": -0.015151515151515152,
+      "family_resampling_lower": -0.04285714285714286,
+      "family_resampling_upper": 0.0,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    },
+    {
+      "budget": 100000,
+      "left_method": "shared_lift",
+      "right_method": "direct_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 54,
+      "left_only": 0,
+      "right_only": 0,
+      "neither_certified": 12,
+      "paired_coverage_difference": 0.0,
+      "family_resampling_lower": 0.0,
+      "family_resampling_upper": 0.0,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    },
+    {
+      "budget": 32,
+      "left_method": "guard_pruned",
+      "right_method": "direct_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 14,
+      "left_only": 0,
+      "right_only": 6,
+      "neither_certified": 46,
+      "paired_coverage_difference": -0.09090909090909091,
+      "family_resampling_lower": -0.1935483870967742,
+      "family_resampling_upper": 0.0,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    },
+    {
+      "budget": 256,
+      "left_method": "guard_pruned",
+      "right_method": "direct_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 54,
+      "left_only": 0,
+      "right_only": 0,
+      "neither_certified": 12,
+      "paired_coverage_difference": 0.0,
+      "family_resampling_lower": 0.0,
+      "family_resampling_upper": 0.0,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    },
+    {
+      "budget": 4096,
+      "left_method": "guard_pruned",
+      "right_method": "direct_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 54,
+      "left_only": 0,
+      "right_only": 0,
+      "neither_certified": 12,
+      "paired_coverage_difference": 0.0,
+      "family_resampling_lower": 0.0,
+      "family_resampling_upper": 0.0,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    },
+    {
+      "budget": 100000,
+      "left_method": "guard_pruned",
+      "right_method": "direct_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 54,
+      "left_only": 0,
+      "right_only": 0,
+      "neither_certified": 12,
+      "paired_coverage_difference": 0.0,
+      "family_resampling_lower": 0.0,
+      "family_resampling_upper": 0.0,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    },
+    {
+      "budget": 32,
+      "left_method": "shared_lift",
+      "right_method": "guard_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 2,
+      "left_only": 0,
+      "right_only": 12,
+      "neither_certified": 52,
+      "paired_coverage_difference": -0.18181818181818182,
+      "family_resampling_lower": -0.38461538461538464,
+      "family_resampling_upper": -0.02857142857142857,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    },
+    {
+      "budget": 256,
+      "left_method": "shared_lift",
+      "right_method": "guard_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 39,
+      "left_only": 0,
+      "right_only": 15,
+      "neither_certified": 12,
+      "paired_coverage_difference": -0.22727272727272727,
+      "family_resampling_lower": -0.45,
+      "family_resampling_upper": 0.0,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    },
+    {
+      "budget": 4096,
+      "left_method": "shared_lift",
+      "right_method": "guard_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 53,
+      "left_only": 0,
+      "right_only": 1,
+      "neither_certified": 12,
+      "paired_coverage_difference": -0.015151515151515152,
+      "family_resampling_lower": -0.04285714285714286,
+      "family_resampling_upper": 0.0,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    },
+    {
+      "budget": 100000,
+      "left_method": "shared_lift",
+      "right_method": "guard_pruned",
+      "profiles": 66,
+      "development_families": 5,
+      "both_certified": 54,
+      "left_only": 0,
+      "right_only": 0,
+      "neither_certified": 12,
+      "paired_coverage_difference": 0.0,
+      "family_resampling_lower": 0.0,
+      "family_resampling_upper": 0.0,
+      "range_scope": "exploratory family-mixture sensitivity; not a population confidence interval"
+    }
+  ],
+  "plot_dependencies": {},
+  "scope": "Exploratory authored-development evidence; deterministic work/proof metrics only; separate Windows and Linux runs",
+  "sensitivity_scope": "Complete existing-family resampling; not a population confidence interval",
+  "outputs": [
+    {
+      "path": "budget-methods.csv",
+      "sha256": "d8b0afe162c61388f1a26e7fd5ccb01d5d0dcb08f06939e428a5efcf1711c273",
+      "bytes": 1013
+    },
+    {
+      "path": "case-methods.csv",
+      "sha256": "2c02a8a2c79bc831ef0f290b649dbff9ebce0f38df7b37dc05dce0add73f343d",
+      "bytes": 182720
+    },
+    {
+      "path": "family-methods.csv",
+      "sha256": "f445eb30ebc276f601c347bb71b1b6258e0e58d5d4c0f2ed5da6d5a97a3d71b8",
+      "bytes": 5878
+    },
+    {
+      "path": "join-ledger.csv",
+      "sha256": "3752c3a8c55f692e4f557899fd29020437e8bdff2b3ec34df0a4c210567d0cc0",
+      "bytes": 70863
+    },
+    {
+      "path": "paired-certification-original.csv",
+      "sha256": "52b1105ff395ffd4072d920cd6e91a5fb9bc449036378603eaa5e7ce063a5046",
+      "bytes": 405
+    },
+    {
+      "path": "paired-comparisons.csv",
+      "sha256": "c36a05cf9612d748ebb6c98d63c3d95a483d3e6930b710ca9c949df318c9f4b2",
+      "bytes": 2076
+    }
+  ]
+}

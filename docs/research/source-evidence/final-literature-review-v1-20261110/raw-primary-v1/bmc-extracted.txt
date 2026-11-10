@@ -1,0 +1,1158 @@
+=== Physical page 1 ===
+Symbolic Model Checking without BDDs
+/?
+Armin Biere1, Alessandro Cimatti2, Edmund Clarke1, and Yunshan Zhu1
+1 Computer Science Department, Carnegie Mellon University
+5000 Forbes Avenue, Pittsburgh, PA 15213, U.S.A
+f Armin.Biere,Edmund.Clarke,Yunshan.Zhug @cs.cmu.edu
+2 Istituto per la Ricerca Scientiﬁca e Tecnologica (IRST)
+via Sommarive 18, 38055 Povo (TN), Italy
+cimatti@irst.itc.it
+Abstract. Symbolic Model Checking [3, 14] has proven to be a powerful tech-
+nique for the veriﬁcation of reactive systems. BDDs [2] have traditionally been
+used as a symbolic representation of the system. In this paper we show how
+boolean decision procedures, like St˚almarck’s Method [16] or the Davis & Put-
+nam Procedure [7], can replace BDDs. This new technique avoids the space blow
+up of BDDs, generates counterexamples much faster, and sometimes speeds up
+the veriﬁcation. In addition, it produces counterexamples of minimal length. We
+introduce a bounded model checking procedure for LTL which reduces model
+checking to propositional satisﬁability. We show that bounded LTL model check-
+ing can be done without a tableau construction. We have implemented a model
+checker BMC, based on bounded model checking, and preliminary results are
+presented.
+1 Introduction
+Model checking [4] is a powerful technique for verifying reactive systems. Able to ﬁnd
+subtle errors in real commercial designs, it is gaining wide industrial acceptance. Com-
+pared to other formal veriﬁcation techniques (e.g. theorem proving) model checking is
+largely automatic.
+In model checking, the speciﬁcation is expressed in temporal logic and the sys-
+tem is modeled as a ﬁnite state machine. For realistic designs, the number of states of
+the system can be very large and the explicit traversal of the state space becomes in-
+feasible. Symbolic model checking [3, 14], with boolean encoding of the ﬁnite state
+machine, can handle more than 10 20 states. BDDs [2], a canonical form for boolean
+expressions, have traditionally been used as the underlying representation for symbolic
+model checkers [14]. Model checkers based on BDDs are usually able to handle sys-
+tems with hundreds of state variables. However, for larger systems the BDDs generated
+during model checking become too large for currently available computers. In addition,
+/?
+This research is sponsored by the Semiconductor Research Corporation (SRC) under Contract
+No. 97-DJ-294 and the National Science Foundation (NSF) under Grant No. CCR-9505472.
+Any opinions, ﬁndings and conclusions or recommendations expressed in this material are
+those of the authors and do not necessarily reﬂect the views of SRC, NSF, or the United States
+Government.
+
+=== Physical page 2 ===
+selecting the right ordering of BDD variables is very important. The generation of a
+variable ordering that results in small BDDs is often time consuming or needs manual
+intervention. For many examples no space efﬁcient variable ordering exists.
+Propositional decision procedures (SAT) [7] also operate on boolean expressions
+but do not use canonical forms. They do not suffer from the potential space explosion
+of BDDs and can handle propositional satisﬁability problems with thousands of vari-
+ables. SAT based techniques have been successfully applied in various domains, such
+as hardware veriﬁcation [17], modal logics [9], formal veriﬁcation of railway control
+systems [1], and AI planning systems [11]. A number of efﬁcient implementations are
+available. Some notable examples are the PROVE tool [1] based on St˚almarck’s Method
+[16], and SATO [18] based on the Davis & Putnam Procedure [7].
+In this paper we present a symbolic model checking technique based on SAT pro-
+cedures. The basic idea is to consider counterexamples of a particular length k and
+generate a propositional formula that is satisﬁable iff such a counterexample exists. In
+particular, we introduce the notion of bounded model checking, where the bound is the
+maximal length of a counterexample. We show that bounded model checking for lin-
+ear temporal logic (LTL) can be reduced to propositional satisﬁability in polynomial
+time. To prove the correctness and completeness of our technique, we establish a cor-
+respondence between bounded model checking and model checking in general. Unlike
+previous approaches to LTL model checking, our method does not require a tableau or
+automaton construction.
+The main advantages of our technique are the following. First, bounded model
+checking ﬁnds counterexamples very fast. This is due to the depth ﬁrst nature of SAT
+search procedures. Finding counterexamples is arguably the most important feature of
+model checking. Second, it ﬁnds counterexamples of minimal length. This feature helps
+the user to understand a counterexample more easily. Third, bounded model check-
+ing uses much less space than BDD based approaches. Finally, unlike BDD based ap-
+proaches, bounded model checking does not need a manually selected variable order or
+time consuming dynamic reordering. Default splitting heuristics are usually sufﬁcient.
+To evaluate our ideas we have implemented a tool BMC based on bounded model
+checking. We give examples in which SAT based model checking signiﬁcantly out-
+performs BDD based model checking. In some cases bounded model checking detects
+errors instantly, while the BDDs for the initial state cannot be built.
+The paper is organized as follows. In the following section we explain the basic
+idea of bounded model checking with an example. In Section 3 we give the semantics
+for bounded model checking. Section 4 explains the translation of a bounded model
+checking problem into a propositional satisﬁability problem. In Section 5 we discuss
+bounds on the length of counterexamples. In Section 6 our experimental results are
+presented, and Section 7 describes some directions for future research.
+2 Example
+Consider the following simple state machine M that consists of a three bit shift register
+x with the individual bits denoted by x/#5B 0/#5D /; x/#5B 1/#5D ,a n dx/#5B 2/#5D . The predicate T /#28 x/; x
+/0
+/#29 denotes
+the transition relation between current state values x and next state values x
+/0
+and is
+
+=== Physical page 3 ===
+equivalent to:
+/#28 x
+/0
+/#5B 0/#5D/= x/#5B 1/#5D/#29 /^ /#28 x
+/0
+/#5B 1/#5D/= x/#5B 2/#5D/#29 /^ /#28 x
+/0
+/#5B 2/#5D/= 1/#29
+In the initial state the content of the register x can be arbitrary. The predicate I/#28 x/#29 that
+denotes the set of initial states is true .
+This shift register is meant to be empty (all bits set to zero) after three consecu-
+tive shifts. But we introduced an error in the transition relation for the next state value
+of x/#5B 2/#5D , where an incorrect value 1 is used instead of 0. Therefore, the property, that
+eventually the register will be empty (written asx /= 0) after a sufﬁciently large number
+of steps is not valid. This property can be formulated as the LTL formula F/#28 x /= 0/#29 .
+We translate the “universal” model checking problemAF/#28 x /= 0/#29 into the “existential”
+model checking problem EG/#28 x /6/= 0/#29 by negating the formula. Then, we check if there
+is an execution sequence that fulﬁlls G/#28 x /6/= 0/#29 . Instead of searching for an arbitrary
+path, we restrict ourselves to paths that have at mostk /+ 1 states, for instance we choose
+k /= 2. Call the ﬁrst three states of this pathx0, x1 and x2 and let x0 be the initial state (see
+Figure 1). Since the initial content of x can be arbitrary, we do not have any restriction
+x0
+x
+x
+x0
+0
+0
+[0]
+[1]
+[2]
+x
+x
+x
+x [0]
+[1]
+[2]
+1
+1
+1
+1 x
+x
+x
+x [0]
+[1]
+[2]
+2
+2
+2
+2
+L0
+L1
+L2
+Fig. 1. Unrolling the transition relation twice and adding a back loop.
+on x0. We unroll the transition relation twice and derive the propositional formula fm
+deﬁned as I/#28 x0
+/#29 /^ T /#28 x0
+/; x1
+/#29 /^ T /#28 x1
+/; x2
+/#29 . We expand the deﬁnition ofT and I, and get the
+following formula.
+/#28 x1
+/#5B 0/#5D/= x0
+/#5B 1/#5D/#29 /^ /#28 x1
+/#5B 1/#5D/= x0
+/#5B 2/#5D/#29 /^ /#28 x1
+/#5B 2/#5D/= 1/#29 /^ 1st step
+/#28 x2
+/#5B 0/#5D/= x1
+/#5B 1/#5D/#29 /^ /#28 x2
+/#5B 1/#5D/= x1
+/#5B 2/#5D/#29 /^ /#28 x2
+/#5B 2/#5D/= 1/#29 2nd step
+Any path with three states that is a “witness” for G/#28 x /6/= 0/#29 must contain a loop. Thus,
+we require that there is a transition from x2 back to the initial state, to the second state,
+or to itself (see also Figure 1). We represent this transition as Li deﬁned as T /#28 x2
+/; xi
+/#29
+which is equivalent to the following formula.
+/#28 xi
+/#5B 0/#5D/= x2
+/#5B 1/#5D/#29 /^ /#28 xi
+/#5B 1/#5D/= x2
+/#5B 2/#5D/#29 /^ /#28 xi
+/#5B 2/#5D/= 1/#29
+Finally, we have to make sure that this path will fulﬁll the constraints imposed by the
+formula G/#28 x /6/= 0/#29 . In this case the propertySi deﬁned as xi
+/6/= 0 has to hold at each state.
+Si is equivalent to the following formula.
+/#28 xi
+/#5B 0/#5D/= 1/#29 /_ /#28 xi
+/#5B 1/#5D/= 1/#29 /_ /#28 xi
+/#5B 2/#5D/= 1/#29
+
+=== Physical page 4 ===
+Putting this all together we derive the following propositional formula.
+fM
+/^
+2
+/_
+i/= 0
+Li
+/^
+2
+/^
+i/= 0
+Si (1)
+This formula is satisﬁable iff there is a counterexample of length 2 for the original
+formula F/#28 x /= 0/#29 . In our example we ﬁnd a satisfying assignment for /#28 1/#29 by setting
+xi
+/#5B j/#5D :/= 1 for all i/; j /= 0/; 1/; 2.
+3 Semantics
+ACTL* is deﬁned as the subset of formulas of CTL* [8] that are in negation normal
+form and contain only universal path quantiﬁers. A formula is in negation normal
+form (NNF) if negations only occur in front of atomic propositions. ECTL* is de-
+ﬁned in the same way, but only existential path quantiﬁers are allowed. We consider
+the next time operator ‘X’, the eventuality operator ‘F’, the globally operator ‘G’, and
+the until operator ‘U’. We assume that formulas are in NNF. We can always transform
+a formula in NNF without increasing its size by including the release operator ‘R’
+( f R g iff
+/: /#28 /: f U /: g/#29 ). In an LTL formula no path quantiﬁers (E or A) are allowed. In
+this paper we concentrate on LTL model checking. Our technique can be extended to
+handle full ACTL* (resp. ECTL*).
+Deﬁnition 1. A Kripke structure is a tuple M /=/#28 S/; I/; T/;/` /#29 with a ﬁnite set of states S,
+the set of initial states I /#12 S, a transition relation between states T /#12 S /#02 S, and the
+labeling of the states /` :S /! P /#28 A/#29 with atomic propositions A.
+We use Kripke structures as models in order to give the semantics of the logic. For
+the rest of the paper we consider only Kripke structures for which we have aboolean en-
+coding. We require thatS /= f 0/; 1g
+n, and that each state can be represented by a vector of
+state variables s /=/#28 s/#28 1/#29 /;/:/:/: /; s/#28 n/#29/#29 where s/#28 i/#29 for i /= 1/;/:/:/: /; n are propositional variables.
+We deﬁne propositional formulas fI
+/#28 s/#29 , fT
+/#28 s/; t/#29 and fp
+/#28 s/#29 as: fI
+/#28 s/#29 iff s /2 I, fT
+/#28 s/; t/#29 iff
+/#28 s/; t/#29 /2 T,a n d fp
+/#28 s/#29 iff p /2 /` /#28 s/#29 . For the rest of the paper we simply use T /#28 s/; t/#29 instead
+of fT
+/#28 s/; t/#29 etc. In addition, we require that every state has a successor state. That is, for
+all s /2 S there is a t /2 S with /#28 s/; t/#29 /2 T .F o r/#28 s/; t/#29 /2 T we also write s /! t. For an inﬁnite
+sequence of states p /=/#28 s0
+/; s1
+/;/:/:/: /#29 we deﬁne p/#28 i/#29/= si and pi
+/=/#28 si
+/; si/+ 1
+/;/:/:/: /#29 for i /2 IN.
+An inﬁnite sequence of states p is a path if p/#28 i/#29 /! p/#28 i /+ 1/#29 for all i /2 IN.
+Deﬁnition 2 (Semantics). Let M be a Kripke structure, p be a path in M and f be an
+LTL formula. Then p j /= f ( f is valid along p) is deﬁned as follows.
+p j /= pi f f p /2 /` /#28 p/#28 0/#29/#29 p j /= /: pi f f p /6/2 /` /#28 p/#28 0/#29/#29
+p j /= f /^ gi f f p j /= f and p j /= g p j /= f /_ gi f f p j /= fo r p j /= g
+p j /= G fi f f /8 i/: pi
+j /= f p j /= F fi f f /9 i/: pi
+j /= f
+p j /= X fi f f p1
+j /= f
+p j /= f U gi f f /9 i /#5B pi
+j /= g and /8 j/; j /#3C i/: p j
+j /= f /#5D
+p j /= f R gi f f /8 i /#5B pi
+j /= go r /9 j/; j /#3C i/: p j
+j /= f /#5D
+
+=== Physical page 5 ===
+Deﬁnition 3 (Validity). An LTL formula f is universally valid in a Kripke structure M
+(in symbols M j /= A f)i f fp j /= f for all paths p in M with p/#28 0/#29 /2 I. An LTL formula f is
+existentially valid in a Kripke structure M (in symbols M j /= E f ) iff there exists a path
+p in M with p j /= f and p/#28 0/#29 /2 I.
+Determining whether an LTL formula f is existentially (resp. universally) valid in a
+given Kripke structure is called anexistential (resp. universal) model checking problem.
+In conformance to the semantics of CTL* [8], it is clear that an LTL formula f is
+universally valid in a Kripke structure M iff /: f is not existentially valid. In order to
+solve the universal model checking problem, we negate the formula and show that the
+existential model checking problem for the negated formula has no solution. Intuitively,
+we are trying to ﬁnd a counterexample, and if we do not succeed then the formula
+is universally valid. Therefore, in the theory part of the paper we only consider the
+existential model checking problem.
+The basic idea ofbounded model checkingis to consider only aﬁnite preﬁx of a path
+that may be a solution to an existential model checking problem. We restrict the length
+of the preﬁx by a certain bound k. In practice we progressively increase the bound,
+looking for longer and longer possible counterexamples.
+A crucial observation is that, though the preﬁx of a path is ﬁnite, it still might repre-
+sent an inﬁnite path if there is a back loop from the last state of the preﬁx to any of the
+previous states (see Figure 2(b)). If there is no such back loop (see Figure 2(a)), then
+the preﬁx does not say anything about the inﬁnite behavior of the path. For instance,
+only a preﬁx with a back loop can represent a witness for Gp.E v e ni fp holds along all
+the states from s
+0 to sk, but there is no back loop from sk to a previous state, then we
+cannot conclude that we have found a witness for Gp,s i n c ep might not hold at sk/+ 1.
+SkSi SkSiSl
+(a) no loop (b) /#28 k/; l/#29 -loop
+Fig. 2. The two cases for a bounded path.
+Deﬁnition 4. For l /#14 k we call a path p a /#28 k/; l/#29 -loop if p/#28 k/#29 /! p/#28 l/#29 and p /= u /#01 vw with
+u /=/#28 p/#28 0/#29 /;/:/:/: /; p/#28 l /, 1/#29/#29 and v /=/#28 p/#28 l/#29 /;/:/:/: /; p/#28 k/#29/#29 .W ec a l lp simply a k-loop if there is
+an l /2 IN with l /#14 kf o rw h i c hp is a /#28 k/; l/#29 -loop.
+We give abounded semantics that is an approximation to the unbounded semantics
+of Deﬁnition 2. It allows us to deﬁne the bounded model checking problem and in the
+next section we will give a translation of a bounded model checking problem into a
+satisﬁability problem.
+In the bounded semantics we only consider a ﬁnite preﬁx of a path. In particular,
+we only use the ﬁrst k /+ 1 states ( s0
+/;/:/:/: /; sk) of a path to determine the validity of a
+
+=== Physical page 6 ===
+formula along that path. If a path is a k-loop then we simply maintain the original LTL
+semantics, since all the information about this (inﬁnite) path is contained in the preﬁx
+of length k.
+Deﬁnition 5 (Bounded Semantics for a Loop). Let k
+/2 INand p be a k-loop. Then an
+LTL formula f is valid along the path p with bound k (in symbols p j /=
+k f)i f fp j /= f.
+Assume that p is not a k-loop. Then the formula f :/= Fp is valid along p in the
+unbounded semantics if we can ﬁnd an index i /2 IN such that p is valid along the sufﬁx
+pi of p. In the bounded semantics the /#28 k /+ 1/#29 -th state p/#28 k/#29 does not have a successor.
+Therefore, we cannot deﬁne the bounded semantics recursively oversufﬁxes (e.g. pi)o f
+p. We keep the original p instead but add a parameter i in the deﬁnition of the bounded
+semantics and use the notation j /=
+i
+k. The parameter i is the current position in the preﬁx
+of p. In Lemma 7 we will show that p j /=
+i
+k f implies pi
+j /= f .
+Deﬁnition 6 (Bounded Semantics without a Loop). Let k /2 IN, and let p be a path
+that is not a k-loop. Then an LTL formula f is valid along p with bound k (in symbols
+p j /=
+k f)i f fp j /=
+0
+k fw h e r e
+p j /=
+i
+k pi f f p /2 /` /#28 p/#28 i/#29/#29 p j /=
+i
+k
+/: pi f f p /6/2 /` /#28 p/#28 i/#29/#29
+p j /=
+i
+k f /^ gi f f p j /=
+i
+k f and p j /=
+i
+k g p j /=
+i
+k f /_ gi f f p j /=
+i
+k fo r p j /=
+i
+k g
+p j /=
+i
+k G f is always false p j /=
+i
+k F fi f f /9 j/; i /#14 j /#14 k/: p j /=
+j
+k f
+p j /=
+i
+k X fi f f i /#3C k and p j /=
+i/+ 1
+k f
+p j /=
+i
+k f U gi f f /9 j/; i /#14 j /#14 k /#5B p j /=
+j
+k g and /8 n/; i /#14 n /#3C j/: p j /=
+n
+k f /#5D
+p j /=
+i
+k f R gi f f /9 j/; i /#14 j /#14 k /#5B p j /=
+j
+k f and /8 n/; i /#14 n /#14 j/: p j /=
+n
+k g /#5D
+Note that ifp is not ak-loop, then we say thatG f is not valid alongp in the bounded
+semantics with bound k since f might not hold along pk/+ 1. Similarly, the case for f R g
+where g always holds and f is never fulﬁlled has to be excluded. These constraints
+imply that for the bounded semantics the duality of G and F (/: F f /#11 G/: f )a n dt h e
+duality of R and U (/: /#28 f U g/#29 /#11 /#28 /: f /#29 R /#28 /: g/#29 ) no longer hold.
+The existential and universal bounded model checking problems are deﬁned in the
+same manner as in Deﬁnition 3. Now we describe how the existential model checking
+problem (M
+j /= E f ) can be reduced to a bounded existential model checking problem
+(M j /=
+k E f ).
+Lemma 7. Let h be an LTL formula and p a path, then p j /=
+k h /#29 p j /= h
+Proof. If p is a k-loop then the conclusion follows by deﬁnition. In the other case we
+assume that p is not a loop. Then we prove by induction over the structure of f and
+i /#14 k the stronger property p j /=
+i
+k h /#29 pi
+j /= h. We only consider the most complicated
+case h /= f R g.
+p j /=
+i
+k f R g /, /9 j/; i /#14 j /#14 k /#5B p j /=
+j
+k f and /8 n/; i /#14 n /#14 j/: p j /=
+n
+k g /#5D
+/#29 /9 j/; i /#14 j /#14 k /#5B p j
+j /= f and /8 n/; i /#14 n /#14 j/: pn
+j /= g /#5D
+/#29 /9 j/; i /#14 j /#5B p j
+j /= f and /8 n/; i /#14 n /#14 j/: pn
+j /= g /#5D
+
+=== Physical page 7 ===
+Let j
+/0
+/= j /, i and n
+/0
+/= n /, i
+/#29 /9 j
+/0
+/#5B pi/+ j
+/0
+j /= f and /8 n
+/0
+/; n
+/0
+/#14 j
+/0
+/: pi/+ n
+/0
+j /= g /#5D
+/#29 /9 j /#5B/#28 pi
+/#29
+j
+j /= f and /8 n/; n /#14 j/: /#28 pi
+/#29
+n
+j /= g /#5D
+/#29 /8 n /#5B/#28 pi
+/#29
+n
+j /= g or /9 j/; j /#3C n/: /#28 pi
+/#29
+j
+j /= f /#5D
+/#29 pi
+j /= f R g
+In the next-to-last step we used the following fact:
+/9 m /#5B pm
+j /= f and /8 l/; l /#14 m/: pl
+j /= g /#5D /#29 /8 n /#5B pn
+j /= g or /9 j/; j /#3C n/: p j
+j /= f /#5D
+Assume that m is the smallest number such that pm
+j /= f and pl
+j /= g for all l with l /#14 m.
+In the ﬁrst case we consider n /#3E m. Based on the assumption, there exists j /#3C n such
+that p j
+j /= f (choose j /= m). The second case is n /#14 m. Because pl
+j /= g for all l /#14 m we
+have pn
+j /= g for all n /#14 m. Thus, for all n we have proven that the disjunction on the
+right hand side is fulﬁlled. ut
+Lemma 8. Let f be an LTL formula f and M a Kripke structure. If M j /= E f then there
+exists k /2 IN with M j /=
+k E f
+Proof. In [3, 5, 12] it is shown that an existential model checking problem for an LTL
+formula f can be reduced to FairCTL model checking of the formula EGtrue in a
+certain product Kripke structure. This Kripke structure is the product of the original
+Kripke structure and a “tableau” that is exponential in the size of the formula f in the
+worst case. If the LTL formula f is existentially valid in M then there exists a path
+in the product structure that starts with an initial state and ends with a cycle in the
+strongly connected component of fair states. This path can be chosen to be a k-loop
+with k bounded by j Sj/#01 2
+j f j
+which is the size of the product structure. If we project this
+path onto its ﬁrst component, the original Kripke structure, then we get a path p that is
+a k-loop and in addition fulﬁlls p j /= f . By deﬁnition of the bounded semantics this also
+implies p j /=
+k f . ut
+The main theorem of this section states that, if we take all possible bounds into
+account, then the bounded and unbounded semantics are equivalent.
+Theorem 9. Let f be an LTL formula, M a Kripke structure. Then M j /= E f iff there
+exists k /2 IN with M j /=
+k E f.
+4T r a n s l a t i o n
+In the previous section, we deﬁned the semantics for bounded model checking. We now
+reduce bounded model checking to propositional satisﬁability. This reduction enables
+us to use efﬁcient propositional decision procedures to perform model checking.
+Given a Kripke structure M, an LTL formula f and a bound k, we will construct a
+propositional formula
+/#5B /#5B M/; f /#5D /#5D
+k. The variables s0
+/;/:/:/: /; sk in /#5B /#5B M/; f /#5D /#5D
+k denote a ﬁnite se-
+quence of states on a pathp. Each si is a vector of state variables. The formula/#5B /#5B M/; f /#5D /#5D
+k
+
+=== Physical page 8 ===
+essentially represents constraints on s0
+/;/:/:/: /; sk such that /#5B /#5B M/; f /#5D /#5D
+k is satisﬁable iff f is
+valid along p.
+The size of /#5B /#5B M/; f /#5D /#5D
+k is polynomial in the size of f if common subformulas are
+shared (as in our toolBMC). It is quadratic ink and linear in the size of the propositional
+formulas for T, I and the p /2 A. Thus, existential bounded model checking can be
+reduced in polynomial time to propositional satisﬁability.
+To construct /#5B /#5B M/; f /#5D /#5D
+k, we ﬁrst deﬁne a propositional formula /#5B /#5B M /#5D /#5D
+k that constrains
+s0
+/;/:/:/: /; sk to be on a valid pathp in M. Second, we give the translation of an LTL formula
+f to a propositional formula that constrains p to satisfy f .
+Deﬁnition 10 (Unfolding the Transition Relation). For a Kripke structure M, k/2 IN
+/#5B /#5B M /#5D /#5D
+k :/= I/#28 s0
+/#29 /^
+k/, 1
+/^
+i/= 0
+T /#28 si
+/; si/+ 1
+/#29
+Depending on whether a path is ak-loop or not (see Figure 2), we have two different
+translations of the temporal formula f . In Deﬁnition 11 we describe the translation if
+the path is not a loop (“/#5B /#5B /#01 /#5D /#5D
+i
+k”). The more technical translation where the path is a loop
+(“l
+/#5B /#5B /#01 /#5D /#5D
+i
+k”) is given in Deﬁnition 13.
+Consider the formula h :/= p U q and a path p that is not a k-loop for a given k /2 IN
+(see Figure 2(a)). Starting at pi for i /2 IN withi /#14 k the formula h is valid along pi with
+respect to the bounded semantics iff there is a position j with i /#14 j /#14 k and q holds
+at p/#28 j/#29 . In addition, for all states p/#28 n/#29 with n /2 IN starting at p/#28 i/#29 up to p/#28 j /, 1/#29 the
+proposition p has to be fulﬁlled. Therefore the translation is simply a disjunction over
+all possible positions j at which q eventually might hold. For each of these positions
+a conjunction is added that ensures that p holds along the path from p/#28 i/#29 to p/#28 j /, 1/#29 .
+Similar reasoning leads to the translation of the other temporal operators.
+The translation “ /#5B /#5B /#01 /#5D /#5D
+i
+k” maps an LTL formula into a propositional formula. The
+parameter k is the length of the preﬁx of the path that we consider and i is the current
+position in this preﬁx (see Figure 2(a)). When we recursively process subformulas, i
+changes but k stays the same. Note that we deﬁne the translation of any formula G f as
+false . This translation is consistent with the bounded semantics.
+Deﬁnition 11 (Translation of an LTL Formula without a Loop).For an LTL formula
+f and k /; i /2 IN, with i /#14 k
+/#5B /#5B p /#5D /#5D
+i
+k :/= p/#28 si
+/#29 /#5B /#5B /: p /#5D /#5D
+i
+k :/= /: p/#28 si
+/#29
+/#5B /#5B f /^ g /#5D /#5D
+i
+k :/= /#5B /#5B f /#5D /#5D
+i
+k
+/^ /#5B /#5B g /#5D /#5D
+i
+k
+/#5B /#5B f /_ g /#5D /#5D
+i
+k :/= /#5B /#5B f /#5D /#5D
+i
+k
+/_ /#5B /#5B g /#5D /#5D
+i
+k
+/#5B /#5B G f /#5D /#5D
+i
+k :/= false /#5B /#5B F f /#5D /#5D
+i
+k :/=
+W
+k
+j/= i
+/#5B /#5B f /#5D /#5D
+j
+k
+/#5B /#5B X f /#5D /#5D
+i
+k :/= if i /#3C kt h e n /#5B /#5B f /#5D /#5D
+i/+ 1
+k else false
+/#5B /#5B f U g /#5D /#5D
+i
+k :/=
+W
+k
+j/= i
+/#10
+/#5B /#5B g /#5D /#5D
+j
+k
+/^
+V
+j/, 1
+n/= i
+/#5B /#5B f /#5D /#5D
+n
+k
+/#11
+/#5B /#5B f R g /#5D /#5D
+i
+k :/=
+W
+k
+j/= i
+/#10
+/#5B /#5B f /#5D /#5D
+j
+k
+/^
+V
+j
+n/= i
+/#5B /#5B g /#5D /#5D
+n
+k
+/#11
+
+=== Physical page 9 ===
+Now we consider the case where the path is ak-loop. The translation “l
+/#5B /#5B /#01 /#5D /#5D
+i
+k”o fa n
+LTL formula depends on the current position i and on the length of the preﬁx k.I ta l s o
+depends on the position where the loop starts (see Figure 2(b)). This position is denoted
+by l for loop.
+Deﬁnition 12 (Successor in a Loop). Let k/; l/; i /2 IN, with l/; i /#14 k. Deﬁne the successor
+succ/#28 i/#29 of i in a /#28 k/; l/#29 -loop as succ/#28 i/#29 :/= i /+ 1 for i /#3C k and succ/#28 i/#29 :/= lf o ri /= k.
+Deﬁnition 13 (Translation of an LTL Formula for a Loop).Let f be an LTL formula,
+k/; l/; i /2 IN, with l/; i /#14 k.
+l
+/#5B /#5B p /#5D /#5D
+i
+k :/= p/#28 si
+/#29
+l
+/#5B /#5B /: p /#5D /#5D
+i
+k :/= /: p/#28 si
+/#29
+l
+/#5B /#5B f /^ g /#5D /#5D
+i
+k :/=
+l
+/#5B /#5B f /#5D /#5D
+i
+k
+/^
+l
+/#5B /#5B g /#5D /#5D
+i
+kl
+/#5B /#5B f /_ g /#5D /#5D
+i
+k :/=
+l
+/#5B /#5B f /#5D /#5D
+i
+k
+/_
+l
+/#5B /#5B g /#5D /#5D
+i
+k
+l
+/#5B /#5B G f /#5D /#5D
+i
+k :/=
+V
+k
+j/= min/#28 i/; l/#29
+l
+/#5B /#5B f /#5D /#5D
+j
+k l
+/#5B /#5B F f /#5D /#5D
+i
+k :/=
+W
+k
+j/= min/#28 i/; l/#29
+l
+/#5B /#5B f /#5D /#5D
+j
+k
+l
+/#5B /#5B X f /#5D /#5D
+i
+k :/=
+l
+/#5B /#5B f /#5D /#5D
+succ/#28 i/#29
+k
+l
+/#5B /#5B f U g /#5D /#5D
+i
+k :/=
+W
+k
+j/= i
+/#10
+l
+/#5B /#5B g /#5D /#5D
+j
+k
+/^
+V
+j/, 1
+n/= il
+/#5B /#5B f /#5D /#5D
+n
+k
+/#11
+/_
+W
+i/, 1
+j/= l
+/#10
+l
+/#5B /#5B g /#5D /#5D
+j
+k
+/^
+V
+k
+n/= i l
+/#5B /#5B f /#5D /#5D
+n
+k
+/^
+V
+j/, 1
+n/= l l
+/#5B /#5B f /#5D /#5D
+n
+k
+/#11
+l
+/#5B /#5B f R g /#5D /#5D
+i
+k :/=
+V
+k
+j/= min/#28 i/; l/#29
+l
+/#5B /#5B g /#5D /#5D
+j
+k
+/_
+W
+k
+j/= i
+/#10
+l
+/#5B /#5B f /#5D /#5D
+j
+k
+/^
+V
+j
+n/= i l
+/#5B /#5B g /#5D /#5D
+n
+k
+/#11
+/_
+W
+i/, 1
+j/= l
+/#10
+l
+/#5B /#5B f /#5D /#5D
+j
+k
+/^
+V
+k
+n/= i l
+/#5B /#5B g /#5D /#5D
+n
+k
+/^
+V
+j
+n/= l l
+/#5B /#5B g /#5D /#5D
+n
+k
+/#11
+The translation of the formula depends on the shape of the path (whether it is a loop
+or not). We now deﬁne a loop condition to distinguish these cases.
+Deﬁnition 14 (Loop Condition). For k/; l /2 IN,l e tlLk :/= T /#28 sk
+/; sl
+/#29 /; Lk :/=
+W
+k
+l/= 0 lLk
+Deﬁnition 15 (General Translation). Let f be an LTL formula, M a Kripke structure
+and k /2 IN
+/#5B /#5B M/; f /#5D /#5D
+k :/=/#5B /#5B M /#5D /#5D
+k
+/^
+/#20
+/#10
+/: Lk
+/^ /#5B /#5B f /#5D /#5D
+0
+k
+/#11
+/_
+k
+/_
+l/= 0
+/#10
+l Lk
+/^
+l
+/#5B /#5B f /#5D /#5D
+0
+k
+/#11
+/!
+The left side of the disjunction is the case where there is no back loop and the
+translation without a loop is used. On the right side all possible starts l of a loop are
+tried and the translation for a /#28 k/; l/#29 -loop is conjuncted with the corresponding lLk loop
+condition.
+Theorem 16. /#5B /#5B M/; f /#5D /#5D
+k is satisﬁable iff M j /=
+k E f.
+Corollary 17. M j /= A/: fi f f /#5B /#5B M/; f /#5D /#5D
+k is unsatisﬁable for all k /2 IN.
+
+=== Physical page 10 ===
+5 Determining the bound
+In Section 3 we have shown that the unbounded semantics is equivalent to the bounded
+semantics if we consider all possible bounds. This equivalence leads to a straightfor-
+ward LTL model checking procedure. To check whetherM
+j /= E f , the procedure checks
+M j /=
+k E f for k /= 0/; 1/; 2/;/:/:/: .I f M j /=
+k E f , then the procedure proves that M j /= E f and
+produces a witness of length k.I f M /6j /= E f , we have to increment the value of k indeﬁ-
+nitely, and the procedure does not terminate. In this section we establish several bounds
+on k.I f M /6j /=
+k E f for all k within the bound, we conclude that M /6j /= E f .
+5.1 ECTL
+ECTL is a subset of ECTL* where each temporal operator is preceded by one existential
+path quantiﬁer. We have extended bounded model checking to handle ECTL formulas.
+Semantics and translation for ECTL formulas can be found in the full version of this
+paper. In general, better bounds can be derived for ECTL formulas than for LTL formu-
+las. The intersection of the two sets of formulas includes many temporal properties of
+practical interest (e.g. EFp and EGp). Therefore, we include the discussion of bounds
+for ECTL formulas in this section.
+Theorem 18. Given an ECTL formula f and a Kripke structure M. Let
+j Mj be the
+number of states in M, then M j /= E f iff there exists k /#14j Mj with M j /=
+k E f.
+In symbolic model checking, the number of states in a Kripke structure is bounded
+by 2 n,w h e r en is the number of boolean variables to encode the Kripke structure.
+Typical model checking problems involve Kripke structures with tens or hundreds of
+boolean variables. The bound given in Theorem 18 is often too large for practical prob-
+lems.
+Deﬁnition 19 (Diameter). Given a Kripke structure M, the diameter of M is the mini-
+mal number d
+/2 INwith the following property. For every sequence of states s0
+/;/:/:/: /; sd/+ 1
+with /#28 si
+/; si/+ 1
+/#29 /2 Tf o r i /#14 d, there exists a sequence of states t0
+/;/:/:/: /; tl where l /#14 ds u c h
+that t0
+/= s0,t l
+/= sd/+ 1 and /#28 tj
+/; tj/+ 1
+/#29 /2 Tf o rj /#3C l. In other words, if a state v is reachable
+from a state u, then v is reachable from u via a path of length d or less.
+Theorem 20. Given an ECTL formula f :/= EFp and a Kripke structure M with diam-
+eter d, M j /= EFp iff there exists k /#14 d with M j /=
+k EFp.
+Theorem 21. Given a Kripke structure M, its diameter d is the minimal number that
+satisﬁes the following formula.
+/8 s0
+/;/:/:/: /; sd/+ 1
+/: /9 t0
+/;/:/:/: /; td
+/:
+d
+/^
+i/= 0
+T /#28 si
+/; si/+ 1
+/#29 /! /#28 t0
+/= s0
+/^
+d/, 1
+/^
+i/= 0
+T /#28 ti
+/; ti/+ 1
+/#29 /^
+d
+/_
+i/= 0
+ti
+/= sd/+ 1
+/#29
+For a Kripke structure with explicit state representation, well-known graph algo-
+rithms can be used to determine its diameter. For a Kripke structure M with a boolean
+encoding, one may verify that d is indeed a diameter of M by evaluating a quantiﬁed
+boolean formula (QBF), shown in Theorem 21. We conjecture that a quantiﬁed boolean
+formula is necessary to express the property thatd is the diameter of M. Unfortunately,
+we do not know of an efﬁcient decision procedure for QBF.
+
+=== Physical page 11 ===
+Deﬁnition 22 (Recurrence Diameter). Given a Kripke structure M, its recurrence di-
+ameter is the minimal number d /2 IN with the following property. For every sequence
+of states s0
+/;/:/:/: /; sd/+ 1 with /#28 si
+/; si/+ 1
+/#29 /2 Tf o r i/#14 d, there exists j /#14 d such that sd/+ 1
+/= sj.
+Theorem 23. Given an ECTL formula f and a Kripke structure M with recurrence
+diameter d, M j /= E f iff there exists k /#14 d with M j /=
+k E f.
+Theorem 24. Given any Kripke structure M, its recurrence diameter d is the minimal
+number that satisﬁes the following formula
+/8 s0
+/;/:/:/: /; sd/+ 1
+/:
+d
+/^
+i/= 0
+T /#28 si
+/; si/+ 1
+/#29 /!
+d
+/_
+i/= 0
+si
+/= sd/+ 1
+The recurrence diameter in Deﬁnition 22 is a bound onk for bounded model check-
+ing that is applicable for all ECTL formulas. The property of a recurrence diameter can
+be expressed as a propositional formula as shown in Theorem 24. We may use a propo-
+sitional decision procedure to determine whether a numberd is the recurrence diameter
+of a Kripke structure. The bound based on recurrence diameter is not as tight as that
+based on the diameter. For example, in a fully connected Kripke structure, the graph
+diameter is 1 while the recurrence diameter equals the number of states.
+5.2 LTL
+LTL model checking is known to be PSPACE-complete [15]. In section 4, we reduced
+bounded LTL model checking to propositional satisﬁability and thus showed that it is in
+NP. Therefore, a polynomial bound on k with respect to the size of M and f for which
+M
+j /=
+k E f /, M j /= E f is unlikely to be found. Otherwise, there would be a polyno-
+mial reduction of LTL model checking problems to propositional satisﬁability and thus
+PSPACE = NP.
+Theorem 25. Given an LTL formula f and a Kripke structure M, let
+j Mj be the number
+of states in M, then M j /= E f iff there exists k /#14j Mj/#02 2
+j f j
+with M j /=
+k E f.
+For the subset of LTL formulas that involves only temporal operatorsF and G,L T L
+model checking is NP-complete [15]. For this subset of LTL formulas, it can be shown
+that there exists a bound on k linear in the number of states and the size of the formula.
+Deﬁnition 26 (Loop Diameter). We say a Kripke structure M is lasso shaped if every
+path p starting from an initial state is of the form u pvw
+p ,w h e r eup and v p are ﬁnite
+sequences of length less or equal to u and v, respectively. We deﬁne the loop diameter
+of M as /#28 u/; v/#29 .
+Theorem 27. Given an LTL formula f and a lasso-shaped Kripke structure M, let the
+loop diameter of M be /#28 u/; v/#29 ,t h e nMj /= E f iff there exists k /#14 u /+ v with M j /=
+k E f.
+Theorem 27 shows that for a restricted class of Kripke structures, small bounds on
+k exist. In particular, if a Kripke structure is lasso shaped,k is bounded by u /+ v,w h e r e
+/#28 u/; v/#29 is the loop diameter of M.
+
+=== Physical page 12 ===
+6 Experimental Results
+We have implemented a model checker BMC based on bounded model checking. Its
+input language is a subset of the SMV language [14]. It outputs a SMV program or
+a propositional formula. For the propositional output mode, two different formats are
+supported. The ﬁrst format is the DIMACS format [10] for satisﬁability problems. The
+SATO tool [18] is a very efﬁcient implementation of the Davis & Putnam Procedure [7]
+and it uses the DIMACS format. We also support the input format of the PROVE Tool
+[1] which is based on St˚almarck’s Method [16].
+As benchmarks we chose examples where BDDs are known to behave badly. First
+we investigated a sequential multiplier, the sequential shift and add multiplier of [6].
+We formulated as model checking problem the following property: when the sequential
+multiplier is ﬁnished its output is the same as the output of a combinational multiplier
+(the C6288 circuit from the ISCAS’85 benchmarks) applied to the same input words.
+These multipliers are 16x16 bit multipliers but we only allowed 16 output bits as in [6]
+together with an overﬂow bit. We proved the property for each output bit individually
+and the results are shown in Table 1. For SATO we conducted two experiments to study
+the effect of the ‘-g’ parameter that controls the maximal size of cached clauses. We
+picked a very small value (‘-g 5’) and a very large value (‘-g 50’). Note that the overﬂow
+bit depends on all the bits of the sequential multiplier and occurs in the speciﬁcation.
+Thus, cone of inﬂuence reduction could not remove anything.
+SMV1 SMV2 SATO -g5 SATO -g50 PROVE
+bit sec MB sec MB sec MB sec MB sec MB
+0 919 13 25 79 00 01 01
+1 1978 13 25 79 00 01 01
+2 2916 13 26 80 00 02 01
+3 4744 13 27 82 00 03 12
+4 6580 15 33 92 20 34 12
+5 10803 25 67 102 12 0 36 7 12
+6 43983 73 258 172 55 0 208 10 22
+7 /#3E 17h 1741 492 209 0 642 13 73
+8 /#3E 1GB 473 0 1198 16 29 3
+9 856 1 2413 20 58 3
+10 1837 1 2055 20 91 3
+11 2367 1 1667 19 125 3
+12 3830 1 976 17 156 4
+13 5128 1 4363 25 186 4
+14 4752 1 2170 23 226 4
+15 4449 1 6847 31 183 5
+sum 71923 2202 23970 22578 1066
+Table 1. 16x16 bit sequential shift and add multiplier with overﬂow ﬂag and 16 output bits (sec
+= seconds, MB = Mega Byte).
+
+=== Physical page 13 ===
+In the column SMV1 of Table 1 the ofﬁcial version of the CMU model checker
+SMV was used. SMV2 is a version by Bwolen Yang from CMU with improved support
+for conjunctive partitioning. We used a manually chosen variable ordering where the
+bits of registers are interleaved. Dynamic reordering failed to ﬁnd a considerably better
+ordering in a reasonable amount of time.
+We used a barrel shifter as another example. It rotates the contents of a register ﬁle
+b with each step by one position. The model also contains another register ﬁle r that is
+related to b in the following way. If a register in r and one in b have the same contents
+then their neighbors also have the same contents. This property holds in the initial state
+of the model, and we proved that it is valid in all successor states. The results of this
+experiment can be found in Table 2. The width of the registers is chosen to be
+d log2
+j rje
+where j rj is the number of registers in the register ﬁle r. In this case we were also able
+to prove the recurrence diameter (see Deﬁnition 22) to be j rj . This took only very little
+time compared to the total veriﬁcation time and is shown in the column “diameter”.
+In [13] an asynchronous circuit for distributed mutual exclusion is described. It con-
+sists of n cells for n users that want to have exclusive access to a shared resource. We
+proved the liveness property that a request for using the resource will eventually be
+acknowledged. This liveness property is only true if each asynchronous gate does not
+delay execution indeﬁnitely. We model this assumption by a fairness constraint for each
+individual gate. Each cell has exactly 18 gates and therefore the model hasn
+/#01 18 fairness
+constraints where n is the number of cells. Since we do not have a bound for the max-
+imal length of a counterexample for the veriﬁcation of this circuit we could not verify
+the liveness property completely. We only showed that there are no counterexamples of
+particular length k. To illustrate the performance of bounded model checking we have
+chosen k
+/= 5/; 10. The results can be found in Table 3.
+We repeated the experiment with a buggy design. For the liveness property we sim-
+ply removed several fairness constraints. Both PROVE and SATO generate a counterex-
+ample (a 2-loop) instantly (see Table 4).
+7 Conclusion
+This work is the ﬁrst step in applying SAT procedures to symbolic model checking.
+We believe that our technique has the potential to handle much larger designs than
+what is currently possible. Towards this goal, we propose several promising directions
+of research. We would like to investigate how to use domain knowledge to guide the
+search in SAT procedures. New techniques are needed to determine the diameter of a
+system. In particular, it would be interesting to study efﬁcient decision procedures for
+QBF. Combining bounded model checking with other state space reduction techniques
+presents another interesting problem.
+
+=== Physical page 14 ===
+SMV2 SATO -g100 SATO -g20 PROVE PROVE
+diameter diameter
+j rj sec MB sec MB sec MB sec MB sec MB
+3 14 9 01 00 01 01
+4 14 9 01 01 01 01
+5 13 83 02 60 2 01 12
+6 509 447 14 364 4 01 23
+7 /#3E 1GB 36 1252 6 02 24
+8 58 2160 9 02 75
+9 25 14 /#3E 21h 03 16 9
+10 42 19 14 55 11
+Table 2. Barrel shifter (j rj = number of registers, sec = seconds, MB = Mega Bytes).
+SMV1 SMV2 SATO PROVE SATO PROVE
+k /= 5 k /= 5 k /= 10 k /= 10
+cells sec MB sec MB sec MB sec MB sec MB sec MB
+4 846 11 159 217 03 13 36 54 5
+5 2166 15 530 703 04 23 98 95 5
+6 4857 18 1762 703 04 33 79 149 6
+7 9985 24 6563 833 05 44 15 10 224 8
+8 19595 31 /#3E 1GB 16 65 16 12 323 8
+9 /#3E 10h 16 95 24 13 444 9
+10 17 10 5 36 15 614 10
+11 18 13 6 38 16 820 11
+12 19 16 6 40 18 1044 11
+13 19 19 8 107 19 1317 12
+14 11 0 22 8 70 21 1634 14
+15 11 1 27 8 168 22 1992 15
+Table 3. Liveness for one user in the DME (sec = seconds, MB = Mega Bytes).
+SMV1 SMV2 SATO PROVE
+cells sec MB sec MB sec MB sec MB
+4 799 11 14 44 01 02
+5 1661 14 24 57 01 02
+6 3155 21 40 76 01 02
+7 5622 38 74 137 01 02
+8 9449 73 118 217 01 02
+9 segmentation 172 220 01 12
+10 fault 244 702 01 03
+11 413 702 01 03
+12 719 702 02 13
+13 843 702 02 13
+14 1060 702 02 13
+15 1429 702 02 13
+Table 4. Counterexample for liveness in a buggy DME (sec = seconds, MB = Mega Bytes).
+
+=== Physical page 15 ===
+References
+[1] Arne Bor¨alv. The industrial success of veriﬁcation tools based on St˚ almarck’s Method.
+In Orna Grumberg, editor, International Conference on Computer-Aided Veriﬁcation
+(CAV’97), number 1254 in LNCS. Springer-Verlag, 1997.
+[2] R. E. Bryant. Graph-based algorithms for boolean function manipulation. IEEE Transac-
+tions on Computers, 35(8):677–691, 1986.
+[3] J. R. Burch, E. M. Clarke, and K. L. McMillan. Symbolic model checking: 10 20 states and
+beyond. Information and Computation, 98:142–170, 1992.
+[4] E. Clarke and E. A. Emerson. Design and synthesis of synchronization skeletons using
+branching time temporal logic. In Proceedings of the IBM Workshop on Logics of Pro-
+grams, volume 131 of LNCS, pages 52–71. Springer-Verlag, 1981.
+[5] E. Clarke, O. Grumberg, and K. Hamaguchi. Another look at LTL model checking. In
+David L. Dill, editor,Computer Aided Veriﬁcation, 6th International Conference (CAV’94),
+volume 818 of LNCS, pages 415–427. Springer-Verlag, June 1994.
+[6] Edmund M. Clarke, Orna Grumberg, and David E. Long. Model checking and abstraction.
+ACM Transactions on Programming Languages and Systems, 16(5):1512–1542, 1994.
+[7] M. Davis and H. Putnam. A computing procedure for quantiﬁcation theory. Journal of the
+Association for Computing Machinery, 7:201–215, 1960.
+[8] E. A. Emerson and C.-L. Lei. Modalities for model checking: Branching time strikes back.
+Science of Computer Programming, 8:275–306, 1986.
+[9] F. Giunchiglia and R. Sebastiani. Building decision procedures for modal logics from
+propositional decision procedures - the case study of modal K. In Proc. of the 13th Con-
+ference on Automated Deduction, Lecture Notes in Artiﬁcial Intelligence. Springer-Verlag,
+1996.
+[10] D. S. Johnson and M. A. Trick, editors. The second DIMACS implementation challenge,
+DIMACS Series in Discrete Mathematics and Theoretical Computer Science, 1993. (see
+http://dimacs.rutgers.edu/Challenges/).
+[11] H. Kautz and B. Selman. Pushing the envelope: planning, propositional logic, and stochas-
+tic search. In Proc. AAAI’96, Portland, OR, 1996.
+[12] O. Lichtenstein and A. Pnueli. Checking that ﬁnite state concurrent programs satisfy their
+linear speciﬁcation. In Poceedings of the Twelfth Annual ACM Symposium on Principles of
+Programming Languages, pages 97–107, 1985.
+[13] A. J. Martin. The design of a self-timed circuit for distributed mutual exclusion. In
+H. Fuchs, editor, Proceedings of the 1985 Chapel Hill Conference on Very Large Scale
+Integration, 1985.
+[14] K. L. McMillan. Symbolic Model Checking: An Approach to the State Explosion Problem.
+Kluwer Academic Publishers, 1993.
+[15] A. P. Sistla and E. M. Clarke. The complexity of propositional linear temporal logics.
+Journal of Assoc. Comput. Mach., 32(3):733–749, 1985.
+[16] G. St˚almarck and M. S¨aﬂund. Modeling and verifying systems and software in propo-
+sitional logic. In B. K. Daniels, editor, Safety of Computer Control Systems (SAFE-
+COMP’90), pages 31–36. Pergamon Press, 1990.
+[17] P. R. Stephan, R. K. Brayton, and A. L. Sangiovanni-Vincentelli. Combinational test gener-
+ation using satisﬁability. Technical Report M92/112, Departement of Electrical Engineer-
+ing and Computer Science, University of California at Berkley, October 1992.
+[18] H. Zhang. SATO: An efﬁcient propositional prover. In International Conference on Au-
+tomated Deduction (CADE’97), number 1249 in LNAI, pages 272–275. Springer-Verlag,
+1997.

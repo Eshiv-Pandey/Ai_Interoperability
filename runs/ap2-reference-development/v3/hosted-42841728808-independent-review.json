@@ -1,0 +1,782 @@
+{
+  "schema_version": "ap2-partial-capture-fresh-signature-audit/1",
+  "reviewed_at_utc": "2026-11-10T15:39:15.756567+00:00",
+  "run_id": "42841728808",
+  "status": "actual_partial_capture_and_buyer_signatures_verified",
+  "actual_returncode": 2,
+  "files_checked": 167,
+  "bytes_checked": 6169232,
+  "original_source_files_verified": 136,
+  "runtime_imported_file_bindings_matched_to_retained_manifest": 1617,
+  "structural_code_checks": 64,
+  "legacy_marshal_inequality_instances": 58,
+  "owned_HTTPX_ASGI_requests": 11,
+  "offline_model_fixtures": 9,
+  "provider_requests": 0,
+  "durable_events_checked": 114,
+  "clients_closed": true,
+  "caller_aliases_restored": true,
+  "raw_streams_closed_without_observation_errors": true,
+  "source_runtime_unchanged_observed": true,
+  "fresh_buyer_root_signature_checks": [
+    {
+      "mandate": "checkout_mandate",
+      "token_sha256": "d4229922f7658d36a70c2370cc5de5620bf77e919cda6ef47a37b7b3da7b4666",
+      "fresh_captured_root_signature_verified": true,
+      "algorithm": "ES256",
+      "captured_disclosure_digests_verified": 2,
+      "negative_controls": [
+        {
+          "control": "altered-signature",
+          "rejected": true
+        },
+        {
+          "control": "fresh-unrelated-key",
+          "rejected": true
+        }
+      ]
+    },
+    {
+      "mandate": "payment_mandate",
+      "token_sha256": "d4710069a175fc27a9cdd080527e30a9168089c761c31a85dc5af3102d518a00",
+      "fresh_captured_root_signature_verified": true,
+      "algorithm": "ES256",
+      "captured_disclosure_digests_verified": 1,
+      "negative_controls": [
+        {
+          "control": "altered-signature",
+          "rejected": true
+        },
+        {
+          "control": "fresh-unrelated-key",
+          "rejected": true
+        }
+      ]
+    }
+  ],
+  "buyer_public_key_sha256": "cc51c24890edaeb4ee1fd81cb17fd68aac405b2234893d4350358ebacb7c49c6",
+  "checkout_hash_transaction_association_freshly_recomputed": true,
+  "merchant_checkout_JWT_signature_rechecked": false,
+  "merchant_signature_limitation": "No captured merchant public key",
+  "cryptographic_scope": "Fresh signature and disclosure-hash checks over captured bytes/public key; no expiration, legal identity or full SDK mandate-policy qualification claim",
+  "verifier_dependency_manifest_sha256": "4d6efdd2e4003b82517f45aead140a7afd6f1e180b3ce518904d87c96e5adeb5",
+  "verifier_imported_frozen_files": {
+    "Lib/site-packages/cryptography/__about__.py": "196838340c60e2fb12294c260f2d478d47803a1a93038eb0221898ea2d373525",
+    "Lib/site-packages/cryptography/__init__.py": "9ad86e52b4dde0544e0a9518ad322a863cfab3a4fd763019ad5ee7675a0c9b6a",
+    "Lib/site-packages/cryptography/hazmat/__init__.py": "e48c2b2d6ad5a7402312bff815d586fd5d39ecd489198fd6e1e80d36cb9cb748",
+    "Lib/site-packages/cryptography/hazmat/bindings/__init__.py": "b3da0a090db2705757a0445d4b58a669fb9e4a406c2fd92f6f27e085a6ae67d6",
+    "Lib/site-packages/_cffi_backend.cp313-win_amd64.pyd": "21b7160d4a6da9590794fdb38718982060b5c92d56fb0e441fc8b62ee789be8d",
+    "Lib/site-packages/cryptography/hazmat/bindings/_rust.pyd": "9271a85485ef33f6092bfb8013c4a8efd03de13135e1407f093b604e4ef5e36d",
+    "Lib/site-packages/cryptography/exceptions.py": "f37e445882dcd9fc31c3e83214cae27220b64aa8558844c1d742c14b2b670c87",
+    "Lib/site-packages/cryptography/hazmat/primitives/__init__.py": "b3da0a090db2705757a0445d4b58a669fb9e4a406c2fd92f6f27e085a6ae67d6",
+    "Lib/site-packages/cryptography/utils.py": "9c51e43d067270e406781b414645920385a3387168ee9c2e9a642df8f3d29197",
+    "Lib/site-packages/cryptography/hazmat/primitives/hashes.py": "33c06b94a07753a0c4b47bd64d5e55463a6d787bf5912dd9c66fc1b24d3872bf",
+    "Lib/site-packages/cryptography/hazmat/primitives/_serialization.py": "72180f0921768f12360abe6007ea9b5973af39fba9061e020114b428086ff403",
+    "Lib/site-packages/cryptography/hazmat/primitives/serialization/base.py": "8a4ab9309230a7fa149e389a05ca3f3e643039362e1a2f979185181cacbc568d",
+    "Lib/site-packages/cryptography/hazmat/primitives/asymmetric/__init__.py": "b3da0a090db2705757a0445d4b58a669fb9e4a406c2fd92f6f27e085a6ae67d6",
+    "Lib/site-packages/cryptography/hazmat/primitives/asymmetric/utils.py": "0cf4ece93e05f94870cc541387ed5f484a50cdacc7da37f6c6922ba3722d178a",
+    "Lib/site-packages/cryptography/hazmat/primitives/asymmetric/dsa.py": "2ddfdb6dba90173d7674e6c7c48933110cd7d125963f8d512d25a461268a86a1",
+    "Lib/site-packages/cryptography/hazmat/_oid.py": "a7c4e18f0241e7a0a2feb008ae3c89d5ff158e00fa7b7f5eb36761f0921404ec",
+    "Lib/site-packages/cryptography/hazmat/primitives/asymmetric/ec.py": "763d1947f8d3548d70a238e2a636d735571c3d221139b5b14997131902866c77",
+    "Lib/site-packages/cryptography/hazmat/primitives/asymmetric/ed25519.py": "8d95b972ce3bdb05d7577781d2c1356fcc3ae2075acf0c14d3f313e54393897b",
+    "Lib/site-packages/cryptography/hazmat/primitives/_asymmetric.py": "46181ca2e501e874e214306b4752f1aa4323a54c4888dbd0d6bff3263446eaa4",
+    "Lib/site-packages/cryptography/hazmat/primitives/asymmetric/rsa.py": "66728ea367f7e0c0823aea42d37635b91fbf8e2486e48ade947126c5a304dc3e",
+    "Lib/site-packages/cryptography/hazmat/primitives/asymmetric/padding.py": "bd0ea5ea03a0f47a9c6ceb2f1eb4a225154b7448fd2f89b81e4446633893c850",
+    "Lib/site-packages/cryptography/hazmat/primitives/_cipheralgorithm.py": "121de2ee5c1e7477e2d1e2d2b07f773d9c502b363d23a9642baeef2f8579b4e7",
+    "Lib/site-packages/cryptography/hazmat/decrepit/__init__.py": "c0709b59f69e7daf9f93a4c74b0f6d87d7c952c4ad268ef6e39c1f141aa676e0",
+    "Lib/site-packages/cryptography/hazmat/decrepit/ciphers/__init__.py": "c0709b59f69e7daf9f93a4c74b0f6d87d7c952c4ad268ef6e39c1f141aa676e0",
+    "Lib/site-packages/cryptography/hazmat/decrepit/ciphers/algorithms.py": "62b2a01d2e0c7f059a3263c1611ca6451942d298705a9f727080857b37893c69",
+    "Lib/site-packages/cryptography/hazmat/primitives/ciphers/algorithms.py": "43b649c1cb31f37320c6fe72eebe82c8929276c3b00be9b2fb903aefe99adafc",
+    "Lib/site-packages/cryptography/hazmat/primitives/ciphers/modes.py": "db4b2da70843b5b02fa47d1231ff440c721c8b099317e24c054399f5b53c5a24",
+    "Lib/site-packages/cryptography/hazmat/primitives/ciphers/base.py": "6810bb1c7041a22c5e6e6a5aad5af4525383b37543d00ec1ea8cff01a4630eff",
+    "Lib/site-packages/cryptography/hazmat/primitives/ciphers/__init__.py": "7b21179a393afc265768e3d80ebeef018197af6f50bf38162f6fb8092a252c5b",
+    "Lib/site-packages/cryptography/hazmat/primitives/serialization/ssh.py": "84f579a1b1739f3d108457d714f39e43ccba32cbab034c5531088b9cb11212cf",
+    "Lib/site-packages/cryptography/hazmat/primitives/serialization/__init__.py": "43bb9380396dee7dd67ec313ea3630bad0ba0c883fed211ea009b51876790791",
+    "Lib/site-packages/cryptography/hazmat/backends/__init__.py": "3b98ef28541d6675e129ea89f87b6e95a10bf4d8bb9abd660f3658e641e56212",
+    "Lib/site-packages/cryptography/hazmat/bindings/openssl/__init__.py": "b3da0a090db2705757a0445d4b58a669fb9e4a406c2fd92f6f27e085a6ae67d6",
+    "Lib/site-packages/cryptography/hazmat/bindings/openssl/_conditional.py": "0cc3a903f5cde25ef4cd3739fc9f43a7095b41e5014535a97c8278c91227d7e5",
+    "Lib/site-packages/cryptography/hazmat/bindings/openssl/binding.py": "c7c7a87049ae90ee1c9bb707a9f5663a8618ec2097768175bf55a1650b7d9dea",
+    "Lib/site-packages/cryptography/hazmat/backends/openssl/backend.py": "b55e40c41a0527619f0340cc59263ed13c5026ba50a1ec7323d4782b26dbfbee",
+    "Lib/site-packages/cryptography/hazmat/backends/openssl/__init__.py": "a778e625f9c26a0f62139b1d32b37a56f544bb9e6ee3ac5a4bf223a08d12ae60"
+  },
+  "audit_network_and_process_attempts": {
+    "network_attempts": 0,
+    "process_attempts": 0
+  },
+  "artifact_unchanged_by_audit": true,
+  "private_PEM_or_Gemini_key_format_found": false,
+  "native_qualification_established": false,
+  "full_application_task_pass": false,
+  "payment_receipt_observed": false,
+  "cleanup_scope": "Captured client/alias/raw closure and source/runtime flags; no authenticated external private-directory deletion proof",
+  "inventory": {
+    "application/caller-final-state.json": {
+      "bytes": 4689,
+      "sha256": "6ae49c16ffafde2b619a2593f6d5cd11dbdd2dcbf15e9271af85b2dc2f7b0fa2"
+    },
+    "application/cleanup.json": {
+      "bytes": 2391,
+      "sha256": "3d43fd25091c757c4aae847a25bd69a0b2d11fedded20260a4313e55039e6a85"
+    },
+    "application/imported-modules.json": {
+      "bytes": 443923,
+      "sha256": "ac60b9cbfb9ac1a9340a86b5a2be6ff9e519857dddffb4909c89e83cd0bf3e90"
+    },
+    "application/model-interventions.jsonl": {
+      "bytes": 3302,
+      "sha256": "a4ad7c86e72d4c8b7ac089fcf332b6fad48bf2e37f39d34e53158feb02c42a6b"
+    },
+    "application/observations/allocation.json": {
+      "bytes": 415,
+      "sha256": "f88aed921b1814ed560539ac8229692c572e3c41db96e5d90fc99c8020cd5803"
+    },
+    "application/observations/events.jsonl": {
+      "bytes": 234600,
+      "sha256": "032807455f1029b96eafa94d7a8581a4f0e8aff0457c0b1ffca6014216878510"
+    },
+    "application/observations/terminal.json": {
+      "bytes": 1696,
+      "sha256": "56af829536912292940255705244749961ae3fc6befd26c4087f9389af348102"
+    },
+    "application/observations/terminal.pending.json": {
+      "bytes": 1696,
+      "sha256": "56af829536912292940255705244749961ae3fc6befd26c4087f9389af348102"
+    },
+    "application/original-callable-code-checks.json": {
+      "bytes": 56615,
+      "sha256": "3ba42f12134100aef392ed37bcd80a6e014ce8ea03a5cce65c2aea8ecbd92212"
+    },
+    "application/original-source/code/samples/certs/ds_cert_sdjwt.pem": {
+      "bytes": 1066,
+      "sha256": "a4b92cd66960d4ddcdcb8ca8b2887dafdec06cbcd42bc10fcc8ede41ffef1306"
+    },
+    "application/original-source/code/samples/certs/issuer_cert_sdjwt.pem": {
+      "bytes": 1005,
+      "sha256": "120abde3087907911c3c9de00c536657a6a503a88849a24653f6c35030c982ba"
+    },
+    "application/original-source/code/samples/python/pyproject.toml": {
+      "bytes": 857,
+      "sha256": "0121f705c05aa3836cff7a7fb4d967b9e3af7a3983a4e78f3cb0f19747b7fbf1"
+    },
+    "application/original-source/code/samples/python/README.md": {
+      "bytes": 2110,
+      "sha256": "5c180b1118c03aa6ac87610af87fc2db3df056bbc1a2db9608ea40ad42a3a530"
+    },
+    "application/original-source/code/samples/python/scenarios/a2a/human-not-present/cards/README.md": {
+      "bytes": 3426,
+      "sha256": "4c3d194d85a44f0c224198e9dc75014cf36c1cf11d5d518cdc29d5ea579f0c67"
+    },
+    "application/original-source/code/samples/python/scenarios/a2a/human-not-present/cards/run.sh": {
+      "bytes": 5157,
+      "sha256": "9db653c8ecb819525f966c35df199fa95ffd50661de546305147bd44de3e1014"
+    },
+    "application/original-source/code/samples/python/scenarios/a2a/human-not-present/x402/README.md": {
+      "bytes": 3602,
+      "sha256": "7c104be18538480ca4f7ec2d14ac63308b3345f15c9326da29321e990ebc44c1"
+    },
+    "application/original-source/code/samples/python/scenarios/a2a/human-not-present/x402/run.sh": {
+      "bytes": 5266,
+      "sha256": "627cf9952aed264d68033d4ce9659d6ad2efcbcee1ed61d0299d10cbd2583e8c"
+    },
+    "application/original-source/code/samples/python/scenarios/a2a/human-present/cards/README.md": {
+      "bytes": 7855,
+      "sha256": "6aa7d6fcec24a82c9ed25529cd0da5914ff85a47e77b317bd96a1dbaa082f415"
+    },
+    "application/original-source/code/samples/python/scenarios/a2a/human-present/cards/run.sh": {
+      "bytes": 4324,
+      "sha256": "4056da39baf86897b0e7bcd4e21243f8ab93cc7ec286034256719203bc488305"
+    },
+    "application/original-source/code/samples/python/scenarios/a2a/human-present/x402/README.md": {
+      "bytes": 5326,
+      "sha256": "d81735a886945960289556d5760692ada8b8fc49bede786fa86bded1df68d08c"
+    },
+    "application/original-source/code/samples/python/src/common/__init__.py": {
+      "bytes": 625,
+      "sha256": "48073036539ffe9e19f3fa46422f8c9aba9ba2ce2b15d89f05a758935383fe17"
+    },
+    "application/original-source/code/samples/python/src/common/a2a_extension_utils.py": {
+      "bytes": 698,
+      "sha256": "6880c8d058a77d28cbf81f0d0fe41b69f43ed91ea10e77fc1d3a64c86f2218f5"
+    },
+    "application/original-source/code/samples/python/src/common/a2a_message_builder.py": {
+      "bytes": 2679,
+      "sha256": "d92cccc6cb9478b160f95cee0c060f9c0dc41f25266d8220cf48a5bbeba95061"
+    },
+    "application/original-source/code/samples/python/src/common/artifact_utils.py": {
+      "bytes": 2405,
+      "sha256": "868bbba8b4f7901b469027483d3de64ea0c2b81fa88fe5dbe9833e5b7d67987e"
+    },
+    "application/original-source/code/samples/python/src/common/base_server_executor.py": {
+      "bytes": 6130,
+      "sha256": "a1e1f85ba4481aa1712d01bef83778c9ab970ed2e3856fdafc4fb821d48f27a9"
+    },
+    "application/original-source/code/samples/python/src/common/constants.py": {
+      "bytes": 1085,
+      "sha256": "55bb997d7969de092f33de23fa3c4149d2132e7f043593ed4404228afcd68c0f"
+    },
+    "application/original-source/code/samples/python/src/common/function_call_resolver.py": {
+      "bytes": 3173,
+      "sha256": "0504bda987763db99b0faf847a839d2d8ab5cbac6a16b00c609d98f4f395a747"
+    },
+    "application/original-source/code/samples/python/src/common/message_utils.py": {
+      "bytes": 2440,
+      "sha256": "7f8e0a62cfdab15089d0a3478b19814c505915c217f078c111fa3d9889dcc7ca"
+    },
+    "application/original-source/code/samples/python/src/common/payment_remote_a2a_client.py": {
+      "bytes": 3718,
+      "sha256": "88bd46d93eb7408912c254b4dc6a392a821d07eabc049c5a04a42b8627042efb"
+    },
+    "application/original-source/code/samples/python/src/common/retrying_llm_agent.py": {
+      "bytes": 2907,
+      "sha256": "263f820a29fb319192a48cd8195bfc69f5516c769e6c595f45d09dc0b62fe72e"
+    },
+    "application/original-source/code/samples/python/src/common/server.py": {
+      "bytes": 7581,
+      "sha256": "1c97a4ba39a191a829d36effe24344616075b1dd03437126bfa31f58d7d04a4b"
+    },
+    "application/original-source/code/samples/python/src/common/system_utils.py": {
+      "bytes": 1559,
+      "sha256": "dd794685dee6edada0f2d389643798fdfae0c9dbe76f0df0556ab50dc5a32c36"
+    },
+    "application/original-source/code/samples/python/src/common/watch_log.py": {
+      "bytes": 3689,
+      "sha256": "4c88122ce5f8e57a7999333697fadc04dcb80922ce675913c663c8184b817edf"
+    },
+    "application/original-source/code/samples/python/src/common/x402_constants.py": {
+      "bytes": 815,
+      "sha256": "80eee90257d1a0b0a34f9cd280b09fb42c41a9014562c6a7fa9656e48435ca63"
+    },
+    "application/original-source/code/samples/python/src/roles/credentials_provider_agent/__main__.py": {
+      "bytes": 1155,
+      "sha256": "05534bbce770a055e769f7f32e5bc1278e057a2cfbb945d12aee7051ed7373de"
+    },
+    "application/original-source/code/samples/python/src/roles/credentials_provider_agent/account_manager.py": {
+      "bytes": 9186,
+      "sha256": "39f80ac02cf60a69eb223ce54c2a66842ab869c1ce6fedf11aedeb7243f2fef8"
+    },
+    "application/original-source/code/samples/python/src/roles/credentials_provider_agent/agent.json": {
+      "bytes": 1952,
+      "sha256": "042a6cd45966efb95833a1daa94fb193fae7fb9e6a583bda43d360ecbb00f498"
+    },
+    "application/original-source/code/samples/python/src/roles/credentials_provider_agent/agent_executor.py": {
+      "bytes": 2654,
+      "sha256": "0932eb790bbc2c173cd79cb33730e4c3d6af5bee4bc5587b0c24412c44b75fd0"
+    },
+    "application/original-source/code/samples/python/src/roles/credentials_provider_agent/tools.py": {
+      "bytes": 12794,
+      "sha256": "b369fa1c0990abc71866915d30a7b2843d6881cf23094abb7e031679e0d979bf"
+    },
+    "application/original-source/code/samples/python/src/roles/credentials_provider_mcp/server.py": {
+      "bytes": 9358,
+      "sha256": "514d48b34a853a801c5074b5f515e9920390c412d8befad91edd168620519ed3"
+    },
+    "application/original-source/code/samples/python/src/roles/credentials_provider_mcp/trigger_server.py": {
+      "bytes": 2253,
+      "sha256": "befa882bc752781c2bccb2d98dec2789537a0ad5d2d0447d080619cb70216b20"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_agent/__main__.py": {
+      "bytes": 1139,
+      "sha256": "15f3c14fe7b234e11a0fa47565302f94dfb5d90d7e0e7e97a0e4f3bb431e82cf"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_agent/agent.json": {
+      "bytes": 1313,
+      "sha256": "f5d67bace1fc46401d1e87d79660fc950028acb959485754a4d004792d3ef388"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_agent/agent_executor.py": {
+      "bytes": 4810,
+      "sha256": "523e1dbe5cb21eb821b861f2bd283e96af464bf0651964b65e9f0ffca8a2df68"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_agent/storage.py": {
+      "bytes": 1300,
+      "sha256": "425838c273be4c316b7bef5c83584b4541ef1520d7304073741794132631abdf"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_agent/sub_agents/__init__.py": {
+      "bytes": 575,
+      "sha256": "42cc9663d84271e50e5ecf55277f5aac962e96d82b23b57aaabe0dd8adc50eab"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_agent/sub_agents/catalog_agent.py": {
+      "bytes": 3512,
+      "sha256": "90df8eaee0b6d473548a95f0a09c13af32f1421d79f51c7585a01801b0495c07"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_agent/tools.py": {
+      "bytes": 15584,
+      "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_agent_mcp/server.py": {
+      "bytes": 35063,
+      "sha256": "a8460750277db99f3b5c8f85df1600aec7ab8628e827b37544115909fd97a918"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_agent_mcp/trigger_server.py": {
+      "bytes": 5210,
+      "sha256": "67741ac05922d61bd2a5c1a9a564b35ef07cb4f5f7912417b1256e8600663a9e"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_payment_processor_agent/__main__.py": {
+      "bytes": 1235,
+      "sha256": "2111f3118e8df0f80bd8adc3e2a9e5f9860b4b4f70bced4ebcbbec97db08f63e"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_payment_processor_agent/agent.json": {
+      "bytes": 939,
+      "sha256": "fcb8c510176e3645bcfb60ac02654928b49e0e2a65fdea82286c4b57ec0340d7"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_payment_processor_agent/agent_executor.py": {
+      "bytes": 1872,
+      "sha256": "12dddf3d50ad955e8a2476fbed2a7f1fe84eecfdaf9ee13bc9767e487122d1f8"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_payment_processor_agent/tools.py": {
+      "bytes": 11483,
+      "sha256": "41a11923ae38798099c39a25d95d358ab1845320f64f8833b4955fa09b04e12d"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_payment_processor_mcp/server.py": {
+      "bytes": 9905,
+      "sha256": "70a086dc6f5b695563f6669556892a086a14d69419a27651aadcee0da962db1f"
+    },
+    "application/original-source/code/samples/python/src/roles/merchant_payment_processor_mcp/trigger_server.py": {
+      "bytes": 2577,
+      "sha256": "7f511dc035244328c83eec0c8d10cbdcdb4e0579c79f211aba554eafd52931a4"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/__init__.py": {
+      "bytes": 630,
+      "sha256": "de4d88482970aa12e61922df5eb002d5307e3d55cd637c0542e448f26ae4a7f0"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/agent.py": {
+      "bytes": 4166,
+      "sha256": "a1ad77fc4d17cfa2fcef5904cab00a9833395e4a4e8b60948d767d52640ec6a3"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/remote_agents.py": {
+      "bytes": 1405,
+      "sha256": "a441210f2913230210ed363d96bf3c7d40a9b70082daed2f99360943a6f36d4c"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/subagents/payment_method_collector/__init__.py": {
+      "bytes": 635,
+      "sha256": "0b77c5699835de1fa7398aa89efe4a73f4181186252e6dc0aa73fefb9f5af16f"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/subagents/payment_method_collector/agent.py": {
+      "bytes": 2340,
+      "sha256": "2a8af2a2a60af1f4af3ef3b56ec93b7d3016ce9e4320286902c547c62702a807"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/subagents/payment_method_collector/tools.py": {
+      "bytes": 3714,
+      "sha256": "be4b5fea7a4c0eef965694cde93205ce1b1652a36c0f121fa7ec6d820fbed8dd"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/subagents/shipping_address_collector/__init__.py": {
+      "bytes": 637,
+      "sha256": "3acdd48ff6a9aabd0ba11b5a2742c1336efa91f06890ca93d6037d081b8fee41"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/subagents/shipping_address_collector/agent.py": {
+      "bytes": 3427,
+      "sha256": "8885e6adc87c043dd8aca8929332de1371a761e114520aad42f2f24861ed9348"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/subagents/shipping_address_collector/tools.py": {
+      "bytes": 2076,
+      "sha256": "6c11b152344289c075fc66595c7ed344a37c2762c549532c8a9c275ecf8d542d"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/subagents/shopper/__init__.py": {
+      "bytes": 618,
+      "sha256": "67a02d8cd1e5d3022b26523d182d8085a840a800518dec80e646afde618830c0"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/subagents/shopper/agent.py": {
+      "bytes": 1995,
+      "sha256": "480b1fb3236adcaa468ef8a586fbbf31f85c8072161d72e10ce3264f7bb80ac8"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/subagents/shopper/tools.py": {
+      "bytes": 2856,
+      "sha256": "7a577d4088dc9decb3bbe72d3162e356176a4f6b1b0c3cb87d496be4e6245bc4"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent/tools.py": {
+      "bytes": 11872,
+      "sha256": "612525025661b608a662a8a09bc50ea527543b26c3bdbc78911bd95f6c3926a6"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent_v2/run_server.py": {
+      "bytes": 4383,
+      "sha256": "083178683b82aafc83eba7084864588020008a6db187c0d7353e743d3bb53e2a"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent_v2/shopping_agent/__init__.py": {
+      "bytes": 57,
+      "sha256": "89240bdea3f7e0fc9b196ce7372bacf619a140ab5fff84847b07c42d8d79d4cf"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent_v2/shopping_agent/agent.json": {
+      "bytes": 1224,
+      "sha256": "b3da5387b51acf8afbe9e3df4ed017e65cda4a599a4f840ff4f9a65198d280d5"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent_v2/shopping_agent/agent.py": {
+      "bytes": 7826,
+      "sha256": "33501c45f580556e908a9b94345ef3d4a2266e28191efa0ecbe03badfe779bcf"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent_v2/shopping_agent/mandate_tools.py": {
+      "bytes": 30844,
+      "sha256": "5ff4af29b7448f5390eab1c918595d3f1b2964dc162fc8628c539609fa9f6414"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent_v2/shopping_agent/prompts/consent_agent.md": {
+      "bytes": 6364,
+      "sha256": "194ba9051b8bb36c206a25555a1c9b4da90ffeb41c89e3a795bdfb6027ebc813"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent_v2/shopping_agent/prompts/monitoring_agent.md": {
+      "bytes": 2941,
+      "sha256": "8daa2e2adf551246a9590c28147f664b2e81b7866137f93be5b78fdc701d6020"
+    },
+    "application/original-source/code/samples/python/src/roles/shopping_agent_v2/shopping_agent/prompts/purchase_agent.md": {
+      "bytes": 3363,
+      "sha256": "a85b631b3ddcc8ebbbea005141585f02624888d1db60ace231df4f5bf08a9fec"
+    },
+    "application/original-source/code/samples/python/src/roles/x402_credentials_provider_mcp/server.py": {
+      "bytes": 7741,
+      "sha256": "0acc26a2a84ef9e2b2d810bc14fe48e1732a5cd3ec024f8100cc52c763767da2"
+    },
+    "application/original-source/code/samples/python/src/roles/x402_psp_mcp/server.py": {
+      "bytes": 10879,
+      "sha256": "584d7c38280a920c979c3f12d921f8097ce2f211e318571444a5d65d094b4e2f"
+    },
+    "application/original-source/code/samples/python/src/roles/x402_psp_mcp/trigger_server.py": {
+      "bytes": 2363,
+      "sha256": "c53c1a8234a88db583d99c46cc8437ae9d2006d79da502eb6b348a2351bcb050"
+    },
+    "application/original-source/code/sdk/python/ap2/models/__init__.py": {
+      "bytes": 575,
+      "sha256": "42cc9663d84271e50e5ecf55277f5aac962e96d82b23b57aaabe0dd8adc50eab"
+    },
+    "application/original-source/code/sdk/python/ap2/models/cart.py": {
+      "bytes": 733,
+      "sha256": "507f1518a23850538f7cebed9e394743b24a09134557ac4aef44757c745e9fb4"
+    },
+    "application/original-source/code/sdk/python/ap2/models/contact_picker.py": {
+      "bytes": 1526,
+      "sha256": "778c456f3096b7ce63696f5d61562d040a8708a41de009e4301619c6103bf67b"
+    },
+    "application/original-source/code/sdk/python/ap2/models/mandate.py": {
+      "bytes": 7567,
+      "sha256": "6a8a931c2435307ae0c991e1596e9ad04e57b3b4bcd6a7b840984318063cb250"
+    },
+    "application/original-source/code/sdk/python/ap2/models/payment_request.py": {
+      "bytes": 6865,
+      "sha256": "a97621979da1d8bdfee0e2347a07da6576ff8aced809211bae53e2b5f848044a"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/checkout_mandate_chain.py": {
+      "bytes": 4368,
+      "sha256": "e2538a57886e3fb727778233bacb9c2c6a820880a179e1063d0f7381da4a5928"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/constraints.py": {
+      "bytes": 18482,
+      "sha256": "9f640592a4f719a2f5cd216905aa9968d6ee852dc4ce37213fe384d1641ab481"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/disclosure_metadata.py": {
+      "bytes": 7972,
+      "sha256": "734e519838d9ce0c90f379e86db91ca8bc79584d0a1686a8dd03ebf2c1ef19cb"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/checkout_mandate.py": {
+      "bytes": 1329,
+      "sha256": "98474de2b28839b5a3a965caf73c357d7f9bfd235839df6039acc73467472d44"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/checkout_receipt.py": {
+      "bytes": 2656,
+      "sha256": "1436ce7a38ed63b04c1c1d6d145e0dce8f4e220b5bc3485dbe298a9b40c9bf02"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/open_checkout_mandate.py": {
+      "bytes": 2931,
+      "sha256": "14fdd261e6eaa7757ca594127117e4c071492fbf9287fcac6ae85461decf6ba6"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/open_payment_mandate.py": {
+      "bytes": 6510,
+      "sha256": "0ca5659a838cc15a2de62fa142d539d46fb8c653e1296c2365d78510e99e9fda"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/payment_mandate.py": {
+      "bytes": 2180,
+      "sha256": "dd392be7351489c962c78f155ec49b226d3b42c534dee26b46bbfe59068d3819"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/payment_receipt.py": {
+      "bytes": 3255,
+      "sha256": "78db7cd258eedd66a1f4e891e1b704df7cff78183249de94e4e77b2df3bb8aae"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/__init__.py": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/amount.py": {
+      "bytes": 508,
+      "sha256": "811c20a429a082770333f2c999f75d42856e15a110a9ed034da01e1d94476585"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/buyer.py": {
+      "bytes": 710,
+      "sha256": "5fc25cd9720276278e3fd1aec46d7a00f771aa3965fe811bcaa67a46435784be"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/checkout.py": {
+      "bytes": 2016,
+      "sha256": "7c2da4c6d431c5f525eb53ea631431be915a1706bfd9ee42fc276f9d6534f8b3"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/item.py": {
+      "bytes": 774,
+      "sha256": "ccfd2cdee46d42b659b6b8536a18dbec6106e03d9d53b984704eeb22a9bc0410"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/jwk.py": {
+      "bytes": 2548,
+      "sha256": "e4ce732ec374ec01b5c36bd923c1b311f4f2766f4fe186c13e98b952d511374b"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/line_item.py": {
+      "bytes": 814,
+      "sha256": "45199d423af79332f7aa67917ef412b53a7c6857c8c7755b556dda8fcb922505"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/link.py": {
+      "bytes": 354,
+      "sha256": "4559a2e31b4afca38ff64b31f44d8f082f300dac1b219200ebffc3d19fdbefe3"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/merchant.py": {
+      "bytes": 533,
+      "sha256": "736a58143121aae66bb38499465eae10e223e0a0efe74958e213c83cf7003215"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/message.py": {
+      "bytes": 694,
+      "sha256": "34edbde542507e3f56b3bcd0b4a8fc817208fccabaa281279a0d11923518170c"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/message_error.py": {
+      "bytes": 1239,
+      "sha256": "a272bd35f38e697c4ba9db974e89034687db5260a0b54e580fe6837d3b90af48"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/message_info.py": {
+      "bytes": 884,
+      "sha256": "2c8190537d84e7f50101a7e8ba1956860e30458bd95e0221d1fbea54734d58cd"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/message_warning.py": {
+      "bytes": 1178,
+      "sha256": "5b7d285a141d7af1e3d38f705c01c7b7d61ea04d5518390cce4da2f4f7a32b54"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/payment_instrument.py": {
+      "bytes": 644,
+      "sha256": "9a88aff0059a492298366220efb149fe53316905375c4d1a3d9473c00648d23c"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/pisp.py": {
+      "bytes": 590,
+      "sha256": "10403c735f2d26bb70067b7d2d2638e1cdfabfcffd0d5e01c70b192ac6c78045"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/receipt_status.py": {
+      "bytes": 294,
+      "sha256": "96381700d4c1b8a316fa9576c0210bf45388451ef32258559dcc89d730abff50"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/generated/types/total.py": {
+      "bytes": 569,
+      "sha256": "69a7b96f19edaabbd381d48cc8a62a4315d14b05d05daa775a70be76f9b65eff"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/jwt_helper.py": {
+      "bytes": 1225,
+      "sha256": "09f21ae7f5eb9bce869f63f188064adcc5570be612a36a076a185d77f2f6d264"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/mandate.py": {
+      "bytes": 15226,
+      "sha256": "6251ec83622192805cd3cd8a4830f9ab922260c3089d4ff9323b9eb2ec27b1f5"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/max_flow_helper.py": {
+      "bytes": 9413,
+      "sha256": "92a6dba9f5b2c2a887ea8ec77dd166cbcd54dd7192a9118939ee51c3eb1a8251"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/payment_mandate_chain.py": {
+      "bytes": 3154,
+      "sha256": "77015620be81d73a9234e9c7cdc6fbd2a3ff6dad49221303ee6a47f0fa8eb755"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/README.md": {
+      "bytes": 13549,
+      "sha256": "813881a4997b598def4ac530f6abb5a493fa492cc36ede91af963214c7658b33"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/receipt_wrapper.py": {
+      "bytes": 5459,
+      "sha256": "7485ef84a7f80da5b8da39d547b9623125d43a373767ede97274cc480a70cb80"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/sdjwt/__init__.py": {
+      "bytes": 390,
+      "sha256": "250499bc27eb134def08553352db54f7aa732158ce1c0f0185a01113e66ea432"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/sdjwt/chain.py": {
+      "bytes": 11076,
+      "sha256": "7d515f4d31592be2121400c18cc3b0ee1cce873eb309af781a6817db058ae2f6"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/sdjwt/common.py": {
+      "bytes": 10467,
+      "sha256": "6b33fe08b17cca52c5818ee9063903de2febea215b21a3a1384254e9b5a549b1"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/sdjwt/kb_sd_jwt.py": {
+      "bytes": 7203,
+      "sha256": "f9b8a9563e7a7d39c2b62a6510fdc19b0c9fb09b4f42bb0c98c1548aef1f2a2c"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/sdjwt/sd_jwt.py": {
+      "bytes": 2849,
+      "sha256": "9bd864482de7355500b39a9fcb6b53070dabf5a1b16bc928593b916e014c3ba9"
+    },
+    "application/original-source/code/sdk/python/ap2/sdk/utils.py": {
+      "bytes": 1641,
+      "sha256": "92920007d190f68cad6b9899f0133ae511332196f59e3255d68be08dbc1e2a2f"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/agent_recurrence_tests.py": {
+      "bytes": 5582,
+      "sha256": "80e970cc93391ef0d135d6d6cea027582dd0f63ab38859f6e6488d91e6d11d4e"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/benchmark_max_flow_tests.py": {
+      "bytes": 4904,
+      "sha256": "18ff4cbd9fb6dfdd42f351756201d929c641caa857f609566359ea7815cc2bf4"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/chain_tests.py": {
+      "bytes": 19001,
+      "sha256": "e7a8d8293365f932e6a86f9509f0f036ef656f4f47c59136d97e57de215c88a4"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/checkout_mandate_chain_tests.py": {
+      "bytes": 5548,
+      "sha256": "327a8f0d689684e793eb7f93a70e997dd89b220d53eda13e4e9b0a427cb1ca9e"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/conftest.py": {
+      "bytes": 4782,
+      "sha256": "9bafd49fdacb8ce269b15d50d307b1c414f2943adc94ff5f9eeb8fab48ba8775"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/constraints_line_items_tests.py": {
+      "bytes": 9820,
+      "sha256": "a5475105c3471b3c41d87d7d385d78a7b6622c97045c9b3ff42bf2cd02705f21"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/constraints_tests.py": {
+      "bytes": 23655,
+      "sha256": "a7c56ddb703c28b006050418f4e1a768df188913c5764c69ecac4a411197a320"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/disclosure_metadata_tests.py": {
+      "bytes": 8933,
+      "sha256": "27a92cf9136de32c44e7d946deeb43fb5b925169bceee2a2c79b2e000303261f"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/issuer_jwt_hash_tests.py": {
+      "bytes": 7069,
+      "sha256": "7972e61360fb3306c999536f35567e3287bb1bd3fd7810b542ea54be259cd354"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/kb_sd_jwt_intermediate_tests.py": {
+      "bytes": 9371,
+      "sha256": "155a3cc2328942aaa702167a82595849972c18ee6e656f3e516a047deaed7420"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/kb_sd_jwt_tests.py": {
+      "bytes": 7886,
+      "sha256": "fabfd568915c10522fdf8c3d0f4c922f966075705573f850193d65aa8b4ff84e"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/mandate_presentation_tests.py": {
+      "bytes": 5739,
+      "sha256": "9beb38038cbad46942b846290833f35999939ab9ce7970a5b5e2b0e62161ed67"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/mandate_wrapper_tests.py": {
+      "bytes": 12092,
+      "sha256": "d25938c623f35f57c77930a4a42fb7d71d461d2b74a20928cb3bc35d91d4e22a"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/payment_mandate_chain_tests.py": {
+      "bytes": 3496,
+      "sha256": "9a7a0d3987be6725395e994f992d8b54e15408b5a82b8b4bdb15dbcfdbb32986"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/README.md": {
+      "bytes": 284,
+      "sha256": "cddd4553fce9fb9be93f8c59e36cd73cee0b52c7179c90d8e1474f0f154877ad"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/receipt_wrapper_tests.py": {
+      "bytes": 6645,
+      "sha256": "b6901ee215237817c48a002278632609ce8f2d7fbffead12c3e99f8f7d687712"
+    },
+    "application/original-source/code/sdk/python/ap2/tests/sd_jwt_tests.py": {
+      "bytes": 8074,
+      "sha256": "8373b299303232de7c14e72adffad08895a68bda032bd87a1df76df4f3cdfe75"
+    },
+    "application/original-source/LICENSE": {
+      "bytes": 11359,
+      "sha256": "b1d2870f1a00e4d7f56576e5f0870cba109e041f8af66866cf5b499478e654e7"
+    },
+    "application/original-source/pyproject.toml": {
+      "bytes": 606,
+      "sha256": "78656cfd88b01d10c693a7fdffdf9d789dc4ddfbb57c208b583e13986fd44b63"
+    },
+    "application/original-source/README.md": {
+      "bytes": 5658,
+      "sha256": "95e85952570c9d367b32e12ed3858b6a23b9d5ff472216b3c2658d3d738e54a4"
+    },
+    "application/original-tool-returns.json": {
+      "bytes": 5378,
+      "sha256": "6f16d228da744142b997f625ef81bba1fc8c1f25559ddb507353d634d9e8e562"
+    },
+    "application/owned-source/scripts/ap2_reference_development_v3.py": {
+      "bytes": 29929,
+      "sha256": "ddb496c33ad510dd32db765c8029087f240fcef3736224879c00454286615e00"
+    },
+    "application/owned-source/src/interoperability/__init__.py": {
+      "bytes": 172,
+      "sha256": "3329d2e18d4778836a21d9b5115c1ae04a59190b14f051f54f75ef174c26b63a"
+    },
+    "application/owned-source/src/interoperability/ap2_hp_durable_observer_v1.py": {
+      "bytes": 33976,
+      "sha256": "3ba610b079af528cca7301c8357de5cbd609dbf5cedd9460bdf843ce05e8f6bc"
+    },
+    "application/owned-source/src/interoperability/ap2_hp_original_binding_v1.py": {
+      "bytes": 24821,
+      "sha256": "27c37938751dfb00f21a3a53043ea2f468814d264df71bb8024dd58cea5ac3af"
+    },
+    "application/owned-source/src/interoperability/ap2_hp_reference_execution_v1.py": {
+      "bytes": 16127,
+      "sha256": "821b463c1e8d8500b32774b7c04ace2b865c7089c7a8e0ca1f5e7f20ab5df340"
+    },
+    "application/owned-source/src/interoperability/ap2_hp_reference_plan_v1.py": {
+      "bytes": 22759,
+      "sha256": "4699f8aba9c8adfdc6c07ee8558b9ea356d64f1a80eb5d07f64e586f5aa0a8e0"
+    },
+    "application/plan.json": {
+      "bytes": 1692,
+      "sha256": "c33eecaf39cee7a971423d28ee8add36577e1b79478996456ecc2062305b585b"
+    },
+    "application/public-verification/agent_provider_signing_key.pub": {
+      "bytes": 178,
+      "sha256": "cc51c24890edaeb4ee1fd81cb17fd68aac405b2234893d4350358ebacb7c49c6"
+    },
+    "application/reference-result.json": {
+      "bytes": 69205,
+      "sha256": "7ff0ebc4769b2fd6a0580bf3d7ff6e645173ac049377d8ad1fc2618da78c9623"
+    },
+    "application/resource-check.json": {
+      "bytes": 89,
+      "sha256": "6118119eda502baaac4135be178afca2518f8f9e7309562bfbd5193c1d80a12a"
+    },
+    "application/result.json": {
+      "bytes": 240,
+      "sha256": "20cec6c50f348819ed040a57413bdbb08bf93461c4a9102cf8d248e93caac401"
+    },
+    "application/runtime-manifest.json": {
+      "bytes": 2408500,
+      "sha256": "4bb37dfe08fcc653e928fd9352171f2a82d1d695fc449a7e96e9fee33a6fc7cb"
+    },
+    "application/source-runner.py": {
+      "bytes": 29929,
+      "sha256": "ddb496c33ad510dd32db765c8029087f240fcef3736224879c00454286615e00"
+    },
+    "application/source-stage-manifest.json": {
+      "bytes": 78104,
+      "sha256": "78828cea09bdd387230a2fc0772b542beabfe07b72c3a2f24b24c02c1a2f4463"
+    },
+    "application/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "application/stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "application/transport-interventions.json": {
+      "bytes": 2109,
+      "sha256": "6032e3893dbca23f0291fd83d05fcb5db00b53b25445aaf40fbd7ecafa5ba8fd"
+    },
+    "pip-check.txt": {
+      "bytes": 30,
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    "pip-install-report.json": {
+      "bytes": 2033972,
+      "sha256": "4ce1fd3d16a7ba1ccd930010e2d6e39c561acee6bf999e55871912dbd1f0799c"
+    },
+    "prepared/contract.json": {
+      "bytes": 5742,
+      "sha256": "5b69c96439d5612696a338ebc7175c89cf3d15b334141ce47284b32e83542e5a"
+    },
+    "prepared/requirements.txt": {
+      "bytes": 3776,
+      "sha256": "e8faa7172ed2c363ffccc0c1474dbe175a77f4df8f964b7813207b66f23d9384"
+    }
+  }
+}

@@ -1,0 +1,1720 @@
+{
+  "aggregate_task_grade": null,
+  "error_type": "PlanningError",
+  "http_extension_observed": false,
+  "native_execution_enabled": false,
+  "native_qualification_established": false,
+  "original_bindings_authenticated": false,
+  "phase": "payment_start",
+  "planning_report": {
+    "aggregate_task_grade": null,
+    "bootstrap_environment_gate_contract": "not_implemented",
+    "caller_state": {
+      "available_carts": [
+        {
+          "amount": 12.5,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Walking shoes"
+        },
+        {
+          "amount": 18.0,
+          "cart_id": "cart_2",
+          "currency": "USD",
+          "item_label": "Trail shoes"
+        },
+        {
+          "amount": 23.0,
+          "cart_id": "cart_3",
+          "currency": "USD",
+          "item_label": "Canvas shoes"
+        }
+      ],
+      "checkout_data": {
+        "amount": 12.5,
+        "amount_cents": 1250,
+        "cart_id": "cart_1",
+        "checkout_hash": "cUKYndEe_QXEHlCAV_7I6Wk_3MOn0BM0Q-khv-vqeqQ",
+        "checkout_jwt": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1lcmNoYW50LWtleS0xIn0.eyJpZCI6ImNhcnRfMSIsIm1lcmNoYW50Ijp7ImlkIjoibWVyY2hhbnRfMSIsIm5hbWUiOiJHZW5lcmljIE1lcmNoYW50Iiwid2Vic2l0ZSI6Imh0dHBzOi8vZGVtby1tZXJjaGFudC5leGFtcGxlIn0sImxpbmVfaXRlbXMiOlt7ImlkIjoibGlfNWI3YjU1ZTk4OTdlNDQ1Zjk1Yzc0NDMyNjYyOTBkMDIiLCJpdGVtIjp7ImlkIjoiY2FydF8xIiwidGl0bGUiOiJXYWxraW5nIHNob2VzIiwicHJpY2UiOjEyNTB9LCJxdWFudGl0eSI6MSwidG90YWxzIjpbeyJ0eXBlIjoic3VidG90YWwiLCJhbW91bnQiOjEyNTB9LHsidHlwZSI6InRvdGFsIiwiYW1vdW50IjoxMjUwfV19XSwic3RhdHVzIjoiaW5jb21wbGV0ZSIsImN1cnJlbmN5IjoiVVNEIiwidG90YWxzIjpbeyJ0eXBlIjoic3VidG90YWwiLCJhbW91bnQiOjEyNTB9LHsidHlwZSI6InRvdGFsIiwiYW1vdW50IjoxMjUwfV0sImxpbmtzIjpbeyJ0eXBlIjoicHJpdmFjeV9wb2xpY3kiLCJ1cmwiOiJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZS9wcml2YWN5In1dLCJpYXQiOjE3OTQzMjM1NTYsImV4cCI6MTc5NDMyNzE1Nn0.4ZtwPD1m_pjr6UF0g6O-WWxENC79L3TGWDD0mqn0iaAMu2E2dMOIfoAehx9---KCxHabmizEMILEYq4Z_yRz_w",
+        "currency": "USD",
+        "item_label": "Walking shoes"
+      },
+      "checkout_hash": "cUKYndEe_QXEHlCAV_7I6Wk_3MOn0BM0Q-khv-vqeqQ",
+      "checkout_mandate_sdjwt": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIjYyOGx4bllHdnpjQWpRcWUxM3oxSTN2SmR4QWFWQm05MGQxUko4aTBhWTAifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.jQ3v20GcplDmkNwsU8Nh3LP-f_ItAipW5iniyI-sRRVvzgtPApr-CieHodtVrllWAElTc6WKBQ65FeOgD7utMQ~WyJ0NzYzVXR5UXpXV3RSZWg4cGI0X0lRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZOV0kzWWpVMVpUazRPVGRsTkRRMVpqazFZemMwTkRNeU5qWXlPVEJrTURJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpYWVd4cmFXNW5JSE5vYjJWeklpd2ljSEpwWTJVaU9qRXlOVEI5TENKeGRXRnVkR2wwZVNJNk1Td2lkRzkwWVd4eklqcGJleUowZVhCbElqb2ljM1ZpZEc5MFlXd2lMQ0poYlc5MWJuUWlPakV5TlRCOUxIc2lkSGx3WlNJNkluUnZkR0ZzSWl3aVlXMXZkVzUwSWpveE1qVXdmVjE5WFN3aWMzUmhkSFZ6SWpvaWFXNWpiMjF3YkdWMFpTSXNJbU4xY25KbGJtTjVJam9pVlZORUlpd2lkRzkwWVd4eklqcGJleUowZVhCbElqb2ljM1ZpZEc5MFlXd2lMQ0poYlc5MWJuUWlPakV5TlRCOUxIc2lkSGx3WlNJNkluUnZkR0ZzSWl3aVlXMXZkVzUwSWpveE1qVXdmVjBzSW14cGJtdHpJanBiZXlKMGVYQmxJam9pY0hKcGRtRmplVjl3YjJ4cFkza2lMQ0oxY213aU9pSm9kSFJ3Y3pvdkwyUmxiVzh0YldWeVkyaGhiblF1WlhoaGJYQnNaUzl3Y21sMllXTjVJbjFkTENKcFlYUWlPakUzT1RRek1qTTFOVFlzSW1WNGNDSTZNVGM1TkRNeU56RTFObjAuNFp0d1BEMW1fcGpyNlVGMGc2Ty1XV3hFTkM3OUwzVEdXREQwbXFuMGlhQU11MkUyZE1PSWZvQWVoeDktLS1LQ3hIYWJtaXpFTUlMRVlxNFpfeVJ6X3ciXQ~WyJLalJPZW9uMXJKMzkxU2JNcVFILXRRIiwgeyJfc2QiOiBbIks4ek5ucS1KSl9DQ0RGUjBlRmhKUzdhSTJFUUdmWGpWRTVQaWQ5c0FyV2MiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJjVUtZbmRFZV9RWEVIbENBVl83STZXa18zTU9uMEJNMFEta2h2LXZxZXFRIiwgImlhdCI6IDE3OTQzMjM1NTYsICJleHAiOiAxNzk0MzI3MTU2fV0~",
+      "chosen_cart_id": "cart_1",
+      "cp_association_public_completion_observed": true,
+      "explicit_reference_approval": {
+        "approved": true,
+        "summary": {
+          "amount_cents": 1250,
+          "cart_id": "cart_1",
+          "checkout_hash": "cUKYndEe_QXEHlCAV_7I6Wk_3MOn0BM0Q-khv-vqeqQ",
+          "currency": "USD",
+          "item_label": "Walking shoes",
+          "payment_method_alias": "American Express ending in 4444",
+          "shipping_address": {
+            "address_line": [
+              "123 Main St"
+            ],
+            "city": "Sample City",
+            "country": "US",
+            "organization": "Sample Organization",
+            "phone_number": "+1-000-000-0000",
+            "postal_code": "00000",
+            "recipient": "Bugs Bunny",
+            "region": "ST"
+          }
+        }
+      },
+      "payment_credential_token": {
+        "url": "http://localhost:8002/a2a/credentials_provider",
+        "value": "fake_payment_credential_token_0"
+      },
+      "payment_mandate_sdjwt": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIlBaeTlqenhTNGVhOUZ6QU5WX3NRbEdiVjhLdFNBZW9HZS1lUDZZeU85Q0EifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.NbiHC-BAOXhjdLpM3R7wrJhpKGsQ2x7Fl41cRez1JXH_Kdl6Y8i7ZODdllGVt646ndf_-0hIN-zIEx0LeyDcTA~WyJtZWNWNXpvOFI5azJyVV9jR3NnR3FBIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiY1VLWW5kRWVfUVhFSGxDQVZfN0k2V2tfM01PbjBCTTBRLWtodi12cWVxUSIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDEyNTAsICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0MzIzNTU2LCAiZXhwIjogMTc5NDMyNzE1Nn1d~",
+      "payment_method_alias": "American Express ending in 4444",
+      "payment_method_aliases": [
+        "American Express ending in 4444",
+        "American Express ending in 8888"
+      ],
+      "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data",
+      "selected_cart": {
+        "amount": 12.5,
+        "cart_id": "cart_1",
+        "currency": "USD",
+        "item_label": "Walking shoes"
+      },
+      "shipping_address": {
+        "address_line": [
+          "123 Main St"
+        ],
+        "city": "Sample City",
+        "country": "US",
+        "organization": "Sample Organization",
+        "phone_number": "+1-000-000-0000",
+        "postal_code": "00000",
+        "recipient": "Bugs Bunny",
+        "region": "ST"
+      },
+      "shopping_context_id": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+      "supplied_distinct_prelude_task_ids": [
+        "43b0a384-7924-4a3c-b82c-6f5b5ca0f161",
+        "5f8c1ec4-7fd5-4d9e-b58f-00373382e5c3",
+        "aba4529c-4fe6-419a-b227-4cc3814658ef",
+        "89264b46-90d6-4970-a8e2-bae9242edbe4",
+        "408304e4-1bd5-42ce-82ec-97cacc947fd7",
+        "d70707ff-2e55-4f15-9ebe-31ea9b0b348e"
+      ]
+    },
+    "capture_order_and_completeness": "unknown",
+    "credential_transaction_association": "unknown",
+    "mandate_signatures": "unknown",
+    "model_usage_guard": "not_implemented",
+    "native_execution_enabled": false,
+    "native_qualification_established": false,
+    "next_phase": "payment_start",
+    "observations": [
+      {
+        "phase": "catalog",
+        "supplied_value": {
+          "artifacts": [
+            {
+              "artifactId": "cdbad426-899b-4362-bba4-61aca1b3e64f",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "ap2.cart": {
+                      "amount": 12.5,
+                      "cart_id": "cart_1",
+                      "currency": "USD",
+                      "item_label": "Walking shoes"
+                    }
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            },
+            {
+              "artifactId": "b4f75005-10e7-4188-96a3-a42efe3f2a3b",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "ap2.cart": {
+                      "amount": 18.0,
+                      "cart_id": "cart_2",
+                      "currency": "USD",
+                      "item_label": "Trail shoes"
+                    }
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            },
+            {
+              "artifactId": "780e1cf5-8558-4da6-a81c-8d80e3143b42",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "ap2.cart": {
+                      "amount": 23.0,
+                      "cart_id": "cart_3",
+                      "currency": "USD",
+                      "item_label": "Canvas shoes"
+                    }
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            },
+            {
+              "artifactId": "8e7bc6f6-8d32-4ca3-bc98-b6ccfe477db8",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            }
+          ],
+          "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+          "history": [
+            {
+              "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+              "extensions": null,
+              "kind": "message",
+              "messageId": "77af54f3d6e440cfa463395ca56540d2",
+              "metadata": null,
+              "parts": [
+                {
+                  "kind": "text",
+                  "metadata": null,
+                  "text": "Find products that match the user's request."
+                },
+                {
+                  "data": {
+                    "catalog_search": "unbranded walking shoes"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                },
+                {
+                  "data": {
+                    "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                },
+                {
+                  "data": {
+                    "shopping_agent_id": "trusted_shopping_agent"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ],
+              "referenceTaskIds": null,
+              "role": "agent",
+              "taskId": "43b0a384-7924-4a3c-b82c-6f5b5ca0f161"
+            }
+          ],
+          "id": "43b0a384-7924-4a3c-b82c-6f5b5ca0f161",
+          "kind": "task",
+          "metadata": null,
+          "status": {
+            "message": null,
+            "state": "completed",
+            "timestamp": "2026-11-10T15:12:36.333087+00:00"
+          }
+        }
+      },
+      {
+        "phase": "cart_selection",
+        "supplied_value": "cart_1"
+      },
+      {
+        "phase": "shipping",
+        "supplied_value": {
+          "artifacts": [
+            {
+              "artifactId": "f689cbcc-bd9a-4b76-a604-4410e54694d6",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "contact_picker.ContactAddress": {
+                      "address_line": [
+                        "123 Main St"
+                      ],
+                      "city": "Sample City",
+                      "country": "US",
+                      "organization": "Sample Organization",
+                      "phone_number": "+1-000-000-0000",
+                      "postal_code": "00000",
+                      "recipient": "Bugs Bunny",
+                      "region": "ST"
+                    }
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            }
+          ],
+          "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+          "history": [
+            {
+              "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+              "extensions": null,
+              "kind": "message",
+              "messageId": "164779826c4542019ab4c362cc2ffb14",
+              "metadata": null,
+              "parts": [
+                {
+                  "kind": "text",
+                  "metadata": null,
+                  "text": "Get the user's shipping address."
+                },
+                {
+                  "data": {
+                    "user_email": "bugsbunny@gmail.com"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ],
+              "referenceTaskIds": null,
+              "role": "agent",
+              "taskId": "5f8c1ec4-7fd5-4d9e-b58f-00373382e5c3"
+            }
+          ],
+          "id": "5f8c1ec4-7fd5-4d9e-b58f-00373382e5c3",
+          "kind": "task",
+          "metadata": null,
+          "status": {
+            "message": null,
+            "state": "completed",
+            "timestamp": "2026-11-10T15:12:36.351921+00:00"
+          }
+        }
+      },
+      {
+        "phase": "payment_methods",
+        "supplied_value": {
+          "artifacts": [
+            {
+              "artifactId": "e1fa1797-ffc7-4a4d-8f87-b4946c2faf3c",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "payment_method_aliases": [
+                      "American Express ending in 4444",
+                      "American Express ending in 8888"
+                    ]
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            }
+          ],
+          "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+          "history": [
+            {
+              "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+              "extensions": null,
+              "kind": "message",
+              "messageId": "11f3198e647a43b3bf95317ee3088a27",
+              "metadata": null,
+              "parts": [
+                {
+                  "kind": "text",
+                  "metadata": null,
+                  "text": "Get a filtered list of the user's payment methods."
+                },
+                {
+                  "data": {
+                    "user_email": "bugsbunny@gmail.com"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                },
+                {
+                  "data": {
+                    "payment_request.PaymentMethodData": {
+                      "data": {
+                        "network": [
+                          "mastercard",
+                          "amex"
+                        ]
+                      },
+                      "supported_methods": "CARD"
+                    }
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ],
+              "referenceTaskIds": null,
+              "role": "agent",
+              "taskId": "aba4529c-4fe6-419a-b227-4cc3814658ef"
+            }
+          ],
+          "id": "aba4529c-4fe6-419a-b227-4cc3814658ef",
+          "kind": "task",
+          "metadata": null,
+          "status": {
+            "message": null,
+            "state": "completed",
+            "timestamp": "2026-11-10T15:12:36.377343+00:00"
+          }
+        }
+      },
+      {
+        "phase": "payment_selection",
+        "supplied_value": "American Express ending in 4444"
+      },
+      {
+        "phase": "credential_token",
+        "supplied_value": {
+          "agent_card": {
+            "additionalInterfaces": null,
+            "capabilities": {
+              "extensions": [
+                {
+                  "description": "Supports the Agent Payments Protocol.",
+                  "params": null,
+                  "required": true,
+                  "uri": "https://github.com/google-agentic-commerce/ap2/v1"
+                },
+                {
+                  "description": "Supports the Sample Card Network payment method extension",
+                  "params": null,
+                  "required": true,
+                  "uri": "https://sample-card-network.github.io/paymentmethod/types/v1"
+                }
+              ],
+              "pushNotifications": null,
+              "stateTransitionHistory": null,
+              "streaming": null
+            },
+            "defaultInputModes": [
+              "text/plain"
+            ],
+            "defaultOutputModes": [
+              "application/json"
+            ],
+            "description": "An agent that holds a user's payment credentials.",
+            "documentationUrl": null,
+            "iconUrl": null,
+            "name": "CredentialsProvider",
+            "preferredTransport": "JSONRPC",
+            "protocolVersion": "0.3.0",
+            "provider": null,
+            "security": null,
+            "securitySchemes": null,
+            "signatures": null,
+            "skills": [
+              {
+                "description": "Initiates a payment with the correct payment processor.",
+                "examples": null,
+                "id": "initiate_payment",
+                "inputModes": null,
+                "name": "Initiate Payment",
+                "outputModes": null,
+                "security": null,
+                "tags": [
+                  "payments"
+                ]
+              },
+              {
+                "description": "Provides a list of eligible payment methods for a particular purchase.",
+                "examples": null,
+                "id": "get_eligible_payment_methods",
+                "inputModes": null,
+                "name": "Get Eligible Payment Methods",
+                "outputModes": null,
+                "security": null,
+                "tags": [
+                  "eligible",
+                  "payment",
+                  "methods"
+                ]
+              },
+              {
+                "description": "Fetches the shipping address from a user's wallet.",
+                "examples": null,
+                "id": "get_account_shipping_address",
+                "inputModes": null,
+                "name": "Get Shipping Address",
+                "outputModes": null,
+                "security": null,
+                "tags": [
+                  "account",
+                  "shipping"
+                ]
+              }
+            ],
+            "supportsAuthenticatedExtendedCard": null,
+            "url": "http://localhost:8002/a2a/credentials_provider",
+            "version": "1.0.0"
+          },
+          "task": {
+            "artifacts": [
+              {
+                "artifactId": "7e14c892-66fb-4f23-a678-cb386affef44",
+                "description": null,
+                "extensions": null,
+                "metadata": null,
+                "name": null,
+                "parts": [
+                  {
+                    "data": {
+                      "token": "fake_payment_credential_token_0"
+                    },
+                    "kind": "data",
+                    "metadata": null
+                  }
+                ]
+              }
+            ],
+            "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+            "history": [
+              {
+                "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+                "extensions": null,
+                "kind": "message",
+                "messageId": "e81f56d12be34fb7b8fe0dfe70ef1fda",
+                "metadata": null,
+                "parts": [
+                  {
+                    "kind": "text",
+                    "metadata": null,
+                    "text": "Get a payment credential token for the user's payment method."
+                  },
+                  {
+                    "data": {
+                      "payment_method_alias": "American Express ending in 4444"
+                    },
+                    "kind": "data",
+                    "metadata": null
+                  },
+                  {
+                    "data": {
+                      "user_email": "bugsbunny@gmail.com"
+                    },
+                    "kind": "data",
+                    "metadata": null
+                  }
+                ],
+                "referenceTaskIds": null,
+                "role": "agent",
+                "taskId": "89264b46-90d6-4970-a8e2-bae9242edbe4"
+              }
+            ],
+            "id": "89264b46-90d6-4970-a8e2-bae9242edbe4",
+            "kind": "task",
+            "metadata": null,
+            "status": {
+              "message": null,
+              "state": "completed",
+              "timestamp": "2026-11-10T15:12:36.389552+00:00"
+            }
+          }
+        }
+      },
+      {
+        "phase": "checkout",
+        "supplied_value": {
+          "artifacts": [
+            {
+              "artifactId": "d018d65b-5664-49d0-86f5-0882444ada33",
+              "description": null,
+              "extensions": null,
+              "metadata": null,
+              "name": null,
+              "parts": [
+                {
+                  "data": {
+                    "ap2.checkout": {
+                      "amount": 12.5,
+                      "amount_cents": 1250,
+                      "cart_id": "cart_1",
+                      "checkout_hash": "cUKYndEe_QXEHlCAV_7I6Wk_3MOn0BM0Q-khv-vqeqQ",
+                      "checkout_jwt": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1lcmNoYW50LWtleS0xIn0.eyJpZCI6ImNhcnRfMSIsIm1lcmNoYW50Ijp7ImlkIjoibWVyY2hhbnRfMSIsIm5hbWUiOiJHZW5lcmljIE1lcmNoYW50Iiwid2Vic2l0ZSI6Imh0dHBzOi8vZGVtby1tZXJjaGFudC5leGFtcGxlIn0sImxpbmVfaXRlbXMiOlt7ImlkIjoibGlfNWI3YjU1ZTk4OTdlNDQ1Zjk1Yzc0NDMyNjYyOTBkMDIiLCJpdGVtIjp7ImlkIjoiY2FydF8xIiwidGl0bGUiOiJXYWxraW5nIHNob2VzIiwicHJpY2UiOjEyNTB9LCJxdWFudGl0eSI6MSwidG90YWxzIjpbeyJ0eXBlIjoic3VidG90YWwiLCJhbW91bnQiOjEyNTB9LHsidHlwZSI6InRvdGFsIiwiYW1vdW50IjoxMjUwfV19XSwic3RhdHVzIjoiaW5jb21wbGV0ZSIsImN1cnJlbmN5IjoiVVNEIiwidG90YWxzIjpbeyJ0eXBlIjoic3VidG90YWwiLCJhbW91bnQiOjEyNTB9LHsidHlwZSI6InRvdGFsIiwiYW1vdW50IjoxMjUwfV0sImxpbmtzIjpbeyJ0eXBlIjoicHJpdmFjeV9wb2xpY3kiLCJ1cmwiOiJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZS9wcml2YWN5In1dLCJpYXQiOjE3OTQzMjM1NTYsImV4cCI6MTc5NDMyNzE1Nn0.4ZtwPD1m_pjr6UF0g6O-WWxENC79L3TGWDD0mqn0iaAMu2E2dMOIfoAehx9---KCxHabmizEMILEYq4Z_yRz_w",
+                      "currency": "USD",
+                      "item_label": "Walking shoes"
+                    }
+                  },
+                  "kind": "data",
+                  "metadata": null
+                },
+                {
+                  "data": {
+                    "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ]
+            }
+          ],
+          "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+          "history": [
+            {
+              "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+              "extensions": null,
+              "kind": "message",
+              "messageId": "9bb32cfd3e9f49c3810a9407caa74109",
+              "metadata": null,
+              "parts": [
+                {
+                  "kind": "text",
+                  "metadata": null,
+                  "text": "Create a checkout for the selected cart."
+                },
+                {
+                  "data": {
+                    "cart_id": "cart_1"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                },
+                {
+                  "data": {
+                    "shopping_agent_id": "trusted_shopping_agent"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ],
+              "referenceTaskIds": null,
+              "role": "agent",
+              "taskId": "408304e4-1bd5-42ce-82ec-97cacc947fd7"
+            }
+          ],
+          "id": "408304e4-1bd5-42ce-82ec-97cacc947fd7",
+          "kind": "task",
+          "metadata": null,
+          "status": {
+            "message": null,
+            "state": "completed",
+            "timestamp": "2026-11-10T15:12:36.404405+00:00"
+          }
+        }
+      },
+      {
+        "phase": "approval",
+        "supplied_value": {
+          "approved": true,
+          "summary": {
+            "amount_cents": 1250,
+            "cart_id": "cart_1",
+            "checkout_hash": "cUKYndEe_QXEHlCAV_7I6Wk_3MOn0BM0Q-khv-vqeqQ",
+            "currency": "USD",
+            "item_label": "Walking shoes",
+            "payment_method_alias": "American Express ending in 4444",
+            "shipping_address": {
+              "address_line": [
+                "123 Main St"
+              ],
+              "city": "Sample City",
+              "country": "US",
+              "organization": "Sample Organization",
+              "phone_number": "+1-000-000-0000",
+              "postal_code": "00000",
+              "recipient": "Bugs Bunny",
+              "region": "ST"
+            }
+          }
+        }
+      },
+      {
+        "phase": "checkout_mandate",
+        "supplied_value": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIjYyOGx4bllHdnpjQWpRcWUxM3oxSTN2SmR4QWFWQm05MGQxUko4aTBhWTAifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.jQ3v20GcplDmkNwsU8Nh3LP-f_ItAipW5iniyI-sRRVvzgtPApr-CieHodtVrllWAElTc6WKBQ65FeOgD7utMQ~WyJ0NzYzVXR5UXpXV3RSZWg4cGI0X0lRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZOV0kzWWpVMVpUazRPVGRsTkRRMVpqazFZemMwTkRNeU5qWXlPVEJrTURJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpYWVd4cmFXNW5JSE5vYjJWeklpd2ljSEpwWTJVaU9qRXlOVEI5TENKeGRXRnVkR2wwZVNJNk1Td2lkRzkwWVd4eklqcGJleUowZVhCbElqb2ljM1ZpZEc5MFlXd2lMQ0poYlc5MWJuUWlPakV5TlRCOUxIc2lkSGx3WlNJNkluUnZkR0ZzSWl3aVlXMXZkVzUwSWpveE1qVXdmVjE5WFN3aWMzUmhkSFZ6SWpvaWFXNWpiMjF3YkdWMFpTSXNJbU4xY25KbGJtTjVJam9pVlZORUlpd2lkRzkwWVd4eklqcGJleUowZVhCbElqb2ljM1ZpZEc5MFlXd2lMQ0poYlc5MWJuUWlPakV5TlRCOUxIc2lkSGx3WlNJNkluUnZkR0ZzSWl3aVlXMXZkVzUwSWpveE1qVXdmVjBzSW14cGJtdHpJanBiZXlKMGVYQmxJam9pY0hKcGRtRmplVjl3YjJ4cFkza2lMQ0oxY213aU9pSm9kSFJ3Y3pvdkwyUmxiVzh0YldWeVkyaGhiblF1WlhoaGJYQnNaUzl3Y21sMllXTjVJbjFkTENKcFlYUWlPakUzT1RRek1qTTFOVFlzSW1WNGNDSTZNVGM1TkRNeU56RTFObjAuNFp0d1BEMW1fcGpyNlVGMGc2Ty1XV3hFTkM3OUwzVEdXREQwbXFuMGlhQU11MkUyZE1PSWZvQWVoeDktLS1LQ3hIYWJtaXpFTUlMRVlxNFpfeVJ6X3ciXQ~WyJLalJPZW9uMXJKMzkxU2JNcVFILXRRIiwgeyJfc2QiOiBbIks4ek5ucS1KSl9DQ0RGUjBlRmhKUzdhSTJFUUdmWGpWRTVQaWQ5c0FyV2MiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJjVUtZbmRFZV9RWEVIbENBVl83STZXa18zTU9uMEJNMFEta2h2LXZxZXFRIiwgImlhdCI6IDE3OTQzMjM1NTYsICJleHAiOiAxNzk0MzI3MTU2fV0~"
+      },
+      {
+        "phase": "payment_mandate",
+        "supplied_value": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIlBaeTlqenhTNGVhOUZ6QU5WX3NRbEdiVjhLdFNBZW9HZS1lUDZZeU85Q0EifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.NbiHC-BAOXhjdLpM3R7wrJhpKGsQ2x7Fl41cRez1JXH_Kdl6Y8i7ZODdllGVt646ndf_-0hIN-zIEx0LeyDcTA~WyJtZWNWNXpvOFI5azJyVV9jR3NnR3FBIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiY1VLWW5kRWVfUVhFSGxDQVZfN0k2V2tfM01PbjBCTTBRLWtodi12cWVxUSIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDEyNTAsICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0MzIzNTU2LCAiZXhwIjogMTc5NDMyNzE1Nn1d~"
+      },
+      {
+        "phase": "cp_association",
+        "supplied_value": {
+          "artifacts": null,
+          "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+          "history": [
+            {
+              "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+              "extensions": null,
+              "kind": "message",
+              "messageId": "9e4c18ed69d2459ca1f0c25f9347fb04",
+              "metadata": null,
+              "parts": [
+                {
+                  "kind": "text",
+                  "metadata": null,
+                  "text": "This is the signed payment mandate"
+                },
+                {
+                  "data": {
+                    "ap2.mandates.PaymentMandateSdJwt": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIlBaeTlqenhTNGVhOUZ6QU5WX3NRbEdiVjhLdFNBZW9HZS1lUDZZeU85Q0EifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.NbiHC-BAOXhjdLpM3R7wrJhpKGsQ2x7Fl41cRez1JXH_Kdl6Y8i7ZODdllGVt646ndf_-0hIN-zIEx0LeyDcTA~WyJtZWNWNXpvOFI5azJyVV9jR3NnR3FBIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiY1VLWW5kRWVfUVhFSGxDQVZfN0k2V2tfM01PbjBCTTBRLWtodi12cWVxUSIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDEyNTAsICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0MzIzNTU2LCAiZXhwIjogMTc5NDMyNzE1Nn1d~"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                },
+                {
+                  "data": {
+                    "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                  },
+                  "kind": "data",
+                  "metadata": null
+                }
+              ],
+              "referenceTaskIds": null,
+              "role": "agent",
+              "taskId": "d70707ff-2e55-4f15-9ebe-31ea9b0b348e"
+            }
+          ],
+          "id": "d70707ff-2e55-4f15-9ebe-31ea9b0b348e",
+          "kind": "task",
+          "metadata": null,
+          "status": {
+            "message": null,
+            "state": "completed",
+            "timestamp": "2026-11-10T15:12:36.419628+00:00"
+          }
+        }
+      }
+    ],
+    "original_source_authenticated": false,
+    "schema_version": "ap2-hp-reference-plan/1",
+    "scope": "pure_source_derived_caller_planning_only",
+    "source_reset_and_effects": "unknown"
+  },
+  "public_record_order": "coordinator_observer_boundary_order",
+  "public_records": [
+    {
+      "boundary": "attempt",
+      "call": 0,
+      "endpoint": "http://localhost:8001/a2a/merchant_agent",
+      "global_sequence": 0,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "contextId": null,
+        "extensions": null,
+        "kind": "message",
+        "messageId": "77af54f3d6e440cfa463395ca56540d2",
+        "metadata": null,
+        "parts": [
+          {
+            "kind": "text",
+            "metadata": null,
+            "text": "Find products that match the user's request."
+          },
+          {
+            "data": {
+              "catalog_search": "unbranded walking shoes"
+            },
+            "kind": "data",
+            "metadata": null
+          },
+          {
+            "data": {
+              "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+            },
+            "kind": "data",
+            "metadata": null
+          },
+          {
+            "data": {
+              "shopping_agent_id": "trusted_shopping_agent"
+            },
+            "kind": "data",
+            "metadata": null
+          }
+        ],
+        "referenceTaskIds": null,
+        "role": "agent",
+        "taskId": null
+      },
+      "sequence": 0
+    },
+    {
+      "boundary": "returned",
+      "call": 0,
+      "endpoint": "http://localhost:8001/a2a/merchant_agent",
+      "global_sequence": 1,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "artifacts": [
+          {
+            "artifactId": "cdbad426-899b-4362-bba4-61aca1b3e64f",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "ap2.cart": {
+                    "amount": 12.5,
+                    "cart_id": "cart_1",
+                    "currency": "USD",
+                    "item_label": "Walking shoes"
+                  }
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          },
+          {
+            "artifactId": "b4f75005-10e7-4188-96a3-a42efe3f2a3b",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "ap2.cart": {
+                    "amount": 18.0,
+                    "cart_id": "cart_2",
+                    "currency": "USD",
+                    "item_label": "Trail shoes"
+                  }
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          },
+          {
+            "artifactId": "780e1cf5-8558-4da6-a81c-8d80e3143b42",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "ap2.cart": {
+                    "amount": 23.0,
+                    "cart_id": "cart_3",
+                    "currency": "USD",
+                    "item_label": "Canvas shoes"
+                  }
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          },
+          {
+            "artifactId": "8e7bc6f6-8d32-4ca3-bc98-b6ccfe477db8",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          }
+        ],
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "history": [
+          {
+            "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+            "extensions": null,
+            "kind": "message",
+            "messageId": "77af54f3d6e440cfa463395ca56540d2",
+            "metadata": null,
+            "parts": [
+              {
+                "kind": "text",
+                "metadata": null,
+                "text": "Find products that match the user's request."
+              },
+              {
+                "data": {
+                  "catalog_search": "unbranded walking shoes"
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "shopping_agent_id": "trusted_shopping_agent"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ],
+            "referenceTaskIds": null,
+            "role": "agent",
+            "taskId": "43b0a384-7924-4a3c-b82c-6f5b5ca0f161"
+          }
+        ],
+        "id": "43b0a384-7924-4a3c-b82c-6f5b5ca0f161",
+        "kind": "task",
+        "metadata": null,
+        "status": {
+          "message": null,
+          "state": "completed",
+          "timestamp": "2026-11-10T15:12:36.333087+00:00"
+        }
+      },
+      "sequence": 1
+    },
+    {
+      "boundary": "attempt",
+      "call": 0,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 2,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "extensions": null,
+        "kind": "message",
+        "messageId": "164779826c4542019ab4c362cc2ffb14",
+        "metadata": null,
+        "parts": [
+          {
+            "kind": "text",
+            "metadata": null,
+            "text": "Get the user's shipping address."
+          },
+          {
+            "data": {
+              "user_email": "bugsbunny@gmail.com"
+            },
+            "kind": "data",
+            "metadata": null
+          }
+        ],
+        "referenceTaskIds": null,
+        "role": "agent",
+        "taskId": null
+      },
+      "sequence": 0
+    },
+    {
+      "boundary": "returned",
+      "call": 0,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 3,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "artifacts": [
+          {
+            "artifactId": "f689cbcc-bd9a-4b76-a604-4410e54694d6",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "contact_picker.ContactAddress": {
+                    "address_line": [
+                      "123 Main St"
+                    ],
+                    "city": "Sample City",
+                    "country": "US",
+                    "organization": "Sample Organization",
+                    "phone_number": "+1-000-000-0000",
+                    "postal_code": "00000",
+                    "recipient": "Bugs Bunny",
+                    "region": "ST"
+                  }
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          }
+        ],
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "history": [
+          {
+            "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+            "extensions": null,
+            "kind": "message",
+            "messageId": "164779826c4542019ab4c362cc2ffb14",
+            "metadata": null,
+            "parts": [
+              {
+                "kind": "text",
+                "metadata": null,
+                "text": "Get the user's shipping address."
+              },
+              {
+                "data": {
+                  "user_email": "bugsbunny@gmail.com"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ],
+            "referenceTaskIds": null,
+            "role": "agent",
+            "taskId": "5f8c1ec4-7fd5-4d9e-b58f-00373382e5c3"
+          }
+        ],
+        "id": "5f8c1ec4-7fd5-4d9e-b58f-00373382e5c3",
+        "kind": "task",
+        "metadata": null,
+        "status": {
+          "message": null,
+          "state": "completed",
+          "timestamp": "2026-11-10T15:12:36.351921+00:00"
+        }
+      },
+      "sequence": 1
+    },
+    {
+      "boundary": "attempt",
+      "call": 1,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 4,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "extensions": null,
+        "kind": "message",
+        "messageId": "11f3198e647a43b3bf95317ee3088a27",
+        "metadata": null,
+        "parts": [
+          {
+            "kind": "text",
+            "metadata": null,
+            "text": "Get a filtered list of the user's payment methods."
+          },
+          {
+            "data": {
+              "user_email": "bugsbunny@gmail.com"
+            },
+            "kind": "data",
+            "metadata": null
+          },
+          {
+            "data": {
+              "payment_request.PaymentMethodData": {
+                "data": {
+                  "network": [
+                    "mastercard",
+                    "amex"
+                  ]
+                },
+                "supported_methods": "CARD"
+              }
+            },
+            "kind": "data",
+            "metadata": null
+          }
+        ],
+        "referenceTaskIds": null,
+        "role": "agent",
+        "taskId": null
+      },
+      "sequence": 2
+    },
+    {
+      "boundary": "returned",
+      "call": 1,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 5,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "artifacts": [
+          {
+            "artifactId": "e1fa1797-ffc7-4a4d-8f87-b4946c2faf3c",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "payment_method_aliases": [
+                    "American Express ending in 4444",
+                    "American Express ending in 8888"
+                  ]
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          }
+        ],
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "history": [
+          {
+            "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+            "extensions": null,
+            "kind": "message",
+            "messageId": "11f3198e647a43b3bf95317ee3088a27",
+            "metadata": null,
+            "parts": [
+              {
+                "kind": "text",
+                "metadata": null,
+                "text": "Get a filtered list of the user's payment methods."
+              },
+              {
+                "data": {
+                  "user_email": "bugsbunny@gmail.com"
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "payment_request.PaymentMethodData": {
+                    "data": {
+                      "network": [
+                        "mastercard",
+                        "amex"
+                      ]
+                    },
+                    "supported_methods": "CARD"
+                  }
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ],
+            "referenceTaskIds": null,
+            "role": "agent",
+            "taskId": "aba4529c-4fe6-419a-b227-4cc3814658ef"
+          }
+        ],
+        "id": "aba4529c-4fe6-419a-b227-4cc3814658ef",
+        "kind": "task",
+        "metadata": null,
+        "status": {
+          "message": null,
+          "state": "completed",
+          "timestamp": "2026-11-10T15:12:36.377343+00:00"
+        }
+      },
+      "sequence": 3
+    },
+    {
+      "boundary": "attempt",
+      "call": 2,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 6,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "extensions": null,
+        "kind": "message",
+        "messageId": "e81f56d12be34fb7b8fe0dfe70ef1fda",
+        "metadata": null,
+        "parts": [
+          {
+            "kind": "text",
+            "metadata": null,
+            "text": "Get a payment credential token for the user's payment method."
+          },
+          {
+            "data": {
+              "payment_method_alias": "American Express ending in 4444"
+            },
+            "kind": "data",
+            "metadata": null
+          },
+          {
+            "data": {
+              "user_email": "bugsbunny@gmail.com"
+            },
+            "kind": "data",
+            "metadata": null
+          }
+        ],
+        "referenceTaskIds": null,
+        "role": "agent",
+        "taskId": null
+      },
+      "sequence": 4
+    },
+    {
+      "boundary": "returned",
+      "call": 2,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 7,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "artifacts": [
+          {
+            "artifactId": "7e14c892-66fb-4f23-a678-cb386affef44",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "token": "fake_payment_credential_token_0"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          }
+        ],
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "history": [
+          {
+            "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+            "extensions": null,
+            "kind": "message",
+            "messageId": "e81f56d12be34fb7b8fe0dfe70ef1fda",
+            "metadata": null,
+            "parts": [
+              {
+                "kind": "text",
+                "metadata": null,
+                "text": "Get a payment credential token for the user's payment method."
+              },
+              {
+                "data": {
+                  "payment_method_alias": "American Express ending in 4444"
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "user_email": "bugsbunny@gmail.com"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ],
+            "referenceTaskIds": null,
+            "role": "agent",
+            "taskId": "89264b46-90d6-4970-a8e2-bae9242edbe4"
+          }
+        ],
+        "id": "89264b46-90d6-4970-a8e2-bae9242edbe4",
+        "kind": "task",
+        "metadata": null,
+        "status": {
+          "message": null,
+          "state": "completed",
+          "timestamp": "2026-11-10T15:12:36.389552+00:00"
+        }
+      },
+      "sequence": 5
+    },
+    {
+      "boundary": "attempt",
+      "call": 3,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 8,
+      "operation": "get_agent_card",
+      "sequence": 6
+    },
+    {
+      "boundary": "returned",
+      "call": 3,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 9,
+      "operation": "get_agent_card",
+      "public_value": {
+        "additionalInterfaces": null,
+        "capabilities": {
+          "extensions": [
+            {
+              "description": "Supports the Agent Payments Protocol.",
+              "params": null,
+              "required": true,
+              "uri": "https://github.com/google-agentic-commerce/ap2/v1"
+            },
+            {
+              "description": "Supports the Sample Card Network payment method extension",
+              "params": null,
+              "required": true,
+              "uri": "https://sample-card-network.github.io/paymentmethod/types/v1"
+            }
+          ],
+          "pushNotifications": null,
+          "stateTransitionHistory": null,
+          "streaming": null
+        },
+        "defaultInputModes": [
+          "text/plain"
+        ],
+        "defaultOutputModes": [
+          "application/json"
+        ],
+        "description": "An agent that holds a user's payment credentials.",
+        "documentationUrl": null,
+        "iconUrl": null,
+        "name": "CredentialsProvider",
+        "preferredTransport": "JSONRPC",
+        "protocolVersion": "0.3.0",
+        "provider": null,
+        "security": null,
+        "securitySchemes": null,
+        "signatures": null,
+        "skills": [
+          {
+            "description": "Initiates a payment with the correct payment processor.",
+            "examples": null,
+            "id": "initiate_payment",
+            "inputModes": null,
+            "name": "Initiate Payment",
+            "outputModes": null,
+            "security": null,
+            "tags": [
+              "payments"
+            ]
+          },
+          {
+            "description": "Provides a list of eligible payment methods for a particular purchase.",
+            "examples": null,
+            "id": "get_eligible_payment_methods",
+            "inputModes": null,
+            "name": "Get Eligible Payment Methods",
+            "outputModes": null,
+            "security": null,
+            "tags": [
+              "eligible",
+              "payment",
+              "methods"
+            ]
+          },
+          {
+            "description": "Fetches the shipping address from a user's wallet.",
+            "examples": null,
+            "id": "get_account_shipping_address",
+            "inputModes": null,
+            "name": "Get Shipping Address",
+            "outputModes": null,
+            "security": null,
+            "tags": [
+              "account",
+              "shipping"
+            ]
+          }
+        ],
+        "supportsAuthenticatedExtendedCard": null,
+        "url": "http://localhost:8002/a2a/credentials_provider",
+        "version": "1.0.0"
+      },
+      "sequence": 7
+    },
+    {
+      "boundary": "attempt",
+      "call": 1,
+      "endpoint": "http://localhost:8001/a2a/merchant_agent",
+      "global_sequence": 10,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "extensions": null,
+        "kind": "message",
+        "messageId": "9bb32cfd3e9f49c3810a9407caa74109",
+        "metadata": null,
+        "parts": [
+          {
+            "kind": "text",
+            "metadata": null,
+            "text": "Create a checkout for the selected cart."
+          },
+          {
+            "data": {
+              "cart_id": "cart_1"
+            },
+            "kind": "data",
+            "metadata": null
+          },
+          {
+            "data": {
+              "shopping_agent_id": "trusted_shopping_agent"
+            },
+            "kind": "data",
+            "metadata": null
+          }
+        ],
+        "referenceTaskIds": null,
+        "role": "agent",
+        "taskId": null
+      },
+      "sequence": 2
+    },
+    {
+      "boundary": "returned",
+      "call": 1,
+      "endpoint": "http://localhost:8001/a2a/merchant_agent",
+      "global_sequence": 11,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "artifacts": [
+          {
+            "artifactId": "d018d65b-5664-49d0-86f5-0882444ada33",
+            "description": null,
+            "extensions": null,
+            "metadata": null,
+            "name": null,
+            "parts": [
+              {
+                "data": {
+                  "ap2.checkout": {
+                    "amount": 12.5,
+                    "amount_cents": 1250,
+                    "cart_id": "cart_1",
+                    "checkout_hash": "cUKYndEe_QXEHlCAV_7I6Wk_3MOn0BM0Q-khv-vqeqQ",
+                    "checkout_jwt": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1lcmNoYW50LWtleS0xIn0.eyJpZCI6ImNhcnRfMSIsIm1lcmNoYW50Ijp7ImlkIjoibWVyY2hhbnRfMSIsIm5hbWUiOiJHZW5lcmljIE1lcmNoYW50Iiwid2Vic2l0ZSI6Imh0dHBzOi8vZGVtby1tZXJjaGFudC5leGFtcGxlIn0sImxpbmVfaXRlbXMiOlt7ImlkIjoibGlfNWI3YjU1ZTk4OTdlNDQ1Zjk1Yzc0NDMyNjYyOTBkMDIiLCJpdGVtIjp7ImlkIjoiY2FydF8xIiwidGl0bGUiOiJXYWxraW5nIHNob2VzIiwicHJpY2UiOjEyNTB9LCJxdWFudGl0eSI6MSwidG90YWxzIjpbeyJ0eXBlIjoic3VidG90YWwiLCJhbW91bnQiOjEyNTB9LHsidHlwZSI6InRvdGFsIiwiYW1vdW50IjoxMjUwfV19XSwic3RhdHVzIjoiaW5jb21wbGV0ZSIsImN1cnJlbmN5IjoiVVNEIiwidG90YWxzIjpbeyJ0eXBlIjoic3VidG90YWwiLCJhbW91bnQiOjEyNTB9LHsidHlwZSI6InRvdGFsIiwiYW1vdW50IjoxMjUwfV0sImxpbmtzIjpbeyJ0eXBlIjoicHJpdmFjeV9wb2xpY3kiLCJ1cmwiOiJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZS9wcml2YWN5In1dLCJpYXQiOjE3OTQzMjM1NTYsImV4cCI6MTc5NDMyNzE1Nn0.4ZtwPD1m_pjr6UF0g6O-WWxENC79L3TGWDD0mqn0iaAMu2E2dMOIfoAehx9---KCxHabmizEMILEYq4Z_yRz_w",
+                    "currency": "USD",
+                    "item_label": "Walking shoes"
+                  }
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ]
+          }
+        ],
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "history": [
+          {
+            "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+            "extensions": null,
+            "kind": "message",
+            "messageId": "9bb32cfd3e9f49c3810a9407caa74109",
+            "metadata": null,
+            "parts": [
+              {
+                "kind": "text",
+                "metadata": null,
+                "text": "Create a checkout for the selected cart."
+              },
+              {
+                "data": {
+                  "cart_id": "cart_1"
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "shopping_agent_id": "trusted_shopping_agent"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ],
+            "referenceTaskIds": null,
+            "role": "agent",
+            "taskId": "408304e4-1bd5-42ce-82ec-97cacc947fd7"
+          }
+        ],
+        "id": "408304e4-1bd5-42ce-82ec-97cacc947fd7",
+        "kind": "task",
+        "metadata": null,
+        "status": {
+          "message": null,
+          "state": "completed",
+          "timestamp": "2026-11-10T15:12:36.404405+00:00"
+        }
+      },
+      "sequence": 3
+    },
+    {
+      "boundary": "attempt",
+      "call": 4,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 12,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "extensions": null,
+        "kind": "message",
+        "messageId": "9e4c18ed69d2459ca1f0c25f9347fb04",
+        "metadata": null,
+        "parts": [
+          {
+            "kind": "text",
+            "metadata": null,
+            "text": "This is the signed payment mandate"
+          },
+          {
+            "data": {
+              "ap2.mandates.PaymentMandateSdJwt": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIlBaeTlqenhTNGVhOUZ6QU5WX3NRbEdiVjhLdFNBZW9HZS1lUDZZeU85Q0EifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.NbiHC-BAOXhjdLpM3R7wrJhpKGsQ2x7Fl41cRez1JXH_Kdl6Y8i7ZODdllGVt646ndf_-0hIN-zIEx0LeyDcTA~WyJtZWNWNXpvOFI5azJyVV9jR3NnR3FBIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiY1VLWW5kRWVfUVhFSGxDQVZfN0k2V2tfM01PbjBCTTBRLWtodi12cWVxUSIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDEyNTAsICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0MzIzNTU2LCAiZXhwIjogMTc5NDMyNzE1Nn1d~"
+            },
+            "kind": "data",
+            "metadata": null
+          },
+          {
+            "data": {
+              "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+            },
+            "kind": "data",
+            "metadata": null
+          }
+        ],
+        "referenceTaskIds": null,
+        "role": "agent",
+        "taskId": null
+      },
+      "sequence": 8
+    },
+    {
+      "boundary": "returned",
+      "call": 4,
+      "endpoint": "http://localhost:8002/a2a/credentials_provider",
+      "global_sequence": 13,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "artifacts": null,
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "history": [
+          {
+            "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+            "extensions": null,
+            "kind": "message",
+            "messageId": "9e4c18ed69d2459ca1f0c25f9347fb04",
+            "metadata": null,
+            "parts": [
+              {
+                "kind": "text",
+                "metadata": null,
+                "text": "This is the signed payment mandate"
+              },
+              {
+                "data": {
+                  "ap2.mandates.PaymentMandateSdJwt": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIlBaeTlqenhTNGVhOUZ6QU5WX3NRbEdiVjhLdFNBZW9HZS1lUDZZeU85Q0EifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.NbiHC-BAOXhjdLpM3R7wrJhpKGsQ2x7Fl41cRez1JXH_Kdl6Y8i7ZODdllGVt646ndf_-0hIN-zIEx0LeyDcTA~WyJtZWNWNXpvOFI5azJyVV9jR3NnR3FBIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiY1VLWW5kRWVfUVhFSGxDQVZfN0k2V2tfM01PbjBCTTBRLWtodi12cWVxUSIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDEyNTAsICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0MzIzNTU2LCAiZXhwIjogMTc5NDMyNzE1Nn1d~"
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ],
+            "referenceTaskIds": null,
+            "role": "agent",
+            "taskId": "d70707ff-2e55-4f15-9ebe-31ea9b0b348e"
+          }
+        ],
+        "id": "d70707ff-2e55-4f15-9ebe-31ea9b0b348e",
+        "kind": "task",
+        "metadata": null,
+        "status": {
+          "message": null,
+          "state": "completed",
+          "timestamp": "2026-11-10T15:12:36.419628+00:00"
+        }
+      },
+      "sequence": 9
+    },
+    {
+      "boundary": "attempt",
+      "call": 2,
+      "endpoint": "http://localhost:8001/a2a/merchant_agent",
+      "global_sequence": 14,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "extensions": null,
+        "kind": "message",
+        "messageId": "da16977aa72842ddb49eca0919b67e9f",
+        "metadata": null,
+        "parts": [
+          {
+            "kind": "text",
+            "metadata": null,
+            "text": "Initiate a payment"
+          },
+          {
+            "data": {
+              "ap2.mandates.PaymentMandateSdJwt": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIlBaeTlqenhTNGVhOUZ6QU5WX3NRbEdiVjhLdFNBZW9HZS1lUDZZeU85Q0EifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.NbiHC-BAOXhjdLpM3R7wrJhpKGsQ2x7Fl41cRez1JXH_Kdl6Y8i7ZODdllGVt646ndf_-0hIN-zIEx0LeyDcTA~WyJtZWNWNXpvOFI5azJyVV9jR3NnR3FBIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiY1VLWW5kRWVfUVhFSGxDQVZfN0k2V2tfM01PbjBCTTBRLWtodi12cWVxUSIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDEyNTAsICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0MzIzNTU2LCAiZXhwIjogMTc5NDMyNzE1Nn1d~"
+            },
+            "kind": "data",
+            "metadata": null
+          },
+          {
+            "data": {
+              "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+            },
+            "kind": "data",
+            "metadata": null
+          },
+          {
+            "data": {
+              "shopping_agent_id": "trusted_shopping_agent"
+            },
+            "kind": "data",
+            "metadata": null
+          },
+          {
+            "data": {
+              "ap2.mandates.CheckoutMandateSdJwt": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIjYyOGx4bllHdnpjQWpRcWUxM3oxSTN2SmR4QWFWQm05MGQxUko4aTBhWTAifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.jQ3v20GcplDmkNwsU8Nh3LP-f_ItAipW5iniyI-sRRVvzgtPApr-CieHodtVrllWAElTc6WKBQ65FeOgD7utMQ~WyJ0NzYzVXR5UXpXV3RSZWg4cGI0X0lRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZOV0kzWWpVMVpUazRPVGRsTkRRMVpqazFZemMwTkRNeU5qWXlPVEJrTURJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpYWVd4cmFXNW5JSE5vYjJWeklpd2ljSEpwWTJVaU9qRXlOVEI5TENKeGRXRnVkR2wwZVNJNk1Td2lkRzkwWVd4eklqcGJleUowZVhCbElqb2ljM1ZpZEc5MFlXd2lMQ0poYlc5MWJuUWlPakV5TlRCOUxIc2lkSGx3WlNJNkluUnZkR0ZzSWl3aVlXMXZkVzUwSWpveE1qVXdmVjE5WFN3aWMzUmhkSFZ6SWpvaWFXNWpiMjF3YkdWMFpTSXNJbU4xY25KbGJtTjVJam9pVlZORUlpd2lkRzkwWVd4eklqcGJleUowZVhCbElqb2ljM1ZpZEc5MFlXd2lMQ0poYlc5MWJuUWlPakV5TlRCOUxIc2lkSGx3WlNJNkluUnZkR0ZzSWl3aVlXMXZkVzUwSWpveE1qVXdmVjBzSW14cGJtdHpJanBiZXlKMGVYQmxJam9pY0hKcGRtRmplVjl3YjJ4cFkza2lMQ0oxY213aU9pSm9kSFJ3Y3pvdkwyUmxiVzh0YldWeVkyaGhiblF1WlhoaGJYQnNaUzl3Y21sMllXTjVJbjFkTENKcFlYUWlPakUzT1RRek1qTTFOVFlzSW1WNGNDSTZNVGM1TkRNeU56RTFObjAuNFp0d1BEMW1fcGpyNlVGMGc2Ty1XV3hFTkM3OUwzVEdXREQwbXFuMGlhQU11MkUyZE1PSWZvQWVoeDktLS1LQ3hIYWJtaXpFTUlMRVlxNFpfeVJ6X3ciXQ~WyJLalJPZW9uMXJKMzkxU2JNcVFILXRRIiwgeyJfc2QiOiBbIks4ek5ucS1KSl9DQ0RGUjBlRmhKUzdhSTJFUUdmWGpWRTVQaWQ5c0FyV2MiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJjVUtZbmRFZV9RWEVIbENBVl83STZXa18zTU9uMEJNMFEta2h2LXZxZXFRIiwgImlhdCI6IDE3OTQzMjM1NTYsICJleHAiOiAxNzk0MzI3MTU2fV0~"
+            },
+            "kind": "data",
+            "metadata": null
+          }
+        ],
+        "referenceTaskIds": null,
+        "role": "agent",
+        "taskId": null
+      },
+      "sequence": 4
+    },
+    {
+      "boundary": "returned",
+      "call": 2,
+      "endpoint": "http://localhost:8001/a2a/merchant_agent",
+      "global_sequence": 15,
+      "operation": "send_a2a_message",
+      "public_value": {
+        "artifacts": null,
+        "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+        "history": [
+          {
+            "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+            "extensions": null,
+            "kind": "message",
+            "messageId": "da16977aa72842ddb49eca0919b67e9f",
+            "metadata": null,
+            "parts": [
+              {
+                "kind": "text",
+                "metadata": null,
+                "text": "Initiate a payment"
+              },
+              {
+                "data": {
+                  "ap2.mandates.PaymentMandateSdJwt": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIlBaeTlqenhTNGVhOUZ6QU5WX3NRbEdiVjhLdFNBZW9HZS1lUDZZeU85Q0EifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.NbiHC-BAOXhjdLpM3R7wrJhpKGsQ2x7Fl41cRez1JXH_Kdl6Y8i7ZODdllGVt646ndf_-0hIN-zIEx0LeyDcTA~WyJtZWNWNXpvOFI5azJyVV9jR3NnR3FBIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiY1VLWW5kRWVfUVhFSGxDQVZfN0k2V2tfM01PbjBCTTBRLWtodi12cWVxUSIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDEyNTAsICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0MzIzNTU2LCAiZXhwIjogMTc5NDMyNzE1Nn1d~"
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "shopping_agent_id": "trusted_shopping_agent"
+                },
+                "kind": "data",
+                "metadata": null
+              },
+              {
+                "data": {
+                  "ap2.mandates.CheckoutMandateSdJwt": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIjYyOGx4bllHdnpjQWpRcWUxM3oxSTN2SmR4QWFWQm05MGQxUko4aTBhWTAifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.jQ3v20GcplDmkNwsU8Nh3LP-f_ItAipW5iniyI-sRRVvzgtPApr-CieHodtVrllWAElTc6WKBQ65FeOgD7utMQ~WyJ0NzYzVXR5UXpXV3RSZWg4cGI0X0lRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZOV0kzWWpVMVpUazRPVGRsTkRRMVpqazFZemMwTkRNeU5qWXlPVEJrTURJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpYWVd4cmFXNW5JSE5vYjJWeklpd2ljSEpwWTJVaU9qRXlOVEI5TENKeGRXRnVkR2wwZVNJNk1Td2lkRzkwWVd4eklqcGJleUowZVhCbElqb2ljM1ZpZEc5MFlXd2lMQ0poYlc5MWJuUWlPakV5TlRCOUxIc2lkSGx3WlNJNkluUnZkR0ZzSWl3aVlXMXZkVzUwSWpveE1qVXdmVjE5WFN3aWMzUmhkSFZ6SWpvaWFXNWpiMjF3YkdWMFpTSXNJbU4xY25KbGJtTjVJam9pVlZORUlpd2lkRzkwWVd4eklqcGJleUowZVhCbElqb2ljM1ZpZEc5MFlXd2lMQ0poYlc5MWJuUWlPakV5TlRCOUxIc2lkSGx3WlNJNkluUnZkR0ZzSWl3aVlXMXZkVzUwSWpveE1qVXdmVjBzSW14cGJtdHpJanBiZXlKMGVYQmxJam9pY0hKcGRtRmplVjl3YjJ4cFkza2lMQ0oxY213aU9pSm9kSFJ3Y3pvdkwyUmxiVzh0YldWeVkyaGhiblF1WlhoaGJYQnNaUzl3Y21sMllXTjVJbjFkTENKcFlYUWlPakUzT1RRek1qTTFOVFlzSW1WNGNDSTZNVGM1TkRNeU56RTFObjAuNFp0d1BEMW1fcGpyNlVGMGc2Ty1XV3hFTkM3OUwzVEdXREQwbXFuMGlhQU11MkUyZE1PSWZvQWVoeDktLS1LQ3hIYWJtaXpFTUlMRVlxNFpfeVJ6X3ciXQ~WyJLalJPZW9uMXJKMzkxU2JNcVFILXRRIiwgeyJfc2QiOiBbIks4ek5ucS1KSl9DQ0RGUjBlRmhKUzdhSTJFUUdmWGpWRTVQaWQ5c0FyV2MiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJjVUtZbmRFZV9RWEVIbENBVl83STZXa18zTU9uMEJNMFEta2h2LXZxZXFRIiwgImlhdCI6IDE3OTQzMjM1NTYsICJleHAiOiAxNzk0MzI3MTU2fV0~"
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ],
+            "referenceTaskIds": null,
+            "role": "agent",
+            "taskId": "99dad5bc-f3e9-443d-826b-a6676e7ee750"
+          }
+        ],
+        "id": "99dad5bc-f3e9-443d-826b-a6676e7ee750",
+        "kind": "task",
+        "metadata": null,
+        "status": {
+          "message": {
+            "contextId": "cc732db8-e1f1-47ae-83f6-5abca2b05834",
+            "extensions": null,
+            "kind": "message",
+            "messageId": "dab324d2-dd7c-4820-b443-c989f39f423e",
+            "metadata": null,
+            "parts": [
+              {
+                "kind": "text",
+                "metadata": null,
+                "text": "Please provide the challenge response to complete the payment."
+              },
+              {
+                "data": {
+                  "challenge": {
+                    "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+                    "type": "otp"
+                  }
+                },
+                "kind": "data",
+                "metadata": null
+              }
+            ],
+            "referenceTaskIds": null,
+            "role": "agent",
+            "taskId": "67c16ad4-4f91-4c61-900e-baf5e956c5b2"
+          },
+          "state": "input-required",
+          "timestamp": "2026-11-10T15:12:36.447368+00:00"
+        }
+      },
+      "sequence": 5
+    }
+  ],
+  "required_http_extension": {
+    "X-A2A-Extensions": "https://github.com/google-agentic-commerce/ap2/v1"
+  },
+  "schema_version": "ap2-hp-injected-reference-execution/1",
+  "scope": "injected public reference coordination",
+  "status": "refused_or_partial_reference",
+  "transport_peer_ownership_verified": false
+}

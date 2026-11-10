@@ -1,0 +1,509 @@
+{
+  "schema_version": "agentops-component-reference-actor/1",
+  "id": "agentops-d01-health-active",
+  "status": "original_component_recipe_executed",
+  "trace": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-11-10T15:23:11.428988+00:00",
+      "operation": "public_user_turns",
+      "arguments": {},
+      "result": [
+        {
+          "kind": "user_message",
+          "text": "Read only: check the current status of \" INVENTORY \" and list its active incidents. Do not save a note or take an action."
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-11-10T15:23:11.445675+00:00",
+      "operation": "agent.tools.get_service_status",
+      "arguments": {
+        "name": " INVENTORY "
+      },
+      "result": {
+        "service": {
+          "name": "inventory",
+          "description": "Inventory and stock-availability service",
+          "status": "down",
+          "owner": "team-fulfillment"
+        },
+        "open_incidents": [
+          {
+            "id": "INC-002",
+            "title": "Inventory service unavailable",
+            "severity": "SEV1",
+            "status": "open"
+          }
+        ]
+      }
+    }
+  ],
+  "before_state": {
+    "incidents.db": {
+      "audit_log": [],
+      "incidents": [
+        {
+          "id": "INC-001",
+          "service": "checkout",
+          "title": "Checkout latency spike",
+          "severity": "SEV2",
+          "status": "investigating",
+          "runbook": "high-latency",
+          "opened_at": "2026-07-05T08:15:00Z",
+          "resolved_at": null,
+          "summary": "p99 checkout latency rose from 200ms to 3.5s right after the 08:00 deploy."
+        },
+        {
+          "id": "INC-002",
+          "service": "inventory",
+          "title": "Inventory service unavailable",
+          "severity": "SEV1",
+          "status": "open",
+          "runbook": "service-down",
+          "opened_at": "2026-07-05T09:02:00Z",
+          "resolved_at": null,
+          "summary": "Inventory pods are crash-looping; stock lookups return HTTP 503."
+        },
+        {
+          "id": "INC-003",
+          "service": "payments",
+          "title": "Elevated payment declines",
+          "severity": "SEV3",
+          "status": "resolved",
+          "runbook": "elevated-errors",
+          "opened_at": "2026-07-04T14:20:00Z",
+          "resolved_at": "2026-07-04T15:05:00Z",
+          "summary": "Decline rate hit 12% due to an expired downstream certificate; certificate rotated."
+        },
+        {
+          "id": "INC-004",
+          "service": "auth",
+          "title": "Token validation errors",
+          "severity": "SEV2",
+          "status": "resolved",
+          "runbook": "elevated-errors",
+          "opened_at": "2026-07-03T22:10:00Z",
+          "resolved_at": "2026-07-03T23:00:00Z",
+          "summary": "5xx from token validation caused by an exhausted connection pool; pool size raised."
+        },
+        {
+          "id": "INC-005",
+          "service": "search",
+          "title": "Search results slow",
+          "severity": "SEV3",
+          "status": "open",
+          "runbook": "high-latency",
+          "opened_at": "2026-07-05T07:40:00Z",
+          "resolved_at": null,
+          "summary": "Search p95 degraded after an index rebuild; cache hit-rate dropped to 40%."
+        },
+        {
+          "id": "INC-006",
+          "service": "checkout",
+          "title": "Disk full on checkout node",
+          "severity": "SEV2",
+          "status": "resolved",
+          "runbook": "disk-full",
+          "opened_at": "2026-07-02T03:30:00Z",
+          "resolved_at": "2026-07-02T04:15:00Z",
+          "summary": "Log volume filled the disk; rotated logs and expanded the volume."
+        },
+        {
+          "id": "INC-007",
+          "service": "cache",
+          "title": "Cache eviction storm",
+          "severity": "SEV2",
+          "status": "resolved",
+          "runbook": "memory-leak",
+          "opened_at": "2026-07-07T09:48:00Z",
+          "resolved_at": "2026-07-07T12:30:00Z",
+          "summary": "A leaking serializer buffer exhausted cache memory and triggered mass evictions; hit-rate fell from 92% to 31%. Root cause of INC-008 and INC-009; fixed by deploying v2026.07.07-2."
+        },
+        {
+          "id": "INC-008",
+          "service": "database",
+          "title": "Database connection saturation",
+          "severity": "SEV1",
+          "status": "resolved",
+          "runbook": "cascade-failure",
+          "opened_at": "2026-07-07T10:12:00Z",
+          "resolved_at": "2026-07-07T12:45:00Z",
+          "summary": "Cache misses from INC-007 multiplied read load eightfold and exhausted the connection pool (200/200). Restarting the database did not help; recovered once the cache (INC-007) was fixed."
+        },
+        {
+          "id": "INC-009",
+          "service": "checkout",
+          "title": "Checkout latency cascade",
+          "severity": "SEV2",
+          "status": "investigating",
+          "runbook": "cascade-failure",
+          "opened_at": "2026-07-07T10:20:00Z",
+          "resolved_at": null,
+          "summary": "Checkout p99 reached 4.8s while queries queued on the saturated database (INC-008), itself a symptom of the cache eviction storm (INC-007). Latency is recovering; verifying baseline."
+        },
+        {
+          "id": "INC-010",
+          "service": "api-gateway",
+          "title": "Gateway workers degrade over uptime",
+          "severity": "SEV3",
+          "status": "open",
+          "runbook": "memory-leak",
+          "opened_at": "2026-07-08T06:30:00Z",
+          "resolved_at": null,
+          "summary": "Gateway worker RSS climbs about 80MB per hour and p99 latency doubles before each scheduled restart clears it; unclear whether a slow leak or a slow upstream dependency is primary."
+        }
+      ],
+      "services": [
+        {
+          "name": "checkout",
+          "description": "Checkout and shopping-cart service",
+          "status": "degraded",
+          "owner": "team-payments"
+        },
+        {
+          "name": "payments",
+          "description": "Payment processing gateway",
+          "status": "operational",
+          "owner": "team-payments"
+        },
+        {
+          "name": "auth",
+          "description": "Authentication and identity service",
+          "status": "operational",
+          "owner": "team-platform"
+        },
+        {
+          "name": "search",
+          "description": "Product search API",
+          "status": "operational",
+          "owner": "team-discovery"
+        },
+        {
+          "name": "inventory",
+          "description": "Inventory and stock-availability service",
+          "status": "down",
+          "owner": "team-fulfillment"
+        },
+        {
+          "name": "database",
+          "description": "Primary transactional database cluster",
+          "status": "operational",
+          "owner": "team-platform"
+        },
+        {
+          "name": "cache",
+          "description": "Shared read-through cache fleet",
+          "status": "operational",
+          "owner": "team-platform"
+        },
+        {
+          "name": "api-gateway",
+          "description": "Public API gateway and edge routing",
+          "status": "degraded",
+          "owner": "team-platform"
+        }
+      ]
+    },
+    "memory.db": null
+  },
+  "after_state": {
+    "incidents.db": {
+      "audit_log": [],
+      "incidents": [
+        {
+          "id": "INC-001",
+          "service": "checkout",
+          "title": "Checkout latency spike",
+          "severity": "SEV2",
+          "status": "investigating",
+          "runbook": "high-latency",
+          "opened_at": "2026-07-05T08:15:00Z",
+          "resolved_at": null,
+          "summary": "p99 checkout latency rose from 200ms to 3.5s right after the 08:00 deploy."
+        },
+        {
+          "id": "INC-002",
+          "service": "inventory",
+          "title": "Inventory service unavailable",
+          "severity": "SEV1",
+          "status": "open",
+          "runbook": "service-down",
+          "opened_at": "2026-07-05T09:02:00Z",
+          "resolved_at": null,
+          "summary": "Inventory pods are crash-looping; stock lookups return HTTP 503."
+        },
+        {
+          "id": "INC-003",
+          "service": "payments",
+          "title": "Elevated payment declines",
+          "severity": "SEV3",
+          "status": "resolved",
+          "runbook": "elevated-errors",
+          "opened_at": "2026-07-04T14:20:00Z",
+          "resolved_at": "2026-07-04T15:05:00Z",
+          "summary": "Decline rate hit 12% due to an expired downstream certificate; certificate rotated."
+        },
+        {
+          "id": "INC-004",
+          "service": "auth",
+          "title": "Token validation errors",
+          "severity": "SEV2",
+          "status": "resolved",
+          "runbook": "elevated-errors",
+          "opened_at": "2026-07-03T22:10:00Z",
+          "resolved_at": "2026-07-03T23:00:00Z",
+          "summary": "5xx from token validation caused by an exhausted connection pool; pool size raised."
+        },
+        {
+          "id": "INC-005",
+          "service": "search",
+          "title": "Search results slow",
+          "severity": "SEV3",
+          "status": "open",
+          "runbook": "high-latency",
+          "opened_at": "2026-07-05T07:40:00Z",
+          "resolved_at": null,
+          "summary": "Search p95 degraded after an index rebuild; cache hit-rate dropped to 40%."
+        },
+        {
+          "id": "INC-006",
+          "service": "checkout",
+          "title": "Disk full on checkout node",
+          "severity": "SEV2",
+          "status": "resolved",
+          "runbook": "disk-full",
+          "opened_at": "2026-07-02T03:30:00Z",
+          "resolved_at": "2026-07-02T04:15:00Z",
+          "summary": "Log volume filled the disk; rotated logs and expanded the volume."
+        },
+        {
+          "id": "INC-007",
+          "service": "cache",
+          "title": "Cache eviction storm",
+          "severity": "SEV2",
+          "status": "resolved",
+          "runbook": "memory-leak",
+          "opened_at": "2026-07-07T09:48:00Z",
+          "resolved_at": "2026-07-07T12:30:00Z",
+          "summary": "A leaking serializer buffer exhausted cache memory and triggered mass evictions; hit-rate fell from 92% to 31%. Root cause of INC-008 and INC-009; fixed by deploying v2026.07.07-2."
+        },
+        {
+          "id": "INC-008",
+          "service": "database",
+          "title": "Database connection saturation",
+          "severity": "SEV1",
+          "status": "resolved",
+          "runbook": "cascade-failure",
+          "opened_at": "2026-07-07T10:12:00Z",
+          "resolved_at": "2026-07-07T12:45:00Z",
+          "summary": "Cache misses from INC-007 multiplied read load eightfold and exhausted the connection pool (200/200). Restarting the database did not help; recovered once the cache (INC-007) was fixed."
+        },
+        {
+          "id": "INC-009",
+          "service": "checkout",
+          "title": "Checkout latency cascade",
+          "severity": "SEV2",
+          "status": "investigating",
+          "runbook": "cascade-failure",
+          "opened_at": "2026-07-07T10:20:00Z",
+          "resolved_at": null,
+          "summary": "Checkout p99 reached 4.8s while queries queued on the saturated database (INC-008), itself a symptom of the cache eviction storm (INC-007). Latency is recovering; verifying baseline."
+        },
+        {
+          "id": "INC-010",
+          "service": "api-gateway",
+          "title": "Gateway workers degrade over uptime",
+          "severity": "SEV3",
+          "status": "open",
+          "runbook": "memory-leak",
+          "opened_at": "2026-07-08T06:30:00Z",
+          "resolved_at": null,
+          "summary": "Gateway worker RSS climbs about 80MB per hour and p99 latency doubles before each scheduled restart clears it; unclear whether a slow leak or a slow upstream dependency is primary."
+        }
+      ],
+      "services": [
+        {
+          "name": "checkout",
+          "description": "Checkout and shopping-cart service",
+          "status": "degraded",
+          "owner": "team-payments"
+        },
+        {
+          "name": "payments",
+          "description": "Payment processing gateway",
+          "status": "operational",
+          "owner": "team-payments"
+        },
+        {
+          "name": "auth",
+          "description": "Authentication and identity service",
+          "status": "operational",
+          "owner": "team-platform"
+        },
+        {
+          "name": "search",
+          "description": "Product search API",
+          "status": "operational",
+          "owner": "team-discovery"
+        },
+        {
+          "name": "inventory",
+          "description": "Inventory and stock-availability service",
+          "status": "down",
+          "owner": "team-fulfillment"
+        },
+        {
+          "name": "database",
+          "description": "Primary transactional database cluster",
+          "status": "operational",
+          "owner": "team-platform"
+        },
+        {
+          "name": "cache",
+          "description": "Shared read-through cache fleet",
+          "status": "operational",
+          "owner": "team-platform"
+        },
+        {
+          "name": "api-gateway",
+          "description": "Public API gateway and edge routing",
+          "status": "degraded",
+          "owner": "team-platform"
+        }
+      ]
+    },
+    "memory.db": null
+  },
+  "identity": {
+    "public_user_label": "bank-user-a",
+    "actual_sdk_user_id": null,
+    "actual_sdk_session_id": null,
+    "sdk_session_created": false,
+    "original_app_selected": false,
+    "invocations": []
+  },
+  "original_imported_files_verified": {
+    "agents/python/src/agent/__init__.py": "bbbf8c55d1c54616401e63e17e5821e05a43a3a0b813844392d6fb27c584db29",
+    "agents/python/src/agent/config.py": "ae37459425a0720f607ff7b3ee30c100c1d902b07e5e12da7b698557a0774587",
+    "agents/python/src/agent/models.py": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0",
+    "agents/python/src/agent/data.py": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+    "agents/python/src/agent/circuit.py": "a37314e0f2d4309bf3809dda9ea61577667b8c8e64f36527ffdeeea5ae91097c",
+    "agents/python/src/agent/resilience.py": "1a40de399059696590c9a36320546080b6cf00ecad4666ece1b29ae2a9ce0d3c",
+    "agents/python/src/agent/tools.py": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+    "agents/python/src/agent/memory.py": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2"
+  },
+  "dependency_imported_files_verified": {
+    "Lib/site-packages/typing_extensions.py": "4040ca1a1ecbee00d1385c12a93084d1c5bd46f0b774f07e5ae7e91c4f55e696",
+    "Lib/site-packages/pydantic_core/_pydantic_core.cp313-win_amd64.pyd": "708d468b354ecb0219d3d72242cf197915f655ab4290c5cbcf65c3076f1b9579",
+    "Lib/site-packages/pydantic_core/core_schema.py": "44207c46053d31e17b9a93bc0b6dff1ecdd427e14f49788f63da39d0bd15e562",
+    "Lib/site-packages/pydantic_core/__init__.py": "e644150a9eac4372c4ff826c8f614df288a561e39250e96c58e447f17806c6bf",
+    "Lib/site-packages/pydantic/version.py": "b8a3b18742e3899919d0a7cb9a5a4f611018fbf369217f228f138b0cd856f26f",
+    "Lib/site-packages/pydantic/warnings.py": "dd0c90a3a94ddf970eece5c36c511759c35a3e518245aade815640f86fa56702",
+    "Lib/site-packages/pydantic/_migration.py": "545ef72d1094cf722b6f9c55b75de36f7340717567105e93d7e27438b7de6790",
+    "Lib/site-packages/typing_inspection/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Lib/site-packages/typing_inspection/typing_objects.py": "a778d6290d51581c9c9a23e0263af2a4604c76def5c4d40a7cd1a375b0046ff6",
+    "Lib/site-packages/typing_inspection/introspection.py": "5888c45bd627da692d9527699e3f549adf35651596b1656772310e12181b4396",
+    "Lib/site-packages/pydantic/_internal/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Lib/site-packages/pydantic/_internal/_namespace_utils.py": "865dfe4d102bf365368d3c8f3f7b7e42ab2f28b8abc6d90b7cd7eb37e7e9d31f",
+    "Lib/site-packages/pydantic/_internal/_typing_extra.py": "743c6a178ea5ceea82a0a2eb007fe4f791036dac8478a6f69478ee4c9e4e0686",
+    "Lib/site-packages/pydantic/_internal/_repr.py": "8d07e726ec83c50a5244d846dbd208f4f5fc7b836fdaa599ac4c3696a8a1dd41",
+    "Lib/site-packages/pydantic/errors.py": "0eb1023c25a1498ad0f016b83bc84acc800cda2f460474d75802f36850e92dfe",
+    "Lib/site-packages/pydantic/__init__.py": "e62127278c07bf5384cdd2903f368a69929f3b8a524000bae4e0eb608ebf4bc6",
+    "Lib/site-packages/pydantic/_internal/_internal_dataclass.py": "fdb79d7355dbbaeca044688b66a914930c05a506a847584a2e5479d359f2c926",
+    "Lib/site-packages/pydantic/aliases.py": "be1087ca84969d7f8427ec166f9aa3e31c91b2c8065a74d07f3429e06499f6e8",
+    "Lib/site-packages/annotated_types/__init__.py": "a7104a4d439b27a9f74fc0be236b9ba1b7831e6044026802a205abc1298a9bc8",
+    "Lib/site-packages/pydantic/_internal/_import_utils.py": "4d18710f93ae63a094a2c8a805d05c254b34a26ec820e36265d60057bcd0f233",
+    "Lib/site-packages/pydantic/_internal/_validators.py": "ec64e35d758530b89be1dc50f8779a8879406624760761bc6f2098306ae6438f",
+    "Lib/site-packages/pydantic/_internal/_core_utils.py": "d63aeee156c9d31eb747a76d55cb8e23e74a4130bf77f9529c9584050cc63444",
+    "Lib/site-packages/pydantic/_internal/_forward_ref.py": "e67dd8efedc028b9fcfc54b761cecabad2e23d48725e602d90464e6859e89f03",
+    "Lib/site-packages/pydantic/_internal/_utils.py": "80de3c06c47e143ac90e26c29a8ebdb6d420ebb59bb85addcbfd4d40bddcbcb2",
+    "Lib/site-packages/pydantic/_internal/_generics.py": "0978dc22796f722f157a36969f57f7f64bf401c7c92f4479db7a912c56550feb",
+    "Lib/site-packages/pydantic/config.py": "a353faec53162101befd17c6b4a8ac9641f0a38a579bfea37ec478d4ff3cbfbf",
+    "Lib/site-packages/pydantic/_internal/_config.py": "473cacd49a1f7e7e097331257180eab192d18018079f69585aa0d1e79a0048f0",
+    "Lib/site-packages/pydantic/_internal/_docs_extraction.py": "7f2ce74801e1e40ce88675d94ad5741ef1fe9d16dabcd1cfca0fa49f1f92fc41",
+    "Lib/site-packages/pydantic/_internal/_fields.py": "85779bfb3a1d1b04c3bc6f4e2b5ba6d7c3fae1bedca876f418e9e03f88eb81c6",
+    "Lib/site-packages/pydantic/annotated_handlers.py": "59fc854aac28108157061ed3ef73f270a9682350e25f8e465a2d3e24eb024786",
+    "Lib/site-packages/pydantic/_internal/_core_metadata.py": "63f836b778bbba5b8afb05c266fcc97d114c3d4336dda0582df69ee05cc13f2d",
+    "Lib/site-packages/pydantic/_internal/_decorators.py": "443106fc96aee4d88971f3b4c60753ec43a0b14d4b816218957ef0379ad8b55b",
+    "Lib/site-packages/pydantic/plugin/__init__.py": "6bb4f0dfae94e8ade496d08235963bea773db2cfbbb86190e344d769df4eca94",
+    "Lib/site-packages/pydantic/plugin/_schema_validator.py": "b616d9cfffb9b183f3c6c0b9b962b91837d87269abb1e702f15c3f034da68705",
+    "Lib/site-packages/pydantic/_internal/_mock_val_ser.py": "c2645115206fa9f70b6c8e353ec165881e2ed80677989a597a21116c3df1293a",
+    "Lib/site-packages/pydantic/_internal/_schema_generation_shared.py": "17fadb41bae4a289a0c6cb24747a4fd23509ed309f7b40400c0124aba089e273",
+    "Lib/site-packages/pydantic/json_schema.py": "75ade143dbd03cb1213ecac39d49628df4357ee0825621959d4cceac064b803b",
+    "Lib/site-packages/pydantic/types.py": "7e961c1a702770ae108da166de366da98c31258cc1eeb2493df025f3d7a6cf24",
+    "Lib/site-packages/pydantic/fields.py": "6bc66125f23c143e934030fbf9c58c9b5657950bdad3031d4f6132e55bd57be3",
+    "Lib/site-packages/pydantic/functional_validators.py": "ee9fb88ef3ffffd8d9caf71d5e289d7b9a406bf26533b7c9d41824a9b8f14963",
+    "Lib/site-packages/pydantic_settings/exceptions.py": "a3d580a6957d9bff37df81cfd8bab1cdbad57cce161d5e7a0aa8ade7bb602f80",
+    "Lib/site-packages/pydantic/_internal/_signature.py": "8bf6fac2d96e895599461d5963c52f076519ce23f52a3a925d9802f87c70393d",
+    "Lib/site-packages/pydantic/_internal/_discriminated_union.py": "24bc7f3152dea7b331975cdba5d3598ef1c3733f89dce116e9671d575f3875c3",
+    "Lib/site-packages/pydantic/_internal/_known_annotated_metadata.py": "3f29d020543ad7fff819caf39f40f910d96583b8cfabf731a0b4e6b8540163cf",
+    "Lib/site-packages/pydantic/_internal/_schema_gather.py": "f2727eb8ce98e33eb1a5ab271a89c432e6ed3555ff9b179e44316677fa8c54b0",
+    "Lib/site-packages/pydantic/_internal/_generate_schema.py": "3e3a2051ac085e67fc2ee2cd7bdb1e26987b58b5b8309efe181b17c02b100bd4",
+    "Lib/site-packages/pydantic/_internal/_dataclasses.py": "660a9c9b559a24b0704d0402e6618a368c23953817de67d7fc9e5edaf776e253",
+    "Lib/site-packages/pydantic/dataclasses.py": "e17f567b48e3d4a2f006dbd84a40055cda27e3aceba4199164035fe0b7f06d78",
+    "Lib/site-packages/pydantic/_internal/_model_construction.py": "2682a663826b0c1bb79c6fed088ac982d249135baaeafdbd4ef4f3e449471398",
+    "Lib/site-packages/pydantic/main.py": "35b842cfe92ef300e060b40c062ef93afee1cb075cf0b7b0037a1434867c2554",
+    "Lib/site-packages/pydantic/type_adapter.py": "4f4e60f1641ccc1b1553fdf945d2b1823222ed8ecb222a7aee9177348ed7e061",
+    "Lib/site-packages/pydantic_settings/utils.py": "64f5c6a03e4c53740b97a4e54ff3f656a3f5d6432a6fdaeaa749dcde7b022d17",
+    "Lib/site-packages/pydantic_settings/sources/types.py": "e971fff9749155befc2db0c548320071f03b1aa3f6db7ee8cd497066a5234da4",
+    "Lib/site-packages/pydantic/plugin/_loader.py": "8408e04a58e82211b1dc0569229baac3948fb6d04d35e181493aea48c9cd8899",
+    "Lib/site-packages/pydantic/root_model.py": "70e328796769e77e8a17ce6e448716fa8cf53bb7791910a9c7d1d34b8fb5b9ff",
+    "Lib/site-packages/pydantic_settings/sources/utils.py": "d71843179706f8967162351fff10d36668a833e2cea11196841ba4eefddc8b74",
+    "Lib/site-packages/pydantic_settings/sources/base.py": "e57f88ad7bded3dd101febb7f4d455715079137854b0dbb1a9338e03787eff84",
+    "Lib/site-packages/pydantic_settings/sources/providers/env.py": "bf2576e89b0ee4b84b3a13d7f3a93aa442b56507ad4a31d01f9908acd4d0615e",
+    "Lib/site-packages/pydantic_settings/sources/providers/aws.py": "8e27a587ee67fe497c6fc80639dde4ab732bd549305b9263502aaab5c3b3c38b",
+    "Lib/site-packages/pydantic/alias_generators.py": "28cd67deee097cb48197552e620de1a181f35c90fecaf82b9eaf2ed5c73087f0",
+    "Lib/site-packages/pydantic_settings/sources/providers/azure.py": "963021a5b4360843720419bc4ad6415d5844859378ac3a817113f8262f247580",
+    "Lib/site-packages/pydantic_settings/sources/providers/cli.py": "7bf2c7befc90c915e6a78b36a4b25d5430af32c478e8b95ac8cad2240cc518ee",
+    "Lib/site-packages/dotenv/parser.py": "6052533a6cd4e0ad5052fe88e5936853059c28ed3fec0f098cd29a7cb376dca4",
+    "Lib/site-packages/dotenv/variables.py": "083d2a5cebefa41deae51a4140c0fda97eaf1d7ed2c96f92ba2c063054a5b74f",
+    "Lib/site-packages/dotenv/main.py": "697eb33eee75d78b73db61eaf96bf9a6547548c1811c93501b67e056e5470dea",
+    "Lib/site-packages/dotenv/__init__.py": "6e163e88aeb0c0765a996208e9e482b820165d435d9f64d016610eb97494ed23",
+    "Lib/site-packages/pydantic_settings/sources/providers/dotenv.py": "a2e9745472944b4505bebe5e15c47980f0c83fbed01cca47ebdeb74450f3b9a9",
+    "Lib/site-packages/pydantic_settings/sources/providers/gcp.py": "ca43f9b0b77a97de5ec80877a07cfb31ed2d9e5a8d667626fd846ec32c4fae93",
+    "Lib/site-packages/pydantic_settings/sources/providers/json.py": "f6ba21415fe72b4cfe5e7da7e9d2d4eb7f8ac773bbaf14a46b292431551d828b",
+    "Lib/site-packages/pydantic_settings/sources/providers/toml.py": "1422cee0abaebe10cf9b8723132d7c0c63e0860e80433abcb07cf0998b9d4e2a",
+    "Lib/site-packages/pydantic_settings/sources/providers/pyproject.py": "f8d628d291c4d0bb9e6dc087bb97b6c79b983d88d3e42721f56e670f6df0c26a",
+    "Lib/site-packages/pydantic_settings/sources/providers/secrets.py": "f1cded57d1725b7e8fe534e3896538b05ed721839b90b320c63edaf162fea67b",
+    "Lib/site-packages/pydantic_settings/sources/providers/yaml.py": "aca9083f1d8317edfea6b9a89e2535dc6af1458163b04c7ce04bd36cb8e2643e",
+    "Lib/site-packages/pydantic_settings/sources/providers/__init__.py": "804e972f3ea16caa5cfec4a274043e50cd34d6e5945e0ef1194f88447ac2e948",
+    "Lib/site-packages/pydantic_settings/sources/providers/nested_secrets.py": "93aa67b50ffc1867e947365330d02ddc5ed168037ae178e4bf4f1bda235190e3",
+    "Lib/site-packages/pydantic_settings/sources/__init__.py": "b0e750bb32dba41bc958a58653220afd978bbc99c0bc5885340444fcf5475c9e",
+    "Lib/site-packages/pydantic_settings/main.py": "1f129674507a76ece2518e1ecf14ede414b61e56fef3cd29c6c30ed47f860bf2",
+    "Lib/site-packages/pydantic_settings/version.py": "8d276b4910e726674348e8b9504037f5dfebdcebf58e7e6422baac6670f5f8fa",
+    "Lib/site-packages/pydantic_settings/__init__.py": "176e01d2ed94fef3e872667082aa4df3726dc1f15201bb25dd578f58024205b1",
+    "Lib/site-packages/opentelemetry/environment_variables/__init__.py": "23fb330709df211be3f55f9a4a584a2881942150e0d8ad856a2a949b30f61716",
+    "Lib/site-packages/opentelemetry/context/context.py": "179366df7ea53b39f70664b23499ea3b6f6d6b452bb917331462ede3981277ff",
+    "Lib/site-packages/opentelemetry/util/_importlib_metadata.py": "4d61329dac26b940325f981fdce101d47cd1a015f65668240577b077ca7beb6e",
+    "Lib/site-packages/opentelemetry/context/contextvars_context.py": "8c41dcec284d143de80dfe2cd045f1b6d24b976fb8ad2c18f87f0900655a1512",
+    "Lib/site-packages/opentelemetry/context/__init__.py": "72eea044020c635d080d48f061875c105e1ef9744246141103198f8dda55852a",
+    "Lib/site-packages/opentelemetry/util/types.py": "f33c6ca209ab6b565c73e11ff33131a63f2d68dc93f16d227db167fb63697f8e",
+    "Lib/site-packages/opentelemetry/metrics/_internal/observation.py": "fdc1edfc45b4b54334aa86d787fd93c95c453303f73336f2d9f0a60b50425951",
+    "Lib/site-packages/opentelemetry/metrics/_internal/instrument.py": "9ebe8aaf6961d43046151c0aed2aa6b87142f3dd62ea5a5a56b3c56474d93bff",
+    "Lib/site-packages/opentelemetry/util/_once.py": "11211cea9c3c780219d84315d99284a5bc9fcc5e385261a1916e36aa78ae6ba8",
+    "Lib/site-packages/opentelemetry/util/_providers.py": "b6203f9290fb8b357b690e374ef898eea97fe2ef3c237ca4a195a15299f65735",
+    "Lib/site-packages/opentelemetry/metrics/_internal/__init__.py": "1c8ccb342439e29c4f28d801acd6ddc3ae2a32e1524afd2d3c121f3820dc1161",
+    "Lib/site-packages/opentelemetry/metrics/__init__.py": "4466bf1d25fa7401b4777bb8e29a3a3cb02806817b68b237c00bacef0fccbdc5"
+  },
+  "denials": {
+    "private_reads_blocked": 1,
+    "network_operations_blocked": 0,
+    "process_launches_blocked": 0
+  },
+  "private_evaluator_probe_blocked": true,
+  "component_profile": "minimal_reads",
+  "unexecuted_component_obligations": [],
+  "original_app_executed": false,
+  "model_requests": 0,
+  "full_application_result": "unknown",
+  "dependency_profile": "Fresh frozen existing AgentOps Windows dependency profile; component execution only",
+  "interventions": [
+    "fixed public recipe controller",
+    "direct original read functions bypass resilience wrappers",
+    "auxiliary SDK context carrier, no original App",
+    "only immediate SDK coroutines; external waits refused",
+    "explicit frozen pywin32 import paths because isolated -S omits .pth execution"
+  ]
+}

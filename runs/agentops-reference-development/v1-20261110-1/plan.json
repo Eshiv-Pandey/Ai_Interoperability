@@ -1,0 +1,176 @@
+{
+  "schema_version": "agentops-component-reference-plan/1",
+  "created_at_utc": "2026-11-10T15:07:19.775238+00:00",
+  "case_ids": [
+    "agentops-d01-health-active",
+    "agentops-d02-logs-after-record",
+    "agentops-d03-restart-pause",
+    "agentops-d04-note-same-session",
+    "agentops-d05-structured-inventory",
+    "agentops-d06-keyword-retrieval"
+  ],
+  "maximum_recipe_processes": 6,
+  "worker_timeout_seconds": 90,
+  "provider_requests": 0,
+  "owned_inputs": [
+    {
+      "path": "benchmark/tasks-v1/agentops/application.json",
+      "bytes": 99764,
+      "sha256": "3eb5cb7a0ebcc5203d7e1c0edd6d5f13b503b9f908a3491670ea0ae95ec4607d"
+    },
+    {
+      "path": "benchmark/tasks-v1/agentops/evaluator.json",
+      "bytes": 232369,
+      "sha256": "2091981ecb2b1e84c30f52563c7dedee8764eef2a545d6cdb69aaaecd5f65ab7"
+    },
+    {
+      "path": "scripts/agentops_reference_actor_v1.py",
+      "bytes": 12976,
+      "sha256": "cd2fe3adeafb366796f00eb9abfe9aba6e27de053e0e2df1d590d146f9d257eb"
+    },
+    {
+      "path": "scripts/run_agentops_reference_development_v1.py",
+      "bytes": 9063,
+      "sha256": "fc3edd7ff2d606335dd88291b37dec777879bb84e348b2dff58a48d04b04e9f2"
+    },
+    {
+      "path": "scripts/agentops_reference_evaluator_v1.py",
+      "bytes": 12698,
+      "sha256": "5b7a2f262be97465b91206b1c63fd4648eae02a9042476f590f02e3c4a0de522"
+    },
+    {
+      "path": "runs/ap2-environment-preparation/installed-assessment-v1/environment-manifest.json",
+      "bytes": 2954267,
+      "sha256": "4d6efdd2e4003b82517f45aead140a7afd6f1e180b3ce518904d87c96e5adeb5"
+    }
+  ],
+  "source_pin": "c806b7f1cd0042c9817c0a4c46d80a9a95a24293",
+  "source_files": {
+    "agents/python/src/agent/__init__.py": "bbbf8c55d1c54616401e63e17e5821e05a43a3a0b813844392d6fb27c584db29",
+    "agents/python/src/agent/actions.py": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+    "agents/python/src/agent/budget.py": "db5cfd9a8c806f348fabf559c65a1b3d658fdcfed59ea30b856f357b5840daec",
+    "agents/python/src/agent/circuit.py": "a37314e0f2d4309bf3809dda9ea61577667b8c8e64f36527ffdeeea5ae91097c",
+    "agents/python/src/agent/compaction.py": "a017d9d9567b37d1a71e400313783bafaeec6f3f6b0198942d5b3ef8c6e2c6ca",
+    "agents/python/src/agent/composition.py": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+    "agents/python/src/agent/config.py": "ae37459425a0720f607ff7b3ee30c100c1d902b07e5e12da7b698557a0774587",
+    "agents/python/src/agent/config_check.py": "9232b8843ed40d8d5b7a8cfc109ad89ba61deb3f2da16ad26b7e6a7a4f3e8b79",
+    "agents/python/src/agent/data.py": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+    "agents/python/src/agent/delegation.py": "132e887b0fa6033da6b73ee264964e6f6b57d0a52cdcfe366dafbf67e75e7b00",
+    "agents/python/src/agent/domain.py": "a8af03e6c13bee0c690c87fa68fd37e722ed706f6f606d50e4126acd184ac848",
+    "agents/python/src/agent/governance.py": "e622f9811521cf6c6ea51161bdcf9f2280db3def7281abe2b632ad38decd0c33",
+    "agents/python/src/agent/guardrails.py": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+    "agents/python/src/agent/longterm.py": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+    "agents/python/src/agent/mcp_client.py": "b34ba776caaccbf2f77ce7e030a3fbbce95fa8df4e03e48b6d32cd3b0443e19a",
+    "agents/python/src/agent/mcp_server.py": "e9187c6b0cb06a492c1347685c3c47dfb0a3ae81eaef41a5b544d1d5aff1ed8e",
+    "agents/python/src/agent/memory.py": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+    "agents/python/src/agent/model.py": "af28dcbd50d7dfc52364833baacfaa909eb6cbccd7d3c43230e914d2d13f718b",
+    "agents/python/src/agent/models.py": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0",
+    "agents/python/src/agent/pii.py": "702c6afa72203c124d91e9de16a20cbd2a18ae8f215d780fdf078944b5bd6455",
+    "agents/python/src/agent/report.py": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043",
+    "agents/python/src/agent/resilience.py": "1a40de399059696590c9a36320546080b6cf00ecad4666ece1b29ae2a9ce0d3c",
+    "agents/python/src/agent/retrieval.py": "7c3c08f4d4177be6bc8ccf4364fa3ccf63d7ee191d11441c34edaf2b1fa72e87",
+    "agents/python/src/agent/server.py": "578bd65522c3edcfd49d831b96b42a4990e1aaa4f39c0e52612e1dbe667680d8",
+    "agents/python/src/agent/skills.py": "c07a179e0b1134c1bfe4b78b82d4ec646d3069824e91fd10af1fea937bb2ccee",
+    "agents/python/src/agent/state.py": "0a560ea3d5cbf4203a02e2ef2842a5589bd93cd77c3454078ef1edcc8104a7f5",
+    "agents/python/src/agent/structured_report/__init__.py": "df44f9cec26ad440f75031081635de393f11254daa31210970dab1448e42591c",
+    "agents/python/src/agent/structured_report/agent.py": "60fa9e15f3eafadc01c71f351b20f897aedfc7e7b62f9aef9683084fceecc8dd",
+    "agents/python/src/agent/telemetry.py": "195cd36707f3ce7b314a6c546da38065e4beb1ba710a7d75b2f135b842a60ff8",
+    "agents/python/src/agent/tools.py": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+    "agents/python/src/agent/workflow.py": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747"
+  },
+  "seed_files": [
+    {
+      "path": "agents/data/incidents.db",
+      "bytes": 40960,
+      "sha256": "957ae8da4e1d174b9ff349acfca7ce4c204020a572fbeb7245783285d49d455b"
+    },
+    {
+      "path": "agents/data/logs/cache.log",
+      "bytes": 915,
+      "sha256": "699784f774655f299a0c729503cec7a428047ece84af87594e624ef4adc85818"
+    },
+    {
+      "path": "agents/data/logs/checkout.log",
+      "bytes": 502,
+      "sha256": "8f70767232f7974060dfcdf62531e9fa7c8faa37d3be710f01068ccdb47b7124"
+    },
+    {
+      "path": "agents/data/logs/database.log",
+      "bytes": 1147,
+      "sha256": "e3b3b850636c6d641c2466a76ba8a4cb045fd4c26e33b9e0dce57bab1653ec86"
+    },
+    {
+      "path": "agents/data/logs/inventory.log",
+      "bytes": 501,
+      "sha256": "f336ebdd541ab9d83a50fcc9f80d00d9800047c3d48fb158020a31c0f0977ecb"
+    },
+    {
+      "path": "agents/data/mise.toml",
+      "bytes": 1790,
+      "sha256": "ee6e4ed95f62ab5dfae09204016ca35b7a423b40998c2208de4f7e425d11cbdd"
+    },
+    {
+      "path": "agents/data/README.md",
+      "bytes": 2146,
+      "sha256": "bb7bd6b0af23784c6351c5b212971c3309ee05715d809a1e20c12de8d2c9131d"
+    },
+    {
+      "path": "agents/data/runbooks/cascade-failure.md",
+      "bytes": 1943,
+      "sha256": "903904200bf9a3293f336e40d8dd7af89f3b456ad88420f948166d2430e742ee"
+    },
+    {
+      "path": "agents/data/runbooks/deployment-rollback.md",
+      "bytes": 1011,
+      "sha256": "1694aedf5a1b23eccafe8d63893b445988816d7ad6ae499db4ffc7b578df1317"
+    },
+    {
+      "path": "agents/data/runbooks/disk-full.md",
+      "bytes": 1008,
+      "sha256": "eb53323f237d0bdcf58889c2c16325a52c23cf2a988f5a59351194fe608587dd"
+    },
+    {
+      "path": "agents/data/runbooks/elevated-errors.md",
+      "bytes": 1114,
+      "sha256": "37a18b7f4bac7e688ebaf5dc347e138120140feab62312cdec3423284dafbf4c"
+    },
+    {
+      "path": "agents/data/runbooks/high-latency.md",
+      "bytes": 1198,
+      "sha256": "82b0b0a9a430c54da38577fc71ff6908d218d58476a5ca2ce69c65aee4b513a5"
+    },
+    {
+      "path": "agents/data/runbooks/memory-leak.md",
+      "bytes": 1383,
+      "sha256": "94a594fdbe254a5f6ce5dae003ffeccd59325dcdf16d0afe1bf619156e5e1d2a"
+    },
+    {
+      "path": "agents/data/runbooks/service-down.md",
+      "bytes": 1210,
+      "sha256": "987c45602bf8977a0409f8684708f1e790f9126668114631a7438352d5a9cbb9"
+    },
+    {
+      "path": "agents/data/skills/incident-triage/SKILL.md",
+      "bytes": 1147,
+      "sha256": "b7649c277932a56deb725317768a78d7ddb0ca2fe1c4a837398c166c7c7ae339"
+    },
+    {
+      "path": "agents/data/skills/remediation/SKILL.md",
+      "bytes": 1250,
+      "sha256": "852d957a7b9ea6390af0aca7cd1cb13cbf0de6b655c2e84940eb67853660e390"
+    },
+    {
+      "path": "agents/data/sql/schema.sql",
+      "bytes": 3314,
+      "sha256": "8da41c51fb79c46846060f5b801eb21f2ac989fd8283b18607b4f35136dc632c"
+    },
+    {
+      "path": "agents/data/sql/seed.sql",
+      "bytes": 4259,
+      "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58"
+    }
+  ],
+  "dependency_manifest_sha256": "4d6efdd2e4003b82517f45aead140a7afd6f1e180b3ce518904d87c96e5adeb5",
+  "dependency_profile": "Frozen AP2 Windows dependency profile; differs from AgentOps native runtime",
+  "application_scope": "six original-component public development recipes; original App/model execution remains unknown"
+}

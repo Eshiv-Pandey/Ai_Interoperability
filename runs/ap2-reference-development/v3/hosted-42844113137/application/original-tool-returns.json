@@ -1,0 +1,86 @@
+[
+  {
+    "phase": "catalog",
+    "value": [
+      {
+        "amount": 12.5,
+        "cart_id": "cart_1",
+        "currency": "USD",
+        "item_label": "Walking shoes"
+      },
+      {
+        "amount": 18.0,
+        "cart_id": "cart_2",
+        "currency": "USD",
+        "item_label": "Trail shoes"
+      },
+      {
+        "amount": 23.0,
+        "cart_id": "cart_3",
+        "currency": "USD",
+        "item_label": "Canvas shoes"
+      }
+    ]
+  },
+  {
+    "phase": "cart_selection",
+    "value": "Cart cart_1 selected."
+  },
+  {
+    "phase": "shipping",
+    "value": {
+      "address_line": [
+        "123 Main St"
+      ],
+      "city": "Sample City",
+      "country": "US",
+      "dependent_locality": null,
+      "organization": "Sample Organization",
+      "phone_number": "+1-000-000-0000",
+      "postal_code": "00000",
+      "recipient": "Bugs Bunny",
+      "region": "ST",
+      "sorting_code": null
+    }
+  },
+  {
+    "phase": "payment_methods",
+    "value": {
+      "payment_method_aliases": [
+        "American Express ending in 4444",
+        "American Express ending in 8888"
+      ]
+    }
+  },
+  {
+    "phase": "credential_token",
+    "value": {
+      "status": "success",
+      "token": "fake_payment_credential_token_0"
+    }
+  },
+  {
+    "phase": "checkout",
+    "value": {
+      "amount": 12.5,
+      "amount_cents": 1250,
+      "cart_id": "cart_1",
+      "checkout_hash": "5ga4-FJHLcjvJxISPEqgYAn0LOSQa569dOs5wi1QyB0",
+      "checkout_jwt": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1lcmNoYW50LWtleS0xIn0.eyJpZCI6ImNhcnRfMSIsIm1lcmNoYW50Ijp7ImlkIjoibWVyY2hhbnRfMSIsIm5hbWUiOiJHZW5lcmljIE1lcmNoYW50Iiwid2Vic2l0ZSI6Imh0dHBzOi8vZGVtby1tZXJjaGFudC5leGFtcGxlIn0sImxpbmVfaXRlbXMiOlt7ImlkIjoibGlfN2UwNTRkYTkwYzczNDg5Y2IxNzhlMzVmYTVjYzhjNjMiLCJpdGVtIjp7ImlkIjoiY2FydF8xIiwidGl0bGUiOiJXYWxraW5nIHNob2VzIiwicHJpY2UiOjEyNTB9LCJxdWFudGl0eSI6MSwidG90YWxzIjpbeyJ0eXBlIjoic3VidG90YWwiLCJhbW91bnQiOjEyNTB9LHsidHlwZSI6InRvdGFsIiwiYW1vdW50IjoxMjUwfV19XSwic3RhdHVzIjoiaW5jb21wbGV0ZSIsImN1cnJlbmN5IjoiVVNEIiwidG90YWxzIjpbeyJ0eXBlIjoic3VidG90YWwiLCJhbW91bnQiOjEyNTB9LHsidHlwZSI6InRvdGFsIiwiYW1vdW50IjoxMjUwfV0sImxpbmtzIjpbeyJ0eXBlIjoicHJpdmFjeV9wb2xpY3kiLCJ1cmwiOiJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZS9wcml2YWN5In1dLCJpYXQiOjE3OTQzMjQzOTQsImV4cCI6MTc5NDMyNzk5NH0.hybDBoCoA2_Z1wsVauBsrQqFR4myC1l1d2ni0tGKQ2yb4ziiJGrNeVNOxSWfWpChiyQly-yAv6fctP2gbmieiw",
+      "currency": "USD",
+      "item_label": "Walking shoes"
+    }
+  },
+  {
+    "phase": "checkout_mandate",
+    "value": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogInktUkRHMGtVYUZNbzc1ZjRhaEYyTDFyUlktdXhrOFpDRzBMajRQTW5hNW8ifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.sjj4JSIYYhx6pALoFxxshZ4polhFMDYkr0AJkBt0xxyxHO-00DWOOuyKOzcXP5FEn2S0SCPvJ3AWGydK6EnezQ~WyJ3OVVlV1RiYkpJWFZveXFxNElVSlZnIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZOMlV3TlRSa1lUa3dZemN6TkRnNVkySXhOemhsTXpWbVlUVmpZemhqTmpNaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpYWVd4cmFXNW5JSE5vYjJWeklpd2ljSEpwWTJVaU9qRXlOVEI5TENKeGRXRnVkR2wwZVNJNk1Td2lkRzkwWVd4eklqcGJleUowZVhCbElqb2ljM1ZpZEc5MFlXd2lMQ0poYlc5MWJuUWlPakV5TlRCOUxIc2lkSGx3WlNJNkluUnZkR0ZzSWl3aVlXMXZkVzUwSWpveE1qVXdmVjE5WFN3aWMzUmhkSFZ6SWpvaWFXNWpiMjF3YkdWMFpTSXNJbU4xY25KbGJtTjVJam9pVlZORUlpd2lkRzkwWVd4eklqcGJleUowZVhCbElqb2ljM1ZpZEc5MFlXd2lMQ0poYlc5MWJuUWlPakV5TlRCOUxIc2lkSGx3WlNJNkluUnZkR0ZzSWl3aVlXMXZkVzUwSWpveE1qVXdmVjBzSW14cGJtdHpJanBiZXlKMGVYQmxJam9pY0hKcGRtRmplVjl3YjJ4cFkza2lMQ0oxY213aU9pSm9kSFJ3Y3pvdkwyUmxiVzh0YldWeVkyaGhiblF1WlhoaGJYQnNaUzl3Y21sMllXTjVJbjFkTENKcFlYUWlPakUzT1RRek1qUXpPVFFzSW1WNGNDSTZNVGM1TkRNeU56azVOSDAuaHliREJvQ29BMl9aMXdzVmF1QnNyUXFGUjRteUMxbDFkMm5pMHRHS1EyeWI0emlpSkdyTmVWTk94U1dmV3BDaGl5UWx5LXlBdjZmY3RQMmdibWllaXciXQ~WyJYQ2J3eHA4NGdJUmwzd3Y1QjRmT0NnIiwgeyJfc2QiOiBbIkVvdzdkcTJSY3dvS3dzM0V0Z21oSnlvVjVKMVJ4bDV6Z3ZuR0ZSS3Z4VlkiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICI1Z2E0LUZKSExjanZKeElTUEVxZ1lBbjBMT1NRYTU2OWRPczV3aTFReUIwIiwgImlhdCI6IDE3OTQzMjQzOTQsICJleHAiOiAxNzk0MzI3OTk0fV0~"
+  },
+  {
+    "phase": "payment_mandate",
+    "value": "eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogInJ0MnRCU1BSMDhxcmMway1mZ2pIa1VTVWtoenBocXVCVHJCZFh5R2JGM1kifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.aaXfKkAD67YbpghLQzGK_Jqfac2y_Ydz0RRrpvCuURwNFUQwb2R6xfc9M466MaffAkir90darzJzx4MPD1kyaw~WyJjUkk2dlVuT014c2VPMkRIZl9jZmhRIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiNWdhNC1GSkhMY2p2SnhJU1BFcWdZQW4wTE9TUWE1NjlkT3M1d2kxUXlCMCIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDEyNTAsICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0MzI0Mzk0LCAiZXhwIjogMTc5NDMyNzk5NH1d~"
+  },
+  {
+    "phase": "cp_association",
+    "value": "Successfully sent mandates to the credentials provider."
+  }
+]
