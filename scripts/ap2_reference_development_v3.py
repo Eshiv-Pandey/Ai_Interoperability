@@ -21,7 +21,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from types import SimpleNamespace
+from types import CodeType, SimpleNamespace
 
 ROOT = Path(__file__).resolve().parents[1]
 STAGE = ROOT / 'runs/ap2-environment-preparation/source-stage-v1/manifest.json'
@@ -52,6 +52,19 @@ PEERS = (
 )
 SECRET_NAMES = ('GOOGLE_API_KEY', 'GEMINI_API_KEY', 'GOOGLE_APPLICATION_CREDENTIALS',
                 'AGENT_PROVIDER_SIGNING_KEY_PEM', 'MERCHANT_SIGNING_KEY_PEM')
+CODE_FIELDS = (
+    'co_argcount', 'co_posonlyargcount', 'co_kwonlyargcount', 'co_nlocals', 'co_stacksize',
+    'co_flags', 'co_code', 'co_names', 'co_varnames', 'co_freevars', 'co_cellvars',
+    'co_filename', 'co_name', 'co_qualname', 'co_firstlineno', 'co_linetable', 'co_exceptiontable',
+)
+OWNED_COMPONENTS = (
+    'scripts/ap2_reference_development_v3.py',
+    'src/interoperability/__init__.py',
+    'src/interoperability/ap2_hp_original_binding_v1.py',
+    'src/interoperability/ap2_hp_reference_execution_v1.py',
+    'src/interoperability/ap2_hp_reference_plan_v1.py',
+    'src/interoperability/ap2_hp_durable_observer_v1.py',
+)
 
 
 def digest(raw):
@@ -61,6 +74,36 @@ def digest(raw):
 def need(condition, label):
     if not condition:
         raise ValueError(label)
+
+
+def constant_fingerprint(value):
+    """Typed structural constants; serialization reference memoization is excluded."""
+    if type(value) is CodeType:
+        return code_fingerprint(value)
+    if value is None:
+        return ('none',)
+    if value is Ellipsis:
+        return ('ellipsis',)
+    if type(value) in (str, int, bool, bytes):
+        return (type(value).__name__, value)
+    if type(value) is float:
+        return ('float', value.hex())
+    if type(value) is complex:
+        return ('complex', value.real.hex(), value.imag.hex())
+    if type(value) is tuple:
+        return ('tuple', tuple(constant_fingerprint(child) for child in value))
+    if type(value) is frozenset:
+        return ('frozenset', tuple(sorted((constant_fingerprint(child) for child in value), key=repr)))
+    raise ValueError('unsupported_code_constant_type')
+
+
+def code_fingerprint(code):
+    """All code identity attributes plus recursively typed constants and positions."""
+    need(type(code) is CodeType, 'exact_code_object_required')
+    return ('code', tuple((name, constant_fingerprint(getattr(code, name))) for name in CODE_FIELDS),
+            constant_fingerprint(code.co_consts),
+            constant_fingerprint(tuple(code.co_lines())),
+            constant_fingerprint(tuple(code.co_positions())))
 
 
 def write(path, value):
@@ -150,7 +193,8 @@ def imported_inventory(site_packages):
         filename = getattr(module, '__file__', None)
         if filename:
             path = Path(filename).resolve()
-            if path.is_file() and (path.is_relative_to(site_packages) or path.is_relative_to(SOURCE)):
+            if path.is_file() and (path.is_relative_to(site_packages) or path.is_relative_to(SOURCE)
+                                   or path.is_relative_to(ROOT / 'src')):
                 result[name] = {'path': str(path), **digest(path.read_bytes())}
     return result
 
@@ -201,6 +245,25 @@ async def application(output, site_packages, private):
     source_binding = binding.SourceBinding(SOURCE.resolve(), site_packages, STAGE.resolve(), runtime_path.resolve(),
                                           stage_raw, runtime_raw, source_files, runtime_files)
     original_validator = binding.SourceBinding.verify_unchanged
+    original_marshal = binding.marshal
+    original_function_check = binding._verify_function
+    callable_checks = []
+
+    def observed_function_check(function, node, expected, namespace, enclosing=None):
+        actual_fingerprint, expected_fingerprint = code_fingerprint(function.__code__), code_fingerprint(expected)
+        row = {
+            'index': len(callable_checks), 'module': function.__module__, 'qualified_name': function.__qualname__,
+            'full_structural_code_equal': actual_fingerprint == expected_fingerprint,
+            'legacy_marshal_bytes_equal': original_marshal.dumps(function.__code__) == original_marshal.dumps(expected),
+            'actual_fingerprint_sha256': digest(repr(actual_fingerprint).encode())['sha256'],
+            'expected_fingerprint_sha256': digest(repr(expected_fingerprint).encode())['sha256'],
+            'identity_fields': list(CODE_FIELDS) + ['co_consts_recursive_types', 'co_lines', 'co_positions'],
+        }
+        callable_checks.append(row)
+        need(len(callable_checks) <= 1000, 'callable_observation_bound')
+        need(row['full_structural_code_equal'], 'original_callable_structural_code_differs:' + function.__qualname__)
+        # The unchanged owned helper still checks globals, defaults and closure identity.
+        return original_function_check(function, node, expected, namespace, enclosing)
 
     def portable_validator(self):
         need(self is source_binding and self.stage_path.read_bytes() == stage_raw
@@ -209,6 +272,8 @@ async def application(output, site_packages, private):
         return True
 
     binding.SourceBinding.verify_unchanged = portable_validator
+    binding.marshal = SimpleNamespace(dumps=code_fingerprint)
+    binding._verify_function = observed_function_check
     model = OfflineModel(output)
     original_genai, original_init = genai.Client, httpx.AsyncClient.__init__
     clients, transports, wrappers = [], {}, {}
@@ -218,7 +283,7 @@ async def application(output, site_packages, private):
     })
     lease = outcome = None
     transport_rows = []
-    restored = False
+    restored = True
 
     class LocalTransport(httpx.AsyncBaseTransport):
         async def handle_async_request(self, request):
@@ -283,6 +348,8 @@ async def application(output, site_packages, private):
             await transport.aclose()
         httpx.AsyncClient.__init__, genai.Client = original_init, original_genai
         binding.SourceBinding.verify_unchanged = original_validator
+        binding.marshal = original_marshal
+        binding._verify_function = original_function_check
         mandate_module.LOG_FILE_PATH = original_log_path
         for role, _, _, _, _ in PEERS:
             if role in wrappers:
@@ -300,10 +367,12 @@ async def application(output, site_packages, private):
         recorder.publish(allow_incomplete=True)
         recorder.close()
         write(output / 'transport-interventions.json', transport_rows)
+        write(output / 'original-callable-code-checks.json', callable_checks)
         write(output / 'imported-modules.json', imported_inventory(site_packages))
         write(output / 'cleanup.json', {'client_count': len(clients), 'clients_closed': all(c.is_closed for c in clients),
                                       'caller_aliases_restored': restored, 'raw': {key: value.report() for key, value in wrappers.items()},
                                       'owned_validator_intervention': 'portable source and fresh site-packages inventory; legacy native environment claim not used',
+                                      'owned_code_comparison_intervention': 'full recursive structural code identity, typed constants, filename/line/position/exception metadata; legacy globals/default/closure/alias guards retained',
                                       'original_sdk_log_destination_intervention': 'owned private temporary profile; no source-tree log writes',
                                       'runtime_tree_unchanged': inventory(site_packages) == runtime_files,
                                       'source_tree_unchanged': source_contract()[1] == source_files})
@@ -312,6 +381,10 @@ async def application(output, site_packages, private):
 
 def worker(output, site_packages):
     need(not any(os.environ.get(name) for name in SECRET_NAMES), 'credential_free_worker_required')
+    plan = json.loads((output / 'plan.json').read_bytes())
+    for name, expected in plan['owned_components'].items():
+        need(digest((ROOT / name).read_bytes()) == expected, 'prospective_owned_source_component_changed')
+        need(digest((output / 'owned-source' / name).read_bytes()) == expected, 'retained_owned_source_component_changed')
     with tempfile.TemporaryDirectory(prefix='ap2-offline-v3-private-') as temporary:
         private = Path(temporary).resolve()
         os.environ['TEMP_DB_DIR'] = str(private)
@@ -346,14 +419,29 @@ def main(argv=None):
                                                  'provider_requests': 0, 'native_qualification_established': False})
             return 3
     output.mkdir(parents=True, exist_ok=False)
-    source_contract()
+    stage_raw, source_files = source_contract()
     resources = resource_check()
     write(output / 'resource-check.json', resources)
     environment = {key: os.environ[key] for key in ('SYSTEMROOT', 'WINDIR', 'PATH', 'TEMP', 'TMP', 'LANG') if key in os.environ}
     environment.update(PYTHONDONTWRITEBYTECODE='1', PYTHONNOUSERSITE='1')
     shutil.copyfile(__file__, output / 'source-runner.py')
+    component_hashes = {}
+    for name in OWNED_COMPONENTS:
+        raw = (ROOT / name).read_bytes()
+        retained = output / 'owned-source' / name
+        retained.parent.mkdir(parents=True, exist_ok=True)
+        retained.write_bytes(raw)
+        component_hashes[name] = digest(raw)
+    for name, expected in source_files.items():
+        raw = (SOURCE / name).read_bytes()
+        need(digest(raw) == expected, 'original_source_snapshot_changed')
+        retained = output / 'original-source' / name
+        retained.parent.mkdir(parents=True, exist_ok=True)
+        retained.write_bytes(raw)
+    (output / 'source-stage-manifest.json').write_bytes(stage_raw)
     write(output / 'plan.json', {'schema_version': 'ap2-application-development/3', 'created_utc': datetime.now(timezone.utc).isoformat(),
                                 'provider_requests_allowed': 0, 'contract': CONTRACT, 'offline_model_call_bound': 24,
+                                'owned_components': component_hashes,
                                 'scope': 'original apps, source-bound caller, actual A2A SDK and task stores; offline model/ASGI interventions',
                                 'native_qualification_established': False, 'aggregate_task_grade': None,
                                 'source_manifest_sha256': STAGE_SHA, 'worker_timeout_seconds': 180})

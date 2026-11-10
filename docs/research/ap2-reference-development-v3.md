@@ -16,6 +16,18 @@ disclosed plain state carrier and fixed development decisions.
 The original SDK mandate log destination is redirected to the private temporary
 profile so logging cannot write into the frozen source tree.
 
+The first hosted allocation, run 42836579769, installed its Linux environment
+successfully and imported the original apps/callers, then stopped before peer
+requests when the owned v1 helper compared noncanonical marshal bytes. A
+constructed imported docstring case reproduces equal code objects with different
+marshal reference encoding. The successor uses a full recursive structural code
+fingerprint, including typed constants, bytecode, arguments/flags, closure names,
+filename/name, line/position and exception metadata. The unchanged helper retains
+its globals, defaults, closure and seven-client-alias guards. Per-callable checks
+are retained. Every successor allocation retains its runner, owned helper sources
+and all 136 original AP2 source files before import. The failed allocation and
+its exact runner copy remain unchanged.
+
 The runner chooses only returned carts and payment aliases, approves the actual
 checkout summary, and supplies 123 only when the original public merchant task
 requests a challenge. It resumes that merchant task and preserves an actual
