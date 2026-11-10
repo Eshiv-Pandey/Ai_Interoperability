@@ -1,0 +1,55 @@
+name: AP2 checked admission and original application development v4
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checked-original-application:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.1'
+      - name: Prepare exact original sources and frozen dependency versions
+        shell: bash
+        run: |
+          python -I -S -B scripts/ap2_reference_development_v4.py prepare --output "$RUNNER_TEMP/ap2-v4/prepared"
+          python -m venv "$RUNNER_TEMP/ap2-v4-environment"
+      - name: Install fresh Linux wheels with retained provenance
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/ap2-v4-environment/bin/python" -m pip install --report "$RUNNER_TEMP/ap2-v4/pip-install-report.json" -r "$RUNNER_TEMP/ap2-v4/prepared/requirements.txt"
+          "$RUNNER_TEMP/ap2-v4-environment/bin/python" -m pip check > "$RUNNER_TEMP/ap2-v4/pip-check.txt"
+      - name: Check inherited intervention and new admission controls
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/ap2-v4-environment/bin/python" -B -m unittest discover -s tests -p test_ap2_reference_development_v3.py -v
+          "$RUNNER_TEMP/ap2-v4-environment/bin/python" -B -m unittest discover -s tests -p test_ap2_reference_development_v4.py -v
+      - name: Execute checked shared admission before the original merchant continuation
+        shell: bash
+        run: |
+          python -I -S -B scripts/ap2_reference_development_v4.py execute \
+            --output "$RUNNER_TEMP/ap2-v4/application" \
+            --site-packages "$RUNNER_TEMP/ap2-v4-environment/lib/python3.13/site-packages"
+      - name: Analyze retained admission ordering and original task receipt semantics
+        if: always()
+        shell: bash
+        run: |
+          python -I -S -B scripts/analyze_ap2_application_development_v4.py \
+            --application "$RUNNER_TEMP/ap2-v4/application" \
+            --output "$RUNNER_TEMP/ap2-v4/analysis"
+      - name: Retain whole actual allocation including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ap2-checked-original-application-development-v4
+          path: ${{ runner.temp }}/ap2-v4/
+          if-no-files-found: error
+          retention-days: 30
