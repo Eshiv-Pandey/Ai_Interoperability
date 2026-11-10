@@ -1,0 +1,176 @@
+{
+  "checks": [
+    {
+      "evidence": {
+        "error_free_owned_cell_count": 31,
+        "purchase_counts": {
+          "conventional": 3,
+          "recovery": 10,
+          "recovery_shared": 9,
+          "reference": 11,
+          "shared": 3
+        }
+      },
+      "id": "ap2_same_65_cell_purchase_and_error_free_denominators",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "rows": 14
+      },
+      "id": "ap2_every_paired_table_row_matches_independent_raw_numeric_audit",
+      "passed": true
+    },
+    {
+      "evidence": [
+        {
+          "arm": "reference",
+          "suffix": "A2AClientJSONRPCError"
+        },
+        {
+          "arm": "conventional",
+          "suffix": "A2AClientJSONRPCError"
+        },
+        {
+          "arm": "recovery",
+          "suffix": "A2AClientJSONRPCError"
+        },
+        {
+          "arm": "shared",
+          "suffix": "AdmissionRefused"
+        },
+        {
+          "arm": "recovery_shared",
+          "suffix": "AdmissionRefused"
+        }
+      ],
+      "id": "all_five_duplicate_purchases_keep_exact_error_classification",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "denominator": 13,
+        "shared_minus_recovery_purchases": -7
+      },
+      "id": "adverse_ap2_utility_and_unequal_information_are_disclosed",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "cache_policy_cells": 1056,
+        "method_cells": 1584,
+        "profiles": 66
+      },
+      "id": "cache_ablation_table_and_method_cell_denominators",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "proof_bytes": [
+          19880,
+          27248,
+          27248,
+          27248,
+          27248
+        ],
+        "work_units": [
+          3382,
+          46278,
+          44432,
+          50150,
+          46840
+        ]
+      },
+      "id": "cache_work_proof_and_hits_match_retained_audit",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "retained_audit_status": "passed_independent_raw_source_and_state_census"
+      },
+      "id": "agentops_34_candidate_mechanical_reference_scope",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "candidate_denominator": 34,
+        "generic_adverse": 28,
+        "new_processes": 29,
+        "purchases": 0
+      },
+      "id": "adk_prefix_process_denominator_not_full_task_success",
+      "passed": true
+    },
+    {
+      "evidence": "New studies must be covered by the v7 guide.",
+      "id": "inherited_artifact_guide_link_updated",
+      "passed": true
+    },
+    {
+      "evidence": "The earlier effect fixture and new candidate references have different scopes.",
+      "id": "inherited_one_fixture_external_validity_statement_scoped",
+      "passed": true
+    },
+    {
+      "evidence": "Hash binding alone must not accept a failed or incomplete independent review.",
+      "id": "builder_requires_complete_passed_ap2_and_adk_peers",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "broken": [],
+        "checked": 30
+      },
+      "id": "all_local_manuscript_links_resolve",
+      "passed": true
+    }
+  ],
+  "draft_sha256": "fc21a040f56cbeeb984841562d983805efdc996f696bdd395ecd37670b73b743",
+  "findings_addressed": [
+    "AP2 36 payments versus 31 error-free cells and all five duplicate suffix errors",
+    "Adverse shared versus recovery utility and unequal arm information",
+    "Inherited v6 artifact-guide and one-fixture scope",
+    "Passed peer-status and complete-denominator requirements before building"
+  ],
+  "human_scientific_review": false,
+  "inputs": [
+    {
+      "bytes": 25633,
+      "path": "runs/ap2-reference-development/v5/retained-42881390576-2/independent-peer-review-v1.json",
+      "sha256": "b2f2d9819e0192f630957860e9672cee2d2939d7547abc79240581907bf1faa8"
+    },
+    {
+      "bytes": 108164,
+      "path": "runs/ap2-reference-development/v5/retained-42881390576-2/numeric-peer-review-v1.json",
+      "sha256": "fd587eec1d128297772c9030574201c896454ab156ea80700d12c273bd65b365"
+    },
+    {
+      "bytes": 738115,
+      "path": "runs/shared-cache-ablation/read-review-42879031721-1/result.json",
+      "sha256": "7fe210d09d029ba4c7056c9ec77ea2018a0a0476d8fc98db92cd368e347bd995"
+    },
+    {
+      "bytes": 26121,
+      "path": "runs/ci-agentops-governed-app-reference-v4/retained-42887519756-1/independent-raw-state-census-v1.json",
+      "sha256": "a45c3a6d0f53708cff1f960a17546d02aa3f0840c988db7299365e6edba082f0"
+    },
+    {
+      "bytes": 62821,
+      "path": "runs/ap2-original-shopper-development/v7/retained-42886479185-1/independent-raw-peer-review-v1.json",
+      "sha256": "41787b20c0a52ebfb8b1fa906a3f9aa9566af801346f866cb4e86acc6855cef9"
+    },
+    {
+      "bytes": 15762,
+      "path": "paper/build_draft_v7.py",
+      "sha256": "eb963cca30e4f289f2079a9527047c380629f5bfa48a18aa88efe1da71438dc0"
+    }
+  ],
+  "limits": [
+    "This review checks retained numerical and scope claims; it does not establish novelty, human gold, publication readiness or broad external validity."
+  ],
+  "mode": "published_local_draft",
+  "new_application_provider_solver_calls": 0,
+  "passed": true,
+  "reviewed_utc": "2026-11-10T19:55:20.089897+00:00",
+  "schema_version": "paper-v7-independent-claim-counterreview/1"
+}

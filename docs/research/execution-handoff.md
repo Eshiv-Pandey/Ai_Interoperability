@@ -1,3 +1,26 @@
+# Latest verified research handoff: 11 November 2026, 01:30 IST update
+
+Whole-project work completion is approximately **75%**, rounded from73.5 under
+unchanged weights and full scope, with about10percentage points uncertainty.
+[Estimate v6](whole-project-progress-estimate-v6.json) preserves the original
+96-task/three-path and96-crossing study, qualified gold, native/provider routes
+and final review. The80%target is not yet achieved.
+
+[Manuscript v7](../../paper/working-draft-v7.md) and its
+[evidence guide](paper-artifact-guide-v7.md) integrate the complete1584-cell
+cache ablation, two independent65-cell AP2 audits, all34AgentOps candidate
+references and all34AP2 candidate allocations. The manuscript evidence audit
+passed. AP2 has36purchase observations but31error-free owned-cell purchases;
+admission alone completes3/13versus10/13with informed recovery. Original ADK
+shopper feasibility captures29/29prefixes,28generic-status adverse branches
+and zero purchases. AgentOps retains20complete,10partial,2unsupported and
+2failed mechanical outcomes. All adverse and unrealized obligations remain.
+
+Continue the prospective native AP2/bridge development allocation, qualified
+application study, stronger scientific assessment and final review. Pending
+workers, qualification and future manuscript results receive no execution credit.
+The entries below are historical.
+
 # Latest verified research handoff: 11 November 2026
 
 Whole-project work completion is about **65%**, rounded from65.5 under unchanged

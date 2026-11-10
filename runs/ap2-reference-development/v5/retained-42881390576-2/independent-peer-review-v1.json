@@ -1,0 +1,941 @@
+{
+  "all_rejection_controls_passed": true,
+  "audit_scripts": {
+    "scripts\\audit_ap2_v5_numeric_peer_v1.py": {
+      "bytes": 19989,
+      "sha256": "8afdd82c13f0d6d7b16b96d7581a950a233fb82e1ac8e7ec7c83f04b41de34c7"
+    },
+    "scripts\\audit_ap2_v5_source_gate_peer_v1.py": {
+      "bytes": 29128,
+      "sha256": "0e31f1b81c5bc8d53ddb0879658ecef4c5645b3a86c4354a502d94ea2a9252e4"
+    },
+    "scripts\\combine_ap2_v5_peer_reviews_v1.py": {
+      "bytes": 7796,
+      "sha256": "49dca33f6123679445c520cfb0d100c2c3e0130090b227a1b332e2b81d1246bc"
+    }
+  },
+  "buyer_mandate_root_anchored_disclosure_and_checkout_hash_links_reverified": true,
+  "buyer_signature_scope": "The first separate evaluator retained 65 passed buyer-root cryptographic checks. This peer audit verifies those attestation records and anchored hash links, not cryptographic signatures. Merchant checkout key/signature and legal issuer policy remain unqualified.",
+  "claim_limits": [
+    "Development matrix with owned prefix, offline fixtures and in-process ASGI, not full ADK shopper tasks or human gold.",
+    "Source-reference uses canonical sender values; information and interventions differ across arms.",
+    "Finite certificate projects one incomplete source relation and does not establish business completion or whole-route non-support.",
+    "Completed payment plus duplicate suffix error is not unconditional whole-task success.",
+    "No native transport, actual MCP bridge, legal issuer identity or full mandate-policy qualification is established."
+  ],
+  "declared_cells": 65,
+  "disagreements": [],
+  "duplicate_suffix_outcomes": [
+    {
+      "actor_error_reason": "JSON-RPC Error code=-32602 data=None message='Task ac50ec46-9f73-4142-b5cf-ccac45516c11 is in terminal state: completed'",
+      "actor_error_type": "A2AClientJSONRPCError",
+      "admissions": [],
+      "id": "duplicate_continuation--reference",
+      "purchase_completed": true,
+      "source_errors": [
+        {
+          "error_type": "A2AClientJSONRPCError",
+          "phase": "duplicate_original_payment_otp",
+          "reason": "JSON-RPC Error code=-32602 data=None message='Task ac50ec46-9f73-4142-b5cf-ccac45516c11 is in terminal state: completed'"
+        }
+      ]
+    },
+    {
+      "actor_error_reason": "JSON-RPC Error code=-32602 data=None message='Task 252211c2-3adc-4d6e-9d26-0df2e07f0d8d is in terminal state: completed'",
+      "actor_error_type": "A2AClientJSONRPCError",
+      "admissions": [],
+      "id": "duplicate_continuation--conventional",
+      "purchase_completed": true,
+      "source_errors": [
+        {
+          "error_type": "A2AClientJSONRPCError",
+          "phase": "duplicate_original_payment_otp",
+          "reason": "JSON-RPC Error code=-32602 data=None message='Task 252211c2-3adc-4d6e-9d26-0df2e07f0d8d is in terminal state: completed'"
+        }
+      ]
+    },
+    {
+      "actor_error_reason": "JSON-RPC Error code=-32602 data=None message='Task f1debab6-6911-4903-8da4-9fab40e0cc8c is in terminal state: completed'",
+      "actor_error_type": "A2AClientJSONRPCError",
+      "admissions": [],
+      "id": "duplicate_continuation--recovery",
+      "purchase_completed": true,
+      "source_errors": [
+        {
+          "error_type": "A2AClientJSONRPCError",
+          "phase": "duplicate_original_payment_otp",
+          "reason": "JSON-RPC Error code=-32602 data=None message='Task f1debab6-6911-4903-8da4-9fab40e0cc8c is in terminal state: completed'"
+        }
+      ]
+    },
+    {
+      "actor_error_reason": "once_only_original_continuation_already_dispatched",
+      "actor_error_type": "AdmissionRefused",
+      "admissions": [
+        {
+          "attempt": "attempt-000",
+          "decision": "supported",
+          "dispatch_clock": 1794337977,
+          "dispatched": true,
+          "evaluation_clock": 1794337977,
+          "relation_guards_independently_reconstructed": true,
+          "rpc_id": "4947a8f0-8d0b-4c2c-9b12-91f4bcba5142",
+          "valid_until": 1794337992
+        },
+        {
+          "attempt": "attempt-001",
+          "dispatched": false,
+          "refusal_reason": "once_only_original_continuation_already_dispatched",
+          "refusal_type": "AdmissionRefused"
+        }
+      ],
+      "id": "duplicate_continuation--shared",
+      "purchase_completed": true,
+      "source_errors": [
+        {
+          "error_type": "AdmissionRefused",
+          "phase": "duplicate_original_payment_otp",
+          "reason": "once_only_original_continuation_already_dispatched"
+        }
+      ]
+    },
+    {
+      "actor_error_reason": "once_only_original_continuation_already_dispatched",
+      "actor_error_type": "AdmissionRefused",
+      "admissions": [
+        {
+          "attempt": "attempt-000",
+          "decision": "supported",
+          "dispatch_clock": 1794337985,
+          "dispatched": true,
+          "evaluation_clock": 1794337985,
+          "relation_guards_independently_reconstructed": true,
+          "rpc_id": "7277e81b-c2e2-4f0d-95c8-fb4baa19c161",
+          "valid_until": 1794338000
+        },
+        {
+          "attempt": "attempt-001",
+          "dispatched": false,
+          "refusal_reason": "once_only_original_continuation_already_dispatched",
+          "refusal_type": "AdmissionRefused"
+        }
+      ],
+      "id": "duplicate_continuation--recovery_shared",
+      "purchase_completed": true,
+      "source_errors": [
+        {
+          "error_type": "AdmissionRefused",
+          "phase": "duplicate_original_payment_otp",
+          "reason": "once_only_original_continuation_already_dispatched"
+        }
+      ]
+    }
+  ],
+  "human_review_replaced": false,
+  "inputs": {
+    "runs\\ap2-reference-development\\v5\\retained-42881390576-2\\extracted\\independent-evaluation\\result.json": {
+      "bytes": 183850,
+      "sha256": "684e8d92ad83ea1494efe6c0f036af3b55841a7e2b220872b1f989eace9723f5"
+    },
+    "runs\\ap2-reference-development\\v5\\retained-42881390576-2\\numeric-peer-review-v1.json": {
+      "bytes": 108164,
+      "sha256": "fd587eec1d128297772c9030574201c896454ab156ea80700d12c273bd65b365"
+    },
+    "runs\\ap2-reference-development\\v5\\retained-42881390576-2\\source-gate-peer-review-v1.json": {
+      "bytes": 119391,
+      "sha256": "8f2a29d49f0047e2c59b4b03b00818d2bbc1712c23fc34a710a5d980c58a1d09"
+    }
+  },
+  "novelty_or_broad_empirical_superiority_established": false,
+  "numeric_verified_cells": 65,
+  "original_source_rehashed_file_instances": 8840,
+  "original_source_rehashed_files_per_cell": 136,
+  "paired_comparisons": [
+    {
+      "equal": 6,
+      "first_arm": "shared",
+      "first_only": 0,
+      "mean_difference": -0.5384615384615384,
+      "metric": "purchase_completed",
+      "paired_cases": 13,
+      "pairs": [
+        {
+          "case_id": "natural_hint_loss",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_demo_otp",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_wrong_otp",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "human_no_reply",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_merchant_id",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "nested_processor_id",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "wrong_context",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "missing_caller_mandate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "swapped_mandate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "missing_association",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "recipient_mandate_loss",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "duplicate_continuation",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "stale_certificate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        }
+      ],
+      "second_arm": "recovery",
+      "second_only": 7,
+      "sum_difference": -7
+    },
+    {
+      "equal": 6,
+      "first_arm": "shared",
+      "first_only": 0,
+      "mean_difference": -0.5384615384615384,
+      "metric": "strict_error_free_owned_cell_purchase",
+      "paired_cases": 13,
+      "pairs": [
+        {
+          "case_id": "natural_hint_loss",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_demo_otp",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_wrong_otp",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "human_no_reply",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_merchant_id",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "nested_processor_id",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "wrong_context",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "missing_caller_mandate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "swapped_mandate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "missing_association",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        },
+        {
+          "case_id": "recipient_mandate_loss",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "duplicate_continuation",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_certificate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        }
+      ],
+      "second_arm": "recovery",
+      "second_only": 7,
+      "sum_difference": -7
+    },
+    {
+      "equal": 12,
+      "first_arm": "recovery_shared",
+      "first_only": 0,
+      "mean_difference": -0.07692307692307693,
+      "metric": "purchase_completed",
+      "paired_cases": 13,
+      "pairs": [
+        {
+          "case_id": "natural_hint_loss",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_demo_otp",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_wrong_otp",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "human_no_reply",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_merchant_id",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "nested_processor_id",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "wrong_context",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "missing_caller_mandate",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "swapped_mandate",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "missing_association",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "recipient_mandate_loss",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "duplicate_continuation",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "stale_certificate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        }
+      ],
+      "second_arm": "recovery",
+      "second_only": 1,
+      "sum_difference": -1
+    },
+    {
+      "equal": 12,
+      "first_arm": "recovery_shared",
+      "first_only": 0,
+      "mean_difference": -0.07692307692307693,
+      "metric": "strict_error_free_owned_cell_purchase",
+      "paired_cases": 13,
+      "pairs": [
+        {
+          "case_id": "natural_hint_loss",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_demo_otp",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_wrong_otp",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "human_no_reply",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_merchant_id",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "nested_processor_id",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "wrong_context",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "missing_caller_mandate",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "swapped_mandate",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "missing_association",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "recipient_mandate_loss",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "duplicate_continuation",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_certificate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        }
+      ],
+      "second_arm": "recovery",
+      "second_only": 1,
+      "sum_difference": -1
+    },
+    {
+      "equal": 11,
+      "first_arm": "shared",
+      "first_only": 1,
+      "mean_difference": 0.0,
+      "metric": "purchase_completed",
+      "paired_cases": 13,
+      "pairs": [
+        {
+          "case_id": "natural_hint_loss",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "human_demo_otp",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_wrong_otp",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "human_no_reply",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_merchant_id",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "nested_processor_id",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "wrong_context",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "missing_caller_mandate",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "swapped_mandate",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "missing_association",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "recipient_mandate_loss",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "duplicate_continuation",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "stale_certificate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        }
+      ],
+      "second_arm": "conventional",
+      "second_only": 1,
+      "sum_difference": 0
+    },
+    {
+      "equal": 11,
+      "first_arm": "shared",
+      "first_only": 1,
+      "mean_difference": 0.0,
+      "metric": "strict_error_free_owned_cell_purchase",
+      "paired_cases": 13,
+      "pairs": [
+        {
+          "case_id": "natural_hint_loss",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "human_demo_otp",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_wrong_otp",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "human_no_reply",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_merchant_id",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "nested_processor_id",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "wrong_context",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "missing_caller_mandate",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "swapped_mandate",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "missing_association",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "recipient_mandate_loss",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "duplicate_continuation",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_certificate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        }
+      ],
+      "second_arm": "conventional",
+      "second_only": 1,
+      "sum_difference": 0
+    },
+    {
+      "equal": 5,
+      "first_arm": "recovery_shared",
+      "first_only": 7,
+      "mean_difference": 0.46153846153846156,
+      "metric": "purchase_completed",
+      "paired_cases": 13,
+      "pairs": [
+        {
+          "case_id": "natural_hint_loss",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "human_demo_otp",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_wrong_otp",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "human_no_reply",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_merchant_id",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "nested_processor_id",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "wrong_context",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "missing_caller_mandate",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "swapped_mandate",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "missing_association",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "recipient_mandate_loss",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "duplicate_continuation",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "stale_certificate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        }
+      ],
+      "second_arm": "conventional",
+      "second_only": 1,
+      "sum_difference": 6
+    },
+    {
+      "equal": 5,
+      "first_arm": "recovery_shared",
+      "first_only": 7,
+      "mean_difference": 0.46153846153846156,
+      "metric": "strict_error_free_owned_cell_purchase",
+      "paired_cases": 13,
+      "pairs": [
+        {
+          "case_id": "natural_hint_loss",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "human_demo_otp",
+          "difference": 0,
+          "first": 1,
+          "second": 1
+        },
+        {
+          "case_id": "human_wrong_otp",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "human_no_reply",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_merchant_id",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "nested_processor_id",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "wrong_context",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "missing_caller_mandate",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "swapped_mandate",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "missing_association",
+          "difference": 1,
+          "first": 1,
+          "second": 0
+        },
+        {
+          "case_id": "recipient_mandate_loss",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "duplicate_continuation",
+          "difference": 0,
+          "first": 0,
+          "second": 0
+        },
+        {
+          "case_id": "stale_certificate",
+          "difference": -1,
+          "first": 0,
+          "second": 1
+        }
+      ],
+      "second_arm": "conventional",
+      "second_only": 1,
+      "sum_difference": 6
+    }
+  ],
+  "purchase_counts": {
+    "conventional": 3,
+    "recovery": 10,
+    "recovery_shared": 9,
+    "reference": 11,
+    "shared": 3
+  },
+  "rejection_controls": [
+    {
+      "id": "altered_durable_prefix_byte",
+      "reason": "exact_durable_admission_prefix",
+      "rejected": true
+    },
+    {
+      "id": "altered_prefix_event_count",
+      "reason": "exact_durable_admission_prefix",
+      "rejected": true
+    },
+    {
+      "id": "altered_prefix_source_sequence",
+      "reason": "admission_prefix_sequences_or_raw_quiescence",
+      "rejected": true
+    },
+    {
+      "id": "modified_unanchored_mandate_disclosure",
+      "reason": "disclosure_not_transitively_root_anchored",
+      "rejected": true
+    },
+    {
+      "id": "changed_checkout_transaction_link",
+      "reason": "mandate_checkout_transaction_link",
+      "rejected": true
+    },
+    {
+      "id": "expired_finite_certificate",
+      "rejected": true
+    },
+    {
+      "id": "modified_certificate_request",
+      "rejected": true
+    }
+  ],
+  "reviewed_utc": "2026-11-10T19:52:41.461846+00:00",
+  "schema_version": "ap2-v5-independent-peer-review/1",
+  "shared_gate_source_relation_bindings_verified": true,
+  "source_gate_verified_cells": 65,
+  "stale_supported_certificate_refused_before_handler": true,
+  "status": "65_cell_source_gate_and_numeric_peer_audits_agree",
+  "strict_error_free_owned_cell_purchase_counts": {
+    "conventional": 2,
+    "recovery": 9,
+    "recovery_shared": 8,
+    "reference": 10,
+    "shared": 2
+  },
+  "total_strict_error_free_owned_cell_purchases": 31,
+  "total_verified_purchases": 36,
+  "whole_original_adk_task_success_established": false
+}
