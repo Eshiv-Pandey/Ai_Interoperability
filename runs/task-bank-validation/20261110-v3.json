@@ -1,0 +1,396 @@
+{
+  "schema_version": "source-task-bank-validation/1",
+  "status": "structurally_valid",
+  "checked_at_utc": "2026-11-10T12:20:17.012960+00:00",
+  "inputs": [
+    {
+      "path": "benchmark/tasks-v1/agentops/application.json",
+      "sha256": "3eb5cb7a0ebcc5203d7e1c0edd6d5f13b503b9f908a3491670ea0ae95ec4607d",
+      "bytes": 99764
+    },
+    {
+      "path": "benchmark/tasks-v1/agentops/evaluator.json",
+      "sha256": "2091981ecb2b1e84c30f52563c7dedee8764eef2a545d6cdb69aaaecd5f65ab7",
+      "bytes": 232369
+    },
+    {
+      "path": "benchmark/tasks-v1/ap2/application.json",
+      "sha256": "36f9d86a22c843f38e8606772e6261aa7f272e6d9ebd73a567aad17f1a70aa41",
+      "bytes": 81510
+    },
+    {
+      "path": "benchmark/tasks-v1/ap2/evaluator.json",
+      "sha256": "67a188c1b973be7f25a57bdb433798b6f68d3cd8b43b0d11d60a83b40f5f403f",
+      "bytes": 281333
+    }
+  ],
+  "domains": [
+    {
+      "domain": "agentops",
+      "structural_status": "valid",
+      "templates": 34,
+      "split_counts": {
+        "development": 6,
+        "calibration": 4,
+        "held_out": 24
+      },
+      "missing_slots": {
+        "development": 0,
+        "calibration": 0,
+        "held_out": 0
+      },
+      "allocation_complete": true,
+      "source_files_checked": 32,
+      "source_ranges_checked": 52,
+      "claims_checked": 250,
+      "claim_statuses": {
+        "pending_human_judgment": 108,
+        "source_supported": 142
+      },
+      "source_files": {
+        "external/agentops-c806b7f1/agents/data/incidents.db": {
+          "sha256": "957ae8da4e1d174b9ff349acfca7ce4c204020a572fbeb7245783285d49d455b",
+          "bytes": 40960,
+          "line_count": 72
+        },
+        "external/agentops-c806b7f1/agents/data/logs/cache.log": {
+          "sha256": "699784f774655f299a0c729503cec7a428047ece84af87594e624ef4adc85818",
+          "bytes": 915,
+          "line_count": 11
+        },
+        "external/agentops-c806b7f1/agents/data/logs/checkout.log": {
+          "sha256": "8f70767232f7974060dfcdf62531e9fa7c8faa37d3be710f01068ccdb47b7124",
+          "bytes": 502,
+          "line_count": 6
+        },
+        "external/agentops-c806b7f1/agents/data/logs/database.log": {
+          "sha256": "e3b3b850636c6d641c2466a76ba8a4cb045fd4c26e33b9e0dce57bab1653ec86",
+          "bytes": 1147,
+          "line_count": 12
+        },
+        "external/agentops-c806b7f1/agents/data/logs/inventory.log": {
+          "sha256": "f336ebdd541ab9d83a50fcc9f80d00d9800047c3d48fb158020a31c0f0977ecb",
+          "bytes": 501,
+          "line_count": 6
+        },
+        "external/agentops-c806b7f1/agents/data/mise.toml": {
+          "sha256": "ee6e4ed95f62ab5dfae09204016ca35b7a423b40998c2208de4f7e425d11cbdd",
+          "bytes": 1790,
+          "line_count": 39
+        },
+        "external/agentops-c806b7f1/agents/data/README.md": {
+          "sha256": "bb7bd6b0af23784c6351c5b212971c3309ee05715d809a1e20c12de8d2c9131d",
+          "bytes": 2146,
+          "line_count": 25
+        },
+        "external/agentops-c806b7f1/agents/data/runbooks/cascade-failure.md": {
+          "sha256": "903904200bf9a3293f336e40d8dd7af89f3b456ad88420f948166d2430e742ee",
+          "bytes": 1943,
+          "line_count": 32
+        },
+        "external/agentops-c806b7f1/agents/data/runbooks/deployment-rollback.md": {
+          "sha256": "1694aedf5a1b23eccafe8d63893b445988816d7ad6ae499db4ffc7b578df1317",
+          "bytes": 1011,
+          "line_count": 25
+        },
+        "external/agentops-c806b7f1/agents/data/runbooks/disk-full.md": {
+          "sha256": "eb53323f237d0bdcf58889c2c16325a52c23cf2a988f5a59351194fe608587dd",
+          "bytes": 1008,
+          "line_count": 28
+        },
+        "external/agentops-c806b7f1/agents/data/runbooks/elevated-errors.md": {
+          "sha256": "37a18b7f4bac7e688ebaf5dc347e138120140feab62312cdec3423284dafbf4c",
+          "bytes": 1114,
+          "line_count": 29
+        },
+        "external/agentops-c806b7f1/agents/data/runbooks/high-latency.md": {
+          "sha256": "82b0b0a9a430c54da38577fc71ff6908d218d58476a5ca2ce69c65aee4b513a5",
+          "bytes": 1198,
+          "line_count": 29
+        },
+        "external/agentops-c806b7f1/agents/data/runbooks/memory-leak.md": {
+          "sha256": "94a594fdbe254a5f6ce5dae003ffeccd59325dcdf16d0afe1bf619156e5e1d2a",
+          "bytes": 1383,
+          "line_count": 28
+        },
+        "external/agentops-c806b7f1/agents/data/runbooks/service-down.md": {
+          "sha256": "987c45602bf8977a0409f8684708f1e790f9126668114631a7438352d5a9cbb9",
+          "bytes": 1210,
+          "line_count": 29
+        },
+        "external/agentops-c806b7f1/agents/data/skills/incident-triage/SKILL.md": {
+          "sha256": "b7649c277932a56deb725317768a78d7ddb0ca2fe1c4a837398c166c7c7ae339",
+          "bytes": 1147,
+          "line_count": 15
+        },
+        "external/agentops-c806b7f1/agents/data/skills/remediation/SKILL.md": {
+          "sha256": "852d957a7b9ea6390af0aca7cd1cb13cbf0de6b655c2e84940eb67853660e390",
+          "bytes": 1250,
+          "line_count": 15
+        },
+        "external/agentops-c806b7f1/agents/data/sql/schema.sql": {
+          "sha256": "8da41c51fb79c46846060f5b801eb21f2ac989fd8283b18607b4f35136dc632c",
+          "bytes": 3314,
+          "line_count": 69
+        },
+        "external/agentops-c806b7f1/agents/data/sql/seed.sql": {
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "bytes": 4259,
+          "line_count": 48
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/tools.py": {
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "bytes": 6311,
+          "line_count": 149
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/memory.py": {
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "bytes": 5974,
+          "line_count": 134
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/models.py": {
+          "sha256": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0",
+          "bytes": 4062,
+          "line_count": 126
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/longterm.py": {
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "bytes": 9516,
+          "line_count": 222
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/composition.py": {
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "bytes": 7282,
+          "line_count": 140
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/actions.py": {
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "bytes": 8641,
+          "line_count": 193
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/data.py": {
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "bytes": 25051,
+          "line_count": 710
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/pii.py": {
+          "sha256": "702c6afa72203c124d91e9de16a20cbd2a18ae8f215d780fdf078944b5bd6455",
+          "bytes": 11662,
+          "line_count": 269
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py": {
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "bytes": 10876,
+          "line_count": 239
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/report.py": {
+          "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043",
+          "bytes": 4257,
+          "line_count": 106
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/structured_report/agent.py": {
+          "sha256": "60fa9e15f3eafadc01c71f351b20f897aedfc7e7b62f9aef9683084fceecc8dd",
+          "bytes": 237,
+          "line_count": 8
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/config.py": {
+          "sha256": "ae37459425a0720f607ff7b3ee30c100c1d902b07e5e12da7b698557a0774587",
+          "bytes": 13745,
+          "line_count": 273
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/skills.py": {
+          "sha256": "c07a179e0b1134c1bfe4b78b82d4ec646d3069824e91fd10af1fea937bb2ccee",
+          "bytes": 1181,
+          "line_count": 29
+        },
+        "external/agentops-c806b7f1/agents/python/src/agent/workflow.py": {
+          "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+          "bytes": 6213,
+          "line_count": 120
+        }
+      },
+      "review_statuses": {
+        "not_reviewed": 34
+      },
+      "qualification": {
+        "human_review": "pending",
+        "runtime_execution": "not_executed",
+        "gold_validation": "pending"
+      },
+      "runtime_execution_performed": false,
+      "gold_semantics_validated": false,
+      "independent_holdout_sealed": false,
+      "research_checkpoint_credit_added": 0
+    },
+    {
+      "domain": "ap2",
+      "structural_status": "valid",
+      "templates": 28,
+      "split_counts": {
+        "development": 6,
+        "calibration": 4,
+        "held_out": 18
+      },
+      "missing_slots": {
+        "development": 0,
+        "calibration": 0,
+        "held_out": 6
+      },
+      "allocation_complete": false,
+      "source_files_checked": 26,
+      "source_ranges_checked": 64,
+      "claims_checked": 275,
+      "claim_statuses": {
+        "pending_human_judgment": 139,
+        "source_supported": 136
+      },
+      "source_files": {
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/tools.py": {
+          "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3",
+          "bytes": 15584,
+          "line_count": 477
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/storage.py": {
+          "sha256": "425838c273be4c316b7bef5c83584b4541ef1520d7304073741794132631abdf",
+          "bytes": 1300,
+          "line_count": 44
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_payment_processor_agent/tools.py": {
+          "sha256": "41a11923ae38798099c39a25d95d358ab1845320f64f8833b4955fa09b04e12d",
+          "bytes": 11483,
+          "line_count": 351
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/credentials_provider_agent/tools.py": {
+          "sha256": "b369fa1c0990abc71866915d30a7b2843d6881cf23094abb7e031679e0d979bf",
+          "bytes": 12794,
+          "line_count": 391
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/credentials_provider_agent/account_manager.py": {
+          "sha256": "39f80ac02cf60a69eb223ce54c2a66842ab869c1ce6fedf11aedeb7243f2fef8",
+          "bytes": 9186,
+          "line_count": 301
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/server.py": {
+          "sha256": "1c97a4ba39a191a829d36effe24344616075b1dd03437126bfa31f58d7d04a4b",
+          "bytes": 7581,
+          "line_count": 237
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/shopping_agent/tools.py": {
+          "sha256": "612525025661b608a662a8a09bc50ea527543b26c3bdbc78911bd95f6c3926a6",
+          "bytes": 11872,
+          "line_count": 332
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/shopping_agent/agent.py": {
+          "sha256": "a1ad77fc4d17cfa2fcef5904cab00a9833395e4a4e8b60948d767d52640ec6a3",
+          "bytes": 4166,
+          "line_count": 97
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/constants.py": {
+          "sha256": "55bb997d7969de092f33de23fa3c4149d2132e7f043593ed4404228afcd68c0f",
+          "bytes": 1085,
+          "line_count": 28
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/artifact_utils.py": {
+          "sha256": "868bbba8b4f7901b469027483d3de64ea0c2b81fa88fe5dbe9833e5b7d67987e",
+          "bytes": 2405,
+          "line_count": 83
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/a2a_message_builder.py": {
+          "sha256": "d92cccc6cb9478b160f95cee0c060f9c0dc41f25266d8220cf48a5bbeba95061",
+          "bytes": 2679,
+          "line_count": 91
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/base_server_executor.py": {
+          "sha256": "a1e1f85ba4481aa1712d01bef83778c9ab970ed2e3856fdafc4fb821d48f27a9",
+          "bytes": 6130,
+          "line_count": 180
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/adk-task-mapping-v1/a2a-sdk/source/a2a/server/tasks/task_updater.py": {
+          "sha256": "5a75c1f24ac2f8a49e975c4fb254239642d31fecae6850ef322e8eba97d94d91",
+          "bytes": 8261,
+          "line_count": 238
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/message_utils.py": {
+          "sha256": "7f8e0a62cfdab15089d0a3478b19814c505915c217f078c111fa3d9889dcc7ca",
+          "bytes": 2440,
+          "line_count": 79
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/function_call_resolver.py": {
+          "sha256": "0504bda987763db99b0faf847a839d2d8ab5cbac6a16b00c609d98f4f395a747",
+          "bytes": 3173,
+          "line_count": 101
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/credentials_provider_agent/agent_executor.py": {
+          "sha256": "0932eb790bbc2c173cd79cb33730e4c3d6af5bee4bc5587b0c24412c44b75fd0",
+          "bytes": 2654,
+          "line_count": 69
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/sdk/python/ap2/sdk/mandate.py": {
+          "sha256": "6251ec83622192805cd3cd8a4830f9ab922260c3089d4ff9323b9eb2ec27b1f5",
+          "bytes": 15226,
+          "line_count": 417
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/sdk/python/ap2/sdk/utils.py": {
+          "sha256": "92920007d190f68cad6b9899f0133ae511332196f59e3255d68be08dbc1e2a2f",
+          "bytes": 1641,
+          "line_count": 52
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/shopping_agent/subagents/payment_method_collector/agent.py": {
+          "sha256": "2a8af2a2a60af1f4af3ef3b56ec93b7d3016ce9e4320286902c547c62702a807",
+          "bytes": 2340,
+          "line_count": 58
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/shopping_agent/subagents/payment_method_collector/tools.py": {
+          "sha256": "be4b5fea7a4c0eef965694cde93205ce1b1652a36c0f121fa7ec6d820fbed8dd",
+          "bytes": 3714,
+          "line_count": 112
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/shopping_agent/subagents/shopper/agent.py": {
+          "sha256": "480b1fb3236adcaa468ef8a586fbbf31f85c8072161d72e10ce3264f7bb80ac8",
+          "bytes": 1995,
+          "line_count": 55
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/shopping_agent/subagents/shopper/tools.py": {
+          "sha256": "7a577d4088dc9decb3bbe72d3162e356176a4f6b1b0c3cb87d496be4e6245bc4",
+          "bytes": 2856,
+          "line_count": 81
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/shopping_agent/subagents/shipping_address_collector/agent.py": {
+          "sha256": "8885e6adc87c043dd8aca8929332de1371a761e114520aad42f2f24861ed9348",
+          "bytes": 3427,
+          "line_count": 82
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/shopping_agent/subagents/shipping_address_collector/tools.py": {
+          "sha256": "6c11b152344289c075fc66595c7ed344a37c2762c549532c8a9c275ecf8d542d",
+          "bytes": 2076,
+          "line_count": 58
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/adk-task-mapping-v1/a2a-sdk/source/a2a/server/tasks/task_manager.py": {
+          "sha256": "640eef411fa6611e2c588a5cd2ed1ff710bcd4145dfcffda1bb48b1f069932a2",
+          "bytes": 9635,
+          "line_count": 271
+        },
+        "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/sdk/python/ap2/sdk/generated/payment_receipt.py": {
+          "sha256": "78db7cd258eedd66a1f4e891e1b704df7cff78183249de94e4e77b2df3bb8aae",
+          "bytes": 3255,
+          "line_count": 92
+        }
+      },
+      "review_statuses": {
+        "not_reviewed": 28
+      },
+      "qualification": {
+        "human_review": "pending",
+        "runtime_execution": "not_executed",
+        "gold_validation": "pending"
+      },
+      "runtime_execution_performed": false,
+      "gold_semantics_validated": false,
+      "independent_holdout_sealed": false,
+      "research_checkpoint_credit_added": 0
+    }
+  ],
+  "total_templates": 62,
+  "allocation_complete": false,
+  "semantic_or_runtime_qualification_claimed": false
+}

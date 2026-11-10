@@ -31,13 +31,14 @@
           "status": "source_supported"
         },
         {
-          "claim": "The processor completion path verifies the supplied mandate, obtains associated credential data, delivers a PaymentReceipt, publishes its canonical artifact and completes; the merchant propagates the receipt and the shopper stores it.",
+          "claim": "The processor completion path verifies the supplied mandate and requests credential data; it rejects a noncompleted remote credential Task or empty artifacts and uses the first DataPart, which may be {} if nonempty artifacts contain no DataPart. It then constructs and delivers a PaymentReceipt, publishes its canonical artifact and completes; the merchant propagates the receipt and the shopper stores it. This path does not validate credential shape or selected-credential association; that association remains independently assessed.",
           "source_refs": [
             "processor_completion",
             "processor_credentials",
             "processor_receipt_delivery",
             "merchant_receipt_propagation",
-            "shopper_receipt_state"
+            "shopper_receipt_state",
+            "credential_first_data_part"
           ],
           "status": "source_supported"
         },
@@ -129,6 +130,15 @@
           "claim": "Supplementary effect near miss: describe a generated demo receipt as a bank debit, durable order reservation or exactly-once payment effect. The inspected HP source does not supply those effects.",
           "source_refs": [
             "provider_receipt_noop"
+          ],
+          "status": "pending_human_judgment"
+        },
+        {
+          "claim": "Supplementary evaluator-only missing-DataPart control: a completed credential Task has nonempty artifacts containing no DataPart. The original helper returns {}, and the inspected completion path can still construct a Success receipt without credential-shape or association validation. Do not assume upstream rejection, invent a native occurrence or credit selected-credential association from this outcome.",
+          "source_refs": [
+            "processor_credentials",
+            "credential_first_data_part",
+            "processor_completion"
           ],
           "status": "pending_human_judgment"
         }
@@ -286,6 +296,15 @@
             98
           ],
           "symbol": "_get_user_signing_key"
+        },
+        "credential_first_data_part": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/artifact_utils.py",
+          "sha256": "868bbba8b4f7901b469027483d3de64ea0c2b81fa88fe5dbe9833e5b7d67987e",
+          "lines": [
+            51,
+            67
+          ],
+          "symbol": "get_first_data_part"
         }
       },
       "review_status": "not_reviewed"

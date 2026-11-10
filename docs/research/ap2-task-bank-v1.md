@@ -25,6 +25,10 @@ The source rationale is [the human-present reassessment](ap2-human-present-sourc
 
 Valid credentials, merchant checkout JWTs and signed CheckoutMandate/PaymentMandate presentations must come from original helpers and the original signing-key lifecycle in an approved future allocation. Public task/context/cart values must come from actual public responses. No arbitrary compact JWT, private expected identifier, fabricated live receipt, patched shopper or silent OTP injection is a source-compatible original workflow.
 
+All public recipes are scoped to `PAYMENT_METHOD=CARD`, `debug_mode=False` and ordinary nonverbose human requests through the original client builder. Preserve the builder omission of false values and the original signing-key lifecycle. The original card launcher defaults to CARD. Original `common/system_utils.py:17-25` supplies verbose/debug formatted-raw-JSON instructions that compete with the shopper instruction's later CRITICAL prohibition on displaying internal JSON; this bank declares the nonverbose scope and does not repair that source conflict. System-utils SHA256: `dd794685dee6edada0f2d389643798fdfae0c9dbe76f0df0556ab50dc5a32c36`.
+
+For `ap2-dev-001`, source-supported completion requests credential data, rejects noncompleted remote Tasks and empty artifacts, and uses the first DataPart. `common/artifact_utils.py:51-67` returns `{}` when nonempty artifacts contain no DataPart; `_complete_payment` can subsequently construct Success without credential-shape or selected-association validation. Selected-credential association remains independently assessed. A missing-DataPart observation is an evaluator-only near miss, with no assumed upstream rejection or claimed native occurrence.
+
 ## Closed schema and separation
 
 The two JSON files have the same closed top-level keys: `schema_version`, `domain`, `source_pin`, `authorship`, `qualification`, `records`. Schema version is `source-task-bank/1`. `source_pin` is an object identifying the AP2 repository/commit/retained root and separate pinned A2A SDK source. Every record inherits the top-level authorship and qualification flags.
