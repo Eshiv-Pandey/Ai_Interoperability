@@ -1,0 +1,49 @@
+name: AgentOps hosted native research v1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agentops-hosted-native-research-v1
+  cancel-in-progress: false
+
+jobs:
+  admission:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out the selected research revision
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify licensed and pinned inputs without importing SDKs
+        run: python3 -B scripts/ci_agentops_admission_v1.py --check-inputs
+      - name: Select the pinned Node runtime
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.13.0'
+      - name: Bind the original absolute Node executable path
+        shell: bash
+        run: |
+          selected_node="$(command -v node)"
+          test "$("$selected_node" --version)" = "v22.13.0"
+          if [ "$selected_node" != "/usr/bin/node" ]; then
+            sudo ln -sfn "$selected_node" /usr/bin/node
+          fi
+          test "$(/usr/bin/node --version)" = "v22.13.0"
+      - name: Execute a fresh hosted Linux profile
+        run: >-
+          python3 -B scripts/ci_agentops_admission_v1.py --execute
+          --output runs/ci-agentops-native/${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Retain bounded research evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: agentops-native-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runs/ci-agentops-native/${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: warn
+          retention-days: 3
+          include-hidden-files: true
