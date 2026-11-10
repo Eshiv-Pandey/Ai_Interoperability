@@ -15,6 +15,48 @@ spec.loader.exec_module(runner)
 
 
 class DevelopmentTests(unittest.TestCase):
+    def test_recursive_projection_retains_nested_public_models_without_mutating_objects(self):
+        class PublicModel:
+            def __init__(self, value):
+                self.value = value
+            def model_dump(self, **options):
+                self.options = options
+                return self.value
+        model = PublicModel({'amount': 12.5, 'currency': 'USD'})
+        value = {'carts': [model]}
+        result = runner.recursive_public_json(value, model_base=PublicModel)
+        self.assertEqual(result, {'carts': [{'amount': 12.5, 'currency': 'USD'}]})
+        result['carts'][0]['amount'] = 99
+        self.assertEqual(model.value['amount'], 12.5)
+        self.assertIs(value['carts'][0], model)
+        self.assertEqual(model.options, {'mode': 'json', 'by_alias': True})
+
+    def test_source_address_projection_preserves_explicit_null_and_omits_unset_default(self):
+        class PublicAddress:
+            def model_dump(self, **options):
+                result = {'city': 'Sample', 'country': None}
+                if not options.get('exclude_unset'):
+                    result['sorting_code'] = None
+                return result
+        address = PublicAddress()
+        self.assertEqual(runner.recursive_public_json(address, model_base=PublicAddress,
+                                                      explicitly_set_model=PublicAddress),
+                         {'city': 'Sample', 'country': None})
+        self.assertEqual(runner.recursive_public_json(address, model_base=PublicAddress),
+                         {'city': 'Sample', 'country': None, 'sorting_code': None})
+
+    def test_recursive_projection_refuses_nonfinite_keys_cycles_and_implicit_object_conversion(self):
+        values = [float('nan'), float('inf'), {1: 'value'}, (1,), object()]
+        cyclic = []
+        cyclic.append(cyclic)
+        values.append(cyclic)
+        for value in values:
+            with self.subTest(value_type=type(value).__name__):
+                with self.assertRaises(ValueError):
+                    runner.recursive_public_json(value)
+        self.assertEqual(runner.recursive_public_json({'integer': 1, 'boolean': True}),
+                         {'integer': 1, 'boolean': True})
+
     def test_unchanged_owned_helper_guards_with_structural_comparison(self):
         spec = importlib.util.spec_from_file_location('_ap2_constructed_legacy_guards',
                                                        ROOT / 'tests/test_ap2_hp_original_bindings_v1.py')

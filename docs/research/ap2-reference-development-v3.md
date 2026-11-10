@@ -28,6 +28,16 @@ are retained. Every successor allocation retains its runner, owned helper source
 and all 136 original AP2 source files before import. The failed allocation and
 its exact runner copy remain unchanged.
 
+Hosted run 42839381849 passed the callable checks and reached original catalog
+and shipping completion, then exposed two owned projection gaps. ContactAddress
+adds default-null fields absent from its raw DataPart, and the old public dump
+helper cannot retain a list of Cart models. The next successor uses bounded
+recursive explicit BaseModel dumps for retained tool returns. Shipping comparison
+uses the original returned model's explicitly set fields, preserving explicit
+nulls; the full original model dump is retained separately. Original task values,
+tool objects, state and public observer serializers remain unchanged. The failed
+raw/public capture and its source snapshots are preserved.
+
 The runner chooses only returned carts and payment aliases, approves the actual
 checkout summary, and supplies 123 only when the original public merchant task
 requests a challenge. It resumes that merchant task and preserves an actual

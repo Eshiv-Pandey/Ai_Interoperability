@@ -14,6 +14,7 @@ import importlib
 import importlib.metadata
 import json
 import logging
+import math
 import os
 from pathlib import Path
 import platform
@@ -104,6 +105,41 @@ def code_fingerprint(code):
             constant_fingerprint(code.co_consts),
             constant_fingerprint(tuple(code.co_lines())),
             constant_fingerprint(tuple(code.co_positions())))
+
+
+def recursive_public_json(value, *, model_base=None, explicitly_set_model=None):
+    """Detach finite JSON and explicit public model dumps, with strict types/bounds."""
+    active = set()
+    nodes = 0
+
+    def project(item, depth):
+        nonlocal nodes
+        nodes += 1
+        need(nodes <= 20000 and depth <= 40, 'public_projection_bound')
+        if item is None or type(item) in (str, int, bool):
+            return item
+        if type(item) is float:
+            need(math.isfinite(item), 'nonfinite_public_number')
+            return item
+        is_model = model_base is not None and isinstance(item, model_base)
+        need(type(item) in (list, dict) or is_model, 'unsupported_public_projection_type')
+        identity = id(item)
+        need(identity not in active, 'cyclic_public_projection')
+        active.add(identity)
+        try:
+            if is_model:
+                options = {'mode': 'json', 'by_alias': True}
+                if type(item) is explicitly_set_model:
+                    options['exclude_unset'] = True
+                return project(item.model_dump(**options), depth + 1)
+            if type(item) is list:
+                return [project(child, depth + 1) for child in item]
+            need(all(type(key) is str for key in item), 'public_object_string_keys_required')
+            return {key: project(child, depth + 1) for key, child in item.items()}
+        finally:
+            active.remove(identity)
+
+    return project(value, 0)
 
 
 def write(path, value):
@@ -230,8 +266,20 @@ async def application(output, site_packages, private):
     from google import genai
     from interoperability import ap2_hp_durable_observer_v1 as durable
     from interoperability import ap2_hp_original_binding_v1 as binding
-    from interoperability.ap2_hp_reference_execution_v1 import ReferenceCoordinator, public_json
+    from interoperability import ap2_hp_reference_execution_v1 as execution
+    from interoperability.ap2_hp_reference_execution_v1 import ReferenceCoordinator
     from interoperability.ap2_hp_reference_plan_v1 import ReferencePlan
+    from pydantic import BaseModel
+    ContactAddress = importlib.import_module('ap2.models.contact_picker').ContactAddress
+    original_public_json = execution.public_json
+
+    def coordinator_public_json(value):
+        # Compare the original returned address's explicit fields to the raw
+        # DataPart. Defaults inserted by its original model are retained separately.
+        return recursive_public_json(value, model_base=BaseModel, explicitly_set_model=ContactAddress)
+
+    def retain_public_json(value):
+        return recursive_public_json(value, model_base=BaseModel)
 
     stage_raw, source_files = source_contract()
     runtime_files = inventory(site_packages)
@@ -250,11 +298,12 @@ async def application(output, site_packages, private):
     callable_checks = []
 
     def observed_function_check(function, node, expected, namespace, enclosing=None):
+        legacy_equal = original_marshal.dumps(function.__code__) == original_marshal.dumps(expected)
         actual_fingerprint, expected_fingerprint = code_fingerprint(function.__code__), code_fingerprint(expected)
         row = {
             'index': len(callable_checks), 'module': function.__module__, 'qualified_name': function.__qualname__,
             'full_structural_code_equal': actual_fingerprint == expected_fingerprint,
-            'legacy_marshal_bytes_equal': original_marshal.dumps(function.__code__) == original_marshal.dumps(expected),
+            'legacy_marshal_bytes_equal': legacy_equal,
             'actual_fingerprint_sha256': digest(repr(actual_fingerprint).encode())['sha256'],
             'expected_fingerprint_sha256': digest(repr(expected_fingerprint).encode())['sha256'],
             'identity_fields': list(CODE_FIELDS) + ['co_consts_recursive_types', 'co_lines', 'co_positions'],
@@ -320,19 +369,22 @@ async def application(output, site_packages, private):
             wrappers[role] = durable.RawAsgiCapture(app, recorder.sink(role + '_raw'))
             transports[port] = httpx.ASGITransport(app=wrappers[role])
         modules = {name: importlib.import_module(name) for name in binding.SOURCE_MODULES}
+        need(modules['roles.shopping_agent.subagents.shipping_address_collector.tools'].ContactAddress is ContactAddress,
+             'original_contact_address_alias_changed')
         lease = binding.make_caller_binding(source_binding, modules, temporary_root=private,
                                            merchant_sink=recorder.sink('merchant_public'),
                                            credentials_sink=recorder.sink('credentials_public'))
         lease.install()
         need(lease.installed and lease.error is None, 'original_caller_lease_incomplete')
+        execution.public_json = coordinator_public_json
         coordinator = ReferenceCoordinator(lease.bindings, ReferencePlan, CONTRACT)
         outcome = await coordinator.run(choose_cart=lambda carts: carts[0]['cart_id'],
                                         choose_alias=lambda aliases: aliases[0],
                                         approve=lambda summary: {'approved': True, 'summary': summary},
                                         respond_otp=lambda challenge: '123')
         write(output / 'reference-result.json', outcome.report())
-        write(output / 'caller-final-state.json', public_json(coordinator.context.state))
-        write(output / 'original-tool-returns.json', [{'phase': phase, 'value': public_json(value)}
+        write(output / 'caller-final-state.json', retain_public_json(coordinator.context.state))
+        write(output / 'original-tool-returns.json', [{'phase': phase, 'value': retain_public_json(value)}
                                                      for phase, value in outcome.tool_returns])
         # Copy public verification keys only. The original apps generated their private keys.
         public = output / 'public-verification'
@@ -350,6 +402,7 @@ async def application(output, site_packages, private):
         binding.SourceBinding.verify_unchanged = original_validator
         binding.marshal = original_marshal
         binding._verify_function = original_function_check
+        execution.public_json = original_public_json
         mandate_module.LOG_FILE_PATH = original_log_path
         for role, _, _, _, _ in PEERS:
             if role in wrappers:
@@ -373,6 +426,10 @@ async def application(output, site_packages, private):
                                       'caller_aliases_restored': restored, 'raw': {key: value.report() for key, value in wrappers.items()},
                                       'owned_validator_intervention': 'portable source and fresh site-packages inventory; legacy native environment claim not used',
                                       'owned_code_comparison_intervention': 'full recursive structural code identity, typed constants, filename/line/position/exception metadata; legacy globals/default/closure/alias guards retained',
+                                      'owned_public_projection_intervention': 'bounded recursive explicit BaseModel dumps; shipping comparison uses explicit original model fields and retains full original return separately',
+                                      'public_observer_serializer_unchanged': lease is None or all(
+                                          observer.serializer is original_public_json for observer in
+                                          (lease.bindings.merchant, lease.bindings.credentials)),
                                       'original_sdk_log_destination_intervention': 'owned private temporary profile; no source-tree log writes',
                                       'runtime_tree_unchanged': inventory(site_packages) == runtime_files,
                                       'source_tree_unchanged': source_contract()[1] == source_files})
