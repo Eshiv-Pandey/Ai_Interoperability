@@ -1,3 +1,38 @@
+# Latest verified research handoff: 11 November 2026, native bootstrap and proof codec
+
+Whole-project work remains approximately **75%**. The preserved estimate is
+[version7](whole-project-progress-estimate-v7.json),73.5roundedto75 with about10
+percentage points uncertainty; the80%target remains open.
+
+V10 hosted run42905259371 at74ed803d failed before public certificate admission
+completed: ValueError non_certificate_non_comment_PEM_content. Its real stage
+journal ran; two pinned source certificates and certifi CA were retained before
+the next bundled CA validation failed. The separate V10 analysis retains all104
+unexecuted/missing cells,0verified captures and65non-evaluable ASGI/TCP pairs at
+runs/ap2-native-bridge-development/v10/analysis-42905259371-1/result.json. The exact
+archive/API digest is73073805482a8ddd1ad4e701399700f3023f8e955a7073b7642e5ec5cf8b2e8e.
+V9's earlier missing append and additional missing now definitions remain frozen.
+
+V11 preparation uses the actual V10 pip-report-pinned grpcio1.85.0 Linux wheel,
+whose bundled roots.pem includes99valid certificates plus OpenSSL text. The
+prospective exception must bind the canonical path and exact file/remainder
+hashes; broader text/key/PEM exceptions remain prohibited. A bounded safe CI
+printer should expose the next actual stage/denial promptly without raw app or
+secret values. AP2 owner handles V11, independent peer handles pinned-CA and
+minimal-delta review; root alone commits, dispatches and retains completed runs.
+
+[Proof codecV2](refutation-prefix-dag-v2.md) passed31tests and independent defect
+checks, preserving V1 and original solver outputs. Its26exact ordered round trips
+have total bytes15128to11918, versus7760direct; only2shrink and24grow. It supplies
+representation observations, no practical method superiority or native-result
+credit. The new paper appendix is awaiting its final source/numerical audit.
+
+Latest pushed revision isf498ec9f. Codec peer finishes the appendix audit; native
+analysis peer prepared scripts/analyze_ap2_native_bridge_development_v10.py. Every
+actual failed allocation and all missing outcomes remain immutable. Continue
+native/bootstrap qualification and complete matrices before raising the estimate.
+The entries below are historical.
+
 # Latest verified research handoff: 11 November 2026, native bootstrap continuation
 
 Whole-project work completion remains approximately **75%**, rounded from73.5
