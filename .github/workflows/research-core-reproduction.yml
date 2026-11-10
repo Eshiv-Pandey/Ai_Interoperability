@@ -1,0 +1,38 @@
+name: Research core hosted reproduction v1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: research-core-hosted-reproduction-v1
+  cancel-in-progress: false
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Check out the selected research revision
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Select the Python 3.13 runtime
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.1'
+      - name: Execute current code and reconcile the full development matrix
+        run: >-
+          python -I -S -B scripts/ci_research_core_v1.py --execute
+          --output runs/ci-research-core/${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Retain every job, certificate, command stream and failed attempt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: research-core-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runs/ci-research-core/${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: error
+          retention-days: 7
+          include-hidden-files: true
