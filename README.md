@@ -1,6 +1,6 @@
 # Agent interoperability research
 
-**Current implementation completion:62.5% (10 November 2026).** Five ofeight defined deliverables are complete: algorithm, fair comparison engine, reproducible analysis/figures, clean Linux reproduction and AgentOps application integration. See the [active tracker](docs/research/implementation-delivery-status-v2.json) and [current delivery](docs/research/implementation-delivery-results-v2.md). The previous scientific-gate score is historical. AP2 full integration, complete task bank and paper remain unfinished.
+**Whole-project work is continuing (10 November 2026).** The goal is to complete the research project and paper. [The whole-project register](docs/research/project-completion-status-v1.json) records the remaining substantive work. The separate [implementation tracker](docs/research/implementation-delivery-status-v2.json) counts five of eight deliveries, or 62.5% implementation completion; this is not the entire-project percentage. AP2 full integration, benchmark qualification, complete experiments, scientific validation and paper work remain open.
 
 The current goal is concrete verified results for a research paper. The records below preserve earlier implementation and supervisor schedules.
 

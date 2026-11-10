@@ -1,0 +1,88 @@
+{
+  "schema_version": "guard-pruned-independent-source-review/3",
+  "status": "passed",
+  "reviewed_at_utc": "2026-11-10T14:33:52.218796+00:00",
+  "source_before": [
+    {
+      "path": "src/interoperability/direct_guard_pruned_v3.py",
+      "bytes": 8475,
+      "sha256": "3aa025550ea0bcf6974e6eca0fd8c068bbb211e3a49ee40ffd423d3ce7093723"
+    },
+    {
+      "path": "src/interoperability/direct_goal_pruned_v2.py",
+      "bytes": 10620,
+      "sha256": "1fba2d0bd747f965056279bbda40b9c28f50f1200b7e9a6869f343ab6f64de51"
+    },
+    {
+      "path": "src/interoperability/refinement_oracle.py",
+      "bytes": 25050,
+      "sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e"
+    },
+    {
+      "path": "tests/test_direct_guard_pruned_v3.py",
+      "bytes": 7606,
+      "sha256": "7f9b0734d57ee3c9905a46e6fbbe1648b5692cce46ffbd7cb981a1e4dc998f4d"
+    },
+    {
+      "path": "tests/test_direct_goal_pruned_v2.py",
+      "bytes": 11627,
+      "sha256": "6b4a4f431fbd87a7e589c9ee7849f1d0bd411824412e9d871766fe007754d7b1"
+    }
+  ],
+  "source_after": [
+    {
+      "path": "src/interoperability/direct_guard_pruned_v3.py",
+      "bytes": 8475,
+      "sha256": "3aa025550ea0bcf6974e6eca0fd8c068bbb211e3a49ee40ffd423d3ce7093723"
+    },
+    {
+      "path": "src/interoperability/direct_goal_pruned_v2.py",
+      "bytes": 10620,
+      "sha256": "1fba2d0bd747f965056279bbda40b9c28f50f1200b7e9a6869f343ab6f64de51"
+    },
+    {
+      "path": "src/interoperability/refinement_oracle.py",
+      "bytes": 25050,
+      "sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e"
+    },
+    {
+      "path": "tests/test_direct_guard_pruned_v3.py",
+      "bytes": 7606,
+      "sha256": "7f9b0734d57ee3c9905a46e6fbbe1648b5692cce46ffbd7cb981a1e4dc998f4d"
+    },
+    {
+      "path": "tests/test_direct_goal_pruned_v2.py",
+      "bytes": 11627,
+      "sha256": "6b4a4f431fbd87a7e589c9ee7849f1d0bd411824412e9d871766fe007754d7b1"
+    }
+  ],
+  "source_unchanged": true,
+  "captured_supplement_source_matches_reviewed_module": true,
+  "focused_tests": {
+    "count": 13,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "author_seeded_differential_cases": 120
+  },
+  "independent_domain_pruning_challenge": {
+    "seed": 20261111,
+    "cases": 200,
+    "original_complete_tuples": 4688,
+    "removed_tuples_proven_definitely_false": 3281,
+    "retained_tuples": 1407,
+    "checks": "Every omitted complete tuple reinterpreted by unchanged exact relation step and required definitely false; kept tuples remain within original legal typed domains. Three argument prefixes, nested whole/absent emitted paths, missing/public bindings, explicit unknowns, eq/ne/present and typed duplicate domains."
+  },
+  "source_reasoning": [
+    "Guard closure includes every referenced argument; emit_path conservatively closes over all emitted-request argument dependencies.",
+    "Bindings are immutable within local relation expansion; a closed unknown guard cannot falsely prune.",
+    "Definite-false conjunction dominance matches unchanged exact relation semantics, even with unknown request or another guard.",
+    "Relation cache is keyed by edge and canonical whole before-frame; product layers/history and old-frame atomic updates are unchanged.",
+    "Complete negative cuts use unchanged exhaustive goal-pruned v2 checker; it receives no trusted pruning summary."
+  ],
+  "prior_failed_review_allocation": "runs/guard-pruned-review/v3-20261110-1/result.json",
+  "correction": "Independent private-helper challenge meter now initializes the same new categories as production evaluate. No method source changed, no matrix outcome retried.",
+  "new_application_or_model_calls": 0,
+  "matrix_rerun": false,
+  "scope": "Independent implementation/source and stdlib semantic checks only. No novel CSP contribution, universal source proof, human review or application/held-out qualification."
+}

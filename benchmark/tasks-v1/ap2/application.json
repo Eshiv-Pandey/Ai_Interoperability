@@ -845,6 +845,186 @@
           "realization": "original interactive source path; an unrealized required branch is not a passed instance"
         }
       }
+    },
+    {
+      "id": "ap2-ho-019",
+      "split": "held_out",
+      "template_family": "unavailable_cart_checkout_guard",
+      "distinct_obligation": "Reject checkout for an explicitly requested unavailable cart before signing or publishing checkout data.",
+      "public": {
+        "task": "Reject checkout for an explicitly requested unavailable cart before signing or publishing checkout data.",
+        "prompt": "Create checkout for my requested cart. If that actual cart is unavailable, report the original merchant failure without inventing a replacement checkout.",
+        "fixture_recipe": {
+          "execution_class": "original_source_boundary_control",
+          "fixture_origin": "AI-authored source-derived boundary recipe; any offline realization is development evidence, not a complete original shopper purchase",
+          "source_compatible_setup": "Call the original merchant create_checkout tool with an explicit public cart identifier absent from a fresh original merchant store. This is an imported-original tool-boundary control, not a cart chosen through the unchanged offered-cart shopper prefix.",
+          "public_choices": {
+            "cart_id": "source-boundary-unavailable-cart"
+          },
+          "steps": [
+            "Call original create_checkout with the public unavailable cart_id and the original SDK updater.",
+            "Retain the original failure event and any artifacts or key-file side effects; do not substitute a known cart."
+          ],
+          "capture_public_surfaces": [
+            "exact public input values and order",
+            "actual original imported tool/helper return or SDK event sequence",
+            "owned-process/key-profile cleanup observations"
+          ],
+          "realization": "Explicit original-function source-boundary control; not a full shopper/native-provider trajectory; prospective held_out label does not establish statistical or human independence"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-020",
+      "split": "held_out",
+      "template_family": "missing_payment_mandate_guard",
+      "distinct_obligation": "Preserve the merchant missing-PaymentMandate failure before optional checkout verification, risk validation or processor construction.",
+      "public": {
+        "task": "Preserve the merchant missing-PaymentMandate failure before optional checkout verification, risk validation or processor construction.",
+        "prompt": "Initiate the requested payment only from the supplied original PaymentMandate. If the request lacks it, return the original failure without asking a downstream processor to guess a mandate.",
+        "fixture_recipe": {
+          "execution_class": "original_source_boundary_control",
+          "fixture_origin": "AI-authored source-derived boundary recipe; any offline realization is development evidence, not a complete original shopper purchase",
+          "source_compatible_setup": "Call the unchanged merchant initiate_payment tool with risk_data but no PaymentMandate DataPart. This explicit missing-input source-boundary control has no signed-token substitution and does not replay the shopper prefix.",
+          "public_choices": {
+            "risk_data": "public-development-risk"
+          },
+          "steps": [
+            "Supply the public risk_data with no payment mandate key.",
+            "Retain the original failure status before any downstream peer request."
+          ],
+          "capture_public_surfaces": [
+            "exact public input values and order",
+            "actual original imported tool/helper return or SDK event sequence",
+            "owned-process/key-profile cleanup observations"
+          ],
+          "realization": "Explicit original-function source-boundary control; not a full shopper/native-provider trajectory; prospective held_out label does not establish statistical or human independence"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-021",
+      "split": "held_out",
+      "template_family": "missing_risk_data_guard",
+      "distinct_obligation": "Preserve merchant rejection of missing risk_data even when a nonempty original signed PaymentMandate output is supplied.",
+      "public": {
+        "task": "Preserve merchant rejection of missing risk_data even when a nonempty original signed PaymentMandate output is supplied.",
+        "prompt": "Use the supplied original signed payment mandate. If the request lacks risk_data, report the merchant input failure before forwarding payment.",
+        "fixture_recipe": {
+          "execution_class": "original_source_boundary_control",
+          "fixture_origin": "AI-authored source-derived boundary recipe; any offline realization is development evidence, not a complete original shopper purchase",
+          "source_compatible_setup": "Obtain a real nonempty PaymentMandate from the original signer or an explicitly retained original development signer output. Omit checkout-mandate and risk_data DataParts. The risk guard precedes processor construction; this does not establish freshness/signature verification or full shopper completion.",
+          "public_choices": {},
+          "steps": [
+            "Retain the provenance of the actually supplied original signer output; never invent JWT bytes.",
+            "Call unchanged merchant initiate_payment with that presentation and missing risk_data.",
+            "Retain its original failure before any peer request."
+          ],
+          "capture_public_surfaces": [
+            "exact public input values and order",
+            "actual original imported tool/helper return or SDK event sequence",
+            "owned-process/key-profile cleanup observations"
+          ],
+          "realization": "Explicit original-function source-boundary control; not a full shopper/native-provider trajectory; prospective held_out label does not establish statistical or human independence"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-022",
+      "split": "held_out",
+      "template_family": "dpc_missing_checkout_mandate_guard",
+      "distinct_obligation": "Preserve the separately routed DPC finish tool failure when its required checkout_mandate DataPart is absent.",
+      "public": {
+        "task": "Preserve the separately routed DPC finish tool failure when its required checkout_mandate DataPart is absent.",
+        "prompt": "Finish the DPC flow only using the checkout mandate returned for that flow. If none is supplied, report the original missing-mandate failure.",
+        "fixture_recipe": {
+          "execution_class": "original_source_boundary_control",
+          "fixture_origin": "AI-authored source-derived boundary recipe; any offline realization is development evidence, not a complete original shopper purchase",
+          "source_compatible_setup": "Scope this record to original merchant dpc_finish as a separately routed DPC tool-boundary control. Supply no checkout_mandate field. This is not the human-present CARD OTP shopper route and does not claim that DPC acquisition or payment completed.",
+          "public_choices": {},
+          "steps": [
+            "Invoke original dpc_finish with no checkout_mandate value and an original SDK updater.",
+            "Retain its failure before mandate verification or payment-status artifact publication."
+          ],
+          "capture_public_surfaces": [
+            "exact public input values and order",
+            "actual original imported tool/helper return or SDK event sequence",
+            "owned-process/key-profile cleanup observations"
+          ],
+          "realization": "Explicit original-function source-boundary control; not a full shopper/native-provider trajectory; prospective held_out label does not establish statistical or human independence"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-023",
+      "split": "held_out",
+      "template_family": "duplicate_datapart_first_occurrence",
+      "distinct_obligation": "Retain exact typed first-occurrence selection when a public A2A request contains repeated data keys, including a first null or false value.",
+      "public": {
+        "task": "Retain exact typed first-occurrence selection when a public A2A request contains repeated data keys, including a first null or false value.",
+        "prompt": "Inspect this public repeated-key request using the original AP2 message helper. Report the value actually selected without merging repeated keys or replacing null/false with a later value.",
+        "fixture_recipe": {
+          "execution_class": "original_source_boundary_control",
+          "fixture_origin": "AI-authored source-derived boundary recipe; any offline realization is development evidence, not a complete original shopper purchase",
+          "source_compatible_setup": "Use unchanged common.message_utils.find_data_part on public typed dictionaries. The input is an authored A2A-data boundary control, not an altered native shopper result or a secret evaluator object.",
+          "public_choices": {
+            "key": "selected",
+            "data_parts": [
+              {
+                "selected": null
+              },
+              {
+                "selected": "later-public-value"
+              }
+            ]
+          },
+          "steps": [
+            "Retain the public ordered dictionaries without coercion.",
+            "Run the original first-key lookup and retain its exact JSON value/type.",
+            "Compare with the distinct original find_data_parts all-occurrence helper only as an explicitly separate observation."
+          ],
+          "capture_public_surfaces": [
+            "exact public input values and order",
+            "actual original imported tool/helper return or SDK event sequence",
+            "owned-process/key-profile cleanup observations"
+          ],
+          "realization": "Explicit original-function source-boundary control; not a full shopper/native-provider trajectory; prospective held_out label does not establish statistical or human independence"
+        }
+      }
+    },
+    {
+      "id": "ap2-ho-024",
+      "split": "held_out",
+      "template_family": "remote_failure_ordered_diagnostics",
+      "distinct_obligation": "Propagate ordered nonempty remote TextPart error details for a failed credential Task rather than replacing them with generic artifact absence or DataPart metadata.",
+      "public": {
+        "task": "Propagate ordered nonempty remote TextPart error details for a failed credential Task rather than replacing them with generic artifact absence or DataPart metadata.",
+        "prompt": "If the remote credential task fails, report its original text diagnostics in their observed order. Do not invent a receipt or treat unrelated data metadata as an error message.",
+        "fixture_recipe": {
+          "execution_class": "original_source_boundary_control",
+          "fixture_origin": "AI-authored source-derived boundary recipe; any offline realization is development evidence, not a complete original shopper purchase",
+          "source_compatible_setup": "Use the original processor _extract_task_error_text and _raise_if_task_failed with a constructed public failed SDK Task containing ordered TextParts, an unrelated DataPart and an empty TextPart. This is a helper-level remote-error control, not an injected failure in a completed original shopper workflow.",
+          "public_choices": {
+            "peer": "credentials_provider",
+            "operation": "credential fetch",
+            "texts": [
+              "first error",
+              "second error"
+            ]
+          },
+          "steps": [
+            "Construct the public typed failed Task using the actual SDK classes.",
+            "Run original diagnostic extraction and the original state guard.",
+            "Retain the actual ValueError message/type without substituting an artifact or receipt."
+          ],
+          "capture_public_surfaces": [
+            "exact public input values and order",
+            "actual original imported tool/helper return or SDK event sequence",
+            "owned-process/key-profile cleanup observations"
+          ],
+          "realization": "Explicit original-function source-boundary control; not a full shopper/native-provider trajectory; prospective held_out label does not establish statistical or human independence"
+        }
+      }
     }
   ]
 }

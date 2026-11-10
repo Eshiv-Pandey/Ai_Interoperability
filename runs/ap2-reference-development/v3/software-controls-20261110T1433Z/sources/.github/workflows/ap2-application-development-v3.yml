@@ -1,0 +1,46 @@
+name: AP2 original application development v3
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-application:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.1'
+      - name: Prepare exact original sources and frozen dependency versions
+        shell: bash
+        run: |
+          python -I -S -B scripts/ap2_reference_development_v3.py prepare --output "$RUNNER_TEMP/ap2-v3/prepared"
+          python -m venv "$RUNNER_TEMP/ap2-v3-environment"
+      - name: Install fresh Linux wheels with a retained download report
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/ap2-v3-environment/bin/python" -m pip install --report "$RUNNER_TEMP/ap2-v3/pip-install-report.json" -r "$RUNNER_TEMP/ap2-v3/prepared/requirements.txt"
+          "$RUNNER_TEMP/ap2-v3-environment/bin/python" -m pip check > "$RUNNER_TEMP/ap2-v3/pip-check.txt"
+      - name: Check intervention controls
+        shell: bash
+        run: python -B -m unittest discover -s tests -p test_ap2_reference_development_v3.py
+      - name: Execute original AP2 applications without provider credentials
+        shell: bash
+        run: |
+          python -I -S -B scripts/ap2_reference_development_v3.py execute \
+            --output "$RUNNER_TEMP/ap2-v3/application" \
+            --site-packages "$RUNNER_TEMP/ap2-v3-environment/lib/python3.13/site-packages"
+      - name: Retain actual result including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ap2-original-application-development-v3
+          path: ${{ runner.temp }}/ap2-v3/
+          if-no-files-found: error
+          retention-days: 30

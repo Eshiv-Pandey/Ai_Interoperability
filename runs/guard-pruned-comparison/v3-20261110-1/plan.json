@@ -1,0 +1,64 @@
+{
+  "algorithms": [
+    {
+      "entrypoint": "evaluate",
+      "input_schema": "recipe-continuation/1",
+      "module": "interoperability.refinement_oracle",
+      "name": "baseline"
+    },
+    {
+      "entrypoint": "evaluate",
+      "input_schema": "recipe-continuation/1",
+      "module": "interoperability.direct_guard_pruned_v3",
+      "name": "guard_pruned"
+    }
+  ],
+  "analysis": "All cases and four original budgets. Compare certified decisions against retained goal-pruned direct; reconcile fresh historical baseline exactly. Preserve budget unknowns and adverse results.",
+  "budgets": [
+    32,
+    256,
+    4096,
+    100000
+  ],
+  "case_count": 66,
+  "checker": "interoperability.direct_goal_pruned_v2",
+  "checker_budget": 2000000,
+  "claim_limit": "Conventional constraint propagation comparator; authored related development profiles, method-specific work units, no novelty/CPU-speed/application/held-out claim.",
+  "clock": 100,
+  "new_guard_source": {
+    "bytes": 8475,
+    "path": "guard-source.py",
+    "sha256": "3aa025550ea0bcf6974e6eca0fd8c068bbb211e3a49ee40ffd423d3ce7093723"
+  },
+  "old_manifests": {
+    "32": {
+      "bytes": 348282,
+      "path": "manifest.json",
+      "sha256": "58afbcb91bd20d3b60367407dd484fcf19f179f22e3fe3a463a1279b4ce71395"
+    },
+    "256": {
+      "bytes": 472986,
+      "path": "manifest.json",
+      "sha256": "63eb9f2a798791d57846dc40b6c6c4a758c5570d84b843d9f162b87eeb2a6147"
+    },
+    "4096": {
+      "bytes": 490296,
+      "path": "manifest.json",
+      "sha256": "94a2eb52395e6ec5bf21a147b44868543e0e7abf978158caa0b47f9029431b43"
+    },
+    "100000": {
+      "bytes": 492118,
+      "path": "manifest.json",
+      "sha256": "a87abefad662dff94a715017e1273232fc65892c649c1dcba43b86f1443e713c"
+    }
+  },
+  "schema_version": "guard-pruned-supplement/3",
+  "source": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\shared-lifting-scaling\\v3-20261110-1",
+  "source_suite": {
+    "bytes": 6165,
+    "path": "inputs/suite.json",
+    "sha256": "5ed596bcaf8e4868f1159db9773f1d3cb80b5334fd2b65fe4e4abbfb9fb93738"
+  },
+  "started_at": "2026-11-10T14:18:45.041551+00:00",
+  "worker_timeout_seconds": 10
+}

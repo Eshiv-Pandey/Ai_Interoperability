@@ -1,6 +1,16 @@
-# Current implementation handoff:10 November 2026
+# Current whole-project direction: 10 November 2026
 
-Active completion is62.5%: five ofeight fixed implementation deliverables. See [delivery resultv2](implementation-delivery-results-v2.md) and [active tracker](implementation-delivery-status-v2.json). Fresh core reproduction matched1056algorithm/264reference/683checker outputs and passed167tests. Regenerated tables/figures passed independent11640-cell validation. Original AgentOps admission-to-application is verified. Full AP2 integration, complete task bank and paper remain open. Earlier gate-score reports below are historical.
+Continue through the entire research project and paper. The user explicitly
+asked about whole-project completion and then ordered continuation to completion.
+The 62.5% figure below is an implementation-deliverable score, not an entire-project
+percentage. [The whole-project register](project-completion-status-v1.json) records
+the preserved scope and remaining substantive work without inventing a percentage.
+Parallel work now targets original AP2 module/application execution, the missing
+task templates and executable qualification, and a complete current paper draft.
+
+# Implementation handoff: 10 November 2026
+
+Implementation completion is 62.5%: five of eight fixed implementation deliverables. See [delivery result v2](implementation-delivery-results-v2.md) and [implementation tracker](implementation-delivery-status-v2.json). Fresh core reproduction matched 1056 algorithm/264 reference/683 checker outputs and passed 167 tests. Regenerated tables/figures passed independent 11640-cell validation. Original AgentOps admission-to-application is verified. Full AP2 integration, complete task bank and paper remain open. Earlier gate-score reports below are historical.
 
 # Earlier scientific-gate handoff: 10 November 2026
 

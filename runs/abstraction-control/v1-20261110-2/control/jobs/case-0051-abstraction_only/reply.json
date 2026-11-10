@@ -1,0 +1,51 @@
+{
+  "status": "returned",
+  "input_sha256_before": "ce0d4005d6f2909b1b7a57c3c86e9f57583caff17ba43f9a3473b4234283ab55",
+  "evaluation_ns": 104500,
+  "result": {
+    "decision": "unsupported",
+    "reason": "bounded_no_path",
+    "certificate": {
+      "model_sha256": "ce0d4005d6f2909b1b7a57c3c86e9f57583caff17ba43f9a3473b4234283ab55",
+      "checked_at": 100,
+      "horizon": 3,
+      "valid_until": 4102444800,
+      "kind": "bounded-cut",
+      "layers": [
+        [
+          "s000"
+        ],
+        [
+          "s001"
+        ],
+        [
+          "s002"
+        ],
+        [
+          "s003"
+        ]
+      ]
+    },
+    "stats": {
+      "state_visits": 4,
+      "edge_checks": 3
+    }
+  },
+  "input_sha256_after": "ce0d4005d6f2909b1b7a57c3c86e9f57583caff17ba43f9a3473b4234283ab55",
+  "input_unchanged": true,
+  "resources": {
+    "schema_version": "benchmark-worker-resources/1",
+    "timings": {
+      "preparation_ns": 9096300,
+      "result_serialization_ns": 9800,
+      "post_validation_ns": 21200
+    },
+    "memory": {
+      "status": "observed",
+      "peak_resident_bytes": 21839872,
+      "source": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "platform": "win32"
+    }
+  },
+  "worker_body_ns": 15162000
+}

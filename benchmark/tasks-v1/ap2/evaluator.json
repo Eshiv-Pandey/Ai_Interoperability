@@ -6098,6 +6098,540 @@
         }
       },
       "review_status": "not_reviewed"
+    },
+    {
+      "id": "ap2-ho-019",
+      "split": "held_out",
+      "template_family": "unavailable_cart_checkout_guard",
+      "distinct_obligation": "Reject checkout for an explicitly requested unavailable cart before signing or publishing checkout data.",
+      "expected_facts": [
+        {
+          "claim": "When cart_id is present but storage.get_cart_data returns no cart, create_checkout calls _fail_task with Cart not found for cart_id and returns before signing.",
+          "source_refs": [
+            "checkout",
+            "failure"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_order": [
+        {
+          "claim": "Public typed inputs -> unchanged original tool/helper invocation -> retained return/failure/events before any unsupported downstream completion.",
+          "source_refs": [
+            "checkout",
+            "failure"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_state": [
+        {
+          "claim": "The original updater reports failed and publishes no checkout artifact for this guard.",
+          "source_refs": [
+            "checkout",
+            "failure"
+          ],
+          "status": "source_supported"
+        },
+        {
+          "claim": "Human review, full workflow reachability and external capture/source authentication remain unverified. Offline source-boundary evidence cannot qualify full held-out shopper performance.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "reset": [
+        {
+          "claim": "Use fresh owned worker/module state and an outside-workspace private profile. Retain before/after evidence; do not overwrite previous allocations or equate this boundary reset with full ADK/server/credential reset.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "legitimate_alternatives": [
+        {
+          "claim": "Report the actually observed missing/failed/unsupported outcome honestly. Additional original workflow choices remain separate tasks and cannot replace this preassigned boundary input.",
+          "source_refs": [
+            "checkout",
+            "failure"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "near_misses": [
+        {
+          "claim": "A caller that creates a checkout for another cart after the original lookup fails does not satisfy the requested-cart obligation.",
+          "source_refs": [
+            "checkout",
+            "failure"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "source_refs": {
+        "checkout": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/tools.py",
+          "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3",
+          "lines": [
+            134,
+            229
+          ],
+          "symbol": "create_checkout"
+        },
+        "failure": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/tools.py",
+          "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3",
+          "lines": [
+            472,
+            477
+          ],
+          "symbol": "_fail_task"
+        }
+      },
+      "review_status": "not_reviewed"
+    },
+    {
+      "id": "ap2-ho-020",
+      "split": "held_out",
+      "template_family": "missing_payment_mandate_guard",
+      "distinct_obligation": "Preserve the merchant missing-PaymentMandate failure before optional checkout verification, risk validation or processor construction.",
+      "expected_facts": [
+        {
+          "claim": "initiate_payment first reads PAYMENT_MANDATE_SD_JWT_KEY and fails with Missing PaymentMandate SD-JWT when its value is falsy, before later verifier/risk/processor operations.",
+          "source_refs": [
+            "initiate",
+            "failure"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_order": [
+        {
+          "claim": "Public typed inputs -> unchanged original tool/helper invocation -> retained return/failure/events before any unsupported downstream completion.",
+          "source_refs": [
+            "initiate",
+            "failure"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_state": [
+        {
+          "claim": "The original updater reports failed without constructing or calling a payment processor.",
+          "source_refs": [
+            "initiate",
+            "failure"
+          ],
+          "status": "source_supported"
+        },
+        {
+          "claim": "Human review, full workflow reachability and external capture/source authentication remain unverified. Offline source-boundary evidence cannot qualify full held-out shopper performance.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "reset": [
+        {
+          "claim": "Use fresh owned worker/module state and an outside-workspace private profile. Retain before/after evidence; do not overwrite previous allocations or equate this boundary reset with full ADK/server/credential reset.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "legitimate_alternatives": [
+        {
+          "claim": "Report the actually observed missing/failed/unsupported outcome honestly. Additional original workflow choices remain separate tasks and cannot replace this preassigned boundary input.",
+          "source_refs": [
+            "initiate",
+            "failure"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "near_misses": [
+        {
+          "claim": "A fabricated token or downstream success cannot replace the absent original mandatory input.",
+          "source_refs": [
+            "initiate",
+            "failure"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "source_refs": {
+        "initiate": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/tools.py",
+          "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3",
+          "lines": [
+            232,
+            318
+          ],
+          "symbol": "initiate_payment"
+        },
+        "failure": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/tools.py",
+          "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3",
+          "lines": [
+            472,
+            477
+          ],
+          "symbol": "_fail_task"
+        }
+      },
+      "review_status": "not_reviewed"
+    },
+    {
+      "id": "ap2-ho-021",
+      "split": "held_out",
+      "template_family": "missing_risk_data_guard",
+      "distinct_obligation": "Preserve merchant rejection of missing risk_data even when a nonempty original signed PaymentMandate output is supplied.",
+      "expected_facts": [
+        {
+          "claim": "After its optional checkout-mandate verification branch, initiate_payment rejects falsy risk_data with Missing risk_data before constructing PaymentRemoteA2aClient.",
+          "source_refs": [
+            "initiate",
+            "failure"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_order": [
+        {
+          "claim": "Public typed inputs -> unchanged original tool/helper invocation -> retained return/failure/events before any unsupported downstream completion.",
+          "source_refs": [
+            "initiate",
+            "failure"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_state": [
+        {
+          "claim": "The missing-risk branch publishes failed and no receipt; nonempty PaymentMandate presence alone does not satisfy required request input.",
+          "source_refs": [
+            "initiate",
+            "failure"
+          ],
+          "status": "source_supported"
+        },
+        {
+          "claim": "Human review, full workflow reachability and external capture/source authentication remain unverified. Offline source-boundary evidence cannot qualify full held-out shopper performance.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "reset": [
+        {
+          "claim": "Use fresh owned worker/module state and an outside-workspace private profile. Retain before/after evidence; do not overwrite previous allocations or equate this boundary reset with full ADK/server/credential reset.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "legitimate_alternatives": [
+        {
+          "claim": "Report the actually observed missing/failed/unsupported outcome honestly. Additional original workflow choices remain separate tasks and cannot replace this preassigned boundary input.",
+          "source_refs": [
+            "initiate",
+            "failure"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "near_misses": [
+        {
+          "claim": "A downstream receipt, inferred risk value or patched missing-risk default cannot upgrade this guard into a complete payment.",
+          "source_refs": [
+            "initiate",
+            "failure"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "source_refs": {
+        "initiate": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/tools.py",
+          "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3",
+          "lines": [
+            232,
+            318
+          ],
+          "symbol": "initiate_payment"
+        },
+        "failure": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/tools.py",
+          "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3",
+          "lines": [
+            472,
+            477
+          ],
+          "symbol": "_fail_task"
+        }
+      },
+      "review_status": "not_reviewed"
+    },
+    {
+      "id": "ap2-ho-022",
+      "split": "held_out",
+      "template_family": "dpc_missing_checkout_mandate_guard",
+      "distinct_obligation": "Preserve the separately routed DPC finish tool failure when its required checkout_mandate DataPart is absent.",
+      "expected_facts": [
+        {
+          "claim": "dpc_finish reads the checkout_mandate key and calls _fail_task with Missing checkout_mandate before verification when it is falsy.",
+          "source_refs": [
+            "dpc",
+            "failure"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_order": [
+        {
+          "claim": "Public typed inputs -> unchanged original tool/helper invocation -> retained return/failure/events before any unsupported downstream completion.",
+          "source_refs": [
+            "dpc",
+            "failure"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_state": [
+        {
+          "claim": "The original task fails and no payment_status SUCCESS artifact is published for the missing-mandate guard.",
+          "source_refs": [
+            "dpc",
+            "failure"
+          ],
+          "status": "source_supported"
+        },
+        {
+          "claim": "Human review, full workflow reachability and external capture/source authentication remain unverified. Offline source-boundary evidence cannot qualify full held-out shopper performance.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "reset": [
+        {
+          "claim": "Use fresh owned worker/module state and an outside-workspace private profile. Retain before/after evidence; do not overwrite previous allocations or equate this boundary reset with full ADK/server/credential reset.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "legitimate_alternatives": [
+        {
+          "claim": "Report the actually observed missing/failed/unsupported outcome honestly. Additional original workflow choices remain separate tasks and cannot replace this preassigned boundary input.",
+          "source_refs": [
+            "dpc",
+            "failure"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "near_misses": [
+        {
+          "claim": "A CARD OTP continuation, a fabricated DPC token or the source successful DPC constant does not satisfy this missing-input case.",
+          "source_refs": [
+            "dpc",
+            "failure"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "source_refs": {
+        "dpc": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/tools.py",
+          "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3",
+          "lines": [
+            321,
+            360
+          ],
+          "symbol": "dpc_finish"
+        },
+        "failure": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/tools.py",
+          "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3",
+          "lines": [
+            472,
+            477
+          ],
+          "symbol": "_fail_task"
+        }
+      },
+      "review_status": "not_reviewed"
+    },
+    {
+      "id": "ap2-ho-023",
+      "split": "held_out",
+      "template_family": "duplicate_datapart_first_occurrence",
+      "distinct_obligation": "Retain exact typed first-occurrence selection when a public A2A request contains repeated data keys, including a first null or false value.",
+      "expected_facts": [
+        {
+          "claim": "find_data_part returns immediately on the first dictionary containing the key, preserving its value even when null or false; find_data_parts collects all matching values in order.",
+          "source_refs": [
+            "first",
+            "all"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_order": [
+        {
+          "claim": "Public typed inputs -> unchanged original tool/helper invocation -> retained return/failure/events before any unsupported downstream completion.",
+          "source_refs": [
+            "first",
+            "all"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_state": [
+        {
+          "claim": "The exact selected value and JSON type match the first containing dictionary; all-occurrence output remains a separate operation.",
+          "source_refs": [
+            "first",
+            "all"
+          ],
+          "status": "source_supported"
+        },
+        {
+          "claim": "Human review, full workflow reachability and external capture/source authentication remain unverified. Offline source-boundary evidence cannot qualify full held-out shopper performance.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "reset": [
+        {
+          "claim": "Use fresh owned worker/module state and an outside-workspace private profile. Retain before/after evidence; do not overwrite previous allocations or equate this boundary reset with full ADK/server/credential reset.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "legitimate_alternatives": [
+        {
+          "claim": "Report the actually observed missing/failed/unsupported outcome honestly. Additional original workflow choices remain separate tasks and cannot replace this preassigned boundary input.",
+          "source_refs": [
+            "first",
+            "all"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "near_misses": [
+        {
+          "claim": "Last-wins merging, truthiness fallback or inferring that null means the key was absent changes the original helper semantics.",
+          "source_refs": [
+            "first",
+            "all"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "source_refs": {
+        "first": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/message_utils.py",
+          "sha256": "7f8e0a62cfdab15089d0a3478b19814c505915c217f078c111fa3d9889dcc7ca",
+          "lines": [
+            22,
+            38
+          ],
+          "symbol": "find_data_part"
+        },
+        "all": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/message_utils.py",
+          "sha256": "7f8e0a62cfdab15089d0a3478b19814c505915c217f078c111fa3d9889dcc7ca",
+          "lines": [
+            41,
+            58
+          ],
+          "symbol": "find_data_parts"
+        }
+      },
+      "review_status": "not_reviewed"
+    },
+    {
+      "id": "ap2-ho-024",
+      "split": "held_out",
+      "template_family": "remote_failure_ordered_diagnostics",
+      "distinct_obligation": "Propagate ordered nonempty remote TextPart error details for a failed credential Task rather than replacing them with generic artifact absence or DataPart metadata.",
+      "expected_facts": [
+        {
+          "claim": "_extract_task_error_text joins nonempty text-bearing parts with space-pipe-space in order; _raise_if_task_failed returns for missing/completed state and otherwise raises with peer, operation, state and extracted text or no-message fallback.",
+          "source_refs": [
+            "extract",
+            "guard"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_order": [
+        {
+          "claim": "Public typed inputs -> unchanged original tool/helper invocation -> retained return/failure/events before any unsupported downstream completion.",
+          "source_refs": [
+            "extract",
+            "guard"
+          ],
+          "status": "source_supported"
+        }
+      ],
+      "expected_state": [
+        {
+          "claim": "A failed Task raises ValueError with the ordered original text diagnostics; unrelated DataPart contents and empty TextParts do not become diagnostic text.",
+          "source_refs": [
+            "extract",
+            "guard"
+          ],
+          "status": "source_supported"
+        },
+        {
+          "claim": "Human review, full workflow reachability and external capture/source authentication remain unverified. Offline source-boundary evidence cannot qualify full held-out shopper performance.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "reset": [
+        {
+          "claim": "Use fresh owned worker/module state and an outside-workspace private profile. Retain before/after evidence; do not overwrite previous allocations or equate this boundary reset with full ADK/server/credential reset.",
+          "source_refs": [],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "legitimate_alternatives": [
+        {
+          "claim": "Report the actually observed missing/failed/unsupported outcome honestly. Additional original workflow choices remain separate tasks and cannot replace this preassigned boundary input.",
+          "source_refs": [
+            "extract",
+            "guard"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "near_misses": [
+        {
+          "claim": "Dropping an earlier text, reversing texts, using unrelated DataPart metadata or replacing the remote error with generic no-artifact text does not preserve the observed failure cause.",
+          "source_refs": [
+            "extract",
+            "guard"
+          ],
+          "status": "pending_human_judgment"
+        }
+      ],
+      "source_refs": {
+        "extract": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_payment_processor_agent/tools.py",
+          "sha256": "41a11923ae38798099c39a25d95d358ab1845320f64f8833b4955fa09b04e12d",
+          "lines": [
+            294,
+            309
+          ],
+          "symbol": "_extract_task_error_text"
+        },
+        "guard": {
+          "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_payment_processor_agent/tools.py",
+          "sha256": "41a11923ae38798099c39a25d95d358ab1845320f64f8833b4955fa09b04e12d",
+          "lines": [
+            312,
+            325
+          ],
+          "symbol": "_raise_if_task_failed"
+        }
+      },
+      "review_status": "not_reviewed"
     }
   ]
 }

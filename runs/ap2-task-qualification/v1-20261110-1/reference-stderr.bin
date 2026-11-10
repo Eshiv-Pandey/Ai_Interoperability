@@ -1,0 +1,43 @@
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\ap2_task_qualification_actor_v1.py", line 119, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\ap2_task_qualification_actor_v1.py", line 96, in main
+    results=asyncio.run(execute())
+  File "C:\Python313\Lib\asyncio\runners.py", line 193, in run
+    with Runner(debug=debug, loop_factory=loop_factory) as runner:
+         ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\runners.py", line 58, in __enter__
+    self._lazy_init()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\asyncio\runners.py", line 137, in _lazy_init
+    self._loop = events.new_event_loop()
+                 ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\asyncio\events.py", line 837, in new_event_loop
+    return get_event_loop_policy().new_event_loop()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\asyncio\events.py", line 734, in new_event_loop
+    return self._loop_factory()
+           ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\asyncio\windows_events.py", line 316, in __init__
+    super().__init__(proactor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\proactor_events.py", line 637, in __init__
+    self._make_self_pipe()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\asyncio\proactor_events.py", line 784, in _make_self_pipe
+    self._ssock, self._csock = socket.socketpair()
+                               ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\socket.py", line 615, in _fallback_socketpair
+    lsock.bind((host, 0))
+    ~~~~~~~~~~^^^^^^^^^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\ap2_task_qualification_actor_v1.py", line 34, in deny
+    raise PermissionError('offline_network_denied')
+PermissionError: offline_network_denied
+<sys>:0: RuntimeWarning: coroutine 'main.<locals>.execute' was never awaited
+Exception ignored in: <function BaseEventLoop.__del__ at 0x00000267B2081E40>
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\base_events.py", line 761, in __del__
+  File "C:\Python313\Lib\asyncio\proactor_events.py", line 694, in close
+  File "C:\Python313\Lib\asyncio\proactor_events.py", line 776, in _close_self_pipe
+AttributeError: 'ProactorEventLoop' object has no attribute '_ssock'

@@ -1,0 +1,59 @@
+{
+  "runtime_manifest": {
+    "evidence": {
+      "complete": true,
+      "observed_at": 0,
+      "valid_until": 4102444800
+    },
+    "horizon": 1,
+    "id": "graph-0002",
+    "initial": "s000",
+    "provenance": {
+      "kind": "authored-development",
+      "review_status": "AI-authored parameterized development; human review pending",
+      "source": "scripts/generate_refinement_scaling_v1.py"
+    },
+    "route": "Authored finite development graph; not a qualified protocol route",
+    "runtime_contract": {
+      "goal": [
+        {
+          "field": "done",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "invariants": [
+        {
+          "field": "safe",
+          "op": "eq",
+          "value": true
+        }
+      ]
+    },
+    "schema_version": "finite-continuation/1",
+    "states": {
+      "s000": {
+        "done": false,
+        "safe": true
+      },
+      "s001": {
+        "done": true,
+        "safe": true
+      }
+    },
+    "transitions": [
+      {
+        "id": "e0000",
+        "operation": "declared_recipe",
+        "source": "s000",
+        "target": "s001"
+      }
+    ]
+  },
+  "now": 100,
+  "kind": "evaluate",
+  "module": "interoperability.baseline",
+  "entrypoint": "evaluate",
+  "keyword_arguments": {},
+  "reply_path": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\abstraction-control\\v1-20261110-2\\control\\jobs\\case-0001-baseline\\reply.json"
+}

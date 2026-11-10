@@ -1,6 +1,6 @@
 # AP2 source task-bank candidates v1
 
-Prepared 10 November 2026. This bank contains 28 AI-authored, source-derived candidate templates: 6 development, 4 calibration and 18 prospectively allocated held-out templates. It deliberately leaves six AP2 held-out slots unfilled. Human eligibility/distinctness review, reference execution and gold validation remain pending for every record. These files provide no completed task, qualified AP2 domain, CP3 pass or checkpoint percentage.
+Updated 10 November 2026. This bank contains 34 AI-authored, source-derived candidate templates: 6 development, 4 calibration and 24 prospectively allocated held-out templates. The six additions are explicit original-source tool/protocol boundary obligations. Human eligibility/distinctness review and full task/gold qualification remain pending. Separate offline development executions support those six source boundaries; they do not establish a complete shopper purchase, qualified AP2 domain, human review or independent held-out performance.
 
 ## Coverage and honest count
 
@@ -8,12 +8,12 @@ Prepared 10 November 2026. This bank contains 28 AI-authored, source-derived can
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Development | 6 | 6 | 0 | 0 | 0 |
 | Calibration | 4 | 4 | 0 | 0 | 0 |
-| Held out | 24 | 18 | 6 | 0 | 0 |
-| Total | 34 | 28 | 6 | 0 | 0 |
+| Held out | 24 | 24 | 0 | 0 | 0 |
+| Total | 34 | 34 | 0 | 0 | 0 |
 
-The 28 is a candidate-record count, not 28 approved independent application tasks. The application tasks differ in business, source protocol, causal-order, outcome or lifecycle obligation, as listed below. Some share the same original purchase prefix and their scientific independence still needs review. The source inspections do not justify claiming that the required 34 eligible AP2 tasks are complete. The combined 12/8/48 target remains open; the global manifest must use actual reviewed/qualified coverage rather than filling the gap with controls.
+The 34 is a candidate-record count, not 34 approved independent full-shopper tasks. There are 28 workflow candidates and six separately classified source-boundary candidates. The structural combined allocation is now 68 records, 12/8/48 across two domains. Eligibility, comparable task scope and scientific independence still require review. Source-boundary controls must never be counted as six completed shopper purchases. The runtime-qualified table column means full task qualification; developmental helper/branch evidence is reported separately.
 
-Execution classes are explicit in each public fixture recipe: 27 candidates use `original_shopper_workflow`; one calibration candidate uses `isolated_original_workflow_pair`. The latter requires two actual allocations and a reviewed lifecycle, not two independently counted task templates. No main record is a pure assessor mutation, hand-constructed child endpoint test, or a human-not-present MCP checkout task.
+Execution classes are explicit: 27 candidates use `original_shopper_workflow`, one uses `isolated_original_workflow_pair`, and six use `original_source_boundary_control`. The pair requires two actual allocations, not two templates. The new controls execute genuine original input/protocol obligations with public typed boundary inputs. Their deliberate direct-function/state interventions are disclosed and do not replace the original shopper prefix. DPC finish is separate from CARD/HP OTP continuation.
 
 Wrong/absent/conflicting OTP data, altered task/context/history, missing/duplicate/malformed/swapped receipts, changed valid mandates, disclosure-versus-leaf equality, and cross-account ordering are supplementary evaluator near misses. They are not extra held-out purchase tasks, observed upstream outcomes, native reference trajectories or independent task-count credit.
 
@@ -43,9 +43,9 @@ All public prompts/recipe inputs can be released to the task actor. Evaluator fi
 
 ## Prospective split and leakage declaration
 
-The split is declared before any application execution performed by this bank-authoring work. None of these held-out records has been executed, held-out tuned, independently judged or gold-validated here. Freeze file hashes and reviewer-approved membership before any scored trial. Preassign each instance and any required outcome branch; if that branch is not observed, retain the attempt as unrealized rather than reassigning it post hoc, replacing its evidence, selecting a favorable retry or silently counting a different outcome.
+The initial workflow split was declared before application execution by this bank-authoring work. Six later source-boundary labels have explicit developmental executions, so they supply no untouched-holdout claim. No bank record has received independent human gold validation or a scored held-out model trial. The bank-wide `runtime_execution: not_executed` metadata means full bank/application qualification remains absent; the separate runtime receipt records partial boundary support. Freeze reviewer-approved membership before scored trials. Preassign required branches; retain unrealized outcomes without reassignment, favorable replacement or silently scoring another outcome.
 
-All templates were authored by an AI after reading public AP2 source, the existing development/reassessment material and the public-assessor design, including its known software near misses. This is explicit public-source/development leakage. The author saw both public and evaluator candidate content. Prospective `held_out` membership does not establish secret tasks, human independence, family isolation or model contamination resistance. Reviewers must assess overlap, branch realizability, family-level leakage and whether any candidate is merely a restatement of another.
+All templates were authored by an AI after reading public AP2 source, the existing development/reassessment material and the public-assessor design, including known software near misses. This is explicit public-source/development leakage. The author saw both public and evaluator content. The six new labels received developmental boundary executions, so their membership supplies no untouched-holdout claim. Prospective `held_out` does not establish secrecy, human independence, family isolation or contamination resistance. Reviewers must assess overlap, branch realizability and comparable scope before any scored model study.
 
 ## Main candidate obligations
 
@@ -79,6 +79,20 @@ All templates were authored by an AI after reading public AP2 source, the existi
 | `ap2-ho-016` | held_out | Retain the original signed-transaction credential lookup failure when no previously bound token matches that transaction, rather than accepting signature/OTP alone. |
 | `ap2-ho-017` | held_out | Report the original HP receipt outcome as simulated payment semantics without inventing debit/reservation/durable exactly-once effects. |
 | `ap2-ho-018` | held_out | Carry the actual single canonical original receipt from processor artifact through merchant artifact into shopper state without substituting text or a different receipt. |
+| `ap2-ho-019` | held_out | Reject unavailable requested-cart checkout before signing or publishing checkout data. |
+| `ap2-ho-020` | held_out | Preserve missing-PaymentMandate merchant failure before verifier/risk/processor operations. |
+| `ap2-ho-021` | held_out | Preserve missing-risk-data rejection with a nonempty original signer output before processor construction. |
+| `ap2-ho-022` | held_out | Preserve the separate DPC finish missing-checkout-mandate guard. |
+| `ap2-ho-023` | held_out | Preserve exact typed first-occurrence DataPart lookup when duplicate keys include null. |
+| `ap2-ho-024` | held_out | Preserve ordered remote TextPart diagnostics and original failed-task exception propagation. |
+
+The six boundary controls have executable development support in
+[ap2-task-runtime-qualification-v1.md](ap2-task-runtime-qualification-v1.md).
+Their actor receives public inputs only. Additional private executable rules are
+in `benchmark/tasks-v1/ap2/qualification-private-v1.json`; this file and the
+evaluator script must not be distributed to an actor. These rules machine-check
+source-supported boundaries and do not replace human judgment of gold or full
+workflow reachability.
 
 Conditional outcome candidates (`ap2-dev-004`, `ap2-ho-013`, `ap2-ho-014`, `ap2-ho-016`) require actual original credential/receipt outcome evidence. They do not authorize injected provider/model/network failures or arbitrary handler retargeting. If an original branch is not encountered, its candidate instance remains unevaluated. Reviewer approval of an executable source-compatible initial condition is still needed before treating these as benchmark instances.
 

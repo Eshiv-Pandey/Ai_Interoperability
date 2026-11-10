@@ -1,0 +1,42 @@
+{
+  "status": "returned",
+  "input_sha256_before": "2a34425e2ab1d08ab9eff6016eba83da83ef9199ddeed0128c2013d9ad8addda",
+  "evaluation_ns": 156500,
+  "result": {
+    "decision": "supported",
+    "reason": "A modeled invariant-safe path satisfies the runtime goal within the horizon.",
+    "certificate": {
+      "model_sha256": "2a34425e2ab1d08ab9eff6016eba83da83ef9199ddeed0128c2013d9ad8addda",
+      "checked_at": 100,
+      "horizon": 4,
+      "valid_until": 4102444800,
+      "kind": "path",
+      "transition_ids": [
+        "e0000",
+        "e0004",
+        "e0008",
+        "e0012"
+      ]
+    },
+    "stats": {
+      "path_nodes": 5
+    }
+  },
+  "input_sha256_after": "2a34425e2ab1d08ab9eff6016eba83da83ef9199ddeed0128c2013d9ad8addda",
+  "input_unchanged": true,
+  "resources": {
+    "schema_version": "benchmark-worker-resources/1",
+    "timings": {
+      "preparation_ns": 12400200,
+      "result_serialization_ns": 17300,
+      "post_validation_ns": 33100
+    },
+    "memory": {
+      "status": "observed",
+      "peak_resident_bytes": 21913600,
+      "source": "GetProcessMemoryInfo.PeakWorkingSetSize",
+      "platform": "win32"
+    }
+  },
+  "worker_body_ns": 18420500
+}

@@ -1,0 +1,99 @@
+{
+  "runtime_manifest": {
+    "evidence": {
+      "complete": true,
+      "observed_at": 0,
+      "valid_until": 4102444800
+    },
+    "horizon": 2,
+    "id": "graph-0019",
+    "initial": "s000",
+    "provenance": {
+      "kind": "authored-development",
+      "review_status": "AI-authored parameterized development; human review pending",
+      "source": "scripts/generate_refinement_scaling_v1.py"
+    },
+    "route": "Authored finite development graph; not a qualified protocol route",
+    "runtime_contract": {
+      "goal": [
+        {
+          "field": "done",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "invariants": [
+        {
+          "field": "safe",
+          "op": "eq",
+          "value": true
+        }
+      ]
+    },
+    "schema_version": "finite-continuation/1",
+    "states": {
+      "s000": {
+        "done": false,
+        "safe": true
+      },
+      "s001": {
+        "done": false,
+        "safe": true
+      },
+      "s002": {
+        "done": true,
+        "safe": true
+      }
+    },
+    "transitions": [
+      {
+        "id": "e0000",
+        "operation": "declared_recipe",
+        "source": "s000",
+        "target": "s001"
+      },
+      {
+        "id": "e0001",
+        "operation": "declared_recipe",
+        "source": "s000",
+        "target": "s001"
+      },
+      {
+        "id": "e0002",
+        "operation": "declared_recipe",
+        "source": "s001",
+        "target": "s002"
+      },
+      {
+        "id": "e0003",
+        "operation": "declared_recipe",
+        "source": "s001",
+        "target": "s002"
+      }
+    ]
+  },
+  "now": 100,
+  "kind": "certificate",
+  "module": "interoperability.oracle",
+  "entrypoint": "check_certificate",
+  "result": {
+    "decision": "supported",
+    "reason": "bounded_path",
+    "certificate": {
+      "model_sha256": "5ff23cb402215ad9780cd97fc20d204acba24307413c2cd85f1c5bc1c10d12d7",
+      "checked_at": 100,
+      "horizon": 2,
+      "valid_until": 4102444800,
+      "kind": "path",
+      "transition_ids": [
+        "e0000",
+        "e0002"
+      ]
+    },
+    "stats": {
+      "state_visits": 3,
+      "edge_checks": 4
+    }
+  },
+  "reply_path": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\abstraction-control\\v1-20261110-2\\control\\jobs\\case-0018-abstraction_only-certificate\\reply.json"
+}

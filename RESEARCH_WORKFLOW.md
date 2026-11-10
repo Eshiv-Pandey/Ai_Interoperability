@@ -1,4 +1,4 @@
-**Current user direction and completion (10 November 2026):** use concrete implementation deliverables for progress. [Delivery planv2](docs/research/implementation-delivery-plan-v2.md) fixed eight equal workpackages before this run; five are now verified, giving62.5%. The [current delivery](docs/research/implementation-delivery-results-v2.md) contains fresh clean-Linux reproduction, regenerated analysis/figures and application evidence. Earlier all-or-nothing scientific gates are retained as historical readiness checks.
+**Current user direction (10 November 2026):** continue until the entire research project and paper are complete. [The whole-project register](docs/research/project-completion-status-v1.json) retains the substantive scope and outstanding work. [Delivery plan v2](docs/research/implementation-delivery-plan-v2.md) separately counts five of eight implementation deliveries, or 62.5%; that figure is not an entire-project percentage. Earlier scientific-gate scores and supervisor schedules below are historical.
 
 # Student-budget research workflow v1: approved scope
 
