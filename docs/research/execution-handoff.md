@@ -1,3 +1,23 @@
+# Latest verified research handoff: 11 November 2026
+
+Whole-project work completion is about **65%**, rounded from65.5 under unchanged
+weights and scope; about10percentage points uncertainty. The user's80%target
+is not reached. [The updated estimate](whole-project-progress-estimate-v4.json)
+keeps the original96-task/three-path study,96crossing episodes, qualification
+and final review in the remaining scope.
+
+The complete [cache ablation](shared-cache-ablation-results-v3.md) has1584audited
+method cells, including1056cache-policy cells; no policy adds a certified case
+beyond goal-pruned direct. Both caches exactly reproduce the frozen solver's
+certificates/counters. The strict [AgentOps diagnostic](agentops-governed-app-diagnostic-results-v2.md)
+remains0/2but establishes the actual import-time urllib3IPv6 probe caller.
+The original governed-App references and65-cell original AP2 payment-tool
+matrix are running in separately allocated hosted workflows. Pending outcomes
+are not credited as completed execution. Continue original ADK shopper and
+source-bank qualification, full experiments, audits and manuscript integration.
+
+The entries below are historical.
+
 # Latest verified research handoff: 10 November 2026
 
 Estimated whole-project work completion is about **60%**, rounded from59 under
