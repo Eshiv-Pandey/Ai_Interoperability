@@ -1,0 +1,70 @@
+name: AP2 paired original payment-tool application development v5
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-application-matrix:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.1'
+      - name: Prepare exact original source and pinned dependency versions
+        shell: bash
+        run: |
+          python -I -S -B scripts/ap2_reference_development_v5.py prepare --output "$RUNNER_TEMP/ap2-v5/prepared"
+          python -m venv "$RUNNER_TEMP/ap2-v5-environment"
+      - name: Install one fresh pinned runtime for isolated cell workers
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/ap2-v5-environment/bin/python" -m pip install --report "$RUNNER_TEMP/ap2-v5/pip-install-report.json" -r "$RUNNER_TEMP/ap2-v5/prepared/requirements.txt"
+          "$RUNNER_TEMP/ap2-v5-environment/bin/python" -m pip check > "$RUNNER_TEMP/ap2-v5/pip-check.txt"
+      - name: Check frozen inherited controls and new matrix separation
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/ap2-v5-environment/bin/python" -B -m unittest discover -s tests -p test_ap2_reference_development_v3.py -v
+          "$RUNNER_TEMP/ap2-v5-environment/bin/python" -B -m unittest discover -s tests -p test_ap2_reference_development_v4.py -v
+          "$RUNNER_TEMP/ap2-v5-environment/bin/python" -B -m unittest discover -s tests -p test_ap2_reference_development_v5.py -v
+      - name: Execute separately retained original-tool smoke cells
+        shell: bash
+        run: |
+          python -I -S -B scripts/ap2_reference_development_v5.py execute \
+            --output "$RUNNER_TEMP/ap2-v5/smoke/conventional" \
+            --site-packages "$RUNNER_TEMP/ap2-v5-environment/lib/python3.13/site-packages" \
+            --case human_demo_otp --arm conventional
+          python -I -S -B scripts/ap2_reference_development_v5.py execute \
+            --output "$RUNNER_TEMP/ap2-v5/smoke/shared" \
+            --site-packages "$RUNNER_TEMP/ap2-v5-environment/lib/python3.13/site-packages" \
+            --case human_demo_otp --arm shared
+      - name: Execute the prospective 65-cell matrix with fresh signing state
+        shell: bash
+        run: |
+          python -I -S -B scripts/run_ap2_application_matrix_v5.py \
+            --output "$RUNNER_TEMP/ap2-v5/matrix" \
+            --site-packages "$RUNNER_TEMP/ap2-v5-environment/lib/python3.13/site-packages"
+      - name: Independently evaluate actual original Tasks, receipts and adverse cells
+        if: always()
+        shell: bash
+        run: |
+          if [ -f "$RUNNER_TEMP/ap2-v5/matrix/execution-results.json" ]; then
+            python -I -S -B scripts/evaluate_ap2_application_matrix_v5.py \
+              --matrix "$RUNNER_TEMP/ap2-v5/matrix" \
+              --output "$RUNNER_TEMP/ap2-v5/independent-evaluation" \
+              --site-packages "$RUNNER_TEMP/ap2-v5-environment/lib/python3.13/site-packages"
+          fi
+      - name: Retain the complete actual allocation, all failures and smoke cells
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ap2-paired-original-payment-tools-development-v5
+          path: ${{ runner.temp }}/ap2-v5/
+          if-no-files-found: error
+          retention-days: 30

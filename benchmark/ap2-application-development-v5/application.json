@@ -1,0 +1,36 @@
+{
+  "schema_version": "ap2-application-development-matrix/5",
+  "source_pin": "e1ea56db72a6385bce3e5c1112b3a56ce60acb43",
+  "scope": "Original AP2 shopper payment and OTP tools, merchant, processor, credentials provider and SDK task stores; owned prefix decisions, offline fixtures and in-process ASGI. These are application development cells, not full ADK shopper tasks, MCP bridge qualification or human-approved gold.",
+  "provider_requests_allowed": 0,
+  "source_bank_candidates": 34,
+  "source_bank_human_gold_qualification": "pending",
+  "whole_route_non_support_inference_allowed": false,
+  "worker_timeout_seconds": 180,
+  "matrix_timeout_seconds": 1500,
+  "declared_cells": 65,
+  "cell_order": "case-major, arm-minor, exactly the ordered Cartesian product below",
+  "fresh_private_signing_state_per_cell": true,
+  "arms": [
+    {"id": "reference", "recover": false, "shared_admission": false, "inspect_public_task": true, "apply_received_fault": false, "description": "Source-reference equivalent: valid source-sender state under the same offline/ASGI intervention; wrong or absent human responses remain adverse."},
+    {"id": "conventional", "recover": false, "shared_admission": false, "inspect_public_task": false, "apply_received_fault": true, "description": "Unchanged original tool return and received caller state. Generic input-required text alone supplies no OTP. No Task read or repair."},
+    {"id": "recovery", "recover": true, "shared_admission": false, "inspect_public_task": true, "apply_received_fault": true, "description": "One legal original SDK Task read; restore already-observed sender identity/mandates or invoke an omitted original credential association. No admission. Recipient transport loss remains unrepairable."},
+    {"id": "shared", "recover": false, "shared_admission": true, "inspect_public_task": true, "apply_received_fault": true, "description": "Check actual received original-tool request against canonical public observations. No state repair or omitted association execution."},
+    {"id": "recovery_shared", "recover": true, "shared_admission": true, "inspect_public_task": true, "apply_received_fault": true, "description": "The same legal public recovery followed by independently checked shared admission, with another freshness check before the original ASGI handler."}
+  ],
+  "cases": [
+    {"id": "natural_hint_loss", "fault": "none", "human_response": "public_demo_hint", "description": "The original tool hides the real input-required challenge in its generic return."},
+    {"id": "human_demo_otp", "fault": "none", "human_response": "123", "description": "Explicit development human/demo reply; preserve original source values."},
+    {"id": "human_wrong_otp", "fault": "none", "human_response": "000", "description": "Explicit wrong public reply. No arm may replace it with the demo hint."},
+    {"id": "human_no_reply", "fault": "none", "human_response": null, "description": "No human reply. Wait even though the public demo challenge offers a hint."},
+    {"id": "stale_merchant_id", "fault": "prior_catalog_task_id", "human_response": "123", "description": "Replace continuation authority with an actual earlier completed original merchant catalog Task ID."},
+    {"id": "nested_processor_id", "fault": "nested_processor_task_id", "human_response": "123", "description": "Replace merchant authority with the actual nested processor Task ID retained in the challenge."},
+    {"id": "wrong_context", "fault": "other_original_catalog_context", "human_response": "123", "description": "Use the actual context from a separate original catalog allocation in this same fresh worker."},
+    {"id": "missing_caller_mandate", "fault": "remove_caller_payment_mandate", "human_response": "123", "description": "Remove the required payment mandate from the caller after original payment start; retain the original source RuntimeError before message construction."},
+    {"id": "swapped_mandate", "fault": "checkout_in_payment_slot", "human_response": "123", "description": "Use the actual original checkout mandate in the payment-mandate slot."},
+    {"id": "missing_association", "fault": "omit_original_credential_association", "human_response": "123", "description": "Omit the original signed-mandate association step in received arms; retain actual credential-lookup behavior."},
+    {"id": "recipient_mandate_loss", "fault": "drop_received_payment_datapart", "human_response": "123", "description": "Declared owned transport perturbation removes the payment DataPart after unchanged original message construction. Public sender and received raw request are retained separately."},
+    {"id": "duplicate_continuation", "fault": "repeat_original_otp_tool", "human_response": "123", "description": "Invoke the original OTP tool twice; retain real terminal-task SDK behavior or once-only admission refusal."},
+    {"id": "stale_certificate", "fault": "dispatch_delay", "human_response": "123", "certificate_valid_for_seconds": 1, "dispatch_delay_seconds": 2, "description": "A prospectively declared one-second finite-model interval with a real two-second pre-handler delay. Other arms receive the same delay."}
+  ]
+}
