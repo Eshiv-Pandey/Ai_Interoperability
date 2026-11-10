@@ -1,3 +1,33 @@
+# Active research execution: 11 November 2026, V13 native matrix
+
+Whole-project work remains approximately **75%**, under the unchanged
+[version 7 estimate](whole-project-progress-estimate-v7.json). The 80% target
+has not been credited yet.
+
+Hosted run [42918421487](https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/42918421487)
+uses frozen revision b96517f89be8ccc6755f78d2eb80b6e1c300f4e6. Its 53-path Git
+package check, hosted controls, 104-cell allocation and four independently
+evaluated native/bridge smokes passed. The matrix is running; completed cell
+results and the archive still need retention and independent raw review.
+Do not dispatch a duplicate or replace any allocated outcome.
+
+V12 run 42915964952 failed a missing outgoing-source fixture control before
+allocation or application execution. Its [retained diagnostic](ap2-native-bridge-development-analysis-v12.md)
+has null actual cell and transport-pair censuses. Its exact archive/API digest
+is 741f898e046261e1bb1d6118b63cfce1cbf0a27e0f79df3f6c53366e623156d7.
+All historical failures remain unchanged. V13 supplies the nine exact public
+source/license fixtures and preserves literal loopback URLs and policy logic.
+
+Root alone handles Git, dispatch and completed-run retention. The native owner
+monitors actual steps; the independent peer prepares all 65 historical pairs
+and will review all 104 raw new outcomes after retention. The manuscript agent
+prepares the V13 source-bound analyzer and successor manuscript. Require the
+actual completed archive/API identity before analysis or paper outcome claims.
+Manuscript V11 and its 31-check audit are committed; final V13 paper integration,
+full-study qualification, human gold and scientific review remain open.
+
+The entries below are historical.
+
 # Latest verified research handoff: 11 November 2026, actual V11 guard diagnosis
 
 Whole-project work remains approximately **75%**, under the unchanged
