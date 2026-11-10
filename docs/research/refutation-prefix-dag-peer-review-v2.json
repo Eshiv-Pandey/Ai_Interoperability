@@ -1,0 +1,1028 @@
+{
+  "schema_version": "refutation-prefix-dag-independent-peer-review/2",
+  "author": "Codex AI /root/codec_counterreview",
+  "generated_utc": "2026-11-10T21:47:14.386184+00:00",
+  "reviewed_revision": "separate_v2_successor",
+  "verdict": "three_v1_findings_fixed_in_v2_no_additional_concrete_defect_found_within_scoped_review",
+  "scope": {
+    "authorized_followup": "Root requested review of the separate V2 repair after the frozen V1 review.",
+    "read_only_retained_input": true,
+    "new_admission_solver_runs": 0,
+    "new_semantic_checker_runs_on_retained_cases": 0,
+    "real_semantic_checker_runs_in_this_review": 0,
+    "delegation_stub_calls": 1,
+    "v2_owner_test_run_inherited": {
+      "tests": 31,
+      "rerun_by_peer_reviewer": false
+    },
+    "implementation_edits_by_peer_reviewer": 0,
+    "retained_outputs_modified": false,
+    "prior_v1_peer_reports_modified": false,
+    "allowed_writes": [
+      "docs/research/refutation-prefix-dag-peer-review-v2.json",
+      "docs/research/refutation-prefix-dag-peer-review-v2.md"
+    ],
+    "retained_recompute_guard": "refinement_oracle.evaluate and check_certificate patched to fail if called; neither was called on retained cases."
+  },
+  "fingerprints": [
+    {
+      "path": "src/interoperability/refutation_prefix_dag_v2.py",
+      "bytes": 15326,
+      "sha256": "59794e5bd480763152577af37b1428cf4dcb737681dc380d8abd3c3ea3dc8449"
+    },
+    {
+      "path": "tests/test_refutation_prefix_dag_v2.py",
+      "bytes": 21604,
+      "sha256": "584d53584989d63f5719a9d413e24303ad72882244fc34871af2a1cd894c4356"
+    },
+    {
+      "path": "docs/research/refutation-prefix-dag-v2.md",
+      "bytes": 5803,
+      "sha256": "e9d04aee30140d0893f2aeea187f8d4a7ccd68eb00a2d0b426f73027de68355e"
+    },
+    {
+      "path": "docs/research/refutation-prefix-dag-comparison-v2.json",
+      "bytes": 28422,
+      "sha256": "7323bf3824bf7edd208f302d51d004cb225b3de06865c877a5b1230b277396a1"
+    },
+    {
+      "path": "docs/research/refutation-prefix-dag-peer-review-v1.json",
+      "bytes": 42946,
+      "sha256": "a3acdf769b299370410bb6a6efad916b0956a24232f870e2803976a922b2bb54"
+    },
+    {
+      "path": "docs/research/refutation-prefix-dag-peer-review-v1.md",
+      "bytes": 7221,
+      "sha256": "8c3bf7338b4d19f87f41d037d4d8ad4b69a1890ce433b590361e4540fbbe9e68"
+    },
+    {
+      "path": "src/interoperability/refinement_oracle.py",
+      "bytes": 25050,
+      "sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e"
+    },
+    {
+      "path": "src/interoperability/refinement_shared_lift_v2.py",
+      "bytes": 15366,
+      "sha256": "927538f7ddcb21120913c6c4257754b65a45703db384eec8cd6a28ba9e9b280b"
+    },
+    {
+      "path": "runs/shared-lifting-scaling/v3-20261110-1/budget-100000/results.jsonl",
+      "bytes": 981178,
+      "sha256": "92137f9cc15feac73fb51b9777cd961be307c6161bf6ad5c797ef3464ff1817c"
+    },
+    {
+      "path": "src/interoperability/refutation_prefix_dag_v1.py",
+      "bytes": 13877,
+      "sha256": "6e1b2012432945c3cec8595cafe077d69d56a6a6189001da7f7d7168f1b34c89"
+    },
+    {
+      "path": "tests/test_refutation_prefix_dag_v1.py",
+      "bytes": 14832,
+      "sha256": "45a2ad02c179fe34f464d0cdf20abe246856d226caf6e647594a49155f611999"
+    },
+    {
+      "path": "docs/research/refutation-prefix-dag-v1.md",
+      "bytes": 6687,
+      "sha256": "1873848106df85e75ed835ca7ffe4eebbe73ed47dfd3625f883689065070f2f0"
+    },
+    {
+      "path": "docs/research/refutation-prefix-dag-comparison-v1.json",
+      "bytes": 27003,
+      "sha256": "5b76d58a0ca110c09d7ae0bb0b4a6fc34951582ce5487408148e23ecadccdb14"
+    }
+  ],
+  "serializer": {
+    "sort_keys": true,
+    "separators": [
+      ",",
+      ":"
+    ],
+    "ensure_ascii": false,
+    "allow_nan": false,
+    "encoding": "utf-8",
+    "scope": "Complete original, V2 DAG-wrapped, restored and retained direct certificates"
+  },
+  "resolved_v1_findings": [
+    {
+      "id": "V1-F1",
+      "v1_status": "open_in_frozen_v1",
+      "v2_status": "fixed_and_independently_reproduced",
+      "mechanism": "Exact-int bit_length bound is applied before JSON conversion. Serializer ValueError is translated to DagError; DagError preserves existing bounds reasons; adapter returns False.",
+      "evidence_keys": [
+        "huge_default_encode",
+        "huge_default_decode",
+        "huge_default_adapter",
+        "huge_raised_limit_encode",
+        "huge_raised_limit_adapter",
+        "huge_disabled_interpreter_guard"
+      ]
+    },
+    {
+      "id": "V1-F2",
+      "v1_status": "open_in_frozen_v1",
+      "v2_status": "fixed_and_independently_instrumented",
+      "mechanism": "Constant-time exact dictionary length guards precede bounded field-set materialization. Bounded payload shape preflight precedes envelope key sorting. Outer result fields are not cloned.",
+      "evidence_keys": [
+        "extra_key_controls",
+        "envelope_preflight_dag",
+        "envelope_preflight_node",
+        "envelope_preflight_arc",
+        "prefix_envelope_preflight",
+        "minimal_delegation_stub"
+      ]
+    },
+    {
+      "id": "V1-F3",
+      "v1_status": "open_in_frozen_v1",
+      "v2_status": "fixed_and_independently_reproduced",
+      "mechanism": "Complete supplied old/DAG certificate envelopes are measured before construction/expansion, using the same operation allowance as payload validation and complete output checks.",
+      "evidence_keys": [
+        "complete_decode_input_bound",
+        "complete_encode_input_bound",
+        "shared_work_budget_controls"
+      ]
+    }
+  ],
+  "new_concrete_findings": [],
+  "adverse_controls": {
+    "huge_default_encode": {
+      "exception": "DagError",
+      "reason": "header_integer_bound_exceeded"
+    },
+    "huge_default_decode": {
+      "exception": "DagError",
+      "reason": "header_integer_bound_exceeded"
+    },
+    "huge_default_adapter": {
+      "result": false,
+      "exception": null
+    },
+    "huge_raised_limit_encode": {
+      "exception": "DagError",
+      "reason": "invalid_bounded_json"
+    },
+    "huge_raised_limit_adapter": {
+      "result": false,
+      "exception": null
+    },
+    "huge_disabled_interpreter_guard": {
+      "exception": "DagError",
+      "reason": "header_integer_bound_exceeded"
+    },
+    "complete_decode_input_bound": {
+      "input_bytes": 537,
+      "output_bytes": 388,
+      "limit": 388,
+      "outcome": {
+        "exception": "DagError",
+        "reason": "serialized_byte_bound_exceeded"
+      }
+    },
+    "complete_encode_input_bound": {
+      "input_bytes": 9086,
+      "prefix_list_bytes": 8705,
+      "limit": 9000,
+      "outcome": {
+        "exception": "DagError",
+        "reason": "serialized_byte_bound_exceeded"
+      }
+    },
+    "extra_key_controls": [
+      {
+        "location": "dag",
+        "extra_keys": 10000,
+        "field_set_input_lengths": [],
+        "outcome": {
+          "exception": "DagError",
+          "reason": "invalid_dag_fields"
+        }
+      },
+      {
+        "location": "node",
+        "extra_keys": 10000,
+        "field_set_input_lengths": [
+          4
+        ],
+        "outcome": {
+          "exception": "DagError",
+          "reason": "invalid_dag_node_fields"
+        }
+      },
+      {
+        "location": "arc",
+        "extra_keys": 10000,
+        "field_set_input_lengths": [
+          4,
+          2
+        ],
+        "outcome": {
+          "exception": "DagError",
+          "reason": "invalid_dag_arc_fields"
+        }
+      },
+      {
+        "location": "certificate",
+        "extra_keys": 10000,
+        "field_set_input_lengths": [],
+        "outcome": {
+          "exception": "DagError",
+          "reason": "invalid_certificate_fields_or_kind"
+        }
+      }
+    ],
+    "envelope_preflight_dag": {
+      "serializer_called_before_refusal": false,
+      "outcome": {
+        "exception": "DagError",
+        "reason": "invalid_dag_fields"
+      }
+    },
+    "envelope_preflight_node": {
+      "serializer_called_before_refusal": false,
+      "outcome": {
+        "exception": "DagError",
+        "reason": "invalid_dag_node_fields"
+      }
+    },
+    "envelope_preflight_arc": {
+      "serializer_called_before_refusal": false,
+      "outcome": {
+        "exception": "DagError",
+        "reason": "invalid_dag_arc_fields"
+      }
+    },
+    "prefix_envelope_preflight": {
+      "serializer_called_before_refusal": false,
+      "outcome": {
+        "exception": "DagError",
+        "reason": "bounded_nonempty_edge_label_required"
+      }
+    },
+    "shared_work_budget_controls": [
+      {
+        "operation": "encode_prefixes",
+        "charged_budget_count": 1,
+        "charged_work_units": 61,
+        "fits_exact": true,
+        "one_unit_less": {
+          "exception": "DagError",
+          "reason": "codec_work_budget_exhausted"
+        }
+      },
+      {
+        "operation": "encode_certificate",
+        "charged_budget_count": 1,
+        "charged_work_units": 161,
+        "fits_exact": true,
+        "one_unit_less": {
+          "exception": "DagError",
+          "reason": "codec_work_budget_exhausted"
+        }
+      },
+      {
+        "operation": "decode_prefixes",
+        "charged_budget_count": 1,
+        "charged_work_units": 67,
+        "fits_exact": true,
+        "one_unit_less": {
+          "exception": "DagError",
+          "reason": "codec_work_budget_exhausted"
+        }
+      },
+      {
+        "operation": "decode_certificate",
+        "charged_budget_count": 1,
+        "charged_work_units": 119,
+        "fits_exact": true,
+        "one_unit_less": {
+          "exception": "DagError",
+          "reason": "codec_work_budget_exhausted"
+        }
+      }
+    ],
+    "minimal_delegation_stub": {
+      "result": true,
+      "stub_calls": 1,
+      "passed_result_keys": [
+        "certificate",
+        "decision"
+      ],
+      "exact_original_certificate_restored": true,
+      "real_semantic_checker_runs": 0
+    }
+  },
+  "language_and_semantic_review": {
+    "exact_order_preserved": true,
+    "equal_right_language_sharing_only": true,
+    "redundant_longer_prefixes_retained": true,
+    "independent_decoder_not_encoder_self_check": true,
+    "no_new_frame_or_global_failure_cache": true,
+    "unchanged_checker_delegation": true,
+    "header_and_old_kind_exactly_restored": true,
+    "private_preflight_bypass_scope": "_decode(structure_checked=True) is used only immediately after _dag_structure and complete envelope size validation by the public certificate decoder.",
+    "bounded_accounting_scope": "One charged budget per public operation in the measured controls; payload preflight, whole input serialization, construction/expansion and output serialization do not reset the allowance. Work units are declared operation counts rather than timing or memory guarantees."
+  },
+  "retained_comparison": {
+    "source_at_execution": {
+      "path": "src/interoperability/refutation_prefix_dag_v2.py",
+      "bytes": 15326,
+      "sha256": "59794e5bd480763152577af37b1428cf4dcb737681dc380d8abd3c3ea3dc8449"
+    },
+    "input_bytes": 981178,
+    "input_sha256": "92137f9cc15feac73fb51b9777cd961be307c6161bf6ad5c797ef3464ff1817c",
+    "selected_rows": 26,
+    "aggregate": {
+      "old_bytes": 15128,
+      "dag_bytes": 11918,
+      "direct_bytes": 7760,
+      "smaller": 2,
+      "larger": 24,
+      "equal": 0
+    },
+    "all_exact_ordered_round_trips": true,
+    "all_independent_language_enumerations_exact": true,
+    "all_right_language_minimality_checks_pass": true,
+    "new_admission_solver_runs": 0,
+    "new_semantic_checker_runs_on_retained_cases": 0,
+    "rows": [
+      {
+        "case_id": "scale-0003",
+        "retained_row_sha256": "2185f4c6a271f19b147b194b2db2893ecc117aa5cab5141b7125687023a4d197",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "01dc70c0f819b5ac68052b6c188be3d5a1b0e287b50cb4755766d72747704878",
+        "dag_certificate_sha256": "21238b69967ce248cc090198abab9f93fbf60143ff4faea3e87cfa2e24bdeef8",
+        "restored_certificate_sha256": "01dc70c0f819b5ac68052b6c188be3d5a1b0e287b50cb4755766d72747704878",
+        "direct_certificate_sha256": "ca74da4ce6fc1f82a44b72a85135abb81aa34b2d12b46ae5642e51c01995be3c",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0007",
+        "retained_row_sha256": "548fb1f9f574738dfff6388e5a4e6ea9bfff08d0388edf8f4228e48ece968388",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "73db86a53ee3261d578531283e6f16ac13bb2ebdf827ac96b59a2763d560ce9b",
+        "dag_certificate_sha256": "6c176a4ad76d98de14686fb78b0f5877a74db0ddaab8c44e1d7c32018b6d2b94",
+        "restored_certificate_sha256": "73db86a53ee3261d578531283e6f16ac13bb2ebdf827ac96b59a2763d560ce9b",
+        "direct_certificate_sha256": "cef9a4b71d57831fac206c7bbb38557ff35899939507269f5593e53f09c5bb69",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0011",
+        "retained_row_sha256": "3e0f633d86bf35b17733d329d425100583a215d1d4ccd1ade5a356b408eb1b0a",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "6391dffbb5a0aff16964760038974026f8acae1d4428e4ce16f4af7b2f3d8719",
+        "dag_certificate_sha256": "1888c96b14b52d2b4b2cefa2637529d4a74d45527e1954c283205fa06dffddb6",
+        "restored_certificate_sha256": "6391dffbb5a0aff16964760038974026f8acae1d4428e4ce16f4af7b2f3d8719",
+        "direct_certificate_sha256": "a8a8f1674eaaa0e19f7474e36313e3fbe449790cecb818b6ddd9453ae105b327",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0015",
+        "retained_row_sha256": "8bde517369f3eb38ff891b59306ff5e8a1c04af3a9efb84b83be94d4fc9951e8",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "2d2610a8257c2305fe76adc4bbf13539917a3e57e4fda91ff329c1376bc23dc5",
+        "dag_certificate_sha256": "25d7d4a151fd7076e358cc94d971dde30c62120631feada090cd33a89d4e60b6",
+        "restored_certificate_sha256": "2d2610a8257c2305fe76adc4bbf13539917a3e57e4fda91ff329c1376bc23dc5",
+        "direct_certificate_sha256": "dd4a93c54cd88b25b53abd904598825c3ba40048f06f04642087ba7497e90ae0",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0018",
+        "retained_row_sha256": "47d4b61d1cf798a28fec93d0fe4278e0df4b1118fa26fe2bb58b8875054a6d96",
+        "evaluation_clock": 100,
+        "old_bytes": 211,
+        "dag_bytes": 378,
+        "direct_bytes": 242,
+        "old_certificate_sha256": "e79f70058a94665344dc8c2534b8f94d1f4788a194d1fbc0118a4b3f104e6264",
+        "dag_certificate_sha256": "1c9ff56db4270647b00d657eafc26262688ae3aecc3cc7d35982f641baded3fb",
+        "restored_certificate_sha256": "e79f70058a94665344dc8c2534b8f94d1f4788a194d1fbc0118a4b3f104e6264",
+        "direct_certificate_sha256": "6ae44bd21cc17fc7ffbea65e566ddb39f819eae0ca30413eb30dae4bc9c3d8bf",
+        "dag_nodes": 2,
+        "dag_arcs": 2,
+        "prefix_count": 2,
+        "prefix_edge_count": 2,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0019",
+        "retained_row_sha256": "a993a4e1cd3bacf62112da4e0407a5b7556b7a6132be366639b8a9e2224b6218",
+        "evaluation_clock": 100,
+        "old_bytes": 263,
+        "dag_bytes": 462,
+        "direct_bytes": 272,
+        "old_certificate_sha256": "4b1b733fabea43203776db02b299e324017faa74103351f7967f546b2810f98d",
+        "dag_certificate_sha256": "8749c5ce76de6ff64fa3e2003dd4b06ef270b59f143110ab906946edcbeb845c",
+        "restored_certificate_sha256": "4b1b733fabea43203776db02b299e324017faa74103351f7967f546b2810f98d",
+        "direct_certificate_sha256": "b034f05aacf5ebf9939f851ca690cab6a817dc1755d2cb0c30636ded45d52e9e",
+        "dag_nodes": 3,
+        "dag_arcs": 4,
+        "prefix_count": 4,
+        "prefix_edge_count": 8,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0022",
+        "retained_row_sha256": "b0fe44c870ed8fb04910962f96b283917a76828281935356a93bf764aea46323",
+        "evaluation_clock": 100,
+        "old_bytes": 211,
+        "dag_bytes": 378,
+        "direct_bytes": 248,
+        "old_certificate_sha256": "20574c952bed8a512df20d5aa06edad9afca5b73ac5e557bf920648296c893b7",
+        "dag_certificate_sha256": "c8f27897850953c6f6b87eceb8fc1ade9d96d915a7583f6e18540414b85d6a6c",
+        "restored_certificate_sha256": "20574c952bed8a512df20d5aa06edad9afca5b73ac5e557bf920648296c893b7",
+        "direct_certificate_sha256": "7a1e1b8f2692ab9e438425b5102dd65e0602030ed40339e9b71cf5062b9be5d5",
+        "dag_nodes": 2,
+        "dag_arcs": 2,
+        "prefix_count": 2,
+        "prefix_edge_count": 2,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0023",
+        "retained_row_sha256": "4ea4cec216ed44c648baabb183d298e4955d1d03711391f75bedba275a8c90c2",
+        "evaluation_clock": 100,
+        "old_bytes": 735,
+        "dag_bytes": 652,
+        "direct_bytes": 338,
+        "old_certificate_sha256": "dcd9f1efcbe39bd4ff5d1232dda22b0c93c2f8e4a933d373f0bbcd9bb0a332eb",
+        "dag_certificate_sha256": "e561ab2add0d8cd529894120171292fa556b464a3f329d662bf0c1209d8344ad",
+        "restored_certificate_sha256": "dcd9f1efcbe39bd4ff5d1232dda22b0c93c2f8e4a933d373f0bbcd9bb0a332eb",
+        "direct_certificate_sha256": "5e9bda253bf0587a8d959b939843dd8ae590cb03bcef106310b3b7d15cec6fd3",
+        "dag_nodes": 5,
+        "dag_arcs": 8,
+        "prefix_count": 16,
+        "prefix_edge_count": 64,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0026",
+        "retained_row_sha256": "cf9e664d56b843345f1ada91f55676b070181b6f2d4653cee478ce0f0ec983cb",
+        "evaluation_clock": 100,
+        "old_bytes": 231,
+        "dag_bytes": 434,
+        "direct_bytes": 242,
+        "old_certificate_sha256": "77f6f56a6d49d45be57346e0a856157e02e6652f9c8e13e35c3c70d0e14e480f",
+        "dag_certificate_sha256": "8192d49a446f178aa44f3b1f19c97678943ca46d030455afdc5b3e30bbd68bd9",
+        "restored_certificate_sha256": "77f6f56a6d49d45be57346e0a856157e02e6652f9c8e13e35c3c70d0e14e480f",
+        "direct_certificate_sha256": "8ec246b3d5e8ca7a3a94427e8e3b1cf934019961cfe155123175169e859b50c2",
+        "dag_nodes": 2,
+        "dag_arcs": 4,
+        "prefix_count": 4,
+        "prefix_edge_count": 4,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0027",
+        "retained_row_sha256": "37f3293537bf46010275a82339029affa5c4fe94a9a8579d1a26e20304a6f476",
+        "evaluation_clock": 100,
+        "old_bytes": 479,
+        "dag_bytes": 596,
+        "direct_bytes": 272,
+        "old_certificate_sha256": "ceb34d1dbb40706a885e1e9f3a12f57b0959b1f3ec46fb96ca5301a2ea66da0c",
+        "dag_certificate_sha256": "5733f9a05ab1a14ad69a0ccb0b0a37a8f63fef90c09ec8b5c00635a792e9b8ca",
+        "restored_certificate_sha256": "ceb34d1dbb40706a885e1e9f3a12f57b0959b1f3ec46fb96ca5301a2ea66da0c",
+        "direct_certificate_sha256": "cc427c91f29b71c7f219e959033ac86a42930aa45dc4f48e6efe90867bd92347",
+        "dag_nodes": 3,
+        "dag_arcs": 8,
+        "prefix_count": 16,
+        "prefix_edge_count": 32,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0030",
+        "retained_row_sha256": "a65e9ab14f078b4767a5fe37f99969818a1823a9e174af4690c7f08ffb1671f2",
+        "evaluation_clock": 100,
+        "old_bytes": 231,
+        "dag_bytes": 434,
+        "direct_bytes": 248,
+        "old_certificate_sha256": "3e9ad97abba2ace33939790d8cf440f59ff812744fe5cb6e7aeee8f23e39ba03",
+        "dag_certificate_sha256": "17207ecaef17d605f034c902be4710c6446760c1711aebbda4fa93ef29460930",
+        "restored_certificate_sha256": "3e9ad97abba2ace33939790d8cf440f59ff812744fe5cb6e7aeee8f23e39ba03",
+        "direct_certificate_sha256": "ed2466ac06d2e703cadb7afa3948d0e3b9dd3b5d7afc3e58842500c4bbca3fa4",
+        "dag_nodes": 2,
+        "dag_arcs": 4,
+        "prefix_count": 4,
+        "prefix_edge_count": 4,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0031",
+        "retained_row_sha256": "4a4a5d93904601806a6a5d790936f9b951d8e2f480ce0446f337387f6f85f543",
+        "evaluation_clock": 100,
+        "old_bytes": 8895,
+        "dag_bytes": 1736,
+        "direct_bytes": 338,
+        "old_certificate_sha256": "662745aba8747ed6c6a57d9ecf2ab07b81bcb1503cf7074f2abcce43d5110135",
+        "dag_certificate_sha256": "7594e88f74d34e32aebecb6e6154b8632e533002d320f7670b225225b406f014",
+        "restored_certificate_sha256": "662745aba8747ed6c6a57d9ecf2ab07b81bcb1503cf7074f2abcce43d5110135",
+        "direct_certificate_sha256": "20c804083cdd010739071332cbc46e769cfda33ef4903f392a92ce2fc8b221b0",
+        "dag_nodes": 5,
+        "dag_arcs": 16,
+        "prefix_count": 256,
+        "prefix_edge_count": 1024,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0035",
+        "retained_row_sha256": "9b733a150a26651be0a60a580f5d8608071d8f42f3f45890e175bff26071798b",
+        "evaluation_clock": 100,
+        "old_bytes": 227,
+        "dag_bytes": 432,
+        "direct_bytes": 349,
+        "old_certificate_sha256": "fed50cdc87efe7ebb47dfbd0bfa4221d37c4e435162e05bd0e4311da55a01fbb",
+        "dag_certificate_sha256": "6542d80401e757935f5008054ec40533bfa75af598a1657f81b28eaae0e53dcc",
+        "restored_certificate_sha256": "fed50cdc87efe7ebb47dfbd0bfa4221d37c4e435162e05bd0e4311da55a01fbb",
+        "direct_certificate_sha256": "83be118c887d7f7a1a7c41f561e929fb1e799de82d8417aba1baf492b12ac82d",
+        "dag_nodes": 3,
+        "dag_arcs": 3,
+        "prefix_count": 2,
+        "prefix_edge_count": 4,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0039",
+        "retained_row_sha256": "b0630a023f7be4b0a40e15e5d0be8401b2a1aaea941de2e4dd31b9b620bf7629",
+        "evaluation_clock": 100,
+        "old_bytes": 259,
+        "dag_bytes": 540,
+        "direct_bytes": 569,
+        "old_certificate_sha256": "9a9b0c02b3a6699b3122d81cf4622aebd51f8363c71a56d4565296726ea1b7c9",
+        "dag_certificate_sha256": "1ec020d2055a7214507b41c2eac82339ab977bb3f6dfe182b24fe55498e2abdd",
+        "restored_certificate_sha256": "9a9b0c02b3a6699b3122d81cf4622aebd51f8363c71a56d4565296726ea1b7c9",
+        "direct_certificate_sha256": "186768eb1c68350fa7147814d5389703f14379bf72a7fdaa9656cfbb4e71089c",
+        "dag_nodes": 5,
+        "dag_arcs": 5,
+        "prefix_count": 2,
+        "prefix_edge_count": 8,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0043",
+        "retained_row_sha256": "273a3f9320f114c0d4b80deb7eebc0e0719a46b32a2b542e9779c1dd6768e7bd",
+        "evaluation_clock": 100,
+        "old_bytes": 263,
+        "dag_bytes": 488,
+        "direct_bytes": 457,
+        "old_certificate_sha256": "ed60008cf376b33fec2139bb45ec00c73378a4b5b36f5889a42dcb7ff3f8c761",
+        "dag_certificate_sha256": "e840b352cce145ca68e09a8152d0ab2b99b8a3ff1a053b25d61dfa861651a765",
+        "restored_certificate_sha256": "ed60008cf376b33fec2139bb45ec00c73378a4b5b36f5889a42dcb7ff3f8c761",
+        "direct_certificate_sha256": "9e068554995697b496b3d2b4b853ce0da5cad8bf1c13d39f736b8e51ee28937e",
+        "dag_nodes": 3,
+        "dag_arcs": 5,
+        "prefix_count": 4,
+        "prefix_edge_count": 8,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0047",
+        "retained_row_sha256": "fa630152eb819c455e640750eec53d9e950cc156f27c30a94abee61c2c2dcb8f",
+        "evaluation_clock": 100,
+        "old_bytes": 327,
+        "dag_bytes": 596,
+        "direct_bytes": 893,
+        "old_certificate_sha256": "f9e947692f3702a4b501c294c6a7ad5bd5dc1276fee3c5463d07161bea320366",
+        "dag_certificate_sha256": "0ff9b884432ff99d9f552be97bdf95b474257a630712d5fb50e08ecd9c6c0f5b",
+        "restored_certificate_sha256": "f9e947692f3702a4b501c294c6a7ad5bd5dc1276fee3c5463d07161bea320366",
+        "direct_certificate_sha256": "98e4e70193687e7bbfb15c3b5f309c9809ee70b83e5dfb2d05968bcf1fc64c19",
+        "dag_nodes": 5,
+        "dag_arcs": 7,
+        "prefix_count": 4,
+        "prefix_edge_count": 16,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0049",
+        "retained_row_sha256": "a9767e3ed76a2112140bc8d3f383727379bc7daf1b92eefde61eef1c707577c9",
+        "evaluation_clock": 100,
+        "old_bytes": 192,
+        "dag_bytes": 296,
+        "direct_bytes": 209,
+        "old_certificate_sha256": "cfe4c3b04e80e455bd0f6d1e78dc444b75891d726c114ae1b031bbec68a7655c",
+        "dag_certificate_sha256": "022b61338592ebd067fef6fe77b6d3db053a481a19b0191cce121b069dbe1b09",
+        "restored_certificate_sha256": "cfe4c3b04e80e455bd0f6d1e78dc444b75891d726c114ae1b031bbec68a7655c",
+        "direct_certificate_sha256": "8bd23d7edb2aac9c8d14b92b2497889887b8a7a043658de4fe621b953563903e",
+        "dag_nodes": 1,
+        "dag_arcs": 0,
+        "prefix_count": 0,
+        "prefix_edge_count": 0,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0052",
+        "retained_row_sha256": "d05098ba461c130a3c2aa885d28986ee0a9cc1be80d3b0b7fe180628c4f8166b",
+        "evaluation_clock": 100,
+        "old_bytes": 192,
+        "dag_bytes": 296,
+        "direct_bytes": 215,
+        "old_certificate_sha256": "a910f0c3609724cb2acf518660f61a4227503d3e73efe804f7511410b9155772",
+        "dag_certificate_sha256": "4e7fef26aa291435faf3f3cb9015f648c240f9b8767b955eef922a35c222a96b",
+        "restored_certificate_sha256": "a910f0c3609724cb2acf518660f61a4227503d3e73efe804f7511410b9155772",
+        "direct_certificate_sha256": "628064951062429ddd660324c731befa143a0993634a89256bcde76c995f2bc5",
+        "dag_nodes": 1,
+        "dag_arcs": 0,
+        "prefix_count": 0,
+        "prefix_edge_count": 0,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0056",
+        "retained_row_sha256": "243c071454b60d722c0d2f66792c0fbe05d2f4f6118eb27e4204b12341cb0a8d",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "141edacffbb4245ef4653abfcef00c6c8763baa355513b31c41ea4dd8541989b",
+        "dag_certificate_sha256": "0cf67bda667aadf03d890489be110fec8ca75ebd7a099b9b79073c768dc731f1",
+        "restored_certificate_sha256": "141edacffbb4245ef4653abfcef00c6c8763baa355513b31c41ea4dd8541989b",
+        "direct_certificate_sha256": "0fc5e9ca8e0b73e3016d2b531e179e1f18f87f949d1177292c7a4f400bd85871",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0057",
+        "retained_row_sha256": "7631d30906bf839a463b368487f27570be245cb9aa390c01d57771d0efc6febf",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "f10787984e8c84b4546554f59f1c26027ad7ed9db8315ec43bf07ac44efb09a7",
+        "dag_certificate_sha256": "6cc7ec34e0d7f5ad4439c865da0b543c04106bad0c624511bf137bc076a441cc",
+        "restored_certificate_sha256": "f10787984e8c84b4546554f59f1c26027ad7ed9db8315ec43bf07ac44efb09a7",
+        "direct_certificate_sha256": "618a2730c5e27b8f5e860eb365355839142c8cb96753b421d89b42841780c02b",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0059",
+        "retained_row_sha256": "86b9fae007e480afa88ea5a9b985311fbe56bc821db104ef84bf33938d990a1a",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "3e578a659e5d21107874a444960000c378ad443c2148dbe09df7efed688d28e1",
+        "dag_certificate_sha256": "02ff2c7744ae5749618b847d26eb5401f5cb8de4a29f07599c4d922f5c43e65a",
+        "restored_certificate_sha256": "3e578a659e5d21107874a444960000c378ad443c2148dbe09df7efed688d28e1",
+        "direct_certificate_sha256": "bf3d8dd8bdab8b9a7a7a128a8b4acf0834915c759af224a9db6fecd8a3a48613",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0060",
+        "retained_row_sha256": "ab55bc82927e190ead317a74285c5ab2630cb5a1ed807252b1fe5dd039b87496",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "b25fac545aa062b6533f9e8f2b6b173d7d700b09b8e5457c9c6bd07a64c7c3c8",
+        "dag_certificate_sha256": "ea52a97d4a7f720fddfa5957b7d7cd038fd88888e6d3d4a184a52236ebec8b3e",
+        "restored_certificate_sha256": "b25fac545aa062b6533f9e8f2b6b173d7d700b09b8e5457c9c6bd07a64c7c3c8",
+        "direct_certificate_sha256": "692cbe1ebaaa93c55785d9469d1d727fff6f017c7d2f628eb08b6df7ffbff296",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0062",
+        "retained_row_sha256": "9b2a413d85a8a1fa0e864923f2801bac4e6b8ebcf75a9e5124226aac63d76415",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "a58046d3e10abac99dee40b9cbaa0ddf2a9a087283240629d25b99862771e828",
+        "dag_certificate_sha256": "2b4f705d8a8fcdfd715d0ce28a53a22a3f39ce4f3f313304aea4686513150df2",
+        "restored_certificate_sha256": "a58046d3e10abac99dee40b9cbaa0ddf2a9a087283240629d25b99862771e828",
+        "direct_certificate_sha256": "0ddade540ff5ffc7388b72f73022b01c4465fe137ea96349d55ca60d023ab843",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0063",
+        "retained_row_sha256": "f8d2c581582b79b303ad4e4d1d15e87d2b1f832440205262d937cec3370fd086",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "35568a10fcf906a79fb4892710dcaeeee7cb5d46c25e8732cd84dece3eac6a86",
+        "dag_certificate_sha256": "1390dfacd9f553745abacde984be8998e1c12a97f5af787bf836784536dae1ef",
+        "restored_certificate_sha256": "35568a10fcf906a79fb4892710dcaeeee7cb5d46c25e8732cd84dece3eac6a86",
+        "direct_certificate_sha256": "a92aab3f36b22a6dd7e1d55284c506c2714c306c3e250f79e167bb4390eb65c2",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0065",
+        "retained_row_sha256": "0124b8599dff60407053f6709e1966824381f1473b5765376df4e24150e43268",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "44004058e8bad8c248d08673d94040a021e806596989d065c9a96f4c13c7491c",
+        "dag_certificate_sha256": "de48ccf5a1f1431c612429360e080c606a72abc93d131223a2d6b1f3c19603b7",
+        "restored_certificate_sha256": "44004058e8bad8c248d08673d94040a021e806596989d065c9a96f4c13c7491c",
+        "direct_certificate_sha256": "9424c4a1404ba81cd859177f100f04ba2f0eb02b7a341ed45836c4ee3590bea0",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      },
+      {
+        "case_id": "scale-0066",
+        "retained_row_sha256": "e03080f55420dab7c975510eacdef5b5b147d29108277e1a0f19c79647700f27",
+        "evaluation_clock": 100,
+        "old_bytes": 201,
+        "dag_bytes": 350,
+        "direct_bytes": 239,
+        "old_certificate_sha256": "55feb9fe5331ca5b32ff8870821d937a172a3dff19a4302c6bdf004b1974ba1b",
+        "dag_certificate_sha256": "44497b6801a3ff108a0a527c9a81554e717f4957322f5be011bf87f0529b9770",
+        "restored_certificate_sha256": "55feb9fe5331ca5b32ff8870821d937a172a3dff19a4302c6bdf004b1974ba1b",
+        "direct_certificate_sha256": "954f202e1cee727e5bf0d29630514931594c70ef6da2431723771e7d8d239d08",
+        "dag_nodes": 2,
+        "dag_arcs": 1,
+        "prefix_count": 1,
+        "prefix_edge_count": 1,
+        "exact_ordered_object_and_canonical_byte_round_trip": true,
+        "independent_language_enumeration_exact": true,
+        "independent_right_language_minimality": true,
+        "inherited_shared_certificate_valid": true,
+        "new_semantic_checker_call": false,
+        "all_v2_receipt_fields_match": true,
+        "original_direct_and_raw_line_digests_unchanged_from_v1": true,
+        "byte_sizes_unchanged_from_v1": true
+      }
+    ],
+    "all_v2_receipt_fields_match": true,
+    "selected_case_ids_match": true,
+    "all_original_direct_and_row_digests_unchanged": true,
+    "all_byte_sizes_unchanged_from_v1": true,
+    "aggregate_matches_receipt": true,
+    "larger_case_ids": [
+      "scale-0003",
+      "scale-0007",
+      "scale-0011",
+      "scale-0015",
+      "scale-0018",
+      "scale-0019",
+      "scale-0022",
+      "scale-0026",
+      "scale-0027",
+      "scale-0030",
+      "scale-0035",
+      "scale-0039",
+      "scale-0043",
+      "scale-0047",
+      "scale-0049",
+      "scale-0052",
+      "scale-0056",
+      "scale-0057",
+      "scale-0059",
+      "scale-0060",
+      "scale-0062",
+      "scale-0063",
+      "scale-0065",
+      "scale-0066"
+    ],
+    "smaller_case_ids": [
+      "scale-0023",
+      "scale-0031"
+    ],
+    "growth_case_ids_match_receipt": true
+  },
+  "preservation": {
+    "v1_implementation_tests_guide_receipt_and_peer_reports_unchanged": true,
+    "unchanged_checker_sha256": "b17feac87ed2972cd1a2c34557b653bdf231345e75a9ab8a919c0b4f1520477e",
+    "unchanged_shared_lifter_sha256": "927538f7ddcb21120913c6c4257754b65a45703db384eec8cd6a28ba9e9b280b",
+    "exact_retained_input_sha256": "92137f9cc15feac73fb51b9777cd961be307c6161bf6ad5c797ef3464ff1817c",
+    "exact_retained_input_bytes": 981178,
+    "v2_receipt_preserved_v1_peer_review_sha256": "a3acdf769b299370410bb6a6efad916b0956a24232f870e2803976a922b2bb54"
+  },
+  "claim_limits": {
+    "novelty_established": false,
+    "faster_checker_established": false,
+    "empirical_method_advantage_established": false,
+    "full_study_reexecution": false,
+    "project_completion_credit_claimed": false,
+    "semantic_validity_on_retained_cases": "Inherited outcomes only; no fresh semantic-checker run.",
+    "serialized_untrusted_input": "A separately strict JSON reader remains required; this is a built-in-object codec review.",
+    "absence_of_new_findings": "Scoped static review and specified adversarial/recompute controls are not a formal verification or whole-study qualification."
+  }
+}
