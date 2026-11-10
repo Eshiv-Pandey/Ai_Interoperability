@@ -1,0 +1,33 @@
+name: Fresh checkout proof codec V2 and retained size reproduction
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Run constructed malformed-proof and semantic-delegation controls
+        shell: bash
+        run: |
+          mkdir -p runs/ci-refutation-prefix-dag-v2/${{ github.run_id }}-${{ github.run_attempt }}
+          python3 -I -S -B -m unittest discover -s tests -p test_refutation_prefix_dag_v2.py -v > runs/ci-refutation-prefix-dag-v2/${{ github.run_id }}-${{ github.run_attempt }}/controls.stdout 2> runs/ci-refutation-prefix-dag-v2/${{ github.run_id }}-${{ github.run_attempt }}/controls.stderr
+      - name: Recompute every retained certificate size and ordered round trip
+        shell: bash
+        run: |
+          python3 -I -S -B scripts/reproduce_refutation_prefix_dag_v2.py --output runs/ci-refutation-prefix-dag-v2/${{ github.run_id }}-${{ github.run_attempt }}/result.json > runs/ci-refutation-prefix-dag-v2/${{ github.run_id }}-${{ github.run_attempt }}/reproduction.stdout 2> runs/ci-refutation-prefix-dag-v2/${{ github.run_id }}-${{ github.run_attempt }}/reproduction.stderr
+      - name: Preserve successful and failed controls and comparisons
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: refutation-prefix-dag-v2-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runs/ci-refutation-prefix-dag-v2/${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: warn
+          retention-days: 30
