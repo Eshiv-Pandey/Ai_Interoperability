@@ -1,0 +1,39 @@
+name: AgentOps six original governed App public references v2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agentops-governed-app-reference-v2
+  cancel-in-progress: false
+
+jobs:
+  reference:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 28
+    steps:
+      - name: Check out the selected research revision
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Check source pins and public development recipes
+        run: |
+          python3 -B scripts/check_agentops_governed_app_reference_v2.py
+          python3 -B scripts/check_agentops_reference_evaluator_v2.py
+          python3 -B scripts/ci_agentops_governed_app_reference_v2.py --check-inputs
+      - name: Execute six original governed App recipes and actual SDK lifecycles
+        run: >-
+          python3 -B scripts/ci_agentops_governed_app_reference_v2.py --execute
+          --output runs/ci-agentops-governed-app-reference-v2/${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Retain raw reference evidence including failed attempts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: agentops-governed-app-reference-v2-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runs/ci-agentops-governed-app-reference-v2/${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: warn
+          retention-days: 3
+          include-hidden-files: true

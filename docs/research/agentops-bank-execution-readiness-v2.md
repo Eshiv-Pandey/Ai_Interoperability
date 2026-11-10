@@ -1,0 +1,11 @@
+# AgentOps candidate execution readiness v2
+
+The [machine-readable registry](../../benchmark/tasks-v2/agentops/execution-readiness.json) binds all 34 unmodified v1 candidates: six development, four calibration and 24 prospective held-out. The preparation checks the exact public/private bank hashes and all 321 source-citation instances across 24 original files. This verifies byte/range binding and execution inventory; it does not execute a task or validate semantic gold.
+
+Six development reference recipes are implemented in the new hosted runner. Nine further source-supported candidates need new actual read/skill/error capture recipes. Nineteen lanes are quarantined from qualification until their specific fixture, verified identity, native confirmation/replay, workflow/App or redaction requirements are implemented and captured. Each registry record names the next required evidence. Quarantine indicates an unresolved runtime/evaluation requirement; it is not an observed failure or a refutation of source feasibility.
+
+The quarantined replay lane requires a second native confirmed delivery with the same actual invocation/action/target; a transport rejection or a new invocation cannot qualify it. Cross-session isolation needs a verified stable user rather than synthetic context labels. Workflow tasks preserve the original constrained stages, and missing-log report tasks preserve schema constraints without invented gateway evidence. These requirements remain explicit so new harness code cannot gain apparent coverage by changing the original task.
+
+All original split labels remain recorded. Author-exposed compositions are not an independently qualified held-out set, and all 34 still require appropriate human gold review and actual evaluator integration. Passing local or synthetic checks is not an application result. This registry asserts zero qualified bank tasks and no provider calls. The six-case hosted capture and its separate private evaluation provide actual execution evidence in a separate allocation.
+
+Regenerate only into a fresh output using `python -B scripts/prepare_agentops_bank_readiness_v2.py --output <fresh-path>`. The script refuses changes to the frozen v1 bank hashes and never mutates original sources, seed data or existing outputs.

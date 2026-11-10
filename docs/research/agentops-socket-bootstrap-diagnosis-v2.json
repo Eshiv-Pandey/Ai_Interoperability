@@ -1,0 +1,53 @@
+{
+  "schema_version": "agentops-source-bound-import-probe-diagnosis/2",
+  "status": "actual_cold_urllib3_ipv6_probe_confirmed",
+  "github_run_id": "42878197269",
+  "helper_sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74",
+  "helper_bytes": 4444,
+  "no_socket_operation_permission": true,
+  "allowed_harness_intervention": "scoped_no_ipv6_cold_import_then_restore",
+  "cases": [
+    {
+      "case_id": "agentops-d01-health-active",
+      "event": "socket.bind",
+      "target": [
+        "::1",
+        0
+      ],
+      "family": 10,
+      "type": 1,
+      "protocol": 0,
+      "function": "_has_ipv6",
+      "line": 127,
+      "source_sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74",
+      "cold_module_import_confirmed": true,
+      "module_initialization_line": 137,
+      "diagnostic_denial_journal_sha256": "150181c3fc58d13fb2db55264754ce9f0c2f43fe63fa0b0f997450b12dc6b386",
+      "diagnostic_denial_journal_source": "source-evidence/agentops-socket-bootstrap-diagnosis-v2/agentops-d01-health-active-audit-denials.jsonl",
+      "source": "source-evidence/agentops-socket-bootstrap-diagnosis-v2/urllib3-util-connection.py",
+      "actual_sdk_state": "completed"
+    },
+    {
+      "case_id": "agentops-d03-restart-pause",
+      "event": "socket.bind",
+      "target": [
+        "::1",
+        0
+      ],
+      "family": 10,
+      "type": 1,
+      "protocol": 0,
+      "function": "_has_ipv6",
+      "line": 127,
+      "source_sha256": "2633bbdb69731e5ccb5cf4e4afd65605d86c7979cc5633126f50c92d5ad74a74",
+      "cold_module_import_confirmed": true,
+      "module_initialization_line": 137,
+      "diagnostic_denial_journal_sha256": "5ac27a5955b54d1860f10021baca43a8c1a235800ae4a04f830eb0cef463a3a4",
+      "diagnostic_denial_journal_source": "source-evidence/agentops-socket-bootstrap-diagnosis-v2/agentops-d03-restart-pause-audit-denials.jsonl",
+      "source": "source-evidence/agentops-socket-bootstrap-diagnosis-v2/urllib3-util-connection.py",
+      "actual_sdk_state": "input-required"
+    }
+  ],
+  "strict_diagnostic_score": "0/2",
+  "scope": "Import-time _has_ipv6 capability probe only; no provider or native network operation is permitted. This diagnosis is not a passing task score."
+}

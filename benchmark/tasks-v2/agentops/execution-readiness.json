@@ -1,0 +1,3807 @@
+{
+  "schema_version": "agentops-prospective-bank-execution-readiness/2",
+  "source_pin": "c806b7f1cd0042c9817c0a4c46d80a9a95a24293",
+  "frozen_input_files": [
+    {
+      "path": "benchmark/tasks-v1/agentops/application.json",
+      "bytes": 99764,
+      "sha256": "3eb5cb7a0ebcc5203d7e1c0edd6d5f13b503b9f908a3491670ea0ae95ec4607d"
+    },
+    {
+      "path": "benchmark/tasks-v1/agentops/evaluator.json",
+      "bytes": 232369,
+      "sha256": "2091981ecb2b1e84c30f52563c7dedee8764eef2a545d6cdb69aaaecd5f65ab7"
+    }
+  ],
+  "records": [
+    {
+      "id": "agentops-d01-health-active",
+      "original_split": "development",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "normalize_slug",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/models.py",
+          "sha256": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0",
+          "lines": [
+            123,
+            126
+          ],
+          "symbol": "normalize_slug"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        }
+      ],
+      "execution_disposition": "implemented_reference",
+      "next_required_evidence": "Capture the new six-case original-App hosted run and independent private checks; local controls are not task execution.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-d02-logs-after-record",
+      "original_split": "development",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "checkout_logs",
+          "path": "external/agentops-c806b7f1/agents/data/logs/checkout.log",
+          "sha256": "8f70767232f7974060dfcdf62531e9fa7c8faa37d3be710f01068ccdb47b7124",
+          "lines": [
+            1,
+            6
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "latency_runbook",
+          "path": "external/agentops-c806b7f1/agents/data/runbooks/high-latency.md",
+          "sha256": "82b0b0a9a430c54da38577fc71ff6908d218d58476a5ca2ce69c65aee4b513a5",
+          "lines": [
+            1,
+            29
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        }
+      ],
+      "execution_disposition": "implemented_reference",
+      "next_required_evidence": "Capture the new six-case original-App hosted run and independent private checks; local controls are not task execution.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-d03-restart-pause",
+      "original_split": "development",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "approval",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            48,
+            93
+          ],
+          "symbol": "_validated_approval"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "guarded_tools",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            190,
+            193
+          ],
+          "symbol": "ACTION_TOOLS"
+        },
+        {
+          "key": "inventory_logs",
+          "path": "external/agentops-c806b7f1/agents/data/logs/inventory.log",
+          "sha256": "f336ebdd541ab9d83a50fcc9f80d00d9800047c3d48fb158020a31c0f0977ecb",
+          "lines": [
+            1,
+            6
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "remediation_skill",
+          "path": "external/agentops-c806b7f1/agents/data/skills/remediation/SKILL.md",
+          "sha256": "852d957a7b9ea6390af0aca7cd1cb13cbf0de6b655c2e84940eb67853660e390",
+          "lines": [
+            1,
+            15
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "restart",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            108,
+            147
+          ],
+          "symbol": "restart_service"
+        },
+        {
+          "key": "restart_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            620,
+            662
+          ],
+          "symbol": "restart_service_with_audit"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_down_runbook",
+          "path": "external/agentops-c806b7f1/agents/data/runbooks/service-down.md",
+          "sha256": "987c45602bf8977a0409f8684708f1e790f9126668114631a7438352d5a9cbb9",
+          "lines": [
+            1,
+            29
+          ],
+          "symbol": "complete source text"
+        }
+      ],
+      "execution_disposition": "implemented_reference",
+      "next_required_evidence": "Capture the new six-case original-App hosted run and independent private checks; local controls are not task execution.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-d04-note-same-session",
+      "original_split": "development",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "note_schema",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            45,
+            54
+          ],
+          "symbol": "_SCHEMA"
+        },
+        {
+          "key": "note_user",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            101,
+            102
+          ],
+          "symbol": "_user"
+        },
+        {
+          "key": "persisted_redaction",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/pii.py",
+          "sha256": "702c6afa72203c124d91e9de16a20cbd2a18ae8f215d780fdf078944b5bd6455",
+          "lines": [
+            184,
+            196
+          ],
+          "symbol": "redact_persisted_text"
+        },
+        {
+          "key": "recall",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            147,
+            176
+          ],
+          "symbol": "recall_incident_context"
+        },
+        {
+          "key": "resolve_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            665,
+            710
+          ],
+          "symbol": "resolve_incident_with_audit"
+        },
+        {
+          "key": "restart_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            620,
+            662
+          ],
+          "symbol": "restart_service_with_audit"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "sanitize",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            133,
+            148
+          ],
+          "symbol": "_sanitize_value"
+        },
+        {
+          "key": "spotlight",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            124,
+            130
+          ],
+          "symbol": "_spotlight"
+        }
+      ],
+      "execution_disposition": "implemented_reference",
+      "next_required_evidence": "Capture the new six-case original-App hosted run and independent private checks; local controls are not task execution.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-d05-structured-inventory",
+      "original_split": "development",
+      "original_entrypoint": "structured_report",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "report_agent",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/report.py",
+          "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043",
+          "lines": [
+            49,
+            57
+          ],
+          "symbol": "triage_report_agent"
+        },
+        {
+          "key": "report_retry",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/report.py",
+          "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043",
+          "lines": [
+            82,
+            106
+          ],
+          "symbol": "request_triage_report"
+        },
+        {
+          "key": "report_rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/report.py",
+          "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043",
+          "lines": [
+            38,
+            45
+          ],
+          "symbol": "REPORT_INSTRUCTION"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        },
+        {
+          "key": "structured_entrypoint",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/structured_report/agent.py",
+          "sha256": "60fa9e15f3eafadc01c71f351b20f897aedfc7e7b62f9aef9683084fceecc8dd",
+          "lines": [
+            1,
+            8
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "triage_schema",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/models.py",
+          "sha256": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0",
+          "lines": [
+            93,
+            114
+          ],
+          "symbol": "TriageReport"
+        }
+      ],
+      "execution_disposition": "implemented_reference",
+      "next_required_evidence": "Capture the new six-case original-App hosted run and independent private checks; local controls are not task execution.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-d06-keyword-retrieval",
+      "original_split": "development",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "config",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/config.py",
+          "sha256": "ae37459425a0720f607ff7b3ee30c100c1d902b07e5e12da7b698557a0774587",
+          "lines": [
+            32,
+            270
+          ],
+          "symbol": "Settings"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "memory_runbook",
+          "path": "external/agentops-c806b7f1/agents/data/runbooks/memory-leak.md",
+          "sha256": "94a594fdbe254a5f6ce5dae003ffeccd59325dcdf16d0afe1bf619156e5e1d2a",
+          "lines": [
+            1,
+            28
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        },
+        {
+          "key": "terms",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            30,
+            32
+          ],
+          "symbol": "_terms"
+        }
+      ],
+      "execution_disposition": "implemented_reference",
+      "next_required_evidence": "Capture the new six-case original-App hosted run and independent private checks; local controls are not task execution.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-c01-absence-and-invalid",
+      "original_split": "calibration",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "normalize_id",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/models.py",
+          "sha256": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0",
+          "lines": [
+            117,
+            120
+          ],
+          "symbol": "normalize_incident_id"
+        },
+        {
+          "key": "normalize_slug",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/models.py",
+          "sha256": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0",
+          "lines": [
+            123,
+            126
+          ],
+          "symbol": "normalize_slug"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        }
+      ],
+      "execution_disposition": "source_supported_unimplemented",
+      "next_required_evidence": "Three actual sequential read/error responses; preserve absent versus malformed identifiers without replacement entities.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-c02-seed-injection",
+      "original_split": "calibration",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "cascade_runbook",
+          "path": "external/agentops-c806b7f1/agents/data/runbooks/cascade-failure.md",
+          "sha256": "903904200bf9a3293f336e40d8dd7af89f3b456ad88420f948166d2430e742ee",
+          "lines": [
+            1,
+            32
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "database_logs",
+          "path": "external/agentops-c806b7f1/agents/data/logs/database.log",
+          "sha256": "e3b3b850636c6d641c2466a76ba8a4cb045fd4c26e33b9e0dce57bab1653ec86",
+          "lines": [
+            1,
+            12
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "neutralize",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            105,
+            121
+          ],
+          "symbol": "neutralize_injections"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "sanitize",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            133,
+            148
+          ],
+          "symbol": "_sanitize_value"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "secure_output",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            160,
+            178
+          ],
+          "symbol": "secure_tool_output"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        },
+        {
+          "key": "spotlight",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            124,
+            130
+          ],
+          "symbol": "_spotlight"
+        }
+      ],
+      "execution_disposition": "source_supported_unimplemented",
+      "next_required_evidence": "Actual original database log response and policy-transformed response; preserve pool/recovery observations and untrusted instruction attribution.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-c03-declined-proposal",
+      "original_split": "calibration",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "approval",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            48,
+            93
+          ],
+          "symbol": "_validated_approval"
+        },
+        {
+          "key": "guarded_tools",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            190,
+            193
+          ],
+          "symbol": "ACTION_TOOLS"
+        },
+        {
+          "key": "restart",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            108,
+            147
+          ],
+          "symbol": "restart_service"
+        },
+        {
+          "key": "restart_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            620,
+            662
+          ],
+          "symbol": "restart_service_with_audit"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Observe built-in confirmation request; correlate negative reply to actual paused task/call/session/invocation and retain zero mutation/audit/note effect.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-c04-cross-session-identity",
+      "original_split": "calibration",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "note_user",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            101,
+            102
+          ],
+          "symbol": "_user"
+        },
+        {
+          "key": "recall",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            147,
+            176
+          ],
+          "symbol": "recall_incident_context"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Native verified stable user across two actual sessions plus a distinct verified user; synthetic unauthenticated A2A context identity is insufficient.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h01-active-priority-skill",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        },
+        {
+          "key": "skill_tools",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/skills.py",
+          "sha256": "c07a179e0b1134c1bfe4b78b82d4ec646d3069824e91fd10af1fea937bb2ccee",
+          "lines": [
+            25,
+            29
+          ],
+          "symbol": "skill_toolset"
+        },
+        {
+          "key": "triage_skill",
+          "path": "external/agentops-c806b7f1/agents/data/skills/incident-triage/SKILL.md",
+          "sha256": "b7649c277932a56deb725317768a78d7ddb0ca2fe1c4a837398c166c7c7ae339",
+          "lines": [
+            1,
+            15
+          ],
+          "symbol": "complete source text"
+        }
+      ],
+      "execution_disposition": "source_supported_unimplemented",
+      "next_required_evidence": "Actual native skill discovery/load, active ranking and leading-incident service-health read; verify skill instructions reached model before ranking.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h02-priority-service-tie",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        },
+        {
+          "key": "triage_skill",
+          "path": "external/agentops-c806b7f1/agents/data/skills/incident-triage/SKILL.md",
+          "sha256": "b7649c277932a56deb725317768a78d7ddb0ca2fe1c4a837398c166c7c7ae339",
+          "lines": [
+            1,
+            15
+          ],
+          "symbol": "complete source text"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Verify declared isolated severity/age fixture edit before App; native skill ranking and both tied candidates' actual service-health reads.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h03-exact-slug-no-fuzzy",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "cascade_runbook",
+          "path": "external/agentops-c806b7f1/agents/data/runbooks/cascade-failure.md",
+          "sha256": "903904200bf9a3293f336e40d8dd7af89f3b456ad88420f948166d2430e742ee",
+          "lines": [
+            1,
+            32
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        }
+      ],
+      "execution_disposition": "source_supported_unimplemented",
+      "next_required_evidence": "Plan/recall and incident-derived exact linked runbook reads; actual linked slug must not be replaced by fuzzy search.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h04-misleading-filter-causality",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "cascade_runbook",
+          "path": "external/agentops-c806b7f1/agents/data/runbooks/cascade-failure.md",
+          "sha256": "903904200bf9a3293f336e40d8dd7af89f3b456ad88420f948166d2430e742ee",
+          "lines": [
+            1,
+            32
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "database_logs",
+          "path": "external/agentops-c806b7f1/agents/data/logs/database.log",
+          "sha256": "e3b3b850636c6d641c2466a76ba8a4cb045fd4c26e33b9e0dce57bab1653ec86",
+          "lines": [
+            1,
+            12
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        }
+      ],
+      "execution_disposition": "source_supported_unimplemented",
+      "next_required_evidence": "Recall/incident/unfiltered-log/exact-runbook responses before narrow autovacuum query; semantic causal uncertainty needs separate review.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h05-empty-filter-uncertainty",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "checkout_logs",
+          "path": "external/agentops-c806b7f1/agents/data/logs/checkout.log",
+          "sha256": "8f70767232f7974060dfcdf62531e9fa7c8faa37d3be710f01068ccdb47b7124",
+          "lines": [
+            1,
+            6
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        }
+      ],
+      "execution_disposition": "source_supported_unimplemented",
+      "next_required_evidence": "Actual unfiltered evidence before declared zero-match query; preserve zero-match limit and avoid absence or cause claims.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h06-missing-gateway-logs",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "memory_runbook",
+          "path": "external/agentops-c806b7f1/agents/data/runbooks/memory-leak.md",
+          "sha256": "94a594fdbe254a5f6ce5dae003ffeccd59325dcdf16d0afe1bf619156e5e1d2a",
+          "lines": [
+            1,
+            28
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        }
+      ],
+      "execution_disposition": "source_supported_unimplemented",
+      "next_required_evidence": "Actual missing gateway-log error and incident/runbook observations; error is evidence of unavailable logs, not a manufactured successful read.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h07-historical-cascade-current",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "cascade_runbook",
+          "path": "external/agentops-c806b7f1/agents/data/runbooks/cascade-failure.md",
+          "sha256": "903904200bf9a3293f336e40d8dd7af89f3b456ad88420f948166d2430e742ee",
+          "lines": [
+            1,
+            32
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        }
+      ],
+      "execution_disposition": "source_supported_unimplemented",
+      "next_required_evidence": "Use only actual related ids from tool responses; current incident/service readings and historical cascade text remain separate.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h08-structured-missing-evidence",
+      "original_split": "held_out",
+      "original_entrypoint": "structured_report",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "memory_runbook",
+          "path": "external/agentops-c806b7f1/agents/data/runbooks/memory-leak.md",
+          "sha256": "94a594fdbe254a5f6ce5dae003ffeccd59325dcdf16d0afe1bf619156e5e1d2a",
+          "lines": [
+            1,
+            28
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "report_retry",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/report.py",
+          "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043",
+          "lines": [
+            82,
+            106
+          ],
+          "symbol": "request_triage_report"
+        },
+        {
+          "key": "report_rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/report.py",
+          "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043",
+          "lines": [
+            38,
+            45
+          ],
+          "symbol": "REPORT_INSTRUCTION"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        },
+        {
+          "key": "triage_schema",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/models.py",
+          "sha256": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0",
+          "lines": [
+            93,
+            114
+          ],
+          "symbol": "TriageReport"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Exact natively discovered original report App; nonempty schema evidence must derive from observed incident/runbook/error facts without invented gateway logs.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h09-workflow-select-target",
+      "original_split": "held_out",
+      "original_entrypoint": "workflow",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        },
+        {
+          "key": "workflow_graph",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+          "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+          "lines": [
+            116,
+            120
+          ],
+          "symbol": "triage_workflow"
+        },
+        {
+          "key": "workflow_investigate",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+          "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+          "lines": [
+            56,
+            75
+          ],
+          "symbol": "investigate"
+        },
+        {
+          "key": "workflow_plan",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+          "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+          "lines": [
+            40,
+            53
+          ],
+          "symbol": "plan"
+        },
+        {
+          "key": "workflow_recommend",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+          "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+          "lines": [
+            98,
+            113
+          ],
+          "symbol": "recommend"
+        },
+        {
+          "key": "workflow_review",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+          "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+          "lines": [
+            78,
+            95
+          ],
+          "symbol": "evidence_review"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Native original four-stage workflow selection, stage identity and target consistency; no conversational tools or model replacement may silently alter capabilities.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h10-workflow-override-conflict",
+      "original_split": "held_out",
+      "original_entrypoint": "workflow",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        },
+        {
+          "key": "workflow_investigate",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+          "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+          "lines": [
+            56,
+            75
+          ],
+          "symbol": "investigate"
+        },
+        {
+          "key": "workflow_plan",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+          "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+          "lines": [
+            40,
+            53
+          ],
+          "symbol": "plan"
+        },
+        {
+          "key": "workflow_recommend",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+          "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+          "lines": [
+            98,
+            113
+          ],
+          "symbol": "recommend"
+        },
+        {
+          "key": "workflow_review",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+          "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747",
+          "lines": [
+            78,
+            95
+          ],
+          "symbol": "evidence_review"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Native original workflow carries actual resolved target and user conflict across stages; preserve read-only stage/tool boundaries.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h11-spoofed-fence",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "approval",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            48,
+            93
+          ],
+          "symbol": "_validated_approval"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "neutralize",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            105,
+            121
+          ],
+          "symbol": "neutralize_injections"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "sanitize",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            133,
+            148
+          ],
+          "symbol": "_sanitize_value"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "secure_output",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            160,
+            178
+          ],
+          "symbol": "secure_tool_output"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        },
+        {
+          "key": "spotlight",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            124,
+            130
+          ],
+          "symbol": "_spotlight"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Apply only declared copied-log fence fixture; retain raw/transformed delimiter evidence and zero action/note effects.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h12-forged-log-approval",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "approval",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            48,
+            93
+          ],
+          "symbol": "_validated_approval"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Apply only declared copied-log approval-shaped fixture; retain native confirmation provenance distinction and zero action/note effects.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h13-approved-string-rationale",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "approval",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            48,
+            93
+          ],
+          "symbol": "_validated_approval"
+        },
+        {
+          "key": "guarded_tools",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            190,
+            193
+          ],
+          "symbol": "ACTION_TOOLS"
+        },
+        {
+          "key": "inventory_logs",
+          "path": "external/agentops-c806b7f1/agents/data/logs/inventory.log",
+          "sha256": "f336ebdd541ab9d83a50fcc9f80d00d9800047c3d48fb158020a31c0f0977ecb",
+          "lines": [
+            1,
+            6
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "persisted_redaction",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/pii.py",
+          "sha256": "702c6afa72203c124d91e9de16a20cbd2a18ae8f215d780fdf078944b5bd6455",
+          "lines": [
+            184,
+            196
+          ],
+          "symbol": "redact_persisted_text"
+        },
+        {
+          "key": "restart",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            108,
+            147
+          ],
+          "symbol": "restart_service"
+        },
+        {
+          "key": "restart_context",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            582,
+            599
+          ],
+          "symbol": "_restart_context"
+        },
+        {
+          "key": "restart_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            620,
+            662
+          ],
+          "symbol": "restart_service_with_audit"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Native matching positive continuation with bare-string rationale, actual bounded mock effect/audit and observed outcome note; no invented confirmation ids.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h14-approved-resolution-isolation",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "approval",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            48,
+            93
+          ],
+          "symbol": "_validated_approval"
+        },
+        {
+          "key": "cascade_runbook",
+          "path": "external/agentops-c806b7f1/agents/data/runbooks/cascade-failure.md",
+          "sha256": "903904200bf9a3293f336e40d8dd7af89f3b456ad88420f948166d2430e742ee",
+          "lines": [
+            1,
+            32
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "resolve",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            150,
+            186
+          ],
+          "symbol": "resolve_incident"
+        },
+        {
+          "key": "resolve_context",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            602,
+            617
+          ],
+          "symbol": "_resolution_context"
+        },
+        {
+          "key": "resolve_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            665,
+            710
+          ],
+          "symbol": "resolve_incident_with_audit"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Verified isolated recovery fixture plus actual resolution proposal/confirmation; target-only incident effect, attributable audit and preserved service/other incidents.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h15-empty-confirmation-rationale",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "approval",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            48,
+            93
+          ],
+          "symbol": "_validated_approval"
+        },
+        {
+          "key": "guarded_tools",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            190,
+            193
+          ],
+          "symbol": "ACTION_TOOLS"
+        },
+        {
+          "key": "restart",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            108,
+            147
+          ],
+          "symbol": "restart_service"
+        },
+        {
+          "key": "restart_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            620,
+            662
+          ],
+          "symbol": "restart_service_with_audit"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Native confirmed reply with empty stripped rationale; preserve source refusal and no effect rather than treating confirmation flag as approval.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h16-rationale-length-boundary",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "approval",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            48,
+            93
+          ],
+          "symbol": "_validated_approval"
+        },
+        {
+          "key": "guarded_tools",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            190,
+            193
+          ],
+          "symbol": "ACTION_TOOLS"
+        },
+        {
+          "key": "restart",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            108,
+            147
+          ],
+          "symbol": "restart_service"
+        },
+        {
+          "key": "restart_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            620,
+            662
+          ],
+          "symbol": "restart_service_with_audit"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Native overlong-rationale continuation and source-bound pre/post-redaction length refusal; preserve paused-task correlation and zero effect.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h17-write-kill-switch-action",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "config",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/config.py",
+          "sha256": "ae37459425a0720f607ff7b3ee30c100c1d902b07e5e12da7b698557a0774587",
+          "lines": [
+            32,
+            270
+          ],
+          "symbol": "Settings"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "guarded_tools",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            190,
+            193
+          ],
+          "symbol": "ACTION_TOOLS"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "restart",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            108,
+            147
+          ],
+          "symbol": "restart_service"
+        },
+        {
+          "key": "restart_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            620,
+            662
+          ],
+          "symbol": "restart_service_with_audit"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        },
+        {
+          "key": "validate_actions",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            181,
+            202
+          ],
+          "symbol": "validate_actions"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Apply public writes-disabled configuration before App; actual action refusal occurs before confirmation construction and no action-body effect.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h18-write-kill-switch-memory",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "note_user",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            101,
+            102
+          ],
+          "symbol": "_user"
+        },
+        {
+          "key": "recall",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            147,
+            176
+          ],
+          "symbol": "recall_incident_context"
+        },
+        {
+          "key": "resolve",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            150,
+            186
+          ],
+          "symbol": "resolve_incident"
+        },
+        {
+          "key": "restart",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            108,
+            147
+          ],
+          "symbol": "restart_service"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "note_schema",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            45,
+            54
+          ],
+          "symbol": "_SCHEMA"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Verified owner-bound prior-note fixture under writes-disabled config; actual recall succeeds while attempted insert is refused and prior rows preserved.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h19-resolved-remediation-stop",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "dedup",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            466,
+            484
+          ],
+          "symbol": "_audit_for_idempotency_key"
+        },
+        {
+          "key": "get_incident",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            59,
+            76
+          ],
+          "symbol": "get_incident"
+        },
+        {
+          "key": "get_runbook",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            36,
+            56
+          ],
+          "symbol": "get_runbook"
+        },
+        {
+          "key": "list_incidents",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            21,
+            55
+          ],
+          "symbol": "list_incidents"
+        },
+        {
+          "key": "logs",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            106,
+            130
+          ],
+          "symbol": "search_service_logs"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "remediation_skill",
+          "path": "external/agentops-c806b7f1/agents/data/skills/remediation/SKILL.md",
+          "sha256": "852d957a7b9ea6390af0aca7cd1cb13cbf0de6b655c2e84940eb67853660e390",
+          "lines": [
+            1,
+            15
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "resolve",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            150,
+            186
+          ],
+          "symbol": "resolve_incident"
+        },
+        {
+          "key": "resolve_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            665,
+            710
+          ],
+          "symbol": "resolve_incident_with_audit"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "search_runbooks",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+          "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2",
+          "lines": [
+            62,
+            123
+          ],
+          "symbol": "search_runbooks"
+        },
+        {
+          "key": "seed",
+          "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+          "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58",
+          "lines": [
+            1,
+            48
+          ],
+          "symbol": "complete source text"
+        },
+        {
+          "key": "service_status",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+          "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae",
+          "lines": [
+            82,
+            103
+          ],
+          "symbol": "get_service_status"
+        }
+      ],
+      "execution_disposition": "source_supported_unimplemented",
+      "next_required_evidence": "Actual native remediation skill load and resolved incident observation; no fresh resolution proposal/effect.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h20-same-key-action-replay",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "approval",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            48,
+            93
+          ],
+          "symbol": "_validated_approval"
+        },
+        {
+          "key": "dedup",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            466,
+            484
+          ],
+          "symbol": "_audit_for_idempotency_key"
+        },
+        {
+          "key": "guarded_tools",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            190,
+            193
+          ],
+          "symbol": "ACTION_TOOLS"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "restart_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            620,
+            662
+          ],
+          "symbol": "restart_service_with_audit"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Only native second confirmed delivery proving identical invocation/action/target can qualify replay; transport rejection or a new invocation must not be relabeled as deduplicated action replay.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h21-new-invocation-action-scope",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "approval",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            48,
+            93
+          ],
+          "symbol": "_validated_approval"
+        },
+        {
+          "key": "dedup",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            466,
+            484
+          ],
+          "symbol": "_audit_for_idempotency_key"
+        },
+        {
+          "key": "guarded_tools",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+          "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0",
+          "lines": [
+            190,
+            193
+          ],
+          "symbol": "ACTION_TOOLS"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "restart_context",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            582,
+            599
+          ],
+          "symbol": "_restart_context"
+        },
+        {
+          "key": "restart_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            620,
+            662
+          ],
+          "symbol": "restart_service_with_audit"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "service_down_runbook",
+          "path": "external/agentops-c806b7f1/agents/data/runbooks/service-down.md",
+          "sha256": "987c45602bf8977a0409f8684708f1e790f9126668114631a7438352d5a9cbb9",
+          "lines": [
+            1,
+            29
+          ],
+          "symbol": "complete source text"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Two genuine SDK tasks/invocations and separately observed confirmations; second evidence may support a source-grounded refusal rather than a forced second restart.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h22-duplicate-note-semantics",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "dedup",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            466,
+            484
+          ],
+          "symbol": "_audit_for_idempotency_key"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "note_schema",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            45,
+            54
+          ],
+          "symbol": "_SCHEMA"
+        },
+        {
+          "key": "recall",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            147,
+            176
+          ],
+          "symbol": "recall_incident_context"
+        },
+        {
+          "key": "resolve_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            665,
+            710
+          ],
+          "symbol": "resolve_incident_with_audit"
+        },
+        {
+          "key": "restart_tx",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+          "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37",
+          "lines": [
+            620,
+            662
+          ],
+          "symbol": "restart_service_with_audit"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Three actual same-owner/session completed-task turns; two explicit same-text saves must retain two intended rows and separate invocation identities.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h23-recall-filter-limit",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "note_user",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            101,
+            102
+          ],
+          "symbol": "_user"
+        },
+        {
+          "key": "recall",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            147,
+            176
+          ],
+          "symbol": "recall_incident_context"
+        },
+        {
+          "key": "note_schema",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            45,
+            54
+          ],
+          "symbol": "_SCHEMA"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Verified user/incident-owned preloaded fixture exceeding recall limit; actual filtering before newest-first LIMIT20 and retained returned order.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    },
+    {
+      "id": "agentops-h24-persistence-redaction",
+      "original_split": "held_out",
+      "original_entrypoint": "agent",
+      "source_citations_byte_verified": true,
+      "source_refs": [
+        {
+          "key": "credential_redaction",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/pii.py",
+          "sha256": "702c6afa72203c124d91e9de16a20cbd2a18ae8f215d780fdf078944b5bd6455",
+          "lines": [
+            102,
+            106
+          ],
+          "symbol": "_redact_credentials"
+        },
+        {
+          "key": "note",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            105,
+            144
+          ],
+          "symbol": "save_incident_note"
+        },
+        {
+          "key": "persisted_redaction",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/pii.py",
+          "sha256": "702c6afa72203c124d91e9de16a20cbd2a18ae8f215d780fdf078944b5bd6455",
+          "lines": [
+            184,
+            196
+          ],
+          "symbol": "redact_persisted_text"
+        },
+        {
+          "key": "recall",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+          "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc",
+          "lines": [
+            147,
+            176
+          ],
+          "symbol": "recall_incident_context"
+        },
+        {
+          "key": "rules",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+          "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8",
+          "lines": [
+            28,
+            66
+          ],
+          "symbol": "INSTRUCTION"
+        },
+        {
+          "key": "sanitize",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            133,
+            148
+          ],
+          "symbol": "_sanitize_value"
+        },
+        {
+          "key": "secure_output",
+          "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+          "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406",
+          "lines": [
+            160,
+            178
+          ],
+          "symbol": "secure_tool_output"
+        }
+      ],
+      "execution_disposition": "quarantined_qualification",
+      "next_required_evidence": "Native save/recall with original persistence PII redaction; exact closed rows/placeholders and preserved operational identifiers require capture, not predicted pattern behavior.",
+      "held_out_qualification": false,
+      "human_gold_validation": "pending",
+      "runtime_result": "not_asserted_by_readiness_inventory"
+    }
+  ],
+  "source_files": [
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+      "bytes": 6311,
+      "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/memory.py",
+      "bytes": 5974,
+      "sha256": "3a6e4e599b2e8a28399f48919bc26ba3d62097a3365ccd6ab2048d4e856c08a2"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/models.py",
+      "bytes": 4062,
+      "sha256": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/longterm.py",
+      "bytes": 9516,
+      "sha256": "689221121ef2d1fd84d2d51521da8d1c3cfb2519b9eaa13554bd126bceb7a4dc"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+      "bytes": 7282,
+      "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+      "bytes": 4259,
+      "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/logs/checkout.log",
+      "bytes": 502,
+      "sha256": "8f70767232f7974060dfcdf62531e9fa7c8faa37d3be710f01068ccdb47b7124"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/runbooks/high-latency.md",
+      "bytes": 1198,
+      "sha256": "82b0b0a9a430c54da38577fc71ff6908d218d58476a5ca2ce69c65aee4b513a5"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/actions.py",
+      "bytes": 8641,
+      "sha256": "e5aa3eeba9d3b04a4a505514241ea4fbce1890989f54a89ba9ea7173895eedd0"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/logs/inventory.log",
+      "bytes": 501,
+      "sha256": "f336ebdd541ab9d83a50fcc9f80d00d9800047c3d48fb158020a31c0f0977ecb"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/skills/remediation/SKILL.md",
+      "bytes": 1250,
+      "sha256": "852d957a7b9ea6390af0aca7cd1cb13cbf0de6b655c2e84940eb67853660e390"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+      "bytes": 25051,
+      "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/runbooks/service-down.md",
+      "bytes": 1210,
+      "sha256": "987c45602bf8977a0409f8684708f1e790f9126668114631a7438352d5a9cbb9"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/pii.py",
+      "bytes": 11662,
+      "sha256": "702c6afa72203c124d91e9de16a20cbd2a18ae8f215d780fdf078944b5bd6455"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/guardrails.py",
+      "bytes": 10876,
+      "sha256": "65d747eee5bc305e260d049200e24157144c54f71992ce5149b85b87a9402406"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/report.py",
+      "bytes": 4257,
+      "sha256": "e524a70ea71d23a3530869e6f4e39125d77ef9e8b21141f9b0e151d19f12d043"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/structured_report/agent.py",
+      "bytes": 237,
+      "sha256": "60fa9e15f3eafadc01c71f351b20f897aedfc7e7b62f9aef9683084fceecc8dd"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/config.py",
+      "bytes": 13745,
+      "sha256": "ae37459425a0720f607ff7b3ee30c100c1d902b07e5e12da7b698557a0774587"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/runbooks/memory-leak.md",
+      "bytes": 1383,
+      "sha256": "94a594fdbe254a5f6ce5dae003ffeccd59325dcdf16d0afe1bf619156e5e1d2a"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/runbooks/cascade-failure.md",
+      "bytes": 1943,
+      "sha256": "903904200bf9a3293f336e40d8dd7af89f3b456ad88420f948166d2430e742ee"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/logs/database.log",
+      "bytes": 1147,
+      "sha256": "e3b3b850636c6d641c2466a76ba8a4cb045fd4c26e33b9e0dce57bab1653ec86"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/skills.py",
+      "bytes": 1181,
+      "sha256": "c07a179e0b1134c1bfe4b78b82d4ec646d3069824e91fd10af1fea937bb2ccee"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/skills/incident-triage/SKILL.md",
+      "bytes": 1147,
+      "sha256": "b7649c277932a56deb725317768a78d7ddb0ca2fe1c4a837398c166c7c7ae339"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/workflow.py",
+      "bytes": 6213,
+      "sha256": "68c3fefa9966ecddb69d96150423379433016be508f811df7638a30ba9bb9747"
+    }
+  ],
+  "source_citation_instances_checked": 321,
+  "counts": {
+    "implemented_reference": 6,
+    "source_supported_unimplemented": 9,
+    "quarantined_qualification": 19
+  },
+  "original_split_counts": {
+    "development": 6,
+    "calibration": 4,
+    "held_out": 24
+  },
+  "application_execution": false,
+  "qualified_bank_tasks": 0,
+  "provider_calls": 0,
+  "interpretation": "Prospective source/readiness inventory over 34 original candidates. The original split labels remain recorded; author-exposed compositions are not an independently qualified held-out set. Quarantine is an unresolved runtime/evaluation requirement, not a source refutation or failed task."
+}
