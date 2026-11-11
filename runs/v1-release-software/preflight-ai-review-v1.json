@@ -1,0 +1,185 @@
+{
+  "schema_version": "v1-release-software-preflight-ai-review/1",
+  "reviewed_at_utc": "2026-11-11T18:14:25.928864+00:00",
+  "status": "no_material_blocker_found_after_fixes",
+  "review_kind": "AI software source/wiring review and constructed status/retention controls",
+  "reviewed_sources": [
+    {
+      "path": "scripts/verify_research_v1_release.py",
+      "bytes": 9152,
+      "sha256": "222b6aa3aee8a1f2f17ba76607e073da9ce6a55f8314b73bfd5109aeb61da5de"
+    },
+    {
+      "path": ".github/workflows/research-v1-release-verification.yml",
+      "bytes": 1259,
+      "sha256": "dc770b7dd84e914437e4e8ea56faedc3e6982db24a33796a0730f96a2e2d6b2e"
+    },
+    {
+      "path": "scripts/ci_research_core_v1.py",
+      "bytes": 18988,
+      "sha256": "e9515ab7a897c4c7225deced5ac21f46775c99c85245490437168c84ce43e400"
+    },
+    {
+      "path": "scripts/ci_research_core_v2.py",
+      "bytes": 14879,
+      "sha256": "e9f62bd970e6759d2f3167ca214041e07a4225a50d7e68d64b106d51fe97d249"
+    },
+    {
+      "path": "scripts/run_shared_admission_demo_v1.py",
+      "bytes": 19131,
+      "sha256": "59be1ab11b61196ea5a2c6dcfa8b22bd62bdbc40dc337737ead692c1eb78605f"
+    },
+    {
+      "path": "scripts/validate_task_banks_v1.py",
+      "bytes": 8485,
+      "sha256": "64cf3c74811d68f6c0a8f333abb468fd3b2a0aab28c8e2b4e8ba9de9066337e7"
+    }
+  ],
+  "inventory_inputs_checked": 824,
+  "required_extra_fixture_dependencies_bound": 10,
+  "fixed_findings": [
+    "Extra-control test fixtures and exact V3 frozen plan/source snapshots now captured",
+    "Captured source inventory explicitly equals original preflight inventory before commands and afterward"
+  ],
+  "constructed_controls": [
+    {
+      "id": "all_commands_pass",
+      "status": "passed_constructed_control",
+      "observed_release_status": "passed",
+      "mocked_commands": [
+        "owned-timeout-controls",
+        "complete-core-reproduction",
+        "admission-demo-and-replay",
+        "current-extra-controls",
+        "complete-bank-validation"
+      ],
+      "actual_original_application_or_sdk_executions": 0,
+      "actual_provider_requests": 0
+    },
+    {
+      "id": "nonzero_exit_kept_failed",
+      "status": "passed_constructed_control",
+      "observed_release_status": "failed",
+      "mocked_commands": [
+        "owned-timeout-controls"
+      ],
+      "actual_original_application_or_sdk_executions": 0,
+      "actual_provider_requests": 0
+    },
+    {
+      "id": "timeout_kept_failed",
+      "status": "passed_constructed_control",
+      "observed_release_status": "failed",
+      "mocked_commands": [
+        "owned-timeout-controls"
+      ],
+      "actual_original_application_or_sdk_executions": 0,
+      "actual_provider_requests": 0
+    },
+    {
+      "id": "failed_core_outcome_stops_dependencies",
+      "status": "passed_constructed_control",
+      "observed_release_status": "failed",
+      "mocked_commands": [
+        "owned-timeout-controls",
+        "complete-core-reproduction"
+      ],
+      "actual_original_application_or_sdk_executions": 0,
+      "actual_provider_requests": 0
+    },
+    {
+      "id": "zero_test_run_is_refused",
+      "status": "passed_constructed_control",
+      "observed_release_status": "failed",
+      "mocked_commands": [
+        "owned-timeout-controls",
+        "complete-core-reproduction",
+        "admission-demo-and-replay",
+        "current-extra-controls"
+      ],
+      "actual_original_application_or_sdk_executions": 0,
+      "actual_provider_requests": 0
+    },
+    {
+      "id": "candidate_bank_semantic_overclaim_is_refused",
+      "status": "passed_constructed_control",
+      "observed_release_status": "failed",
+      "mocked_commands": [
+        "owned-timeout-controls",
+        "complete-core-reproduction",
+        "admission-demo-and-replay",
+        "current-extra-controls",
+        "complete-bank-validation"
+      ],
+      "actual_original_application_or_sdk_executions": 0,
+      "actual_provider_requests": 0
+    },
+    {
+      "id": "source_drift_is_refused",
+      "status": "passed_constructed_control",
+      "observed_release_status": "failed",
+      "mocked_commands": [
+        "owned-timeout-controls",
+        "complete-core-reproduction",
+        "admission-demo-and-replay",
+        "current-extra-controls",
+        "complete-bank-validation"
+      ],
+      "actual_original_application_or_sdk_executions": 0,
+      "actual_provider_requests": 0
+    },
+    {
+      "id": "captured_bytes_must_match_preflight",
+      "status": "passed_constructed_control",
+      "no_command_started": true,
+      "precommand_failure_capture_retained": true,
+      "structured_result_not_written_before_command_phase": true
+    }
+  ],
+  "actual_current_extra_controls": {
+    "tests_run": 57,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "successful": true
+  },
+  "actual_current_extra_controls_argv": [
+    "C:\\Python313\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-c",
+    "import json,sys,unittest; from pathlib import Path; r=Path(sys.argv[1]); sys.path[:0]=[str(r/'src'),str(r/'tests'),str(r/'scripts')]; s=unittest.defaultTestLoader.loadTestsFromNames(sys.argv[2:]); v=unittest.TextTestRunner(verbosity=2).run(s); print(json.dumps({'tests_run':v.testsRun,'errors':len(v.errors),'failures':len(v.failures),'skipped':len(v.skipped),'successful':v.wasSuccessful()})); raise SystemExit(0 if v.wasSuccessful() and not v.skipped else 1)",
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+    "test_pending_admission",
+    "test_task_bank_validation_v1",
+    "test_ap2_original_native_provider_semantics_v2",
+    "test_analyze_ap2_native_shopper_provider_v3",
+    "test_ap2_native_shopper_provider_v4"
+  ],
+  "actual_current_extra_controls_cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\v1-release-software\\preflight-controls-v1\\empty-working-directory",
+  "workflow_review": {
+    "manual_dispatch_only": true,
+    "Ubuntu_24_04_Python_3_13_1": true,
+    "pinned_checkout_python_artifact_actions": true,
+    "read_only_repository_permissions": true,
+    "no_secrets_or_provider_setup": true,
+    "always_uploads_failed_allocations": true
+  },
+  "observations": [
+    "Input-validation failures happen before allocation; workflow step logs retain them, while artifact upload has no allocation to upload.",
+    "Capture-validation failures happen before the command-phase try/finally; partial captured bytes are retained but no structured result/manifest is sealed.",
+    "owned.invoke can raise after writing process.json; result commands list may omit that failed receipt, but complete retained file inventory includes it.",
+    "Unconfirmed owned groups block manifest sealing and final exit is nonzero; no successful release claim is made."
+  ],
+  "actual_original_application_or_sdk_execution_by_reviewer": 0,
+  "actual_provider_requests_by_reviewer": 0,
+  "actual_Git_actions_by_reviewer": 0,
+  "actual_Linux_core_or_demo_execution_by_reviewer": false,
+  "scope_limit": "Preflight software qualification only; actual Linux owned groups/full core/demo replay remain required after hosted execution. Constructed controls do not award application task success, human gold, novelty or whole-study completion.",
+  "review_source": {
+    "path": "runs/v1-release-software/preflight-ai-review-source-v1.py",
+    "bytes": 10950,
+    "sha256": "e716ce05c50a1354f087f8400880b745b389bdc608c4456301229d5b45c044f7"
+  }
+}
