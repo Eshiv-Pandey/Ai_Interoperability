@@ -1,0 +1,167 @@
+{
+  "corrected_analyzer_accepts_actual_prepared_identity_dictionary_schema": true,
+  "declared_case": "ap2-native-shopper-provider-v5-correct-human",
+  "declared_case_denominator": 1,
+  "historical_V4_sources_unchanged": true,
+  "human_scientific_review": false,
+  "limits": {
+    "maximum_ADK_events": 160,
+    "maximum_event_bytes": 262144,
+    "maximum_observed_usage_tokens_before_stopping": 100000,
+    "maximum_provider_drain_seconds": 150,
+    "maximum_public_user_turns": 12,
+    "maximum_total_request_bytes": 200000,
+    "minimum_interval_seconds": 6.0,
+    "request_timeout_is_independent_whole_request_wall_cap": false,
+    "request_timeout_seconds": 120,
+    "screen_timeout_seconds": 900,
+    "upstream_calls_including_smoke": 80,
+    "worker_timeout_seconds": 600
+  },
+  "live_dispatch_by_review": false,
+  "material_consistency_questions": [],
+  "new_application_SDK_provider_solver_checker_calls_by_review": 0,
+  "new_network_or_transport_control_executions_by_review": 0,
+  "percentage_credit_claimed": false,
+  "prepared_files": [
+    {
+      "bytes": 8999,
+      "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/owned-source/scripts/ap2_native_shopper_actor_guard_v5.py",
+      "sha256": "25ec5869de958a6c20ada1d07a2c5333a2fdde25a9a60a55935e693d05a046fc"
+    },
+    {
+      "bytes": 9319,
+      "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/owned-source/scripts/ap2_native_shopper_provider_boundary_v2.py",
+      "sha256": "95bd0ccb0513cce59cb3c94724658f1943806588283e989002626deb3545e52f"
+    },
+    {
+      "bytes": 18818,
+      "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/owned-source/scripts/ap2_native_shopper_provider_worker_v1.py",
+      "sha256": "f7c0e3d79582e9bfbc49123fe7fd16791c3651f9c58dab7b70a69658a548b765"
+    },
+    {
+      "bytes": 18818,
+      "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/owned-source/scripts/ap2_native_shopper_provider_worker_v2.py",
+      "sha256": "382a7601d6929946c35d090d8bedf6d2a65a7b111b645b5fb1177cba6250c2e0"
+    },
+    {
+      "bytes": 18192,
+      "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/owned-source/scripts/ap2_native_shopper_provider_worker_v3.py",
+      "sha256": "58d0db0494eda5b74ce006a717719a70965a49fbe553b00ff0ec83e9ab503a9a"
+    },
+    {
+      "bytes": 19597,
+      "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/owned-source/scripts/run_ap2_native_shopper_provider_v1.py",
+      "sha256": "8c99e95fc686da0d8b15ac1c930a50a39a06d0c0e48722f7e15c2495a4dea358"
+    },
+    {
+      "bytes": 14590,
+      "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/owned-source/scripts/run_ap2_native_shopper_provider_v4.py",
+      "sha256": "1ff3cb5a423b1b3503025aa16e0f0aa946ad1659e498b57472d389db0909683a"
+    },
+    {
+      "bytes": 15884,
+      "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/owned-source/scripts/run_ap2_native_shopper_provider_v5.py",
+      "sha256": "2e21f3749eae1cb55086940a1fa3353861b6ed709eab55a03cb24452fdb0d2bd"
+    },
+    {
+      "bytes": 35459,
+      "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/owned-source/scripts/run_ap2_original_native_repeat_v3.py",
+      "sha256": "ef750dfa58a49e083ceb6ac84471372aa0945ddf7b96289c1020388180c3d1fb"
+    },
+    {
+      "bytes": 38948,
+      "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/plan.json",
+      "sha256": "3bee8a4653206a425d9b8a26c59f566023bb0ff19258fadfbddca358e5452ac7"
+    },
+    {
+      "bytes": 3958,
+      "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/requirements.txt",
+      "sha256": "ec535b1e7fcdf2c0287a74e20d2c2aa4036314d5088e3ba7f052af45e8ea35ac"
+    }
+  ],
+  "prepared_plan": {
+    "bytes": 38948,
+    "path": "runs/ap2-native-shopper-provider-development/v5/preparation-1/plan.json",
+    "sha256": "3bee8a4653206a425d9b8a26c59f566023bb0ff19258fadfbddca358e5452ac7"
+  },
+  "public_actor_and_original_application_function_AST_preserved": true,
+  "retained_real_loopback_witness": {
+    "bytes": 5353,
+    "path": "runs/ap2-native-shopper-provider-development/v5/software-controls-v1/real-loopback-transport.json",
+    "sha256": "6ad536ec790f11347c90f4dcde7b2dc196503776a294b5cf0e10e9d9fd0fad36"
+  },
+  "retained_zero_token_controls": {
+    "bytes": 3042,
+    "path": "runs/ap2-native-shopper-provider-development/v5/software-controls-v1/result.json",
+    "sha256": "759965e92d5a32a2026ec6857f3a7936434366b3890269c89016395a04678bf1"
+  },
+  "review_found_and_resolved_blocker": "Original V5 analyzer expected bare SHA strings while the real runner preparation writes exact bytes/SHA dictionaries. Root corrected strict schema/full digest checks and fixtures before this accepted actual-preparation check.",
+  "reviewed_at_utc": "2026-11-11T21:23:40.372644+00:00",
+  "reviewed_sources": [
+    {
+      "bytes": 15884,
+      "path": "scripts/run_ap2_native_shopper_provider_v5.py",
+      "sha256": "2e21f3749eae1cb55086940a1fa3353861b6ed709eab55a03cb24452fdb0d2bd"
+    },
+    {
+      "bytes": 18192,
+      "path": "scripts/ap2_native_shopper_provider_worker_v3.py",
+      "sha256": "58d0db0494eda5b74ce006a717719a70965a49fbe553b00ff0ec83e9ab503a9a"
+    },
+    {
+      "bytes": 8999,
+      "path": "scripts/ap2_native_shopper_actor_guard_v5.py",
+      "sha256": "25ec5869de958a6c20ada1d07a2c5333a2fdde25a9a60a55935e693d05a046fc"
+    },
+    {
+      "bytes": 20174,
+      "path": "scripts/analyze_ap2_native_shopper_provider_v5.py",
+      "sha256": "cb3ae80782244b49786ce1601298b98c5557b6c66225c5c635edac240c64e90b"
+    },
+    {
+      "bytes": 4191,
+      "path": "docs/research/ap2-native-shopper-provider-protocol-v5.md",
+      "sha256": "d149f39ec105c3cb0789e431f6309bae999fc3c73f07851fa7f1b2fc6493c93b"
+    },
+    {
+      "bytes": 4363,
+      "path": ".github/workflows/ap2-native-shopper-provider-v5.yml",
+      "sha256": "ddf7dcd77a372c66a8359a2a1259e52102afb45f3cc35a8dc9ab14405bc8bad4"
+    },
+    {
+      "bytes": 15323,
+      "path": "tests/test_ap2_native_shopper_provider_v5.py",
+      "sha256": "228b411424d1b1e212bd12a8267fef8770d7b22c7b783a37adb4966e4c517ba7"
+    },
+    {
+      "bytes": 7009,
+      "path": "tests/test_analyze_ap2_native_shopper_provider_v5.py",
+      "sha256": "d30263bd38b470c921c6b7ac5f377c55a177d1bb9e111234d33dbd52768f09f1"
+    },
+    {
+      "bytes": 18317,
+      "path": "tests/test_ap2_native_shopper_provider_v5_analysis_integration.py",
+      "sha256": "70be15fce72c04075d589b07f139c865676df08056a02d6375e8ff2f1d1eed73"
+    }
+  ],
+  "reviewer_source": {
+    "bytes": 10080,
+    "path": "runs/ap2-native-shopper-provider-development/v5/independent-prospective-review-v1/review_prospective_v1.py",
+    "sha256": "9b5b69ee6951d5bf4c3be6edf02e2f0d5d69b3e6d3c32a417b475138865f1897"
+  },
+  "runner_execute_AST_preserved_after_exact_schema_and_private_directory_version_normalization": true,
+  "schema_version": "ap2-native-shopper-provider-V5-independent-prospective-source-review/1",
+  "scope_findings": [
+    "V5 changes owned loopback address normalization and sanitized denied-address evidence, with plan/case/schema updates. It does not establish why V4's unrecorded socket arguments were denied.",
+    "Exact declared loopback hosts/native ports plus allocated proxy port are admitted; other endpoints and malformed audit shapes remain denied. Recorded controls show real local transports only.",
+    "Diagnostic records are bounded and omit socket objects, packet payloads and external host values. Dropped/write-failed diagnostics remain explicit missing evidence.",
+    "Provider boundary remains serialized, paced and call/request-byte bounded; real credential stays in the parent, with synthetic proxy credentials in children and no redirects or ambient proxy.",
+    "100000 is a known-token stop threshold, not a pre-request reservation or proven hard total-token maximum. Missing usage remains unknown and stops further admission.",
+    "120 seconds is a transport sender option, not an independent whole-request wall cap; drain freezes unfinished allocations as unmeasured.",
+    "Worker closes recorded original HTTP clients but preserves absent explicit Runner-close/full physical runtime/socket-inode witnesses as unresolved scope.",
+    "Workflow places the real secret only in execution, pins actions/runtime requirements, runs controls first and retains failure outputs with private-key/environment exclusions.",
+    "This read review qualifies a prospective one-case adaptive diagnostic, not task success, human gold, holdout, novelty or original full-study route fidelity. Root owns any dispatch."
+  ],
+  "status": "reviewed_for_one_bounded_adaptive_development_allocation"
+}

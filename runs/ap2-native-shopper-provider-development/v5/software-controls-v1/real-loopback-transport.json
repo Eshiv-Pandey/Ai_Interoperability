@@ -1,0 +1,198 @@
+{
+  "application_calls": 0,
+  "blocked": [
+    "external-dns",
+    "external-connect",
+    "undeclared-loopback-port"
+  ],
+  "denials": {
+    "descendants": 0,
+    "diagnostic_write_failures": 0,
+    "external_network": 3,
+    "network_diagnostic_bytes": 2061,
+    "network_diagnostics_dropped": 0,
+    "network_diagnostics_logged": 3,
+    "private_reads": 1
+  },
+  "diagnostics": [
+    {
+      "classification": {
+        "address_length": 2,
+        "allowed": false,
+        "normalized_host": null,
+        "normalized_port": 51245,
+        "reason": "host_not_declared_loopback",
+        "schema_version": "ap2-native-shopper-network-classification/5"
+      },
+      "event": "socket.getaddrinfo",
+      "external_host_or_unrestricted_argument_retained": false,
+      "sanitized_arguments": {
+        "address_length": 2,
+        "address_type": "tuple",
+        "audit_values_count": 5,
+        "audit_values_type": "tuple",
+        "host": {
+          "length": 40,
+          "type": "str",
+          "value_redacted": true
+        },
+        "port": {
+          "safe_value": 51245,
+          "type": "int"
+        }
+      },
+      "schema_version": "ap2-native-shopper-network-denial/5",
+      "socket_object_or_send_payload_retained": false,
+      "time": "2026-11-11T20:43:45.592059+00:00"
+    },
+    {
+      "classification": {
+        "address_length": 2,
+        "allowed": false,
+        "normalized_host": null,
+        "normalized_port": 51245,
+        "reason": "host_not_declared_loopback",
+        "schema_version": "ap2-native-shopper-network-classification/5"
+      },
+      "event": "socket.getaddrinfo",
+      "external_host_or_unrestricted_argument_retained": false,
+      "sanitized_arguments": {
+        "address_length": 2,
+        "address_type": "tuple",
+        "audit_values_count": 5,
+        "audit_values_type": "tuple",
+        "host": {
+          "length": 9,
+          "type": "str",
+          "value_redacted": true
+        },
+        "port": {
+          "safe_value": 51245,
+          "type": "int"
+        }
+      },
+      "schema_version": "ap2-native-shopper-network-denial/5",
+      "socket_object_or_send_payload_retained": false,
+      "time": "2026-11-11T20:43:45.594508+00:00"
+    },
+    {
+      "classification": {
+        "address_length": 2,
+        "allowed": false,
+        "normalized_host": "127.0.0.1",
+        "normalized_port": 1,
+        "reason": "port_not_declared",
+        "schema_version": "ap2-native-shopper-network-classification/5"
+      },
+      "event": "socket.getaddrinfo",
+      "external_host_or_unrestricted_argument_retained": false,
+      "sanitized_arguments": {
+        "address_length": 2,
+        "address_type": "tuple",
+        "audit_values_count": 5,
+        "audit_values_type": "tuple",
+        "host": {
+          "length": 9,
+          "safe_value": "127.0.0.1",
+          "type": "str"
+        },
+        "port": {
+          "safe_value": 1,
+          "type": "int"
+        }
+      },
+      "schema_version": "ap2-native-shopper-network-denial/5",
+      "socket_object_or_send_payload_retained": false,
+      "time": "2026-11-11T20:43:45.595486+00:00"
+    }
+  ],
+  "ipv6_status": "observed",
+  "loopback_listeners_closed": true,
+  "observed_socket_audit_shapes": [
+    {
+      "address_length": 2,
+      "audit_values_count": 5,
+      "event": "socket.getaddrinfo",
+      "host_type": "str",
+      "port_type": "int"
+    },
+    {
+      "address_length": 2,
+      "audit_values_count": 2,
+      "event": "socket.connect",
+      "host_type": "str",
+      "port_type": "int"
+    },
+    {
+      "address_length": 2,
+      "audit_values_count": 5,
+      "event": "socket.getaddrinfo",
+      "host_type": "bytes",
+      "port_type": "str"
+    },
+    {
+      "address_length": 2,
+      "audit_values_count": 2,
+      "event": "socket.connect",
+      "host_type": "str",
+      "port_type": "int"
+    },
+    {
+      "address_length": 2,
+      "audit_values_count": 5,
+      "event": "socket.getaddrinfo",
+      "host_type": "bytes",
+      "port_type": "bytes"
+    },
+    {
+      "address_length": 2,
+      "audit_values_count": 2,
+      "event": "socket.connect",
+      "host_type": "str",
+      "port_type": "int"
+    },
+    {
+      "address_length": 2,
+      "audit_values_count": 2,
+      "event": "socket.sendto",
+      "host_type": "str",
+      "port_type": "int"
+    },
+    {
+      "address_length": 4,
+      "audit_values_count": 2,
+      "event": "socket.connect",
+      "host_type": "str",
+      "port_type": "int"
+    },
+    {
+      "address_length": 2,
+      "audit_values_count": 5,
+      "event": "socket.getaddrinfo",
+      "host_type": "str",
+      "port_type": "int"
+    },
+    {
+      "address_length": 2,
+      "audit_values_count": 5,
+      "event": "socket.getaddrinfo",
+      "host_type": "str",
+      "port_type": "int"
+    },
+    {
+      "address_length": 2,
+      "audit_values_count": 5,
+      "event": "socket.getaddrinfo",
+      "host_type": "str",
+      "port_type": "int"
+    }
+  ],
+  "provider_calls": 0,
+  "successes": [
+    "str-ipv4",
+    "bytes-host-str-service",
+    "bytes-host-bytes-service",
+    "udp-sendto",
+    "ipv6-loopback"
+  ]
+}
