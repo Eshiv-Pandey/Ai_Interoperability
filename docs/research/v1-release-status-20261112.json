@@ -1,0 +1,184 @@
+{
+  "AI_reviews_are_not_human_reviews": true,
+  "V1_complete": true,
+  "V1_progress_percent": 100.0,
+  "accepted_criteria": 8,
+  "completed_at_utc": "2026-11-11T19:43:31.839055+00:00",
+  "completed_before_deadline": true,
+  "criteria": [
+    {
+      "claim_limit": "Finite supplied-model supported/unsupported/unknown API and certificates; no model-faithfulness or novel advantage claim.",
+      "criterion": "Algorithm prototype",
+      "evidence": [
+        "runs/implementation-acceptance/audit-v1.json",
+        "runs/overnight-acceptance/v1-20261111-1/focused-tests.stderr.txt"
+      ],
+      "id": "algorithm",
+      "status": "complete_for_declared_V1_scope",
+      "weight": 12.5
+    },
+    {
+      "claim_limit": "Method-specific charged work; shared lifting demonstrates no superiority. Failures/unknowns retain denominators.",
+      "criterion": "Fair comparison engine",
+      "evidence": [
+        "runs/implementation-acceptance/audit-v1.json",
+        "runs/shared-lifting-scaling/v3-20261110-1/result.json"
+      ],
+      "id": "comparison",
+      "status": "complete_for_declared_V1_scope",
+      "weight": 12.5
+    },
+    {
+      "claim_limit": "Saved independent numeric/PNG/SVG review reused only after byte checks; PDF hash bound but not independently rendered during historical review or this audit.",
+      "criterion": "Reproducible results analysis",
+      "evidence": [
+        "runs/research-analysis/v1-20261110-3/result.json",
+        "runs/research-analysis/independent-review-v1.json"
+      ],
+      "id": "analysis",
+      "status": "complete_for_declared_V1_scope",
+      "weight": 12.5
+    },
+    {
+      "claim_limit": "Fresh hosted Linux core/software proof at its recorded head; finite development profiles only. No application, provider, human-gold or full-study qualification.",
+      "criterion": "Clean-environment reproduction",
+      "evidence": [
+        "runs/ci-research-core/download-42819352517-independent-review.json",
+        "runs/v1-release-software/v3-independent-raw-review-43079771054-1/review.json"
+      ],
+      "id": "clean_reproduction",
+      "status": "complete_for_declared_V1_scope",
+      "weight": 12.5
+    },
+    {
+      "claim_limit": "One deterministic native fixture per arm using original refinement; shared-lift v2 was not the application solver. No complete-runtime/capture authentication claim.",
+      "criterion": "AgentOps application integration",
+      "evidence": [
+        "runs/ci-agentops-native/download-42808110286-independent-review.json"
+      ],
+      "id": "agentops",
+      "status": "complete_for_declared_V1_scope",
+      "weight": 12.5
+    },
+    {
+      "claim_limit": "Candidate authorship/source crossreview only: 296 source-supported claims and 271 pending human judgments. No human gold, untouched holdout or execution qualification; historical AP2 review does not bind every current edit.",
+      "criterion": "Complete two-domain candidate bank",
+      "evidence": [
+        "runs/overnight-acceptance/v1-20261111-1/task-bank-validation.json",
+        "runs/task-bank-review/ap2-current-ai-supplement-v1.json",
+        "runs/task-bank-review/agentops-v1.json"
+      ],
+      "id": "task_bank",
+      "status": "complete_for_declared_V1_scope",
+      "weight": 12.5
+    },
+    {
+      "claim_limit": "Scripted public caller under original native services/SDK generation with owned choices/binder/provider accounting; no autonomous shopper/bridge/settlement/idempotency or human-gold claim.",
+      "criterion": "AP2 application integration",
+      "evidence": [
+        "runs/ap2-original-native-provider-development/v2/independent-raw-review-v1/review.json",
+        "runs/overnight-acceptance/v1-20261111-1/ap2-v2-semantic-recheck.json/analysis.json"
+      ],
+      "id": "ap2",
+      "status": "complete_for_declared_V1_scope",
+      "weight": 12.5
+    },
+    {
+      "claim_limit": "Complete development manuscript and exact-input restoration from an initially clean checkout with the V15 read audit. Earlier numerical/semantic reviews are inherited after byte checks; final human scientific and publication decisions remain open.",
+      "criterion": "Complete paper package",
+      "evidence": [
+        "paper/working-draft-v15.md",
+        "paper/claim-ledger-v15.json",
+        "paper/working-draft-v15.overnight-recheck-9a71c3098604462dbad3bd7a8a7c04c2.json",
+        "docs/research/paper-artifact-guide-v15.md",
+        "runs/v1-release-paper/clean-47439ff5-v2-1/result.json",
+        "runs/v1-release-paper/clean-47439ff5-v2-1/context.json",
+        "paper/working-draft-v15.inputs-v2-c180a94be1a14317a719fd0cd2addfa0.json"
+      ],
+      "id": "paper",
+      "status": "complete_for_declared_V1_scope",
+      "weight": 12.5
+    }
+  ],
+  "deadline_utc": "2026-11-12T00:30:00+00:00",
+  "evidence_identities": [
+    {
+      "bytes": 11429,
+      "path": "runs/overnight-acceptance/v1-20261111-1/acceptance.json",
+      "sha256": "b642ec40ad4acca5c9e5c95277634cc73fb55e2fa9ffa658de5c0ee5bc8bc800"
+    },
+    {
+      "bytes": 908600,
+      "path": "runs/v1-release-software/v3-independent-raw-review-43079771054-1/review.json",
+      "sha256": "7f1188c3058be93aa5f4e9873858cc691a50b0d3c02cadc294276393aaaa26b2"
+    },
+    {
+      "bytes": 1083750,
+      "path": "runs/v1-release-paper/clean-47439ff5-v2-1/result.json",
+      "sha256": "021d340ee954e572534abe121024e5db009b23bf21b1965429fa91f2b28b2a24"
+    },
+    {
+      "bytes": 1712,
+      "path": "runs/v1-release-paper/clean-47439ff5-v2-1/context.json",
+      "sha256": "4f7fa7c881409bb37b6a7bef891bf35cc73394f26a327232399f82c37164d98d"
+    },
+    {
+      "bytes": 12010,
+      "path": "paper/working-draft-v15.inputs-v2-c180a94be1a14317a719fd0cd2addfa0.json",
+      "sha256": "1ed2355ecacfc2e4c77f2caba13acee7c8bd9ad4841c6b855d6901378caeab53"
+    },
+    {
+      "bytes": 107505,
+      "path": "paper/working-draft-v15.md",
+      "sha256": "967eccdc549a683053b814044ce7c4ed3b4de63e572eb72679082a602837f4b6"
+    },
+    {
+      "bytes": 46381,
+      "path": "paper/claim-ledger-v15.json",
+      "sha256": "e5b07d8241349b1ab12d77d11cf33a712e7f6d0f263cd5f76ef4428d5ac703d9"
+    },
+    {
+      "bytes": 2222,
+      "path": "paper/ap2-native-shopper-v4-development-addendum-v1.md",
+      "sha256": "b286f6f7845bcc676c8301ce47e4983dfd14e97090c81598387c4ca861c1629d"
+    },
+    {
+      "bytes": 7127,
+      "path": "docs/research/project-completion-status-v1.json",
+      "sha256": "423fed3d78d5149c1f1e2d54dc3c2cbd8a61299d57e280d083afe049564baf25"
+    },
+    {
+      "bytes": 10625,
+      "path": "scripts/finalize_v1_release_v1.py",
+      "sha256": "7f90a71e59154d56e92ec7f6721b61f4152ee784eb16aaf3d8334e7628aa7a78"
+    }
+  ],
+  "failures_and_unknowns_preserved": true,
+  "human_gold_or_final_scientific_review_complete": false,
+  "new_application_or_provider_calls_by_finalizer": 0,
+  "percentage_meaning": "Eight completed fixed implementation-delivery criteria; separate from the original whole research project.",
+  "publication_ready": false,
+  "remaining_original_research_requirements": [
+    "Qualified source-to-model and two-domain crossing routes",
+    "Independent human task/gold, near-miss and scientific/contribution review",
+    "Untouched holdout",
+    "Full 96-task, 288-path-cell and 96-additional-crossing study and independent reproduction"
+  ],
+  "retained_checks": {
+    "algorithm_certificates_rechecked": 683,
+    "core_algorithm_comparisons": 1056,
+    "core_reference_comparisons": 264,
+    "current_Linux_core_tests": 167,
+    "extra_controls": 57,
+    "fresh_paper_input_hashes": 3468,
+    "fresh_paper_read_checks": 19,
+    "owned_timeout_controls": 5,
+    "reference_certificates_rechecked": 172
+  },
+  "schema_version": "V1-implementation-development-paper-release/1",
+  "status": "complete_for_fixed_V1_implementation_and_development_paper_scope",
+  "total_criteria": 8,
+  "whole_original_research_project_complete": false,
+  "whole_project_estimate_uncertainty_points": 10,
+  "whole_project_work_estimate_percent": 80
+}

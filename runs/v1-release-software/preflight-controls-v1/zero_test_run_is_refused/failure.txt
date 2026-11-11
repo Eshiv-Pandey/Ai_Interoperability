@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\verify_research_v1_release.py", line 113, in execute
+    core.require(observed["successful"] and observed["tests_run"] > 0
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 and observed["skipped"] == observed["failures"] == observed["errors"] == 0,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 "Current controls did not all execute successfully")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "P:\JUNKK\Also Junk\sem_7\Ai_Interoperability\scripts\ci_research_core_v1.py", line 61, in require
+    raise ValueError(message)
+ValueError: Current controls did not all execute successfully

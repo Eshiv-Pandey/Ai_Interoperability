@@ -4,9 +4,10 @@ This release packages the finite admission algorithm, fair benchmark, reproduced
 development results, source-derived candidate bank, original-application
 development observations and complete development manuscript. The fixed
 [release plan](v1-release-plan-20261112.md) defines eight acceptance criteria.
-The [independent acceptance review](overnight-v1-acceptance-review-20261111.md)
-records the accepted evidence and its limits; final current-release qualification
-is recorded separately when the hosted run has been retained and checked.
+All eight criteria are accepted in the [completed release record](v1-release-status-20261112.md).
+The [independent acceptance review](v1-release-independent-acceptance-v2-20261112.md)
+binds the current Linux software checks, exact paper restoration and their limits.
+The earlier seven-criterion review and all failed attempts remain preserved.
 
 The original whole research project remains approximately 80% by its existing
 work estimate. V1 acceptance does not complete the full registered study, human
@@ -23,6 +24,8 @@ certified case beyond goal-pruned direct in the finite development suite.
 - [Paper artifact guide](paper-artifact-guide-v15.md): source/results/audit map.
 - [Original-application profile appendix](../../paper/original-autonomous-workflow-shopper-appendix-v1.md):
   separate Workflow and shopper failures with no pooled success rate.
+- [Native shopper V4 paper addendum](../../paper/ap2-native-shopper-v4-development-addendum-v1.md):
+  two original business attempts, zero business returns and zero receipts.
 
 AI code and retained-evidence reviews are identified as AI reviews. They do not
 supply human-approved gold or scientific approval. Scripted callers, finite
@@ -55,11 +58,11 @@ of the 66-profile comparison, independent bundle verification, the demo and its
 replay, additional current controls and all 68 candidate-bank records.
 
 ```bash
-python -I -S -B scripts/verify_research_v1_release.py --check-inputs
-python -I -S -B scripts/verify_research_v1_release.py --execute --output runs/v1-release-software/my-unused-allocation
+python -I -S -B scripts/verify_research_v1_release_v2.py --check-inputs
+python -I -S -B scripts/verify_research_v1_release_v2.py --execute --output runs/v1-release-software/my-unused-allocation
 ```
 
-The manual [GitHub workflow](../../.github/workflows/research-v1-release-verification.yml)
+The manual [GitHub workflow](../../.github/workflows/research-v1-release-verification-v2.yml)
 uses a fresh Ubuntu 24.04 checkout with no provider secret or project runtime
 dependencies. `result.json`, `plan.json`, all command streams and the complete
 `retained-manifest.json` are retained, including failed allocations. Passing
@@ -68,10 +71,26 @@ and scientific claims rely on their separately scoped evidence.
 
 ## Verify the paper
 
-Restore the exact retained evidence using the paper artifact guide and the
-additive V15 offline restoration guide. Run the guide's fresh-output V15 read
-audit. This rechecks manuscript/ledger identities and retained numerical/profile
-claims without overwriting the published paper or executing original applications.
+Use the [exact-input restoration guide](paper-v15-offline-restoration-guide-v2.md)
+with Python 3.12 or newer. The tested command restores missing required inputs
+and runs the unchanged V15 read auditor from one fresh output allocation:
+
+```powershell
+$paperOutput = Join-Path 'runs/v1-release-paper' ('v1-release-' + [guid]::NewGuid().ToString('N'))
+python -I -S -B scripts/verify_v15_paper_package_v2.py --output $paperOutput
+```
+
+The [actual isolated-checkout receipt](../../runs/v1-release-paper/clean-47439ff5-v2-1/result.json)
+restores 2,995 members and ten archives, verifies all 3,468 input hashes and
+passes 19 read checks. Existing evidence is verified and preserved. This
+qualifies the exact paper inputs; unrelated SDK payloads remain outside the check.
+The [paper artifact guide](paper-artifact-guide-v15.md) maps result-specific
+reproduction and the independently inherited numerical/certificate reviews.
+
+The later V4 addendum has a separate 48-member capture. Restore and inspect it
+with the bounded restorer and reader named in its result guide. Its
+[fresh-checkout review](../../runs/ap2-native-shopper-provider-development/v4/fresh-checkout-review-1/review.json)
+has zero consistency questions and preserves the failed business outcome.
 
 The next research phase must qualify the source-to-model and crossing routes,
 resolve human judgments and near misses, freeze the full study prospectively,
