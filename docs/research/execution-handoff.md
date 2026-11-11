@@ -1,3 +1,40 @@
+# Active continuation: 11 November 2026, fresh repeat prerequisite failed upstream
+
+Whole-project work remains approximately **80%** under the unchanged estimate
+v8. No additional percentage is assigned for preparation or for this unrealized
+repeat.
+
+Run [43014447502](https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/43014447502)
+completed at 65a6767e21191314c27cdf50d3f5ff810d5a2ce. Its exact 1,282,507-byte
+archive agrees with the API at SHA-256
+8f988d85bb47cb98ea8c2171125e6441323a338223b634aed4ab2bfc3af3f49;
+all 34 members and a bounded public archive part are preserved and verified.
+The [V3 results](ap2-original-native-repeat-results-v3.md) and independently
+constructed semantic controls retain the one adaptive attempt.
+
+The original catalog failed on an actual upstream HTTP 503 UNAVAILABLE
+high-demand response. Payment and repeat were not reached. Three upstream
+requests consumed 6,327 request bytes: two HTTP 200 responses reported 839
+known tokens; the failed response had no usage metadata, so total usage is
+unknown. There were zero local refusals, payment Task reads, receipts or repeat
+attempts. All four recorded children were reaped. This external failure stays
+distinct from V2's locally generated cumulative-byte stop; V2 retains all five
+cases and its two observed public receipts.
+
+The [additive paper appendix](../../paper/original-native-provider-v2-appendix.md)
+reconstructs all three native/provider ledgers and preserves separate
+denominators. It supplements the frozen V14 development manuscript. No full
+study, independent human gold, unchanged original launch-script provisioning
+or hidden-effect idempotence is established.
+
+Next substantive work is the original autonomous ADK shopper/native/provider
+route and unchanged original AgentOps four-stage workflow. Their new runners
+are separate prospective development allocations; root handles final review,
+freeze, dispatch and retention. Historical allocations are never resumed or
+replaced.
+
+The entries below are historical.
+
 # Active continuation: 11 November 2026, observed native Gemini task continuations
 
 Whole-project work remains approximately **80%** under estimate v8. The new
