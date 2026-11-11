@@ -2,7 +2,7 @@
 
 The additive [V2 helper](../../scripts/verify_v15_paper_package_v2.py) restores the exact 3,468 inputs in the sealed V15 provenance and then runs the unchanged 19-check V15 read auditor. It replaces full SDK extraction for this paper-package check. The V1 helper/guide and the failed isolated V8 restoration attempt remain preserved.
 
-Run from a fresh isolated checkout that includes the V15 package, exact codec inventory, portability census and this V2 source/guide. Use Python 3.10 or later:
+Run from a fresh isolated checkout that includes the V15 package, exact codec inventory, portability census and this V2 source/guide. Use Python 3.12 or later so the explicit Windows junction checks are available. The local controls and paper check used Python 3.13:
 
 ```powershell
 $paperVerify = Join-Path 'runs/v1-release-paper' ('exact-inputs-v2-' + [guid]::NewGuid().ToString('N'))

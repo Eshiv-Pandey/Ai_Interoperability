@@ -1,0 +1,386 @@
+{
+  "auditor_source_identity": {
+    "bytes": 22379,
+    "path": "paper/audit_draft_v15.py",
+    "sha256": "c9dc9ac354acc19e0efb85de7718ce137a7abc286bf8b418a44c6023e592029a"
+  },
+  "checks": [
+    {
+      "evidence": {
+        "bytes": 107505,
+        "path": "paper/working-draft-v15.md",
+        "sha256": "967eccdc549a683053b814044ce7c4ed3b4de63e572eb72679082a602837f4b6"
+      },
+      "id": "current_V15_draft_provenance_ledger_bound",
+      "passed": true
+    },
+    {
+      "evidence": 3468,
+      "id": "all_3468_current_and_inherited_build_inputs_unchanged",
+      "passed": true
+    },
+    {
+      "evidence": 54,
+      "id": "claim_source_artifact_and_builder_identities_bound",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "bytes": 18987,
+        "path": "paper/working-draft-v14.audit.json",
+        "sha256": "8d971ce73ae9163188f46ab2008e94e4f94325a39cccd32ba2564d04c9c1b31e"
+      },
+      "id": "exact_saved_20_check_V14_numerical_audit_inherited",
+      "passed": true
+    },
+    {
+      "evidence": "Sections 2 through 8.12 preserved",
+      "id": "V14_technical_methods_all_tables_and_result_sections_identical",
+      "passed": true
+    },
+    {
+      "evidence": [
+        {
+          "HTTP_status_counts": {
+            "200": 1
+          },
+          "all_response_token_total_measured": true,
+          "archive": {
+            "bytes": 1193591,
+            "sha256": "0b73d252058fe6d967a54e4cbe1646e1f08b0ac0d3711d82791b90dd445e6d0a"
+          },
+          "archive_members": 27,
+          "head_sha": "365ec09c191bddb50f6e9bf50cf6f2a871c64686",
+          "known_reported_tokens": 45,
+          "owned_local_refusals": 0,
+          "parent_attempts": 5,
+          "request_bytes": 356,
+          "responses_without_usage": 0,
+          "run_id": 42982595287,
+          "upstream_allocations": 1,
+          "version": "v1"
+        },
+        {
+          "HTTP_status_counts": {
+            "200": 60
+          },
+          "all_response_token_total_measured": true,
+          "archive": {
+            "bytes": 1945795,
+            "sha256": "5aa54a06193b25416e6d952fdee9be2af1760fd60fed596107906c5864bb2bf3"
+          },
+          "archive_members": 217,
+          "head_sha": "5f8ef7c8948c0a4a89b665810968cc4d5a734cda",
+          "known_reported_tokens": 44940,
+          "owned_local_refusals": 1,
+          "parent_attempts": 5,
+          "request_bytes": 197564,
+          "responses_without_usage": 0,
+          "run_id": 42995902326,
+          "upstream_allocations": 60,
+          "version": "v2"
+        },
+        {
+          "HTTP_status_counts": {
+            "200": 2,
+            "503": 1
+          },
+          "all_response_token_total_measured": false,
+          "archive": {
+            "bytes": 1282507,
+            "sha256": "b8f988d85bb47cb98ea8c2171125e6441323a338223b634aed4ab2bfc3af3f49"
+          },
+          "archive_members": 34,
+          "head_sha": "b65a6767e21191314c27cdf50d3f5ff810d5a2ce",
+          "known_reported_tokens": 839,
+          "owned_local_refusals": 0,
+          "parent_attempts": 1,
+          "request_bytes": 6327,
+          "responses_without_usage": 1,
+          "run_id": 43014447502,
+          "upstream_allocations": 3,
+          "version": "v3"
+        }
+      ],
+      "id": "three_native_run_ledgers_reconstructed_from_raw_archives",
+      "passed": true
+    },
+    {
+      "evidence": "| V1 / 42982595287 | 5 | 1 | 1 / 0 | 356 | 45 | 0 | 0 |",
+      "id": "V15N_v1_all_counts_and_usage_statuses",
+      "passed": true
+    },
+    {
+      "evidence": "| V2 / 42995902326 | 5 | 60 | 60 / 0 | 197,564 | 44,940 | 0 | 1 |",
+      "id": "V15N_v2_all_counts_and_usage_statuses",
+      "passed": true
+    },
+    {
+      "evidence": "| V3 / 43014447502 | 1 | 3 | 2 / 1 | 6,327 | 839 | 1 | 0 |",
+      "id": "V15N_v3_all_counts_and_usage_statuses",
+      "passed": true
+    },
+    {
+      "evidence": 5,
+      "id": "V2_two_completed_Task_receipt_cases_kept_at_separate_denominator",
+      "passed": true
+    },
+    {
+      "evidence": "839 known tokens; one unknown response",
+      "id": "V3_unreached_repeat_and_failed_response_usage_remain_unknown",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "archive_members": 154,
+        "cases": [
+          {
+            "case_id": "agentops-h09-workflow-select-target",
+            "final_target": null,
+            "final_verdict": "insufficient",
+            "fixture_callbacks": 9,
+            "frozen_questions": 3,
+            "json_error_offset": 2140,
+            "optional_after_tool_observers": 0,
+            "raw_events": 14,
+            "tool_terminals": 5
+          },
+          {
+            "case_id": "agentops-h10-workflow-override-conflict",
+            "final_target": null,
+            "final_verdict": "insufficient",
+            "fixture_callbacks": 8,
+            "frozen_questions": 3,
+            "json_error_offset": 2737,
+            "optional_after_tool_observers": 0,
+            "raw_events": 12,
+            "tool_terminals": 4
+          }
+        ]
+      },
+      "id": "Workflow_actual_raw_delivery_and_malformed_handoffs_reconstructed",
+      "passed": true
+    },
+    {
+      "evidence": 2,
+      "id": "V15W_counts_null_targets_and_frozen_questions_preserved",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "case_id": {
+          "provided": "ap2-native-shopper-provider-v3-correct-human",
+          "worker_expected": "ap2-native-shopper-provider-v1-correct-human"
+        }
+      },
+      "id": "V3_shopper_startup_failure_not_live_business_execution",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "| V1 / 43038234376 | 2 | 45 | 1 |",
+        "| V2 / 43045731741 | 0 | 0 | 0 |",
+        "| V3 / 43055390208 | 1 | 45 | 0 |"
+      ],
+      "id": "V15S_separate_one_case_failures_and_usage_table",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "ABSTRACT_CONTROL",
+        "AGENTOPS_BANK",
+        "AGENTOPS_EFFECT",
+        "ALGORITHMS",
+        "AP2_PAYMENT_BANK",
+        "AP2_SEQUENCE",
+        "AP2_SHARED",
+        "AP2_SOURCE",
+        "CACHE_ABLATION",
+        "COMMON_COST",
+        "CONCLUSION",
+        "COVERAGE",
+        "DESIGN",
+        "DISCUSSION",
+        "EFFECT_BOUNDARY",
+        "LIMITATIONS",
+        "NATIVE_FAILURE_HISTORY",
+        "NATIVE_PROVIDER",
+        "NATIVE_V13",
+        "OFFLINE_SHOPPER",
+        "OWNED_TCP",
+        "PROOF_CODEC",
+        "PROPERTIES",
+        "REPRODUCIBILITY",
+        "REPRODUCTION",
+        "SEMANTICS",
+        "SHOPPER_V3",
+        "STRESS",
+        "WORKFLOW_V2"
+      ],
+      "id": "29_current_substantive_claims_map_inherited_and_new_results",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "FULL_REGISTERED_STUDY": {
+          "additional_crossings": 96,
+          "id": "FULL_REGISTERED_STUDY",
+          "original_scope_revised": false,
+          "path_cells": 288,
+          "status": "incomplete",
+          "tasks": 96
+        },
+        "HOLDOUT": {
+          "id": "HOLDOUT",
+          "reason": "Related authored development profiles are not untouched held-out tasks or near misses.",
+          "status": "unexecuted"
+        },
+        "HUMAN_GOLD": {
+          "id": "HUMAN_GOLD",
+          "reason": "Independent human domain/task/gold review is incomplete; AI read audits do not replace it.",
+          "status": "unqualified"
+        },
+        "LIVE_TASK_UTILITY": {
+          "id": "LIVE_TASK_UTILITY",
+          "reason": "Specific provider/Task observations do not prove autonomous two-domain, bridge or generalized live-model utility.",
+          "status": "unqualified"
+        },
+        "NOVELTY": {
+          "id": "NOVELTY",
+          "reason": "No distinctive general method or accountable human novelty decision.",
+          "status": "unestablished"
+        },
+        "PUBLICATION_READY": {
+          "id": "PUBLICATION_READY",
+          "reason": "Accountable scientific/reference review and eventual submission approval remain open.",
+          "status": "not_claimed"
+        }
+      },
+      "id": "original_scope_and_six_open_scientific_claims_preserved",
+      "passed": true
+    },
+    {
+      "evidence": "Bounded provider observations; original scientific scope open",
+      "id": "stale_blanket_claims_corrected_and_adverse_limits_explicit",
+      "passed": true
+    },
+    {
+      "evidence": [],
+      "id": "current_manuscript_and_guide_local_links_resolve",
+      "passed": true
+    }
+  ],
+  "checks_passed": 19,
+  "created_utc": "2026-11-11T19:12:09.477099+00:00",
+  "draft_identity": {
+    "bytes": 107505,
+    "path": "paper/working-draft-v15.md",
+    "sha256": "967eccdc549a683053b814044ce7c4ed3b4de63e572eb72679082a602837f4b6"
+  },
+  "full_original_study_complete": false,
+  "human_scientific_review": false,
+  "inherited_V14_saved_numerical_checks": 20,
+  "inherited_numerical_runtime_reexecuted": false,
+  "ledger_identity": {
+    "bytes": 46381,
+    "path": "paper/claim-ledger-v15.json",
+    "sha256": "e5b07d8241349b1ab12d77d11cf33a712e7f6d0f263cd5f76ef4428d5ac703d9"
+  },
+  "native_profiles_raw_reconstructed": [
+    {
+      "HTTP_status_counts": {
+        "200": 1
+      },
+      "all_response_token_total_measured": true,
+      "archive": {
+        "bytes": 1193591,
+        "sha256": "0b73d252058fe6d967a54e4cbe1646e1f08b0ac0d3711d82791b90dd445e6d0a"
+      },
+      "archive_members": 27,
+      "head_sha": "365ec09c191bddb50f6e9bf50cf6f2a871c64686",
+      "known_reported_tokens": 45,
+      "owned_local_refusals": 0,
+      "parent_attempts": 5,
+      "request_bytes": 356,
+      "responses_without_usage": 0,
+      "run_id": 42982595287,
+      "upstream_allocations": 1,
+      "version": "v1"
+    },
+    {
+      "HTTP_status_counts": {
+        "200": 60
+      },
+      "all_response_token_total_measured": true,
+      "archive": {
+        "bytes": 1945795,
+        "sha256": "5aa54a06193b25416e6d952fdee9be2af1760fd60fed596107906c5864bb2bf3"
+      },
+      "archive_members": 217,
+      "head_sha": "5f8ef7c8948c0a4a89b665810968cc4d5a734cda",
+      "known_reported_tokens": 44940,
+      "owned_local_refusals": 1,
+      "parent_attempts": 5,
+      "request_bytes": 197564,
+      "responses_without_usage": 0,
+      "run_id": 42995902326,
+      "upstream_allocations": 60,
+      "version": "v2"
+    },
+    {
+      "HTTP_status_counts": {
+        "200": 2,
+        "503": 1
+      },
+      "all_response_token_total_measured": false,
+      "archive": {
+        "bytes": 1282507,
+        "sha256": "b8f988d85bb47cb98ea8c2171125e6441323a338223b634aed4ab2bfc3af3f49"
+      },
+      "archive_members": 34,
+      "head_sha": "b65a6767e21191314c27cdf50d3f5ff810d5a2ce",
+      "known_reported_tokens": 839,
+      "owned_local_refusals": 0,
+      "parent_attempts": 1,
+      "request_bytes": 6327,
+      "responses_without_usage": 1,
+      "run_id": 43014447502,
+      "upstream_allocations": 3,
+      "version": "v3"
+    }
+  ],
+  "new_application_sdk_provider_solver_checker_or_evaluator_executions": 0,
+  "passed": true,
+  "provenance_identity": {
+    "bytes": 1022369,
+    "path": "paper/working-draft-v15.provenance.json",
+    "sha256": "23ba0330b4b0ecc8093a6fd3519c219db712322e3f773abd6ec7961befb95a63"
+  },
+  "publication_ready": false,
+  "schema_version": "paper-v15-independent-read-audit/1",
+  "status": "passed_current_claim_and_raw_profile_read_audit",
+  "workflow_raw_reconstructed": [
+    {
+      "case_id": "agentops-h09-workflow-select-target",
+      "final_target": null,
+      "final_verdict": "insufficient",
+      "fixture_callbacks": 9,
+      "frozen_questions": 3,
+      "json_error_offset": 2140,
+      "optional_after_tool_observers": 0,
+      "raw_events": 14,
+      "tool_terminals": 5
+    },
+    {
+      "case_id": "agentops-h10-workflow-override-conflict",
+      "final_target": null,
+      "final_verdict": "insufficient",
+      "fixture_callbacks": 8,
+      "frozen_questions": 3,
+      "json_error_offset": 2737,
+      "optional_after_tool_observers": 0,
+      "raw_events": 12,
+      "tool_terminals": 4
+    }
+  ]
+}
