@@ -1,0 +1,24 @@
+I1111 07:53:57.453368 140197864434560 server.py:90] merchant_payment_processor_agent listening on http://localhost:8003
+INFO:     Started server process [2618]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8003 (Press CTRL+C to quit)
+I1111 07:53:57.530968 140197864434560 server.py:121] 
+
+
+
+I1111 07:53:57.531121 140197864434560 server.py:122] ---------- New Agent Request Received---------
+I1111 07:53:57.531175 140197864434560 server.py:125] GET http://127.0.0.1:8003/a2a/merchant_payment_processor_agent/.well-known/agent-card.json
+I1111 07:53:57.531232 140197864434560 server.py:134] 
+
+I1111 07:53:57.531268 140197864434560 server.py:135] [Request Body]
+I1111 07:53:57.531298 140197864434560 server.py:136] <empty>
+I1111 07:53:57.531724 140197864434560 server.py:162] 
+
+I1111 07:53:57.531777 140197864434560 server.py:163] [Response Body]
+I1111 07:53:57.531814 140197864434560 server.py:164] {"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["text/plain"],"defaultOutputModes":["application/json"],"description":"An agent that processes card payments on behalf of a merchant.","name":"merchant_payment_processor_agent","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Processes card payments.","id":"card-processor","name":"Card Processor","tags":["payment","card"]}],"url":"http://localhost:8003/a2a/merchant_payment_processor_agent","version":"1.0.0"}
+INFO:     127.0.0.1:59020 - "GET /a2a/merchant_payment_processor_agent/.well-known/agent-card.json HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2618]

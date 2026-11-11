@@ -1,0 +1,24 @@
+I1111 07:53:57.805316 140595421338496 server.py:90] MerchantAgent listening on http://localhost:8001
+INFO:     Started server process [2616]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+I1111 07:53:58.043106 140595421338496 server.py:121] 
+
+
+
+I1111 07:53:58.043256 140595421338496 server.py:122] ---------- New Agent Request Received---------
+I1111 07:53:58.043310 140595421338496 server.py:125] GET http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json
+I1111 07:53:58.043362 140595421338496 server.py:134] 
+
+I1111 07:53:58.043399 140595421338496 server.py:135] [Request Body]
+I1111 07:53:58.043432 140595421338496 server.py:136] <empty>
+I1111 07:53:58.043890 140595421338496 server.py:162] 
+
+I1111 07:53:58.043951 140595421338496 server.py:163] [Response Body]
+I1111 07:53:58.043991 140595421338496 server.py:164] {"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["json"],"defaultOutputModes":["json"],"description":"A sales assistant agent for a merchant.","name":"MerchantAgent","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Searches the merchant's catalog based on a catalog search query & returns a cart containing the top results.","id":"search_catalog","name":"Search Catalog","tags":["merchant","search","catalog"]}],"url":"http://localhost:8001/a2a/merchant_agent","version":"1.0.0"}
+INFO:     127.0.0.1:40916 - "GET /a2a/merchant_agent/.well-known/agent-card.json HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2616]

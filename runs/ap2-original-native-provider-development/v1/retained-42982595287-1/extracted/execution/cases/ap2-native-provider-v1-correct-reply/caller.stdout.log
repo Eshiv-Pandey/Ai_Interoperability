@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/scripts/ap2_public_scripted_continuation_v1.py", line 219, in <module>
+    main()
+    ~~~~^^
+  File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/scripts/ap2_public_scripted_continuation_v1.py", line 170, in main
+    modules, source_records = bind_original_modules(args.samples_root, expected)
+                              ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/src/interoperability/ap2_public_scripted_continuation_v1.py", line 88, in bind_original_modules
+    verify_module(module, name, loaded, raw)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/src/interoperability/ap2_hp_original_binding_v1.py", line 284, in verify_module
+    _verify_function(actual, definition, matching[0], namespace, enclosing)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/src/interoperability/ap2_hp_original_binding_v1.py", line 209, in _verify_function
+    need(marshal.dumps(function.__code__) == marshal.dumps(code), "Loaded original callable code differs")
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/src/interoperability/ap2_hp_original_binding_v1.py", line 52, in need
+    raise BindingError(reason)
+interoperability.ap2_hp_original_binding_v1.BindingError: Loaded original callable code differs

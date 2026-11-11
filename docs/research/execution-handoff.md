@@ -1,3 +1,40 @@
+# Active continuation: 11 November 2026, actual provider access and native caller failure
+
+Whole-project work remains approximately **80%** under the unchanged estimate
+v8. Parent model access and native startup are observed; completed application
+tasks and scientific qualification are not established by this run.
+
+Run [42982595287](https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/42982595287)
+completed at `365ec09c191bddb50f6e9bf50cf6f2a871c64686`. Its exact 1,193,591-byte
+archive is retained at
+`runs/ap2-original-native-provider-development/v1/retained-42982595287-1`,
+with matching API/archive SHA-256
+`0b73d252058fe6d967a54e4cbe1646e1f08b0ac0d3711d82791b90dd445e6d0a`.
+The independent raw review verifies all 27 archive members and source/runtime,
+provider and task-attempt censuses with no integrity discrepancy.
+
+The one parent access request received HTTP 200 and the expected `access_check`
+function call, with 35 prompt plus 10 candidate tokens. The requested model path
+contains `gemini-3.1-flash-lite-preview`; returned `modelVersion` is
+`gemini-3.1-flash-lite`. All three original service modules started and their
+v0.3 cards were read in the first case. No service-model generation occurred.
+
+The first caller failed the original binding helper's `marshal.dumps` comparison
+before construction or business calls. The four later attempts recorded OSError
+before any child process was retained; their original errno/cause is absent.
+All four recorded first-case processes were reaped. Preserve five failed
+task attempts and zero business/public Task/challenge/receipt captures. Workflow
+success is not application task success.
+
+Separate V2 work replaces only the owned callable comparison with structural
+code identity and prepares a reusable-port ownership preflight with retained
+errno. Original V1 code, all five attempted outcomes and its archive remain
+unchanged. Root alone freezes/dispatches the successor after meaningful controls
+and independent delta review. The source-bound answer review package is already
+pushed; full study and actual human review remain open.
+
+The entries below are historical.
+
 # Active continuation: 11 November 2026, task answers and original provider preparation
 
 Whole-project work remains approximately **80%**, rounded from the unchanged

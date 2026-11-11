@@ -1,0 +1,37 @@
+{
+  "entries": [
+    {
+      "module": "roles.merchant_agent",
+      "port": 8001,
+      "rpc_path": "/a2a/merchant_agent"
+    },
+    {
+      "module": "roles.credentials_provider_agent",
+      "port": 8002,
+      "rpc_path": "/a2a/credentials_provider"
+    },
+    {
+      "module": "roles.merchant_payment_processor_agent",
+      "port": 8003,
+      "rpc_path": "/a2a/merchant_payment_processor_agent"
+    }
+  ],
+  "original_entrypoints": true,
+  "original_genai_client_replaced": false,
+  "owned_accounting_base_url": "http://127.0.0.1:39271",
+  "public_cards": {
+    "credentials": {
+      "bytes": 1149,
+      "sha256": "a3999605f4200fd72fa686ba12215a0d6d3f226a8ed0556ec93a07fd74a97d47"
+    },
+    "merchant": {
+      "bytes": 809,
+      "sha256": "abae7e20491ede70d171abadea5260eaee04df83831f1a37131d311b370d9383"
+    },
+    "processor": {
+      "bytes": 790,
+      "sha256": "cc42eddceab916e8fadb7ed0652866c440859d7c2f5cc58c210635b940badec3"
+    }
+  },
+  "secret_in_children": false
+}
