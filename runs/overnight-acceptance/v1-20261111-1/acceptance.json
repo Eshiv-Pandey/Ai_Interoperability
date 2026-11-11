@@ -1,0 +1,223 @@
+{
+  "schema_version": "overnight-v1-delivery-acceptance/1",
+  "reviewed_at_utc": "2026-11-11T18:06:56.766606+00:00",
+  "reviewer": "AI retained-evidence and current-source acceptance reviewer",
+  "scope": "Existing eight implementation-delivery criteria, with additional current-release smoke pending root",
+  "status": "seven_criteria_accepted_current_release_smoke_pending",
+  "accepted_criteria": 7,
+  "total_criteria": 8,
+  "whole_project_percentage_assigned": null,
+  "original_full_study_complete": false,
+  "publication_ready": false,
+  "human_gold_or_scientific_review_granted": false,
+  "fresh_evidence_files_hashed": 12247,
+  "fresh_focused_tests": 93,
+  "fresh_paper_read_checks": 19,
+  "source_bound_generator": {
+    "path": "scripts/analyze_research_results_v1.py",
+    "bytes": 11901,
+    "sha256": "19002ac5cf3b613bf58dd48de304c3f02f7eda7444039f1edbae1f3766df9039"
+  },
+  "criteria": [
+    {
+      "id": "algorithm",
+      "criterion": "Algorithm prototype",
+      "status": "accepted",
+      "verification": "93 fresh focused controls across algorithm/comparison/bank/AP2 semantic modules; all ten historical implementation source identities match current bytes.",
+      "evidence": [
+        "runs/implementation-acceptance/audit-v1.json",
+        "runs/overnight-acceptance/v1-20261111-1/focused-tests.stderr.txt"
+      ],
+      "claim_limit": "Finite supplied-model supported/unsupported/unknown API and certificates; no model-faithfulness or novel advantage claim."
+    },
+    {
+      "id": "comparison",
+      "criterion": "Fair comparison engine",
+      "status": "accepted",
+      "verification": "Four budgets, 66 profiles and four methods; complete retained worker/checker evidence; all four Linux bundles freshly verified against current trusted code.",
+      "evidence": [
+        "runs/implementation-acceptance/audit-v1.json",
+        "runs/shared-lifting-scaling/v3-20261110-1/result.json"
+      ],
+      "claim_limit": "Method-specific charged work; shared lifting demonstrates no superiority. Failures/unknowns retain denominators."
+    },
+    {
+      "id": "analysis",
+      "criterion": "Reproducible results analysis",
+      "status": "accepted",
+      "verification": "Current generator and all 17 analysis input and seven output identities match the independently reconciled 11,640 table cells and saved figure review.",
+      "evidence": [
+        "runs/research-analysis/v1-20261110-3/result.json",
+        "runs/research-analysis/independent-review-v1.json"
+      ],
+      "claim_limit": "Saved independent numeric/PNG/SVG review reused only after byte checks; PDF hash bound but not independently rendered during historical review or this audit."
+    },
+    {
+      "id": "clean_reproduction",
+      "criterion": "Clean-environment reproduction",
+      "status": "pending_current_release_smoke",
+      "verification": "Historical fresh Linux run 42819352517 passed 167 tests and matches 1056 algorithm, 264 reference and 683 checker outputs. Its 10821 retained file identities and four bundles pass fresh checks.",
+      "evidence": [
+        "runs/ci-research-core/download-42819352517-independent-review.json"
+      ],
+      "pending": "Root must append the separate current-release Linux smoke/core/demo replay qualification before release acceptance.",
+      "claim_limit": "This audit did not perform a new checkout, hosted dispatch or download; historical transport ZIP digest was not independently rechecked."
+    },
+    {
+      "id": "agentops",
+      "criterion": "AgentOps application integration",
+      "status": "accepted",
+      "verification": "1138 exported files freshly rehashed. Historical native N11 precedes B7; each completes original task with inventory operational and exactly one audit row. B7 certificate-to-wire binding and clean exits are retained.",
+      "evidence": [
+        "runs/ci-agentops-native/download-42808110286-independent-review.json"
+      ],
+      "claim_limit": "One deterministic native fixture per arm using original refinement; shared-lift v2 was not the application solver. No complete-runtime/capture authentication claim."
+    },
+    {
+      "id": "task_bank",
+      "criterion": "Complete two-domain candidate bank",
+      "status": "accepted",
+      "verification": "Fresh complete-bank validation checks 68 public/evaluator pairs: 12 development, 8 calibration, 48 prospective held-out candidates. Historical AgentOps/AP2 source crossreviews and current six-record AP2 supplement document fixes.",
+      "evidence": [
+        "runs/overnight-acceptance/v1-20261111-1/task-bank-validation.json",
+        "runs/task-bank-review/ap2-current-ai-supplement-v1.json",
+        "runs/task-bank-review/agentops-v1.json"
+      ],
+      "claim_limit": "Candidate authorship/source crossreview only: 296 source-supported claims and 271 pending human judgments. No human gold, untouched holdout or execution qualification; historical AP2 review does not bind every current edit."
+    },
+    {
+      "id": "ap2",
+      "criterion": "AP2 application integration",
+      "status": "accepted",
+      "verification": "V2 archive digest and 217 extracted files freshly checked; public semantic reanalysis has zero questions. Five fixed cases retain two completed original Tasks/demo Success receipts, wrong/no-reply outcomes, recovery and an unreached repeat prerequisite; all recorded children reaped.",
+      "evidence": [
+        "runs/ap2-original-native-provider-development/v2/independent-raw-review-v1/review.json",
+        "runs/overnight-acceptance/v1-20261111-1/ap2-v2-semantic-recheck.json/analysis.json"
+      ],
+      "claim_limit": "Scripted public caller under original native services/SDK generation with owned choices/binder/provider accounting; no autonomous shopper/bridge/settlement/idempotency or human-gold claim."
+    },
+    {
+      "id": "paper",
+      "criterion": "Complete paper package",
+      "status": "accepted",
+      "verification": "V15 full manuscript, references, 29-claim current ledger, 3468 input provenance and artifact guide pass this fresh 19-check read audit. Saved V14 20-check numeric audit and technical/result text retained; new profile counts rederived from raw archives.",
+      "evidence": [
+        "paper/working-draft-v15.md",
+        "paper/claim-ledger-v15.json",
+        "paper/working-draft-v15.overnight-recheck-9a71c3098604462dbad3bd7a8a7c04c2.json",
+        "docs/research/paper-artifact-guide-v15.md"
+      ],
+      "claim_limit": "Complete development manuscript/artifact package. Human scientific/reference review, authorship and publication readiness remain explicit open decisions; earlier certificate semantics not rerun by V15 reader."
+    }
+  ],
+  "material_release_gap": "Current-release fresh Linux smoke/core/demo qualification is not performed by this reviewer; root owns it and final freeze/push.",
+  "fixed_gap": "The current V15 ledger now binds the manuscript; the inherited V7 ledger did not bind V14 and is retained as historical evidence.",
+  "reproduction": [
+    "python -I -S -B scripts/audit_overnight_acceptance_v1.py --output-dir runs/overnight-acceptance/your-unused-allocation",
+    "python -I -S -B paper/audit_draft_v15.py --draft paper/working-draft-v15.md --provenance paper/working-draft-v15.provenance.json --ledger paper/claim-ledger-v15.json --output paper/your-unused-v15-audit.json",
+    "python -I -S -B scripts/finalize_overnight_acceptance_v1.py --audit-dir runs/overnight-acceptance/your-unused-allocation"
+  ],
+  "audited_evidence_identities": [
+    {
+      "path": "docs/research/implementation-delivery-plan-v2.md",
+      "bytes": 2743,
+      "sha256": "023df493cacd990bf175ad338a3f42e134d508b43073c77d8f040bae20dbf9d4"
+    },
+    {
+      "path": "docs/research/v1-release-plan-20261112.md",
+      "bytes": 3914,
+      "sha256": "fe83d3de98fbcfa77b546689814c569163cb183508f03d5dd34e8d4e4e18adef"
+    },
+    {
+      "path": "runs/implementation-acceptance/audit-v1.json",
+      "bytes": 18211,
+      "sha256": "69331c7ef851d8f0eded7bce85a581317c734287e0a006602d0bca4ba01addd2"
+    },
+    {
+      "path": "runs/research-analysis/independent-review-v1.json",
+      "bytes": 10644,
+      "sha256": "55264461a7427affe420c6c153d28f1fdae88057816e1868e41aad205c514115"
+    },
+    {
+      "path": "runs/ci-research-core/download-42819352517-independent-review.json",
+      "bytes": 7137,
+      "sha256": "dd86692ba7fc8ecc387238376013ca4c7751ea0b817eaa668e7f81cb03264bd3"
+    },
+    {
+      "path": "runs/ci-agentops-native/download-42808110286-independent-review.json",
+      "bytes": 7272,
+      "sha256": "b887921bfbbb4d9cde17147e15184ef7b84e9be498907e82c7fd509c1c42d15b"
+    },
+    {
+      "path": "runs/task-bank-review/agentops-v1.json",
+      "bytes": 23403,
+      "sha256": "6d07979743e1ba4acc2978fdc1ee1b5e7724cae6ee752cf67b8de05996c0b339"
+    },
+    {
+      "path": "runs/task-bank-review/ap2-v1.json",
+      "bytes": 6584,
+      "sha256": "99a92e2a2e83a924516dfcbc77e1ddc3770fe72e38f2779afa641595af4f37d5"
+    },
+    {
+      "path": "runs/task-bank-review/ap2-current-ai-supplement-v1.json",
+      "bytes": 4390,
+      "sha256": "19ad44b73011231728aa37d979e473b8328fbac01bdb6d16adf41c31b9214fd6"
+    },
+    {
+      "path": "runs/ap2-original-native-provider-development/v2/independent-raw-review-v1/review.json",
+      "bytes": 325044,
+      "sha256": "f5620a8f53765b67f3fdd976c5769a827ae7ae45c3f1b50d3c45c975bff4c427"
+    },
+    {
+      "path": "runs/ap2-original-native-provider-development/v2/independent-semantic-analysis-v1/analysis.json",
+      "bytes": 62129,
+      "sha256": "a1889821ce11848ca5e0e4cc9c2def1048a5bd050c21e5cbdb3903e648c8169a"
+    },
+    {
+      "path": "paper/working-draft-v15.md",
+      "bytes": 107505,
+      "sha256": "967eccdc549a683053b814044ce7c4ed3b4de63e572eb72679082a602837f4b6"
+    },
+    {
+      "path": "paper/working-draft-v15.provenance.json",
+      "bytes": 1022369,
+      "sha256": "23ba0330b4b0ecc8093a6fd3519c219db712322e3f773abd6ec7961befb95a63"
+    },
+    {
+      "path": "paper/claim-ledger-v15.json",
+      "bytes": 46381,
+      "sha256": "e5b07d8241349b1ab12d77d11cf33a712e7f6d0f263cd5f76ef4428d5ac703d9"
+    },
+    {
+      "path": "paper/working-draft-v15.audit.json",
+      "bytes": 12010,
+      "sha256": "3fdc146786cdf7ab5d5d374da454042314820e69ecef86241dce7ca7ff005090"
+    },
+    {
+      "path": "docs/research/paper-artifact-guide-v15.md",
+      "bytes": 6006,
+      "sha256": "24c29d2a0f72ad258f3f792b9aefcd63666d15ac22517da5752ed6296d8bc8bd"
+    }
+  ],
+  "audit_command_records": [
+    {
+      "path": "runs/overnight-acceptance/v1-20261111-1/commands.json",
+      "bytes": 8371,
+      "sha256": "4d71c72f6881928a9894c69efff238fba95a31cb0e505125b668c1b5b74305be"
+    },
+    {
+      "path": "runs/overnight-acceptance/v1-20261111-1/paper-command-success.json",
+      "bytes": 1430,
+      "sha256": "eca9212b925cd5afd1ba363caef55fa25857a862cf11aee1d87474742badce00"
+    }
+  ],
+  "paper_recheck": {
+    "path": "paper/working-draft-v15.overnight-recheck-9a71c3098604462dbad3bd7a8a7c04c2.json",
+    "bytes": 12010,
+    "sha256": "53883eebf4d30c61bec4daab6cdeec5e6d4a23ce760a8600241274935b2fd994"
+  },
+  "previous_failed_paper_output_boundary_attempt": "paper-command.json records a rejected output outside paper; no paper output was written by that attempt.",
+  "original_application_or_sdk_execution_by_reviewer": false,
+  "provider_requests_by_reviewer": 0,
+  "Git_actions_by_reviewer": 0
+}

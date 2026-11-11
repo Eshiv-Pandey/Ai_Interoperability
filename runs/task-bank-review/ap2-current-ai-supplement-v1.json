@@ -1,0 +1,117 @@
+{
+  "schema_version": "ap2-current-ai-source-crossreview-supplement/1",
+  "reviewed_at_utc": "2026-11-11T18:02:49.788517+00:00",
+  "review_kind": "AI source crossreview of six additions and targeted corrections",
+  "input_files": [
+    {
+      "path": "benchmark/tasks-v1/ap2/application.json",
+      "bytes": 93872,
+      "sha256": "8d50f50ac64976365d5c284a9ebf01e2f0291e506494ac9894df77d2d6cd7af2"
+    },
+    {
+      "path": "benchmark/tasks-v1/ap2/evaluator.json",
+      "bytes": 302404,
+      "sha256": "3cc1ece28513f4137735f4c26f8d7402d29f85b01102351b0de63857adb24bca"
+    }
+  ],
+  "prior_28_record_review": {
+    "path": "runs/task-bank-review/ap2-v1.json",
+    "bytes": 6584,
+    "sha256": "99a92e2a2e83a924516dfcbc77e1ddc3770fe72e38f2779afa641595af4f37d5"
+  },
+  "prior_review_hashes_match_current_bank": false,
+  "current_semantic_delta_reviewed_ids": [
+    "ap2-ho-019",
+    "ap2-ho-020",
+    "ap2-ho-021",
+    "ap2-ho-022",
+    "ap2-ho-023",
+    "ap2-ho-024"
+  ],
+  "targeted_recipe_fix_checks": [
+    {
+      "id": "ap2-dev-001",
+      "checks": {
+        "PAYMENT_METHOD=CARD": true,
+        "debug_mode=False": true,
+        "nonverbose": true
+      }
+    },
+    {
+      "id": "ap2-cal-003",
+      "checks": {
+        "PAYMENT_METHOD=CARD": true,
+        "debug_mode=False": true,
+        "nonverbose": true
+      }
+    },
+    {
+      "id": "ap2-ho-001",
+      "checks": {
+        "PAYMENT_METHOD=CARD": true,
+        "debug_mode=False": true,
+        "nonverbose": true
+      }
+    },
+    {
+      "id": "ap2-ho-004",
+      "checks": {
+        "PAYMENT_METHOD=CARD": true,
+        "debug_mode=False": true,
+        "nonverbose": true
+      }
+    },
+    {
+      "id": "ap2-ho-018",
+      "checks": {
+        "PAYMENT_METHOD=CARD": true,
+        "debug_mode=False": true,
+        "nonverbose": true
+      }
+    }
+  ],
+  "source_files_checked": [
+    {
+      "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_agent/tools.py",
+      "bytes": 15584,
+      "sha256": "513b7a6dd5d92ef2a0b355e77003706ffcec77ac662d42161fb638ef98f816d3"
+    },
+    {
+      "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/message_utils.py",
+      "bytes": 2440,
+      "sha256": "7f8e0a62cfdab15089d0a3478b19814c505915c217f078c111fa3d9889dcc7ca"
+    },
+    {
+      "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/merchant_payment_processor_agent/tools.py",
+      "bytes": 11483,
+      "sha256": "41a11923ae38798099c39a25d95d358ab1845320f64f8833b4955fa09b04e12d"
+    }
+  ],
+  "distinct_obligation_assessment": "Six additions cover separate source guards, a separately routed DPC boundary, first-occurrence typed lookup, and ordered remote failure diagnostics.",
+  "confirmed_source_semantic_blockers_in_reviewed_delta": [],
+  "current_source_semantic_delta_status": "source_consistent_for_declared_boundary_scope",
+  "nonempty_artifact_clarification": "Current dev-001 evaluator explicitly distinguishes an artifact-list check, first DataPart possibly {}, credential shape and selected-transaction association.",
+  "debug_instruction_conflict": "Preserved in the historical review; current recipes constrain CARD, nonverbose turns and debug_mode=False. No original prompt was edited.",
+  "fresh_full_bank_structural_validation": {
+    "path": "runs/overnight-acceptance/v1-20261111-1/task-bank-validation.json",
+    "bytes": 17677,
+    "sha256": "aecda88f5773e3afb1e37cab7ec2992d97c48d484d962f52bcc0b7d10c68f36f"
+  },
+  "human_semantic_review": false,
+  "gold_validation": false,
+  "untouched_holdout_qualification": false,
+  "original_application_or_sdk_execution": false,
+  "provider_requests": 0,
+  "bank_mutation_performed": false,
+  "claim_limit": "Current-byte supplement for its reviewed six-record semantic delta and targeted fixes, combined with historical 28-record AI crossreview; not exhaustive current-file human review.",
+  "review_note": {
+    "path": "docs/research/ap2-task-bank-current-ai-supplement-v1.md",
+    "bytes": 2812,
+    "sha256": "e117323b1566fd9937df63111e64ff23ee19a6a2bb1347db751f67937a7027c7"
+  },
+  "receipt_source": {
+    "path": "runs/task-bank-review/record_ap2_current_ai_supplement_v1.py",
+    "bytes": 4160,
+    "sha256": "cebf7fa89667531cbdc7f3a62d1633d3e1f62f1b4a3252b2a3dde8eb546fc587"
+  }
+}

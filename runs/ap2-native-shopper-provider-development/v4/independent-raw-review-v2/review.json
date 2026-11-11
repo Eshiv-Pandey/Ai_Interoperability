@@ -1,0 +1,893 @@
+{
+  "Git_actions_by_reviewer": 0,
+  "actor_null_reply_count": 1,
+  "actor_separation": {
+    "denials": {
+      "descendants": 0,
+      "external_network": 2,
+      "private_reads": 0
+    },
+    "provider_credential_is_synthetic_downstream_only": true,
+    "public_user_replies_use_visible_final_text_only": true,
+    "scope": "Python audit controls, not an OS hostile-code sandbox"
+  },
+  "actual_original_application_or_sdk_execution_by_reviewer": 0,
+  "actual_provider_requests_by_reviewer": 0,
+  "archive": {
+    "bytes": 1255530,
+    "sha256": "b051d089a19b489fc758b96b714bd56f6718bf662e09ab6a17c846494511d908"
+  },
+  "archive_members_independently_verified": 48,
+  "business_function_call_attempts": 2,
+  "business_function_terminal_responses": 0,
+  "call_response_pairs": [
+    {
+      "call_event_index": 0,
+      "id": "call_18374847516532931205",
+      "name": "transfer_to_agent",
+      "response_event_index": 1
+    }
+  ],
+  "canonical_public_receipt_records": 0,
+  "case_denominator": 1,
+  "case_id": "ap2-native-shopper-provider-v4-correct-human",
+  "consistency_questions": [],
+  "error_classification": {
+    "original_retry_layer_exhausted": 1,
+    "owned_actor_native_card_network_denial": 2,
+    "owned_proxy_prior_failure_refusal": 2,
+    "upstream_503_high_demand": 1
+  },
+  "error_witnesses": [
+    {
+      "author": "shopper",
+      "errorMessage": "Gemini server error (A2AClientHTTPError: HTTP Error 503: Network communication error fetching agent card from http://localhost:8001/a2a/merchant_agent/.well-known/agent-card.json: owned_user_actor_external_network_denied). Retrying...",
+      "error_type": "A2AClientHTTPError",
+      "event_id": "060da446-2bb7-4e94-92bc-280862d8b829",
+      "event_index": 3,
+      "time": "2026-11-11T18:06:44.837016+00:00"
+    },
+    {
+      "author": "shopper",
+      "errorMessage": "Gemini server error (A2AClientHTTPError: HTTP Error 503: Network communication error fetching agent card from http://localhost:8001/a2a/merchant_agent/.well-known/agent-card.json: owned_user_actor_external_network_denied). Retrying...",
+      "error_type": "A2AClientHTTPError",
+      "event_id": "0d0ff86b-ccb6-4575-b27d-6f99f4917d04",
+      "event_index": 5,
+      "time": "2026-11-11T18:06:51.723377+00:00"
+    },
+    {
+      "author": "shopper",
+      "errorMessage": "Gemini server error (ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}). Retrying...",
+      "error_type": "ServerError",
+      "event_id": "8465e919-7403-4ee3-8da0-1f36cf9f10ad",
+      "event_index": 6,
+      "time": "2026-11-11T18:07:58.540349+00:00"
+    },
+    {
+      "author": "shopper",
+      "errorMessage": "Gemini server error (_ResourceExhaustedError: \nOn how to mitigate this issue, please refer to:\n\nhttps://google.github.io/adk-docs/agents/models/google-gemini/#error-code-429-resource_exhausted\n\n\n429 None. {'error': {'message': 'owned_provider_budget_or_prior_failure'}}). Retrying...",
+      "error_type": "_ResourceExhaustedError",
+      "event_id": "f1a8a44e-8b47-4a72-8c7f-300423ad47e2",
+      "event_index": 7,
+      "time": "2026-11-11T18:07:58.593446+00:00"
+    },
+    {
+      "author": "shopper",
+      "errorMessage": "Gemini server error (_ResourceExhaustedError: \nOn how to mitigate this issue, please refer to:\n\nhttps://google.github.io/adk-docs/agents/models/google-gemini/#error-code-429-resource_exhausted\n\n\n429 None. {'error': {'message': 'owned_provider_budget_or_prior_failure'}}). Retrying...",
+      "error_type": "_ResourceExhaustedError",
+      "event_id": "a763d893-ed9e-472d-8b73-f0f371305020",
+      "event_index": 8,
+      "time": "2026-11-11T18:07:58.651382+00:00"
+    },
+    {
+      "author": "shopper",
+      "errorMessage": "Maximum retries exhausted. The remote Gemini server failed to respond. Please try again later.",
+      "error_type": null,
+      "event_id": "fdba9aff-a05b-4907-a3bc-5c457d8e777c",
+      "event_index": 9,
+      "time": "2026-11-11T18:07:58.651804+00:00"
+    }
+  ],
+  "function_calls": [
+    {
+      "args": {
+        "agent_name": "shopper"
+      },
+      "author": "root_agent",
+      "event_index": 0,
+      "id": "call_18374847516532931205",
+      "name": "transfer_to_agent",
+      "time": "2026-11-11T18:06:38.941418+00:00"
+    },
+    {
+      "args": {
+        "catalog_search": "comfortable unbranded walking shoes under 100 USD"
+      },
+      "author": "shopper",
+      "event_index": 2,
+      "id": "call_18340964109725111535",
+      "name": "find_products",
+      "time": "2026-11-11T18:06:44.821985+00:00"
+    },
+    {
+      "args": {
+        "catalog_search": "comfortable unbranded walking shoes under 100 USD"
+      },
+      "author": "shopper",
+      "event_index": 4,
+      "id": "call_10819967056468386689",
+      "name": "find_products",
+      "time": "2026-11-11T18:06:51.668299+00:00"
+    }
+  ],
+  "function_responses": [
+    {
+      "author": "root_agent",
+      "event_index": 1,
+      "id": "call_18374847516532931205",
+      "name": "transfer_to_agent",
+      "response": {
+        "result": null
+      },
+      "time": "2026-11-11T18:06:38.952815+00:00"
+    }
+  ],
+  "head_sha": "117daf284fe2758746369f0abe06e03870077c31",
+  "hidden_effect_or_real_settlement_proven": false,
+  "human_gold_qualified": false,
+  "independent_A2A_wire_authentication": false,
+  "limits": [
+    "Adaptive one-case development profile; prior failures and their denominators remain unchanged.",
+    "Model functionCall attempts and actual original stack-frame failures are distinct from successful business tool terminal responses.",
+    "One completed transfer is ADK control flow and does not complete a purchase.",
+    "No visible model reply, original completed payment Task or demo receipt was captured.",
+    "Retained byte/source consistency and parent runtime/lifecycle witnesses do not independently authenticate full runtime files, wire provenance, hidden effects or human semantic gold.",
+    "The workflow and worker exiting successfully do not turn this observed business-attempt failure into task success."
+  ],
+  "native_business_POST_observations": 0,
+  "native_watcher_method_census": {
+    "GET": 3
+  },
+  "observed_purchase_success": false,
+  "original_run_sh_provisioning_qualified": false,
+  "original_source_files_independently_read_and_hash_bound": [
+    {
+      "bytes": 4166,
+      "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/shopping_agent/agent.py",
+      "sha256": "a1ad77fc4d17cfa2fcef5904cab00a9833395e4a4e8b60948d767d52640ec6a3"
+    },
+    {
+      "bytes": 2856,
+      "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/roles/shopping_agent/subagents/shopper/tools.py",
+      "sha256": "7a577d4088dc9decb3bbe72d3162e356176a4f6b1b0c3cb87d496be4e6245bc4"
+    },
+    {
+      "bytes": 2907,
+      "path": "docs/research/source-evidence/ap2-procurement-screen-v1/source/code/samples/python/src/common/retrying_llm_agent.py",
+      "sha256": "263f820a29fb319192a48cd8195bfc69f5516c769e6c595f45d09dc0b62fe72e"
+    }
+  ],
+  "owned_source_snapshots_verified": [
+    {
+      "bytes": 9319,
+      "path": "scripts/ap2_native_shopper_provider_boundary_v2.py",
+      "sha256": "95bd0ccb0513cce59cb3c94724658f1943806588283e989002626deb3545e52f"
+    },
+    {
+      "bytes": 18818,
+      "path": "scripts/ap2_native_shopper_provider_worker_v1.py",
+      "sha256": "f7c0e3d79582e9bfbc49123fe7fd16791c3651f9c58dab7b70a69658a548b765"
+    },
+    {
+      "bytes": 18818,
+      "path": "scripts/ap2_native_shopper_provider_worker_v2.py",
+      "sha256": "382a7601d6929946c35d090d8bedf6d2a65a7b111b645b5fb1177cba6250c2e0"
+    },
+    {
+      "bytes": 19597,
+      "path": "scripts/run_ap2_native_shopper_provider_v1.py",
+      "sha256": "8c99e95fc686da0d8b15ac1c930a50a39a06d0c0e48722f7e15c2495a4dea358"
+    },
+    {
+      "bytes": 14590,
+      "path": "scripts/run_ap2_native_shopper_provider_v4.py",
+      "sha256": "1ff3cb5a423b1b3503025aa16e0f0aa946ad1659e498b57472d389db0909683a"
+    },
+    {
+      "bytes": 35459,
+      "path": "scripts/run_ap2_original_native_repeat_v3.py",
+      "sha256": "ef750dfa58a49e083ceb6ac84471372aa0945ddf7b96289c1020388180c3d1fb"
+    }
+  ],
+  "parent_case_status": "executed_returned",
+  "provider_lifecycle_independent_review": {
+    "bytes": 17500,
+    "path": "runs/ap2-native-shopper-provider-development/v4/provider-lifecycle-independent-review-v1.json",
+    "sha256": "fa11ab075406ce9936bfe588540e42fb0ecd6000586aa1ccc55e29fcb8cfd3f4"
+  },
+  "provider_lifecycle_review": {
+    "API_digest_matches_reconstructed_archive": true,
+    "Git_actions_by_reviewer": 0,
+    "archive_and_extracted_files_verified": 48,
+    "archive_identity": {
+      "bytes": 1255530,
+      "sha256": "b051d089a19b489fc758b96b714bd56f6718bf662e09ab6a17c846494511d908"
+    },
+    "evidence_identities": {
+      "artifact.zip": {
+        "bytes": 1255530,
+        "sha256": "b051d089a19b489fc758b96b714bd56f6718bf662e09ab6a17c846494511d908"
+      },
+      "extracted-manifest.json": {
+        "bytes": 9170,
+        "sha256": "620ac2a2e3283bdfa8c5ed1c2dda4ee7bd6aeb3e01ef3f6f92f9dfa3a7d6e7e4"
+      },
+      "extracted/execution/archive-safety.json": {
+        "bytes": 75,
+        "sha256": "c63a1ce3d1d55789b3b3ae2f3ac5a24685a91104ebb5004b40dc6982cc41090c"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/credentials.agent-card.json": {
+        "bytes": 1149,
+        "sha256": "a3999605f4200fd72fa686ba12215a0d6d3f226a8ed0556ec93a07fd74a97d47"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/credentials.stdout.log": {
+        "bytes": 2358,
+        "sha256": "c48bdad1eba6785b150a236a73f5c4e50287dc1e9be2734e14d683a799c10237"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/merchant.agent-card.json": {
+        "bytes": 809,
+        "sha256": "abae7e20491ede70d171abadea5260eaee04df83831f1a37131d311b370d9383"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/merchant.stdout.log": {
+        "bytes": 2000,
+        "sha256": "5fb45db1f742b4645c09cd564a3fcbda58d659433605c3289ba26612ac65ea51"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/native-launch.json": {
+        "bytes": 1302,
+        "sha256": "e99bc90aa7046c1b094d1ac6cc00dfdad89d5adbe806b3c43e9c3780f38483f4"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/native-port-preflight.jsonl": {
+        "bytes": 160,
+        "sha256": "7ac073b75943e80a821da265720d258e5f72d3cc2bc63d308dc31dc0742b85d2"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/original-watch.log": {
+        "bytes": 3448,
+        "sha256": "74a8c888b08caccbff760d61baae8380fc3de298092b00f9edfc0d3932a8e020"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/processor.agent-card.json": {
+        "bytes": 790,
+        "sha256": "cc42eddceab916e8fadb7ed0652866c440859d7c2f5cc58c210635b940badec3"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/processor.stdout.log": {
+        "bytes": 2036,
+        "sha256": "b2a15838f6300354947a5c8de4e972e4b657b779e94069e5c063dda36f4764a3"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/public-human-facts.json": {
+        "bytes": 555,
+        "sha256": "5d55d2c47c501e0a81727695210719505d0fac88896b4d05e4dedb843877ceea"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper.stdout.log": {
+        "bytes": 99073,
+        "sha256": "b2df7421e5f2d9995ea4b04d976d13baafee80cd7f627e23bbe92b7c2fb11222"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/ADK-events.jsonl": {
+        "bytes": 8312,
+        "sha256": "cddd0e4cbb5f27beee3dae95d760b5a439c7827e9783520c81dfdc68b3ad2a45"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/actor-input-separation.json": {
+        "bytes": 282,
+        "sha256": "d0a15f83cb49fa229c57e40edc465cc31b60257374ed3424687b2135253b3e85"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/original-root-binding.json": {
+        "bytes": 1543,
+        "sha256": "0d63a1456ba1567c2f8d3611da090ddf9d7d086b444b38b4cef4aef3e1e8799a"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/public-actor-decisions.jsonl": {
+        "bytes": 201,
+        "sha256": "fa53e68e4c8019cb769e80a43289fbac585bf8d0eaa0c0b30b4c0ccfa08390cc"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/public-conversation.jsonl": {
+        "bytes": 260,
+        "sha256": "6f3354dc1e45e74bb02e22646efb4dd2957f2566b10aae0a6031205334448551"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/turn-00-session.json": {
+        "bytes": 10560,
+        "sha256": "afb03b0c9bb5863b8a2f991e5a3dad41803537208d4fa730c6da4501fb358fd2"
+      },
+      "extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/worker-result.json": {
+        "bytes": 521,
+        "sha256": "768e1489edd3f6d646365d950fd99c0651e993770e3cd7ea9a467744c54b1e44"
+      },
+      "extracted/execution/opening.json": {
+        "bytes": 607,
+        "sha256": "d91d6fd8c2e814e2746189bf36b869ff494833113a12170fe73f21758f28ea57"
+      },
+      "extracted/execution/portable-runtime.json": {
+        "bytes": 2846966,
+        "sha256": "ec40e3f83c02bb8bcaa114c69cbede91f54b80a711d7efa1993f7cbbdbd75122"
+      },
+      "extracted/execution/provider-access-smoke.json": {
+        "bytes": 298,
+        "sha256": "f7622e0e801623e6f589f04e0ab5ad49e7cc291eef86c12c7a60b45a8079b46a"
+      },
+      "extracted/execution/provider-drain.json": {
+        "bytes": 572,
+        "sha256": "8919b888f6366204de00b33ee1b9bd67704ad284d66af17c03b77fbe043a2764"
+      },
+      "extracted/execution/provider/000.request.json": {
+        "bytes": 356,
+        "sha256": "8646045bca0a31708021fde3c24c1905be36a0b5f2f9c29cadf100bf3cbe5993"
+      },
+      "extracted/execution/provider/000.response.json": {
+        "bytes": 933,
+        "sha256": "df15540d6ebe3137292161e8f11764e4fe843843c550e739142f66868dcd5b17"
+      },
+      "extracted/execution/provider/001.request.json": {
+        "bytes": 7557,
+        "sha256": "240b5f00c98eb66e0381a926d5e848af30935c14ea05cb90514b3ea117f0e49c"
+      },
+      "extracted/execution/provider/001.response.json": {
+        "bytes": 999,
+        "sha256": "ebad27df37d510cf3421d6aedddd5d8142535aee5fe0ec8ff1bd451222f05fc8"
+      },
+      "extracted/execution/provider/002.request.json": {
+        "bytes": 4824,
+        "sha256": "42e7f72563420288e58b1545742b58f6cc4259b1114aacf99486790aea061cb2"
+      },
+      "extracted/execution/provider/002.response.json": {
+        "bytes": 1041,
+        "sha256": "a3f7cbccbe7ca5b17cfefa29847654481d00f6575842124b2bdd960ae8ea7782"
+      },
+      "extracted/execution/provider/003.request.json": {
+        "bytes": 5347,
+        "sha256": "2f27fceae9fff65fc49cbc0b898130443e3b2dd6eb80838914e825e47632b33e"
+      },
+      "extracted/execution/provider/003.response.json": {
+        "bytes": 1041,
+        "sha256": "fa5824334f21f068dc7cbdba00c619390cc2a35234c48047c29ddb14d123e252"
+      },
+      "extracted/execution/provider/004.request.json": {
+        "bytes": 5718,
+        "sha256": "7b9aa8bdd98e36ad875be0e03430bad43c158b4feaffb39ceb0db13a0f9d8e77"
+      },
+      "extracted/execution/provider/004.response.json": {
+        "bytes": 198,
+        "sha256": "01f5c7d4e4d8ec06c8098777e731b3d552ba518feb02b681f6c569edcd9c6f6d"
+      },
+      "extracted/execution/provider/ledger.jsonl": {
+        "bytes": 3229,
+        "sha256": "173d9d15445d70c9d2d41e5de11cb06404216c2ebdf959514c1cad628dc5db03"
+      },
+      "extracted/execution/provider/local-refusals.jsonl": {
+        "bytes": 198,
+        "sha256": "992b6737a459212537c100aa19198065977e09a099363517bf24efa20c5e3bae"
+      },
+      "extracted/execution/result.json": {
+        "bytes": 4649,
+        "sha256": "26967a87db7dc56326e0ed7c05950ded82ccec61de5c1374dec56e6a4559c87a"
+      },
+      "extracted/execution/task-ledger.jsonl": {
+        "bytes": 802,
+        "sha256": "4334613b08272a00d24fa61665efa5a7318a851bf161e36b144670f8a142a3a1"
+      },
+      "extracted/execution/worker-public-facts-preflight.json": {
+        "bytes": 413,
+        "sha256": "ca6c28e1e4b877b0a200dca36b3ad0487814f1a55fb28c568762751fd8747df6"
+      },
+      "extracted/pip-check.txt": {
+        "bytes": 30,
+        "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+      },
+      "extracted/pip-install-report.json": {
+        "bytes": 2033972,
+        "sha256": "9c6356bb6054546add8b977b5cd667a84ac80156245f43e7973c0a0ceed88995"
+      },
+      "extracted/plan/owned-source/scripts/ap2_native_shopper_provider_boundary_v2.py": {
+        "bytes": 9319,
+        "sha256": "95bd0ccb0513cce59cb3c94724658f1943806588283e989002626deb3545e52f"
+      },
+      "extracted/plan/owned-source/scripts/ap2_native_shopper_provider_worker_v1.py": {
+        "bytes": 18818,
+        "sha256": "f7c0e3d79582e9bfbc49123fe7fd16791c3651f9c58dab7b70a69658a548b765"
+      },
+      "extracted/plan/owned-source/scripts/ap2_native_shopper_provider_worker_v2.py": {
+        "bytes": 18818,
+        "sha256": "382a7601d6929946c35d090d8bedf6d2a65a7b111b645b5fb1177cba6250c2e0"
+      },
+      "extracted/plan/owned-source/scripts/run_ap2_native_shopper_provider_v1.py": {
+        "bytes": 19597,
+        "sha256": "8c99e95fc686da0d8b15ac1c930a50a39a06d0c0e48722f7e15c2495a4dea358"
+      },
+      "extracted/plan/owned-source/scripts/run_ap2_native_shopper_provider_v4.py": {
+        "bytes": 14590,
+        "sha256": "1ff3cb5a423b1b3503025aa16e0f0aa946ad1659e498b57472d389db0909683a"
+      },
+      "extracted/plan/owned-source/scripts/run_ap2_original_native_repeat_v3.py": {
+        "bytes": 35459,
+        "sha256": "ef750dfa58a49e083ceb6ac84471372aa0945ddf7b96289c1020388180c3d1fb"
+      },
+      "extracted/plan/plan.json": {
+        "bytes": 37370,
+        "sha256": "cf7e6808b5b5b9a7f45a677fbea8fb78d709d1f427ae49d8684f74009e4743a3"
+      },
+      "extracted/plan/requirements.txt": {
+        "bytes": 3776,
+        "sha256": "57a38bc368261c7a40650c48489348531e5026728c1b168968ad0b9eec8cdafd"
+      },
+      "github-artifacts.json": {
+        "bytes": 767,
+        "sha256": "d00472be3ba8e19fe90b3e96a38a90b8d7bed3b501e0b8d8cc0104c1275f0b2d"
+      },
+      "github-run.json": {
+        "bytes": 13561,
+        "sha256": "91eddcf971c68be3b73f4c5fa10bb3834eaf5a9ac31921faec5c7d1f209d7a7d"
+      },
+      "plan.json": {
+        "bytes": 231,
+        "sha256": "084c9e15920f02b85627cf36842f38436044a4ec9634f3fe34eeb43322bcc224"
+      },
+      "retention.json": {
+        "bytes": 577,
+        "sha256": "36266108c1f9ab44299a2974b22aa518d39b9bfbd62fb1245a2d2c80d4b2368a"
+      }
+    },
+    "head_sha": "117daf284fe2758746369f0abe06e03870077c31",
+    "human_gold_qualified": false,
+    "lifecycle": {
+      "all_recorded_children_reaped": true,
+      "explicit_official_Runner_close_recorded": false,
+      "native_PID_listener_ownership": "Source-bound declared check plus public-card/stdout/reap reconciliation; no retained /proc FD/socket-inode snapshot for independent post-run reconstruction.",
+      "native_services": [
+        {
+          "finished_PID": 2515,
+          "logged_POST_count": 0,
+          "logged_card_GET_200_count": 1,
+          "service": "merchant",
+          "started_PID": 2515
+        },
+        {
+          "finished_PID": 2516,
+          "logged_POST_count": 0,
+          "logged_card_GET_200_count": 1,
+          "service": "credentials",
+          "started_PID": 2516
+        },
+        {
+          "finished_PID": 2517,
+          "logged_POST_count": 0,
+          "logged_card_GET_200_count": 1,
+          "service": "processor",
+          "started_PID": 2517
+        }
+      ],
+      "port_preflight": [
+        {
+          "foreign_service_contacted": false,
+          "ports": [
+            8001,
+            8002,
+            8003
+          ],
+          "status": "bind_only_reuseaddr_preflight_passed",
+          "time": "2026-11-11T18:06:33.064585+00:00"
+        }
+      ],
+      "recorded_children": [
+        {
+          "cleanup_error_type": null,
+          "pid": 2519,
+          "reaped": true,
+          "returncode": 0
+        },
+        {
+          "cleanup_error_type": null,
+          "pid": 2517,
+          "reaped": true,
+          "returncode": -15
+        },
+        {
+          "cleanup_error_type": null,
+          "pid": 2516,
+          "reaped": true,
+          "returncode": -15
+        },
+        {
+          "cleanup_error_type": null,
+          "pid": 2515,
+          "reaped": true,
+          "returncode": -15
+        }
+      ],
+      "remote_HTTP_clients_closed": [
+        true,
+        true
+      ]
+    },
+    "material_consistency_questions": [],
+    "original_application_SDK_provider_execution_by_reviewer": 0,
+    "owned_actor_guard": {
+      "claim_limit": "Two owned actor socket denials are separate from upstream503 and proxy429; Python audit controls are not an OS hostile-code sandbox.",
+      "denied_socket_argument_values_retained": false,
+      "exact_argument_mismatch_established": false,
+      "recorded_denials": {
+        "descendants": 0,
+        "external_network": 2,
+        "private_reads": 0
+      },
+      "source_behavior": "Audits socket connect/getaddrinfo/sendto against str loopback hosts and native/proxy ports; rejects other values."
+    },
+    "provider": {
+      "HTTP_status_counts": {
+        "200": 4,
+        "503": 1
+      },
+      "access_smoke_allocation_included": 0,
+      "drain": {
+        "active_handlers_at_capture_freeze": 0,
+        "admission_closed": true,
+        "all_handlers_completed": true,
+        "allocated_upstream_calls_at_capture_freeze": 5,
+        "allocations_with_unmeasured_usage": 1,
+        "capture_frozen": true,
+        "elapsed_drain_seconds": 1.78270000219527e-05,
+        "late_sender_outcomes_retained": false,
+        "maximum_drain_seconds": 150,
+        "request_bytes_at_capture_freeze": 23802,
+        "schema_version": "ap2-provider-drain/2",
+        "time": "2026-11-11T18:07:59.634058+00:00",
+        "unclosed_allocation_ids": [],
+        "unfinished_allocations_require_unknown_usage": true
+      },
+      "known_reported_tokens": 4081,
+      "observations": [
+        {
+          "allocation": 0,
+          "http_status": 200,
+          "known_reported_tokens": 45,
+          "model_version": "gemini-3.1-flash-lite",
+          "request_bytes": 356,
+          "unknown_usage_reason": null,
+          "upstream_error": null
+        },
+        {
+          "allocation": 1,
+          "http_status": 200,
+          "known_reported_tokens": 1745,
+          "model_version": "gemini-3.1-flash-lite",
+          "request_bytes": 7557,
+          "unknown_usage_reason": null,
+          "upstream_error": null
+        },
+        {
+          "allocation": 2,
+          "http_status": 200,
+          "known_reported_tokens": 1122,
+          "model_version": "gemini-3.1-flash-lite",
+          "request_bytes": 4824,
+          "unknown_usage_reason": null,
+          "upstream_error": null
+        },
+        {
+          "allocation": 3,
+          "http_status": 200,
+          "known_reported_tokens": 1169,
+          "model_version": "gemini-3.1-flash-lite",
+          "request_bytes": 5347,
+          "unknown_usage_reason": null,
+          "upstream_error": null
+        },
+        {
+          "allocation": 4,
+          "http_status": 503,
+          "known_reported_tokens": null,
+          "model_version": null,
+          "request_bytes": 5718,
+          "unknown_usage_reason": "missing_usage",
+          "upstream_error": {
+            "code": 503,
+            "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+            "status": "UNAVAILABLE"
+          }
+        }
+      ],
+      "owned_refusal_reason": "Prior failure branch inferred from bound proxy code and available call/byte/token budget, separately from the captured upstream503.",
+      "owned_refusals_after_upstream_failure": [
+        {
+          "status": "no_upstream_call_budget_or_prior_failure",
+          "time": "2026-11-11T18:07:58.584459+00:00"
+        },
+        {
+          "status": "no_upstream_call_budget_or_prior_failure",
+          "time": "2026-11-11T18:07:58.638219+00:00"
+        }
+      ],
+      "request_bytes": 23802,
+      "responses_with_missing_usage": 1,
+      "returned_model_version_counts": {
+        "gemini-3.1-flash-lite": 4
+      },
+      "shopper_generation_allocations": 4,
+      "unknown_usage_is_zero": false,
+      "upstream_allocations": 5
+    },
+    "reviewed_at_utc": "2026-11-11T18:33:57.366247+00:00",
+    "reviewer_source": {
+      "bytes": 17426,
+      "path": "runs/ap2-native-shopper-provider-development/v4/review_provider_lifecycle_v1.py",
+      "sha256": "a328966e258b50fa86df380cb74a8782d48c3848783b3654f2052ad4a5870573"
+    },
+    "run_id": 43074319113,
+    "runtime": {
+      "actual_distribution_count": 185,
+      "actual_required_versions_match": true,
+      "pip_report_install_count": 184,
+      "python_version": "3.13.1",
+      "required_versions_checked": 182,
+      "runtime_inventory_file_count": 14728,
+      "runtime_physical_files_independently_rehashed": false,
+      "verification_limit": "Bound recorded inventory/version metadata and pip report; actual hosted venv files are not retained for post-run physical rehashing."
+    },
+    "schema_version": "ap2-native-shopper-v4-provider-lifecycle-independent-review/1",
+    "source_binding": {
+      "full_installed_runtime_or_capture_authentication_claimed": false,
+      "original_AP2_source_hash_declarations": 136,
+      "original_source_physical_bytes_independently_rehashed": false,
+      "original_x402_source_hash_declarations": 24,
+      "owned_source_snapshots_checked": 6,
+      "root_import_matches_private_copy_path_and_plan_hash": true
+    },
+    "status": "retained_provider_runtime_lifecycle_consistent_at_stated_scope",
+    "whole_task_grade": null,
+    "worker_public_facts": {
+      "all_exact_typed_fields_match_plan_and_actual_public_facts": true,
+      "delta_from_prior_worker": "Exact changes to case ID and result schema only",
+      "selected_worker": "scripts/ap2_native_shopper_provider_worker_v2.py",
+      "snapshot_identity": {
+        "bytes": 18818,
+        "sha256": "382a7601d6929946c35d090d8bedf6d2a65a7b111b645b5fb1177cba6250c2e0"
+      },
+      "source_derived_preflight_order": "Before provider smoke; receipt itself has no timestamp"
+    },
+    "workflow_success_implies_task_success": false
+  },
+  "public_actor_replies": 0,
+  "public_conversation_messages": 1,
+  "public_facts_match_plan": true,
+  "raw_ADK_events": 10,
+  "raw_error_events": 6,
+  "retained_provider_response_to_ADK_function_call_matches": [
+    {
+      "call_id": "call_18374847516532931205",
+      "event_index": 0,
+      "name": "transfer_to_agent",
+      "provider_member": "execution/provider/001.response.json",
+      "reported_total_tokens": 1745
+    },
+    {
+      "call_id": "call_18340964109725111535",
+      "event_index": 2,
+      "name": "find_products",
+      "provider_member": "execution/provider/002.response.json",
+      "reported_total_tokens": 1122
+    },
+    {
+      "call_id": "call_10819967056468386689",
+      "event_index": 4,
+      "name": "find_products",
+      "provider_member": "execution/provider/003.response.json",
+      "reported_total_tokens": 1169
+    }
+  ],
+  "retained_session_state": {},
+  "review_source": {
+    "bytes": 19484,
+    "path": "scripts/review_ap2_native_shopper_provider_v4.py",
+    "sha256": "1c65a776ad511efbe73e3969af4c58232326d32940a0522d4fa7b8d97aaa5093"
+  },
+  "reviewed_at_utc": "2026-11-11T18:37:46.055428+00:00",
+  "root_binding": {
+    "deterministic_BaseLlm_replacement": false,
+    "genai_Client_replaced": false,
+    "official_ADK_runner": true,
+    "original_native_remote_clients": [
+      "http://localhost:8001/a2a/merchant_agent",
+      "http://localhost:8002/a2a/credentials_provider"
+    ],
+    "original_root_import_file": "/tmp/ap2-native-shopper-v4-private-prev64yc/original-ap2/code/samples/python/src/roles/shopping_agent/agent.py",
+    "original_root_source_sha256": "a1ad77fc4d17cfa2fcef5904cab00a9833395e4a4e8b60948d767d52640ec6a3",
+    "original_root_tool_names": [
+      "create_checkout",
+      "create_checkout_mandate",
+      "create_payment_mandate",
+      "send_signed_mandates_to_credentials_provider",
+      "initiate_payment",
+      "initiate_payment_with_otp"
+    ],
+    "original_tools_instructions_models_unchanged": true,
+    "owned_public_user_actor": true,
+    "root_class": "common.retrying_llm_agent.RetryingLlmAgent",
+    "root_model": "gemini-3.1-flash-lite-preview",
+    "root_name": "root_agent",
+    "session_id": "c1e60d30-4126-4b3f-9e3d-6d60d4b103db",
+    "streaming_mode": "NONE",
+    "subagents": [
+      {
+        "class": "common.retrying_llm_agent.RetryingLlmAgent",
+        "model": "gemini-3.1-flash-lite-preview",
+        "name": "shopper"
+      },
+      {
+        "class": "common.retrying_llm_agent.RetryingLlmAgent",
+        "model": "gemini-3.1-flash-lite-preview",
+        "name": "shipping_address_collector"
+      },
+      {
+        "class": "common.retrying_llm_agent.RetryingLlmAgent",
+        "model": "gemini-3.1-flash-lite-preview",
+        "name": "payment_method_collector"
+      }
+    ]
+  },
+  "run_id": 43074319113,
+  "schema_version": "ap2-native-shopper-V4-independent-raw-review/1",
+  "selected_worker_schema_and_case_bound": true,
+  "session_events_including_initial_user": 11,
+  "source_derived_diagnosis": "Original find_products reaches merchant native agent-card acquisition; owned actor audit guard rejects two lookup attempts. The rejected socket/getaddrinfo arguments are not retained, so the exact host/port mismatch is unproven. A later actual upstream 503 and two owned prior-failure refusals remain distinct.",
+  "source_original_find_products_stack_frame_present": true,
+  "stack_frame_occurrences_are_not_execution_counts": true,
+  "status": "retained_V4_original_root_and_business_attempt_failures_consistent",
+  "unique_invocation_ids": [
+    "e-d003e76b-3761-4cbc-85ab-24fdf0b9a995"
+  ],
+  "unmatched_business_call_ids": [
+    "call_18340964109725111535",
+    "call_10819967056468386689"
+  ],
+  "untouched_holdout_qualified": false,
+  "validated_input_identities": {
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/artifact.zip": {
+      "bytes": 1255530,
+      "path": "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/artifact.zip",
+      "sha256": "b051d089a19b489fc758b96b714bd56f6718bf662e09ab6a17c846494511d908"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted-manifest.json": {
+      "bytes": 9170,
+      "path": "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted-manifest.json",
+      "sha256": "620ac2a2e3283bdfa8c5ed1c2dda4ee7bd6aeb3e01ef3f6f92f9dfa3a7d6e7e4"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/original-watch.log": {
+      "bytes": 3448,
+      "member": "execution/cases/ap2-native-shopper-provider-v4-correct-human/original-watch.log",
+      "sha256": "74a8c888b08caccbff760d61baae8380fc3de298092b00f9edfc0d3932a8e020"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/public-human-facts.json": {
+      "bytes": 555,
+      "member": "execution/cases/ap2-native-shopper-provider-v4-correct-human/public-human-facts.json",
+      "sha256": "5d55d2c47c501e0a81727695210719505d0fac88896b4d05e4dedb843877ceea"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper.stdout.log": {
+      "bytes": 99073,
+      "member": "execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper.stdout.log",
+      "sha256": "b2df7421e5f2d9995ea4b04d976d13baafee80cd7f627e23bbe92b7c2fb11222"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/ADK-events.jsonl": {
+      "bytes": 8312,
+      "member": "execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/ADK-events.jsonl",
+      "sha256": "cddd0e4cbb5f27beee3dae95d760b5a439c7827e9783520c81dfdc68b3ad2a45"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/actor-input-separation.json": {
+      "bytes": 282,
+      "member": "execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/actor-input-separation.json",
+      "sha256": "d0a15f83cb49fa229c57e40edc465cc31b60257374ed3424687b2135253b3e85"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/original-root-binding.json": {
+      "bytes": 1543,
+      "member": "execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/original-root-binding.json",
+      "sha256": "0d63a1456ba1567c2f8d3611da090ddf9d7d086b444b38b4cef4aef3e1e8799a"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/public-actor-decisions.jsonl": {
+      "bytes": 201,
+      "member": "execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/public-actor-decisions.jsonl",
+      "sha256": "fa53e68e4c8019cb769e80a43289fbac585bf8d0eaa0c0b30b4c0ccfa08390cc"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/public-conversation.jsonl": {
+      "bytes": 260,
+      "member": "execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/public-conversation.jsonl",
+      "sha256": "6f3354dc1e45e74bb02e22646efb4dd2957f2566b10aae0a6031205334448551"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/turn-00-session.json": {
+      "bytes": 10560,
+      "member": "execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/turn-00-session.json",
+      "sha256": "afb03b0c9bb5863b8a2f991e5a3dad41803537208d4fa730c6da4501fb358fd2"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/worker-result.json": {
+      "bytes": 521,
+      "member": "execution/cases/ap2-native-shopper-provider-v4-correct-human/shopper/worker-result.json",
+      "sha256": "768e1489edd3f6d646365d950fd99c0651e993770e3cd7ea9a467744c54b1e44"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/provider/000.response.json": {
+      "bytes": 933,
+      "member": "execution/provider/000.response.json",
+      "sha256": "df15540d6ebe3137292161e8f11764e4fe843843c550e739142f66868dcd5b17"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/provider/001.response.json": {
+      "bytes": 999,
+      "member": "execution/provider/001.response.json",
+      "sha256": "ebad27df37d510cf3421d6aedddd5d8142535aee5fe0ec8ff1bd451222f05fc8"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/provider/002.response.json": {
+      "bytes": 1041,
+      "member": "execution/provider/002.response.json",
+      "sha256": "a3f7cbccbe7ca5b17cfefa29847654481d00f6575842124b2bdd960ae8ea7782"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/provider/003.response.json": {
+      "bytes": 1041,
+      "member": "execution/provider/003.response.json",
+      "sha256": "fa5824334f21f068dc7cbdba00c619390cc2a35234c48047c29ddb14d123e252"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/provider/004.response.json": {
+      "bytes": 198,
+      "member": "execution/provider/004.response.json",
+      "sha256": "01f5c7d4e4d8ec06c8098777e731b3d552ba518feb02b681f6c569edcd9c6f6d"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/execution/result.json": {
+      "bytes": 4649,
+      "member": "execution/result.json",
+      "sha256": "26967a87db7dc56326e0ed7c05950ded82ccec61de5c1374dec56e6a4559c87a"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/plan/owned-source/scripts/ap2_native_shopper_provider_boundary_v2.py": {
+      "bytes": 9319,
+      "member": "plan/owned-source/scripts/ap2_native_shopper_provider_boundary_v2.py",
+      "sha256": "95bd0ccb0513cce59cb3c94724658f1943806588283e989002626deb3545e52f"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/plan/owned-source/scripts/ap2_native_shopper_provider_worker_v1.py": {
+      "bytes": 18818,
+      "member": "plan/owned-source/scripts/ap2_native_shopper_provider_worker_v1.py",
+      "sha256": "f7c0e3d79582e9bfbc49123fe7fd16791c3651f9c58dab7b70a69658a548b765"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/plan/owned-source/scripts/ap2_native_shopper_provider_worker_v2.py": {
+      "bytes": 18818,
+      "member": "plan/owned-source/scripts/ap2_native_shopper_provider_worker_v2.py",
+      "sha256": "382a7601d6929946c35d090d8bedf6d2a65a7b111b645b5fb1177cba6250c2e0"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/plan/owned-source/scripts/run_ap2_native_shopper_provider_v1.py": {
+      "bytes": 19597,
+      "member": "plan/owned-source/scripts/run_ap2_native_shopper_provider_v1.py",
+      "sha256": "8c99e95fc686da0d8b15ac1c930a50a39a06d0c0e48722f7e15c2495a4dea358"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/plan/owned-source/scripts/run_ap2_native_shopper_provider_v4.py": {
+      "bytes": 14590,
+      "member": "plan/owned-source/scripts/run_ap2_native_shopper_provider_v4.py",
+      "sha256": "1ff3cb5a423b1b3503025aa16e0f0aa946ad1659e498b57472d389db0909683a"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/plan/owned-source/scripts/run_ap2_original_native_repeat_v3.py": {
+      "bytes": 35459,
+      "member": "plan/owned-source/scripts/run_ap2_original_native_repeat_v3.py",
+      "sha256": "ef750dfa58a49e083ceb6ac84471372aa0945ddf7b96289c1020388180c3d1fb"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/extracted/plan/plan.json": {
+      "bytes": 37370,
+      "member": "plan/plan.json",
+      "sha256": "cf7e6808b5b5b9a7f45a677fbea8fb78d709d1f427ae49d8684f74009e4743a3"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/github-artifacts.json": {
+      "bytes": 767,
+      "path": "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/github-artifacts.json",
+      "sha256": "d00472be3ba8e19fe90b3e96a38a90b8d7bed3b501e0b8d8cc0104c1275f0b2d"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/github-run.json": {
+      "bytes": 13561,
+      "path": "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/github-run.json",
+      "sha256": "91eddcf971c68be3b73f4c5fa10bb3834eaf5a9ac31921faec5c7d1f209d7a7d"
+    },
+    "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/retention.json": {
+      "bytes": 577,
+      "path": "runs/ap2-native-shopper-provider-development/v4/retained-43074319113-1/retention.json",
+      "sha256": "36266108c1f9ab44299a2974b22aa518d39b9bfbd62fb1245a2d2c80d4b2368a"
+    }
+  },
+  "visible_model_text_messages": 0,
+  "whole_task_grade": null,
+  "worker_returncode": 0,
+  "worker_status": "public_actor_stopped_without_unambiguous_unseen_question"
+}

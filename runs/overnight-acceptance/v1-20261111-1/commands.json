@@ -1,0 +1,214 @@
+{
+  "schema_version": "overnight-acceptance-commands/1",
+  "commands": [
+    {
+      "id": "complete-task-bank",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "scripts/validate_task_banks_v1.py",
+        "--require-complete",
+        "--output",
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\overnight-acceptance\\v1-20261111-1\\task-bank-validation.json"
+      ],
+      "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+      "started_at_utc": "2026-11-11T17:59:29.514925+00:00",
+      "elapsed_seconds": 0.792763,
+      "exit_code": 0,
+      "stdout": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/complete-task-bank.stdout.txt",
+        "bytes": 2677,
+        "sha256": "43fc5cdaf5a65dda245cfa463be8a2301b942f47f416e64277a359c302faa548"
+      },
+      "stderr": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/complete-task-bank.stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "original_application_or_sdk_execution": false,
+      "provider_requests": 0
+    },
+    {
+      "id": "focused-tests",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-c",
+        "import sys,unittest;sys.path[:0]=['src','scripts','tests'];suite=unittest.defaultTestLoader.loadTestsFromNames(['test_refinement_shared_lift_v2','test_shared_admission_v1','test_direct_goal_pruned_v2','test_shared_lifting_comparison_v3','test_pending_admission','test_task_bank_validation_v1','test_ap2_original_native_provider_semantics_v2']);result=unittest.TextTestRunner(verbosity=1).run(suite);raise SystemExit(not result.wasSuccessful())"
+      ],
+      "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+      "started_at_utc": "2026-11-11T17:59:30.315204+00:00",
+      "elapsed_seconds": 20.123949,
+      "exit_code": 0,
+      "stdout": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/focused-tests.stdout.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/focused-tests.stderr.txt",
+        "bytes": 198,
+        "sha256": "9866f6c13d1a53f2cfd797e6ced71481df21d634ef63967d558441f32878cf01"
+      },
+      "original_application_or_sdk_execution": false,
+      "provider_requests": 0
+    },
+    {
+      "id": "linux-bundle-32",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-c",
+        "import sys;sys.path.insert(0,'src');from interoperability.shared_lifting_comparison_v3 import main;raise SystemExit(main(sys.argv[1:]))",
+        "verify",
+        "runs/ci-research-core/download-42819352517/budget-32"
+      ],
+      "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+      "started_at_utc": "2026-11-11T17:59:50.446314+00:00",
+      "elapsed_seconds": 2.320401,
+      "exit_code": 0,
+      "stdout": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/linux-bundle-32.stdout.txt",
+        "bytes": 87616,
+        "sha256": "4af6da3db6cd0b0d30edae49fa36e9addfa54aa29cc4debd9a770d9df5daa3d9"
+      },
+      "stderr": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/linux-bundle-32.stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "original_application_or_sdk_execution": false,
+      "provider_requests": 0
+    },
+    {
+      "id": "linux-bundle-256",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-c",
+        "import sys;sys.path.insert(0,'src');from interoperability.shared_lifting_comparison_v3 import main;raise SystemExit(main(sys.argv[1:]))",
+        "verify",
+        "runs/ci-research-core/download-42819352517/budget-256"
+      ],
+      "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+      "started_at_utc": "2026-11-11T17:59:52.778542+00:00",
+      "elapsed_seconds": 3.83047,
+      "exit_code": 0,
+      "stdout": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/linux-bundle-256.stdout.txt",
+        "bytes": 112938,
+        "sha256": "2c8d77563442eb1408c83fadae3d5462a93178c4f8d12990d2121fdd017db2b0"
+      },
+      "stderr": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/linux-bundle-256.stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "original_application_or_sdk_execution": false,
+      "provider_requests": 0
+    },
+    {
+      "id": "linux-bundle-4096",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-c",
+        "import sys;sys.path.insert(0,'src');from interoperability.shared_lifting_comparison_v3 import main;raise SystemExit(main(sys.argv[1:]))",
+        "verify",
+        "runs/ci-research-core/download-42819352517/budget-4096"
+      ],
+      "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+      "started_at_utc": "2026-11-11T17:59:56.618607+00:00",
+      "elapsed_seconds": 3.154338,
+      "exit_code": 0,
+      "stdout": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/linux-bundle-4096.stdout.txt",
+        "bytes": 116423,
+        "sha256": "39928e9947bc542593fccb93b8b4d6d2cb684f617585839b4053c7837867cd02"
+      },
+      "stderr": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/linux-bundle-4096.stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "original_application_or_sdk_execution": false,
+      "provider_requests": 0
+    },
+    {
+      "id": "linux-bundle-100000",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "-c",
+        "import sys;sys.path.insert(0,'src');from interoperability.shared_lifting_comparison_v3 import main;raise SystemExit(main(sys.argv[1:]))",
+        "verify",
+        "runs/ci-research-core/download-42819352517/budget-100000"
+      ],
+      "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+      "started_at_utc": "2026-11-11T17:59:59.781379+00:00",
+      "elapsed_seconds": 16.764075,
+      "exit_code": 0,
+      "stdout": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/linux-bundle-100000.stdout.txt",
+        "bytes": 116776,
+        "sha256": "ad33baea707ace8078098a5a3db8d7247d5e37d3ef7c7799eccdacf25b3ff548"
+      },
+      "stderr": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/linux-bundle-100000.stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "original_application_or_sdk_execution": false,
+      "provider_requests": 0
+    },
+    {
+      "id": "ap2-v2-semantic-recheck",
+      "argv": [
+        "C:\\Python313\\python.exe",
+        "-I",
+        "-S",
+        "-B",
+        "scripts/analyze_ap2_original_native_provider_v2.py",
+        "--retained-root",
+        "runs/ap2-original-native-provider-development/v2/retained-42995902326-1",
+        "--archive-sha256",
+        "5aa54a06193b25416e6d952fdee9be2af1760fd60fed596107906c5864bb2bf3",
+        "--output",
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\overnight-acceptance\\v1-20261111-1\\ap2-v2-semantic-recheck.json"
+      ],
+      "cwd": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability",
+      "started_at_utc": "2026-11-11T18:00:16.554126+00:00",
+      "elapsed_seconds": 0.12144,
+      "exit_code": 0,
+      "stdout": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/ap2-v2-semantic-recheck.stdout.txt",
+        "bytes": 285,
+        "sha256": "4b2e9862b1edb2c8a99aeb970fea300078a6ad54b442e67156d3fdd4b4e9931f"
+      },
+      "stderr": {
+        "path": "runs/overnight-acceptance/v1-20261111-1/ap2-v2-semantic-recheck.stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "original_application_or_sdk_execution": false,
+      "provider_requests": 0
+    }
+  ],
+  "audit_source": {
+    "path": "scripts/audit_overnight_acceptance_v1.py",
+    "bytes": 9232,
+    "sha256": "ba33b58d9ec320c9e86456ccbf786c1c9eda63289ac1fedfc41e91823d06b38c"
+  }
+}
