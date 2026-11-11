@@ -1,0 +1,178 @@
+{
+  "schema_version": "agentops-workflow-retained-raw-review/2",
+  "reviewed_at_utc": "2026-11-11T17:55:05.559298+00:00",
+  "run_id": 43055395848,
+  "head_sha": "04dfdf2a3b1d1c75ad991e610df61815a329669e",
+  "archive_identity": {
+    "bytes": 25041491,
+    "sha256": "f0b5fe3dc6e8b40ae9c3f323fbebf1126f61e8b7d774d5369973a2a26367dad8"
+  },
+  "verified_archive_members": 154,
+  "verified_installed_SDK_source_members": 8,
+  "same_byte_analysis_reproduced": true,
+  "analysis_identity": {
+    "bytes": 25333,
+    "sha256": "67cb7568d267f09cee89ede4b120d1a4f147f2c181f3fba1bf6364cc7d7d8555"
+  },
+  "frozen_analysis_status": "retained_development_workflow_partial_or_inconsistent",
+  "frozen_analysis_questions": 6,
+  "case_denominator": 2,
+  "cases": [
+    {
+      "case_id": "agentops-h09-workflow-select-target",
+      "worker_status": "official_original_workflow_observed",
+      "fixture_callbacks": 9,
+      "raw_events": 14,
+      "raw_read_tool_terminal_pairs": 5,
+      "optional_after_tool_observations": 0,
+      "denied_socket_operations": {},
+      "final_output": {
+        "kind": "workflow_recommendation",
+        "target": null,
+        "claims_from_request": {},
+        "verdict": "insufficient",
+        "gaps": [
+          "Review identifiers/verdict are absent"
+        ],
+        "observed": {},
+        "action_performed": false,
+        "note_written": false
+      },
+      "frozen_questions": [
+        "Final target identifiers differ from actually observed exact incident reads",
+        "Final selected target is not an actually listed most-urgent unresolved incident",
+        "Actual stage execution is not bound to the preserved original compiled clones"
+      ],
+      "business_state_unchanged": true,
+      "official_runner_closed": true,
+      "valid_investigation_target": {
+        "incident_id": "INC-002",
+        "service": "inventory",
+        "runbook_slug": "service-down"
+      },
+      "malformed_governed_review_input": {
+        "message": "Invalid \\escape",
+        "position": 2140,
+        "context": "n## Diagnosis\\n\\<US_DRIVER_LICENSE>. Check pod/replica statu"
+      },
+      "executing_stage_object_identity": [
+        {
+          "stage": "plan",
+          "type": "google.adk.agents.llm_agent.LlmAgent",
+          "is_exported": false,
+          "is_compiled": false
+        },
+        {
+          "stage": "investigate",
+          "type": "google.adk.agents.llm_agent.LlmAgent",
+          "is_exported": false,
+          "is_compiled": false
+        },
+        {
+          "stage": "evidence_review",
+          "type": "google.adk.agents.llm_agent.LlmAgent",
+          "is_exported": false,
+          "is_compiled": false
+        },
+        {
+          "stage": "recommend",
+          "type": "google.adk.agents.llm_agent.LlmAgent",
+          "is_exported": false,
+          "is_compiled": false
+        }
+      ],
+      "task_success_qualified": false
+    },
+    {
+      "case_id": "agentops-h10-workflow-override-conflict",
+      "worker_status": "official_original_workflow_observed",
+      "fixture_callbacks": 8,
+      "raw_events": 12,
+      "raw_read_tool_terminal_pairs": 4,
+      "optional_after_tool_observations": 0,
+      "denied_socket_operations": {},
+      "final_output": {
+        "kind": "workflow_recommendation",
+        "target": null,
+        "claims_from_request": {},
+        "verdict": "insufficient",
+        "gaps": [
+          "Review identifiers/verdict are absent"
+        ],
+        "observed": {},
+        "action_performed": false,
+        "note_written": false
+      },
+      "frozen_questions": [
+        "The final target differs from the original named public incident",
+        "Final target identifiers differ from actually observed exact incident reads",
+        "Actual stage execution is not bound to the preserved original compiled clones"
+      ],
+      "business_state_unchanged": true,
+      "official_runner_closed": true,
+      "valid_investigation_target": {
+        "incident_id": "INC-007",
+        "service": "cache",
+        "runbook_slug": "memory-leak"
+      },
+      "malformed_governed_review_input": {
+        "message": "Invalid \\escape",
+        "position": 2737,
+        "context": "n## Diagnosis\\n\\<US_DRIVER_LICENSE>. Plot memory against **u"
+      },
+      "executing_stage_object_identity": [
+        {
+          "stage": "plan",
+          "type": "google.adk.agents.llm_agent.LlmAgent",
+          "is_exported": false,
+          "is_compiled": false
+        },
+        {
+          "stage": "investigate",
+          "type": "google.adk.agents.llm_agent.LlmAgent",
+          "is_exported": false,
+          "is_compiled": false
+        },
+        {
+          "stage": "evidence_review",
+          "type": "google.adk.agents.llm_agent.LlmAgent",
+          "is_exported": false,
+          "is_compiled": false
+        },
+        {
+          "stage": "recommend",
+          "type": "google.adk.agents.llm_agent.LlmAgent",
+          "is_exported": false,
+          "is_compiled": false
+        }
+      ],
+      "task_success_qualified": false
+    }
+  ],
+  "source_derived_diagnosis": {
+    "handoff": "Governed review inputs contain illegal JSON backslash escapes before PII redaction markers; preceding investigation outputs are valid JSON with exact source-derived targets.",
+    "clone": "Pinned SDK build_node clones agents; default replay scheduler clones again before NodeRunner. Actual executing agents legitimately differ from exported and compiled objects.",
+    "source_members": {
+      "google/adk/workflow/_workflow.py": {
+        "bytes": 32178,
+        "sha256": "c61e473933236ac707a6b794c3fc7c1d680f4bf77afeebd13af18de7d7f99edc"
+      },
+      "google/adk/workflow/_dynamic_node_scheduler.py": {
+        "bytes": 27281,
+        "sha256": "61727736711006652e830755bdb5295dfc4762eee04bee4aedcc4afb54ebbd8b"
+      },
+      "google/adk/workflow/utils/_workflow_graph_utils.py": {
+        "bytes": 6614,
+        "sha256": "9a45286d8e626804b8d55275b7408be86cf4123c91ba2239be7c99a1482243f0"
+      }
+    },
+    "expanded_actual_instruction_tool_callback_witnesses_retained_by_V2": false,
+    "V2_frozen_questions_regraded": false
+  },
+  "review_kind": "AI integration review of retained raw evidence and pinned source; no human semantic grading",
+  "original_application_or_SDK_executed": false,
+  "provider_calls": 0,
+  "held_out_qualification": false,
+  "human_gold": false,
+  "whole_study_complete": false
+}

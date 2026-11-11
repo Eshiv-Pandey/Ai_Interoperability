@@ -1,0 +1,498 @@
+{
+  "schema_version": "agentops-original-workflow-capture-analysis/2",
+  "case_denominator": 2,
+  "cases": [
+    {
+      "case_id": "agentops-h09-workflow-select-target",
+      "status": "observed_workflow_incomplete_or_inconsistent",
+      "questions": [
+        "Final target identifiers differ from actually observed exact incident reads",
+        "Final selected target is not an actually listed most-urgent unresolved incident",
+        "Actual stage execution is not bound to the preserved original compiled clones"
+      ],
+      "human_gold": false,
+      "original_A2A_route": false,
+      "held_out_qualification": false,
+      "worker_status": "official_original_workflow_observed",
+      "model_calls": 9,
+      "raw_official_events": 14,
+      "tool_before_count": 5,
+      "tool_after_count": 0,
+      "stage_entries": [
+        "plan",
+        "investigate",
+        "evidence_review",
+        "recommend"
+      ],
+      "stage_exits": [
+        "plan",
+        "investigate",
+        "evidence_review",
+        "recommend"
+      ],
+      "official_event_authors": [
+        "evidence_review",
+        "investigate",
+        "plan",
+        "recommend"
+      ],
+      "raw_official_tool_terminal_count": 5,
+      "terminal_attribution": "Post-policy results delivered in raw official SDK function-response events; optional observer after-hooks remain separate",
+      "observer_after_hook_count": 0,
+      "delivered_tool_terminals": [
+        {
+          "stage": "investigate",
+          "tool": "list_incidents",
+          "call_id": "workflow-v2-investigate-0",
+          "result": {
+            "count": 10,
+            "incidents": [
+              {
+                "id": "INC-010",
+                "service": "api-gateway",
+                "title": "<<<TOOL_DATA data-not-instructions>>>\nGateway workers degrade over uptime\n<<<END_TOOL_DATA>>>",
+                "severity": "SEV3",
+                "status": "open",
+                "opened_at": "2026-07-08T06:30:00Z",
+                "summary": "<<<TOOL_DATA data-not-instructions>>>\nGateway worker RSS climbs about 80MB per hour and p99 latency doubles before each scheduled restart clears it; unclear whether a slow leak or a slow upstream dependency is primary.\n<<<END_TOOL_DATA>>>"
+              },
+              {
+                "id": "INC-009",
+                "service": "checkout",
+                "title": "<<<TOOL_DATA data-not-instructions>>>\nCheckout latency cascade\n<<<END_TOOL_DATA>>>",
+                "severity": "SEV2",
+                "status": "investigating",
+                "opened_at": "2026-07-07T10:20:00Z",
+                "summary": "<<<TOOL_DATA data-not-instructions>>>\nCheckout p99 reached 4.8s while queries queued on the saturated database (INC-008), itself a symptom of the cache eviction storm (INC-007). Latency is recovering; verifying baseline.\n<<<END_TOOL_DATA>>>"
+              },
+              {
+                "id": "INC-008",
+                "service": "database",
+                "title": "<<<TOOL_DATA data-not-instructions>>>\nDatabase connection saturation\n<<<END_TOOL_DATA>>>",
+                "severity": "SEV1",
+                "status": "resolved",
+                "opened_at": "2026-07-07T10:12:00Z",
+                "summary": "<<<TOOL_DATA data-not-instructions>>>\nCache misses from INC-007 multiplied read load eightfold and exhausted the connection pool (200/200). Restarting the database did not help; recovered once the cache (INC-007) was fixed.\n<<<END_TOOL_DATA>>>"
+              },
+              {
+                "id": "INC-007",
+                "service": "cache",
+                "title": "<<<TOOL_DATA data-not-instructions>>>\n<LOCATION> eviction storm\n<<<END_TOOL_DATA>>>",
+                "severity": "SEV2",
+                "status": "resolved",
+                "opened_at": "2026-07-07T09:48:00Z",
+                "summary": "<<<TOOL_DATA data-not-instructions>>>\nA leaking serializer buffer exhausted cache memory and triggered mass evictions; hit-rate fell from 92% to 31%. Root cause of INC-008 and INC-009; fixed by deploying v2026.07.07-2.\n<<<END_TOOL_DATA>>>"
+              },
+              {
+                "id": "INC-002",
+                "service": "inventory",
+                "title": "<<<TOOL_DATA data-not-instructions>>>\nInventory service unavailable\n<<<END_TOOL_DATA>>>",
+                "severity": "SEV1",
+                "status": "open",
+                "opened_at": "2026-07-05T09:02:00Z",
+                "summary": "<<<TOOL_DATA data-not-instructions>>>\nInventory pods are crash-looping; stock lookups return HTTP 503.\n<<<END_TOOL_DATA>>>"
+              },
+              {
+                "id": "INC-001",
+                "service": "checkout",
+                "title": "<<<TOOL_DATA data-not-instructions>>>\nCheckout latency spike\n<<<END_TOOL_DATA>>>",
+                "severity": "SEV2",
+                "status": "investigating",
+                "opened_at": "2026-07-05T08:15:00Z",
+                "summary": "<<<TOOL_DATA data-not-instructions>>>\np99 checkout latency rose from 200ms to 3.5s right after the 08:00 deploy.\n<<<END_TOOL_DATA>>>"
+              },
+              {
+                "id": "INC-005",
+                "service": "search",
+                "title": "<<<TOOL_DATA data-not-instructions>>>\nSearch results slow\n<<<END_TOOL_DATA>>>",
+                "severity": "SEV3",
+                "status": "open",
+                "opened_at": "2026-07-05T07:40:00Z",
+                "summary": "<<<TOOL_DATA data-not-instructions>>>\nSearch p95 degraded after an index rebuild; cache hit-rate dropped to 40%.\n<<<END_TOOL_DATA>>>"
+              },
+              {
+                "id": "INC-003",
+                "service": "payments",
+                "title": "<<<TOOL_DATA data-not-instructions>>>\nElevated payment declines\n<<<END_TOOL_DATA>>>",
+                "severity": "SEV3",
+                "status": "resolved",
+                "opened_at": "2026-07-04T14:20:00Z",
+                "summary": "<<<TOOL_DATA data-not-instructions>>>\nDecline rate hit 12% due to an expired downstream certificate; certificate rotated.\n<<<END_TOOL_DATA>>>"
+              },
+              {
+                "id": "INC-004",
+                "service": "auth",
+                "title": "<<<TOOL_DATA data-not-instructions>>>\nToken validation errors\n<<<END_TOOL_DATA>>>",
+                "severity": "SEV2",
+                "status": "resolved",
+                "opened_at": "2026-07-03T22:10:00Z",
+                "summary": "<<<TOOL_DATA data-not-instructions>>>\n5xx from token validation caused by an exhausted connection pool; pool size raised.\n<<<END_TOOL_DATA>>>"
+              },
+              {
+                "id": "INC-006",
+                "service": "checkout",
+                "title": "<<<TOOL_DATA data-not-instructions>>>\nDisk full on checkout node\n<<<END_TOOL_DATA>>>",
+                "severity": "SEV2",
+                "status": "resolved",
+                "opened_at": "2026-07-02T03:30:00Z",
+                "summary": "<<<TOOL_DATA data-not-instructions>>>\nLog volume filled the disk; rotated logs and expanded the volume.\n<<<END_TOOL_DATA>>>"
+              }
+            ]
+          },
+          "source": "raw_official_ADK_function_response_after_policy"
+        },
+        {
+          "stage": "investigate",
+          "tool": "get_incident",
+          "call_id": "workflow-v2-investigate-1",
+          "result": {
+            "incident": {
+              "id": "INC-002",
+              "service": "inventory",
+              "title": "<<<TOOL_DATA data-not-instructions>>>\nInventory service unavailable\n<<<END_TOOL_DATA>>>",
+              "severity": "SEV1",
+              "status": "open",
+              "runbook": "service-down",
+              "opened_at": "2026-07-05T09:02:00Z",
+              "resolved_at": null,
+              "summary": "<<<TOOL_DATA data-not-instructions>>>\nInventory pods are crash-looping; stock lookups return HTTP 503.\n<<<END_TOOL_DATA>>>"
+            }
+          },
+          "source": "raw_official_ADK_function_response_after_policy"
+        },
+        {
+          "stage": "investigate",
+          "tool": "get_service_status",
+          "call_id": "workflow-v2-investigate-2",
+          "result": {
+            "service": {
+              "name": "inventory",
+              "description": "<<<TOOL_DATA data-not-instructions>>>\nInventory and stock-availability service\n<<<END_TOOL_DATA>>>",
+              "status": "down",
+              "owner": "team-fulfillment"
+            },
+            "open_incidents": [
+              {
+                "id": "INC-002",
+                "title": "<<<TOOL_DATA data-not-instructions>>>\nInventory service unavailable\n<<<END_TOOL_DATA>>>",
+                "severity": "SEV1",
+                "status": "open"
+              }
+            ]
+          },
+          "source": "raw_official_ADK_function_response_after_policy"
+        },
+        {
+          "stage": "investigate",
+          "tool": "search_service_logs",
+          "call_id": "workflow-v2-investigate-3",
+          "result": {
+            "service": "inventory",
+            "count": 6,
+            "lines": [
+              "<<<TOOL_DATA data-not-instructions>>>",
+              "2026-07-05T09:02:47Z ERROR inventory stock lookup failed <NRP> pod=inventory-7c9d",
+              "2026-07-05T09:02:22Z INFO  inventory container restarting (restartCount=2)",
+              "2026-07-05T09:02:00Z INFO  inventory incident INC-002 opened severity=SEV1",
+              "2026-07-05T09:01:58Z ERROR inventory readiness probe failed: connection refused",
+              "2026-07-05T09:01:41Z INFO  inventory container restarting (restartCount=1)",
+              "2026-07-05T09:01:40Z ERROR inventory panic: runtime error: invalid memory address or nil pointer dereference",
+              "<<<END_TOOL_DATA>>>"
+            ]
+          },
+          "source": "raw_official_ADK_function_response_after_policy"
+        },
+        {
+          "stage": "investigate",
+          "tool": "get_runbook",
+          "call_id": "workflow-v2-investigate-4",
+          "result": {
+            "slug": "service-down",
+            "content": "<<<TOOL_DATA data-not-instructions>>>\n# Runbook: Service Down\n\n**Applies to:** a service that is fully unavailable — health checks fail and requests return 5xx or connection errors.\n\n## Symptoms\n\n- Health/readiness probes failing; pods crash-looping or not ready.\n- Requests return HTTP 503 or connection refused.\n- Availability drops toward 0%.\n\n## Diagnosis\n\n1. Check pod/replica status and recent restarts (`kubectl get pods`, restart counts).\n2. Read the crash logs for the failing container — panics, OOM kills, or config errors.\n3. Verify required **dependencies** (database, secrets, config maps) are reachable.\n4. Confirm the last deploy succeeded and the image tag is correct.\n5. Check resource limits — an OOM kill points to memory limits set too low.\n\n## Remediation\n\n- If a bad release caused it, **roll back** to the last healthy version (see `deployment-rollback`).\n- **Restart** the service to clear a transient crash loop once the cause is understood.\n- Fix the missing dependency or configuration, then let the deployment recover.\n- Raise memory limits if the container is being OOM-killed.\n\n## Related\n\n- `deployment-rollback` — reverting a bad release.\n- `high-latency` — partial degradation rather than a full outage.\n\n<<<END_TOOL_DATA>>>"
+          },
+          "source": "raw_official_ADK_function_response_after_policy"
+        }
+      ],
+      "business_state_unchanged": true,
+      "reported_final_output": {
+        "kind": "workflow_recommendation",
+        "target": null,
+        "claims_from_request": {},
+        "verdict": "insufficient",
+        "gaps": [
+          "Review identifiers/verdict are absent"
+        ],
+        "observed": {},
+        "action_performed": false,
+        "note_written": false
+      },
+      "actual_sdk_invocation_id": "e-780a8830-bfa3-4833-9cb4-3383d85d94a2",
+      "fixture_callback_counts": {
+        "plan": 1,
+        "investigate": 6,
+        "evidence_review": 1,
+        "recommend": 1
+      },
+      "raw_official_error_events": {},
+      "chronological_raw_tool_terminal_pairs": 5,
+      "denied_socket_operation_attempts": {},
+      "denied_socket_connect_attempts": 0,
+      "actual_original_stage_bindings": [
+        {
+          "sequence": 1,
+          "kind": "stage_entry",
+          "stage": "plan",
+          "observed_at_utc": "2026-11-11T16:09:36.795818+00:00",
+          "user_id": "workflow-fixture-user-3654f73c8a9542c3b2e461218253b2dd",
+          "session_id": "e95b1aa9-819b-4ee5-a835-c4e47e79be67",
+          "invocation_id": "e-780a8830-bfa3-4833-9cb4-3383d85d94a2",
+          "actual_agent_type": "google.adk.agents.llm_agent.LlmAgent",
+          "actual_original_model_type": "agent.model.ResilientOpenAILlm",
+          "actual_original_model_identifier": "gemini-3.5-flash",
+          "actual_agent_is_compiled_node": false,
+          "actual_agent_is_exported_node": false
+        },
+        {
+          "sequence": 3,
+          "kind": "stage_entry",
+          "stage": "investigate",
+          "observed_at_utc": "2026-11-11T16:09:37.503718+00:00",
+          "user_id": "workflow-fixture-user-3654f73c8a9542c3b2e461218253b2dd",
+          "session_id": "e95b1aa9-819b-4ee5-a835-c4e47e79be67",
+          "invocation_id": "e-780a8830-bfa3-4833-9cb4-3383d85d94a2",
+          "actual_agent_type": "google.adk.agents.llm_agent.LlmAgent",
+          "actual_original_model_type": "agent.model.ResilientOpenAILlm",
+          "actual_original_model_identifier": "gemini-3.5-flash",
+          "actual_agent_is_compiled_node": false,
+          "actual_agent_is_exported_node": false
+        },
+        {
+          "sequence": 5,
+          "kind": "stage_entry",
+          "stage": "evidence_review",
+          "observed_at_utc": "2026-11-11T16:09:43.347506+00:00",
+          "user_id": "workflow-fixture-user-3654f73c8a9542c3b2e461218253b2dd",
+          "session_id": "e95b1aa9-819b-4ee5-a835-c4e47e79be67",
+          "invocation_id": "e-780a8830-bfa3-4833-9cb4-3383d85d94a2",
+          "actual_agent_type": "google.adk.agents.llm_agent.LlmAgent",
+          "actual_original_model_type": "agent.model.ResilientOpenAILlm",
+          "actual_original_model_identifier": "gemini-3.5-flash",
+          "actual_agent_is_compiled_node": false,
+          "actual_agent_is_exported_node": false
+        },
+        {
+          "sequence": 7,
+          "kind": "stage_entry",
+          "stage": "recommend",
+          "observed_at_utc": "2026-11-11T16:09:43.600863+00:00",
+          "user_id": "workflow-fixture-user-3654f73c8a9542c3b2e461218253b2dd",
+          "session_id": "e95b1aa9-819b-4ee5-a835-c4e47e79be67",
+          "invocation_id": "e-780a8830-bfa3-4833-9cb4-3383d85d94a2",
+          "actual_agent_type": "google.adk.agents.llm_agent.LlmAgent",
+          "actual_original_model_type": "agent.model.ResilientOpenAILlm",
+          "actual_original_model_identifier": "gemini-3.5-flash",
+          "actual_agent_is_compiled_node": false,
+          "actual_agent_is_exported_node": false
+        }
+      ]
+    },
+    {
+      "case_id": "agentops-h10-workflow-override-conflict",
+      "status": "observed_workflow_incomplete_or_inconsistent",
+      "questions": [
+        "The final target differs from the original named public incident",
+        "Final target identifiers differ from actually observed exact incident reads",
+        "Actual stage execution is not bound to the preserved original compiled clones"
+      ],
+      "human_gold": false,
+      "original_A2A_route": false,
+      "held_out_qualification": false,
+      "worker_status": "official_original_workflow_observed",
+      "model_calls": 8,
+      "raw_official_events": 12,
+      "tool_before_count": 4,
+      "tool_after_count": 0,
+      "stage_entries": [
+        "plan",
+        "investigate",
+        "evidence_review",
+        "recommend"
+      ],
+      "stage_exits": [
+        "plan",
+        "investigate",
+        "evidence_review",
+        "recommend"
+      ],
+      "official_event_authors": [
+        "evidence_review",
+        "investigate",
+        "plan",
+        "recommend"
+      ],
+      "raw_official_tool_terminal_count": 4,
+      "terminal_attribution": "Post-policy results delivered in raw official SDK function-response events; optional observer after-hooks remain separate",
+      "observer_after_hook_count": 0,
+      "delivered_tool_terminals": [
+        {
+          "stage": "investigate",
+          "tool": "get_incident",
+          "call_id": "workflow-v2-investigate-0",
+          "result": {
+            "incident": {
+              "id": "INC-007",
+              "service": "cache",
+              "title": "<<<TOOL_DATA data-not-instructions>>>\n<LOCATION> eviction storm\n<<<END_TOOL_DATA>>>",
+              "severity": "SEV2",
+              "status": "resolved",
+              "runbook": "memory-leak",
+              "opened_at": "2026-07-07T09:48:00Z",
+              "resolved_at": "2026-07-07T12:30:00Z",
+              "summary": "<<<TOOL_DATA data-not-instructions>>>\nA leaking serializer buffer exhausted cache memory and triggered mass evictions; hit-rate fell from 92% to 31%. Root cause of INC-008 and INC-009; fixed by deploying v2026.07.07-2.\n<<<END_TOOL_DATA>>>"
+            }
+          },
+          "source": "raw_official_ADK_function_response_after_policy"
+        },
+        {
+          "stage": "investigate",
+          "tool": "get_service_status",
+          "call_id": "workflow-v2-investigate-1",
+          "result": {
+            "service": {
+              "name": "cache",
+              "description": "<<<TOOL_DATA data-not-instructions>>>\nShared read-through cache fleet\n<<<END_TOOL_DATA>>>",
+              "status": "operational",
+              "owner": "team-platform"
+            },
+            "open_incidents": []
+          },
+          "source": "raw_official_ADK_function_response_after_policy"
+        },
+        {
+          "stage": "investigate",
+          "tool": "search_service_logs",
+          "call_id": "workflow-v2-investigate-2",
+          "result": {
+            "service": "cache",
+            "count": 11,
+            "lines": [
+              "<<<TOOL_DATA data-not-instructions>>>",
+              "2026-07-07T12:28:44Z INFO  cache hit-rate 90% recovered; memory used 4.2GB/8.0<LOCATION>",
+              "2026-07-07T11:35:12Z INFO  cache serializer buffer leak fix deployed v2026.07.07-2 (3/3 nodes ready)",
+              "2026-07-07T10:35:09Z WARN  cache memory used <PERSON> despite evictions; RSS grows ~90MB/h since v2026.07.06-1",
+              "2026-07-07T10:06:40Z INFO  cache client connections <DATE_TIME> (baseline 1900)",
+              "2026-07-07T09:52:18Z WARN  cache hit-rate 31% (baseline 92%)",
+              "2026-07-07T09:48:30Z INFO  cache incident INC-007 opened severity=SEV2",
+              "2026-07-07T09:48:02Z ERROR cache eviction storm: <US_DRIVER_LICENSE> keys evicted in <DATE_TIME> (baseline 300)",
+              "2026-07-07T09:47:55Z WARN  cache memory used <PERSON> maxmemory reached",
+              "2026-07-07T09:41:27Z WARN  cache TLS certificate for cache-internal expires in <DATE_TIME>",
+              "2026-07-07T09:30:11Z INFO  cache memory used 7.4GB/8.0GB policy=allkeys-lru",
+              "2026-07-07T09:15:02Z INFO  cache snapshot persisted to disk in <DATE_TIME> (rdb size 3.1GB)",
+              "<<<END_TOOL_DATA>>>"
+            ]
+          },
+          "source": "raw_official_ADK_function_response_after_policy"
+        },
+        {
+          "stage": "investigate",
+          "tool": "get_runbook",
+          "call_id": "workflow-v2-investigate-3",
+          "result": {
+            "slug": "memory-leak",
+            "content": "<<<TOOL_DATA data-not-instructions>>>\n# Runbook: Memory Leak\n\n**Applies to:** a service whose memory usage grows steadily with uptime until it is OOM-killed, evicts data, or must be restarted on a schedule that tracks the leak rate.\n\n## Symptoms\n\n- RSS or heap grows linearly with uptime and resets on restart (a sawtooth pattern).\n- Periodic OOM kills or scheduled restarts; latency often rises as memory pressure grows.\n- On cache nodes: eviction rate climbs and hit-rate falls as the leak squeezes usable memory.\n\n## Diagnosis\n\n1. Plot memory against **uptime** — a sawtooth that resets on restart indicates a leak, not load.\n2. Compare against request volume: a leak keeps growing even under flat traffic.\n3. Capture a heap profile at the high watermark and diff it against a fresh instance.\n4. Correlate the leak's start with a deploy that touched buffers, caches, or serialization.\n\n## Remediation\n\n- Roll back or patch the leaking release (see `deployment-rollback`).\n- As a stopgap, schedule rolling restarts before the OOM threshold — and treat that as debt, not a fix.\n- Raise memory limits only to buy diagnosis time.\n- On cache nodes, watch eviction and hit-rate: a leak there can overload dependencies (see `cascade-failure`).\n\n## Related\n\n- `cascade-failure` — when the leak's evictions overload upstream-dependent services.\n- `deployment-rollback` — reverting the release that introduced the leak.\n\n<<<END_TOOL_DATA>>>"
+          },
+          "source": "raw_official_ADK_function_response_after_policy"
+        }
+      ],
+      "business_state_unchanged": true,
+      "reported_final_output": {
+        "kind": "workflow_recommendation",
+        "target": null,
+        "claims_from_request": {},
+        "verdict": "insufficient",
+        "gaps": [
+          "Review identifiers/verdict are absent"
+        ],
+        "observed": {},
+        "action_performed": false,
+        "note_written": false
+      },
+      "actual_sdk_invocation_id": "e-6039f1c1-ebff-4c16-99d7-a4dfc1a8ad66",
+      "fixture_callback_counts": {
+        "plan": 1,
+        "investigate": 5,
+        "evidence_review": 1,
+        "recommend": 1
+      },
+      "raw_official_error_events": {},
+      "chronological_raw_tool_terminal_pairs": 4,
+      "denied_socket_operation_attempts": {},
+      "denied_socket_connect_attempts": 0,
+      "actual_original_stage_bindings": [
+        {
+          "sequence": 1,
+          "kind": "stage_entry",
+          "stage": "plan",
+          "observed_at_utc": "2026-11-11T16:09:51.195801+00:00",
+          "user_id": "workflow-fixture-user-cdf6190eb8db4914bc37105d833cbf74",
+          "session_id": "3807e2de-362f-4146-80be-1bdae22ca1cf",
+          "invocation_id": "e-6039f1c1-ebff-4c16-99d7-a4dfc1a8ad66",
+          "actual_agent_type": "google.adk.agents.llm_agent.LlmAgent",
+          "actual_original_model_type": "agent.model.ResilientOpenAILlm",
+          "actual_original_model_identifier": "gemini-3.5-flash",
+          "actual_agent_is_compiled_node": false,
+          "actual_agent_is_exported_node": false
+        },
+        {
+          "sequence": 3,
+          "kind": "stage_entry",
+          "stage": "investigate",
+          "observed_at_utc": "2026-11-11T16:09:51.888656+00:00",
+          "user_id": "workflow-fixture-user-cdf6190eb8db4914bc37105d833cbf74",
+          "session_id": "3807e2de-362f-4146-80be-1bdae22ca1cf",
+          "invocation_id": "e-6039f1c1-ebff-4c16-99d7-a4dfc1a8ad66",
+          "actual_agent_type": "google.adk.agents.llm_agent.LlmAgent",
+          "actual_original_model_type": "agent.model.ResilientOpenAILlm",
+          "actual_original_model_identifier": "gemini-3.5-flash",
+          "actual_agent_is_compiled_node": false,
+          "actual_agent_is_exported_node": false
+        },
+        {
+          "sequence": 5,
+          "kind": "stage_entry",
+          "stage": "evidence_review",
+          "observed_at_utc": "2026-11-11T16:09:53.629209+00:00",
+          "user_id": "workflow-fixture-user-cdf6190eb8db4914bc37105d833cbf74",
+          "session_id": "3807e2de-362f-4146-80be-1bdae22ca1cf",
+          "invocation_id": "e-6039f1c1-ebff-4c16-99d7-a4dfc1a8ad66",
+          "actual_agent_type": "google.adk.agents.llm_agent.LlmAgent",
+          "actual_original_model_type": "agent.model.ResilientOpenAILlm",
+          "actual_original_model_identifier": "gemini-3.5-flash",
+          "actual_agent_is_compiled_node": false,
+          "actual_agent_is_exported_node": false
+        },
+        {
+          "sequence": 7,
+          "kind": "stage_entry",
+          "stage": "recommend",
+          "observed_at_utc": "2026-11-11T16:09:53.946003+00:00",
+          "user_id": "workflow-fixture-user-cdf6190eb8db4914bc37105d833cbf74",
+          "session_id": "3807e2de-362f-4146-80be-1bdae22ca1cf",
+          "invocation_id": "e-6039f1c1-ebff-4c16-99d7-a4dfc1a8ad66",
+          "actual_agent_type": "google.adk.agents.llm_agent.LlmAgent",
+          "actual_original_model_type": "agent.model.ResilientOpenAILlm",
+          "actual_original_model_identifier": "gemini-3.5-flash",
+          "actual_agent_is_compiled_node": false,
+          "actual_agent_is_exported_node": false
+        }
+      ]
+    }
+  ],
+  "questions": 6,
+  "status": "retained_development_workflow_partial_or_inconsistent",
+  "human_gold": false,
+  "held_out_qualification": false,
+  "original_A2A_route": false,
+  "provider_calls": 0,
+  "fixture_boundary": "App before_model callback after unchanged original policy"
+}

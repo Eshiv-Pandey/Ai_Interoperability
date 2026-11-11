@@ -1,0 +1,575 @@
+{
+  "adaptive_development_followup": true,
+  "all_recorded_children_reaped": true,
+  "analyzer_source_sha256": "effc825332ed8f867acc20b9b194a46a76348c44428233c92faea84437590357",
+  "archive_sha256": "921d50f1b5e5554e5a0366eefd9269bba9dcf5ddb497d71e96fbf35573e59c31",
+  "bound_V3_owned_sources": {
+    "scripts/ap2_native_shopper_provider_boundary_v2.py": {
+      "bytes": 9319,
+      "sha256": "95bd0ccb0513cce59cb3c94724658f1943806588283e989002626deb3545e52f"
+    },
+    "scripts/ap2_native_shopper_provider_worker_v1.py": {
+      "bytes": 18818,
+      "sha256": "f7c0e3d79582e9bfbc49123fe7fd16791c3651f9c58dab7b70a69658a548b765"
+    },
+    "scripts/run_ap2_native_shopper_provider_v1.py": {
+      "bytes": 19597,
+      "sha256": "8c99e95fc686da0d8b15ac1c930a50a39a06d0c0e48722f7e15c2495a4dea358"
+    },
+    "scripts/run_ap2_native_shopper_provider_v3.py": {
+      "bytes": 12883,
+      "sha256": "0cb1ea8965f8af8fc9520c1ae47353fa23b222f6a2aa80d53b158965fc26918e"
+    },
+    "scripts/run_ap2_original_native_repeat_v3.py": {
+      "bytes": 35459,
+      "sha256": "ef750dfa58a49e083ceb6ac84471372aa0945ddf7b96289c1020388180c3d1fb"
+    }
+  },
+  "case_denominator": 1,
+  "case_id": "ap2-native-shopper-provider-v3-correct-human",
+  "consistency_questions": [],
+  "copied_source_unchanged_parent_record": true,
+  "head_sha": "04dfdf2a3b1d1c75ad991e610df61815a329669e",
+  "held_out_study": false,
+  "hidden_effects_or_real_settlement_proven": false,
+  "human_gold": false,
+  "immutable_V1_analyzer_source_sha256": "fd07c3609400f951d8500ce97f1cc655fc4ed654b7836597c30d26262ef930ab",
+  "immutable_V2_analyzer_source_sha256": "c1211733a21dd8bc8ea1aee5135b471c43f53fe7459eb998daf678160375e07d",
+  "inherited_boundary_drain_schema": "ap2-provider-drain/2",
+  "limits": [
+    "Retained development observations and their consistency do not replace human semantic task grading.",
+    "An owned actor stop, original tool failure, provider failure and unreached branch remain separate outcomes.",
+    "Handler completion at capture freeze is separate from consumed allocations; unclosed consumption remains unknown.",
+    "Frozen V3 sources preserve the V2 sender/drain and V1 worker; retained schemas are checked directly, not rewritten.",
+    "Provider transport timeout and drain wait records do not prove a whole-request network wall-clock cap.",
+    "Runtime versions, parent cleanup/ownership and source-copy assertions do not supply full original A2A wire, hidden effects or settlement proof."
+  ],
+  "native_launch": {
+    "byte_identical_original_source_copy": true,
+    "entries": [
+      {
+        "module": "roles.merchant_agent",
+        "port": 8001,
+        "rpc_path": "/a2a/merchant_agent"
+      },
+      {
+        "module": "roles.credentials_provider_agent",
+        "port": 8002,
+        "rpc_path": "/a2a/credentials_provider"
+      },
+      {
+        "module": "roles.merchant_payment_processor_agent",
+        "port": 8003,
+        "rpc_path": "/a2a/merchant_payment_processor_agent"
+      }
+    ],
+    "exact_native_PID_listener_ownership_verified_before_card_requests": true,
+    "original_entrypoints": true,
+    "original_genai_Client_replaced": false,
+    "original_source_copy_roots": {
+      "ap2": "/tmp/ap2-native-shopper-v3-private-aky3xk8g/original-ap2",
+      "x402": "/tmp/ap2-native-shopper-v3-private-aky3xk8g/original-x402"
+    },
+    "owned_accounting_base_url": "http://127.0.0.1:33255",
+    "public_cards": {
+      "credentials": {
+        "bytes": 1149,
+        "sha256": "a3999605f4200fd72fa686ba12215a0d6d3f226a8ed0556ec93a07fd74a97d47"
+      },
+      "merchant": {
+        "bytes": 809,
+        "sha256": "abae7e20491ede70d171abadea5260eaee04df83831f1a37131d311b370d9383"
+      },
+      "processor": {
+        "bytes": 790,
+        "sha256": "cc42eddceab916e8fadb7ed0652866c440859d7c2f5cc58c210635b940badec3"
+      }
+    },
+    "real_secret_in_children": false
+  },
+  "native_listener_inode_records_independently_captured": false,
+  "native_listener_ownership_parent_record": true,
+  "native_stdout_process_IDs": {
+    "credentials": [
+      2794
+    ],
+    "merchant": [
+      2793
+    ],
+    "processor": [
+      2795
+    ]
+  },
+  "observed_case_outcome": "retained_development_observations_require_per_branch_reading",
+  "original_A2A_wire_capture_claimed": false,
+  "original_root_binding": null,
+  "original_run_sh_provisioning_qualified": false,
+  "parent_case_status": "executed_nonzero_retained",
+  "parent_failure": null,
+  "parent_preflight_error": null,
+  "parent_process_cleanup": [
+    {
+      "cleanup_error_type": null,
+      "pid": 2796,
+      "reaped": true,
+      "returncode": 1
+    },
+    {
+      "cleanup_error_type": null,
+      "pid": 2795,
+      "reaped": true,
+      "returncode": -15
+    },
+    {
+      "cleanup_error_type": null,
+      "pid": 2794,
+      "reaped": true,
+      "returncode": -15
+    },
+    {
+      "cleanup_error_type": null,
+      "pid": 2793,
+      "reaped": true,
+      "returncode": -15
+    }
+  ],
+  "parent_result_status": null,
+  "provider": {
+    "HTTP_status_census": {
+      "200": 1
+    },
+    "actual_network_send_timestamps_captured": false,
+    "allocations_with_unmeasured_usage": 0,
+    "consistency_questions": [],
+    "failed_responses_missing_or_invalid_usage": 0,
+    "fully_measured": true,
+    "known_reported_tokens": 45,
+    "local_proxy_refusals": [],
+    "minimum_recorded_allocation_timestamp_gap_seconds": null,
+    "recorded_allocation_to_terminal_durations": [
+      {
+        "allocation": 0,
+        "seconds": 60.246338
+      }
+    ],
+    "recorded_cumulative_request_bytes": 356,
+    "recorded_provider_path_census": {
+      "/v1beta/models/gemini-3.1-flash-lite-preview:generateContent": 1
+    },
+    "responses": [
+      {
+        "allocation": 0,
+        "http_status": 200,
+        "known_reported_tokens": 45,
+        "model_version": "gemini-3.1-flash-lite",
+        "transport_or_parse_error_type": null
+      }
+    ],
+    "responses_missing_or_invalid_usage": 0,
+    "successful_responses_missing_or_invalid_usage": 0,
+    "terminal_responses": 1,
+    "unclosed_allocation_ids": [],
+    "unknown_usage_is_zero": false,
+    "upstream_allocations": 1
+  },
+  "provider_drain": {
+    "all_response_allocations_with_unmeasured_usage": 0,
+    "consistency_questions": [],
+    "elapsed_drain_exceeds_requested_wait": false,
+    "elapsed_wait_is_not_an_independently_proven_socket_wall_cap": true,
+    "freeze_enforcement_scope": "Raw retained ledger/payload joins and frozen owned source policy; actual late upstream completion after capture freeze is not observed.",
+    "fully_measured_provider_consumption_claimed": true,
+    "handler_census_is_distinct_from_consumed_allocation_count": true,
+    "handlers_can_finish_without_late_captured_terminal_observations": true,
+    "parent_summary_active_handlers": 0,
+    "record_present": true,
+    "standalone_drain_record": {
+      "active_handlers_at_capture_freeze": 0,
+      "admission_closed": true,
+      "all_handlers_completed": true,
+      "allocated_upstream_calls_at_capture_freeze": 1,
+      "allocations_with_unmeasured_usage": 0,
+      "capture_frozen": true,
+      "elapsed_drain_seconds": 2.1113000002515037e-05,
+      "late_sender_outcomes_retained": false,
+      "maximum_drain_seconds": 150,
+      "request_bytes_at_capture_freeze": 356,
+      "schema_version": "ap2-provider-drain/2",
+      "time": "2026-11-11T16:11:38.702460+00:00",
+      "unclosed_allocation_ids": [],
+      "unfinished_allocations_require_unknown_usage": true
+    },
+    "status": "frozen_handler_census_and_raw_ledger_consistent",
+    "unclosed_allocations_with_unmeasured_usage": 0,
+    "unclosed_consumed_allocations": []
+  },
+  "public_and_ADK": {
+    "actor_delivered_replies": [],
+    "actor_proposed_replies": [],
+    "behavior_observations": [],
+    "business_call_count": 0,
+    "cart_selection_corroboration": {
+      "delivered_cart_selections": 0,
+      "evidence_scope": "Visible first ordinal selection joined to preceding raw original ADK tool return, later original select_cart and retained session state; full A2A wire and semantic human gold are absent.",
+      "records": []
+    },
+    "consistency_questions": [],
+    "function_call_IDs_present": null,
+    "function_calls": [],
+    "function_responses": [],
+    "human_gold": false,
+    "milestones": {
+      "create_checkout": {
+        "requested": 0,
+        "returned": 0
+      },
+      "create_checkout_mandate": {
+        "requested": 0,
+        "returned": 0
+      },
+      "create_payment_mandate": {
+        "requested": 0,
+        "returned": 0
+      },
+      "find_products": {
+        "requested": 0,
+        "returned": 0
+      },
+      "get_payment_credential_token": {
+        "requested": 0,
+        "returned": 0
+      },
+      "get_payment_methods": {
+        "requested": 0,
+        "returned": 0
+      },
+      "get_shipping_address": {
+        "requested": 0,
+        "returned": 0
+      },
+      "initiate_payment": {
+        "requested": 0,
+        "returned": 0
+      },
+      "initiate_payment_with_otp": {
+        "requested": 0,
+        "returned": 0
+      },
+      "select_cart": {
+        "requested": 0,
+        "returned": 0
+      },
+      "send_signed_mandates_to_credentials_provider": {
+        "requested": 0,
+        "returned": 0
+      }
+    },
+    "official_authors": [],
+    "public_user_messages": 0,
+    "raw_ADK_error_events": [],
+    "raw_ADK_events": 0,
+    "retained_receipts": [],
+    "session_snapshot_ids": [],
+    "unique_success_receipt_records": 0,
+    "unrequested_later_business_tools": [
+      "create_checkout",
+      "create_checkout_mandate",
+      "create_payment_mandate",
+      "send_signed_mandates_to_credentials_provider",
+      "initiate_payment",
+      "initiate_payment_with_otp",
+      "find_products",
+      "select_cart",
+      "get_shipping_address",
+      "get_payment_methods",
+      "get_payment_credential_token"
+    ],
+    "visible_model_messages": [],
+    "whole_task_grade": null
+  },
+  "root_reviewed_frozen_plan_template_sha256": "49343a1fa5c7836b6acf851ce213a4699718026dd7ebaf305a2f9186c7a9d63f",
+  "run_id": 43055390208,
+  "runtime_manifest": {
+    "consistency_questions": [],
+    "manifested_runtime_files": 14728,
+    "python_version": "3.13.1",
+    "record_present": true,
+    "required_original_versions": {
+      "a2a-sdk": "0.3.24",
+      "absl-py": "2.4.0",
+      "aiofile": "3.12.3",
+      "aiohappyeyeballs": "2.7.1",
+      "aiohttp": "3.14.5",
+      "aiosignal": "1.4.0",
+      "aiosqlite": "0.22.1",
+      "alembic": "1.20.1",
+      "annotated-doc": "0.0.5",
+      "annotated-types": "0.8.0",
+      "anyio": "4.15.1",
+      "attrs": "26.1.0",
+      "authlib": "1.9.1",
+      "beartype": "0.23.1",
+      "bitarray": "3.12.3",
+      "blinker": "1.9.0",
+      "cachetools": "7.2.7",
+      "caio": "0.12.10",
+      "certifi": "2026.10.23",
+      "cffi": "2.1.1",
+      "charset-normalizer": "3.5.2",
+      "ckzg": "2.1.8",
+      "click": "8.5.0",
+      "cloudpickle": "3.1.2",
+      "colorama": "0.4.6",
+      "cryptography": "46.0.5",
+      "cyclopts": "5.3.2",
+      "cytoolz": "1.2.0",
+      "distro": "1.9.0",
+      "dnspython": "2.9.1",
+      "docstring-parser": "0.18.0",
+      "email-validator": "2.3.0",
+      "eth-abi": "6.0.0",
+      "eth-account": "0.14.0",
+      "eth-hash": "0.8.0",
+      "eth-keyfile": "0.10.0",
+      "eth-keys": "0.8.0",
+      "eth-rlp": "3.0.0",
+      "eth-typing": "6.0.0",
+      "eth-utils": "6.0.0",
+      "exceptiongroup": "1.3.1",
+      "fastapi": "0.141.1",
+      "fastmcp": "3.1.0",
+      "flask": "3.1.3",
+      "flask-cors": "6.0.2",
+      "frozenlist": "1.8.0",
+      "google-adk": "1.28.0",
+      "google-api-core": "2.30.3",
+      "google-api-python-client": "2.201.0",
+      "google-auth": "2.62.0",
+      "google-auth-httplib2": "0.4.4",
+      "google-cloud-aiplatform": "1.165.1",
+      "google-cloud-appengine-logging": "1.11.0",
+      "google-cloud-audit-log": "0.6.3",
+      "google-cloud-bigquery": "3.47.0",
+      "google-cloud-bigquery-storage": "2.43.0",
+      "google-cloud-bigtable": "2.50.2",
+      "google-cloud-core": "2.8.0",
+      "google-cloud-dataplex": "2.21.0",
+      "google-cloud-discoveryengine": "0.13.12",
+      "google-cloud-logging": "3.17.0",
+      "google-cloud-monitoring": "2.32.0",
+      "google-cloud-pubsub": "2.43.0",
+      "google-cloud-resource-manager": "1.19.0",
+      "google-cloud-secret-manager": "2.31.0",
+      "google-cloud-spanner": "3.71.0",
+      "google-cloud-speech": "2.41.0",
+      "google-cloud-storage": "3.17.1",
+      "google-cloud-trace": "1.21.0",
+      "google-crc32c": "1.9.0",
+      "google-genai": "1.66.0",
+      "google-resumable-media": "2.11.0",
+      "googleapis-common-protos": "1.76.0",
+      "graphviz": "0.21",
+      "grpc-google-iam-v1": "0.14.6",
+      "grpc-interceptor": "0.15.4",
+      "grpcio": "1.85.0",
+      "grpcio-status": "1.85.0",
+      "h11": "0.16.0",
+      "hexbytes": "2.0.0",
+      "httpcore": "1.0.9",
+      "httplib2": "0.32.1",
+      "httpx": "0.28.1",
+      "httpx-sse": "0.4.3",
+      "idna": "3.20",
+      "importlib-metadata": "8.7.1",
+      "iniconfig": "2.3.1",
+      "itsdangerous": "2.2.0",
+      "jaraco-classes": "3.4.0",
+      "jaraco-context": "6.1.2",
+      "jaraco-functools": "4.6.0",
+      "jinja2": "3.1.6",
+      "joserfc": "1.7.7",
+      "jsonref": "1.1.0",
+      "jsonschema": "4.26.0",
+      "jsonschema-path": "0.5.0",
+      "jsonschema-specifications": "2025.9.1",
+      "jwcrypto": "1.5.6",
+      "keyring": "25.7.0",
+      "mako": "1.4.3",
+      "markdown-it-py": "4.2.0",
+      "markupsafe": "3.0.4",
+      "mcp": "1.26.0",
+      "mdurl": "0.1.2",
+      "mmh3": "5.3.1",
+      "more-itertools": "11.2.1",
+      "multidict": "7.2.1",
+      "nest-asyncio": "1.6.0",
+      "openapi-pydantic": "0.6.0",
+      "opentelemetry-api": "1.38.0",
+      "opentelemetry-exporter-gcp-logging": "1.11.0a0",
+      "opentelemetry-exporter-gcp-monitoring": "1.15.0a0",
+      "opentelemetry-exporter-gcp-trace": "1.15.0",
+      "opentelemetry-exporter-otlp-proto-common": "1.38.0",
+      "opentelemetry-exporter-otlp-proto-http": "1.38.0",
+      "opentelemetry-proto": "1.38.0",
+      "opentelemetry-resourcedetector-gcp": "1.14.0",
+      "opentelemetry-sdk": "1.38.0",
+      "opentelemetry-semantic-conventions": "0.59b0",
+      "packaging": "26.3",
+      "parsimonious": "0.10.0",
+      "pathable": "0.6.0",
+      "platformdirs": "4.14.0",
+      "pluggy": "1.7.0",
+      "propcache": "0.5.4",
+      "proto-plus": "1.29.0",
+      "protobuf": "6.33.6",
+      "py": "1.11.0",
+      "py-ecc": "8.0.0",
+      "py-key-value-aio": "0.4.6",
+      "pyarrow": "26.0.0",
+      "pyasn1": "0.6.5",
+      "pyasn1-modules": "0.4.2",
+      "pycparser": "3.12",
+      "pycryptodome": "3.24.1",
+      "pydantic": "2.12.5",
+      "pydantic-core": "2.41.5",
+      "pydantic-settings": "2.16.2",
+      "pygments": "2.21.0",
+      "pyjwt": "2.15.1",
+      "pyparsing": "3.3.3",
+      "pyperclip": "1.11.0",
+      "pytest": "9.0.2",
+      "python-dateutil": "2.9.0.post0",
+      "python-dotenv": "1.2.2",
+      "python-multipart": "0.0.32",
+      "pyunormalize": "18.0.0",
+      "pyyaml": "6.0.3",
+      "referencing": "0.37.0",
+      "regex": "2026.9.29",
+      "requests": "2.32.5",
+      "rich": "15.0.0",
+      "rich-rst": "2.2.0",
+      "rlp": "5.0.0",
+      "rpds-py": "2026.9.1",
+      "sd-jwt": "0.10.4",
+      "six": "1.17.0",
+      "sniffio": "1.3.1",
+      "sqlalchemy": "2.1.6",
+      "sqlalchemy-spanner": "1.20.1",
+      "sqlparse": "0.6.0",
+      "sse-starlette": "3.6.0",
+      "starlette": "0.52.1",
+      "tenacity": "9.1.4",
+      "toolz": "1.2.0",
+      "types-requests": "2.33.0.20261030",
+      "typing-extensions": "4.16.0",
+      "typing-inspection": "0.4.4",
+      "tzdata": "2026.6",
+      "tzlocal": "5.4.5",
+      "uncalled-for": "0.4.1",
+      "uritemplate": "4.2.0",
+      "urllib3": "2.8.0",
+      "uvicorn": "0.54.0",
+      "watchdog": "6.0.0",
+      "watchfiles": "1.3.0",
+      "web3": "7.15.0",
+      "websockets": "15.0.1",
+      "werkzeug": "3.1.9",
+      "x402": "2.26.0",
+      "yarl": "1.25.1",
+      "zipp": "4.1.2"
+    },
+    "runtime_package_bytes_independently_retained": false,
+    "sha256": "d0c0662cdb2d05ce2f7462926e6daac8ad87c6edc21e7182004745bcc18dd161"
+  },
+  "schema_version": "ap2-native-shopper-provider-offline-analysis/3",
+  "source_tree_unchanged_parent_record": true,
+  "status": "retained_V3_native_shopper_observations_consistent",
+  "validated_read_members": {
+    "execution/cases/ap2-native-shopper-provider-v3-correct-human/credentials.agent-card.json": {
+      "bytes": 1149,
+      "sha256": "a3999605f4200fd72fa686ba12215a0d6d3f226a8ed0556ec93a07fd74a97d47"
+    },
+    "execution/cases/ap2-native-shopper-provider-v3-correct-human/credentials.stdout.log": {
+      "bytes": 2358,
+      "sha256": "c453284658cf85038d9121d44863138a40926c56e0591ef2312b88beea298913"
+    },
+    "execution/cases/ap2-native-shopper-provider-v3-correct-human/merchant.agent-card.json": {
+      "bytes": 809,
+      "sha256": "abae7e20491ede70d171abadea5260eaee04df83831f1a37131d311b370d9383"
+    },
+    "execution/cases/ap2-native-shopper-provider-v3-correct-human/merchant.stdout.log": {
+      "bytes": 2000,
+      "sha256": "b7240aa871635d57a3b96706e68a059eafb51dcabae1b9530818ffbf8387a171"
+    },
+    "execution/cases/ap2-native-shopper-provider-v3-correct-human/native-launch.json": {
+      "bytes": 1302,
+      "sha256": "d869f6ca62b439f3d36e7281cd1f1c63dc12552dddbd4041f85f970376fc50b3"
+    },
+    "execution/cases/ap2-native-shopper-provider-v3-correct-human/processor.agent-card.json": {
+      "bytes": 790,
+      "sha256": "cc42eddceab916e8fadb7ed0652866c440859d7c2f5cc58c210635b940badec3"
+    },
+    "execution/cases/ap2-native-shopper-provider-v3-correct-human/processor.stdout.log": {
+      "bytes": 2036,
+      "sha256": "1907342aedcf149528c22667a3e7a7b486338757397aebbe07aa062f19d286df"
+    },
+    "execution/cases/ap2-native-shopper-provider-v3-correct-human/public-human-facts.json": {
+      "bytes": 555,
+      "sha256": "dd874c3279a91d18d1103fe955bac22b60a8e61d1d5623a0860cb8f1a5e48d8f"
+    },
+    "execution/cases/ap2-native-shopper-provider-v3-correct-human/shopper.stdout.log": {
+      "bytes": 779,
+      "sha256": "604cd9c481a0fe7108fca15d676ae95e6648f9083cae233299dbd241fdc262ff"
+    },
+    "execution/portable-runtime.json": {
+      "bytes": 2846966,
+      "sha256": "d0c0662cdb2d05ce2f7462926e6daac8ad87c6edc21e7182004745bcc18dd161"
+    },
+    "execution/provider-drain.json": {
+      "bytes": 572,
+      "sha256": "14745300aa540dacf4b2ecfbe2d948b19d9ca136d323eb736e68935883fa427a"
+    },
+    "execution/provider/000.request.json": {
+      "bytes": 356,
+      "sha256": "8646045bca0a31708021fde3c24c1905be36a0b5f2f9c29cadf100bf3cbe5993"
+    },
+    "execution/provider/000.response.json": {
+      "bytes": 933,
+      "sha256": "8055635a2a8729335fc67a0a0d4bfee484f6b63fac77f01b5f81e266aa2e8175"
+    },
+    "execution/provider/ledger.jsonl": {
+      "bytes": 643,
+      "sha256": "612344e9d500b9bf382ebfbe888d4eed05029893baea342f4af27f22bda5ce8e"
+    },
+    "execution/result.json": {
+      "bytes": 3812,
+      "sha256": "b79b6e2c660e60ae06c18bcf59cb233d81cb5e95f187abbb37c326966626e7f3"
+    },
+    "plan/owned-source/scripts/ap2_native_shopper_provider_boundary_v2.py": {
+      "bytes": 9319,
+      "sha256": "95bd0ccb0513cce59cb3c94724658f1943806588283e989002626deb3545e52f"
+    },
+    "plan/owned-source/scripts/ap2_native_shopper_provider_worker_v1.py": {
+      "bytes": 18818,
+      "sha256": "f7c0e3d79582e9bfbc49123fe7fd16791c3651f9c58dab7b70a69658a548b765"
+    },
+    "plan/owned-source/scripts/run_ap2_native_shopper_provider_v1.py": {
+      "bytes": 19597,
+      "sha256": "8c99e95fc686da0d8b15ac1c930a50a39a06d0c0e48722f7e15c2495a4dea358"
+    },
+    "plan/owned-source/scripts/run_ap2_native_shopper_provider_v3.py": {
+      "bytes": 12883,
+      "sha256": "0cb1ea8965f8af8fc9520c1ae47353fa23b222f6a2aa80d53b158965fc26918e"
+    },
+    "plan/owned-source/scripts/run_ap2_original_native_repeat_v3.py": {
+      "bytes": 35459,
+      "sha256": "ef750dfa58a49e083ceb6ac84471372aa0945ddf7b96289c1020388180c3d1fb"
+    },
+    "plan/plan.json": {
+      "bytes": 36963,
+      "sha256": "7afe01100309f282bb9d8cd1ddd6d6795db39441f7714b55542200b3ab8d1f80"
+    }
+  },
+  "whole_task_grade": null,
+  "worker_result": null
+}
