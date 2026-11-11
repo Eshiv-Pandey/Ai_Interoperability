@@ -1,0 +1,101 @@
+{
+  "V1_binder_current_bytes": {
+    "bytes": 24821,
+    "sha256": "27c37938751dfb00f21a3a53043ea2f468814d264df71bb8024dd58cea5ac3af"
+  },
+  "V1_retained_archive_unchanged": {
+    "bytes": 1193591,
+    "sha256": "0b73d252058fe6d967a54e4cbe1646e1f08b0ac0d3711d82791b90dd445e6d0a"
+  },
+  "closed_findings": [
+    "The V1 marshal-reference-sharing false-negative is replaced by 17 exact code fields, recursively typed co_consts and derived co_lines/co_positions; deprecated co_lnotab is derived from exact co_linetable.",
+    "Constructed controls accept marshal memo/reference-sharing differences only when structural attributes agree, and refuse opcode/constants/filename/line-table and other code-field mutations.",
+    "The reviewer demonstrated a pre-stable float.hex signed-NaN collision on constructed code constants. Final IEEE bytes now preserve NaN sign/payload and signed zero for float and complex components; relevant controls pass.",
+    "SO_REUSEADDR precedes bind-only preflight; only EADDRINUSE receives bounded preflight retries. Errno and sanitized messages are retained; probes do not contact a foreign listener.",
+    "Linux listening socket inode ownership is checked against the exact native PID before card requests; foreign/missing ownership suppresses requests.",
+    "V2 uses a new binder/caller/runner identity and keeps the original public read helper. All five case facts, original source/model, 80-call cap, six-second spacing, byte bounds and post-response token stop are unchanged."
+  ],
+  "completed_at": "2026-11-11T09:04:28.520341+00:00",
+  "controls": {
+    "binder_controls": 32,
+    "independent_peer_confirmation": {
+      "agent": "/root/native_v11_analysis/v2_fingerprint_peer",
+      "binder_controls": 32,
+      "binder_sha256": "f5ecd810445c445b19cd6ce2cb99f714d47f137895b96a68b8c56c2d9cfc0787",
+      "passed": true,
+      "reported_seconds": 0.043,
+      "test_sha256": "e5b50878b8e9a8b1fc549b08221cf3ef2d2fa4f11a9ba7c86c0c3a31d7c7055a",
+      "timing_provenance": "Peer completed the already-started constructed suite before root's no-further-testing message arrived; no further tests ran."
+    },
+    "new_suite_execution_by_this_reviewer": false,
+    "root_execution_provenance": "Parent /root reports 23 runner and 32 structural binder controls passed on the bound stable hashes; root requested no further repetition.",
+    "runner_controls": 23,
+    "unique_completed_controls": 55
+  },
+  "frozen_V1_owned_bindings": {
+    "scripts/ap2_public_scripted_continuation_v1.py": {
+      "bytes": 14146,
+      "sha256": "1b7fb83f67dc6a1a86de70db9a7a5607c42fba2662c929da6d3a8eb18284f79e"
+    },
+    "scripts/run_ap2_original_native_provider_v1.py": {
+      "bytes": 32120,
+      "sha256": "284a0fc36b41b422e95f382fb3d6f80e806541eb5608bb7af1beddc1f55d04e3"
+    },
+    "src/interoperability/ap2_public_scripted_continuation_v1.py": {
+      "bytes": 17867,
+      "sha256": "aa8bf308fad6c9b112ed815cb2b393ac8c9fcbaf97ee71c1c4547ccc1b1342c0"
+    },
+    "src/interoperability/ap2_public_task_read_v1.py": {
+      "bytes": 3304,
+      "sha256": "feaa86eb5ec62d1627a0d7e0744bd8a626e3f597a7a2012e7f8eb0a80dbf0c46"
+    }
+  },
+  "frozen_V1_owned_sources_unchanged": true,
+  "limitations": [
+    "Completed constructed controls and source inspection do not predict a V2 original-native/provider/task result.",
+    "V1 remains five failed task attempts with zero business/public Task/receipt captures; only parent smoke generation and first-case native/card readiness were observed.",
+    "No run.sh provisioning, unchanged ADK shopper, bridge, human gold, untouched holdout, exact wire attribution, whole-task, full-study or scientific checkpoint qualification is granted.",
+    "The observed-token threshold is post-response stopping, not a hard token or cost ceiling."
+  ],
+  "original_app_sdk_model_actor_solver_evaluator_checker_imports_or_executions": 0,
+  "provider_requests_by_reviewer": 0,
+  "review_source": {
+    "bytes": 9893,
+    "sha256": "3aa1df764ee4d282a3848838b1cba6706564981c18a37e3a56d0f9831f34ac93"
+  },
+  "reviewed_V2_source_bytes_stable": true,
+  "reviewer": "/root/native_v11_analysis",
+  "schema_version": "ap2-original-native-provider-independent-V2-delta-review/1",
+  "scope": "Prospective V2 source and constructed-control delta review only; no V1 rerun, artifact mutation, regrading, Git or dispatch.",
+  "source_bindings": {
+    "scripts/ap2_public_scripted_continuation_v2.py": {
+      "bytes": 14220,
+      "sha256": "06a2bcf732cacc042180e6d5d89f64a54efd1d4fd9789621c906eae7cbdf6954"
+    },
+    "scripts/run_ap2_original_native_provider_v2.py": {
+      "bytes": 35530,
+      "sha256": "ef6da20b1b499da44454371a40fd42807d9e7fe046ae2cd370d9499e20e2a35e"
+    },
+    "src/interoperability/ap2_public_original_binding_v2.py": {
+      "bytes": 9131,
+      "sha256": "f5ecd810445c445b19cd6ce2cb99f714d47f137895b96a68b8c56c2d9cfc0787"
+    },
+    "src/interoperability/ap2_public_scripted_continuation_v2.py": {
+      "bytes": 17874,
+      "sha256": "afc3f0a010b83eb516d59c329811aaa257f8d8973205c4428b08bb6770fd9048"
+    },
+    "src/interoperability/ap2_public_task_read_v1.py": {
+      "bytes": 3304,
+      "sha256": "feaa86eb5ec62d1627a0d7e0744bd8a626e3f597a7a2012e7f8eb0a80dbf0c46"
+    },
+    "tests/test_ap2_original_native_provider_v2.py": {
+      "bytes": 18060,
+      "sha256": "69b24263663d359a94e62d6c8bbf015bb37407cf1a1fd8a0b8401fd4bc5f4623"
+    },
+    "tests/test_ap2_public_original_binding_v2.py": {
+      "bytes": 8929,
+      "sha256": "e5b50878b8e9a8b1fc549b08221cf3ef2d2fa4f11a9ba7c86c0c3a31d7c7055a"
+    }
+  },
+  "status": "no_remaining_reviewed_delta_blocker_identified"
+}

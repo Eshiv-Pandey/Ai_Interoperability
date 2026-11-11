@@ -1,0 +1,65 @@
+name: AP2 original native entries and bounded Gemini task development v2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ap2-original-native-provider-v2
+  cancel-in-progress: false
+
+jobs:
+  original-native-provider:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.1'
+      - name: Freeze original source, five public task cases and provider bounds
+        shell: bash
+        run: |
+          python -I -S -B scripts/run_ap2_original_native_provider_v2.py prepare --output "$RUNNER_TEMP/ap2-native-provider-v2/plan"
+          python -m venv "$RUNNER_TEMP/ap2-native-provider-v2-environment"
+      - name: Install one pinned runtime before application or provider execution
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/ap2-native-provider-v2-environment/bin/python" -m pip install --report "$RUNNER_TEMP/ap2-native-provider-v2/pip-install-report.json" -r "$RUNNER_TEMP/ap2-native-provider-v2/plan/requirements.txt"
+          "$RUNNER_TEMP/ap2-native-provider-v2-environment/bin/python" -m pip check > "$RUNNER_TEMP/ap2-native-provider-v2/pip-check.txt"
+      - name: Verify inherited bounds, structural source binding and port ownership
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/ap2-native-provider-v2-environment/bin/python" -B -m unittest discover -s tests -p test_ap2_original_native_provider_v1.py -v
+          "$RUNNER_TEMP/ap2-native-provider-v2-environment/bin/python" -B -m unittest discover -s tests -p test_ap2_original_native_provider_v2.py -v
+          "$RUNNER_TEMP/ap2-native-provider-v2-environment/bin/python" -B -m unittest discover -s tests -p test_ap2_public_task_read_v1.py -v
+          "$RUNNER_TEMP/ap2-native-provider-v2-environment/bin/python" -B -m unittest discover -s tests -p test_ap2_public_scripted_continuation_v1.py -v
+          "$RUNNER_TEMP/ap2-native-provider-v2-environment/bin/python" -B -m unittest discover -s tests -p test_ap2_public_original_binding_v2.py -v
+      - name: Execute one bounded access check and the immutable successor allocation
+        shell: bash
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: |
+          python -I -S -B scripts/run_ap2_original_native_provider_v2.py execute \
+            --plan "$RUNNER_TEMP/ap2-native-provider-v2/plan" \
+            --output "$RUNNER_TEMP/ap2-native-provider-v2/execution" \
+            --python "$RUNNER_TEMP/ap2-native-provider-v2-environment/bin/python" \
+            --site-packages "$RUNNER_TEMP/ap2-native-provider-v2-environment/lib/python3.13/site-packages" \
+            --pip-report "$RUNNER_TEMP/ap2-native-provider-v2/pip-install-report.json" \
+            --provider-mode live
+      - name: Retain actual source, public outcomes, provider ledger and all failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ap2-original-native-provider-development-v2
+          path: |
+            ${{ runner.temp }}/ap2-native-provider-v2/
+            !${{ runner.temp }}/ap2-native-provider-v2/**/*.pem
+            !${{ runner.temp }}/ap2-native-provider-v2/**/*.key
+            !${{ runner.temp }}/ap2-native-provider-v2/**/.env
+          if-no-files-found: error
+          retention-days: 30
