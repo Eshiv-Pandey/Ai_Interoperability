@@ -1,0 +1,365 @@
+CredentialsProvider listening on http://localhost:8002
+
+
+
+
+---------- New Agent Request Received---------
+GET http://127.0.0.1:8002/a2a/credentials_provider/.well-known/agent-card.json
+
+
+[Request Body]
+<empty>
+
+
+[Response Body]
+{"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["text/plain"],"defaultOutputModes":["application/json"],"description":"An agent that holds a user's payment credentials.","name":"CredentialsProvider","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Initiates a payment with the correct payment processor.","id":"initiate_payment","name":"Initiate Payment","tags":["payments"]},{"description":"Provides a list of eligible payment methods for a particular purchase.","id":"get_eligible_payment_methods","name":"Get Eligible Payment Methods","tags":["eligible","payment","methods"]},{"description":"Fetches the shipping address from a user's wallet.","id":"get_account_shipping_address","name":"Get Shipping Address","tags":["account","shipping"]}],"url":"http://localhost:8002/a2a/credentials_provider","version":"1.0.0"}
+merchant_payment_processor_agent listening on http://localhost:8003
+MerchantAgent listening on http://localhost:8001
+
+
+
+
+---------- New Agent Request Received---------
+GET http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json
+
+
+[Request Body]
+<empty>
+
+
+[Response Body]
+{"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["json"],"defaultOutputModes":["json"],"description":"A sales assistant agent for a merchant.","name":"MerchantAgent","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Searches the merchant's catalog based on a catalog search query & returns a cart containing the top results.","id":"search_catalog","name":"Search Catalog","tags":["merchant","search","catalog"]}],"url":"http://localhost:8001/a2a/merchant_agent","version":"1.0.0"}
+
+
+
+
+---------- New Agent Request Received---------
+GET http://127.0.0.1:8003/a2a/merchant_payment_processor_agent/.well-known/agent-card.json
+
+
+[Request Body]
+<empty>
+
+
+[Response Body]
+{"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["text/plain"],"defaultOutputModes":["application/json"],"description":"An agent that processes card payments on behalf of a merchant.","name":"merchant_payment_processor_agent","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Processes card payments.","id":"card-processor","name":"Card Processor","tags":["payment","card"]}],"url":"http://localhost:8003/a2a/merchant_payment_processor_agent","version":"1.0.0"}
+
+
+
+
+---------- New Agent Request Received---------
+GET http://localhost:8001/a2a/merchant_agent/.well-known/agent-card.json
+
+
+[Request Body]
+<empty>
+
+
+[Response Body]
+{"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["json"],"defaultOutputModes":["json"],"description":"A sales assistant agent for a merchant.","name":"MerchantAgent","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Searches the merchant's catalog based on a catalog search query & returns a cart containing the top results.","id":"search_catalog","name":"Search Catalog","tags":["merchant","search","catalog"]}],"url":"http://localhost:8001/a2a/merchant_agent","version":"1.0.0"}
+
+
+
+
+---------- New Agent Request Received---------
+POST http://localhost:8001/a2a/merchant_agent
+
+
+[Request Body]
+{'id': '87ade280-b016-41cf-a94a-68056c03beba', 'jsonrpc': '2.0', 'method': 'message/send', 'params': {'configuration': {'acceptedOutputModes': [], 'blocking': True}, 'message': {'kind': 'message', 'messageId': 'fda49f326b84464f9a582f551a81c63f', 'parts': [{'kind': 'text', 'text': "Find products that match the user's request."}, {'data': {'catalog_search': 'unbranded walking shoes'}, 'kind': 'data'}, {'data': {'risk_data': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data'}, 'kind': 'data'}, {'data': {'shopping_agent_id': 'trusted_shopping_agent'}, 'kind': 'data'}], 'role': 'agent'}}}
+
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+
+
+[Request Instructions]
+["Find products that match the user's request."]
+
+
+[Data Part: catalog_search] 
+unbranded walking shoes
+
+
+[Data Part: risk_data] 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data
+
+
+[Data Part: shopping_agent_id] 
+trusted_shopping_agent
+
+
+[Response Body]
+{"id":"87ade280-b016-41cf-a94a-68056c03beba","jsonrpc":"2.0","result":{"artifacts":[{"artifactId":"f4cb9e9f-c457-4ee1-b644-abfc245b90ea","parts":[{"data":{"ap2.cart":{"cart_id":"cart_1","item_label":"Lightweight breathable mesh walking shoes","amount":55.99,"currency":"USD"}},"kind":"data"}]},{"artifactId":"82f88550-a8f3-4d6a-b203-7d7ab1b90716","parts":[{"data":{"ap2.cart":{"cart_id":"cart_2","item_label":"Ergonomic arch support walking sneakers","amount":72.5,"currency":"USD"}},"kind":"data"}]},{"artifactId":"08aebdba-15b4-4c1d-b9f3-246816ce813b","parts":[{"data":{"ap2.cart":{"cart_id":"cart_3","item_label":"Water-resistant daily comfort walking shoes","amount":48.0,"currency":"USD"}},"kind":"data"}]},{"artifactId":"cd5e47ea-ee86-4906-bbc1-65ef1d1e2665","parts":[{"data":{"risk_data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"},"kind":"data"}]}],"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","history":[{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"fda49f326b84464f9a582f551a81c63f","parts":[{"kind":"text","text":"Find products that match the user's request."},{"data":{"catalog_search":"unbranded walking shoes"},"kind":"data"},{"data":{"risk_data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"},"kind":"data"},{"data":{"shopping_agent_id":"trusted_shopping_agent"},"kind":"data"}],"role":"agent","taskId":"b9113728-16ea-42f4-8bd9-620eddee67d5"}],"id":"b9113728-16ea-42f4-8bd9-620eddee67d5","kind":"task","status":{"state":"completed","timestamp":"2026-11-11T09:35:34.742749+00:00"}}}
+
+
+
+
+---------- New Agent Request Received---------
+GET http://localhost:8002/a2a/credentials_provider/.well-known/agent-card.json
+
+
+[Request Body]
+<empty>
+
+
+[Response Body]
+{"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["text/plain"],"defaultOutputModes":["application/json"],"description":"An agent that holds a user's payment credentials.","name":"CredentialsProvider","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Initiates a payment with the correct payment processor.","id":"initiate_payment","name":"Initiate Payment","tags":["payments"]},{"description":"Provides a list of eligible payment methods for a particular purchase.","id":"get_eligible_payment_methods","name":"Get Eligible Payment Methods","tags":["eligible","payment","methods"]},{"description":"Fetches the shipping address from a user's wallet.","id":"get_account_shipping_address","name":"Get Shipping Address","tags":["account","shipping"]}],"url":"http://localhost:8002/a2a/credentials_provider","version":"1.0.0"}
+
+
+
+
+---------- New Agent Request Received---------
+POST http://localhost:8002/a2a/credentials_provider
+
+
+[Request Body]
+{'id': '9e627a53-0ade-4677-aab4-2f726a6a6632', 'jsonrpc': '2.0', 'method': 'message/send', 'params': {'configuration': {'acceptedOutputModes': [], 'blocking': True}, 'message': {'contextId': '80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef', 'kind': 'message', 'messageId': 'a6ba06e035b0411fbed1999638c59dc0', 'parts': [{'kind': 'text', 'text': "Get the user's shipping address."}, {'data': {'user_email': 'bugsbunny@gmail.com'}, 'kind': 'data'}], 'role': 'agent'}}}
+
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+
+
+[Request Instructions]
+["Get the user's shipping address."]
+
+
+[Data Part: user_email] 
+bugsbunny@gmail.com
+
+
+[Response Body]
+{"id":"9e627a53-0ade-4677-aab4-2f726a6a6632","jsonrpc":"2.0","result":{"artifacts":[{"artifactId":"9f20224d-18ec-4a32-a46b-743ef5210499","parts":[{"data":{"contact_picker.ContactAddress":{"recipient":"Bugs Bunny","organization":"Sample Organization","address_line":["123 Main St"],"city":"Sample City","region":"ST","postal_code":"00000","country":"US","phone_number":"+1-000-000-0000"}},"kind":"data"}]}],"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","history":[{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"a6ba06e035b0411fbed1999638c59dc0","parts":[{"kind":"text","text":"Get the user's shipping address."},{"data":{"user_email":"bugsbunny@gmail.com"},"kind":"data"}],"role":"agent","taskId":"3e3fde2e-6820-41d0-9d9b-98bead321ffc"}],"id":"3e3fde2e-6820-41d0-9d9b-98bead321ffc","kind":"task","status":{"state":"completed","timestamp":"2026-11-11T09:35:40.517607+00:00"}}}
+
+
+
+
+---------- New Agent Request Received---------
+POST http://localhost:8002/a2a/credentials_provider
+
+
+[Request Body]
+{'id': 'f9d040cb-72c9-4513-83ba-2c57fa8d4a14', 'jsonrpc': '2.0', 'method': 'message/send', 'params': {'configuration': {'acceptedOutputModes': [], 'blocking': True}, 'message': {'contextId': '80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef', 'kind': 'message', 'messageId': '2ae6c4a452ee4878ac3b5f8ab79157e6', 'parts': [{'kind': 'text', 'text': "Get a filtered list of the user's payment methods."}, {'data': {'user_email': 'bugsbunny@gmail.com'}, 'kind': 'data'}, {'data': {'payment_request.PaymentMethodData': {'supported_methods': 'CARD', 'data': {'network': ['mastercard', 'amex']}}}, 'kind': 'data'}], 'role': 'agent'}}}
+
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+
+
+[Request Instructions]
+["Get a filtered list of the user's payment methods."]
+
+
+[Data Part: user_email] 
+bugsbunny@gmail.com
+
+
+[Data Part: payment_request.PaymentMethodData] 
+{'supported_methods': 'CARD', 'data': {'network': ['mastercard', 'amex']}}
+
+
+[Response Body]
+{"id":"f9d040cb-72c9-4513-83ba-2c57fa8d4a14","jsonrpc":"2.0","result":{"artifacts":[{"artifactId":"9b9959be-4826-4f8d-869f-beb3170b3e7d","parts":[{"data":{"payment_method_aliases":["American Express ending in 4444","American Express ending in 8888"]},"kind":"data"}]}],"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","history":[{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"2ae6c4a452ee4878ac3b5f8ab79157e6","parts":[{"kind":"text","text":"Get a filtered list of the user's payment methods."},{"data":{"user_email":"bugsbunny@gmail.com"},"kind":"data"},{"data":{"payment_request.PaymentMethodData":{"supported_methods":"CARD","data":{"network":["mastercard","amex"]}}},"kind":"data"}],"role":"agent","taskId":"5bb3f7c7-b8f6-4757-9f64-1460a5f85272"}],"id":"5bb3f7c7-b8f6-4757-9f64-1460a5f85272","kind":"task","status":{"state":"completed","timestamp":"2026-11-11T09:35:46.548971+00:00"}}}
+
+
+
+
+---------- New Agent Request Received---------
+POST http://localhost:8002/a2a/credentials_provider
+
+
+[Request Body]
+{'id': '0a226553-15fa-4ea0-82ab-a30ca3520cbe', 'jsonrpc': '2.0', 'method': 'message/send', 'params': {'configuration': {'acceptedOutputModes': [], 'blocking': True}, 'message': {'contextId': '80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef', 'kind': 'message', 'messageId': '9565cce574f94b4981d53f627e39a475', 'parts': [{'kind': 'text', 'text': "Get a payment credential token for the user's payment method."}, {'data': {'payment_method_alias': 'American Express ending in 4444'}, 'kind': 'data'}, {'data': {'user_email': 'bugsbunny@gmail.com'}, 'kind': 'data'}], 'role': 'agent'}}}
+
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+
+
+[Request Instructions]
+["Get a payment credential token for the user's payment method."]
+
+
+[Data Part: payment_method_alias] 
+American Express ending in 4444
+
+
+[Data Part: user_email] 
+bugsbunny@gmail.com
+
+
+[Response Body]
+{"id":"0a226553-15fa-4ea0-82ab-a30ca3520cbe","jsonrpc":"2.0","result":{"artifacts":[{"artifactId":"e2f237c5-c621-4f1a-b117-6044ead52949","parts":[{"data":{"token":"fake_payment_credential_token_0"},"kind":"data"}]}],"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","history":[{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"9565cce574f94b4981d53f627e39a475","parts":[{"kind":"text","text":"Get a payment credential token for the user's payment method."},{"data":{"payment_method_alias":"American Express ending in 4444"},"kind":"data"},{"data":{"user_email":"bugsbunny@gmail.com"},"kind":"data"}],"role":"agent","taskId":"5a12bdf1-69f4-44f1-8bbb-16a18ac13854"}],"id":"5a12bdf1-69f4-44f1-8bbb-16a18ac13854","kind":"task","status":{"state":"completed","timestamp":"2026-11-11T09:35:52.534221+00:00"}}}
+
+
+
+
+---------- New Agent Request Received---------
+POST http://localhost:8001/a2a/merchant_agent
+
+
+[Request Body]
+{'id': '0545ad9d-7817-4041-906f-989fb1b43599', 'jsonrpc': '2.0', 'method': 'message/send', 'params': {'configuration': {'acceptedOutputModes': [], 'blocking': True}, 'message': {'contextId': '80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef', 'kind': 'message', 'messageId': '9b85736adf8d4ac192f96b3cbc4cbd6d', 'parts': [{'kind': 'text', 'text': 'Create a checkout for the selected cart.'}, {'data': {'cart_id': 'cart_1'}, 'kind': 'data'}, {'data': {'shopping_agent_id': 'trusted_shopping_agent'}, 'kind': 'data'}], 'role': 'agent'}}}
+
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+
+
+[Request Instructions]
+['Create a checkout for the selected cart.']
+
+
+[Data Part: cart_id] 
+cart_1
+
+
+[Data Part: shopping_agent_id] 
+trusted_shopping_agent
+
+
+[Response Body]
+{"id":"0545ad9d-7817-4041-906f-989fb1b43599","jsonrpc":"2.0","result":{"artifacts":[{"artifactId":"9b4506ba-2b6d-4afa-be3f-585aeb1e3066","parts":[{"data":{"ap2.checkout":{"cart_id":"cart_1","checkout_jwt":"eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im1lcmNoYW50LWtleS0xIn0.eyJpZCI6ImNhcnRfMSIsIm1lcmNoYW50Ijp7ImlkIjoibWVyY2hhbnRfMSIsIm5hbWUiOiJHZW5lcmljIE1lcmNoYW50Iiwid2Vic2l0ZSI6Imh0dHBzOi8vZGVtby1tZXJjaGFudC5leGFtcGxlIn0sImxpbmVfaXRlbXMiOlt7ImlkIjoibGlfYTYwZDUyMzljMmY4NDMxZjk4NThlN2M0YmQ1NjRjMzIiLCJpdGVtIjp7ImlkIjoiY2FydF8xIiwidGl0bGUiOiJMaWdodHdlaWdodCBicmVhdGhhYmxlIG1lc2ggd2Fsa2luZyBzaG9lcyIsInByaWNlIjo1NTk5fSwicXVhbnRpdHkiOjEsInRvdGFscyI6W3sidHlwZSI6InN1YnRvdGFsIiwiYW1vdW50Ijo1NTk5fSx7InR5cGUiOiJ0b3RhbCIsImFtb3VudCI6NTU5OX1dfV0sInN0YXR1cyI6ImluY29tcGxldGUiLCJjdXJyZW5jeSI6IlVTRCIsInRvdGFscyI6W3sidHlwZSI6InN1YnRvdGFsIiwiYW1vdW50Ijo1NTk5fSx7InR5cGUiOiJ0b3RhbCIsImFtb3VudCI6NTU5OX1dLCJsaW5rcyI6W3sidHlwZSI6InByaXZhY3lfcG9saWN5IiwidXJsIjoiaHR0cHM6Ly9kZW1vLW1lcmNoYW50LmV4YW1wbGUvcHJpdmFjeSJ9XSwiaWF0IjoxNzk0Mzg5NzU4LCJleHAiOjE3OTQzOTMzNTh9.R0FGYDPpP6DoxxCw2Isv7eCWi1j1G2AJv0_X_kKPJyOdT-UWU36soL_PVecfBdK-7QtSwqZ5ocwOauPDQ_YUDQ","checkout_hash":"a5LdF7z9UmicXWPW98E78Bg661bDx80CaC7fjQArE4w","item_label":"Lightweight breathable mesh walking shoes","amount":55.99,"amount_cents":5599,"currency":"USD"}},"kind":"data"},{"data":{"risk_data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"},"kind":"data"}]}],"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","history":[{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"9b85736adf8d4ac192f96b3cbc4cbd6d","parts":[{"kind":"text","text":"Create a checkout for the selected cart."},{"data":{"cart_id":"cart_1"},"kind":"data"},{"data":{"shopping_agent_id":"trusted_shopping_agent"},"kind":"data"}],"role":"agent","taskId":"e038a9b1-56b0-44a0-9cde-d47d5601bf37"}],"id":"e038a9b1-56b0-44a0-9cde-d47d5601bf37","kind":"task","status":{"state":"completed","timestamp":"2026-11-11T09:35:58.584078+00:00"}}}
+
+
+
+
+---------- New Agent Request Received---------
+POST http://localhost:8002/a2a/credentials_provider
+
+
+[Request Body]
+{'id': '4cca53ea-f234-47c9-b4a3-18e9dea41ae4', 'jsonrpc': '2.0', 'method': 'message/send', 'params': {'configuration': {'acceptedOutputModes': [], 'blocking': True}, 'message': {'contextId': '80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef', 'kind': 'message', 'messageId': '14b134074ec84320931a952cdb11ac8c', 'parts': [{'kind': 'text', 'text': 'This is the signed payment mandate'}, {'data': {'ap2.mandates.PaymentMandateSdJwt': 'eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIldodF9kQnYzZ0tWLXJjR3loTVFERGxGTWhmcGVSU2pzLUNlTnctcDhwU3cifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ._SCa8rMdgabBPLFZGG8W26-E3tP3oEZBOuxXuJxwV7hEmMyUbK72EPgnV7d7CvR0DLnO99uHTDL7HjuUe3eBbQ~WyJJd0ZhdnVYTDJpZTZzNzhHbmotS3BnIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiYTVMZEY3ejlVbWljWFdQVzk4RTc4Qmc2NjFiRHg4MENhQzdmalFBckU0dyIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDU1OTksICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0Mzg5NzU4LCAiZXhwIjogMTc5NDM5MzM1OH1d~'}, 'kind': 'data'}, {'data': {'risk_data': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data'}, 'kind': 'data'}], 'role': 'agent'}}}
+
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+
+
+[Request Instructions]
+['This is the signed payment mandate']
+
+
+[A PaymentMandate SD-JWT was in the request Data]
+eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0x...
+
+
+[Data Part: risk_data] 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data
+
+
+[Response Body]
+{"id":"4cca53ea-f234-47c9-b4a3-18e9dea41ae4","jsonrpc":"2.0","result":{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","history":[{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"14b134074ec84320931a952cdb11ac8c","parts":[{"kind":"text","text":"This is the signed payment mandate"},{"data":{"ap2.mandates.PaymentMandateSdJwt":"eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIldodF9kQnYzZ0tWLXJjR3loTVFERGxGTWhmcGVSU2pzLUNlTnctcDhwU3cifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ._SCa8rMdgabBPLFZGG8W26-E3tP3oEZBOuxXuJxwV7hEmMyUbK72EPgnV7d7CvR0DLnO99uHTDL7HjuUe3eBbQ~WyJJd0ZhdnVYTDJpZTZzNzhHbmotS3BnIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiYTVMZEY3ejlVbWljWFdQVzk4RTc4Qmc2NjFiRHg4MENhQzdmalFBckU0dyIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDU1OTksICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0Mzg5NzU4LCAiZXhwIjogMTc5NDM5MzM1OH1d~"},"kind":"data"},{"data":{"risk_data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"},"kind":"data"}],"role":"agent","taskId":"73a5df1a-1996-42db-a771-7be2b5cad2e7"}],"id":"73a5df1a-1996-42db-a771-7be2b5cad2e7","kind":"task","status":{"state":"completed","timestamp":"2026-11-11T09:36:04.361059+00:00"}}}
+
+
+
+
+---------- New Agent Request Received---------
+POST http://localhost:8001/a2a/merchant_agent
+
+
+[Request Body]
+{'id': 'ba2dd250-82a6-4c1c-be1b-a9d18a7adeac', 'jsonrpc': '2.0', 'method': 'message/send', 'params': {'configuration': {'acceptedOutputModes': [], 'blocking': True}, 'message': {'contextId': '80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef', 'kind': 'message', 'messageId': '3a53692ff6f849eeb927b9e4bcf78e2a', 'parts': [{'kind': 'text', 'text': 'Initiate a payment'}, {'data': {'ap2.mandates.PaymentMandateSdJwt': 'eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIldodF9kQnYzZ0tWLXJjR3loTVFERGxGTWhmcGVSU2pzLUNlTnctcDhwU3cifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ._SCa8rMdgabBPLFZGG8W26-E3tP3oEZBOuxXuJxwV7hEmMyUbK72EPgnV7d7CvR0DLnO99uHTDL7HjuUe3eBbQ~WyJJd0ZhdnVYTDJpZTZzNzhHbmotS3BnIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiYTVMZEY3ejlVbWljWFdQVzk4RTc4Qmc2NjFiRHg4MENhQzdmalFBckU0dyIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDU1OTksICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0Mzg5NzU4LCAiZXhwIjogMTc5NDM5MzM1OH1d~'}, 'kind': 'data'}, {'data': {'risk_data': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data'}, 'kind': 'data'}, {'data': {'shopping_agent_id': 'trusted_shopping_agent'}, 'kind': 'data'}, {'data': {'ap2.mandates.CheckoutMandateSdJwt': 'eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogImNBTnpHSFA4c0xHTjlxZm9jVzAxbGJwRVo2UUotU3E0ZGhPVVVobDc0QW8ifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.JLk2_YH8gsVX0boyor7Ebsy8cNNfyMnEgQBD1cfLOmfGSWja52Ylh4laLxmDP8hybbnLsFq7wFulI0uV0nlEeg~WyJqR1lMMW5ZaFV2X2lzbjkyUDZQa2dRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZZVFl3WkRVeU16bGpNbVk0TkRNeFpqazROVGhsTjJNMFltUTFOalJqTXpJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpNYVdkb2RIZGxhV2RvZENCaWNtVmhkR2hoWW14bElHMWxjMmdnZDJGc2EybHVaeUJ6YUc5bGN5SXNJbkJ5YVdObElqbzFOVGs1ZlN3aWNYVmhiblJwZEhraU9qRXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkZlYwc0luTjBZWFIxY3lJNkltbHVZMjl0Y0d4bGRHVWlMQ0pqZFhKeVpXNWplU0k2SWxWVFJDSXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkTENKc2FXNXJjeUk2VzNzaWRIbHdaU0k2SW5CeWFYWmhZM2xmY0c5c2FXTjVJaXdpZFhKc0lqb2lhSFIwY0hNNkx5OWtaVzF2TFcxbGNtTm9ZVzUwTG1WNFlXMXdiR1V2Y0hKcGRtRmplU0o5WFN3aWFXRjBJam94TnprME16ZzVOelU0TENKbGVIQWlPakUzT1RRek9UTXpOVGg5LlIwRkdZRFBwUDZEb3h4Q3cySXN2N2VDV2kxajFHMkFKdjBfWF9rS1BKeU9kVC1VV1UzNnNvTF9QVmVjZkJkSy03UXRTd3FaNW9jd09hdVBEUV9ZVURRIl0~WyJaZmdxY3d0SWFDY1BFODVYZU9ELTNBIiwgeyJfc2QiOiBbIlc5NXA1clc2TWRic2Y4OWUtVHBwSUcyUHZ1MW9lY2N5bElDUE5ncGR6SkUiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJhNUxkRjd6OVVtaWNYV1BXOThFNzhCZzY2MWJEeDgwQ2FDN2ZqUUFyRTR3IiwgImlhdCI6IDE3OTQzODk3NTgsICJleHAiOiAxNzk0MzkzMzU4fV0~'}, 'kind': 'data'}], 'role': 'agent'}}}
+
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+
+
+[Request Instructions]
+['Initiate a payment']
+
+
+[A PaymentMandate SD-JWT was in the request Data]
+eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0x...
+
+
+[A CheckoutMandate SD-JWT was in the request Data]
+eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0x...
+
+
+[Data Part: risk_data] 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data
+
+
+[Data Part: shopping_agent_id] 
+trusted_shopping_agent
+
+
+
+
+---------- New Agent Request Received---------
+GET http://localhost:8003/a2a/merchant_payment_processor_agent/.well-known/agent-card.json
+
+
+[Request Body]
+<empty>
+
+
+[Response Body]
+{"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["text/plain"],"defaultOutputModes":["application/json"],"description":"An agent that processes card payments on behalf of a merchant.","name":"merchant_payment_processor_agent","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Processes card payments.","id":"card-processor","name":"Card Processor","tags":["payment","card"]}],"url":"http://localhost:8003/a2a/merchant_payment_processor_agent","version":"1.0.0"}
+
+
+
+
+---------- New Agent Request Received---------
+POST http://localhost:8003/a2a/merchant_payment_processor_agent
+
+
+[Request Body]
+{'id': '026976d0-a1d1-4052-9bb0-780a58062dba', 'jsonrpc': '2.0', 'method': 'message/send', 'params': {'configuration': {'acceptedOutputModes': [], 'blocking': True}, 'message': {'contextId': '80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef', 'kind': 'message', 'messageId': 'f10d2a57a8ef47559687c1b465d9344d', 'parts': [{'kind': 'text', 'text': 'initiate_payment'}, {'data': {'ap2.mandates.PaymentMandateSdJwt': 'eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIldodF9kQnYzZ0tWLXJjR3loTVFERGxGTWhmcGVSU2pzLUNlTnctcDhwU3cifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ._SCa8rMdgabBPLFZGG8W26-E3tP3oEZBOuxXuJxwV7hEmMyUbK72EPgnV7d7CvR0DLnO99uHTDL7HjuUe3eBbQ~WyJJd0ZhdnVYTDJpZTZzNzhHbmotS3BnIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiYTVMZEY3ejlVbWljWFdQVzk4RTc4Qmc2NjFiRHg4MENhQzdmalFBckU0dyIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDU1OTksICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0Mzg5NzU4LCAiZXhwIjogMTc5NDM5MzM1OH1d~'}, 'kind': 'data'}, {'data': {'risk_data': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data'}, 'kind': 'data'}, {'data': {'ap2.mandates.CheckoutMandateSdJwt': 'eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogImNBTnpHSFA4c0xHTjlxZm9jVzAxbGJwRVo2UUotU3E0ZGhPVVVobDc0QW8ifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.JLk2_YH8gsVX0boyor7Ebsy8cNNfyMnEgQBD1cfLOmfGSWja52Ylh4laLxmDP8hybbnLsFq7wFulI0uV0nlEeg~WyJqR1lMMW5ZaFV2X2lzbjkyUDZQa2dRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZZVFl3WkRVeU16bGpNbVk0TkRNeFpqazROVGhsTjJNMFltUTFOalJqTXpJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpNYVdkb2RIZGxhV2RvZENCaWNtVmhkR2hoWW14bElHMWxjMmdnZDJGc2EybHVaeUJ6YUc5bGN5SXNJbkJ5YVdObElqbzFOVGs1ZlN3aWNYVmhiblJwZEhraU9qRXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkZlYwc0luTjBZWFIxY3lJNkltbHVZMjl0Y0d4bGRHVWlMQ0pqZFhKeVpXNWplU0k2SWxWVFJDSXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkTENKc2FXNXJjeUk2VzNzaWRIbHdaU0k2SW5CeWFYWmhZM2xmY0c5c2FXTjVJaXdpZFhKc0lqb2lhSFIwY0hNNkx5OWtaVzF2TFcxbGNtTm9ZVzUwTG1WNFlXMXdiR1V2Y0hKcGRtRmplU0o5WFN3aWFXRjBJam94TnprME16ZzVOelU0TENKbGVIQWlPakUzT1RRek9UTXpOVGg5LlIwRkdZRFBwUDZEb3h4Q3cySXN2N2VDV2kxajFHMkFKdjBfWF9rS1BKeU9kVC1VV1UzNnNvTF9QVmVjZkJkSy03UXRTd3FaNW9jd09hdVBEUV9ZVURRIl0~WyJaZmdxY3d0SWFDY1BFODVYZU9ELTNBIiwgeyJfc2QiOiBbIlc5NXA1clc2TWRic2Y4OWUtVHBwSUcyUHZ1MW9lY2N5bElDUE5ncGR6SkUiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJhNUxkRjd6OVVtaWNYV1BXOThFNzhCZzY2MWJEeDgwQ2FDN2ZqUUFyRTR3IiwgImlhdCI6IDE3OTQzODk3NTgsICJleHAiOiAxNzk0MzkzMzU4fV0~'}, 'kind': 'data'}], 'role': 'agent'}}}
+
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+
+
+[Request Instructions]
+['initiate_payment']
+
+
+[A PaymentMandate SD-JWT was in the request Data]
+eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0x...
+
+
+[A CheckoutMandate SD-JWT was in the request Data]
+eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0x...
+
+
+[Data Part: risk_data] 
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data
+
+
+[Response Body]
+{"id":"026976d0-a1d1-4052-9bb0-780a58062dba","jsonrpc":"2.0","result":{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","history":[{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"f10d2a57a8ef47559687c1b465d9344d","parts":[{"kind":"text","text":"initiate_payment"},{"data":{"ap2.mandates.PaymentMandateSdJwt":"eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIldodF9kQnYzZ0tWLXJjR3loTVFERGxGTWhmcGVSU2pzLUNlTnctcDhwU3cifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ._SCa8rMdgabBPLFZGG8W26-E3tP3oEZBOuxXuJxwV7hEmMyUbK72EPgnV7d7CvR0DLnO99uHTDL7HjuUe3eBbQ~WyJJd0ZhdnVYTDJpZTZzNzhHbmotS3BnIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiYTVMZEY3ejlVbWljWFdQVzk4RTc4Qmc2NjFiRHg4MENhQzdmalFBckU0dyIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDU1OTksICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0Mzg5NzU4LCAiZXhwIjogMTc5NDM5MzM1OH1d~"},"kind":"data"},{"data":{"risk_data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"},"kind":"data"},{"data":{"ap2.mandates.CheckoutMandateSdJwt":"eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogImNBTnpHSFA4c0xHTjlxZm9jVzAxbGJwRVo2UUotU3E0ZGhPVVVobDc0QW8ifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.JLk2_YH8gsVX0boyor7Ebsy8cNNfyMnEgQBD1cfLOmfGSWja52Ylh4laLxmDP8hybbnLsFq7wFulI0uV0nlEeg~WyJqR1lMMW5ZaFV2X2lzbjkyUDZQa2dRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZZVFl3WkRVeU16bGpNbVk0TkRNeFpqazROVGhsTjJNMFltUTFOalJqTXpJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpNYVdkb2RIZGxhV2RvZENCaWNtVmhkR2hoWW14bElHMWxjMmdnZDJGc2EybHVaeUJ6YUc5bGN5SXNJbkJ5YVdObElqbzFOVGs1ZlN3aWNYVmhiblJwZEhraU9qRXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkZlYwc0luTjBZWFIxY3lJNkltbHVZMjl0Y0d4bGRHVWlMQ0pqZFhKeVpXNWplU0k2SWxWVFJDSXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkTENKc2FXNXJjeUk2VzNzaWRIbHdaU0k2SW5CeWFYWmhZM2xmY0c5c2FXTjVJaXdpZFhKc0lqb2lhSFIwY0hNNkx5OWtaVzF2TFcxbGNtTm9ZVzUwTG1WNFlXMXdiR1V2Y0hKcGRtRmplU0o5WFN3aWFXRjBJam94TnprME16ZzVOelU0TENKbGVIQWlPakUzT1RRek9UTXpOVGg5LlIwRkdZRFBwUDZEb3h4Q3cySXN2N2VDV2kxajFHMkFKdjBfWF9rS1BKeU9kVC1VV1UzNnNvTF9QVmVjZkJkSy03UXRTd3FaNW9jd09hdVBEUV9ZVURRIl0~WyJaZmdxY3d0SWFDY1BFODVYZU9ELTNBIiwgeyJfc2QiOiBbIlc5NXA1clc2TWRic2Y4OWUtVHBwSUcyUHZ1MW9lY2N5bElDUE5ncGR6SkUiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJhNUxkRjd6OVVtaWNYV1BXOThFNzhCZzY2MWJEeDgwQ2FDN2ZqUUFyRTR3IiwgImlhdCI6IDE3OTQzODk3NTgsICJleHAiOiAxNzk0MzkzMzU4fV0~"},"kind":"data"}],"role":"agent","taskId":"a256b1c1-20e9-4a50-9caa-b380a8871f2f"}],"id":"a256b1c1-20e9-4a50-9caa-b380a8871f2f","kind":"task","status":{"message":{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"55ab8d7e-cec8-410e-871f-57b864af10bd","parts":[{"kind":"text","text":"Please provide the challenge response to complete the payment."},{"data":{"challenge":{"type":"otp","display_text":"The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)"}},"kind":"data"}],"role":"agent","taskId":"a256b1c1-20e9-4a50-9caa-b380a8871f2f"},"state":"input-required","timestamp":"2026-11-11T09:36:16.365331+00:00"}}}
+
+
+[Response Body]
+{"id":"ba2dd250-82a6-4c1c-be1b-a9d18a7adeac","jsonrpc":"2.0","result":{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","history":[{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"3a53692ff6f849eeb927b9e4bcf78e2a","parts":[{"kind":"text","text":"Initiate a payment"},{"data":{"ap2.mandates.PaymentMandateSdJwt":"eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIldodF9kQnYzZ0tWLXJjR3loTVFERGxGTWhmcGVSU2pzLUNlTnctcDhwU3cifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ._SCa8rMdgabBPLFZGG8W26-E3tP3oEZBOuxXuJxwV7hEmMyUbK72EPgnV7d7CvR0DLnO99uHTDL7HjuUe3eBbQ~WyJJd0ZhdnVYTDJpZTZzNzhHbmotS3BnIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiYTVMZEY3ejlVbWljWFdQVzk4RTc4Qmc2NjFiRHg4MENhQzdmalFBckU0dyIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDU1OTksICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0Mzg5NzU4LCAiZXhwIjogMTc5NDM5MzM1OH1d~"},"kind":"data"},{"data":{"risk_data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"},"kind":"data"},{"data":{"shopping_agent_id":"trusted_shopping_agent"},"kind":"data"},{"data":{"ap2.mandates.CheckoutMandateSdJwt":"eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogImNBTnpHSFA4c0xHTjlxZm9jVzAxbGJwRVo2UUotU3E0ZGhPVVVobDc0QW8ifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.JLk2_YH8gsVX0boyor7Ebsy8cNNfyMnEgQBD1cfLOmfGSWja52Ylh4laLxmDP8hybbnLsFq7wFulI0uV0nlEeg~WyJqR1lMMW5ZaFV2X2lzbjkyUDZQa2dRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZZVFl3WkRVeU16bGpNbVk0TkRNeFpqazROVGhsTjJNMFltUTFOalJqTXpJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpNYVdkb2RIZGxhV2RvZENCaWNtVmhkR2hoWW14bElHMWxjMmdnZDJGc2EybHVaeUJ6YUc5bGN5SXNJbkJ5YVdObElqbzFOVGs1ZlN3aWNYVmhiblJwZEhraU9qRXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkZlYwc0luTjBZWFIxY3lJNkltbHVZMjl0Y0d4bGRHVWlMQ0pqZFhKeVpXNWplU0k2SWxWVFJDSXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkTENKc2FXNXJjeUk2VzNzaWRIbHdaU0k2SW5CeWFYWmhZM2xmY0c5c2FXTjVJaXdpZFhKc0lqb2lhSFIwY0hNNkx5OWtaVzF2TFcxbGNtTm9ZVzUwTG1WNFlXMXdiR1V2Y0hKcGRtRmplU0o5WFN3aWFXRjBJam94TnprME16ZzVOelU0TENKbGVIQWlPakUzT1RRek9UTXpOVGg5LlIwRkdZRFBwUDZEb3h4Q3cySXN2N2VDV2kxajFHMkFKdjBfWF9rS1BKeU9kVC1VV1UzNnNvTF9QVmVjZkJkSy03UXRTd3FaNW9jd09hdVBEUV9ZVURRIl0~WyJaZmdxY3d0SWFDY1BFODVYZU9ELTNBIiwgeyJfc2QiOiBbIlc5NXA1clc2TWRic2Y4OWUtVHBwSUcyUHZ1MW9lY2N5bElDUE5ncGR6SkUiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJhNUxkRjd6OVVtaWNYV1BXOThFNzhCZzY2MWJEeDgwQ2FDN2ZqUUFyRTR3IiwgImlhdCI6IDE3OTQzODk3NTgsICJleHAiOiAxNzk0MzkzMzU4fV0~"},"kind":"data"}],"role":"agent","taskId":"becdb11f-8c44-41db-8907-d0d249fad589"}],"id":"becdb11f-8c44-41db-8907-d0d249fad589","kind":"task","status":{"message":{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"55ab8d7e-cec8-410e-871f-57b864af10bd","parts":[{"kind":"text","text":"Please provide the challenge response to complete the payment."},{"data":{"challenge":{"type":"otp","display_text":"The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)"}},"kind":"data"}],"role":"agent","taskId":"a256b1c1-20e9-4a50-9caa-b380a8871f2f"},"state":"input-required","timestamp":"2026-11-11T09:36:16.367701+00:00"}}}
+
+
+
+
+---------- New Agent Request Received---------
+POST http://localhost:8001/a2a/merchant_agent
+
+
+[Request Body]
+{'id': 'b7ce4258-ecbc-45d1-bc3b-ab01a9d2c6bc', 'jsonrpc': '2.0', 'method': 'tasks/get', 'params': {'historyLength': 100, 'id': 'becdb11f-8c44-41db-8907-d0d249fad589'}}
+
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+
+
+[Response Body]
+{"id":"b7ce4258-ecbc-45d1-bc3b-ab01a9d2c6bc","jsonrpc":"2.0","result":{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","history":[{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"3a53692ff6f849eeb927b9e4bcf78e2a","parts":[{"kind":"text","text":"Initiate a payment"},{"data":{"ap2.mandates.PaymentMandateSdJwt":"eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIldodF9kQnYzZ0tWLXJjR3loTVFERGxGTWhmcGVSU2pzLUNlTnctcDhwU3cifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ._SCa8rMdgabBPLFZGG8W26-E3tP3oEZBOuxXuJxwV7hEmMyUbK72EPgnV7d7CvR0DLnO99uHTDL7HjuUe3eBbQ~WyJJd0ZhdnVYTDJpZTZzNzhHbmotS3BnIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiYTVMZEY3ejlVbWljWFdQVzk4RTc4Qmc2NjFiRHg4MENhQzdmalFBckU0dyIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDU1OTksICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0Mzg5NzU4LCAiZXhwIjogMTc5NDM5MzM1OH1d~"},"kind":"data"},{"data":{"risk_data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"},"kind":"data"},{"data":{"shopping_agent_id":"trusted_shopping_agent"},"kind":"data"},{"data":{"ap2.mandates.CheckoutMandateSdJwt":"eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogImNBTnpHSFA4c0xHTjlxZm9jVzAxbGJwRVo2UUotU3E0ZGhPVVVobDc0QW8ifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.JLk2_YH8gsVX0boyor7Ebsy8cNNfyMnEgQBD1cfLOmfGSWja52Ylh4laLxmDP8hybbnLsFq7wFulI0uV0nlEeg~WyJqR1lMMW5ZaFV2X2lzbjkyUDZQa2dRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZZVFl3WkRVeU16bGpNbVk0TkRNeFpqazROVGhsTjJNMFltUTFOalJqTXpJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpNYVdkb2RIZGxhV2RvZENCaWNtVmhkR2hoWW14bElHMWxjMmdnZDJGc2EybHVaeUJ6YUc5bGN5SXNJbkJ5YVdObElqbzFOVGs1ZlN3aWNYVmhiblJwZEhraU9qRXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkZlYwc0luTjBZWFIxY3lJNkltbHVZMjl0Y0d4bGRHVWlMQ0pqZFhKeVpXNWplU0k2SWxWVFJDSXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkTENKc2FXNXJjeUk2VzNzaWRIbHdaU0k2SW5CeWFYWmhZM2xmY0c5c2FXTjVJaXdpZFhKc0lqb2lhSFIwY0hNNkx5OWtaVzF2TFcxbGNtTm9ZVzUwTG1WNFlXMXdiR1V2Y0hKcGRtRmplU0o5WFN3aWFXRjBJam94TnprME16ZzVOelU0TENKbGVIQWlPakUzT1RRek9UTXpOVGg5LlIwRkdZRFBwUDZEb3h4Q3cySXN2N2VDV2kxajFHMkFKdjBfWF9rS1BKeU9kVC1VV1UzNnNvTF9QVmVjZkJkSy03UXRTd3FaNW9jd09hdVBEUV9ZVURRIl0~WyJaZmdxY3d0SWFDY1BFODVYZU9ELTNBIiwgeyJfc2QiOiBbIlc5NXA1clc2TWRic2Y4OWUtVHBwSUcyUHZ1MW9lY2N5bElDUE5ncGR6SkUiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJhNUxkRjd6OVVtaWNYV1BXOThFNzhCZzY2MWJEeDgwQ2FDN2ZqUUFyRTR3IiwgImlhdCI6IDE3OTQzODk3NTgsICJleHAiOiAxNzk0MzkzMzU4fV0~"},"kind":"data"}],"role":"agent","taskId":"becdb11f-8c44-41db-8907-d0d249fad589"}],"id":"becdb11f-8c44-41db-8907-d0d249fad589","kind":"task","status":{"message":{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"55ab8d7e-cec8-410e-871f-57b864af10bd","parts":[{"kind":"text","text":"Please provide the challenge response to complete the payment."},{"data":{"challenge":{"type":"otp","display_text":"The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)"}},"kind":"data"}],"role":"agent","taskId":"a256b1c1-20e9-4a50-9caa-b380a8871f2f"},"state":"input-required","timestamp":"2026-11-11T09:36:16.367701+00:00"}}}
+
+
+
+
+---------- New Agent Request Received---------
+POST http://localhost:8001/a2a/merchant_agent
+
+
+[Request Body]
+{'id': 'a9775a2e-381a-4e1d-b718-71f65fbe937c', 'jsonrpc': '2.0', 'method': 'tasks/get', 'params': {'historyLength': 100, 'id': 'becdb11f-8c44-41db-8907-d0d249fad589'}}
+
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+
+
+[Response Body]
+{"id":"a9775a2e-381a-4e1d-b718-71f65fbe937c","jsonrpc":"2.0","result":{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","history":[{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"3a53692ff6f849eeb927b9e4bcf78e2a","parts":[{"kind":"text","text":"Initiate a payment"},{"data":{"ap2.mandates.PaymentMandateSdJwt":"eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIldodF9kQnYzZ0tWLXJjR3loTVFERGxGTWhmcGVSU2pzLUNlTnctcDhwU3cifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ._SCa8rMdgabBPLFZGG8W26-E3tP3oEZBOuxXuJxwV7hEmMyUbK72EPgnV7d7CvR0DLnO99uHTDL7HjuUe3eBbQ~WyJJd0ZhdnVYTDJpZTZzNzhHbmotS3BnIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiYTVMZEY3ejlVbWljWFdQVzk4RTc4Qmc2NjFiRHg4MENhQzdmalFBckU0dyIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDU1OTksICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0Mzg5NzU4LCAiZXhwIjogMTc5NDM5MzM1OH1d~"},"kind":"data"},{"data":{"risk_data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"},"kind":"data"},{"data":{"shopping_agent_id":"trusted_shopping_agent"},"kind":"data"},{"data":{"ap2.mandates.CheckoutMandateSdJwt":"eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogImNBTnpHSFA4c0xHTjlxZm9jVzAxbGJwRVo2UUotU3E0ZGhPVVVobDc0QW8ifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.JLk2_YH8gsVX0boyor7Ebsy8cNNfyMnEgQBD1cfLOmfGSWja52Ylh4laLxmDP8hybbnLsFq7wFulI0uV0nlEeg~WyJqR1lMMW5ZaFV2X2lzbjkyUDZQa2dRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZZVFl3WkRVeU16bGpNbVk0TkRNeFpqazROVGhsTjJNMFltUTFOalJqTXpJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpNYVdkb2RIZGxhV2RvZENCaWNtVmhkR2hoWW14bElHMWxjMmdnZDJGc2EybHVaeUJ6YUc5bGN5SXNJbkJ5YVdObElqbzFOVGs1ZlN3aWNYVmhiblJwZEhraU9qRXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkZlYwc0luTjBZWFIxY3lJNkltbHVZMjl0Y0d4bGRHVWlMQ0pqZFhKeVpXNWplU0k2SWxWVFJDSXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkTENKc2FXNXJjeUk2VzNzaWRIbHdaU0k2SW5CeWFYWmhZM2xmY0c5c2FXTjVJaXdpZFhKc0lqb2lhSFIwY0hNNkx5OWtaVzF2TFcxbGNtTm9ZVzUwTG1WNFlXMXdiR1V2Y0hKcGRtRmplU0o5WFN3aWFXRjBJam94TnprME16ZzVOelU0TENKbGVIQWlPakUzT1RRek9UTXpOVGg5LlIwRkdZRFBwUDZEb3h4Q3cySXN2N2VDV2kxajFHMkFKdjBfWF9rS1BKeU9kVC1VV1UzNnNvTF9QVmVjZkJkSy03UXRTd3FaNW9jd09hdVBEUV9ZVURRIl0~WyJaZmdxY3d0SWFDY1BFODVYZU9ELTNBIiwgeyJfc2QiOiBbIlc5NXA1clc2TWRic2Y4OWUtVHBwSUcyUHZ1MW9lY2N5bElDUE5ncGR6SkUiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJhNUxkRjd6OVVtaWNYV1BXOThFNzhCZzY2MWJEeDgwQ2FDN2ZqUUFyRTR3IiwgImlhdCI6IDE3OTQzODk3NTgsICJleHAiOiAxNzk0MzkzMzU4fV0~"},"kind":"data"}],"role":"agent","taskId":"becdb11f-8c44-41db-8907-d0d249fad589"}],"id":"becdb11f-8c44-41db-8907-d0d249fad589","kind":"task","status":{"message":{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"55ab8d7e-cec8-410e-871f-57b864af10bd","parts":[{"kind":"text","text":"Please provide the challenge response to complete the payment."},{"data":{"challenge":{"type":"otp","display_text":"The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)"}},"kind":"data"}],"role":"agent","taskId":"a256b1c1-20e9-4a50-9caa-b380a8871f2f"},"state":"input-required","timestamp":"2026-11-11T09:36:16.367701+00:00"}}}

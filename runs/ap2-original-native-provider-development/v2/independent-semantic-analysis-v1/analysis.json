@@ -1,0 +1,1561 @@
+{
+  "analyzer_source": {
+    "bytes": 31885,
+    "path": "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\scripts\\analyze_ap2_original_native_provider_v2.py",
+    "sha256": "8901795494755665cd46ad278e15cd83e0da26cd7c1937b22894bbb06aaa61f9"
+  },
+  "case_disposition_counts": {
+    "completed_public_receipt_observed": 2,
+    "owned_byte_budget_stop_before_repeat_prerequisite_completed": 1,
+    "waiting_without_human_reply_observed": 1,
+    "wrong_reply_public_refusal_observed": 1
+  },
+  "cases": [
+    {
+      "actor_result_present": true,
+      "authority_observations": {
+        "disposition_event": null,
+        "fault_event": null,
+        "original_rpc_error_event": null,
+        "recovery_event": null
+      },
+      "caller_error": null,
+      "caller_status": "completed_with_public_receipt",
+      "cart_confirmation": {
+        "approved": true,
+        "cart": {
+          "amount": 45.99,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Lightweight mesh walking shoes"
+        },
+        "index": 4,
+        "kind": "human-cart-confirmation",
+        "payment_method": "American Express ending in 4444",
+        "shipping": {
+          "address_line": [
+            "123 Main St"
+          ],
+          "city": "Sample City",
+          "country": "US",
+          "organization": "Sample Organization",
+          "phone_number": "+1-000-000-0000",
+          "postal_code": "00000",
+          "recipient": "Bugs Bunny",
+          "region": "ST"
+        }
+      },
+      "case_id": "ap2-native-provider-v2-correct-reply",
+      "case_window_local_refusals": [],
+      "checkout_display_fields": {
+        "amount": 45.99,
+        "amount_cents": 4599,
+        "cart_id": "cart_1",
+        "checkout_hash": "8S5KVQHH4gL6ADFR6al07ugMpx4-wNm2VN4ZxjlGLkQ",
+        "currency": "USD",
+        "item_label": "Lightweight mesh walking shoes"
+      },
+      "consistency_questions": [],
+      "declared_public_facts": {
+        "cart_index": 0,
+        "case_id": "ap2-native-provider-v2-correct-reply",
+        "catalog_search": "unbranded walking shoes",
+        "confirm_cart": true,
+        "fault": "none",
+        "otp_response": "123",
+        "payment_method_index": 0,
+        "repeat_after_completed": false,
+        "user_email": "bugsbunny@gmail.com",
+        "wallet_consent": true
+      },
+      "disposition": "completed_public_receipt_observed",
+      "exact_reply_in_actor_event": true,
+      "exact_reply_present_in_retained_task_messages": true,
+      "explicit_human_reply": {
+        "index": 6,
+        "kind": "explicit-human-otp",
+        "response": "123"
+      },
+      "failure_attribution": null,
+      "final_task": {
+        "context_id": "4725baf9-ad33-40e6-8b54-6b3248069621",
+        "id": "c6f90f1d-be5e-43e3-b41a-afe4541ecacf",
+        "otp_challenge": null,
+        "raw_task_digest": {
+          "bytes": 8212,
+          "sha256": "f1da2ad48cc062496483c7c87c413bffdfe4831beb9dde65803cdbfac3eec38a"
+        },
+        "receipts": [
+          {
+            "error": null,
+            "error_description": null,
+            "iat": 1794389647,
+            "iss": "",
+            "network_confirmation_id": "d7d10102f748428789d3fae87f5f0635",
+            "payment_id": "d7d10102f748428789d3fae87f5f0635",
+            "psp_confirmation_id": "d7d10102f748428789d3fae87f5f0635",
+            "reference": "jcb4e8xQQflTcEwTuBx_7POv3OuzEZeellVz_UMnVQg",
+            "status": "Success"
+          }
+        ],
+        "retained_task_message_challenge_responses": [
+          "123"
+        ],
+        "state": "completed",
+        "status_message_context_id": "4725baf9-ad33-40e6-8b54-6b3248069621",
+        "status_message_task_id": "f9dbac67-b296-44f4-b4ef-af90e98d75aa",
+        "status_text": [
+          "{'status': 'success'}"
+        ]
+      },
+      "initial_task": {
+        "context_id": "4725baf9-ad33-40e6-8b54-6b3248069621",
+        "id": "c6f90f1d-be5e-43e3-b41a-afe4541ecacf",
+        "otp_challenge": {
+          "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+          "type": "otp"
+        },
+        "raw_task_digest": {
+          "bytes": 4111,
+          "sha256": "65c9ea45cfc851d21ffcdb967bc7b55a417561e720d13950d5384be9c9029f3c"
+        },
+        "receipts": [],
+        "retained_task_message_challenge_responses": [],
+        "state": "input-required",
+        "status_message_context_id": "4725baf9-ad33-40e6-8b54-6b3248069621",
+        "status_message_task_id": "f9dbac67-b296-44f4-b4ef-af90e98d75aa",
+        "status_text": [
+          "Please provide the challenge response to complete the payment."
+        ]
+      },
+      "original_call_errors": [],
+      "original_call_phases": [
+        "catalog",
+        "cart-selection",
+        "shipping",
+        "payment-methods",
+        "credential-token",
+        "checkout",
+        "checkout-mandate",
+        "payment-mandate",
+        "credential-association",
+        "payment-start",
+        "payment-otp"
+      ],
+      "original_call_return_count": 11,
+      "original_call_started_count": 11,
+      "original_call_terminal_count": 11,
+      "otp_request": {
+        "challenge": {
+          "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+          "type": "otp"
+        },
+        "context_id": "4725baf9-ad33-40e6-8b54-6b3248069621",
+        "index": 5,
+        "kind": "public-otp-request",
+        "merchant_task_id": "c6f90f1d-be5e-43e3-b41a-afe4541ecacf"
+      },
+      "owned_budget_stop_observed": false,
+      "owned_total_request_byte_branch_inferred_by_exclusion": false,
+      "parent_status": "executed_returned",
+      "prior_completed_receipt_observed": true,
+      "public_offered_cart_selection": {
+        "index": 0,
+        "kind": "human-cart-selection",
+        "offered": [
+          {
+            "amount": 45.99,
+            "cart_id": "cart_1",
+            "currency": "USD",
+            "item_label": "Lightweight mesh walking shoes"
+          },
+          {
+            "amount": 75.5,
+            "cart_id": "cart_2",
+            "currency": "USD",
+            "item_label": "Waterproof performance walking sneakers"
+          },
+          {
+            "amount": 59.0,
+            "cart_id": "cart_3",
+            "currency": "USD",
+            "item_label": "Orthopedic arch support walking shoes"
+          }
+        ],
+        "selected": {
+          "amount": 45.99,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Lightweight mesh walking shoes"
+        }
+      },
+      "public_offered_payment_selection": {
+        "index": 3,
+        "kind": "human-payment-selection",
+        "offered": {
+          "payment_method_aliases": [
+            "American Express ending in 4444",
+            "American Express ending in 8888"
+          ]
+        },
+        "selected": "American Express ending in 4444"
+      },
+      "public_tasks": [
+        {
+          "disposition": "returned",
+          "phase": "initial-payment-task",
+          "task": {
+            "context_id": "4725baf9-ad33-40e6-8b54-6b3248069621",
+            "id": "c6f90f1d-be5e-43e3-b41a-afe4541ecacf",
+            "otp_challenge": {
+              "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+              "type": "otp"
+            },
+            "raw_task_digest": {
+              "bytes": 4111,
+              "sha256": "65c9ea45cfc851d21ffcdb967bc7b55a417561e720d13950d5384be9c9029f3c"
+            },
+            "receipts": [],
+            "retained_task_message_challenge_responses": [],
+            "state": "input-required",
+            "status_message_context_id": "4725baf9-ad33-40e6-8b54-6b3248069621",
+            "status_message_task_id": "f9dbac67-b296-44f4-b4ef-af90e98d75aa",
+            "status_text": [
+              "Please provide the challenge response to complete the payment."
+            ]
+          }
+        },
+        {
+          "disposition": "returned",
+          "phase": "after-original-otp",
+          "task": {
+            "context_id": "4725baf9-ad33-40e6-8b54-6b3248069621",
+            "id": "c6f90f1d-be5e-43e3-b41a-afe4541ecacf",
+            "otp_challenge": null,
+            "raw_task_digest": {
+              "bytes": 8212,
+              "sha256": "f1da2ad48cc062496483c7c87c413bffdfe4831beb9dde65803cdbfac3eec38a"
+            },
+            "receipts": [
+              {
+                "error": null,
+                "error_description": null,
+                "iat": 1794389647,
+                "iss": "",
+                "network_confirmation_id": "d7d10102f748428789d3fae87f5f0635",
+                "payment_id": "d7d10102f748428789d3fae87f5f0635",
+                "psp_confirmation_id": "d7d10102f748428789d3fae87f5f0635",
+                "reference": "jcb4e8xQQflTcEwTuBx_7POv3OuzEZeellVz_UMnVQg",
+                "status": "Success"
+              }
+            ],
+            "retained_task_message_challenge_responses": [
+              "123"
+            ],
+            "state": "completed",
+            "status_message_context_id": "4725baf9-ad33-40e6-8b54-6b3248069621",
+            "status_message_task_id": "f9dbac67-b296-44f4-b4ef-af90e98d75aa",
+            "status_text": [
+              "{'status': 'success'}"
+            ]
+          }
+        }
+      ],
+      "raw_public_event_count": 34,
+      "repeat_event": null,
+      "repeat_receipts_equal_prior_receipts": null,
+      "repeat_task": null,
+      "semantic_response_captured": true,
+      "shipping_display": {
+        "address": {
+          "address_line": [
+            "123 Main St"
+          ],
+          "city": "Sample City",
+          "country": "US",
+          "organization": "Sample Organization",
+          "phone_number": "+1-000-000-0000",
+          "postal_code": "00000",
+          "recipient": "Bugs Bunny",
+          "region": "ST"
+        },
+        "index": 2,
+        "kind": "public-shipping-display"
+      },
+      "waiting_without_human_reply_observed": false,
+      "wallet_consent": {
+        "consent": true,
+        "index": 1,
+        "kind": "human-wallet-consent",
+        "user_email": "bugsbunny@gmail.com"
+      },
+      "whole_task_grade": null,
+      "wrong_reply_public_refusal_observed": false
+    },
+    {
+      "actor_result_present": true,
+      "authority_observations": {
+        "disposition_event": null,
+        "fault_event": null,
+        "original_rpc_error_event": null,
+        "recovery_event": null
+      },
+      "caller_error": null,
+      "caller_status": "public_continuation_remains_incomplete",
+      "cart_confirmation": {
+        "approved": true,
+        "cart": {
+          "amount": 55.99,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Lightweight mesh breathable walking sneakers"
+        },
+        "index": 4,
+        "kind": "human-cart-confirmation",
+        "payment_method": "American Express ending in 4444",
+        "shipping": {
+          "address_line": [
+            "123 Main St"
+          ],
+          "city": "Sample City",
+          "country": "US",
+          "organization": "Sample Organization",
+          "phone_number": "+1-000-000-0000",
+          "postal_code": "00000",
+          "recipient": "Bugs Bunny",
+          "region": "ST"
+        }
+      },
+      "case_id": "ap2-native-provider-v2-wrong-reply",
+      "case_window_local_refusals": [],
+      "checkout_display_fields": {
+        "amount": 55.99,
+        "amount_cents": 5599,
+        "cart_id": "cart_1",
+        "checkout_hash": "ZQcyskP-jMrqYYvoGwxRFgjU_3RhranFdwcC-2CKkRU",
+        "currency": "USD",
+        "item_label": "Lightweight mesh breathable walking sneakers"
+      },
+      "consistency_questions": [],
+      "declared_public_facts": {
+        "cart_index": 0,
+        "case_id": "ap2-native-provider-v2-wrong-reply",
+        "catalog_search": "unbranded walking shoes",
+        "confirm_cart": true,
+        "fault": "none",
+        "otp_response": "wrong-human-reply",
+        "payment_method_index": 0,
+        "repeat_after_completed": false,
+        "user_email": "bugsbunny@gmail.com",
+        "wallet_consent": true
+      },
+      "disposition": "wrong_reply_public_refusal_observed",
+      "exact_reply_in_actor_event": true,
+      "exact_reply_present_in_retained_task_messages": true,
+      "explicit_human_reply": {
+        "index": 6,
+        "kind": "explicit-human-otp",
+        "response": "wrong-human-reply"
+      },
+      "failure_attribution": null,
+      "final_task": {
+        "context_id": "ed5cc196-25ad-4cbf-af58-36b8a9071dac",
+        "id": "ef4fc58c-2858-4516-b51b-bf8b2b499254",
+        "otp_challenge": null,
+        "raw_task_digest": {
+          "bytes": 7828,
+          "sha256": "a53ba8e565b148f35f3af66f0f10e7c60571ed3f2ca802736d656a09decd70f9"
+        },
+        "receipts": [],
+        "retained_task_message_challenge_responses": [
+          "wrong-human-reply"
+        ],
+        "state": "input-required",
+        "status_message_context_id": "ed5cc196-25ad-4cbf-af58-36b8a9071dac",
+        "status_message_task_id": "2f619bf9-af25-413a-8d88-5d526031f472",
+        "status_text": [
+          "Challenge response incorrect."
+        ]
+      },
+      "initial_task": {
+        "context_id": "ed5cc196-25ad-4cbf-af58-36b8a9071dac",
+        "id": "ef4fc58c-2858-4516-b51b-bf8b2b499254",
+        "otp_challenge": {
+          "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+          "type": "otp"
+        },
+        "raw_task_digest": {
+          "bytes": 4135,
+          "sha256": "7fd1fee62af776d449b247c6beda3fc5fa256412329877a32843af701aae7c3c"
+        },
+        "receipts": [],
+        "retained_task_message_challenge_responses": [],
+        "state": "input-required",
+        "status_message_context_id": "ed5cc196-25ad-4cbf-af58-36b8a9071dac",
+        "status_message_task_id": "2f619bf9-af25-413a-8d88-5d526031f472",
+        "status_text": [
+          "Please provide the challenge response to complete the payment."
+        ]
+      },
+      "original_call_errors": [],
+      "original_call_phases": [
+        "catalog",
+        "cart-selection",
+        "shipping",
+        "payment-methods",
+        "credential-token",
+        "checkout",
+        "checkout-mandate",
+        "payment-mandate",
+        "credential-association",
+        "payment-start",
+        "payment-otp"
+      ],
+      "original_call_return_count": 11,
+      "original_call_started_count": 11,
+      "original_call_terminal_count": 11,
+      "otp_request": {
+        "challenge": {
+          "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+          "type": "otp"
+        },
+        "context_id": "ed5cc196-25ad-4cbf-af58-36b8a9071dac",
+        "index": 5,
+        "kind": "public-otp-request",
+        "merchant_task_id": "ef4fc58c-2858-4516-b51b-bf8b2b499254"
+      },
+      "owned_budget_stop_observed": false,
+      "owned_total_request_byte_branch_inferred_by_exclusion": false,
+      "parent_status": "executed_returned",
+      "prior_completed_receipt_observed": false,
+      "public_offered_cart_selection": {
+        "index": 0,
+        "kind": "human-cart-selection",
+        "offered": [
+          {
+            "amount": 55.99,
+            "cart_id": "cart_1",
+            "currency": "USD",
+            "item_label": "Lightweight mesh breathable walking sneakers"
+          },
+          {
+            "amount": 72.5,
+            "cart_id": "cart_2",
+            "currency": "USD",
+            "item_label": "Water-resistant ergonomic arch support walking shoes"
+          },
+          {
+            "amount": 48.0,
+            "cart_id": "cart_3",
+            "currency": "USD",
+            "item_label": "Slip-on cushioned daily walking footwear"
+          }
+        ],
+        "selected": {
+          "amount": 55.99,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Lightweight mesh breathable walking sneakers"
+        }
+      },
+      "public_offered_payment_selection": {
+        "index": 3,
+        "kind": "human-payment-selection",
+        "offered": {
+          "payment_method_aliases": [
+            "American Express ending in 4444",
+            "American Express ending in 8888"
+          ]
+        },
+        "selected": "American Express ending in 4444"
+      },
+      "public_tasks": [
+        {
+          "disposition": "returned",
+          "phase": "initial-payment-task",
+          "task": {
+            "context_id": "ed5cc196-25ad-4cbf-af58-36b8a9071dac",
+            "id": "ef4fc58c-2858-4516-b51b-bf8b2b499254",
+            "otp_challenge": {
+              "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+              "type": "otp"
+            },
+            "raw_task_digest": {
+              "bytes": 4135,
+              "sha256": "7fd1fee62af776d449b247c6beda3fc5fa256412329877a32843af701aae7c3c"
+            },
+            "receipts": [],
+            "retained_task_message_challenge_responses": [],
+            "state": "input-required",
+            "status_message_context_id": "ed5cc196-25ad-4cbf-af58-36b8a9071dac",
+            "status_message_task_id": "2f619bf9-af25-413a-8d88-5d526031f472",
+            "status_text": [
+              "Please provide the challenge response to complete the payment."
+            ]
+          }
+        },
+        {
+          "disposition": "returned",
+          "phase": "after-original-otp",
+          "task": {
+            "context_id": "ed5cc196-25ad-4cbf-af58-36b8a9071dac",
+            "id": "ef4fc58c-2858-4516-b51b-bf8b2b499254",
+            "otp_challenge": null,
+            "raw_task_digest": {
+              "bytes": 7828,
+              "sha256": "a53ba8e565b148f35f3af66f0f10e7c60571ed3f2ca802736d656a09decd70f9"
+            },
+            "receipts": [],
+            "retained_task_message_challenge_responses": [
+              "wrong-human-reply"
+            ],
+            "state": "input-required",
+            "status_message_context_id": "ed5cc196-25ad-4cbf-af58-36b8a9071dac",
+            "status_message_task_id": "2f619bf9-af25-413a-8d88-5d526031f472",
+            "status_text": [
+              "Challenge response incorrect."
+            ]
+          }
+        }
+      ],
+      "raw_public_event_count": 34,
+      "repeat_event": null,
+      "repeat_receipts_equal_prior_receipts": null,
+      "repeat_task": null,
+      "semantic_response_captured": true,
+      "shipping_display": {
+        "address": {
+          "address_line": [
+            "123 Main St"
+          ],
+          "city": "Sample City",
+          "country": "US",
+          "organization": "Sample Organization",
+          "phone_number": "+1-000-000-0000",
+          "postal_code": "00000",
+          "recipient": "Bugs Bunny",
+          "region": "ST"
+        },
+        "index": 2,
+        "kind": "public-shipping-display"
+      },
+      "waiting_without_human_reply_observed": false,
+      "wallet_consent": {
+        "consent": true,
+        "index": 1,
+        "kind": "human-wallet-consent",
+        "user_email": "bugsbunny@gmail.com"
+      },
+      "whole_task_grade": null,
+      "wrong_reply_public_refusal_observed": true
+    },
+    {
+      "actor_result_present": true,
+      "authority_observations": {
+        "disposition_event": null,
+        "fault_event": null,
+        "original_rpc_error_event": null,
+        "recovery_event": null
+      },
+      "caller_error": null,
+      "caller_status": "waiting_for_explicit_human_otp",
+      "cart_confirmation": {
+        "approved": true,
+        "cart": {
+          "amount": 55.99,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Lightweight breathable mesh walking shoes"
+        },
+        "index": 4,
+        "kind": "human-cart-confirmation",
+        "payment_method": "American Express ending in 4444",
+        "shipping": {
+          "address_line": [
+            "123 Main St"
+          ],
+          "city": "Sample City",
+          "country": "US",
+          "organization": "Sample Organization",
+          "phone_number": "+1-000-000-0000",
+          "postal_code": "00000",
+          "recipient": "Bugs Bunny",
+          "region": "ST"
+        }
+      },
+      "case_id": "ap2-native-provider-v2-no-reply",
+      "case_window_local_refusals": [],
+      "checkout_display_fields": {
+        "amount": 55.99,
+        "amount_cents": 5599,
+        "cart_id": "cart_1",
+        "checkout_hash": "a5LdF7z9UmicXWPW98E78Bg661bDx80CaC7fjQArE4w",
+        "currency": "USD",
+        "item_label": "Lightweight breathable mesh walking shoes"
+      },
+      "consistency_questions": [],
+      "declared_public_facts": {
+        "cart_index": 0,
+        "case_id": "ap2-native-provider-v2-no-reply",
+        "catalog_search": "unbranded walking shoes",
+        "confirm_cart": true,
+        "fault": "none",
+        "otp_response": null,
+        "payment_method_index": 0,
+        "repeat_after_completed": false,
+        "user_email": "bugsbunny@gmail.com",
+        "wallet_consent": true
+      },
+      "disposition": "waiting_without_human_reply_observed",
+      "exact_reply_in_actor_event": true,
+      "exact_reply_present_in_retained_task_messages": false,
+      "explicit_human_reply": {
+        "index": 6,
+        "kind": "explicit-human-otp",
+        "response": null
+      },
+      "failure_attribution": null,
+      "final_task": {
+        "context_id": "80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef",
+        "id": "becdb11f-8c44-41db-8907-d0d249fad589",
+        "otp_challenge": {
+          "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+          "type": "otp"
+        },
+        "raw_task_digest": {
+          "bytes": 4130,
+          "sha256": "08d457e22fa5760f9df0fa7af9e4803023cdfbc44685d8c9fa0dcecde74774ac"
+        },
+        "receipts": [],
+        "retained_task_message_challenge_responses": [],
+        "state": "input-required",
+        "status_message_context_id": "80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef",
+        "status_message_task_id": "a256b1c1-20e9-4a50-9caa-b380a8871f2f",
+        "status_text": [
+          "Please provide the challenge response to complete the payment."
+        ]
+      },
+      "initial_task": {
+        "context_id": "80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef",
+        "id": "becdb11f-8c44-41db-8907-d0d249fad589",
+        "otp_challenge": {
+          "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+          "type": "otp"
+        },
+        "raw_task_digest": {
+          "bytes": 4130,
+          "sha256": "08d457e22fa5760f9df0fa7af9e4803023cdfbc44685d8c9fa0dcecde74774ac"
+        },
+        "receipts": [],
+        "retained_task_message_challenge_responses": [],
+        "state": "input-required",
+        "status_message_context_id": "80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef",
+        "status_message_task_id": "a256b1c1-20e9-4a50-9caa-b380a8871f2f",
+        "status_text": [
+          "Please provide the challenge response to complete the payment."
+        ]
+      },
+      "original_call_errors": [],
+      "original_call_phases": [
+        "catalog",
+        "cart-selection",
+        "shipping",
+        "payment-methods",
+        "credential-token",
+        "checkout",
+        "checkout-mandate",
+        "payment-mandate",
+        "credential-association",
+        "payment-start"
+      ],
+      "original_call_return_count": 10,
+      "original_call_started_count": 10,
+      "original_call_terminal_count": 10,
+      "otp_request": {
+        "challenge": {
+          "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+          "type": "otp"
+        },
+        "context_id": "80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef",
+        "index": 5,
+        "kind": "public-otp-request",
+        "merchant_task_id": "becdb11f-8c44-41db-8907-d0d249fad589"
+      },
+      "owned_budget_stop_observed": false,
+      "owned_total_request_byte_branch_inferred_by_exclusion": false,
+      "parent_status": "executed_returned",
+      "prior_completed_receipt_observed": false,
+      "public_offered_cart_selection": {
+        "index": 0,
+        "kind": "human-cart-selection",
+        "offered": [
+          {
+            "amount": 55.99,
+            "cart_id": "cart_1",
+            "currency": "USD",
+            "item_label": "Lightweight breathable mesh walking shoes"
+          },
+          {
+            "amount": 72.5,
+            "cart_id": "cart_2",
+            "currency": "USD",
+            "item_label": "Ergonomic arch support walking sneakers"
+          },
+          {
+            "amount": 48.0,
+            "cart_id": "cart_3",
+            "currency": "USD",
+            "item_label": "Water-resistant daily comfort walking shoes"
+          }
+        ],
+        "selected": {
+          "amount": 55.99,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Lightweight breathable mesh walking shoes"
+        }
+      },
+      "public_offered_payment_selection": {
+        "index": 3,
+        "kind": "human-payment-selection",
+        "offered": {
+          "payment_method_aliases": [
+            "American Express ending in 4444",
+            "American Express ending in 8888"
+          ]
+        },
+        "selected": "American Express ending in 4444"
+      },
+      "public_tasks": [
+        {
+          "disposition": "returned",
+          "phase": "initial-payment-task",
+          "task": {
+            "context_id": "80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef",
+            "id": "becdb11f-8c44-41db-8907-d0d249fad589",
+            "otp_challenge": {
+              "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+              "type": "otp"
+            },
+            "raw_task_digest": {
+              "bytes": 4130,
+              "sha256": "08d457e22fa5760f9df0fa7af9e4803023cdfbc44685d8c9fa0dcecde74774ac"
+            },
+            "receipts": [],
+            "retained_task_message_challenge_responses": [],
+            "state": "input-required",
+            "status_message_context_id": "80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef",
+            "status_message_task_id": "a256b1c1-20e9-4a50-9caa-b380a8871f2f",
+            "status_text": [
+              "Please provide the challenge response to complete the payment."
+            ]
+          }
+        },
+        {
+          "disposition": "returned",
+          "phase": "waiting-payment-task",
+          "task": {
+            "context_id": "80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef",
+            "id": "becdb11f-8c44-41db-8907-d0d249fad589",
+            "otp_challenge": {
+              "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+              "type": "otp"
+            },
+            "raw_task_digest": {
+              "bytes": 4130,
+              "sha256": "08d457e22fa5760f9df0fa7af9e4803023cdfbc44685d8c9fa0dcecde74774ac"
+            },
+            "receipts": [],
+            "retained_task_message_challenge_responses": [],
+            "state": "input-required",
+            "status_message_context_id": "80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef",
+            "status_message_task_id": "a256b1c1-20e9-4a50-9caa-b380a8871f2f",
+            "status_text": [
+              "Please provide the challenge response to complete the payment."
+            ]
+          }
+        }
+      ],
+      "raw_public_event_count": 31,
+      "repeat_event": null,
+      "repeat_receipts_equal_prior_receipts": null,
+      "repeat_task": null,
+      "semantic_response_captured": true,
+      "shipping_display": {
+        "address": {
+          "address_line": [
+            "123 Main St"
+          ],
+          "city": "Sample City",
+          "country": "US",
+          "organization": "Sample Organization",
+          "phone_number": "+1-000-000-0000",
+          "postal_code": "00000",
+          "recipient": "Bugs Bunny",
+          "region": "ST"
+        },
+        "index": 2,
+        "kind": "public-shipping-display"
+      },
+      "waiting_without_human_reply_observed": true,
+      "wallet_consent": {
+        "consent": true,
+        "index": 1,
+        "kind": "human-wallet-consent",
+        "user_email": "bugsbunny@gmail.com"
+      },
+      "whole_task_grade": null,
+      "wrong_reply_public_refusal_observed": false
+    },
+    {
+      "actor_result_present": true,
+      "authority_observations": {
+        "disposition_event": {
+          "disposition": "owned_caller_context_check_refused_actual_public_task",
+          "error": "The public Task does not match the caller-held task and context.",
+          "error_type": "PublicTaskAuthorityError",
+          "index": 9,
+          "kind": "adverse-read-disposition"
+        },
+        "fault_event": {
+          "fault": "other_original_context",
+          "index": 7,
+          "kind": "received-public-authority-fault",
+          "received": "27246a09-8a8b-4db0-8800-9625e24912e7"
+        },
+        "original_rpc_error_event": {
+          "index": 8,
+          "kind": "adverse-original-rpc-error",
+          "public_rpc_error": {
+            "code": -32602,
+            "message": "bad context id"
+          }
+        },
+        "recovery_event": {
+          "context_id": "29ff03b2-7f51-47f0-ae32-2bdb1dedf79a",
+          "index": 10,
+          "kind": "recover-from-prior-public-task",
+          "task_id": "6c3e3acd-84ab-43d2-9852-f086d6e86453"
+        }
+      },
+      "caller_error": null,
+      "caller_status": "completed_with_public_receipt",
+      "cart_confirmation": {
+        "approved": true,
+        "cart": {
+          "amount": 59.99,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Lightweight breathable mesh walking shoes"
+        },
+        "index": 4,
+        "kind": "human-cart-confirmation",
+        "payment_method": "American Express ending in 4444",
+        "shipping": {
+          "address_line": [
+            "123 Main St"
+          ],
+          "city": "Sample City",
+          "country": "US",
+          "organization": "Sample Organization",
+          "phone_number": "+1-000-000-0000",
+          "postal_code": "00000",
+          "recipient": "Bugs Bunny",
+          "region": "ST"
+        }
+      },
+      "case_id": "ap2-native-provider-v2-foreign-context-recovery",
+      "case_window_local_refusals": [],
+      "checkout_display_fields": {
+        "amount": 59.99,
+        "amount_cents": 5999,
+        "cart_id": "cart_1",
+        "checkout_hash": "DG_0p0rs1kpvVSAfZOd6_2D-3lsyykh_YiFCfLVoJts",
+        "currency": "USD",
+        "item_label": "Lightweight breathable mesh walking shoes"
+      },
+      "consistency_questions": [],
+      "declared_public_facts": {
+        "cart_index": 0,
+        "case_id": "ap2-native-provider-v2-foreign-context-recovery",
+        "catalog_search": "unbranded walking shoes",
+        "confirm_cart": true,
+        "fault": "other_original_context",
+        "otp_response": "123",
+        "payment_method_index": 0,
+        "repeat_after_completed": false,
+        "user_email": "bugsbunny@gmail.com",
+        "wallet_consent": true
+      },
+      "disposition": "completed_public_receipt_observed",
+      "exact_reply_in_actor_event": true,
+      "exact_reply_present_in_retained_task_messages": true,
+      "explicit_human_reply": {
+        "index": 6,
+        "kind": "explicit-human-otp",
+        "response": "123"
+      },
+      "failure_attribution": null,
+      "final_task": {
+        "context_id": "29ff03b2-7f51-47f0-ae32-2bdb1dedf79a",
+        "id": "6c3e3acd-84ab-43d2-9852-f086d6e86453",
+        "otp_challenge": null,
+        "raw_task_digest": {
+          "bytes": 11660,
+          "sha256": "5647d8ab99c16b5965f09d4a9fe7f5cc0164943fa634eae9c17e27d26bda84dd"
+        },
+        "receipts": [
+          {
+            "error": null,
+            "error_description": null,
+            "iat": 1794389861,
+            "iss": "",
+            "network_confirmation_id": "2d0eec0f5dd84444b72e405012d5609f",
+            "payment_id": "2d0eec0f5dd84444b72e405012d5609f",
+            "psp_confirmation_id": "2d0eec0f5dd84444b72e405012d5609f",
+            "reference": "YejH2kBa93DsTyNxkbRvGWd-lfYuvWu5XRYH1sarkQs",
+            "status": "Success"
+          }
+        ],
+        "retained_task_message_challenge_responses": [
+          "123",
+          "123"
+        ],
+        "state": "completed",
+        "status_message_context_id": "29ff03b2-7f51-47f0-ae32-2bdb1dedf79a",
+        "status_message_task_id": "f3d6d62e-fd72-4a96-8329-e4b74b22fc81",
+        "status_text": [
+          "{'status': 'success'}"
+        ]
+      },
+      "initial_task": {
+        "context_id": "29ff03b2-7f51-47f0-ae32-2bdb1dedf79a",
+        "id": "6c3e3acd-84ab-43d2-9852-f086d6e86453",
+        "otp_challenge": {
+          "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+          "type": "otp"
+        },
+        "raw_task_digest": {
+          "bytes": 4130,
+          "sha256": "9dc396c25930a76132f0b44de04aeb7375b64bbe39e3c9fe43875a816a30ab37"
+        },
+        "receipts": [],
+        "retained_task_message_challenge_responses": [],
+        "state": "input-required",
+        "status_message_context_id": "29ff03b2-7f51-47f0-ae32-2bdb1dedf79a",
+        "status_message_task_id": "f3d6d62e-fd72-4a96-8329-e4b74b22fc81",
+        "status_text": [
+          "Please provide the challenge response to complete the payment."
+        ]
+      },
+      "original_call_errors": [
+        {
+          "error": "JSON-RPC Error code=-32602 data=None message='bad context id'",
+          "error_type": "A2AClientJSONRPCError",
+          "phase": "adverse-original-payment-otp"
+        }
+      ],
+      "original_call_phases": [
+        "catalog",
+        "cart-selection",
+        "shipping",
+        "payment-methods",
+        "credential-token",
+        "checkout",
+        "checkout-mandate",
+        "payment-mandate",
+        "credential-association",
+        "payment-start",
+        "other-original-catalog",
+        "adverse-original-payment-otp",
+        "payment-otp"
+      ],
+      "original_call_return_count": 12,
+      "original_call_started_count": 13,
+      "original_call_terminal_count": 13,
+      "otp_request": {
+        "challenge": {
+          "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+          "type": "otp"
+        },
+        "context_id": "29ff03b2-7f51-47f0-ae32-2bdb1dedf79a",
+        "index": 5,
+        "kind": "public-otp-request",
+        "merchant_task_id": "6c3e3acd-84ab-43d2-9852-f086d6e86453"
+      },
+      "owned_budget_stop_observed": false,
+      "owned_total_request_byte_branch_inferred_by_exclusion": false,
+      "parent_status": "executed_returned",
+      "prior_completed_receipt_observed": true,
+      "public_offered_cart_selection": {
+        "index": 0,
+        "kind": "human-cart-selection",
+        "offered": [
+          {
+            "amount": 59.99,
+            "cart_id": "cart_1",
+            "currency": "USD",
+            "item_label": "Lightweight breathable mesh walking shoes"
+          },
+          {
+            "amount": 75.5,
+            "cart_id": "cart_2",
+            "currency": "USD",
+            "item_label": "Ergonomic arch support athletic walking shoes"
+          },
+          {
+            "amount": 45.0,
+            "cart_id": "cart_3",
+            "currency": "USD",
+            "item_label": "Water-resistant daily comfort walking sneakers"
+          }
+        ],
+        "selected": {
+          "amount": 59.99,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Lightweight breathable mesh walking shoes"
+        }
+      },
+      "public_offered_payment_selection": {
+        "index": 3,
+        "kind": "human-payment-selection",
+        "offered": {
+          "payment_method_aliases": [
+            "American Express ending in 4444",
+            "American Express ending in 8888"
+          ]
+        },
+        "selected": "American Express ending in 4444"
+      },
+      "public_tasks": [
+        {
+          "disposition": "returned",
+          "phase": "initial-payment-task",
+          "task": {
+            "context_id": "29ff03b2-7f51-47f0-ae32-2bdb1dedf79a",
+            "id": "6c3e3acd-84ab-43d2-9852-f086d6e86453",
+            "otp_challenge": {
+              "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+              "type": "otp"
+            },
+            "raw_task_digest": {
+              "bytes": 4130,
+              "sha256": "9dc396c25930a76132f0b44de04aeb7375b64bbe39e3c9fe43875a816a30ab37"
+            },
+            "receipts": [],
+            "retained_task_message_challenge_responses": [],
+            "state": "input-required",
+            "status_message_context_id": "29ff03b2-7f51-47f0-ae32-2bdb1dedf79a",
+            "status_message_task_id": "f3d6d62e-fd72-4a96-8329-e4b74b22fc81",
+            "status_text": [
+              "Please provide the challenge response to complete the payment."
+            ]
+          }
+        },
+        {
+          "disposition": "refused_by_owned_read",
+          "phase": "adverse-authority-read",
+          "task": {
+            "context_id": "29ff03b2-7f51-47f0-ae32-2bdb1dedf79a",
+            "id": "6c3e3acd-84ab-43d2-9852-f086d6e86453",
+            "otp_challenge": null,
+            "raw_task_digest": {
+              "bytes": 7529,
+              "sha256": "af652254d5c0570c4a71bfbc466e0cb5594329665c18cf3c87c953481ed93dac"
+            },
+            "receipts": [],
+            "retained_task_message_challenge_responses": [
+              "123"
+            ],
+            "state": "input-required",
+            "status_message_context_id": null,
+            "status_message_task_id": null,
+            "status_text": []
+          }
+        },
+        {
+          "disposition": "returned",
+          "phase": "after-original-otp",
+          "task": {
+            "context_id": "29ff03b2-7f51-47f0-ae32-2bdb1dedf79a",
+            "id": "6c3e3acd-84ab-43d2-9852-f086d6e86453",
+            "otp_challenge": null,
+            "raw_task_digest": {
+              "bytes": 11660,
+              "sha256": "5647d8ab99c16b5965f09d4a9fe7f5cc0164943fa634eae9c17e27d26bda84dd"
+            },
+            "receipts": [
+              {
+                "error": null,
+                "error_description": null,
+                "iat": 1794389861,
+                "iss": "",
+                "network_confirmation_id": "2d0eec0f5dd84444b72e405012d5609f",
+                "payment_id": "2d0eec0f5dd84444b72e405012d5609f",
+                "psp_confirmation_id": "2d0eec0f5dd84444b72e405012d5609f",
+                "reference": "YejH2kBa93DsTyNxkbRvGWd-lfYuvWu5XRYH1sarkQs",
+                "status": "Success"
+              }
+            ],
+            "retained_task_message_challenge_responses": [
+              "123",
+              "123"
+            ],
+            "state": "completed",
+            "status_message_context_id": "29ff03b2-7f51-47f0-ae32-2bdb1dedf79a",
+            "status_message_task_id": "f3d6d62e-fd72-4a96-8329-e4b74b22fc81",
+            "status_text": [
+              "{'status': 'success'}"
+            ]
+          }
+        }
+      ],
+      "raw_public_event_count": 44,
+      "repeat_event": null,
+      "repeat_receipts_equal_prior_receipts": null,
+      "repeat_task": null,
+      "semantic_response_captured": true,
+      "shipping_display": {
+        "address": {
+          "address_line": [
+            "123 Main St"
+          ],
+          "city": "Sample City",
+          "country": "US",
+          "organization": "Sample Organization",
+          "phone_number": "+1-000-000-0000",
+          "postal_code": "00000",
+          "recipient": "Bugs Bunny",
+          "region": "ST"
+        },
+        "index": 2,
+        "kind": "public-shipping-display"
+      },
+      "waiting_without_human_reply_observed": false,
+      "wallet_consent": {
+        "consent": true,
+        "index": 1,
+        "kind": "human-wallet-consent",
+        "user_email": "bugsbunny@gmail.com"
+      },
+      "whole_task_grade": null,
+      "wrong_reply_public_refusal_observed": false
+    },
+    {
+      "actor_result_present": true,
+      "authority_observations": {
+        "disposition_event": null,
+        "fault_event": null,
+        "original_rpc_error_event": null,
+        "recovery_event": null
+      },
+      "caller_error": {
+        "message": "Duplicate continuation requires an actual completed public receipt first.",
+        "type": "ValueError"
+      },
+      "caller_status": "actual_failed_or_partial_attempt_retained",
+      "cart_confirmation": {
+        "approved": true,
+        "cart": {
+          "amount": 55.99,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Lightweight mesh walking sneakers"
+        },
+        "index": 4,
+        "kind": "human-cart-confirmation",
+        "payment_method": "American Express ending in 4444",
+        "shipping": {
+          "address_line": [
+            "123 Main St"
+          ],
+          "city": "Sample City",
+          "country": "US",
+          "organization": "Sample Organization",
+          "phone_number": "+1-000-000-0000",
+          "postal_code": "00000",
+          "recipient": "Bugs Bunny",
+          "region": "ST"
+        }
+      },
+      "case_id": "ap2-native-provider-v2-repeat-completed",
+      "case_window_local_refusals": [
+        {
+          "status": "no_upstream_call_budget_or_prior_failure",
+          "time": "2026-11-11T09:38:55.010184+00:00"
+        }
+      ],
+      "checkout_display_fields": {
+        "amount": 55.99,
+        "amount_cents": 5599,
+        "cart_id": "cart_1",
+        "checkout_hash": "26VyjEEkAwFZFnpWopbRzG8aiK_-qzvSbtOF8Zxh6d4",
+        "currency": "USD",
+        "item_label": "Lightweight mesh walking sneakers"
+      },
+      "consistency_questions": [],
+      "declared_public_facts": {
+        "cart_index": 0,
+        "case_id": "ap2-native-provider-v2-repeat-completed",
+        "catalog_search": "unbranded walking shoes",
+        "confirm_cart": true,
+        "fault": "none",
+        "otp_response": "123",
+        "payment_method_index": 0,
+        "repeat_after_completed": true,
+        "user_email": "bugsbunny@gmail.com",
+        "wallet_consent": true
+      },
+      "disposition": "owned_byte_budget_stop_before_repeat_prerequisite_completed",
+      "exact_reply_in_actor_event": true,
+      "exact_reply_present_in_retained_task_messages": true,
+      "explicit_human_reply": {
+        "index": 6,
+        "kind": "explicit-human-otp",
+        "response": "123"
+      },
+      "failure_attribution": "owned_accounting_boundary_then_original_failed_public_task; upstream model/server failure not established",
+      "final_task": {
+        "context_id": "2a44b192-49f4-463e-b8f6-fa71e79a7ebf",
+        "id": "7ea13918-c9a9-40a3-8e48-96938793b797",
+        "otp_challenge": null,
+        "raw_task_digest": {
+          "bytes": 7926,
+          "sha256": "2992cfaebe94d78714ee4b1e14e113234ab382df9ec7dcace8b6e500738effef"
+        },
+        "receipts": [],
+        "retained_task_message_challenge_responses": [
+          "123"
+        ],
+        "state": "failed",
+        "status_message_context_id": "2a44b192-49f4-463e-b8f6-fa71e79a7ebf",
+        "status_message_task_id": "d732eaf6-99cc-448e-b8f8-c3e5b7d2c784",
+        "status_text": [
+          "An error occurred: credentials_provider payment credential failed (state=TaskState.failed): An error occurred: 429 None. {'error': {'message': 'owned_provider_budget_or_prior_failure'}}"
+        ]
+      },
+      "initial_task": {
+        "context_id": "2a44b192-49f4-463e-b8f6-fa71e79a7ebf",
+        "id": "7ea13918-c9a9-40a3-8e48-96938793b797",
+        "otp_challenge": {
+          "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+          "type": "otp"
+        },
+        "raw_task_digest": {
+          "bytes": 4117,
+          "sha256": "d5397adfa22613b4c9e7aeb27d1980bf629cf3bc99f2e30851e44a9bd46098d5"
+        },
+        "receipts": [],
+        "retained_task_message_challenge_responses": [],
+        "state": "input-required",
+        "status_message_context_id": "2a44b192-49f4-463e-b8f6-fa71e79a7ebf",
+        "status_message_task_id": "d732eaf6-99cc-448e-b8f8-c3e5b7d2c784",
+        "status_text": [
+          "Please provide the challenge response to complete the payment."
+        ]
+      },
+      "original_call_errors": [],
+      "original_call_phases": [
+        "catalog",
+        "cart-selection",
+        "shipping",
+        "payment-methods",
+        "credential-token",
+        "checkout",
+        "checkout-mandate",
+        "payment-mandate",
+        "credential-association",
+        "payment-start",
+        "payment-otp"
+      ],
+      "original_call_return_count": 11,
+      "original_call_started_count": 11,
+      "original_call_terminal_count": 11,
+      "otp_request": {
+        "challenge": {
+          "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+          "type": "otp"
+        },
+        "context_id": "2a44b192-49f4-463e-b8f6-fa71e79a7ebf",
+        "index": 5,
+        "kind": "public-otp-request",
+        "merchant_task_id": "7ea13918-c9a9-40a3-8e48-96938793b797"
+      },
+      "owned_budget_stop_observed": true,
+      "owned_total_request_byte_branch_inferred_by_exclusion": true,
+      "parent_status": "executed_returned",
+      "prior_completed_receipt_observed": false,
+      "public_offered_cart_selection": {
+        "index": 0,
+        "kind": "human-cart-selection",
+        "offered": [
+          {
+            "amount": 55.99,
+            "cart_id": "cart_1",
+            "currency": "USD",
+            "item_label": "Lightweight mesh walking sneakers"
+          },
+          {
+            "amount": 89.5,
+            "cart_id": "cart_2",
+            "currency": "USD",
+            "item_label": "Orthopedic support walking shoes"
+          },
+          {
+            "amount": 72.0,
+            "cart_id": "cart_3",
+            "currency": "USD",
+            "item_label": "Water-resistant daily walking shoes"
+          }
+        ],
+        "selected": {
+          "amount": 55.99,
+          "cart_id": "cart_1",
+          "currency": "USD",
+          "item_label": "Lightweight mesh walking sneakers"
+        }
+      },
+      "public_offered_payment_selection": {
+        "index": 3,
+        "kind": "human-payment-selection",
+        "offered": {
+          "payment_method_aliases": [
+            "American Express ending in 4444",
+            "American Express ending in 8888"
+          ]
+        },
+        "selected": "American Express ending in 4444"
+      },
+      "public_tasks": [
+        {
+          "disposition": "returned",
+          "phase": "initial-payment-task",
+          "task": {
+            "context_id": "2a44b192-49f4-463e-b8f6-fa71e79a7ebf",
+            "id": "7ea13918-c9a9-40a3-8e48-96938793b797",
+            "otp_challenge": {
+              "display_text": "The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)",
+              "type": "otp"
+            },
+            "raw_task_digest": {
+              "bytes": 4117,
+              "sha256": "d5397adfa22613b4c9e7aeb27d1980bf629cf3bc99f2e30851e44a9bd46098d5"
+            },
+            "receipts": [],
+            "retained_task_message_challenge_responses": [],
+            "state": "input-required",
+            "status_message_context_id": "2a44b192-49f4-463e-b8f6-fa71e79a7ebf",
+            "status_message_task_id": "d732eaf6-99cc-448e-b8f8-c3e5b7d2c784",
+            "status_text": [
+              "Please provide the challenge response to complete the payment."
+            ]
+          }
+        },
+        {
+          "disposition": "returned",
+          "phase": "after-original-otp",
+          "task": {
+            "context_id": "2a44b192-49f4-463e-b8f6-fa71e79a7ebf",
+            "id": "7ea13918-c9a9-40a3-8e48-96938793b797",
+            "otp_challenge": null,
+            "raw_task_digest": {
+              "bytes": 7926,
+              "sha256": "2992cfaebe94d78714ee4b1e14e113234ab382df9ec7dcace8b6e500738effef"
+            },
+            "receipts": [],
+            "retained_task_message_challenge_responses": [
+              "123"
+            ],
+            "state": "failed",
+            "status_message_context_id": "2a44b192-49f4-463e-b8f6-fa71e79a7ebf",
+            "status_message_task_id": "d732eaf6-99cc-448e-b8f8-c3e5b7d2c784",
+            "status_text": [
+              "An error occurred: credentials_provider payment credential failed (state=TaskState.failed): An error occurred: 429 None. {'error': {'message': 'owned_provider_budget_or_prior_failure'}}"
+            ]
+          }
+        }
+      ],
+      "raw_public_event_count": 35,
+      "repeat_event": null,
+      "repeat_receipts_equal_prior_receipts": null,
+      "repeat_task": null,
+      "semantic_response_captured": true,
+      "shipping_display": {
+        "address": {
+          "address_line": [
+            "123 Main St"
+          ],
+          "city": "Sample City",
+          "country": "US",
+          "organization": "Sample Organization",
+          "phone_number": "+1-000-000-0000",
+          "postal_code": "00000",
+          "recipient": "Bugs Bunny",
+          "region": "ST"
+        },
+        "index": 2,
+        "kind": "public-shipping-display"
+      },
+      "waiting_without_human_reply_observed": false,
+      "wallet_consent": {
+        "consent": true,
+        "index": 1,
+        "kind": "human-wallet-consent",
+        "user_email": "bugsbunny@gmail.com"
+      },
+      "whole_task_grade": null,
+      "wrong_reply_public_refusal_observed": false
+    }
+  ],
+  "completed_at": "2026-11-11T10:57:28.419273+00:00",
+  "evidence_bindings": {
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted-manifest.json": {
+      "bytes": 41545,
+      "sha256": "d6cca9f19a5aff4b1e866df49de7b9c8130590952f6a19777e3813996e6cc880"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-correct-reply\\ap2-native-provider-v2-correct-reply.public-human-facts.json": {
+      "bytes": 319,
+      "sha256": "39ad5939f882cd9232af183e703d81e84aa0473d4302c224c793a3ac796a1eba"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-correct-reply\\caller\\actor-public-events.jsonl": {
+      "bytes": 23991,
+      "sha256": "0a9d9f4ecdca572e3a7b09c85db0af40d05b9f7423f77fd1dcb4fce671f8ed26"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-correct-reply\\caller\\result.json": {
+      "bytes": 255030,
+      "sha256": "1674870f46f5172db5cd24bd94ffebb8635109dcb61e24ae91bc80010333f3d6"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-foreign-context-recovery\\ap2-native-provider-v2-foreign-context-recovery.public-human-facts.json": {
+      "bytes": 348,
+      "sha256": "4a61a52621b103fe62dfe81ae6a45a7e85f3cff40aae4077ac973220867f4329"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-foreign-context-recovery\\caller\\actor-public-events.jsonl": {
+      "bytes": 37620,
+      "sha256": "6e290d74c64c49fbe6bda84b00f45f2c32e130fda351f09d4c2ec309f8d10a6d"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-foreign-context-recovery\\caller\\result.json": {
+      "bytes": 275318,
+      "sha256": "b3afade1844b94d1fc18b9b951c6a5d2f8476e9b1f20aa99a4bc628a70db2535"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-no-reply\\ap2-native-provider-v2-no-reply.public-human-facts.json": {
+      "bytes": 313,
+      "sha256": "d2025c211c1d53b202e163944ed9262a139d474f6fbb3289b0efe599e63b9772"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-no-reply\\caller\\actor-public-events.jsonl": {
+      "bytes": 19294,
+      "sha256": "dd288080725392dfbd8b247d16116c98764e1ff4c0ca48dcb321fed4ae3be1b6"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-no-reply\\caller\\result.json": {
+      "bytes": 243633,
+      "sha256": "bb40d17e59d66a3d6802f237d823d3d53a2d8c5cab3198b0975b838d0e42c2d8"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-repeat-completed\\ap2-native-provider-v2-repeat-completed.public-human-facts.json": {
+      "bytes": 321,
+      "sha256": "0bb55e10324bff83798ca926255b5b9cbd2d044dd632f144c5cc190f5d245b22"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-repeat-completed\\caller\\actor-public-events.jsonl": {
+      "bytes": 23533,
+      "sha256": "643b1c93655bbed509ac9dfe462dc44c000cc98f4a3f1f52bee0d74160350192"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-repeat-completed\\caller\\result.json": {
+      "bytes": 253240,
+      "sha256": "294d67f7ab1b8ea0444fed66e4c33a7178e8c849e857ddc4eccd418b7c2c268e"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-wrong-reply\\ap2-native-provider-v2-wrong-reply.public-human-facts.json": {
+      "bytes": 331,
+      "sha256": "4a56db351a1eae192c3196f22cc65d805c4b4de1dd8371c2424468eb86c9cca1"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-wrong-reply\\caller\\actor-public-events.jsonl": {
+      "bytes": 23474,
+      "sha256": "8ce4aa8a2d00b717ad10eec4ec3241a69d59a5599a0141767d2fb826debc4996"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\cases\\ap2-native-provider-v2-wrong-reply\\caller\\result.json": {
+      "bytes": 253024,
+      "sha256": "a31ee9e6e445ca67643ca112016d8c8ab5d8899220ce57f14935895f1e18a529"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\provider\\local-refusals.jsonl": {
+      "bytes": 99,
+      "sha256": "6988bb2ae01e67453634146e7369976913492f12d60c3f25a40b9fc2ea2590f8"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\execution\\result.json": {
+      "bytes": 5556,
+      "sha256": "ab101e9b9dc40778d5a6fcf6556bb2eeb0cdc70c895aef0db101f193fc08af44"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\extracted\\plan\\plan.json": {
+      "bytes": 37151,
+      "sha256": "5a12321010dc1a7df869ce692a02752eee4380edddf3fd1355e9cb538d26a46a"
+    },
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\runs\\ap2-original-native-provider-development\\v2\\retained-42995902326-1\\retention.json": {
+      "bytes": 680,
+      "sha256": "02f98c95b90b4bd8b7ad9950a7faf708b7cfd1efae73c30505c9bac962bdc27a"
+    }
+  },
+  "expected_head_sha": "5f8ef7c8948c0a4a89b665810968cc4d5a734cda",
+  "expected_run_id": 42995902326,
+  "human_gold_qualified": false,
+  "integrity_questions": [],
+  "limitations": [
+    "Root's separate independent raw review owns archive/native/runtime/provider reconciliation.",
+    "Actor choices and source-bound calls establish caller observations; retained Task message fields add public evidence but do not establish exact wire attribution.",
+    "An observed public receipt is a sample artifact, not real-world settlement or human-qualified gold.",
+    "Repeated public Tasks/receipts do not establish idempotency, hidden-effect uniqueness or durability.",
+    "All partial, failed and unexecuted branches remain in the five-case census; no scientific checkpoint, unchanged ADK shopper or bridge qualification is granted."
+  ],
+  "original_app_sdk_model_actor_solver_evaluator_checker_imports_or_executions": 0,
+  "owned_boundary_observations": {
+    "closing_provider_summary": {
+      "actual_live_generation_responses_observed": true,
+      "cumulative_request_bytes": 197564,
+      "failed": false,
+      "observed_usage_tokens": 44940,
+      "provider_mode": "live",
+      "responses_with_unknown_usage": 0,
+      "stopped": true,
+      "successful_provider_responses": 60,
+      "upstream_allocations": 60,
+      "usage_threshold_is_a_post_response_stop_not_a_hard_token_cap": true
+    },
+    "fixed_limits": {
+      "caller_timeout_seconds": 300,
+      "maximum_observed_usage_tokens_before_stopping": 100000,
+      "maximum_total_request_bytes": 200000,
+      "minimum_interval_seconds": 6.0,
+      "port_preflight_wait_seconds": 8.0,
+      "request_timeout_seconds": 45,
+      "screen_timeout_seconds": 1500,
+      "upstream_calls_including_smoke": 80
+    },
+    "inference_limit": "The refused request payload and byte count were not retained. The byte branch is inferred from the bound implementation, first local refusal, no prior provider failure, and remaining call/token limits; raw provider reconciliation is separate.",
+    "local_refusals": [
+      {
+        "status": "no_upstream_call_budget_or_prior_failure",
+        "time": "2026-11-11T09:38:55.010184+00:00"
+      }
+    ],
+    "total_request_byte_branch_inferred_by_exclusion": true
+  },
+  "provider_requests_by_analyzer": 0,
+  "public_receipt_case_count": 2,
+  "root_retention": {
+    "api_digest": "sha256:5aa54a06193b25416e6d952fdee9be2af1760fd60fed596107906c5864bb2bf3",
+    "archive_bytes": 1945795,
+    "archive_max_bytes": 300000000,
+    "archive_sha256": "5aa54a06193b25416e6d952fdee9be2af1760fd60fed596107906c5864bb2bf3",
+    "artifact_id": 13843679125,
+    "artifact_name": "ap2-original-native-provider-development-v2",
+    "copy_buffer_bytes": 262144,
+    "digest_matches_api": true,
+    "expanded_max_bytes": 2000000000,
+    "extracted_files": 217,
+    "head_sha": "5f8ef7c8948c0a4a89b665810968cc4d5a734cda",
+    "run_id": 42995902326,
+    "scientific_acceptance": "evaluate individual raw profiles separately",
+    "status": "retained",
+    "workflow_conclusion": "success"
+  },
+  "schema_version": "ap2-original-native-provider-public-semantic-observations/2",
+  "semantic_response_case_count": 5,
+  "status": "retained_public_observations_consistent",
+  "whole_task_grade": null
+}

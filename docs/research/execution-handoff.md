@@ -1,3 +1,40 @@
+# Active continuation: 11 November 2026, observed native Gemini task continuations
+
+Whole-project work remains approximately **80%** under estimate v8. The new
+development observations are concrete; full-study and human-gold qualification
+remain outstanding.
+
+Run [42995902326](https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/42995902326)
+completed at `5f8ef7c8948c0a4a89b665810968cc4d5a734cda`. Its retained
+1,945,795-byte archive and API digest agree at SHA-256
+`5aa54a06193b25416e6d952fdee9be2af1760fd60fed596107906c5864bb2bf3`;
+all 217 archive members are preserved. The [V2 results](ap2-original-native-provider-results-v2.md)
+and separate raw/semantic reconstructions retain all five task cases.
+
+Correct reply and foreign-context recovery each have an actual completed
+public Task with one Success demo receipt. The wrong human reply remains
+input-required with `Challenge response incorrect.` No reply has no OTP
+continuation and remains waiting. The original foreign-context call returned
+invalid params; the owned public reader refused/retained the mismatched Task,
+and recovery used the original previously returned Task ID and context.
+
+The fifth case has a failed prerequisite payment and no repeat attempt. The
+declared 200,000-byte cumulative request budget locally refused a later call.
+All 60 upstream responses were HTTP 200, with 197,564 request bytes, 44,940
+reported total tokens and zero unknown-usage responses. This is not an observed
+Gemini quota failure or an original-application non-support result. All 20
+recorded children were reaped. The measured minimum provider-start gap is
+6.000037 seconds. Original service/SDK generation now appears in the capture;
+the scripted caller and owned public-reader/proxy interventions stay explicit.
+
+A separate [V3 repeat control](ap2-original-native-repeat-protocol-v3.md) allocates
+one fresh task under the unchanged call/byte/rate limits. It is explicitly
+adaptive development selected after V2, with a one-task denominator and no
+held-out claim. V2's partial case remains unchanged and is never replaced by
+the follow-up. Root alone handles its review, freeze, dispatch and retention.
+
+The entries below are historical.
+
 # Active continuation: 11 November 2026, actual provider access and native caller failure
 
 Whole-project work remains approximately **80%** under the unchanged estimate

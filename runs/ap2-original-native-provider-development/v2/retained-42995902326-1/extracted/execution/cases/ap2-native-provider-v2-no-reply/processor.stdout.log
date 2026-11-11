@@ -1,0 +1,77 @@
+I1111 09:35:25.041530 140620597234560 server.py:90] merchant_payment_processor_agent listening on http://localhost:8003
+INFO:     Started server process [2784]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8003 (Press CTRL+C to quit)
+I1111 09:35:25.211393 140620597234560 server.py:121] 
+
+
+
+I1111 09:35:25.211518 140620597234560 server.py:122] ---------- New Agent Request Received---------
+I1111 09:35:25.211561 140620597234560 server.py:125] GET http://127.0.0.1:8003/a2a/merchant_payment_processor_agent/.well-known/agent-card.json
+I1111 09:35:25.211607 140620597234560 server.py:134] 
+
+I1111 09:35:25.211636 140620597234560 server.py:135] [Request Body]
+I1111 09:35:25.211661 140620597234560 server.py:136] <empty>
+I1111 09:35:25.212061 140620597234560 server.py:162] 
+
+I1111 09:35:25.212112 140620597234560 server.py:163] [Response Body]
+I1111 09:35:25.212140 140620597234560 server.py:164] {"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["text/plain"],"defaultOutputModes":["application/json"],"description":"An agent that processes card payments on behalf of a merchant.","name":"merchant_payment_processor_agent","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Processes card payments.","id":"card-processor","name":"Card Processor","tags":["payment","card"]}],"url":"http://localhost:8003/a2a/merchant_payment_processor_agent","version":"1.0.0"}
+INFO:     127.0.0.1:46092 - "GET /a2a/merchant_payment_processor_agent/.well-known/agent-card.json HTTP/1.1" 200 OK
+I1111 09:36:10.425575 140620597234560 server.py:121] 
+
+
+
+I1111 09:36:10.425679 140620597234560 server.py:122] ---------- New Agent Request Received---------
+I1111 09:36:10.425721 140620597234560 server.py:125] GET http://localhost:8003/a2a/merchant_payment_processor_agent/.well-known/agent-card.json
+I1111 09:36:10.425763 140620597234560 server.py:134] 
+
+I1111 09:36:10.425791 140620597234560 server.py:135] [Request Body]
+I1111 09:36:10.425826 140620597234560 server.py:136] <empty>
+I1111 09:36:10.426218 140620597234560 server.py:162] 
+
+I1111 09:36:10.426278 140620597234560 server.py:163] [Response Body]
+I1111 09:36:10.426309 140620597234560 server.py:164] {"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["text/plain"],"defaultOutputModes":["application/json"],"description":"An agent that processes card payments on behalf of a merchant.","name":"merchant_payment_processor_agent","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Processes card payments.","id":"card-processor","name":"Card Processor","tags":["payment","card"]}],"url":"http://localhost:8003/a2a/merchant_payment_processor_agent","version":"1.0.0"}
+INFO:     127.0.0.1:57604 - "GET /a2a/merchant_payment_processor_agent/.well-known/agent-card.json HTTP/1.1" 200 OK
+I1111 09:36:10.428301 140620597234560 server.py:121] 
+
+
+
+I1111 09:36:10.428369 140620597234560 server.py:122] ---------- New Agent Request Received---------
+I1111 09:36:10.428410 140620597234560 server.py:125] POST http://localhost:8003/a2a/merchant_payment_processor_agent
+I1111 09:36:10.428558 140620597234560 server.py:134] 
+
+I1111 09:36:10.428596 140620597234560 server.py:135] [Request Body]
+I1111 09:36:10.428624 140620597234560 server.py:136] {'id': '026976d0-a1d1-4052-9bb0-780a58062dba', 'jsonrpc': '2.0', 'method': 'message/send', 'params': {'configuration': {'acceptedOutputModes': [], 'blocking': True}, 'message': {'contextId': '80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef', 'kind': 'message', 'messageId': 'f10d2a57a8ef47559687c1b465d9344d', 'parts': [{'kind': 'text', 'text': 'initiate_payment'}, {'data': {'ap2.mandates.PaymentMandateSdJwt': 'eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIldodF9kQnYzZ0tWLXJjR3loTVFERGxGTWhmcGVSU2pzLUNlTnctcDhwU3cifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ._SCa8rMdgabBPLFZGG8W26-E3tP3oEZBOuxXuJxwV7hEmMyUbK72EPgnV7d7CvR0DLnO99uHTDL7HjuUe3eBbQ~WyJJd0ZhdnVYTDJpZTZzNzhHbmotS3BnIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiYTVMZEY3ejlVbWljWFdQVzk4RTc4Qmc2NjFiRHg4MENhQzdmalFBckU0dyIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDU1OTksICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0Mzg5NzU4LCAiZXhwIjogMTc5NDM5MzM1OH1d~'}, 'kind': 'data'}, {'data': {'risk_data': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data'}, 'kind': 'data'}, {'data': {'ap2.mandates.CheckoutMandateSdJwt': 'eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogImNBTnpHSFA4c0xHTjlxZm9jVzAxbGJwRVo2UUotU3E0ZGhPVVVobDc0QW8ifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.JLk2_YH8gsVX0boyor7Ebsy8cNNfyMnEgQBD1cfLOmfGSWja52Ylh4laLxmDP8hybbnLsFq7wFulI0uV0nlEeg~WyJqR1lMMW5ZaFV2X2lzbjkyUDZQa2dRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZZVFl3WkRVeU16bGpNbVk0TkRNeFpqazROVGhsTjJNMFltUTFOalJqTXpJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpNYVdkb2RIZGxhV2RvZENCaWNtVmhkR2hoWW14bElHMWxjMmdnZDJGc2EybHVaeUJ6YUc5bGN5SXNJbkJ5YVdObElqbzFOVGs1ZlN3aWNYVmhiblJwZEhraU9qRXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkZlYwc0luTjBZWFIxY3lJNkltbHVZMjl0Y0d4bGRHVWlMQ0pqZFhKeVpXNWplU0k2SWxWVFJDSXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkTENKc2FXNXJjeUk2VzNzaWRIbHdaU0k2SW5CeWFYWmhZM2xmY0c5c2FXTjVJaXdpZFhKc0lqb2lhSFIwY0hNNkx5OWtaVzF2TFcxbGNtTm9ZVzUwTG1WNFlXMXdiR1V2Y0hKcGRtRmplU0o5WFN3aWFXRjBJam94TnprME16ZzVOelU0TENKbGVIQWlPakUzT1RRek9UTXpOVGg5LlIwRkdZRFBwUDZEb3h4Q3cySXN2N2VDV2kxajFHMkFKdjBfWF9rS1BKeU9kVC1VV1UzNnNvTF9QVmVjZkJkSy03UXRTd3FaNW9jd09hdVBEUV9ZVURRIl0~WyJaZmdxY3d0SWFDY1BFODVYZU9ELTNBIiwgeyJfc2QiOiBbIlc5NXA1clc2TWRic2Y4OWUtVHBwSUcyUHZ1MW9lY2N5bElDUE5ncGR6SkUiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJhNUxkRjd6OVVtaWNYV1BXOThFNzhCZzY2MWJEeDgwQ2FDN2ZqUUFyRTR3IiwgImlhdCI6IDE3OTQzODk3NTgsICJleHAiOiAxNzk0MzkzMzU4fV0~'}, 'kind': 'data'}], 'role': 'agent'}}}
+I1111 09:36:10.428704 140620597234560 server.py:141] 
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+I1111 09:36:10.429573 140620597234560 watch_log.py:87] 
+
+I1111 09:36:10.429628 140620597234560 watch_log.py:88] [Request Instructions]
+I1111 09:36:10.429655 140620597234560 watch_log.py:89] ['initiate_payment']
+I1111 09:36:10.429682 140620597234560 watch_log.py:101] 
+
+I1111 09:36:10.429705 140620597234560 watch_log.py:102] [A PaymentMandate SD-JWT was in the request Data]
+I1111 09:36:10.429728 140620597234560 watch_log.py:103] eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0x...
+I1111 09:36:10.429756 140620597234560 watch_log.py:105] 
+
+I1111 09:36:10.429779 140620597234560 watch_log.py:106] [A CheckoutMandate SD-JWT was in the request Data]
+I1111 09:36:10.429801 140620597234560 watch_log.py:107] eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0x...
+I1111 09:36:10.429832 140620597234560 watch_log.py:117] 
+
+I1111 09:36:10.429854 140620597234560 watch_log.py:118] [Data Part: risk_data] 
+I1111 09:36:10.429879 140620597234560 watch_log.py:119] eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data
+I1111 09:36:10.429928 140620597234560 base_server_executor.py:104] Server working on (context_id, task_id): (80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef, a256b1c1-20e9-4a50-9caa-b380a8871f2f)
+I1111 09:36:16.361603 140620597234560 _client.py:1025] HTTP Request: POST http://127.0.0.1:43297/v1beta/models/gemini-3.1-flash-lite-preview:generateContent "HTTP/1.0 200 OK"
+I1111 09:36:16.362615 140620597234560 base_server_executor.py:137] Using tool: initiate_payment
+I1111 09:36:16.365573 140620597234560 task_manager.py:179] Task not found or task_id not set. Creating new task for event (task_id: a256b1c1-20e9-4a50-9caa-b380a8871f2f, context_id: 80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef).
+I1111 09:36:16.366311 140620597234560 server.py:162] 
+
+I1111 09:36:16.366380 140620597234560 server.py:163] [Response Body]
+I1111 09:36:16.366411 140620597234560 server.py:164] {"id":"026976d0-a1d1-4052-9bb0-780a58062dba","jsonrpc":"2.0","result":{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","history":[{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"f10d2a57a8ef47559687c1b465d9344d","parts":[{"kind":"text","text":"initiate_payment"},{"data":{"ap2.mandates.PaymentMandateSdJwt":"eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogIldodF9kQnYzZ0tWLXJjR3loTVFERGxGTWhmcGVSU2pzLUNlTnctcDhwU3cifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ._SCa8rMdgabBPLFZGG8W26-E3tP3oEZBOuxXuJxwV7hEmMyUbK72EPgnV7d7CvR0DLnO99uHTDL7HjuUe3eBbQ~WyJJd0ZhdnVYTDJpZTZzNzhHbmotS3BnIiwgeyJ2Y3QiOiAibWFuZGF0ZS5wYXltZW50LjEiLCAidHJhbnNhY3Rpb25faWQiOiAiYTVMZEY3ejlVbWljWFdQVzk4RTc4Qmc2NjFiRHg4MENhQzdmalFBckU0dyIsICJwYXllZSI6IHsiaWQiOiAibWVyY2hhbnRfMSIsICJuYW1lIjogIkdlbmVyaWMgTWVyY2hhbnQiLCAid2Vic2l0ZSI6ICJodHRwczovL2RlbW8tbWVyY2hhbnQuZXhhbXBsZSJ9LCAicGF5bWVudF9hbW91bnQiOiB7ImFtb3VudCI6IDU1OTksICJjdXJyZW5jeSI6ICJVU0QifSwgInBheW1lbnRfaW5zdHJ1bWVudCI6IHsiaWQiOiAic3R1YiIsICJ0eXBlIjogImNhcmQiLCAiZGVzY3JpcHRpb24iOiAiQ2FyZCBcdTIwMjJcdTIwMjJcdTIwMjI0MjQyIn0sICJpYXQiOiAxNzk0Mzg5NzU4LCAiZXhwIjogMTc5NDM5MzM1OH1d~"},"kind":"data"},{"data":{"risk_data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"},"kind":"data"},{"data":{"ap2.mandates.CheckoutMandateSdJwt":"eyJhbGciOiAiRVMyNTYiLCAidHlwIjogImV4YW1wbGUrc2Qtand0IiwgImtpZCI6ICJ1c2VyLWtleS0xIn0.eyJkZWxlZ2F0ZV9wYXlsb2FkIjogW3siLi4uIjogImNBTnpHSFA4c0xHTjlxZm9jVzAxbGJwRVo2UUotU3E0ZGhPVVVobDc0QW8ifV0sICJfc2RfYWxnIjogInNoYS0yNTYifQ.JLk2_YH8gsVX0boyor7Ebsy8cNNfyMnEgQBD1cfLOmfGSWja52Ylh4laLxmDP8hybbnLsFq7wFulI0uV0nlEeg~WyJqR1lMMW5ZaFV2X2lzbjkyUDZQa2dRIiwgImNoZWNrb3V0X2p3dCIsICJleUpoYkdjaU9pSkZVekkxTmlJc0luUjVjQ0k2SWtwWFZDSXNJbXRwWkNJNkltMWxjbU5vWVc1MExXdGxlUzB4SW4wLmV5SnBaQ0k2SW1OaGNuUmZNU0lzSW0xbGNtTm9ZVzUwSWpwN0ltbGtJam9pYldWeVkyaGhiblJmTVNJc0ltNWhiV1VpT2lKSFpXNWxjbWxqSUUxbGNtTm9ZVzUwSWl3aWQyVmljMmwwWlNJNkltaDBkSEJ6T2k4dlpHVnRieTF0WlhKamFHRnVkQzVsZUdGdGNHeGxJbjBzSW14cGJtVmZhWFJsYlhNaU9sdDdJbWxrSWpvaWJHbGZZVFl3WkRVeU16bGpNbVk0TkRNeFpqazROVGhsTjJNMFltUTFOalJqTXpJaUxDSnBkR1Z0SWpwN0ltbGtJam9pWTJGeWRGOHhJaXdpZEdsMGJHVWlPaUpNYVdkb2RIZGxhV2RvZENCaWNtVmhkR2hoWW14bElHMWxjMmdnZDJGc2EybHVaeUJ6YUc5bGN5SXNJbkJ5YVdObElqbzFOVGs1ZlN3aWNYVmhiblJwZEhraU9qRXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkZlYwc0luTjBZWFIxY3lJNkltbHVZMjl0Y0d4bGRHVWlMQ0pqZFhKeVpXNWplU0k2SWxWVFJDSXNJblJ2ZEdGc2N5STZXM3NpZEhsd1pTSTZJbk4xWW5SdmRHRnNJaXdpWVcxdmRXNTBJam8xTlRrNWZTeDdJblI1Y0dVaU9pSjBiM1JoYkNJc0ltRnRiM1Z1ZENJNk5UVTVPWDFkTENKc2FXNXJjeUk2VzNzaWRIbHdaU0k2SW5CeWFYWmhZM2xmY0c5c2FXTjVJaXdpZFhKc0lqb2lhSFIwY0hNNkx5OWtaVzF2TFcxbGNtTm9ZVzUwTG1WNFlXMXdiR1V2Y0hKcGRtRmplU0o5WFN3aWFXRjBJam94TnprME16ZzVOelU0TENKbGVIQWlPakUzT1RRek9UTXpOVGg5LlIwRkdZRFBwUDZEb3h4Q3cySXN2N2VDV2kxajFHMkFKdjBfWF9rS1BKeU9kVC1VV1UzNnNvTF9QVmVjZkJkSy03UXRTd3FaNW9jd09hdVBEUV9ZVURRIl0~WyJaZmdxY3d0SWFDY1BFODVYZU9ELTNBIiwgeyJfc2QiOiBbIlc5NXA1clc2TWRic2Y4OWUtVHBwSUcyUHZ1MW9lY2N5bElDUE5ncGR6SkUiXSwgInZjdCI6ICJtYW5kYXRlLmNoZWNrb3V0LjEiLCAiY2hlY2tvdXRfaGFzaCI6ICJhNUxkRjd6OVVtaWNYV1BXOThFNzhCZzY2MWJEeDgwQ2FDN2ZqUUFyRTR3IiwgImlhdCI6IDE3OTQzODk3NTgsICJleHAiOiAxNzk0MzkzMzU4fV0~"},"kind":"data"}],"role":"agent","taskId":"a256b1c1-20e9-4a50-9caa-b380a8871f2f"}],"id":"a256b1c1-20e9-4a50-9caa-b380a8871f2f","kind":"task","status":{"message":{"contextId":"80dc38b0-ccfd-4c7b-83bc-b1a86b69a3ef","kind":"message","messageId":"55ab8d7e-cec8-410e-871f-57b864af10bd","parts":[{"kind":"text","text":"Please provide the challenge response to complete the payment."},{"data":{"challenge":{"type":"otp","display_text":"The payment method issuer sent a verification code to the phone number on file, please enter it below. It will be shared with the issuer so they can authorize the transaction.(Demo only hint: the code is 123)"}},"kind":"data"}],"role":"agent","taskId":"a256b1c1-20e9-4a50-9caa-b380a8871f2f"},"state":"input-required","timestamp":"2026-11-11T09:36:16.365331+00:00"}}}
+INFO:     127.0.0.1:57604 - "POST /a2a/merchant_payment_processor_agent HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2784]
