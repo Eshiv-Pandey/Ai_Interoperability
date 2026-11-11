@@ -1,0 +1,63 @@
+{
+  "fixtures": [
+    {
+      "actual_context_id": "e5080271-207b-4198-ab9e-2b1f30a28e60",
+      "actual_state": "input-required",
+      "actual_task_id": "e7973192-9d9e-48b8-9c52-0aca4a1b2ba7",
+      "fixture": "v7-pending-task.json",
+      "fixture_sha256": "e76c6510a5ac0033a2be3dfddee267574407c32bca369354e54c96b8a2d4d94c",
+      "selector": "public_records[13].public_value",
+      "source": "runs/ap2-original-shopper-development/v7/retained-42886479185-1/extracted/bank/cells/ap2-dev-001--original-1/reference-result.json",
+      "source_sha256": "7a26f3861f15cb2d21ef99536d8180ec1c00ac4bddc3218c0acc59a210f37ba5"
+    },
+    {
+      "actual_context_id": "caf71d84-2791-4edb-a772-815c9776348f",
+      "actual_state": "input-required",
+      "actual_task_id": "ca5bcf94-f8bf-4a87-874e-281c33a5157f",
+      "fixture": "v13-correct-pending-task.json",
+      "fixture_sha256": "a839318a43b7249baafe93ea0e6b618d34adc49e3bf6945a93ff052f783575c8",
+      "selector": "root",
+      "source": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_demo_otp--recovery/payment-start-task.json",
+      "source_sha256": "a839318a43b7249baafe93ea0e6b618d34adc49e3bf6945a93ff052f783575c8"
+    },
+    {
+      "actual_context_id": "caf71d84-2791-4edb-a772-815c9776348f",
+      "actual_state": "completed",
+      "actual_task_id": "ca5bcf94-f8bf-4a87-874e-281c33a5157f",
+      "fixture": "v13-correct-final-task.json",
+      "fixture_sha256": "424300afae01a7a55a5955c5b63eddbb537b1da43dad6e2759167b22c0d5301e",
+      "selector": "final_task",
+      "source": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_demo_otp--recovery/application-outcome.json",
+      "source_sha256": "d619647a2d4ba1c5632d2628f68ecb1ab28e7a8ee99496bc0ac7319094f6aedd"
+    },
+    {
+      "actual_context_id": "ebfc0ffe-1788-4caf-a601-3b70b35073b6",
+      "actual_state": "input-required",
+      "actual_task_id": "d4fc84b2-6fe9-4edc-9348-4e31d9c48652",
+      "fixture": "v13-wrong-pending-task.json",
+      "fixture_sha256": "323eb44358a7c789b72a6c99f26f0373045b081c6479542c733385bf5b3ec2cd",
+      "selector": "root",
+      "source": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_wrong_otp--recovery/payment-start-task.json",
+      "source_sha256": "323eb44358a7c789b72a6c99f26f0373045b081c6479542c733385bf5b3ec2cd"
+    },
+    {
+      "actual_context_id": "ebfc0ffe-1788-4caf-a601-3b70b35073b6",
+      "actual_state": "input-required",
+      "actual_task_id": "d4fc84b2-6fe9-4edc-9348-4e31d9c48652",
+      "fixture": "v13-wrong-final-task.json",
+      "fixture_sha256": "8a388595cb82a1abbd42959f8d339f90ff8626592c75ebb395f6a1cd25b53d1b",
+      "selector": "final_task",
+      "source": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_wrong_otp--recovery/application-outcome.json",
+      "source_sha256": "4cff5094b4574a88621f7244533c5ab7d3a0fd5eb396eaf920cd01b894fb3233"
+    },
+    {
+      "fixture": "original-merchant-card.json",
+      "fixture_sha256": "f5d67bace1fc46401d1e87d79660fc950028acb959485754a4d004792d3ef388",
+      "selector": "root",
+      "source": "runs/ap2-environment-preparation/source-stage-v1/ap2/code/samples/python/src/roles/merchant_agent/agent.json",
+      "source_sha256": "f5d67bace1fc46401d1e87d79660fc950028acb959485754a4d004792d3ef388"
+    }
+  ],
+  "qualification_scope": "Pure caller/helper unit controls; no new original/native/model execution",
+  "schema_version": "retained-public-AP2-unit-fixtures/1"
+}

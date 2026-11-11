@@ -1,0 +1,275 @@
+{
+  "completed_at": "2026-11-11T07:46:00.862295+00:00",
+  "constructed_control_count": 33,
+  "controls": [
+    {
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-B",
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\tests\\test_ap2_original_native_provider_v1.py"
+      ],
+      "constructed_only": true,
+      "exit_code": 0,
+      "log": {
+        "bytes": 123,
+        "sha256": "079e4e2a1a2bdd2970440bb180ae3c717fd01e4f9095868bb460a8738e1ad9dc"
+      },
+      "log_path": "runs/ap2-original-native-provider-development/v1/pre-dispatch-independent-review-v1/test_ap2_original_native_provider_v1.log",
+      "original_app_or_provider_executed": false,
+      "reported_seconds": 0.632,
+      "source": "tests/test_ap2_original_native_provider_v1.py",
+      "tests": 19
+    },
+    {
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-B",
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\tests\\test_ap2_public_scripted_continuation_v1.py"
+      ],
+      "constructed_only": true,
+      "exit_code": 0,
+      "log": {
+        "bytes": 114,
+        "sha256": "c8c96ce128ac4523505b87c7b204ef669d5b547623a947204d5ce8ed2f7e6e16"
+      },
+      "log_path": "runs/ap2-original-native-provider-development/v1/pre-dispatch-independent-review-v1/test_ap2_public_scripted_continuation_v1.log",
+      "original_app_or_provider_executed": false,
+      "reported_seconds": 0.087,
+      "source": "tests/test_ap2_public_scripted_continuation_v1.py",
+      "tests": 10
+    },
+    {
+      "command": [
+        "C:\\Python313\\python.exe",
+        "-B",
+        "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\tests\\test_ap2_public_task_read_v1.py"
+      ],
+      "constructed_only": true,
+      "exit_code": 0,
+      "log": {
+        "bytes": 107,
+        "sha256": "792d491075c305da7f6ad8b5cd9476ab168a4683d94b6b6b9443e1576cfdebc6"
+      },
+      "log_path": "runs/ap2-original-native-provider-development/v1/pre-dispatch-independent-review-v1/test_ap2_public_task_read_v1.log",
+      "original_app_or_provider_executed": false,
+      "reported_seconds": 0.049,
+      "source": "tests/test_ap2_public_task_read_v1.py",
+      "tests": 4
+    }
+  ],
+  "declared_case_ids": [
+    "ap2-native-provider-v1-correct-reply",
+    "ap2-native-provider-v1-wrong-reply",
+    "ap2-native-provider-v1-no-reply",
+    "ap2-native-provider-v1-foreign-context-recovery",
+    "ap2-native-provider-v1-repeat-completed"
+  ],
+  "findings": [
+    {
+      "detail": "Exact 136-file AP2 tree and 24-file x402 tree membership and hashes; original native modules, RPC routes and source-supported SDK base URL.",
+      "disposition": "verified_source_contract",
+      "id": "native-source-and-entrypoints",
+      "references": [
+        "scripts/run_ap2_original_native_provider_v1.py:40",
+        "scripts/run_ap2_original_native_provider_v1.py:91",
+        "scripts/run_ap2_original_native_provider_v1.py:110",
+        "scripts/run_ap2_original_native_provider_v1.py:328",
+        "scripts/run_ap2_original_native_provider_v1.py:508"
+      ]
+    },
+    {
+      "detail": "Fixed model/provider/limits/source/env/qualification fields use type-sensitive JSON comparison; exact OWNED membership and hashes checked before execution.",
+      "disposition": "fixed_and_verified",
+      "id": "frozen-plan-and-owned-bytes",
+      "references": [
+        "scripts/run_ap2_original_native_provider_v1.py:142",
+        "scripts/run_ap2_original_native_provider_v1.py:441"
+      ]
+    },
+    {
+      "detail": "60-call proposal changed prospectively to 80; concurrency control confirms 80 sends, four local refusals and 160 started/finished rows. Five cases and other limits unchanged. Static ideal64 accounting does not prove actual provider sufficiency.",
+      "disposition": "fixed_before_freeze_or_dispatch",
+      "id": "prospective-cap-delta",
+      "references": [
+        "scripts/run_ap2_original_native_provider_v1.py:38",
+        "tests/test_ap2_original_native_provider_v1.py:39",
+        "docs/research/ap2-original-native-provider-protocol-v1.md:77"
+      ]
+    },
+    {
+      "detail": "One serial ledger accounts smoke and nested SDK calls; 6-second pacing, request/response/total-byte bounds. Missing successful usage is sticky unknown-usage stop. 100000 observed tokens is explicitly post-response stopping and can be crossed by the last response.",
+      "disposition": "fixed_and_verified",
+      "id": "usage-and-hard-limits",
+      "references": [
+        "scripts/run_ap2_original_native_provider_v1.py:211",
+        "scripts/run_ap2_original_native_provider_v1.py:245",
+        "scripts/run_ap2_original_native_provider_v1.py:272"
+      ]
+    },
+    {
+      "detail": "Readiness/caller waits use remaining screen deadline; cleanup failures are retained; boundary closes before server shutdown, then serial provider lock drains before terminal census. Cleanup/drain can extend wall time beyond execution deadline.",
+      "disposition": "fixed_and_verified_source_and_constructed_controls",
+      "id": "deadline-cleanup-terminal-census",
+      "references": [
+        "scripts/run_ap2_original_native_provider_v1.py:409",
+        "scripts/run_ap2_original_native_provider_v1.py:513",
+        "scripts/run_ap2_original_native_provider_v1.py:528",
+        "scripts/run_ap2_original_native_provider_v1.py:537",
+        "scripts/run_ap2_original_native_provider_v1.py:547"
+      ]
+    },
+    {
+      "detail": "Real key stays in parent; services get synthetic key and accounting URL, caller gets no key. Fresh temporary original state stays outside retained output. Scanner rejects secret/private-key material. Caller denies benchmark/private journals, external network and descendants.",
+      "disposition": "verified_source_and_constructed_controls",
+      "id": "credential-private-state-and-caller-isolation",
+      "references": [
+        "scripts/run_ap2_original_native_provider_v1.py:328",
+        "scripts/run_ap2_original_native_provider_v1.py:429",
+        "scripts/run_ap2_original_native_provider_v1.py:501",
+        "scripts/ap2_public_scripted_continuation_v1.py:111"
+      ]
+    },
+    {
+      "detail": "Only actual expected public authority mismatch/task-not-found errors qualify recovery; unexpected transport/RPC errors remain failures. Raw retained state is input-required; the caller correctly accepts that exact hyphenated state.",
+      "disposition": "fixed_and_verified_source_and_constructed_controls",
+      "id": "authority-errors-and-wire-state",
+      "references": [
+        "src/interoperability/ap2_public_scripted_continuation_v1.py:160",
+        "src/interoperability/ap2_public_scripted_continuation_v1.py:216",
+        "tests/test_ap2_public_scripted_continuation_v1.py:78"
+      ]
+    },
+    {
+      "detail": "uname, processor, platform and architecture warm before strict actor audit. Descendant denial remains unconditional. The AST control proves source ordering, not actual native runtime compatibility.",
+      "disposition": "verified_source_and_constructed_control",
+      "id": "platform-prewarm-ordering",
+      "references": [
+        "scripts/ap2_public_scripted_continuation_v1.py:98",
+        "scripts/ap2_public_scripted_continuation_v1.py:149",
+        "tests/test_ap2_public_scripted_continuation_v1.py:92"
+      ]
+    }
+  ],
+  "fixed_plan_fields": {
+    "held_out_study": false,
+    "human_gold_qualified": false,
+    "limits": {
+      "caller_timeout_seconds": 300,
+      "maximum_observed_usage_tokens_before_stopping": 100000,
+      "maximum_total_request_bytes": 200000,
+      "minimum_interval_seconds": 6.0,
+      "request_timeout_seconds": 45,
+      "screen_timeout_seconds": 1500,
+      "upstream_calls_including_smoke": 80
+    },
+    "model": "gemini-3.1-flash-lite-preview",
+    "original_run_sh_provisioning_qualified": false,
+    "original_windows_environment_sha256": "4d6efdd2e4003b82517f45aead140a7afd6f1e180b3ce518904d87c96e5adeb5",
+    "owned_base_url_accounting_proxy": true,
+    "provider_origin": "https://generativelanguage.googleapis.com",
+    "provider_path": "/v1beta/models/gemini-3.1-flash-lite-preview:generateContent",
+    "provider_requests": 0,
+    "schema_version": "ap2-original-native-provider-screen/1",
+    "source_and_sdk_unchanged": true,
+    "source_stage_sha256": "78828cea09bdd387230a2fc0772b542beabfe07b72c3a2f24b24c02c1a2f4463",
+    "unchanged_adk_shopper_qualified": false
+  },
+  "limitations": [
+    "Live provider capacity, model routing and native task outcomes remain unobserved by this review.",
+    "This treatment does not qualify original run.sh provisioning or the unchanged ADK autonomous shopper.",
+    "Source contracts and constructed controls do not establish exact A2A wire attribution, untouched holdout, human gold, independent bridge qualification or whole-task success.",
+    "The usage threshold is a post-response stop, not a strict token quota or cost ceiling.",
+    "AI-authored proposed answers remain exposed and human-unreviewed; 68 candidates, 48 family identities, 96 slots, 288 path cells and 96 additional crossings are unaffected.",
+    "This review performs no allocation, freeze, dispatch, Git mutation, checkpoint credit or retention adjudication."
+  ],
+  "original_application_model_actor_solver_evaluator_checker_executions_by_review": 0,
+  "prior_control_result": {
+    "exit_code": 0,
+    "reported_seconds": 6.31,
+    "revision": "pre-80 proposal",
+    "source": "resumed unified exec session 98883",
+    "tests": 19
+  },
+  "provider_requests_made_by_review": 0,
+  "read_only_source_census": {
+    "ap2_files": 136,
+    "required_versions": 182,
+    "x402_files": 24
+  },
+  "real_provider_credential_value_read_printed_or_persisted_by_review": false,
+  "review_source": {
+    "bytes": 12432,
+    "sha256": "255c5bc044c4d937f508c321a9fe841e153fbb5a772fa4d8b74174f24005c7b8"
+  },
+  "reviewed_bytes_unchanged_during_controls": true,
+  "reviewer": "/root/native_v11_analysis",
+  "schema_version": "ap2-original-native-provider-independent-pre-dispatch-review/1",
+  "scope": "specifically bounded five-case prospective development dispatch",
+  "source_bindings": {
+    "docs/research/ap2-original-native-provider-protocol-v1.md": {
+      "bytes": 8245,
+      "sha256": "6ce69b59478cefa438fdaa431ead790147769a5475d758f0b4b9fab6590c3232"
+    },
+    "scripts/ap2_public_scripted_continuation_v1.py": {
+      "bytes": 14146,
+      "sha256": "1b7fb83f67dc6a1a86de70db9a7a5607c42fba2662c929da6d3a8eb18284f79e"
+    },
+    "scripts/run_ap2_original_native_provider_v1.py": {
+      "bytes": 32120,
+      "sha256": "284a0fc36b41b422e95f382fb3d6f80e806541eb5608bb7af1beddc1f55d04e3"
+    },
+    "src/interoperability/ap2_public_scripted_continuation_v1.py": {
+      "bytes": 17867,
+      "sha256": "aa8bf308fad6c9b112ed815cb2b393ac8c9fcbaf97ee71c1c4547ccc1b1342c0"
+    },
+    "src/interoperability/ap2_public_task_read_v1.py": {
+      "bytes": 3304,
+      "sha256": "feaa86eb5ec62d1627a0d7e0744bd8a626e3f597a7a2012e7f8eb0a80dbf0c46"
+    },
+    "tests/ap2_public_control_support_v1.py": {
+      "bytes": 3949,
+      "sha256": "1abafcea840612a164613e75eb382662e67a6f65cc7f40f9395db320c3ffc498"
+    },
+    "tests/fixtures/ap2-public-continuation-v1/original-merchant-card.json": {
+      "bytes": 1313,
+      "sha256": "f5d67bace1fc46401d1e87d79660fc950028acb959485754a4d004792d3ef388"
+    },
+    "tests/fixtures/ap2-public-continuation-v1/provenance.json": {
+      "bytes": 3636,
+      "sha256": "d10873149a33ba83a2250c71910838bf889a7f8d55b66621e39dd516bdc5bfa9"
+    },
+    "tests/fixtures/ap2-public-continuation-v1/v13-correct-final-task.json": {
+      "bytes": 10314,
+      "sha256": "424300afae01a7a55a5955c5b63eddbb537b1da43dad6e2759167b22c0d5301e"
+    },
+    "tests/fixtures/ap2-public-continuation-v1/v13-correct-pending-task.json": {
+      "bytes": 5047,
+      "sha256": "a839318a43b7249baafe93ea0e6b618d34adc49e3bf6945a93ff052f783575c8"
+    },
+    "tests/fixtures/ap2-public-continuation-v1/v13-wrong-final-task.json": {
+      "bytes": 9526,
+      "sha256": "8a388595cb82a1abbd42959f8d339f90ff8626592c75ebb395f6a1cd25b53d1b"
+    },
+    "tests/fixtures/ap2-public-continuation-v1/v13-wrong-pending-task.json": {
+      "bytes": 5047,
+      "sha256": "323eb44358a7c789b72a6c99f26f0373045b081c6479542c733385bf5b3ec2cd"
+    },
+    "tests/fixtures/ap2-public-continuation-v1/v7-pending-task.json": {
+      "bytes": 5047,
+      "sha256": "e76c6510a5ac0033a2be3dfddee267574407c32bca369354e54c96b8a2d4d94c"
+    },
+    "tests/test_ap2_original_native_provider_v1.py": {
+      "bytes": 14647,
+      "sha256": "9916bd6ed3186945399299ef3e4c4a9af60c774632e4ab479541c76eab729713"
+    },
+    "tests/test_ap2_public_scripted_continuation_v1.py": {
+      "bytes": 10314,
+      "sha256": "560806c1c9fb77c2eb52da79b98ffdabc568202b290a5007f6a4016bf8b081ed"
+    },
+    "tests/test_ap2_public_task_read_v1.py": {
+      "bytes": 2916,
+      "sha256": "b965bd647b74ece9ad927d1df74eccef580268798b7890fb5e7b0080f619b866"
+    }
+  },
+  "status": "no_remaining_source_or_constructed_control_blocker_identified"
+}

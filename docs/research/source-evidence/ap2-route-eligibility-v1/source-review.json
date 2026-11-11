@@ -1,0 +1,372 @@
+{
+  "schema_version": "ap2-route-source-eligibility-preparation/1",
+  "status": "static_source_review_only",
+  "application_runs": 0,
+  "model_requests": 0,
+  "provider_requests": 0,
+  "experiments_dispatched": 0,
+  "ap2_pin": "e1ea56db72a6385bce3e5c1112b3a56ce60acb43",
+  "amir_pin": "58eff9da469bccdc432bf164662727947de646b4",
+  "mgcrea_pin": "c4d9d3c57c1746abbf9f6aadd3a9912d464eb1f5",
+  "sdk13_member": {
+    "archive": "docs/research/source-evidence/agentops-bridge-control-v1/runtime/runtime.zip",
+    "member": "nodes/p005/package/dist/client/index.js",
+    "sha256": "0814951d54a43a7cccaad69299f44a567d80cb1a417c0ebe9fb0b79601c9fb89",
+    "legacy_resolver_requires_opt_in_lines": [
+      5335,
+      5348
+    ],
+    "legacy_jsonrpc_transport_requires_opt_in_lines": [
+      6112,
+      6124
+    ]
+  },
+  "original_source_sha256": {
+    "external/a2a-to-mcp/src/agent-card.ts": "69f6bf59c45bc490493f7a18a9e8c500bb2b3970a019948b1423720266cd2cba",
+    "external/mcp-a2a/src/client/peer.ts": "62c36155dd3f2438f4a629fff8cc5b1961d2f7c20bfbc5a620706a2f8218b909",
+    "external/mcp-a2a/src/tools/request.ts": "1c9eb49a065f3eac95c0fd2172068443719a29aeca9453a31690c70a61731342",
+    "runs/ap2-environment-preparation/source-stage-v1/ap2/code/samples/python/src/roles/merchant_agent/agent.json": "f5d67bace1fc46401d1e87d79660fc950028acb959485754a4d004792d3ef388",
+    "runs/ap2-environment-preparation/source-stage-v1/ap2/code/samples/python/src/roles/shopping_agent/tools.py": "612525025661b608a662a8a09bc50ea527543b26c3bdbc78911bd95f6c3926a6",
+    "runs/ap2-environment-preparation/source-stage-v1/ap2/code/samples/python/src/roles/shopping_agent/agent.py": "a1ad77fc4d17cfa2fcef5904cab00a9833395e4a4e8b60948d767d52640ec6a3",
+    "runs/ap2-environment-preparation/source-stage-v1/ap2/code/samples/python/src/roles/merchant_payment_processor_agent/tools.py": "41a11923ae38798099c39a25d95d358ab1845320f64f8833b4955fa09b04e12d"
+  },
+  "retained_error_census": [
+    {
+      "route": "amir_typed",
+      "legal_initiation_error_count": 13,
+      "source_results": [
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/duplicate_continuation--amir_typed/bridge/result.json",
+          "sha256": "9a3024d4e968a949b0cd9268fdb70f40378eb35fc2c7bc630a37d70d1ea2eee0",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_demo_otp--amir_typed/bridge/result.json",
+          "sha256": "28ba19fd0c01072843b30a4ce06d92c39035fc5ac2c3f80b949f2bfc5fc51d27",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_no_reply--amir_typed/bridge/result.json",
+          "sha256": "4df525934a422e0479c1f44544711463644a3ec305e33c970ce9d65f97c5d77d",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_wrong_otp--amir_typed/bridge/result.json",
+          "sha256": "4e57af3853970d3cc7edadb70fc97cadbd28169d50c498e2e79ff870b25d4bd5",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/missing_association--amir_typed/bridge/result.json",
+          "sha256": "1fa82795e723963be0934bdd361f01ebe191214a3135080c5037a02e32233bf7",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/missing_caller_mandate--amir_typed/bridge/result.json",
+          "sha256": "40d1ad3550ed0daf573494297e62de4e137f2edd6ff134e163a297ef329be139",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/natural_hint_loss--amir_typed/bridge/result.json",
+          "sha256": "61c0e8911d9bb039410c6355c25b840776c2a767c540a1a46c20fe3d17eefa94",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/nested_processor_id--amir_typed/bridge/result.json",
+          "sha256": "57575d4f56e8e9ff625d95807538d1f0cafa1bd0f917bfab0e4740753cd26830",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/recipient_mandate_loss--amir_typed/bridge/result.json",
+          "sha256": "ef72fd321d7f9715ec2ab0ae5d5226ef2577bd4580d80f09caaee2e45f1c6541",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/stale_certificate--amir_typed/bridge/result.json",
+          "sha256": "a19a84bf2430116de35b3630be54a8122b3cce486147d20556d7fc6c77eed7c8",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/stale_merchant_id--amir_typed/bridge/result.json",
+          "sha256": "3b0c2da489446de053bae885108312fd34a939735c26f7a6a25c4665b1c25625",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/swapped_mandate--amir_typed/bridge/result.json",
+          "sha256": "3896a918d65ce52d0ab20b6e5c777f59a8b572b5d4173668b5c098463e1f1499",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/wrong_context--amir_typed/bridge/result.json",
+          "sha256": "109fb7ffd6e04e1c3d3ac77869b750309e52124e50bd1d4e5859df6af66617b6",
+          "isError": true,
+          "message": [
+            "Cannot use the agent card of \"ap2\" at http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json: supportedInterfaces must be a non-empty array. A v0.3 card with url and preferredTransport is not an A2A v1.0 card."
+          ]
+        }
+      ],
+      "full_continuation_under_unchanged_pins_source_eligible": false
+    },
+    {
+      "route": "mg_typed",
+      "legal_initiation_error_count": 13,
+      "source_results": [
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/duplicate_continuation--mg_typed/bridge/result.json",
+          "sha256": "db2886c96c0d93c7acc7adc0163f5a265245141a75411a4361d0e3744f192e4a",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_demo_otp--mg_typed/bridge/result.json",
+          "sha256": "8adc8fd199724e4ea639aac4f66dff8cce5908e6035d804cbad229d4b4524488",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_no_reply--mg_typed/bridge/result.json",
+          "sha256": "68419ff052c09b7d06643040777eebd7b51765e930231b47c92b183209dbcd68",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_wrong_otp--mg_typed/bridge/result.json",
+          "sha256": "50ac35c39a6834a89616e4f6a82339c64d2a83726b0a419fa7342e4268caf36f",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/missing_association--mg_typed/bridge/result.json",
+          "sha256": "bb5bd88d2d9ad60c0fbe73a9e760cb80f136f02603654bfb52593ce7058cbd12",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/missing_caller_mandate--mg_typed/bridge/result.json",
+          "sha256": "f46ec663d51e62a0064bc6cb3430e8f4f030acfbc19732d151642aa99a0204f9",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/natural_hint_loss--mg_typed/bridge/result.json",
+          "sha256": "07ba9451c9c33cd7d04d40352b75d07a781751a4481bcec5b1910c91421811d9",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/nested_processor_id--mg_typed/bridge/result.json",
+          "sha256": "32edc47a35d0bb90c3fb9f9b5623be1e1239a22f6afe2fc2111775179ffa4eb7",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/recipient_mandate_loss--mg_typed/bridge/result.json",
+          "sha256": "be44399b0361620ad2a033b90237cb0adcd7e530bd6fd11d026e173a1462f45c",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/stale_certificate--mg_typed/bridge/result.json",
+          "sha256": "6cd196f520121e169466fad55e30b417e5a39d49891d7d3e2c0f84fed6866fe4",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/stale_merchant_id--mg_typed/bridge/result.json",
+          "sha256": "6891735b5063604c2edf49fdf4da1cc5feaaffcf0e058d6e796e7f6819a3e5d9",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/swapped_mandate--mg_typed/bridge/result.json",
+          "sha256": "1b6014d8dba71d74e21e051022dcba8601e50716a41231adf0013abbe86935ce",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/wrong_context--mg_typed/bridge/result.json",
+          "sha256": "a274aae09aff587ed1acf9e654d3c4fd993728c2f876d693aecb7ee2d2ec6806",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        }
+      ],
+      "full_continuation_under_unchanged_pins_source_eligible": false
+    },
+    {
+      "route": "mg_raw",
+      "legal_initiation_error_count": 13,
+      "source_results": [
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/duplicate_continuation--mg_raw/bridge/result.json",
+          "sha256": "10c20067ba74f0dfe607eefe9352ca2b4a0a7caae358e7fb8d66060e1dffd6f0",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_demo_otp--mg_raw/bridge/result.json",
+          "sha256": "355c576a43c251a230e57ac1b02f9554a9dcf1731344824c361b12caf47af23b",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_no_reply--mg_raw/bridge/result.json",
+          "sha256": "b8229e44b16711bfc5242795a3beae03a93217b8cc9ba42333af5d7311599e27",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/human_wrong_otp--mg_raw/bridge/result.json",
+          "sha256": "0a4cc0a27fb3a518c9c0c17469e365e99980a219e0ba8ee499c57f0eae1676d6",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/missing_association--mg_raw/bridge/result.json",
+          "sha256": "b786ce1c6e40ce0fb4ee398376140a46377b82cd5a860b4f9def82098c81003c",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/missing_caller_mandate--mg_raw/bridge/result.json",
+          "sha256": "595baad9b054a95ec924f6e833843b14febaaa0aee13451c05cdd8574382cd17",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/natural_hint_loss--mg_raw/bridge/result.json",
+          "sha256": "b93f717db8c575130c360c1b8d69c7eb39bb3014494f8290df6414cef31e2b71",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/nested_processor_id--mg_raw/bridge/result.json",
+          "sha256": "3e82bf4aeeb4d60363faa90eb885fb3f7f2f5eb38f5d41cea0d2fa0113f7696c",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/recipient_mandate_loss--mg_raw/bridge/result.json",
+          "sha256": "0e765d8bce18ba4797300d3f5492036cc952d07a69b3ee359a7cb418e201f7ae",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/stale_certificate--mg_raw/bridge/result.json",
+          "sha256": "760530e5efd80eedefb4703453380d810db381a3850c0c50d5ecc2e65d99f70f",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/stale_merchant_id--mg_raw/bridge/result.json",
+          "sha256": "ed71c80cde9656ca4932c2250e190204beeb85a5df9e1cf564547632638ab3c7",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/swapped_mandate--mg_raw/bridge/result.json",
+          "sha256": "2407f9ffd41ed63943030532afb673747c9dcf2fd07d8fa88aa99e1de868bd93",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        },
+        {
+          "path": "runs/ap2-native-bridge-development/v13/retained-42918421487-4/extracted/matrix/cells/wrong_context--mg_raw/bridge/result.json",
+          "sha256": "69dd52c144e68f91912a7b22a7025bff4a1c035d1c9fb228df77314175ee19cb",
+          "isError": true,
+          "message": [
+            "{\"error\":\"Could not read an agent card from http://127.0.0.1:8001: Failed to fetch Agent Card from http://127.0.0.1:8001/.well-known/agent-card.json: 404\",\"remedy\":\"Check the peer is running and serving /.well-known/agent-card.json at that base URL. Pass the peer's BASE url (http://127.0.0.1:41241), not the card path itself.\"}"
+          ]
+        }
+      ],
+      "full_continuation_under_unchanged_pins_source_eligible": false
+    }
+  ],
+  "no_original_or_frozen_source_edits": true,
+  "prepared_native_treatment": "owned scripted caller and public SDK Task read; original0.3 business functions",
+  "unchanged_adk_root_tool_qualification": false,
+  "runtime_verification_of_prepared_caller": false
+}

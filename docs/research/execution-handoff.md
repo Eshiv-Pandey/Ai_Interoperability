@@ -1,3 +1,37 @@
+# Active continuation: 11 November 2026, task answers and original provider preparation
+
+Whole-project work remains approximately **80%**, rounded from the unchanged
+77.5 estimate in `whole-project-progress-estimate-v8.json`. Source proposals,
+additional reviews and prepared experiments receive no new completion credit.
+
+Commit `2490a411` publishes the source-bound
+[qualification package](../../benchmark/qualification-v1/README.md) and
+[cost phase appendix](../../paper/common-cost-phase-appendix-v1.md). All 68
+candidate IDs and original 96-task/288-path/96-crossing slots remain present.
+There are 25 second-instance source recipes and 23 explicit refusals. Eight
+validation checks and 19 constructed controls pass; human gold and route
+qualification remain open. The [minimum review guide](task-answer-review-guide-v1.md)
+points to actual answer rows and source/alternative/near-miss records.
+
+The phase analysis independently reconstructs all 1,650 retained allocations.
+Import and evaluation/checking share timers; remaining worker CPU cannot all
+be assigned to interpreter overhead. Original refinement has lower full-worker
+CPU and wall medians than goal-pruned direct on 53 of 54 compared profiles;
+this is a cold-process observation. Shared lifting remains adverse on all 54
+eligible profiles. No warmed or pure-algorithm ranking is established.
+
+The user added `GOOGLE_API_KEY`; only its GitHub secret metadata was checked.
+The new [native/provider protocol](ap2-original-native-provider-protocol-v1.md)
+preserves original source, service module entries and SDK generation payloads,
+with an explicit owned accounting proxy and scripted public caller. One access
+request precedes five fresh task cases; at most 80 upstream requests are allowed.
+No provider or new original application run has occurred at this preparation
+stage. Root alone handles final freeze, dispatch, retention and actual-result
+integration. Full study, human gold, independent bridges and final scientific
+review remain outstanding.
+
+The entries below are historical.
+
 # Active research execution: 11 November 2026, verified native matrix and common-cost experiment
 
 Whole-project work is approximately **80%**, rounded from 77.5 under unchanged
