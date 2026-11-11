@@ -1,7 +1,10 @@
 # Active research execution: 11 November 2026, verified native matrix and common-cost experiment
 
-Whole-project work remains approximately **75%** pending reassessment from completed
-reviewed work under unchanged weights and original scope.
+Whole-project work is approximately **80%**, rounded from 77.5 under unchanged
+weights and original scope in [estimate v8](whole-project-progress-estimate-v8.json).
+The [independent estimate review](whole-project-v8-independent-estimate-review.md)
+credits two completed development experiments, with about 10 points uncertainty.
+Scientific gate completion and publication readiness remain separate.
 
 V13 run [42918421487](https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/42918421487)
 completed at b96517f89be8ccc6755f78d2eb80b6e1c300f4e6. Its exact 265,648,891-byte archive
@@ -23,15 +26,33 @@ The separate [common-cost protocol](common-cost-benchmark-v1.md) is frozen at
 `d058c2a05e278b71ad5969e49ecdd344576cf166`. Root dispatched
 [42927208534](https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/42927208534)
 once: five unchanged methods, the same 66 authored development profiles and five
-balanced repeats, totaling 1,650 serial capped allocations. It measures full
-child CPU, peak RSS and launch-to-reap wall time, including independent checking.
-Retain every timeout, failure, unknown and interrupted allocation. Hosted Linux
-controls, execution, archive retention and independent raw cost review must finish
-before any cost or completion claim. Do not dispatch a duplicate.
+balanced repeats, totaling 1,650 serial capped allocations. The completed
+[cost results](common-cost-results-v1.md) retain all opening/closing receipts,
+1,730 frozen identities and 11,634 archive members. Each method has 140 certified
+supported, 130 certified unsupported and 60 unknown outcomes, with no failed,
+timed-out, stopped or unstarted cell. All ten comparisons contain 54 profiles
+with five certified same-decision paired repeats. No contradiction, hash mismatch
+or logical-exhaustion label discrepancy is observed. Full-child CPU, peak RSS
+and launch-to-reap wall time include independent checking. Shared/direct median
+ratios are 1.129994 CPU, 1.114527 wall and 1.055200 RSS; shared is higher on all
+54 eligible profiles for each metric. The 300 unknown cells stay outside ratios
+and inside the full denominator. The archive SHA-256 is
+`bc84692b270eadb32ee80c0e1c4ac594606329542d6db0852c874287c894be23`.
+Do not dispatch a duplicate or rerun any captured allocation.
 
 Root alone handles Git, dispatch and retention. The cost owner prepares an
-artifact-only auditor, a separate peer reviews raw native/cost records, and the
-manuscript agent integrates completed evidence. The original 96-task/three-path
+artifact-only auditor, a separate peer reviewed raw native/cost records, and the
+manuscript agent integrated completed evidence into [manuscript V14](../../paper/working-draft-v14.md).
+Its [independent audit](../../paper/working-draft-v14.audit.json) passes 20 checks,
+including all 1,650 raw cost statuses and ten paired cohorts. Numerical and raw
+reviews agree. The [minimum review guide](verified-results-review-guide-v1.md)
+and [artifact guide](paper-artifact-guide-v14.md) provide concrete offline
+restoration and current-artifact verification commands. Eight restoration
+controls and a fresh 11,634-file common-cost extraction pass; final verification
+preserves all existing bytes. The V5 partial tracked extraction uses explicit
+preflighted missing-file restoration. Earlier manuscripts, source versions,
+failed transfers and allocated outcomes remain preserved.
+The original 96-task/three-path
 and additional 96-crossing study, human gold, untouched holdout, contribution
 assessment and accountable final scientific review remain unresolved.
 
