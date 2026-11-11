@@ -1,0 +1,51 @@
+name: Original four-stage AgentOps workflow development reference v2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: agentops-workflow-reference-v2
+  cancel-in-progress: false
+
+jobs:
+  original-workflow-reference:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Check out the selected research revision
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify and stage only missing original source members
+        run: |
+          python3 -B scripts/check_agentops_source_stage_v1.py
+          python3 -B scripts/stage_agentops_original_source_v1.py --output runs/ci-agentops-source-stage-v1/${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Verify constructed four-stage controls and prospective inputs
+        run: |
+          python3 -B scripts/check_agentops_workflow_reference_v2.py
+          python3 -B scripts/ci_agentops_workflow_reference_v2.py --check-inputs
+      - name: Execute both original read-only workflow tasks once
+        run: >-
+          python3 -B scripts/ci_agentops_workflow_reference_v2.py --execute
+          --output runs/ci-agentops-workflow-reference-v2/${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Retain actual workflow evidence including failed attempts
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: agentops-workflow-reference-v2-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runs/ci-agentops-workflow-reference-v2/${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: warn
+          retention-days: 30
+          include-hidden-files: true
+      - name: Retain source-staging evidence including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: agentops-workflow-source-stage-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          path: runs/ci-agentops-source-stage-v1/${{ github.run_id }}-${{ github.run_attempt }}/
+          if-no-files-found: warn
+          retention-days: 30
+          include-hidden-files: true

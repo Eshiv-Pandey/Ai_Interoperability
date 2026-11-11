@@ -1,0 +1,171 @@
+{
+  "schema_version": "agentops-workflow-v2-analyzer-peer-review/1",
+  "analyzer_sources": {
+    "analyze_agentops_workflow_reference_v1.py": {
+      "sha256": "7da513d2583bb2af4b5152a11b7c9c8592fbeac1737cd2539a1d54498797b490",
+      "bytes": 12550
+    },
+    "analyze_agentops_workflow_reference_v2.py": {
+      "sha256": "52b3baca085ff0f3752d5d95e3b607a8d1e01fc3654fdcdb51b8bc639584e93f",
+      "bytes": 13277
+    }
+  },
+  "baseline_status": "retained_development_workflow_consistent",
+  "baseline_questions": 0,
+  "case_denominator": 2,
+  "mutation_count": 14,
+  "invalid_capture_accepted_count": 0,
+  "mutations": [
+    {
+      "case": "overlapping_stages",
+      "mutation": "All four stage entries precede all four stage exits",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 1,
+      "mutated_case_questions": [
+        "Original sequential stage lifecycle is not ordered entry then exit for each stage"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "callback_invocation_mismatch",
+      "mutation": "First callback invocation differs from stage/tool invocation",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 1,
+      "mutated_case_questions": [
+        "Fixture, stage, tool and raw events do not share the one actual fresh SDK invocation"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "stage_invocation_mismatch",
+      "mutation": "First stage entry invocation differs from all other observations",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 1,
+      "mutated_case_questions": [
+        "Fixture, stage, tool and raw events do not share the one actual fresh SDK invocation"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "raw_invocation_mismatch",
+      "mutation": "All raw events use a different invocation than callback/stage/tool rows",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 1,
+      "mutated_case_questions": [
+        "Fixture, stage, tool and raw events do not share the one actual fresh SDK invocation"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "response_before_call",
+      "mutation": "First raw function-response event is moved before its matching function-call event",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 2,
+      "mutated_case_questions": [
+        "Raw official tool response has no unique earlier matching call",
+        "An earlier raw official tool call has no later terminal response"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "denied_socket.connect_ex",
+      "mutation": "Receipt retains denied socket.connect_ex backend operation",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 2,
+      "mutated_case_questions": [
+        "Actual denied socket operations show the bounded fixture did not fully bypass network activity",
+        "Actual denial journal/private-evaluator probe is absent, altered or inconsistent"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "denied_socket.getaddrinfo",
+      "mutation": "Receipt retains denied socket.getaddrinfo backend operation",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 2,
+      "mutated_case_questions": [
+        "Actual denied socket operations show the bounded fixture did not fully bypass network activity",
+        "Actual denial journal/private-evaluator probe is absent, altered or inconsistent"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "denied_socket.sendto",
+      "mutation": "Receipt retains denied socket.sendto backend operation",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 2,
+      "mutated_case_questions": [
+        "Actual denied socket operations show the bounded fixture did not fully bypass network activity",
+        "Actual denial journal/private-evaluator probe is absent, altered or inconsistent"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "denied_socket.sendmsg",
+      "mutation": "Receipt retains denied socket.sendmsg backend operation",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 2,
+      "mutated_case_questions": [
+        "Actual denied socket operations show the bounded fixture did not fully bypass network activity",
+        "Actual denial journal/private-evaluator probe is absent, altered or inconsistent"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "worker_failed_after_return",
+      "mutation": "Receipt has status failed, error_type ValueError and copied_data_unchanged_during_task false",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 1,
+      "mutated_case_questions": [
+        "Worker failure, copied-input preservation or official return/cleanup evidence is incomplete"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "governed_request_model_mismatch",
+      "mutation": "First recorded governed-request model differs from preserved compiled model",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 1,
+      "mutated_case_questions": [
+        "Actual governed request model differs from its preserved compiled model or request record"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "exported_model_identifier_mismatch",
+      "mutation": "Exported original model identifier contradicts preserved compiled model claim",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 1,
+      "mutated_case_questions": [
+        "Exported and compiled original model types/identifiers do not agree"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "sdk_error_message_without_code",
+      "mutation": "First raw event retains an error_message without error_code",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 1,
+      "mutated_case_questions": [
+        "Raw official SDK error events remain in the actual attempt"
+      ],
+      "invalid_capture_accepted": false
+    },
+    {
+      "case": "raw_tool_confirmation",
+      "mutation": "First raw event actions request a confirmed tool confirmation",
+      "status": "retained_development_workflow_partial_or_inconsistent",
+      "questions": 1,
+      "mutated_case_questions": [
+        "Raw official SDK event requested a confirmation in the read-only allocation"
+      ],
+      "invalid_capture_accepted": false
+    }
+  ],
+  "original_application_or_sdk_imported": false,
+  "provider_calls": 0,
+  "human_gold": false,
+  "held_out_qualification": false,
+  "repository_capture_mutated": false,
+  "status": "constructed_analyzer_mutations_rejected"
+}

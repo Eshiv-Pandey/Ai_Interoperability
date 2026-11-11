@@ -1,3 +1,42 @@
+# Active continuation: 11 November 2026, corrected prospective original routes reviewed
+
+Whole-project work remains approximately **80%** under estimate v8. No additional
+credit is assigned for the retained launcher failure or prospective preparation.
+
+Native shopper [V2 run 43045731741](https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/43045731741)
+failed runtime preflight before provider or application calls. One declared task
+remains unexecuted. The exact 529,223-byte, twelve-member archive matches the API
+at `c41af803458b432eaa934e606169a76235488c65472bd4c27e41ac73a2deee56`.
+[Actual analysis and source diagnosis](ap2-native-shopper-provider-development-results-v2.md)
+preserve zero calls/events/receipts and zero consistency questions. All 182
+required pip-report versions match, but V2 resolved the virtual-environment
+Python link to its target. Exact selected-interpreter mismatches were not retained.
+Nineteen constructed analyzer controls pass; the failed allocation is preserved.
+
+[Native V3](ap2-native-shopper-provider-protocol-v3.md) restores the original
+absolute virtual-environment launcher path. Original SDK/model/source/tools/
+actor and the V2 sender/drain limits remain unchanged. The
+[independent review](ap2-native-shopper-provider-v3-independent-source-review-v1.md)
+finds no source blocker. Three constructed controls pass locally; the real link
+control is required on Linux before live execution. This allocates one separate
+adaptive case, without replacing V1 or V2.
+
+[Workflow V2](agentops-workflow-reference-v2.md) now maps the actual SDK node list
+and preserves original compiled models. It enforces chronological raw tool
+terminals, one actual invocation, sequential stage lifecycles, original plugin
+order, model correspondence and absence of backend/socket/error/confirmation
+activity. The [fresh independent review](agentops-workflow-reference-v2-source-review-v2.md)
+passes 45 controls, 421-source/32-input verification, all fourteen independent
+invalid-evidence rejections and five AST checks. The original two-task V1 failed
+binding record remains unchanged. This reference is direct original ADK;
+original A2A rejects Workflow roots, and no A2A qualification is inferred.
+
+Root owns the fresh head freeze, once-only dispatch and exact actual retention
+for both profiles. Prospective controls do not supply live task results, human
+gold, untouched holdout, full-study reproduction or final scientific review.
+
+The entries below are historical.
+
 # Active continuation: 11 November 2026, original workflow and shopper failures retained
 
 Whole-project work remains approximately **80%** under the unchanged estimate v8.

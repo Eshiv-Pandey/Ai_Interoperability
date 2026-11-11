@@ -1,0 +1,196 @@
+{
+  "schema_version": "agentops-workflow-reference-v2-independent-source-review/2",
+  "reviewed_at_utc": "2026-11-11T15:56:48.464168+00:00",
+  "status": "source_and_constructed_review_passed_actual_execution_pending",
+  "reviewer_kind": "independent_AI_source_and_constructed_review",
+  "final_reviewed_sources": [
+    {
+      "path": "scripts/agentops_workflow_reference_v2.py",
+      "bytes": 20800,
+      "sha256": "8a9aaf259ca397312fa0edd4540d2b8e0ca5caac4246a7ac1d3b32cfdca498e8"
+    },
+    {
+      "path": "scripts/agentops_workflow_fixture_v2.py",
+      "bytes": 3147,
+      "sha256": "dadcb9dbbd44cf0936c089ec2da1b2c17ce84c2d79ce3ac19224ec233f01ec46"
+    },
+    {
+      "path": "scripts/analyze_agentops_workflow_reference_v2.py",
+      "bytes": 13434,
+      "sha256": "d740b6705f19a6b9f18e5cdf55133dc0796db83a836717f1b318744d44634e1b"
+    },
+    {
+      "path": "scripts/ci_agentops_workflow_reference_v2.py",
+      "bytes": 15388,
+      "sha256": "9befa1c8d9c176dcad654bcd6b865edcb86a2240715ea822fbd69faa8c7e5373"
+    },
+    {
+      "path": "scripts/check_agentops_workflow_reference_v2.py",
+      "bytes": 13965,
+      "sha256": "7fde42ed4788a4b39f585b340c773e34871ea796a2cfd1919dc57e71ac60e228"
+    }
+  ],
+  "prior_review": {
+    "path": "docs/research/agentops-workflow-reference-v2-source-review-v1.json",
+    "sha256": "0c5d3810a3ec1a69d2af6bcf5bd231890b7d88c684d09a546dfc6ad42b1f3c8b",
+    "status_preserved": "correction_required_before_dispatch"
+  },
+  "resolved_findings": [
+    {
+      "id": "F1",
+      "resolution": "Worker and observer use validated name map from actual Graph.nodes list; requires exactly __START__ plus the four frozen stages and rejects dictionary/missing/duplicate/unknown nodes."
+    },
+    {
+      "id": "F2",
+      "resolution": "All 14 independent invalid mutations now receive explicit analyzer questions with no analyzer exceptions. Positive baseline remains zero questions."
+    }
+  ],
+  "independent_source_controls": {
+    "count": 5,
+    "checks": [
+      "no_original_model_instruction_tools_or_graph_assignment",
+      "no_subscript_of_actual_SDK_graph_nodes_list",
+      "actual_compiled_name_map_reads_selected_graph_nodes",
+      "fixture_then_observer_append_order_after_original_policy_guard",
+      "compiled_name_map_is_owned_standard_library_helper"
+    ],
+    "status": "passed"
+  },
+  "independent_software_controls": {
+    "command": "python -B scripts/check_agentops_workflow_reference_v2.py",
+    "v1_checks": 18,
+    "v2_checks": 27,
+    "total_constructed_checks": 45,
+    "status": "passed",
+    "SDK_or_application_imported": false,
+    "provider_calls": 0
+  },
+  "independent_peer_mutation_replay": {
+    "path": "docs/research/agentops-workflow-reference-v2-independent-peer-replay-v2.json",
+    "sha256": "410ce21317ad059c81590c116859f89b93048134081638f7b36c6f5507e7babe",
+    "command": "python -B scripts/check_agentops_workflow_reference_v2_analyzer_peer_v1.py --expect-rejected --output docs/research/agentops-workflow-reference-v2-independent-peer-replay-v2.json",
+    "baseline_questions": 0,
+    "mutation_count": 14,
+    "invalid_capture_accepted_count": 0,
+    "analyzer_exceptions": 0,
+    "SDK_or_application_imported": false
+  },
+  "independent_input_verification": {
+    "path": "docs/research/agentops-workflow-reference-v2-independent-input-check-v2.json",
+    "sha256": "151d0492885ecd643e7f8acc27a3cb5941bc1257d12a6a8dbd50c207021a20e6",
+    "command": "python -B scripts/ci_agentops_workflow_reference_v2.py --check-inputs",
+    "source_files": 421,
+    "verified_inputs": 32,
+    "status": "before_model_reference_inputs_verified",
+    "provider_calls": 0,
+    "application_requests": 0
+  },
+  "SDK_source_contract_evidence": [
+    {
+      "path": "google/adk/workflow/_workflow.py",
+      "bytes": 32178,
+      "sha256": "c61e473933236ac707a6b794c3fc7c1d680f4bf77afeebd13af18de7d7f99edc",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/workflow/_graph.py",
+      "bytes": 6157,
+      "sha256": "1514520a58919cee5a48f3b48f96da4edf2fdbc3bd035d4dd04c8be2309d1181",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/workflow/utils/_graph_parser.py",
+      "bytes": 6546,
+      "sha256": "e598171ba602bed6012ed1651168b50af4565d0a79e8fba0b777c57775f0ae94",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/workflow/utils/_workflow_graph_utils.py",
+      "bytes": 6614,
+      "sha256": "9a45286d8e626804b8d55275b7408be86cf4123c91ba2239be7c99a1482243f0",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/agents/base_agent.py",
+      "bytes": 25251,
+      "sha256": "3679333de1dea0efb517360b1793dea078f4bffd167b3cec7ed362338bf7ef8a",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/agents/llm_agent.py",
+      "bytes": 49028,
+      "sha256": "633e08f77d4cdef5d1139c033cacc10e1132d8ceb983c70b90ec4e9b519b78fa",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/flows/llm_flows/core/_finalizer.py",
+      "bytes": 11566,
+      "sha256": "00eb1ca5f98a4f84709e034df1562bfe133858bd2686460fe153ea5ff1d72644",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/plugins/plugin_manager.py",
+      "bytes": 14341,
+      "sha256": "857e523348b777ea4d076f0165d8be1b2b47b233e5ada19c292f26bb1df10f7b",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/flows/llm_flows/core/_model_call.py",
+      "bytes": 11086,
+      "sha256": "79804a194cae9a7932f293a0bec23340eb9b98ec3e5d0549bd874e19a9711325",
+      "kind": "independently_inspected_locked_wheel_member"
+    },
+    {
+      "path": "google/adk/workflow/_node_runner.py",
+      "bytes": 16825,
+      "sha256": "9d932ae24bbaa60781c5a92cd8c8200cc1b00c393243f82f9ddd6807bb598b28",
+      "kind": "independently_inspected_locked_wheel_member"
+    },
+    {
+      "path": "google/adk/agents/context.py",
+      "bytes": 30353,
+      "sha256": "56a332f2727e42f8c39d99336fdd3b69b2d69d0d4fa0552919f54c3faba04301",
+      "kind": "independently_inspected_locked_wheel_member"
+    },
+    {
+      "path": "google/adk/events/event_actions.py",
+      "bytes": 7665,
+      "sha256": "9f9739675ecce76f8e5bec817393e82e784f7bd3c6ad33a2f040153a2d3ca1ba",
+      "kind": "independently_inspected_locked_wheel_member"
+    },
+    {
+      "path": "google/adk/workflow/_base_node.py",
+      "bytes": 10163,
+      "sha256": "cc579c92d8943c66aa495b9c05d7d1869c59297ad90b9c71e4ea4aa3952638ad",
+      "kind": "independently_inspected_locked_wheel_member"
+    },
+    {
+      "path": "google/adk/flows/llm_flows/basic.py",
+      "bytes": 9081,
+      "sha256": "cf4126e3685e532ff754fe43e5d1e01489259a506c820454065c22bec32400ee",
+      "kind": "independently_inspected_locked_wheel_member"
+    }
+  ],
+  "source_contract_notes": [
+    "Original Workflow graph compilation clones LlmAgent nodes; original models/instructions/tools/callback absence remain checked and unassigned.",
+    "Original App policy remains first, then fixture and observer; original secure-tool output can bypass observer but raw official terminals remain required.",
+    "Locked wheel core _model_call.py yields/returns before backend lookup when fixture produces response.",
+    "Context/BaseAgent copies preserve invocation_id and NodeRunner writes that actual ID to raw events. One fresh one-turn allocation requires the same nonempty SDK invocation across all journals.",
+    "Official EventActions requested_tool_confirmations is rejected in this read-only profile.",
+    "Pinned _base_node.py:279 defines START=BaseNode(name=__START__); Graph infers both endpoint nodes from every edge, including this sentinel.",
+    "Pinned basic.py:106-107 sets governed llm_request.model=agent.canonical_model.model before fixture callbacks."
+  ],
+  "remaining_findings": [],
+  "constraints": [
+    "Review performed no original policy/App/SDK/A2A/provider execution or live dispatch.",
+    "Review approves the source and constructed controls for root-owned prospective execution; it does not claim application success.",
+    "Actual hosted output must be independently reconstructed from raw events and state before any task-success interpretation.",
+    "Failed V1 history, pre-correction review and mutation proof remain preserved; human gold and held-out scientific qualification remain false."
+  ],
+  "provider_calls": 0,
+  "SDK_or_application_imported": false,
+  "actual_application_execution": false,
+  "human_gold": false,
+  "held_out_qualification": false,
+  "original_A2A_qualification": false
+}

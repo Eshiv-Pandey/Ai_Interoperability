@@ -1,0 +1,96 @@
+{
+  "actual_selected_interpreter_or_distribution_census_retained": false,
+  "archive_sha256": "c41af803458b432eaa934e606169a76235488c65472bd4c27e41ac73a2deee56",
+  "case_denominator": 1,
+  "case_execution_status": "unexecuted",
+  "different_pip_report_versions": {},
+  "expected_distribution_count": 182,
+  "head_sha": "9e333da735dd75e97c4bc8206c9fa7cb9b2da5cd",
+  "missing_expected_pip_report_distributions": [],
+  "pip_check_text": "No broken requirements found.",
+  "pip_report_install_rows": 184,
+  "portable_runtime_manifest_retained": false,
+  "provider_allocations": 0,
+  "run_id": 43045731741,
+  "schema_version": "ap2-native-shopper-V2-preflight-source-diagnosis/1",
+  "source_derived_failure_mode": "V2 main resolves the venv Python symlink; V1 main preserves its absolute launcher path. portable_runtime executes the supplied interpreter before comparing installed versions.",
+  "source_diagnosis_does_not_invent_actual_version_mismatches": true,
+  "source_records": {
+    "scripts/run_ap2_native_shopper_provider_v1.py": {
+      "identity": {
+        "bytes": 19597,
+        "sha256": "8c99e95fc686da0d8b15ac1c930a50a39a06d0c0e48722f7e15c2495a4dea358"
+      },
+      "relevant_source_lines": [
+        {
+          "line": 329,
+          "text": "        execute(args.plan.resolve(), args.output.resolve(), args.python.absolute(), args.site_packages.resolve(), args.pip_report.resolve(), args.provider_mode)"
+        }
+      ]
+    },
+    "scripts/run_ap2_native_shopper_provider_v2.py": {
+      "identity": {
+        "bytes": 12723,
+        "sha256": "9249b2860b8b9602457d49f2505f76ba5b3fc0cd67d6b0620c27a0291dc77f26"
+      },
+      "relevant_source_lines": [
+        {
+          "line": 209,
+          "text": "        execute(args.plan.resolve(), args.output.resolve(), args.python.resolve(), args.site_packages.resolve(), args.pip_report.resolve(), args.provider_mode)"
+        }
+      ]
+    },
+    "scripts/run_ap2_original_native_repeat_v3.py": {
+      "identity": {
+        "bytes": 35459,
+        "sha256": "ef750dfa58a49e083ceb6ac84471372aa0945ddf7b96289c1020388180c3d1fb"
+      },
+      "relevant_source_lines": [
+        {
+          "line": 347,
+          "text": "    result = subprocess.run([str(python), '-I', '-B', '-c',"
+        },
+        {
+          "line": 353,
+          "text": "        raise ValueError('installed_distribution_version_mismatch')"
+        },
+        {
+          "line": 647,
+          "text": "        execute(args.plan.resolve(), args.output.resolve(), args.python.absolute(), args.site_packages.resolve(), args.pip_report.resolve(), args.provider_mode)"
+        }
+      ]
+    }
+  },
+  "unexpected_pip_report_distributions": [
+    "jeepney",
+    "secretstorage"
+  ],
+  "unique_pip_report_distributions": 184,
+  "validated_read_members": {
+    "pip-check.txt": {
+      "bytes": 30,
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    "pip-install-report.json": {
+      "bytes": 2033972,
+      "sha256": "9c6356bb6054546add8b977b5cd667a84ac80156245f43e7973c0a0ceed88995"
+    },
+    "plan/owned-source/scripts/run_ap2_native_shopper_provider_v1.py": {
+      "bytes": 19597,
+      "sha256": "8c99e95fc686da0d8b15ac1c930a50a39a06d0c0e48722f7e15c2495a4dea358"
+    },
+    "plan/owned-source/scripts/run_ap2_native_shopper_provider_v2.py": {
+      "bytes": 12723,
+      "sha256": "9249b2860b8b9602457d49f2505f76ba5b3fc0cd67d6b0620c27a0291dc77f26"
+    },
+    "plan/owned-source/scripts/run_ap2_original_native_repeat_v3.py": {
+      "bytes": 35459,
+      "sha256": "ef750dfa58a49e083ceb6ac84471372aa0945ddf7b96289c1020388180c3d1fb"
+    },
+    "plan/plan.json": {
+      "bytes": 36830,
+      "sha256": "578a399b2f05ed5d5d6aa91e249d28be4d57da40fb8be08a53877034b2110fd5"
+    }
+  },
+  "whole_task_grade": null
+}

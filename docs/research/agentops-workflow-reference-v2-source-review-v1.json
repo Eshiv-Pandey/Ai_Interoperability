@@ -1,0 +1,167 @@
+{
+  "schema_version": "agentops-workflow-reference-v2-independent-source-review/1",
+  "reviewed_at_utc": "2026-11-11T15:07:09.804170+00:00",
+  "reviewer_kind": "independent_AI_source_and_constructed_review",
+  "status": "correction_required_before_dispatch",
+  "reviewed_worker_sha256": "8443cb109e1345f6ead2f8d2008a1532dd199d7fd05ba8886dc17c6e66cc4336",
+  "reviewed_analyzer_sha256": "9d81fe9bad9d544b55536d4f7c21f04c36edc09ccaf62c2cc0961724631fff20",
+  "original_source_commit": "c806b7f1cd0042c9817c0a4c46d80a9a95a24293",
+  "locked_ADK_wheel": {
+    "path": "runs/agentops-workflow-reference-development/v1/pinned-sdk-source-diagnosis-v1/google_adk-2.10.0-py3-none-any.whl",
+    "bytes": 4792014,
+    "sha256": "7550fecbb428a8a6de15ab88ba3c1d4704c752fe0b5594dc6d67ff440f370886"
+  },
+  "inspected_sdk_members": [
+    {
+      "path": "google/adk/workflow/_workflow.py",
+      "bytes": 32178,
+      "sha256": "c61e473933236ac707a6b794c3fc7c1d680f4bf77afeebd13af18de7d7f99edc",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/workflow/_graph.py",
+      "bytes": 6157,
+      "sha256": "1514520a58919cee5a48f3b48f96da4edf2fdbc3bd035d4dd04c8be2309d1181",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/workflow/utils/_graph_parser.py",
+      "bytes": 6546,
+      "sha256": "e598171ba602bed6012ed1651168b50af4565d0a79e8fba0b777c57775f0ae94",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/workflow/utils/_workflow_graph_utils.py",
+      "bytes": 6614,
+      "sha256": "9a45286d8e626804b8d55275b7408be86cf4123c91ba2239be7c99a1482243f0",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/agents/base_agent.py",
+      "bytes": 25251,
+      "sha256": "3679333de1dea0efb517360b1793dea078f4bffd167b3cec7ed362338bf7ef8a",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/agents/llm_agent.py",
+      "bytes": 49028,
+      "sha256": "633e08f77d4cdef5d1139c033cacc10e1132d8ceb983c70b90ec4e9b519b78fa",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/flows/llm_flows/core/_finalizer.py",
+      "bytes": 11566,
+      "sha256": "00eb1ca5f98a4f84709e034df1562bfe133858bd2686460fe153ea5ff1d72644",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/plugins/plugin_manager.py",
+      "bytes": 14341,
+      "sha256": "857e523348b777ea4d076f0165d8be1b2b47b233e5ada19c292f26bb1df10f7b",
+      "kind": "retained_runtime_binding_diagnosis"
+    },
+    {
+      "path": "google/adk/flows/llm_flows/core/_model_call.py",
+      "bytes": 11086,
+      "sha256": "79804a194cae9a7932f293a0bec23340eb9b98ec3e5d0549bd874e19a9711325",
+      "kind": "independently_inspected_locked_wheel_member"
+    },
+    {
+      "path": "google/adk/workflow/_node_runner.py",
+      "bytes": 16825,
+      "sha256": "9d932ae24bbaa60781c5a92cd8c8200cc1b00c393243f82f9ddd6807bb598b28",
+      "kind": "independently_inspected_locked_wheel_member"
+    },
+    {
+      "path": "google/adk/agents/context.py",
+      "bytes": 30353,
+      "sha256": "56a332f2727e42f8c39d99336fdd3b69b2d69d0d4fa0552919f54c3faba04301",
+      "kind": "independently_inspected_locked_wheel_member"
+    },
+    {
+      "path": "google/adk/events/event_actions.py",
+      "bytes": 7665,
+      "sha256": "9f9739675ecce76f8e5bec817393e82e784f7bd3c6ad33a2f040153a2d3ca1ba",
+      "kind": "independently_inspected_locked_wheel_member"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "blocking",
+      "title": "String-indexing pinned Graph.nodes list stops worker",
+      "worker_expressions": [
+        {
+          "line": 219,
+          "expression": "selected.graph.nodes[node.name]",
+          "constructed_error": "TypeError: list indices must be integers or slices, not str"
+        },
+        {
+          "line": 169,
+          "expression": "selected.graph.nodes[agent.name]",
+          "constructed_error": "TypeError: list indices must be integers or slices, not str"
+        }
+      ],
+      "SDK_source": "google/adk/workflow/_graph.py:104-109 nodes list; google/adk/workflow/_workflow.py:875-880 iterates nodes by name",
+      "required_correction": "Build and validate an index by exact original stage name from the compiled nodes list; use it for preflight and actual callback identity; add a list-shape constructed control."
+    },
+    {
+      "id": "F2",
+      "severity": "blocking_evidence_acceptance",
+      "title": "Invalid ordering, invocation, model, error, write and denial records accepted",
+      "peer_evidence": "docs/research/agentops-workflow-reference-v2-analyzer-peer-review-v1.json",
+      "peer_evidence_sha256": "71832f8bc3702d7366f44bc751b76e83dedbf76e9287e1bb5e2553979dee605b",
+      "constructed_baseline_questions": 0,
+      "invalid_independent_mutations_accepted": 14,
+      "mutation_names": [
+        "overlapping_stages",
+        "callback_invocation_mismatch",
+        "stage_invocation_mismatch",
+        "raw_invocation_mismatch",
+        "response_before_call",
+        "denied_socket.connect_ex",
+        "denied_socket.getaddrinfo",
+        "denied_socket.sendto",
+        "denied_socket.sendmsg",
+        "worker_failed_after_return",
+        "governed_request_model_mismatch",
+        "exported_model_identifier_mismatch",
+        "sdk_error_message_without_code",
+        "raw_tool_confirmation"
+      ],
+      "required_correction": "V2-only alternating stage lifecycle, one source-derived common invocation ID, preceding raw call for each terminal, all denied socket operation checks, successful receipt and copied-data invariance, governed/exported/compiled model agreement, all SDK error messages/codes, and raw requested_tool_confirmations rejection; preserve V1 files."
+    }
+  ],
+  "verified_source_contracts": [
+    "Pinned Workflow compiles graph at construction and clones LlmAgent nodes using BaseAgent.clone/model_copy.",
+    "App PluginManager executes plugins in order and stops at the first non-None callback result.",
+    "Core model-call yields a before-model response and returns before backend lookup; source path _model_call.py lines 168-193.",
+    "Original AgentOpsPolicyPlugin before-model budget/compaction/PII stays first; original secure_tool_output may short-circuit appended after-tool observer.",
+    "BaseAgent and Context copies preserve invocation_id; NodeRunner enriches each raw event with that actual invocation_id.",
+    "EventActions requested_tool_confirmations is an official dict keyed by call ID.",
+    "Public task records have only id/split/template_family/distinct_obligation/public; worker uses actual public projection and denies evaluator/credential reads."
+  ],
+  "independent_existing_controls": {
+    "command": "python -B scripts/check_agentops_workflow_reference_v2.py",
+    "constructed_checks": 39,
+    "result": "passed_before_corrections",
+    "SDK_or_application_imported": false
+  },
+  "independent_input_check": {
+    "command": "python -B scripts/ci_agentops_workflow_reference_v2.py --check-inputs",
+    "source_files": 421,
+    "result": "passed_before_corrections",
+    "provider_calls": 0,
+    "application_requests": 0
+  },
+  "limits": [
+    "This is source and constructed evidence, not execution of the original policy, App, SDK, A2A or provider.",
+    "Corrections and fresh independent post-correction checks remain required.",
+    "Human gold and scientific checkpoint qualification are not established; failed historical attempts remain preserved."
+  ],
+  "provider_calls": 0,
+  "SDK_or_application_imported": false,
+  "human_gold": false,
+  "held_out_qualification": false,
+  "original_A2A_qualification": false
+}
