@@ -1,0 +1,1115 @@
+{
+  "allocated_cells": 1650,
+  "constructed_controls_passed": [
+    "changed_original_profile_cpu_refused",
+    "changed_original_goal_ratio_refused",
+    "dropped_phase_profile_refused"
+  ],
+  "input_result_sha256": "8e4f1453d3dfc12bd3f1151d1d0b80a201f68461883c350a218fc25ff179a385",
+  "interpretation": "Original full-worker CPU and wall are lower on53/54 profiles; shared lifting retains an adverse cost result. Phase import+evaluation/checking and about40-42ms unassigned lifetime CPU are descriptive, not warmed-process cost or causal attribution.",
+  "limits": [
+    "Solver phase combines import and evaluation; checker phase combines import and checking.",
+    "Full-minus-phase CPU also includes startup, worker imports, unmetered glue, closing output and clock differences.",
+    "Phase CPU can be zero because of measurement resolution; it is not a proof of zero computation.",
+    "Subtracting these phases cannot establish a warmed long-lived-process result.",
+    "Observed profile ranges are descriptive, not confidence intervals.",
+    "No novelty, held-out advantage or full-study completion inferred."
+  ],
+  "new_solver_checker_actor_application_or_provider_calls": 0,
+  "paired_repeats": 5,
+  "per_profile_original_goal_costs": [
+    {
+      "cpu_total_ns": {
+        "goal_median": 72374000,
+        "original_median": 66930000,
+        "original_over_goal_ratio": 0.9247796169895266
+      },
+      "outer_wall_ns": {
+        "goal_median": 75066172,
+        "original_median": 68859187,
+        "original_over_goal_ratio": 0.9173131540529335
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20697088,
+        "original_median": 20557824,
+        "original_over_goal_ratio": 0.9932713239659609
+      },
+      "profile_id": "scale-0001"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71816000,
+        "original_median": 66136000,
+        "original_over_goal_ratio": 0.9209089896401916
+      },
+      "outer_wall_ns": {
+        "goal_median": 72951882,
+        "original_median": 68807478,
+        "original_over_goal_ratio": 0.9431898960468217
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20799488,
+        "original_median": 20545536,
+        "original_over_goal_ratio": 0.98779046868846
+      },
+      "profile_id": "scale-0002"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72456000,
+        "original_median": 66574000,
+        "original_over_goal_ratio": 0.918819697471569
+      },
+      "outer_wall_ns": {
+        "goal_median": 75066105,
+        "original_median": 68891540,
+        "original_over_goal_ratio": 0.917744966253411
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20692992,
+        "original_median": 20742144,
+        "original_over_goal_ratio": 1.002375296912114
+      },
+      "profile_id": "scale-0003"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71819000,
+        "original_median": 66591000,
+        "original_over_goal_ratio": 0.9272058925910971
+      },
+      "outer_wall_ns": {
+        "goal_median": 73010880,
+        "original_median": 68768707,
+        "original_over_goal_ratio": 0.9418967008752668
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20824064,
+        "original_median": 20635648,
+        "original_over_goal_ratio": 0.9909520062942565
+      },
+      "profile_id": "scale-0005"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72325000,
+        "original_median": 66982000,
+        "original_over_goal_ratio": 0.9261251296232285
+      },
+      "outer_wall_ns": {
+        "goal_median": 74916547,
+        "original_median": 68855229,
+        "original_over_goal_ratio": 0.9190924002410309
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20824064,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.987411487018096
+      },
+      "profile_id": "scale-0006"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72927000,
+        "original_median": 67591000,
+        "original_over_goal_ratio": 0.9268309405295707
+      },
+      "outer_wall_ns": {
+        "goal_median": 75156865,
+        "original_median": 69023351,
+        "original_over_goal_ratio": 0.9183905023180517
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20824064,
+        "original_median": 20639744,
+        "original_over_goal_ratio": 0.9911487018095987
+      },
+      "profile_id": "scale-0007"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71913000,
+        "original_median": 66649000,
+        "original_over_goal_ratio": 0.9268004394198546
+      },
+      "outer_wall_ns": {
+        "goal_median": 72974220,
+        "original_median": 68725820,
+        "original_over_goal_ratio": 0.9417821800630415
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20901888,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9837350578091318
+      },
+      "profile_id": "scale-0009"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71737000,
+        "original_median": 66771000,
+        "original_over_goal_ratio": 0.9307749139216862
+      },
+      "outer_wall_ns": {
+        "goal_median": 72856539,
+        "original_median": 69022430,
+        "original_over_goal_ratio": 0.9473745383375952
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20901888,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9837350578091318
+      },
+      "profile_id": "scale-0010"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72188000,
+        "original_median": 67201000,
+        "original_over_goal_ratio": 0.9309164958164792
+      },
+      "outer_wall_ns": {
+        "goal_median": 75052407,
+        "original_median": 68737235,
+        "original_over_goal_ratio": 0.9158565027767863
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20819968,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9876057446389928
+      },
+      "profile_id": "scale-0011"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71859000,
+        "original_median": 66407000,
+        "original_over_goal_ratio": 0.9241291974561293
+      },
+      "outer_wall_ns": {
+        "goal_median": 73001070,
+        "original_median": 68679827,
+        "original_over_goal_ratio": 0.9408057580525875
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20717568,
+        "original_median": 20500480,
+        "original_over_goal_ratio": 0.9895215500197707
+      },
+      "profile_id": "scale-0013"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71816000,
+        "original_median": 66676000,
+        "original_over_goal_ratio": 0.9284282054138353
+      },
+      "outer_wall_ns": {
+        "goal_median": 72813743,
+        "original_median": 68731660,
+        "original_over_goal_ratio": 0.9439380145585978
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20721664,
+        "original_median": 20742144,
+        "original_over_goal_ratio": 1.0009883376161297
+      },
+      "profile_id": "scale-0014"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 73010000,
+        "original_median": 66752000,
+        "original_over_goal_ratio": 0.9142857142857143
+      },
+      "outer_wall_ns": {
+        "goal_median": 75015075,
+        "original_median": 68796207,
+        "original_over_goal_ratio": 0.9170984232169334
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20807680,
+        "original_median": 20459520,
+        "original_over_goal_ratio": 0.9832677165354331
+      },
+      "profile_id": "scale-0015"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72123000,
+        "original_median": 66473000,
+        "original_over_goal_ratio": 0.9216616058677537
+      },
+      "outer_wall_ns": {
+        "goal_median": 74779038,
+        "original_median": 68688826,
+        "original_over_goal_ratio": 0.9185572299017808
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20713472,
+        "original_median": 20459520,
+        "original_over_goal_ratio": 0.9877397666600751
+      },
+      "profile_id": "scale-0017"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72419000,
+        "original_median": 66877000,
+        "original_over_goal_ratio": 0.923473121694583
+      },
+      "outer_wall_ns": {
+        "goal_median": 74945746,
+        "original_median": 68800905,
+        "original_over_goal_ratio": 0.918009475814678
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20877312,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9848930743574652
+      },
+      "profile_id": "scale-0018"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71913000,
+        "original_median": 67051000,
+        "original_over_goal_ratio": 0.9323905274428824
+      },
+      "outer_wall_ns": {
+        "goal_median": 73026348,
+        "original_median": 68753906,
+        "original_over_goal_ratio": 0.941494513733591
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20848640,
+        "original_median": 20742144,
+        "original_over_goal_ratio": 0.9948919449901769
+      },
+      "profile_id": "scale-0019"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72678000,
+        "original_median": 67979000,
+        "original_over_goal_ratio": 0.9353449462010512
+      },
+      "outer_wall_ns": {
+        "goal_median": 74840890,
+        "original_median": 71078688,
+        "original_over_goal_ratio": 0.9497306619416204
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20918272,
+        "original_median": 20451328,
+        "original_over_goal_ratio": 0.9776776972782455
+      },
+      "profile_id": "scale-0021"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72371000,
+        "original_median": 66984000,
+        "original_over_goal_ratio": 0.925564107169999
+      },
+      "outer_wall_ns": {
+        "goal_median": 74954295,
+        "original_median": 68679047,
+        "original_over_goal_ratio": 0.9162790070935894
+      },
+      "peak_rss_bytes": {
+        "goal_median": 21028864,
+        "original_median": 20516864,
+        "original_over_goal_ratio": 0.9756525126606934
+      },
+      "profile_id": "scale-0022"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72866000,
+        "original_median": 69302000,
+        "original_over_goal_ratio": 0.9510882990695249
+      },
+      "outer_wall_ns": {
+        "goal_median": 75127062,
+        "original_median": 70926214,
+        "original_over_goal_ratio": 0.9440834249581063
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20930560,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9823874755381604
+      },
+      "profile_id": "scale-0023"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72213000,
+        "original_median": 66593000,
+        "original_over_goal_ratio": 0.9221746776896127
+      },
+      "outer_wall_ns": {
+        "goal_median": 74960851,
+        "original_median": 68707611,
+        "original_over_goal_ratio": 0.9165799224984785
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20865024,
+        "original_median": 20639744,
+        "original_over_goal_ratio": 0.9892029839026305
+      },
+      "profile_id": "scale-0025"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72138000,
+        "original_median": 66496000,
+        "original_over_goal_ratio": 0.921788793700962
+      },
+      "outer_wall_ns": {
+        "goal_median": 75104210,
+        "original_median": 68806404,
+        "original_over_goal_ratio": 0.9161457659963402
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20819968,
+        "original_median": 20742144,
+        "original_over_goal_ratio": 0.9962620499704898
+      },
+      "profile_id": "scale-0026"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72465000,
+        "original_median": 67564000,
+        "original_over_goal_ratio": 0.9323673497550542
+      },
+      "outer_wall_ns": {
+        "goal_median": 75108999,
+        "original_median": 68774656,
+        "original_over_goal_ratio": 0.9156646595702866
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20783104,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9893575088687426
+      },
+      "profile_id": "scale-0027"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72203000,
+        "original_median": 68075000,
+        "original_over_goal_ratio": 0.9428278603382131
+      },
+      "outer_wall_ns": {
+        "goal_median": 75093793,
+        "original_median": 70732947,
+        "original_over_goal_ratio": 0.9419280099488383
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20766720,
+        "original_median": 20672512,
+        "original_over_goal_ratio": 0.9954635108481262
+      },
+      "profile_id": "scale-0029"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72743000,
+        "original_median": 67262000,
+        "original_over_goal_ratio": 0.9246525438873844
+      },
+      "outer_wall_ns": {
+        "goal_median": 74920250,
+        "original_median": 68785988,
+        "original_over_goal_ratio": 0.918122777219777
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20869120,
+        "original_median": 20762624,
+        "original_over_goal_ratio": 0.9948969578017665
+      },
+      "profile_id": "scale-0030"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 73789000,
+        "original_median": 107467000,
+        "original_over_goal_ratio": 1.4564094919296915
+      },
+      "outer_wall_ns": {
+        "goal_median": 75135659,
+        "original_median": 110044847,
+        "original_over_goal_ratio": 1.46461544976933
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20869120,
+        "original_median": 20869120,
+        "original_over_goal_ratio": 1.0
+      },
+      "profile_id": "scale-0031"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72559000,
+        "original_median": 66658000,
+        "original_over_goal_ratio": 0.9186730798384762
+      },
+      "outer_wall_ns": {
+        "goal_median": 75074851,
+        "original_median": 68872502,
+        "original_over_goal_ratio": 0.9173844647390642
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20963328,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9808518952715904
+      },
+      "profile_id": "scale-0033"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71915000,
+        "original_median": 66637000,
+        "original_over_goal_ratio": 0.9266078008760342
+      },
+      "outer_wall_ns": {
+        "goal_median": 72986262,
+        "original_median": 68879305,
+        "original_over_goal_ratio": 0.9437297254653211
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20918272,
+        "original_median": 20508672,
+        "original_over_goal_ratio": 0.9804190327002154
+      },
+      "profile_id": "scale-0034"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72871000,
+        "original_median": 67613000,
+        "original_over_goal_ratio": 0.9278450961287755
+      },
+      "outer_wall_ns": {
+        "goal_median": 75093420,
+        "original_median": 68934296,
+        "original_over_goal_ratio": 0.9179805101432322
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20729856,
+        "original_median": 20643840,
+        "original_over_goal_ratio": 0.995850622406639
+      },
+      "profile_id": "scale-0035"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72297000,
+        "original_median": 67115000,
+        "original_over_goal_ratio": 0.928323443573039
+      },
+      "outer_wall_ns": {
+        "goal_median": 74957883,
+        "original_median": 68761947,
+        "original_over_goal_ratio": 0.917341102069278
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20914176,
+        "original_median": 20459520,
+        "original_over_goal_ratio": 0.9782608695652174
+      },
+      "profile_id": "scale-0037"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 73315000,
+        "original_median": 66937000,
+        "original_over_goal_ratio": 0.9130055241082998
+      },
+      "outer_wall_ns": {
+        "goal_median": 75084290,
+        "original_median": 68726138,
+        "original_over_goal_ratio": 0.9153198092437179
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20824064,
+        "original_median": 20451328,
+        "original_over_goal_ratio": 0.9821007081038552
+      },
+      "profile_id": "scale-0038"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72945000,
+        "original_median": 67485000,
+        "original_over_goal_ratio": 0.9251490849269998
+      },
+      "outer_wall_ns": {
+        "goal_median": 75033544,
+        "original_median": 68748620,
+        "original_over_goal_ratio": 0.916238475954168
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20697088,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9934692262022561
+      },
+      "profile_id": "scale-0039"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72808000,
+        "original_median": 67449000,
+        "original_over_goal_ratio": 0.9263954510493352
+      },
+      "outer_wall_ns": {
+        "goal_median": 74768018,
+        "original_median": 69083286,
+        "original_over_goal_ratio": 0.9239684004997966
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20824064,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.987411487018096
+      },
+      "profile_id": "scale-0041"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 74137000,
+        "original_median": 68248000,
+        "original_over_goal_ratio": 0.9205659792006691
+      },
+      "outer_wall_ns": {
+        "goal_median": 75246133,
+        "original_median": 70903335,
+        "original_over_goal_ratio": 0.9422854327942674
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20721664,
+        "original_median": 20459520,
+        "original_over_goal_ratio": 0.9873492785135403
+      },
+      "profile_id": "scale-0042"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72937000,
+        "original_median": 67884000,
+        "original_over_goal_ratio": 0.9307210332204505
+      },
+      "outer_wall_ns": {
+        "goal_median": 75135205,
+        "original_median": 69073496,
+        "original_over_goal_ratio": 0.9193226530758783
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20824064,
+        "original_median": 20774912,
+        "original_over_goal_ratio": 0.997639653815893
+      },
+      "profile_id": "scale-0043"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72842000,
+        "original_median": 67497000,
+        "original_over_goal_ratio": 0.9266220037890228
+      },
+      "outer_wall_ns": {
+        "goal_median": 75082259,
+        "original_median": 68960530,
+        "original_over_goal_ratio": 0.9184663716631115
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20840448,
+        "original_median": 20459520,
+        "original_over_goal_ratio": 0.9817216981132075
+      },
+      "profile_id": "scale-0045"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72324000,
+        "original_median": 67309000,
+        "original_over_goal_ratio": 0.9306592555721476
+      },
+      "outer_wall_ns": {
+        "goal_median": 74855580,
+        "original_median": 68815288,
+        "original_over_goal_ratio": 0.9193073916466882
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20856832,
+        "original_median": 20557824,
+        "original_over_goal_ratio": 0.9856637863315004
+      },
+      "profile_id": "scale-0046"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72857000,
+        "original_median": 67574000,
+        "original_over_goal_ratio": 0.9274880931139081
+      },
+      "outer_wall_ns": {
+        "goal_median": 74947644,
+        "original_median": 68733810,
+        "original_over_goal_ratio": 0.9170910028872956
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20803584,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9883835400669423
+      },
+      "profile_id": "scale-0047"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72581000,
+        "original_median": 66562000,
+        "original_over_goal_ratio": 0.9170719609815241
+      },
+      "outer_wall_ns": {
+        "goal_median": 75007659,
+        "original_median": 68869953,
+        "original_over_goal_ratio": 0.9181722762471496
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20824064,
+        "original_median": 20459520,
+        "original_over_goal_ratio": 0.9824940991345398
+      },
+      "profile_id": "scale-0049"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72743000,
+        "original_median": 66392000,
+        "original_over_goal_ratio": 0.9126926302187152
+      },
+      "outer_wall_ns": {
+        "goal_median": 74633042,
+        "original_median": 68706340,
+        "original_over_goal_ratio": 0.920588765496119
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20824064,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.987411487018096
+      },
+      "profile_id": "scale-0050"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72231000,
+        "original_median": 66653000,
+        "original_over_goal_ratio": 0.9227755395882654
+      },
+      "outer_wall_ns": {
+        "goal_median": 74884623,
+        "original_median": 68753540,
+        "original_over_goal_ratio": 0.9181262754036967
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20824064,
+        "original_median": 20459520,
+        "original_over_goal_ratio": 0.9824940991345398
+      },
+      "profile_id": "scale-0051"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72040000,
+        "original_median": 66861000,
+        "original_over_goal_ratio": 0.9281093836757357
+      },
+      "outer_wall_ns": {
+        "goal_median": 74923779,
+        "original_median": 68880700,
+        "original_over_goal_ratio": 0.9193436438917476
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20762624,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9903333990925232
+      },
+      "profile_id": "scale-0052"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72551000,
+        "original_median": 66619000,
+        "original_over_goal_ratio": 0.9182368265082493
+      },
+      "outer_wall_ns": {
+        "goal_median": 74909273,
+        "original_median": 68817915,
+        "original_over_goal_ratio": 0.9186835253360421
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20787200,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9891625615763546
+      },
+      "profile_id": "scale-0053"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71898000,
+        "original_median": 66838000,
+        "original_over_goal_ratio": 0.9296225207933462
+      },
+      "outer_wall_ns": {
+        "goal_median": 72861072,
+        "original_median": 68712933,
+        "original_over_goal_ratio": 0.9430678291420143
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20787200,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9891625615763546
+      },
+      "profile_id": "scale-0054"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71991000,
+        "original_median": 66884000,
+        "original_over_goal_ratio": 0.9290605770165715
+      },
+      "outer_wall_ns": {
+        "goal_median": 74770850,
+        "original_median": 68815876,
+        "original_over_goal_ratio": 0.9203570107869578
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20717568,
+        "original_median": 20545536,
+        "original_over_goal_ratio": 0.9916963226571768
+      },
+      "profile_id": "scale-0055"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71741000,
+        "original_median": 66404000,
+        "original_over_goal_ratio": 0.9256073932618726
+      },
+      "outer_wall_ns": {
+        "goal_median": 72914622,
+        "original_median": 68725941,
+        "original_over_goal_ratio": 0.9425536211378837
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20824064,
+        "original_median": 20557824,
+        "original_over_goal_ratio": 0.9872147915027537
+      },
+      "profile_id": "scale-0056"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72515000,
+        "original_median": 67144000,
+        "original_over_goal_ratio": 0.925932565676067
+      },
+      "outer_wall_ns": {
+        "goal_median": 75101412,
+        "original_median": 69045323,
+        "original_over_goal_ratio": 0.9193611832491245
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20934656,
+        "original_median": 20639744,
+        "original_over_goal_ratio": 0.9859127372334181
+      },
+      "profile_id": "scale-0057"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71933000,
+        "original_median": 66752000,
+        "original_over_goal_ratio": 0.9279746430706352
+      },
+      "outer_wall_ns": {
+        "goal_median": 74817747,
+        "original_median": 68769727,
+        "original_over_goal_ratio": 0.9191632969113598
+      },
+      "peak_rss_bytes": {
+        "goal_median": 21024768,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.9779855834794468
+      },
+      "profile_id": "scale-0058"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72022000,
+        "original_median": 66888000,
+        "original_over_goal_ratio": 0.928716225597734
+      },
+      "outer_wall_ns": {
+        "goal_median": 74796317,
+        "original_median": 68777837,
+        "original_over_goal_ratio": 0.9195350755037845
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20717568,
+        "original_median": 20561920,
+        "original_over_goal_ratio": 0.992487149070779
+      },
+      "profile_id": "scale-0059"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71883000,
+        "original_median": 66270000,
+        "original_over_goal_ratio": 0.9219147781812111
+      },
+      "outer_wall_ns": {
+        "goal_median": 72932925,
+        "original_median": 68707632,
+        "original_over_goal_ratio": 0.9420660421887646
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20807680,
+        "original_median": 20639744,
+        "original_over_goal_ratio": 0.9919291338582678
+      },
+      "profile_id": "scale-0060"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72767000,
+        "original_median": 66619000,
+        "original_over_goal_ratio": 0.9155111520332019
+      },
+      "outer_wall_ns": {
+        "goal_median": 74980513,
+        "original_median": 68686303,
+        "original_over_goal_ratio": 0.9160553889515266
+      },
+      "peak_rss_bytes": {
+        "goal_median": 21004288,
+        "original_median": 20742144,
+        "original_over_goal_ratio": 0.9875195007800313
+      },
+      "profile_id": "scale-0061"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71714000,
+        "original_median": 66831000,
+        "original_over_goal_ratio": 0.9319100872911844
+      },
+      "outer_wall_ns": {
+        "goal_median": 73045289,
+        "original_median": 68763180,
+        "original_over_goal_ratio": 0.9413773419391906
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20901888,
+        "original_median": 20717568,
+        "original_over_goal_ratio": 0.9911816578483245
+      },
+      "profile_id": "scale-0062"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 72100000,
+        "original_median": 66640000,
+        "original_over_goal_ratio": 0.9242718446601942
+      },
+      "outer_wall_ns": {
+        "goal_median": 74866340,
+        "original_median": 68719475,
+        "original_over_goal_ratio": 0.9178954787959449
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20807680,
+        "original_median": 20611072,
+        "original_over_goal_ratio": 0.9905511811023622
+      },
+      "profile_id": "scale-0063"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71768000,
+        "original_median": 67255000,
+        "original_over_goal_ratio": 0.9371168208672389
+      },
+      "outer_wall_ns": {
+        "goal_median": 72933734,
+        "original_median": 69002053,
+        "original_over_goal_ratio": 0.9460924213752719
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20934656,
+        "original_median": 20529152,
+        "original_over_goal_ratio": 0.9806300136959499
+      },
+      "profile_id": "scale-0064"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71824000,
+        "original_median": 67351000,
+        "original_over_goal_ratio": 0.9377227667631989
+      },
+      "outer_wall_ns": {
+        "goal_median": 72887153,
+        "original_median": 68702623,
+        "original_over_goal_ratio": 0.9425889223578262
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20946944,
+        "original_median": 20434944,
+        "original_over_goal_ratio": 0.9755572937035588
+      },
+      "profile_id": "scale-0065"
+    },
+    {
+      "cpu_total_ns": {
+        "goal_median": 71945000,
+        "original_median": 66703000,
+        "original_over_goal_ratio": 0.9271387865730767
+      },
+      "outer_wall_ns": {
+        "goal_median": 74928078,
+        "original_median": 68818709,
+        "original_over_goal_ratio": 0.9184635564787875
+      },
+      "peak_rss_bytes": {
+        "goal_median": 20840448,
+        "original_median": 20537344,
+        "original_over_goal_ratio": 0.9854559748427673
+      },
+      "profile_id": "scale-0066"
+    }
+  ],
+  "phase_profile_records_verified": 162,
+  "phase_summaries": {
+    "goal_pruned_direct": {
+      "descriptive_median_across_profile_phase_medians": {
+        "independent_checker_import_and_check": {
+          "cpu_ns": 11999503.0,
+          "wall_ns": 12216515.5
+        },
+        "profile_source_load_and_guard": {
+          "cpu_ns": 1000386.5,
+          "wall_ns": 1186654.5
+        },
+        "solver_import_and_evaluate": {
+          "cpu_ns": 17997868.5,
+          "wall_ns": 17985510.5
+        },
+        "solver_result_output": {
+          "cpu_ns": 0.0,
+          "wall_ns": 117960.5
+        },
+        "solver_result_serialization": {
+          "cpu_ns": 0.0,
+          "wall_ns": 17773.0
+        }
+      },
+      "median_full_child_cpu_ns": 72310500.0,
+      "median_full_minus_recorded_phase_cpu_ns": 40786179.5,
+      "profile_count": 54
+    },
+    "original_refinement": {
+      "descriptive_median_across_profile_phase_medians": {
+        "independent_checker_import_and_check": {
+          "cpu_ns": 12998977.0,
+          "wall_ns": 13222340.0
+        },
+        "profile_source_load_and_guard": {
+          "cpu_ns": 1000582.0,
+          "wall_ns": 1186854.5
+        },
+        "solver_import_and_evaluate": {
+          "cpu_ns": 11998145.0,
+          "wall_ns": 11771727.5
+        },
+        "solver_result_output": {
+          "cpu_ns": 0.0,
+          "wall_ns": 116733.5
+        },
+        "solver_result_serialization": {
+          "cpu_ns": 0.0,
+          "wall_ns": 19401.0
+        }
+      },
+      "median_full_child_cpu_ns": 66880500.0,
+      "median_full_minus_recorded_phase_cpu_ns": 40601543.5,
+      "profile_count": 54
+    },
+    "shared_lift": {
+      "descriptive_median_across_profile_phase_medians": {
+        "independent_checker_import_and_check": {
+          "cpu_ns": 12998116.0,
+          "wall_ns": 12571079.5
+        },
+        "profile_source_load_and_guard": {
+          "cpu_ns": 1000586.5,
+          "wall_ns": 1184245.0
+        },
+        "solver_import_and_evaluate": {
+          "cpu_ns": 25999833.0,
+          "wall_ns": 25947557.5
+        },
+        "solver_result_output": {
+          "cpu_ns": 0.0,
+          "wall_ns": 121482.5
+        },
+        "solver_result_serialization": {
+          "cpu_ns": 0.0,
+          "wall_ns": 24891.5
+        }
+      },
+      "median_full_child_cpu_ns": 81653500.0,
+      "median_full_minus_recorded_phase_cpu_ns": 41743192.0,
+      "profile_count": 54
+    }
+  },
+  "physical_original_vs_goal_pruned_direct": {
+    "cpu_total_ns": {
+      "median_original_over_goal_pruned_direct": 0.9266149023325285,
+      "observed_profile_ratio_max": 1.4564094919296915,
+      "observed_profile_ratio_min": 0.9126926302187152,
+      "original_lower_equal_higher": [
+        53,
+        0,
+        1
+      ]
+    },
+    "outer_wall_ns": {
+      "median_original_over_goal_pruned_direct": 0.919235344279024,
+      "observed_profile_ratio_max": 1.46461544976933,
+      "observed_profile_ratio_min": 0.9153198092437179,
+      "original_lower_equal_higher": [
+        53,
+        0,
+        1
+      ]
+    },
+    "peak_rss_bytes": {
+      "median_original_over_goal_pruned_direct": 0.9876727556495339,
+      "observed_profile_ratio_max": 1.002375296912114,
+      "observed_profile_ratio_min": 0.9755572937035588,
+      "original_lower_equal_higher": [
+        51,
+        1,
+        2
+      ]
+    }
+  },
+  "profiles": 54,
+  "raw_after_reply_files_verified": 3300,
+  "reviewer_source_sha256": "5bfb7b7f723298f2b0dabe6d7d1bad045e8fea65104194406101492558e09a4f",
+  "schema_version": "independent-retained-cost-phase-review/1",
+  "status": "all_original_goal_cost_and_phase_rows_verified"
+}

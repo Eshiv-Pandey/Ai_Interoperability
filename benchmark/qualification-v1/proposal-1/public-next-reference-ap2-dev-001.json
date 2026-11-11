@@ -1,0 +1,63 @@
+{
+  "schema_version": "public-only-next-reference-preparation/1",
+  "candidate_id": "ap2-dev-001",
+  "source_pin": {
+    "repository": "https://github.com/google-agentic-commerce/AP2",
+    "commit": "e1ea56db72a6385bce3e5c1112b3a56ce60acb43",
+    "retained_root": "docs/research/source-evidence/ap2-procurement-screen-v1/source",
+    "a2a_sdk": {
+      "version": "0.3.24",
+      "retained_root": "docs/research/source-evidence/ap2-procurement-screen-v1/adk-task-mapping-v1/a2a-sdk/source"
+    }
+  },
+  "public_record": {
+    "id": "ap2-dev-001",
+    "domain": "ap2",
+    "split": "development",
+    "template_family": "original_purchase_completion",
+    "public": {
+      "task": "Buy a publicly offered product through the original human-present demo and report the observed simulated payment outcome.",
+      "prompt": "I want to buy a pair of shoes in this demo. Show me the available choices, collect my shipping and payment choices, and ask me to confirm the cart before starting payment. If the issuer requests a code, ask me for it. When the process finishes, show me the demo payment receipt or explain the actual failure.",
+      "fixture_recipe": {
+        "execution_class": "original_shopper_workflow",
+        "fixture_origin": "AI-authored source-derived prospective recipe; no native capture or fixture execution",
+        "source_compatible_setup": "Scope this recipe to PAYMENT_METHOD=CARD, debug_mode=False and ordinary nonverbose human requests through the original client builder; preserve its omission of false values and the original signing-key lifecycle. Use the unchanged human-present cards ADK shopping_agent entry and its original merchant, credentials-provider and processor calls in a future authorized run. Obtain cart/task/context identifiers and result objects from public original responses. Obtain valid credentials, checkout JWTs and signed checkout/payment mandates through the original get_payment_credential_token, create_checkout, create_checkout_mandate and create_payment_mandate helpers with the run's original signing-key lifecycle. Never substitute arbitrary JWT strings, a fabricated live receipt, evaluator-private identifiers, a patched shopper or a direct child control for the original shopper prefix.",
+        "public_choices": {
+          "product": "choose an actual shoe cart only after original options are shown",
+          "shipping": "manual US address supplied in the human conversation",
+          "payment": "choose an eligible alias from the original displayed list",
+          "confirmation": "confirm only the displayed selected cart",
+          "otp": "123 only in a human reply after an actual OTP request"
+        },
+        "steps": [
+          "Enter the prompt through the original ADK shopper and provide each public choice after it is requested.",
+          "Retain the complete original shopper prefix and all original child A2A messages through the first pending payment states.",
+          "Provide the demo code only after an actual user-facing request; retain the original generic input_required outcome if no request is surfaced.",
+          "Retain every subsequent credential, receipt-delivery, receipt-artifact and shopper outcome without replacing an unfavorable branch."
+        ],
+        "capture_public_surfaces": [
+          "public human conversation and original tool-call sequence",
+          "merchant initial Message, pending Task including full history, follow-up Message and subsequent Task",
+          "processor initial Message, pending Task including full history, follow-up Message and subsequent Task",
+          "original credentials-provider request/Task outcome and canonical public receipt artifacts where actually returned"
+        ],
+        "realization": "original interactive source path; an unrealized required branch is not a passed instance"
+      }
+    }
+  },
+  "source_application_path": "benchmark/tasks-v1/ap2/application.json",
+  "source_application_sha256": "8d50f50ac64976365d5c284a9ebf01e2f0291e506494ac9894df77d2d6cd7af2",
+  "proposal_application_sha256": "f0e16f1af1393b6feeb6acd3d018dde4d675fef4ac1c0118db2890653f0be508",
+  "execution_allowed": false,
+  "allocation": null,
+  "provider_calls_allowed": 0,
+  "purpose": "Concrete reviewable original public recipe; later allocation requires owner coordination and separate route/resource/task gates",
+  "evaluator_material_read": false,
+  "guards": [
+    "Retain all failures and unsupported/unexecuted outcomes",
+    "Use original entrypoint/tools/source restrictions",
+    "Bind actual observed task/context/session/user/invocation; no invented confirmations or OTP",
+    "Direct boundary evidence cannot substitute for original workflow completion",
+    "Use fresh exclusive state only in a separately coordinated execution"
+  ]
+}

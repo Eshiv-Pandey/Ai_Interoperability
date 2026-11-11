@@ -1,0 +1,4204 @@
+{
+  "allocated_cells_retained": 1650,
+  "comparison_profiles": 54,
+  "comparison_unit": "related authored profile; five dependent timing repeats",
+  "inputs": [
+    {
+      "bytes": 1069249,
+      "path": "runs/common-cost-development/v1/read-audit-42927208534-3/result.json",
+      "sha256": "737ce96dfbe415898c5d7e31eb38f2f25e4fedaabaf2c622b7563a2c9b61338e"
+    },
+    {
+      "bytes": 5174418,
+      "path": "runs/common-cost-development/v1/read-audit-42927208534-3/cells.jsonl",
+      "sha256": "a459bbdeb339702526150f6d1bc6c2f4208f212b4fa28f8b835e34b6b5e5cc92"
+    },
+    {
+      "bytes": 6240,
+      "path": "scripts/analyze_common_cost_phases_v1.py",
+      "sha256": "18b708a074e7c520b69876f73a716b08ba60d0728f2606535890e34651c1db8f"
+    }
+  ],
+  "limits": [
+    "Solver phase combines import and evaluation; checker phase combines import and checking.",
+    "Full-minus-phase CPU also includes startup, worker imports, unmetered glue, closing output and clock differences.",
+    "Phase CPU can be zero because of measurement resolution; it is not a proof of zero computation.",
+    "Subtracting these phases cannot establish a warmed long-lived-process result.",
+    "Observed profile ranges are descriptive, not confidence intervals.",
+    "No novelty, held-out advantage or full-study completion inferred."
+  ],
+  "new_solver_checker_application_or_provider_calls": 0,
+  "paired_repeats": 5,
+  "phase_description": {
+    "goal_pruned_direct": {
+      "descriptive_median_across_profile_phase_medians": {
+        "independent_checker_import_and_check": {
+          "cpu_ns": 11999503.0,
+          "wall_ns": 12216515.5
+        },
+        "profile_source_load_and_guard": {
+          "cpu_ns": 1000386.5,
+          "wall_ns": 1186654.5
+        },
+        "solver_import_and_evaluate": {
+          "cpu_ns": 17997868.5,
+          "wall_ns": 17985510.5
+        },
+        "solver_result_output": {
+          "cpu_ns": 0.0,
+          "wall_ns": 117960.5
+        },
+        "solver_result_serialization": {
+          "cpu_ns": 0.0,
+          "wall_ns": 17773.0
+        }
+      },
+      "median_full_child_cpu_ns": 72310500.0,
+      "median_full_minus_recorded_phase_cpu_ns": 40786179.5,
+      "per_profile": [
+        {
+          "full_child_cpu_ns": 72374000,
+          "full_minus_recorded_phase_cpu_ns": 41376457,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999327,
+            "wall_ns": 12185517
+          },
+          "profile_id": "scale-0001",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 998904,
+            "wall_ns": 1183994
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17998830,
+            "wall_ns": 17935781
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 124483
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17573
+          }
+        },
+        {
+          "full_child_cpu_ns": 71816000,
+          "full_minus_recorded_phase_cpu_ns": 40820441,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999848,
+            "wall_ns": 12180218
+          },
+          "profile_id": "scale-0002",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000266,
+            "wall_ns": 1164588
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17996837,
+            "wall_ns": 17806255
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117710
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17503
+          }
+        },
+        {
+          "full_child_cpu_ns": 72456000,
+          "full_minus_recorded_phase_cpu_ns": 41169766,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12000109,
+            "wall_ns": 12144512
+          },
+          "profile_id": "scale-0003",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1003512,
+            "wall_ns": 1179365
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997538,
+            "wall_ns": 17885325
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 123220
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 15840
+          }
+        },
+        {
+          "full_child_cpu_ns": 71819000,
+          "full_minus_recorded_phase_cpu_ns": 40782726,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999407,
+            "wall_ns": 12064618
+          },
+          "profile_id": "scale-0005",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000768,
+            "wall_ns": 1163175
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17998900,
+            "wall_ns": 17832426
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120295
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17833
+          }
+        },
+        {
+          "full_child_cpu_ns": 72325000,
+          "full_minus_recorded_phase_cpu_ns": 40377194,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999988,
+            "wall_ns": 12040864
+          },
+          "profile_id": "scale-0006",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001248,
+            "wall_ns": 1184325
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17993551,
+            "wall_ns": 18076254
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 111929
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 18244
+          }
+        },
+        {
+          "full_child_cpu_ns": 72927000,
+          "full_minus_recorded_phase_cpu_ns": 41657798,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999557,
+            "wall_ns": 12138321
+          },
+          "profile_id": "scale-0007",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000637,
+            "wall_ns": 1175488
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17996336,
+            "wall_ns": 17986572
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 131756
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 15959
+          }
+        },
+        {
+          "full_child_cpu_ns": 71913000,
+          "full_minus_recorded_phase_cpu_ns": 40915128,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999958,
+            "wall_ns": 12151080
+          },
+          "profile_id": "scale-0009",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 998734,
+            "wall_ns": 1178313
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997748,
+            "wall_ns": 17833338
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 112922
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17713
+          }
+        },
+        {
+          "full_child_cpu_ns": 71737000,
+          "full_minus_recorded_phase_cpu_ns": 40278172,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999407,
+            "wall_ns": 12084339
+          },
+          "profile_id": "scale-0010",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1991345,
+            "wall_ns": 1168917
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17999082,
+            "wall_ns": 17917202
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 118070
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17973
+          }
+        },
+        {
+          "full_child_cpu_ns": 72188000,
+          "full_minus_recorded_phase_cpu_ns": 40249008,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998225,
+            "wall_ns": 12170444
+          },
+          "profile_id": "scale-0011",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000006,
+            "wall_ns": 1162895
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 18000624,
+            "wall_ns": 17973480
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115195
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16001
+          }
+        },
+        {
+          "full_child_cpu_ns": 71859000,
+          "full_minus_recorded_phase_cpu_ns": 40513622,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999657,
+            "wall_ns": 12138721
+          },
+          "profile_id": "scale-0013",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000336,
+            "wall_ns": 1180718
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17998149,
+            "wall_ns": 17895206
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 126566
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 18684
+          }
+        },
+        {
+          "full_child_cpu_ns": 71816000,
+          "full_minus_recorded_phase_cpu_ns": 40780172,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999176,
+            "wall_ns": 12104196
+          },
+          "profile_id": "scale-0014",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000727,
+            "wall_ns": 1185838
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997708,
+            "wall_ns": 17988998
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119774
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 18585
+          }
+        },
+        {
+          "full_child_cpu_ns": 73010000,
+          "full_minus_recorded_phase_cpu_ns": 41510421,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999808,
+            "wall_ns": 12209705
+          },
+          "profile_id": "scale-0015",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000356,
+            "wall_ns": 1187891
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17995744,
+            "wall_ns": 18072029
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119383
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16130
+          }
+        },
+        {
+          "full_child_cpu_ns": 72123000,
+          "full_minus_recorded_phase_cpu_ns": 40855591,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12000220,
+            "wall_ns": 12232843
+          },
+          "profile_id": "scale-0017",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999494,
+            "wall_ns": 1186058
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17998059,
+            "wall_ns": 17984449
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 116097
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 18114
+          }
+        },
+        {
+          "full_child_cpu_ns": 72419000,
+          "full_minus_recorded_phase_cpu_ns": 40420320,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999828,
+            "wall_ns": 12126568
+          },
+          "profile_id": "scale-0018",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000657,
+            "wall_ns": 1178423
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17995935,
+            "wall_ns": 17933997
+          },
+          "solver_result_output": {
+            "cpu_ns": 1001829,
+            "wall_ns": 135543
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16440
+          }
+        },
+        {
+          "full_child_cpu_ns": 71913000,
+          "full_minus_recorded_phase_cpu_ns": 40061918,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999138,
+            "wall_ns": 12209281
+          },
+          "profile_id": "scale-0019",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000386,
+            "wall_ns": 1174947
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997808,
+            "wall_ns": 18052929
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 118672
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16371
+          }
+        },
+        {
+          "full_child_cpu_ns": 72678000,
+          "full_minus_recorded_phase_cpu_ns": 39949669,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12003224,
+            "wall_ns": 12371110
+          },
+          "profile_id": "scale-0021",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1954516,
+            "wall_ns": 1203611
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17999832,
+            "wall_ns": 18083336
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 118391
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 20278
+          }
+        },
+        {
+          "full_child_cpu_ns": 72371000,
+          "full_minus_recorded_phase_cpu_ns": 41084142,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 13000686,
+            "wall_ns": 12282743
+          },
+          "profile_id": "scale-0022",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001518,
+            "wall_ns": 1202870
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997719,
+            "wall_ns": 18056643
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 113112
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16160
+          }
+        },
+        {
+          "full_child_cpu_ns": 72866000,
+          "full_minus_recorded_phase_cpu_ns": 40748078,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997985,
+            "wall_ns": 12407823
+          },
+          "profile_id": "scale-0023",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999054,
+            "wall_ns": 1200514
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 18998826,
+            "wall_ns": 18251512
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121437
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 18034
+          }
+        },
+        {
+          "full_child_cpu_ns": 72213000,
+          "full_minus_recorded_phase_cpu_ns": 41122738,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999768,
+            "wall_ns": 12282860
+          },
+          "profile_id": "scale-0025",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001218,
+            "wall_ns": 1200745
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997409,
+            "wall_ns": 18111340
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 118672
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17964
+          }
+        },
+        {
+          "full_child_cpu_ns": 72138000,
+          "full_minus_recorded_phase_cpu_ns": 40261899,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12005499,
+            "wall_ns": 12245859
+          },
+          "profile_id": "scale-0026",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001098,
+            "wall_ns": 1182181
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997248,
+            "wall_ns": 17926431
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121107
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 15519
+          }
+        },
+        {
+          "full_child_cpu_ns": 72465000,
+          "full_minus_recorded_phase_cpu_ns": 40474605,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12996528,
+            "wall_ns": 12470565
+          },
+          "profile_id": "scale-0027",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000446,
+            "wall_ns": 1192010
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997759,
+            "wall_ns": 18129967
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 130153
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16370
+          }
+        },
+        {
+          "full_child_cpu_ns": 72203000,
+          "full_minus_recorded_phase_cpu_ns": 41142119,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999578,
+            "wall_ns": 12475089
+          },
+          "profile_id": "scale-0029",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999966,
+            "wall_ns": 1215523
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17996365,
+            "wall_ns": 18093176
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 111448
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 21020
+          }
+        },
+        {
+          "full_child_cpu_ns": 72743000,
+          "full_minus_recorded_phase_cpu_ns": 41747522,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998706,
+            "wall_ns": 12472800
+          },
+          "profile_id": "scale-0030",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999544,
+            "wall_ns": 1224299
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997929,
+            "wall_ns": 18114157
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 133159
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16321
+          }
+        },
+        {
+          "full_child_cpu_ns": 73789000,
+          "full_minus_recorded_phase_cpu_ns": 40789633,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999533,
+            "wall_ns": 12770850
+          },
+          "profile_id": "scale-0031",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000807,
+            "wall_ns": 1204593
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17999792,
+            "wall_ns": 18371684
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117169
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 18003
+          }
+        },
+        {
+          "full_child_cpu_ns": 72559000,
+          "full_minus_recorded_phase_cpu_ns": 41355957,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998126,
+            "wall_ns": 12205084
+          },
+          "profile_id": "scale-0033",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999645,
+            "wall_ns": 1198973
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17998941,
+            "wall_ns": 17968972
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 128831
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 21550
+          }
+        },
+        {
+          "full_child_cpu_ns": 71915000,
+          "full_minus_recorded_phase_cpu_ns": 40766831,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998577,
+            "wall_ns": 12211367
+          },
+          "profile_id": "scale-0034",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000046,
+            "wall_ns": 1191468
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17996867,
+            "wall_ns": 17982117
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 122810
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 21059
+          }
+        },
+        {
+          "full_child_cpu_ns": 72871000,
+          "full_minus_recorded_phase_cpu_ns": 40882591,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998867,
+            "wall_ns": 12428532
+          },
+          "profile_id": "scale-0035",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000387,
+            "wall_ns": 1184535
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17999702,
+            "wall_ns": 18013040
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119113
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 18364
+          }
+        },
+        {
+          "full_child_cpu_ns": 72297000,
+          "full_minus_recorded_phase_cpu_ns": 40298049,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998285,
+            "wall_ns": 12380957
+          },
+          "profile_id": "scale-0037",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1004815,
+            "wall_ns": 1210123
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997368,
+            "wall_ns": 18200633
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115736
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 26309
+          }
+        },
+        {
+          "full_child_cpu_ns": 73315000,
+          "full_minus_recorded_phase_cpu_ns": 41160521,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998045,
+            "wall_ns": 12361852
+          },
+          "profile_id": "scale-0038",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000407,
+            "wall_ns": 1186278
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 18999027,
+            "wall_ns": 18430493
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 118151
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 25858
+          }
+        },
+        {
+          "full_child_cpu_ns": 72945000,
+          "full_minus_recorded_phase_cpu_ns": 40946019,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998876,
+            "wall_ns": 12474989
+          },
+          "profile_id": "scale-0039",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000226,
+            "wall_ns": 1180478
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997328,
+            "wall_ns": 18276591
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117841
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 23574
+          }
+        },
+        {
+          "full_child_cpu_ns": 72808000,
+          "full_minus_recorded_phase_cpu_ns": 40834337,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999668,
+            "wall_ns": 12241271
+          },
+          "profile_id": "scale-0041",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999966,
+            "wall_ns": 1199614
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17999852,
+            "wall_ns": 17997977
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 123461
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 21801
+          }
+        },
+        {
+          "full_child_cpu_ns": 74137000,
+          "full_minus_recorded_phase_cpu_ns": 43129229,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12000138,
+            "wall_ns": 12539589
+          },
+          "profile_id": "scale-0042",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999936,
+            "wall_ns": 1201116
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 18001615,
+            "wall_ns": 18243639
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 129181
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 21390
+          }
+        },
+        {
+          "full_child_cpu_ns": 72937000,
+          "full_minus_recorded_phase_cpu_ns": 40968895,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998015,
+            "wall_ns": 12365142
+          },
+          "profile_id": "scale-0043",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000267,
+            "wall_ns": 1193532
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17999191,
+            "wall_ns": 18174979
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117279
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 20609
+          }
+        },
+        {
+          "full_child_cpu_ns": 72842000,
+          "full_minus_recorded_phase_cpu_ns": 40689831,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12996458,
+            "wall_ns": 12538246
+          },
+          "profile_id": "scale-0045",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001419,
+            "wall_ns": 1190957
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 18001966,
+            "wall_ns": 18431496
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119113
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 26138
+          }
+        },
+        {
+          "full_child_cpu_ns": 72324000,
+          "full_minus_recorded_phase_cpu_ns": 40331872,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999483,
+            "wall_ns": 12450033
+          },
+          "profile_id": "scale-0046",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999886,
+            "wall_ns": 1188502
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17998249,
+            "wall_ns": 18338360
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 112891
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 25758
+          }
+        },
+        {
+          "full_child_cpu_ns": 72857000,
+          "full_minus_recorded_phase_cpu_ns": 40857496,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12000089,
+            "wall_ns": 12714311
+          },
+          "profile_id": "scale-0047",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000116,
+            "wall_ns": 1190106
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997087,
+            "wall_ns": 18419933
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115076
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 32501
+          }
+        },
+        {
+          "full_child_cpu_ns": 72581000,
+          "full_minus_recorded_phase_cpu_ns": 40725736,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999418,
+            "wall_ns": 12092077
+          },
+          "profile_id": "scale-0049",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1003612,
+            "wall_ns": 1188272
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17998080,
+            "wall_ns": 17920180
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121788
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 15710
+          }
+        },
+        {
+          "full_child_cpu_ns": 72743000,
+          "full_minus_recorded_phase_cpu_ns": 40744951,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999768,
+            "wall_ns": 12137237
+          },
+          "profile_id": "scale-0050",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000747,
+            "wall_ns": 1161963
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17998810,
+            "wall_ns": 17800186
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117048
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 18524
+          }
+        },
+        {
+          "full_child_cpu_ns": 72231000,
+          "full_minus_recorded_phase_cpu_ns": 41031473,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999488,
+            "wall_ns": 12214381
+          },
+          "profile_id": "scale-0051",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 998773,
+            "wall_ns": 1176821
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17993431,
+            "wall_ns": 17878954
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 113963
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 18494
+          }
+        },
+        {
+          "full_child_cpu_ns": 72040000,
+          "full_minus_recorded_phase_cpu_ns": 41012123,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999678,
+            "wall_ns": 12047058
+          },
+          "profile_id": "scale-0052",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000045,
+            "wall_ns": 1176139
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 18002477,
+            "wall_ns": 18016439
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120886
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 15609
+          }
+        },
+        {
+          "full_child_cpu_ns": 72551000,
+          "full_minus_recorded_phase_cpu_ns": 40100012,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12997780,
+            "wall_ns": 12321291
+          },
+          "profile_id": "scale-0053",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1516980,
+            "wall_ns": 1185146
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997548,
+            "wall_ns": 18114416
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117790
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 20759
+          }
+        },
+        {
+          "full_child_cpu_ns": 71898000,
+          "full_minus_recorded_phase_cpu_ns": 40549548,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998756,
+            "wall_ns": 12220139
+          },
+          "profile_id": "scale-0054",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999495,
+            "wall_ns": 1177353
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17999041,
+            "wall_ns": 18020874
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 114124
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 21319
+          }
+        },
+        {
+          "full_child_cpu_ns": 71991000,
+          "full_minus_recorded_phase_cpu_ns": 40504568,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12002935,
+            "wall_ns": 12196209
+          },
+          "profile_id": "scale-0055",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000236,
+            "wall_ns": 1171651
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997408,
+            "wall_ns": 17902351
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 113301
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16861
+          }
+        },
+        {
+          "full_child_cpu_ns": 71741000,
+          "full_minus_recorded_phase_cpu_ns": 39744805,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999278,
+            "wall_ns": 12221034
+          },
+          "profile_id": "scale-0056",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000737,
+            "wall_ns": 1184565
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997959,
+            "wall_ns": 17918283
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 111298
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 15970
+          }
+        },
+        {
+          "full_child_cpu_ns": 72515000,
+          "full_minus_recorded_phase_cpu_ns": 41095169,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998936,
+            "wall_ns": 12218650
+          },
+          "profile_id": "scale-0057",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1997206,
+            "wall_ns": 1208720
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17998521,
+            "wall_ns": 17981439
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119203
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16701
+          }
+        },
+        {
+          "full_child_cpu_ns": 71933000,
+          "full_minus_recorded_phase_cpu_ns": 40959473,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998866,
+            "wall_ns": 12156224
+          },
+          "profile_id": "scale-0058",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999425,
+            "wall_ns": 1175658
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997538,
+            "wall_ns": 18093016
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 113171
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17242
+          }
+        },
+        {
+          "full_child_cpu_ns": 72022000,
+          "full_minus_recorded_phase_cpu_ns": 40092478,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999748,
+            "wall_ns": 12132289
+          },
+          "profile_id": "scale-0059",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001037,
+            "wall_ns": 1186479
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17996887,
+            "wall_ns": 17983487
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 116448
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16340
+          }
+        },
+        {
+          "full_child_cpu_ns": 71883000,
+          "full_minus_recorded_phase_cpu_ns": 40196795,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11998827,
+            "wall_ns": 12088819
+          },
+          "profile_id": "scale-0060",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1002781,
+            "wall_ns": 1198993
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17994903,
+            "wall_ns": 17928456
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 116057
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16090
+          }
+        },
+        {
+          "full_child_cpu_ns": 72767000,
+          "full_minus_recorded_phase_cpu_ns": 41206003,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999518,
+            "wall_ns": 12143674
+          },
+          "profile_id": "scale-0061",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000376,
+            "wall_ns": 1194374
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17998490,
+            "wall_ns": 17857688
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 124133
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16811
+          }
+        },
+        {
+          "full_child_cpu_ns": 71714000,
+          "full_minus_recorded_phase_cpu_ns": 40716096,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999147,
+            "wall_ns": 12151419
+          },
+          "profile_id": "scale-0062",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000968,
+            "wall_ns": 1199031
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997689,
+            "wall_ns": 17847732
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117851
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 15720
+          }
+        },
+        {
+          "full_child_cpu_ns": 72100000,
+          "full_minus_recorded_phase_cpu_ns": 40930686,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999167,
+            "wall_ns": 12235860
+          },
+          "profile_id": "scale-0063",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000737,
+            "wall_ns": 1191328
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997618,
+            "wall_ns": 17860930
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115035
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17072
+          }
+        },
+        {
+          "full_child_cpu_ns": 71768000,
+          "full_minus_recorded_phase_cpu_ns": 40594646,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999107,
+            "wall_ns": 12186327
+          },
+          "profile_id": "scale-0064",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999345,
+            "wall_ns": 1202068
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17999633,
+            "wall_ns": 17941368
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117059
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17193
+          }
+        },
+        {
+          "full_child_cpu_ns": 71824000,
+          "full_minus_recorded_phase_cpu_ns": 39824308,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999328,
+            "wall_ns": 12221535
+          },
+          "profile_id": "scale-0065",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000456,
+            "wall_ns": 1191468
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17998860,
+            "wall_ns": 17949526
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 116879
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 15980
+          }
+        },
+        {
+          "full_child_cpu_ns": 71945000,
+          "full_minus_recorded_phase_cpu_ns": 40803305,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997885,
+            "wall_ns": 12372207
+          },
+          "profile_id": "scale-0066",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999736,
+            "wall_ns": 1186830
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 17997508,
+            "wall_ns": 17943123
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 114674
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 15720
+          }
+        }
+      ],
+      "profile_count": 54
+    },
+    "original_refinement": {
+      "descriptive_median_across_profile_phase_medians": {
+        "independent_checker_import_and_check": {
+          "cpu_ns": 12998977.0,
+          "wall_ns": 13222340.0
+        },
+        "profile_source_load_and_guard": {
+          "cpu_ns": 1000582.0,
+          "wall_ns": 1186854.5
+        },
+        "solver_import_and_evaluate": {
+          "cpu_ns": 11998145.0,
+          "wall_ns": 11771727.5
+        },
+        "solver_result_output": {
+          "cpu_ns": 0.0,
+          "wall_ns": 116733.5
+        },
+        "solver_result_serialization": {
+          "cpu_ns": 0.0,
+          "wall_ns": 19401.0
+        }
+      },
+      "median_full_child_cpu_ns": 66880500.0,
+      "median_full_minus_recorded_phase_cpu_ns": 40601543.5,
+      "per_profile": [
+        {
+          "full_child_cpu_ns": 66930000,
+          "full_minus_recorded_phase_cpu_ns": 40930944,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998231,
+            "wall_ns": 13160911
+          },
+          "profile_id": "scale-0001",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999745,
+            "wall_ns": 1168606
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11999067,
+            "wall_ns": 11777315
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120465
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 19496
+          }
+        },
+        {
+          "full_child_cpu_ns": 66136000,
+          "full_minus_recorded_phase_cpu_ns": 40327481,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998312,
+            "wall_ns": 13100761
+          },
+          "profile_id": "scale-0002",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000246,
+            "wall_ns": 1154530
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998326,
+            "wall_ns": 11716024
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 112761
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 19717
+          }
+        },
+        {
+          "full_child_cpu_ns": 66574000,
+          "full_minus_recorded_phase_cpu_ns": 41317735,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998261,
+            "wall_ns": 13080733
+          },
+          "profile_id": "scale-0003",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999635,
+            "wall_ns": 1172954
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11041469,
+            "wall_ns": 11638814
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120385
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16912
+          }
+        },
+        {
+          "full_child_cpu_ns": 66591000,
+          "full_minus_recorded_phase_cpu_ns": 40601080,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998411,
+            "wall_ns": 13238088
+          },
+          "profile_id": "scale-0005",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999906,
+            "wall_ns": 1169216
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998756,
+            "wall_ns": 11753716
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 116478
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 20518
+          }
+        },
+        {
+          "full_child_cpu_ns": 66982000,
+          "full_minus_recorded_phase_cpu_ns": 40651526,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999173,
+            "wall_ns": 13161448
+          },
+          "profile_id": "scale-0006",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001629,
+            "wall_ns": 1185537
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998566,
+            "wall_ns": 11847591
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 112451
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 19857
+          }
+        },
+        {
+          "full_child_cpu_ns": 67591000,
+          "full_minus_recorded_phase_cpu_ns": 41448694,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 13995392,
+            "wall_ns": 13183334
+          },
+          "profile_id": "scale-0007",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1005226,
+            "wall_ns": 1191238
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 10999792,
+            "wall_ns": 11813432
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 130323
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16801
+          }
+        },
+        {
+          "full_child_cpu_ns": 66649000,
+          "full_minus_recorded_phase_cpu_ns": 40238899,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999694,
+            "wall_ns": 13225512
+          },
+          "profile_id": "scale-0009",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999855,
+            "wall_ns": 1166381
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998636,
+            "wall_ns": 11600575
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 122118
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 19938
+          }
+        },
+        {
+          "full_child_cpu_ns": 66771000,
+          "full_minus_recorded_phase_cpu_ns": 40700615,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998843,
+            "wall_ns": 13170899
+          },
+          "profile_id": "scale-0010",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000727,
+            "wall_ns": 1168521
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998085,
+            "wall_ns": 11692249
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120775
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 19958
+          }
+        },
+        {
+          "full_child_cpu_ns": 67201000,
+          "full_minus_recorded_phase_cpu_ns": 41217772,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12997970,
+            "wall_ns": 13169238
+          },
+          "profile_id": "scale-0011",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000877,
+            "wall_ns": 1184275
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11995751,
+            "wall_ns": 11642113
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 110437
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16761
+          }
+        },
+        {
+          "full_child_cpu_ns": 66407000,
+          "full_minus_recorded_phase_cpu_ns": 40406961,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998732,
+            "wall_ns": 13063557
+          },
+          "profile_id": "scale-0013",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1005706,
+            "wall_ns": 1168205
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11995601,
+            "wall_ns": 11671277
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 118732
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 20659
+          }
+        },
+        {
+          "full_child_cpu_ns": 66676000,
+          "full_minus_recorded_phase_cpu_ns": 40679237,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12997870,
+            "wall_ns": 13153232
+          },
+          "profile_id": "scale-0014",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000046,
+            "wall_ns": 1183573
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11999628,
+            "wall_ns": 11787012
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119563
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 20168
+          }
+        },
+        {
+          "full_child_cpu_ns": 66752000,
+          "full_minus_recorded_phase_cpu_ns": 40659058,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 13000635,
+            "wall_ns": 13151535
+          },
+          "profile_id": "scale-0015",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000156,
+            "wall_ns": 1191318
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998085,
+            "wall_ns": 11809154
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 116448
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17172
+          }
+        },
+        {
+          "full_child_cpu_ns": 66473000,
+          "full_minus_recorded_phase_cpu_ns": 40476017,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998942,
+            "wall_ns": 13183862
+          },
+          "profile_id": "scale-0017",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000036,
+            "wall_ns": 1172634
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998265,
+            "wall_ns": 11713073
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 116348
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 21099
+          }
+        },
+        {
+          "full_child_cpu_ns": 66877000,
+          "full_minus_recorded_phase_cpu_ns": 40668726,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998752,
+            "wall_ns": 13146305
+          },
+          "profile_id": "scale-0018",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1992016,
+            "wall_ns": 1194483
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11000022,
+            "wall_ns": 11730738
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119053
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17483
+          }
+        },
+        {
+          "full_child_cpu_ns": 67051000,
+          "full_minus_recorded_phase_cpu_ns": 41060970,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 13003911,
+            "wall_ns": 13269183
+          },
+          "profile_id": "scale-0019",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000597,
+            "wall_ns": 1200305
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11993497,
+            "wall_ns": 11852514
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120926
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17703
+          }
+        },
+        {
+          "full_child_cpu_ns": 67979000,
+          "full_minus_recorded_phase_cpu_ns": 41204122,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998331,
+            "wall_ns": 13336900
+          },
+          "profile_id": "scale-0021",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001479,
+            "wall_ns": 1203471
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11995440,
+            "wall_ns": 11759943
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121287
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22142
+          }
+        },
+        {
+          "full_child_cpu_ns": 66984000,
+          "full_minus_recorded_phase_cpu_ns": 40984212,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998872,
+            "wall_ns": 13144471
+          },
+          "profile_id": "scale-0022",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000507,
+            "wall_ns": 1194142
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998445,
+            "wall_ns": 11872123
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115516
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17442
+          }
+        },
+        {
+          "full_child_cpu_ns": 69302000,
+          "full_minus_recorded_phase_cpu_ns": 40325150,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 14004519,
+            "wall_ns": 14285008
+          },
+          "profile_id": "scale-0023",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001288,
+            "wall_ns": 1199493
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11995630,
+            "wall_ns": 12486996
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115336
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 21921
+          }
+        },
+        {
+          "full_child_cpu_ns": 66593000,
+          "full_minus_recorded_phase_cpu_ns": 40602007,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999323,
+            "wall_ns": 13209989
+          },
+          "profile_id": "scale-0025",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000908,
+            "wall_ns": 1187801
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998205,
+            "wall_ns": 11735156
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115436
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 20539
+          }
+        },
+        {
+          "full_child_cpu_ns": 66496000,
+          "full_minus_recorded_phase_cpu_ns": 40084745,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999213,
+            "wall_ns": 13310406
+          },
+          "profile_id": "scale-0026",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999926,
+            "wall_ns": 1190987
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998856,
+            "wall_ns": 11669972
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 113342
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 18093
+          }
+        },
+        {
+          "full_child_cpu_ns": 67564000,
+          "full_minus_recorded_phase_cpu_ns": 40564487,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 14000632,
+            "wall_ns": 13720252
+          },
+          "profile_id": "scale-0027",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000016,
+            "wall_ns": 1196318
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998365,
+            "wall_ns": 12106922
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 116327
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 20518
+          }
+        },
+        {
+          "full_child_cpu_ns": 68075000,
+          "full_minus_recorded_phase_cpu_ns": 40570350,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 14000460,
+            "wall_ns": 13490296
+          },
+          "profile_id": "scale-0029",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1995744,
+            "wall_ns": 1215163
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11999458,
+            "wall_ns": 12264530
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 122509
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22533
+          }
+        },
+        {
+          "full_child_cpu_ns": 67262000,
+          "full_minus_recorded_phase_cpu_ns": 41036400,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999494,
+            "wall_ns": 13353962
+          },
+          "profile_id": "scale-0030",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000456,
+            "wall_ns": 1215182
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11999487,
+            "wall_ns": 12263443
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117831
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 18715
+          }
+        },
+        {
+          "full_child_cpu_ns": 107467000,
+          "full_minus_recorded_phase_cpu_ns": 40479150,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 44992694,
+            "wall_ns": 44404383
+          },
+          "profile_id": "scale-0031",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001228,
+            "wall_ns": 1227506
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 20991995,
+            "wall_ns": 20789735
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 139832
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 100067
+          }
+        },
+        {
+          "full_child_cpu_ns": 66658000,
+          "full_minus_recorded_phase_cpu_ns": 40456549,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998522,
+            "wall_ns": 13251937
+          },
+          "profile_id": "scale-0033",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000567,
+            "wall_ns": 1180658
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11997694,
+            "wall_ns": 11636806
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121177
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 23364
+          }
+        },
+        {
+          "full_child_cpu_ns": 66637000,
+          "full_minus_recorded_phase_cpu_ns": 40639597,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12997840,
+            "wall_ns": 13345307
+          },
+          "profile_id": "scale-0034",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000056,
+            "wall_ns": 1192951
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 12000269,
+            "wall_ns": 11729636
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 130885
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22793
+          }
+        },
+        {
+          "full_child_cpu_ns": 67613000,
+          "full_minus_recorded_phase_cpu_ns": 40372671,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999393,
+            "wall_ns": 13246196
+          },
+          "profile_id": "scale-0035",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1999230,
+            "wall_ns": 1201747
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11997033,
+            "wall_ns": 11848061
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 111728
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17132
+          }
+        },
+        {
+          "full_child_cpu_ns": 67115000,
+          "full_minus_recorded_phase_cpu_ns": 40178692,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 13999519,
+            "wall_ns": 13385952
+          },
+          "profile_id": "scale-0037",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000016,
+            "wall_ns": 1209191
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11990050,
+            "wall_ns": 11819808
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 113723
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 26590
+          }
+        },
+        {
+          "full_child_cpu_ns": 66937000,
+          "full_minus_recorded_phase_cpu_ns": 40938405,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999584,
+            "wall_ns": 13325734
+          },
+          "profile_id": "scale-0038",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000467,
+            "wall_ns": 1181500
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11997855,
+            "wall_ns": 11848152
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115887
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 28403
+          }
+        },
+        {
+          "full_child_cpu_ns": 67485000,
+          "full_minus_recorded_phase_cpu_ns": 40485937,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 13001317,
+            "wall_ns": 13521504
+          },
+          "profile_id": "scale-0039",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000146,
+            "wall_ns": 1178995
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998005,
+            "wall_ns": 11910866
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 129923
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16792
+          }
+        },
+        {
+          "full_child_cpu_ns": 67449000,
+          "full_minus_recorded_phase_cpu_ns": 40644623,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999032,
+            "wall_ns": 13248233
+          },
+          "profile_id": "scale-0041",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1002881,
+            "wall_ns": 1197269
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11996522,
+            "wall_ns": 11994198
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115906
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 23063
+          }
+        },
+        {
+          "full_child_cpu_ns": 68248000,
+          "full_minus_recorded_phase_cpu_ns": 41258332,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998591,
+            "wall_ns": 13142628
+          },
+          "profile_id": "scale-0042",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1998960,
+            "wall_ns": 1212097
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11994719,
+            "wall_ns": 11951666
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119934
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22532
+          }
+        },
+        {
+          "full_child_cpu_ns": 67884000,
+          "full_minus_recorded_phase_cpu_ns": 40393797,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 14000000,
+            "wall_ns": 13400790
+          },
+          "profile_id": "scale-0043",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001048,
+            "wall_ns": 1181740
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998355,
+            "wall_ns": 11936882
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 118401
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17342
+          }
+        },
+        {
+          "full_child_cpu_ns": 67497000,
+          "full_minus_recorded_phase_cpu_ns": 40800507,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 13999448,
+            "wall_ns": 13327418
+          },
+          "profile_id": "scale-0045",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000186,
+            "wall_ns": 1209621
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998055,
+            "wall_ns": 11985697
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 114113
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 27080
+          }
+        },
+        {
+          "full_child_cpu_ns": 67309000,
+          "full_minus_recorded_phase_cpu_ns": 40339045,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998903,
+            "wall_ns": 13296515
+          },
+          "profile_id": "scale-0046",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001409,
+            "wall_ns": 1205204
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11999077,
+            "wall_ns": 12098161
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 112490
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 26819
+          }
+        },
+        {
+          "full_child_cpu_ns": 67574000,
+          "full_minus_recorded_phase_cpu_ns": 40424847,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 13005114,
+            "wall_ns": 13609039
+          },
+          "profile_id": "scale-0047",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000968,
+            "wall_ns": 1214831
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998346,
+            "wall_ns": 12158296
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 107541
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17643
+          }
+        },
+        {
+          "full_child_cpu_ns": 66562000,
+          "full_minus_recorded_phase_cpu_ns": 40564927,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998571,
+            "wall_ns": 13028773
+          },
+          "profile_id": "scale-0049",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1002030,
+            "wall_ns": 1158917
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11997884,
+            "wall_ns": 11676765
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 110156
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16110
+          }
+        },
+        {
+          "full_child_cpu_ns": 66392000,
+          "full_minus_recorded_phase_cpu_ns": 39676034,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999834,
+            "wall_ns": 13148359
+          },
+          "profile_id": "scale-0050",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000567,
+            "wall_ns": 1185908
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11985732,
+            "wall_ns": 11667649
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115306
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 20769
+          }
+        },
+        {
+          "full_child_cpu_ns": 66653000,
+          "full_minus_recorded_phase_cpu_ns": 40654794,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998081,
+            "wall_ns": 13179515
+          },
+          "profile_id": "scale-0051",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000818,
+            "wall_ns": 1160870
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11999307,
+            "wall_ns": 11660956
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115576
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 20619
+          }
+        },
+        {
+          "full_child_cpu_ns": 66861000,
+          "full_minus_recorded_phase_cpu_ns": 40319086,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998762,
+            "wall_ns": 13088314
+          },
+          "profile_id": "scale-0052",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000998,
+            "wall_ns": 1179115
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998285,
+            "wall_ns": 11659014
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121648
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16311
+          }
+        },
+        {
+          "full_child_cpu_ns": 66619000,
+          "full_minus_recorded_phase_cpu_ns": 40327464,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 13000175,
+            "wall_ns": 13225973
+          },
+          "profile_id": "scale-0053",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000256,
+            "wall_ns": 1185417
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11993486,
+            "wall_ns": 11718859
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 113923
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 21711
+          }
+        },
+        {
+          "full_child_cpu_ns": 66838000,
+          "full_minus_recorded_phase_cpu_ns": 40611414,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 13986785,
+            "wall_ns": 13324654
+          },
+          "profile_id": "scale-0054",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001619,
+            "wall_ns": 1176390
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11992374,
+            "wall_ns": 11737009
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 112100
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22292
+          }
+        },
+        {
+          "full_child_cpu_ns": 66884000,
+          "full_minus_recorded_phase_cpu_ns": 40449683,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998151,
+            "wall_ns": 13164119
+          },
+          "profile_id": "scale-0055",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001659,
+            "wall_ns": 1172353
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998776,
+            "wall_ns": 11716763
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 118532
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 19256
+          }
+        },
+        {
+          "full_child_cpu_ns": 66404000,
+          "full_minus_recorded_phase_cpu_ns": 40324476,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12997901,
+            "wall_ns": 13103314
+          },
+          "profile_id": "scale-0056",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000837,
+            "wall_ns": 1172631
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998816,
+            "wall_ns": 11766140
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119193
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16942
+          }
+        },
+        {
+          "full_child_cpu_ns": 67144000,
+          "full_minus_recorded_phase_cpu_ns": 40923740,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998562,
+            "wall_ns": 13347168
+          },
+          "profile_id": "scale-0057",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999706,
+            "wall_ns": 1183293
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 10999501,
+            "wall_ns": 11678077
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121989
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17162
+          }
+        },
+        {
+          "full_child_cpu_ns": 66752000,
+          "full_minus_recorded_phase_cpu_ns": 40754247,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998101,
+            "wall_ns": 13073178
+          },
+          "profile_id": "scale-0058",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000016,
+            "wall_ns": 1193081
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11995019,
+            "wall_ns": 11762117
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120285
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 19306
+          }
+        },
+        {
+          "full_child_cpu_ns": 66888000,
+          "full_minus_recorded_phase_cpu_ns": 40558019,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998812,
+            "wall_ns": 13219168
+          },
+          "profile_id": "scale-0059",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000797,
+            "wall_ns": 1181730
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11988397,
+            "wall_ns": 11851428
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 113011
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16932
+          }
+        },
+        {
+          "full_child_cpu_ns": 66270000,
+          "full_minus_recorded_phase_cpu_ns": 40271485,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999503,
+            "wall_ns": 13205967
+          },
+          "profile_id": "scale-0060",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000066,
+            "wall_ns": 1180087
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11997624,
+            "wall_ns": 11690872
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115125
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16972
+          }
+        },
+        {
+          "full_child_cpu_ns": 66619000,
+          "full_minus_recorded_phase_cpu_ns": 40331178,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12997890,
+            "wall_ns": 13181512
+          },
+          "profile_id": "scale-0061",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999726,
+            "wall_ns": 1194463
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998275,
+            "wall_ns": 11650080
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 118402
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 19266
+          }
+        },
+        {
+          "full_child_cpu_ns": 66831000,
+          "full_minus_recorded_phase_cpu_ns": 40836883,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999012,
+            "wall_ns": 13268788
+          },
+          "profile_id": "scale-0062",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000907,
+            "wall_ns": 1190547
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998666,
+            "wall_ns": 11908384
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 116989
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17072
+          }
+        },
+        {
+          "full_child_cpu_ns": 66640000,
+          "full_minus_recorded_phase_cpu_ns": 40643929,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998331,
+            "wall_ns": 13150954
+          },
+          "profile_id": "scale-0063",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000246,
+            "wall_ns": 1182591
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998677,
+            "wall_ns": 11705499
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 108212
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 16821
+          }
+        },
+        {
+          "full_child_cpu_ns": 67255000,
+          "full_minus_recorded_phase_cpu_ns": 40880447,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999022,
+            "wall_ns": 13297828
+          },
+          "profile_id": "scale-0064",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000076,
+            "wall_ns": 1208621
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11999087,
+            "wall_ns": 11853347
+          },
+          "solver_result_output": {
+            "cpu_ns": 1001408,
+            "wall_ns": 148958
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 19056
+          }
+        },
+        {
+          "full_child_cpu_ns": 67351000,
+          "full_minus_recorded_phase_cpu_ns": 41137542,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999193,
+            "wall_ns": 13274406
+          },
+          "profile_id": "scale-0065",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1997477,
+            "wall_ns": 1222336
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11993396,
+            "wall_ns": 11839489
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 112360
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17803
+          }
+        },
+        {
+          "full_child_cpu_ns": 66703000,
+          "full_minus_recorded_phase_cpu_ns": 40578682,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998332,
+            "wall_ns": 13141464
+          },
+          "profile_id": "scale-0066",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000177,
+            "wall_ns": 1220192
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 11998695,
+            "wall_ns": 11814272
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117590
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 17081
+          }
+        }
+      ],
+      "profile_count": 54
+    },
+    "shared_lift": {
+      "descriptive_median_across_profile_phase_medians": {
+        "independent_checker_import_and_check": {
+          "cpu_ns": 12998116.0,
+          "wall_ns": 12571079.5
+        },
+        "profile_source_load_and_guard": {
+          "cpu_ns": 1000586.5,
+          "wall_ns": 1184245.0
+        },
+        "solver_import_and_evaluate": {
+          "cpu_ns": 25999833.0,
+          "wall_ns": 25947557.5
+        },
+        "solver_result_output": {
+          "cpu_ns": 0.0,
+          "wall_ns": 121482.5
+        },
+        "solver_result_serialization": {
+          "cpu_ns": 0.0,
+          "wall_ns": 24891.5
+        }
+      },
+      "median_full_child_cpu_ns": 81653500.0,
+      "median_full_minus_recorded_phase_cpu_ns": 41743192.0,
+      "per_profile": [
+        {
+          "full_child_cpu_ns": 81324000,
+          "full_minus_recorded_phase_cpu_ns": 42326992,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11999408,
+            "wall_ns": 12548796
+          },
+          "profile_id": "scale-0001",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000317,
+            "wall_ns": 1178894
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000129,
+            "wall_ns": 25944197
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 125434
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 25738
+          }
+        },
+        {
+          "full_child_cpu_ns": 80679000,
+          "full_minus_recorded_phase_cpu_ns": 40928112,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12996958,
+            "wall_ns": 12446424
+          },
+          "profile_id": "scale-0002",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000887,
+            "wall_ns": 1157955
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000009,
+            "wall_ns": 25638077
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115526
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 26049
+          }
+        },
+        {
+          "full_child_cpu_ns": 80963000,
+          "full_minus_recorded_phase_cpu_ns": 41764240,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997063,
+            "wall_ns": 12462768
+          },
+          "profile_id": "scale-0003",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001458,
+            "wall_ns": 1174206
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000650,
+            "wall_ns": 25785522
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 132808
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22322
+          }
+        },
+        {
+          "full_child_cpu_ns": 81321000,
+          "full_minus_recorded_phase_cpu_ns": 41698276,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12996948,
+            "wall_ns": 12527067
+          },
+          "profile_id": "scale-0005",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000476,
+            "wall_ns": 1165790
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25999799,
+            "wall_ns": 25755838
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119554
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 26039
+          }
+        },
+        {
+          "full_child_cpu_ns": 81762000,
+          "full_minus_recorded_phase_cpu_ns": 41763765,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998442,
+            "wall_ns": 12552220
+          },
+          "profile_id": "scale-0006",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000307,
+            "wall_ns": 1173144
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25999958,
+            "wall_ns": 25980185
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119133
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 26349
+          }
+        },
+        {
+          "full_child_cpu_ns": 82664000,
+          "full_minus_recorded_phase_cpu_ns": 42665264,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998311,
+            "wall_ns": 12648374
+          },
+          "profile_id": "scale-0007",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000727,
+            "wall_ns": 1166552
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25999828,
+            "wall_ns": 25982367
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 129062
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22111
+          }
+        },
+        {
+          "full_child_cpu_ns": 80338000,
+          "full_minus_recorded_phase_cpu_ns": 42222957,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12995215,
+            "wall_ns": 12448258
+          },
+          "profile_id": "scale-0009",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001960,
+            "wall_ns": 1183093
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25001746,
+            "wall_ns": 25566667
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 115536
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 25809
+          }
+        },
+        {
+          "full_child_cpu_ns": 80994000,
+          "full_minus_recorded_phase_cpu_ns": 41745758,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998071,
+            "wall_ns": 12385743
+          },
+          "profile_id": "scale-0010",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000547,
+            "wall_ns": 1163336
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25997393,
+            "wall_ns": 25694832
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121878
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 25237
+          }
+        },
+        {
+          "full_child_cpu_ns": 81104000,
+          "full_minus_recorded_phase_cpu_ns": 40798709,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998953,
+            "wall_ns": 12498354
+          },
+          "profile_id": "scale-0011",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1002280,
+            "wall_ns": 1164287
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25999547,
+            "wall_ns": 25755747
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 123501
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22362
+          }
+        },
+        {
+          "full_child_cpu_ns": 81418000,
+          "full_minus_recorded_phase_cpu_ns": 41850302,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997424,
+            "wall_ns": 12437419
+          },
+          "profile_id": "scale-0013",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001599,
+            "wall_ns": 1174416
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25992656,
+            "wall_ns": 25954789
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 122418
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 26238
+          }
+        },
+        {
+          "full_child_cpu_ns": 80534000,
+          "full_minus_recorded_phase_cpu_ns": 41161624,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12441753,
+            "wall_ns": 12592233
+          },
+          "profile_id": "scale-0014",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999334,
+            "wall_ns": 1175379
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25991453,
+            "wall_ns": 25693501
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 122349
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 26670
+          }
+        },
+        {
+          "full_child_cpu_ns": 81588000,
+          "full_minus_recorded_phase_cpu_ns": 41591629,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997824,
+            "wall_ns": 12573525
+          },
+          "profile_id": "scale-0015",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1002901,
+            "wall_ns": 1189333
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000890,
+            "wall_ns": 25978740
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 116558
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22582
+          }
+        },
+        {
+          "full_child_cpu_ns": 81920000,
+          "full_minus_recorded_phase_cpu_ns": 42023596,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997824,
+            "wall_ns": 12501955
+          },
+          "profile_id": "scale-0017",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000587,
+            "wall_ns": 1190186
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000119,
+            "wall_ns": 25912429
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120785
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 24797
+          }
+        },
+        {
+          "full_child_cpu_ns": 81262000,
+          "full_minus_recorded_phase_cpu_ns": 41262743,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997844,
+            "wall_ns": 12482955
+          },
+          "profile_id": "scale-0018",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001087,
+            "wall_ns": 1173525
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25999057,
+            "wall_ns": 25984511
+          },
+          "solver_result_output": {
+            "cpu_ns": 996539,
+            "wall_ns": 146354
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22321
+          }
+        },
+        {
+          "full_child_cpu_ns": 81658000,
+          "full_minus_recorded_phase_cpu_ns": 41922988,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12996197,
+            "wall_ns": 12808751
+          },
+          "profile_id": "scale-0019",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1002501,
+            "wall_ns": 1190997
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000339,
+            "wall_ns": 25856531
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 118972
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22913
+          }
+        },
+        {
+          "full_child_cpu_ns": 82802000,
+          "full_minus_recorded_phase_cpu_ns": 42000376,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12997610,
+            "wall_ns": 12920543
+          },
+          "profile_id": "scale-0021",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1004053,
+            "wall_ns": 1202049
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25999838,
+            "wall_ns": 26049363
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 124573
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 27732
+          }
+        },
+        {
+          "full_child_cpu_ns": 81745000,
+          "full_minus_recorded_phase_cpu_ns": 40870084,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998762,
+            "wall_ns": 12676456
+          },
+          "profile_id": "scale-0022",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1999069,
+            "wall_ns": 1220021
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000449,
+            "wall_ns": 26075143
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117720
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22372
+          }
+        },
+        {
+          "full_child_cpu_ns": 83587000,
+          "full_minus_recorded_phase_cpu_ns": 41830823,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 13998447,
+            "wall_ns": 13748255
+          },
+          "profile_id": "scale-0023",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999605,
+            "wall_ns": 1186057
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26999093,
+            "wall_ns": 26874966
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117589
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 27462
+          }
+        },
+        {
+          "full_child_cpu_ns": 81382000,
+          "full_minus_recorded_phase_cpu_ns": 41387983,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12997660,
+            "wall_ns": 12557796
+          },
+          "profile_id": "scale-0025",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000126,
+            "wall_ns": 1204292
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25997113,
+            "wall_ns": 25847404
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 124242
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 25448
+          }
+        },
+        {
+          "full_child_cpu_ns": 81149000,
+          "full_minus_recorded_phase_cpu_ns": 41758195,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998401,
+            "wall_ns": 12544949
+          },
+          "profile_id": "scale-0026",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000586,
+            "wall_ns": 1186379
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25999047,
+            "wall_ns": 25990572
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 113753
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22332
+          }
+        },
+        {
+          "full_child_cpu_ns": 82739000,
+          "full_minus_recorded_phase_cpu_ns": 41739437,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999703,
+            "wall_ns": 13068208
+          },
+          "profile_id": "scale-0027",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001057,
+            "wall_ns": 1184225
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26997681,
+            "wall_ns": 26350831
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119203
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 25658
+          }
+        },
+        {
+          "full_child_cpu_ns": 81944000,
+          "full_minus_recorded_phase_cpu_ns": 41879406,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999183,
+            "wall_ns": 12485317
+          },
+          "profile_id": "scale-0029",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000217,
+            "wall_ns": 1219781
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000730,
+            "wall_ns": 26489995
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 118522
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 27492
+          }
+        },
+        {
+          "full_child_cpu_ns": 83318000,
+          "full_minus_recorded_phase_cpu_ns": 41641051,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998792,
+            "wall_ns": 12547662
+          },
+          "profile_id": "scale-0030",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001178,
+            "wall_ns": 1231523
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26992480,
+            "wall_ns": 26814644
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119323
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22332
+          }
+        },
+        {
+          "full_child_cpu_ns": 122000000,
+          "full_minus_recorded_phase_cpu_ns": 42007737,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 43991035,
+            "wall_ns": 43122987
+          },
+          "profile_id": "scale-0031",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000948,
+            "wall_ns": 1236753
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 34992757,
+            "wall_ns": 35172804
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 143228
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 103083
+          }
+        },
+        {
+          "full_child_cpu_ns": 82356000,
+          "full_minus_recorded_phase_cpu_ns": 42355420,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997634,
+            "wall_ns": 12595449
+          },
+          "profile_id": "scale-0033",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000176,
+            "wall_ns": 1208490
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26001922,
+            "wall_ns": 25970634
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 134191
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 27862
+          }
+        },
+        {
+          "full_child_cpu_ns": 81508000,
+          "full_minus_recorded_phase_cpu_ns": 41717522,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12993291,
+            "wall_ns": 12785598
+          },
+          "profile_id": "scale-0034",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999915,
+            "wall_ns": 1188512
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25998756,
+            "wall_ns": 25900727
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120646
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 27922
+          }
+        },
+        {
+          "full_child_cpu_ns": 81666000,
+          "full_minus_recorded_phase_cpu_ns": 41362287,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999173,
+            "wall_ns": 12672062
+          },
+          "profile_id": "scale-0035",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000918,
+            "wall_ns": 1182903
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25997814,
+            "wall_ns": 25950918
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 123952
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22602
+          }
+        },
+        {
+          "full_child_cpu_ns": 81735000,
+          "full_minus_recorded_phase_cpu_ns": 41410948,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997654,
+            "wall_ns": 12627725
+          },
+          "profile_id": "scale-0037",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999965,
+            "wall_ns": 1209112
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25999999,
+            "wall_ns": 26128174
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121206
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 32741
+          }
+        },
+        {
+          "full_child_cpu_ns": 82996000,
+          "full_minus_recorded_phase_cpu_ns": 42996091,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998161,
+            "wall_ns": 12774114
+          },
+          "profile_id": "scale-0038",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000206,
+            "wall_ns": 1178394
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26002423,
+            "wall_ns": 26403096
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 127198
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 33052
+          }
+        },
+        {
+          "full_child_cpu_ns": 82172000,
+          "full_minus_recorded_phase_cpu_ns": 41674498,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12996258,
+            "wall_ns": 12925402
+          },
+          "profile_id": "scale-0039",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000377,
+            "wall_ns": 1183833
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 27000325,
+            "wall_ns": 26560948
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 127107
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22422
+          }
+        },
+        {
+          "full_child_cpu_ns": 81649000,
+          "full_minus_recorded_phase_cpu_ns": 41657288,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998291,
+            "wall_ns": 12789232
+          },
+          "profile_id": "scale-0041",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000006,
+            "wall_ns": 1181860
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25997203,
+            "wall_ns": 26068840
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121738
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 27451
+          }
+        },
+        {
+          "full_child_cpu_ns": 83296000,
+          "full_minus_recorded_phase_cpu_ns": 42306505,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999012,
+            "wall_ns": 12700640
+          },
+          "profile_id": "scale-0042",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000286,
+            "wall_ns": 1185227
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26999894,
+            "wall_ns": 26761902
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 127960
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 27802
+          }
+        },
+        {
+          "full_child_cpu_ns": 82363000,
+          "full_minus_recorded_phase_cpu_ns": 41839585,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999464,
+            "wall_ns": 12798796
+          },
+          "profile_id": "scale-0043",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999966,
+            "wall_ns": 1181770
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000409,
+            "wall_ns": 26384897
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120395
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22692
+          }
+        },
+        {
+          "full_child_cpu_ns": 81713000,
+          "full_minus_recorded_phase_cpu_ns": 41720355,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998201,
+            "wall_ns": 12711075
+          },
+          "profile_id": "scale-0045",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000106,
+            "wall_ns": 1204613
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000219,
+            "wall_ns": 26125360
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117810
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 32321
+          }
+        },
+        {
+          "full_child_cpu_ns": 82748000,
+          "full_minus_recorded_phase_cpu_ns": 41748787,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999574,
+            "wall_ns": 12728630
+          },
+          "profile_id": "scale-0046",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1004134,
+            "wall_ns": 1231112
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26995004,
+            "wall_ns": 26917950
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 129392
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 32581
+          }
+        },
+        {
+          "full_child_cpu_ns": 82854000,
+          "full_minus_recorded_phase_cpu_ns": 41857823,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999804,
+            "wall_ns": 13175058
+          },
+          "profile_id": "scale-0047",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000366,
+            "wall_ns": 1203441
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26998401,
+            "wall_ns": 26582959
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119012
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 23103
+          }
+        },
+        {
+          "full_child_cpu_ns": 81072000,
+          "full_minus_recorded_phase_cpu_ns": 41072903,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997925,
+            "wall_ns": 12432404
+          },
+          "profile_id": "scale-0049",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001138,
+            "wall_ns": 1164627
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 24999412,
+            "wall_ns": 25699997
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 128641
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 21300
+          }
+        },
+        {
+          "full_child_cpu_ns": 81079000,
+          "full_minus_recorded_phase_cpu_ns": 41836250,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12994504,
+            "wall_ns": 12413104
+          },
+          "profile_id": "scale-0050",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1002230,
+            "wall_ns": 1175148
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25996492,
+            "wall_ns": 25604089
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 123602
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 25287
+          }
+        },
+        {
+          "full_child_cpu_ns": 80792000,
+          "full_minus_recorded_phase_cpu_ns": 41782656,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997123,
+            "wall_ns": 12479176
+          },
+          "profile_id": "scale-0051",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000738,
+            "wall_ns": 1179756
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25985462,
+            "wall_ns": 25521257
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 117650
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 24836
+          }
+        },
+        {
+          "full_child_cpu_ns": 80877000,
+          "full_minus_recorded_phase_cpu_ns": 41851172,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998231,
+            "wall_ns": 12457777
+          },
+          "profile_id": "scale-0052",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000306,
+            "wall_ns": 1182691
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 24999913,
+            "wall_ns": 25452446
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121447
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 21290
+          }
+        },
+        {
+          "full_child_cpu_ns": 81257000,
+          "full_minus_recorded_phase_cpu_ns": 41294107,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997995,
+            "wall_ns": 12568634
+          },
+          "profile_id": "scale-0053",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1001519,
+            "wall_ns": 1184265
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25996632,
+            "wall_ns": 25824556
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120044
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 27551
+          }
+        },
+        {
+          "full_child_cpu_ns": 81593000,
+          "full_minus_recorded_phase_cpu_ns": 41594083,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12003064,
+            "wall_ns": 12592133
+          },
+          "profile_id": "scale-0054",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1005907,
+            "wall_ns": 1188152
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000530,
+            "wall_ns": 25908423
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 124914
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 27672
+          }
+        },
+        {
+          "full_child_cpu_ns": 81872000,
+          "full_minus_recorded_phase_cpu_ns": 41876991,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999383,
+            "wall_ns": 12556642
+          },
+          "profile_id": "scale-0055",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000988,
+            "wall_ns": 1172192
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25995961,
+            "wall_ns": 25701952
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 128470
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 24575
+          }
+        },
+        {
+          "full_child_cpu_ns": 80690000,
+          "full_minus_recorded_phase_cpu_ns": 40690492,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998191,
+            "wall_ns": 12469045
+          },
+          "profile_id": "scale-0056",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000456,
+            "wall_ns": 1176851
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25999558,
+            "wall_ns": 25915028
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 116137
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22782
+          }
+        },
+        {
+          "full_child_cpu_ns": 81738000,
+          "full_minus_recorded_phase_cpu_ns": 41740626,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998341,
+            "wall_ns": 12601049
+          },
+          "profile_id": "scale-0057",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1998248,
+            "wall_ns": 1177092
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25001676,
+            "wall_ns": 25747599
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 123181
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22983
+          }
+        },
+        {
+          "full_child_cpu_ns": 81540000,
+          "full_minus_recorded_phase_cpu_ns": 42235653,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 11997483,
+            "wall_ns": 12533936
+          },
+          "profile_id": "scale-0058",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000025,
+            "wall_ns": 1185536
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25994218,
+            "wall_ns": 25793313
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 123682
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 24947
+          }
+        },
+        {
+          "full_child_cpu_ns": 81474000,
+          "full_minus_recorded_phase_cpu_ns": 41608993,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12997991,
+            "wall_ns": 12524025
+          },
+          "profile_id": "scale-0059",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000547,
+            "wall_ns": 1186088
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25997183,
+            "wall_ns": 25767516
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 119073
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22222
+          }
+        },
+        {
+          "full_child_cpu_ns": 81685000,
+          "full_minus_recorded_phase_cpu_ns": 41685903,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999463,
+            "wall_ns": 12628196
+          },
+          "profile_id": "scale-0060",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999765,
+            "wall_ns": 1177492
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25999869,
+            "wall_ns": 25743353
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120225
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22723
+          }
+        },
+        {
+          "full_child_cpu_ns": 81960000,
+          "full_minus_recorded_phase_cpu_ns": 41052494,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998842,
+            "wall_ns": 12637313
+          },
+          "profile_id": "scale-0061",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 999315,
+            "wall_ns": 1195966
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000349,
+            "wall_ns": 25992617
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 134402
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 25548
+          }
+        },
+        {
+          "full_child_cpu_ns": 82914000,
+          "full_minus_recorded_phase_cpu_ns": 42030597,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998061,
+            "wall_ns": 12639679
+          },
+          "profile_id": "scale-0062",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000286,
+            "wall_ns": 1199484
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 26000259,
+            "wall_ns": 26129515
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 126426
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22582
+          }
+        },
+        {
+          "full_child_cpu_ns": 81001000,
+          "full_minus_recorded_phase_cpu_ns": 41001462,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998722,
+            "wall_ns": 12532174
+          },
+          "profile_id": "scale-0063",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000667,
+            "wall_ns": 1180939
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25999808,
+            "wall_ns": 25842636
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 113161
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22542
+          }
+        },
+        {
+          "full_child_cpu_ns": 81551000,
+          "full_minus_recorded_phase_cpu_ns": 41549688,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12002403,
+            "wall_ns": 12545742
+          },
+          "profile_id": "scale-0064",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1999290,
+            "wall_ns": 1208249
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25003059,
+            "wall_ns": 25787512
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120856
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 24445
+          }
+        },
+        {
+          "full_child_cpu_ns": 82076000,
+          "full_minus_recorded_phase_cpu_ns": 42093253,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12998191,
+            "wall_ns": 12617134
+          },
+          "profile_id": "scale-0065",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000678,
+            "wall_ns": 1216014
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25997995,
+            "wall_ns": 26050274
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 120996
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22763
+          }
+        },
+        {
+          "full_child_cpu_ns": 81331000,
+          "full_minus_recorded_phase_cpu_ns": 41708232,
+          "independent_checker_import_and_check": {
+            "cpu_ns": 12999063,
+            "wall_ns": 12556510
+          },
+          "profile_id": "scale-0066",
+          "profile_source_load_and_guard": {
+            "cpu_ns": 1000527,
+            "wall_ns": 1204171
+          },
+          "solver_import_and_evaluate": {
+            "cpu_ns": 25997073,
+            "wall_ns": 25731969
+          },
+          "solver_result_output": {
+            "cpu_ns": 0,
+            "wall_ns": 121518
+          },
+          "solver_result_serialization": {
+            "cpu_ns": 0,
+            "wall_ns": 22563
+          }
+        }
+      ],
+      "profile_count": 54
+    }
+  },
+  "physical_original_vs_goal_pruned_direct": {
+    "cpu_total_ns": {
+      "median_original_over_goal_pruned_direct": 0.9266149023325285,
+      "observed_profile_ratio_max": 1.4564094919296915,
+      "observed_profile_ratio_min": 0.9126926302187152,
+      "original_lower_equal_higher": [
+        53,
+        0,
+        1
+      ]
+    },
+    "outer_wall_ns": {
+      "median_original_over_goal_pruned_direct": 0.919235344279024,
+      "observed_profile_ratio_max": 1.46461544976933,
+      "observed_profile_ratio_min": 0.9153198092437179,
+      "original_lower_equal_higher": [
+        53,
+        0,
+        1
+      ]
+    },
+    "peak_rss_bytes": {
+      "median_original_over_goal_pruned_direct": 0.9876727556495339,
+      "observed_profile_ratio_max": 1.002375296912114,
+      "observed_profile_ratio_min": 0.9755572937035588,
+      "original_lower_equal_higher": [
+        51,
+        1,
+        2
+      ]
+    }
+  },
+  "schema_version": "retained-common-cost-phase-description/1"
+}
