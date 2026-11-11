@@ -1,0 +1,54 @@
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	﻿2026-11-11T18:20:10.3287322Z ##[group]Run python -I -S -B scripts/verify_research_v1_release.py --execute --output runs/v1-release-software/43076696650-1
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.3288304Z [36;1mpython -I -S -B scripts/verify_research_v1_release.py --execute --output runs/v1-release-software/43076696650-1[0m
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.3314400Z shell: /usr/bin/bash -e {0}
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.3314687Z env:
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.3314966Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.1/x64
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.3315415Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.1/x64/lib/pkgconfig
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.3315848Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.1/x64
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.3316226Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.1/x64
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.3316600Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.1/x64
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.3316974Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.1/x64/lib
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.3317298Z ##[endgroup]
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5350005Z Traceback (most recent call last):
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5367866Z   File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/scripts/verify_research_v1_release.py", line 159, in <module>
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5368912Z     value = execute(args.output)
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5369858Z   File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/scripts/verify_research_v1_release.py", line 58, in execute
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5370756Z     before = inventory()
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5371623Z   File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/scripts/verify_research_v1_release.py", line 44, in inventory
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5372938Z     report = bank.validate_pair(*(core.read(path) for path in inputs),
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5373591Z                                 lambda name: bank.read_regular(ROOT, name))
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5374592Z   File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/scripts/validate_task_banks_v1.py", line 95, in validate_pair
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5375502Z     source(entry["path"], entry["sha256"])
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5375925Z     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5376784Z   File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/scripts/validate_task_banks_v1.py", line 87, in source
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5377640Z     raw = source_reader(name)
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5378484Z   File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/scripts/verify_research_v1_release.py", line 45, in <lambda>
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5379412Z     lambda name: bank.read_regular(ROOT, name))
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5379839Z                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5380718Z   File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/scripts/validate_task_banks_v1.py", line 37, in read_regular
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5381884Z     require(path.is_file() and not path.is_symlink(), "Missing or nonregular input: " + name)
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5382901Z     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5383921Z   File "/home/runner/work/Ai_Interoperability/Ai_Interoperability/scripts/validate_task_banks_v1.py", line 24, in require
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5384841Z     raise ValueError(message)
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5385491Z ValueError: Missing or nonregular input: external/agentops-c806b7f1/agents/data/incidents.db
+qualify-current-software	Run bounded current core, replay and source-derived bank checks	2026-11-11T18:20:10.5499211Z ##[error]Process completed with exit code 1.
+qualify-current-software	Retain complete software outcomes and failed allocations	﻿2026-11-11T18:20:10.5585356Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5585801Z with:
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5586055Z   name: research-v1-release-software-43076696650-1
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5586417Z   path: runs/v1-release-software/43076696650-1/
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5586722Z   if-no-files-found: error
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5586955Z   retention-days: 30
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5587174Z   include-hidden-files: true
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5587422Z   compression-level: 6
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5587645Z   overwrite: false
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5587841Z env:
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5588089Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.1/x64
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5588526Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.1/x64/lib/pkgconfig
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5588951Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.1/x64
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5589343Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.1/x64
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5589718Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.1/x64
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5590138Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.1/x64/lib
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.5590458Z ##[endgroup]
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.7290302Z (node:2449) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.7291527Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualify-current-software	Retain complete software outcomes and failed allocations	2026-11-11T18:20:10.7327993Z ##[error]No files were found with the provided path: runs/v1-release-software/43076696650-1/. No artifacts will be uploaded.
