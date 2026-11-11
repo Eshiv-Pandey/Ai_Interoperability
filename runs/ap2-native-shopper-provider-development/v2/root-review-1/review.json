@@ -1,0 +1,54 @@
+{
+  "schema_version": "ap2-native-shopper-v2-root-source-review/1",
+  "started_at_utc": "2026-11-11T15:04:30.393022+00:00",
+  "finished_at_utc": "2026-11-11T15:04:31.652261+00:00",
+  "argv": [
+    "P:\\JUNKK\\Also Junk\\sem_7\\Ai_Interoperability\\.venv\\Scripts\\python.exe",
+    "-I",
+    "-S",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_ap2_native_shopper_provider_v2.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "constructed_controls": 15,
+  "SDK_or_original_application_executed": false,
+  "provider_calls": 0,
+  "reviewed_properties": [
+    "unchanged actual request path/body/key routing; only owned timeout option changed",
+    "120-second urllib wait disclosed as transport option, not independent whole-request wall cap",
+    "admission/byte/call/pacing gates serialized and closed before drain",
+    "separate capture lock can freeze while network sender holds serialization lock",
+    "late sender cannot write terminal, payload or token/success counters after freeze",
+    "unclosed allocations retained as unknown by unchanged all-response census",
+    "drain/freeze and census precede proxy shutdown and final result",
+    "original SDK/client/source/tools/model/actor remain inherited byte unchanged"
+  ],
+  "blocking_findings": [],
+  "sources": {
+    "scripts/ap2_native_shopper_provider_boundary_v2.py": {
+      "bytes": 9319,
+      "sha256": "95bd0ccb0513cce59cb3c94724658f1943806588283e989002626deb3545e52f"
+    },
+    "scripts/run_ap2_native_shopper_provider_v2.py": {
+      "bytes": 12723,
+      "sha256": "9249b2860b8b9602457d49f2505f76ba5b3fc0cd67d6b0620c27a0291dc77f26"
+    },
+    "tests/test_ap2_native_shopper_provider_v2.py": {
+      "bytes": 13591,
+      "sha256": "c523e98702cde394066bf41665397a682d4ae7156e6b74586a29fe71017cccc8"
+    },
+    ".github/workflows/ap2-native-shopper-provider-v2.yml": {
+      "bytes": 3512,
+      "sha256": "56a52ed36107eaabc81333ecd30b798b20fe373e482aeeb5370e6eb36588b1f4"
+    }
+  },
+  "prepared_plan": "runs/ap2-native-shopper-provider-development/v2/preparation-2/plan.json",
+  "whole_task_success_claimed": false
+}

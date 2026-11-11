@@ -1,3 +1,46 @@
+# Active continuation: 11 November 2026, original workflow and shopper failures retained
+
+Whole-project work remains approximately **80%** under the unchanged estimate v8.
+The two new failures add evidence, without extra completion credit.
+
+Original Workflow run [43036777469](https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/43036777469)
+retains both declared tasks, four MODEL_UNAVAILABLE events per case, zero fixture
+responses/tools and twelve denied loopback connects per case. Its exact
+25,115,647-byte archive matches the API digest at
+`83632c16b0f58598aff659bccf48374f73104c64a1558aee0ac7d8c1b9989e70`.
+The [results](agentops-workflow-reference-results-v1.md) and
+[clone-binding diagnosis](agentops-workflow-clone-binding-diagnosis-v1.md)
+establish an owned binding error: Workflow executes compiled copies while V1
+changed exported agents after construction. This is separate from provider outage.
+
+Original native shopper run [43038234376](https://github.com/Eshiv-Pandey/Ai_Interoperability/actions/runs/43038234376)
+retains one failed task at head `f8bc3028fd936490bef80de89efe57e4e4fcf6eb`.
+Its exact 1,226,464-byte archive matches the API at
+`9276a05ffd1dbc29e732fe42f4a116bf64653df54d5555b71a6e6ae189f761b2`.
+Smoke reported 45 tokens. Shopper generation timed out before visible text or
+business tools; the consumed allocation has unknown usage. The
+[results and offline analysis](ap2-native-shopper-provider-development-results-v1.md)
+retain two upstream allocations, four local refusals, six raw ADK errors, zero
+receipts and all four children reaped. Twenty-one constructed analyzer controls
+pass. This failed before the public actor could be evaluated.
+
+The [native shopper V2 protocol](ap2-native-shopper-provider-protocol-v2.md)
+preserves SDK/client/model/source/tools/actor and the existing call, byte and pace
+limits. The owned sender wait is 120 seconds. Admission close, bounded drain and
+capture freeze prevent late handlers from changing the final census. Fifteen
+constructed controls and [root source review](../../runs/ap2-native-shopper-provider-development/v2/root-review-1/review.json)
+pass. This remains one prospective adaptive task, with no human gold, untouched
+holdout or original run.sh provisioning claim. Root owns the fresh dispatch and
+retention; none of the historical attempts is resumed or replaced.
+
+Workflow V2 uses original policy, owned before-model fixture, then observer;
+compiled original models remain unchanged. Independent source review discovered
+a list-versus-mapping lookup and analyzer identity/order gaps before dispatch.
+Their additive fixes and fresh review are in progress. No V2 workflow application
+or SDK execution is claimed from preparation.
+
+The entries below are historical.
+
 # Active continuation: 11 November 2026, fresh repeat prerequisite failed upstream
 
 Whole-project work remains approximately **80%** under the unchanged estimate

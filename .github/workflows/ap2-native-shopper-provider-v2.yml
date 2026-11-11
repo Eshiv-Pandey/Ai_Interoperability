@@ -1,0 +1,64 @@
+name: Original ADK shopper and native AP2 Gemini development v2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ap2-native-shopper-provider-v2
+  cancel-in-progress: false
+
+jobs:
+  original-shopper-native-provider:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.1'
+      - name: Freeze fresh original shopper task, native source and provider bounds
+        shell: bash
+        run: |
+          python -I -S -B scripts/run_ap2_native_shopper_provider_v2.py prepare --output "$RUNNER_TEMP/ap2-native-shopper-provider-v2/plan"
+          python -m venv "$RUNNER_TEMP/ap2-native-shopper-provider-v2-environment"
+      - name: Install and record one pinned runtime
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/ap2-native-shopper-provider-v2-environment/bin/python" -m pip install --report "$RUNNER_TEMP/ap2-native-shopper-provider-v2/pip-install-report.json" -r "$RUNNER_TEMP/ap2-native-shopper-provider-v2/plan/requirements.txt"
+          "$RUNNER_TEMP/ap2-native-shopper-provider-v2-environment/bin/python" -m pip check > "$RUNNER_TEMP/ap2-native-shopper-provider-v2/pip-check.txt"
+      - name: Verify owned proxy, public actor and source isolation controls
+        shell: bash
+        run: |
+          "$RUNNER_TEMP/ap2-native-shopper-provider-v2-environment/bin/python" -I -S -B -m unittest discover -s tests -p test_ap2_original_native_provider_v1.py -v
+          "$RUNNER_TEMP/ap2-native-shopper-provider-v2-environment/bin/python" -I -S -B -m unittest discover -s tests -p test_ap2_original_native_provider_v2.py -v
+          "$RUNNER_TEMP/ap2-native-shopper-provider-v2-environment/bin/python" -I -S -B -m unittest discover -s tests -p test_ap2_native_shopper_provider_v1.py -v
+          "$RUNNER_TEMP/ap2-native-shopper-provider-v2-environment/bin/python" -I -S -B -m unittest discover -s tests -p test_ap2_native_shopper_provider_v2.py -v
+      - name: Execute one original ADK shopper task with accounted native services
+        shell: bash
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: |
+          python -I -S -B scripts/run_ap2_native_shopper_provider_v2.py execute \
+            --plan "$RUNNER_TEMP/ap2-native-shopper-provider-v2/plan" \
+            --output "$RUNNER_TEMP/ap2-native-shopper-provider-v2/execution" \
+            --python "$RUNNER_TEMP/ap2-native-shopper-provider-v2-environment/bin/python" \
+            --site-packages "$RUNNER_TEMP/ap2-native-shopper-provider-v2-environment/lib/python3.13/site-packages" \
+            --pip-report "$RUNNER_TEMP/ap2-native-shopper-provider-v2/pip-install-report.json" \
+            --provider-mode live
+      - name: Retain all actual attempts, ADK events and provider usage
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ap2-native-shopper-provider-development-v2
+          path: |
+            ${{ runner.temp }}/ap2-native-shopper-provider-v2/
+            !${{ runner.temp }}/ap2-native-shopper-provider-v2/**/*.pem
+            !${{ runner.temp }}/ap2-native-shopper-provider-v2/**/*.key
+            !${{ runner.temp }}/ap2-native-shopper-provider-v2/**/.env
+          if-no-files-found: error
+          retention-days: 30
