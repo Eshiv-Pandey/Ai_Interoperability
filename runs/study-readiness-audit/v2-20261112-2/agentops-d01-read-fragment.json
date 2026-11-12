@@ -1,0 +1,585 @@
+{
+  "schema_version": "agentops-owned-read-fragment-qualification/1",
+  "status": "passed_source_bound_development_fragment",
+  "candidate_id": "agentops-d01-health-active",
+  "original_split": "development",
+  "exact_input_bindings": [
+    {
+      "path": "benchmark/tasks-v1/agentops/application.json",
+      "bytes": 99764,
+      "sha256": "3eb5cb7a0ebcc5203d7e1c0edd6d5f13b503b9f908a3491670ea0ae95ec4607d"
+    },
+    {
+      "path": "benchmark/tasks-v1/agentops/evaluator.json",
+      "bytes": 232369,
+      "sha256": "2091981ecb2b1e84c30f52563c7dedee8764eef2a545d6cdb69aaaecd5f65ab7"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/sql/schema.sql",
+      "bytes": 3314,
+      "sha256": "8da41c51fb79c46846060f5b801eb21f2ac989fd8283b18607b4f35136dc632c"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/data/sql/seed.sql",
+      "bytes": 4259,
+      "sha256": "83b11f57fda11da60f5030545908d8f94644587d45a045fa7bc70ec44de15a58"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/models.py",
+      "bytes": 4062,
+      "sha256": "35e60ecd98f064570b63f9126a70c4b09ae736f7faa4c0364b457f372e0731c0"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/tools.py",
+      "bytes": 6311,
+      "sha256": "c6a2a7c09d002c54def8b4a9c371c381809abc87fd3ba1884fa2a9d951ad0dae"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/data.py",
+      "bytes": 25051,
+      "sha256": "d17825751bb20412783a85e079072bad3171c7a41036f1463ccc3a84da8a6d37"
+    },
+    {
+      "path": "runs/ci-agentops-governed-app-reference-v4/retained-42887519756-1/extracted/agentops-d01-health-active/state-before.json",
+      "bytes": 6044,
+      "sha256": "5defe6a9f7dcf19ff04b08fcc52236a6e2131db294d5b530f586c4037627df75"
+    },
+    {
+      "path": "runs/ci-agentops-governed-app-reference-v4/retained-42887519756-1/extracted/agentops-d01-health-active/state-after.json",
+      "bytes": 13557,
+      "sha256": "f4f09b32821a2fddef9fadba2de774119c4acee4f788f3a125485d902db4f7ac"
+    },
+    {
+      "path": "runs/ci-agentops-governed-app-reference-v4/retained-42887519756-1/extracted/agentops-d01-health-active/tool-contexts.jsonl",
+      "bytes": 346,
+      "sha256": "363547612681f3fb043524ff2eba3960e52136e6e0ed95175730415ac4b0271e"
+    },
+    {
+      "path": "runs/ci-agentops-governed-app-reference-v4/retained-42887519756-1/extracted/agentops-d01-health-active/model-journal.jsonl",
+      "bytes": 28896,
+      "sha256": "9ca4403c27c4a811dcc4ac71d4a72bc9fc782e70c07ade34dddd09b7a2f290a4"
+    },
+    {
+      "path": "runs/ci-agentops-governed-app-reference-v4/retained-42887519756-1/extracted/agentops-d01-health-active/actor-receipt.json",
+      "bytes": 23569,
+      "sha256": "17d9d9cebe1f01d86887d3d97983a59893d44eb961db8d3b9d4c4c4e20b55e3e"
+    },
+    {
+      "path": "runs/ci-agentops-governed-app-reference-v4/retained-42887519756-1/extracted/agentops-d01-health-active/turn-1/task-get.response.raw.json",
+      "bytes": 2383,
+      "sha256": "4e0a6e2026a8f84e9e0eab50d8856e8848c49315dd891315ca5e706716de14ee"
+    }
+  ],
+  "observed_projection": {
+    "branch": "observed_service",
+    "normalized_name": "inventory",
+    "projection": {
+      "service": {
+        "name": "inventory",
+        "status": "down",
+        "owner": "team-fulfillment"
+      },
+      "open_incidents": [
+        {
+          "id": "INC-002",
+          "severity": "SEV1",
+          "status": "open"
+        }
+      ]
+    }
+  },
+  "finite_input_worlds": [
+    {
+      "input": "checkout",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "checkout",
+        "projection": {
+          "service": {
+            "name": "checkout",
+            "status": "degraded",
+            "owner": "team-payments"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-009",
+              "severity": "SEV2",
+              "status": "investigating"
+            },
+            {
+              "id": "INC-001",
+              "severity": "SEV2",
+              "status": "investigating"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "CHECKOUT",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "checkout",
+        "projection": {
+          "service": {
+            "name": "checkout",
+            "status": "degraded",
+            "owner": "team-payments"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-009",
+              "severity": "SEV2",
+              "status": "investigating"
+            },
+            {
+              "id": "INC-001",
+              "severity": "SEV2",
+              "status": "investigating"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": " CHECKOUT ",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "checkout",
+        "projection": {
+          "service": {
+            "name": "checkout",
+            "status": "degraded",
+            "owner": "team-payments"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-009",
+              "severity": "SEV2",
+              "status": "investigating"
+            },
+            {
+              "id": "INC-001",
+              "severity": "SEV2",
+              "status": "investigating"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "payments",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "payments",
+        "projection": {
+          "service": {
+            "name": "payments",
+            "status": "operational",
+            "owner": "team-payments"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": "PAYMENTS",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "payments",
+        "projection": {
+          "service": {
+            "name": "payments",
+            "status": "operational",
+            "owner": "team-payments"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": " PAYMENTS ",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "payments",
+        "projection": {
+          "service": {
+            "name": "payments",
+            "status": "operational",
+            "owner": "team-payments"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": "auth",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "auth",
+        "projection": {
+          "service": {
+            "name": "auth",
+            "status": "operational",
+            "owner": "team-platform"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": "AUTH",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "auth",
+        "projection": {
+          "service": {
+            "name": "auth",
+            "status": "operational",
+            "owner": "team-platform"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": " AUTH ",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "auth",
+        "projection": {
+          "service": {
+            "name": "auth",
+            "status": "operational",
+            "owner": "team-platform"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": "search",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "search",
+        "projection": {
+          "service": {
+            "name": "search",
+            "status": "operational",
+            "owner": "team-discovery"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-005",
+              "severity": "SEV3",
+              "status": "open"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "SEARCH",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "search",
+        "projection": {
+          "service": {
+            "name": "search",
+            "status": "operational",
+            "owner": "team-discovery"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-005",
+              "severity": "SEV3",
+              "status": "open"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": " SEARCH ",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "search",
+        "projection": {
+          "service": {
+            "name": "search",
+            "status": "operational",
+            "owner": "team-discovery"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-005",
+              "severity": "SEV3",
+              "status": "open"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "inventory",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "inventory",
+        "projection": {
+          "service": {
+            "name": "inventory",
+            "status": "down",
+            "owner": "team-fulfillment"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-002",
+              "severity": "SEV1",
+              "status": "open"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "INVENTORY",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "inventory",
+        "projection": {
+          "service": {
+            "name": "inventory",
+            "status": "down",
+            "owner": "team-fulfillment"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-002",
+              "severity": "SEV1",
+              "status": "open"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": " INVENTORY ",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "inventory",
+        "projection": {
+          "service": {
+            "name": "inventory",
+            "status": "down",
+            "owner": "team-fulfillment"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-002",
+              "severity": "SEV1",
+              "status": "open"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "database",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "database",
+        "projection": {
+          "service": {
+            "name": "database",
+            "status": "operational",
+            "owner": "team-platform"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": "DATABASE",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "database",
+        "projection": {
+          "service": {
+            "name": "database",
+            "status": "operational",
+            "owner": "team-platform"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": " DATABASE ",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "database",
+        "projection": {
+          "service": {
+            "name": "database",
+            "status": "operational",
+            "owner": "team-platform"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": "cache",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "cache",
+        "projection": {
+          "service": {
+            "name": "cache",
+            "status": "operational",
+            "owner": "team-platform"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": "CACHE",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "cache",
+        "projection": {
+          "service": {
+            "name": "cache",
+            "status": "operational",
+            "owner": "team-platform"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": " CACHE ",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "cache",
+        "projection": {
+          "service": {
+            "name": "cache",
+            "status": "operational",
+            "owner": "team-platform"
+          },
+          "open_incidents": []
+        }
+      }
+    },
+    {
+      "input": "api-gateway",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "api-gateway",
+        "projection": {
+          "service": {
+            "name": "api-gateway",
+            "status": "degraded",
+            "owner": "team-platform"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-010",
+              "severity": "SEV3",
+              "status": "open"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "API-GATEWAY",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "api-gateway",
+        "projection": {
+          "service": {
+            "name": "api-gateway",
+            "status": "degraded",
+            "owner": "team-platform"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-010",
+              "severity": "SEV3",
+              "status": "open"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": " API-GATEWAY ",
+      "oracle": {
+        "branch": "observed_service",
+        "normalized_name": "api-gateway",
+        "projection": {
+          "service": {
+            "name": "api-gateway",
+            "status": "degraded",
+            "owner": "team-platform"
+          },
+          "open_incidents": [
+            {
+              "id": "INC-010",
+              "severity": "SEV3",
+              "status": "open"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": "",
+      "oracle": {
+        "branch": "invalid_slug",
+        "normalized_name": null
+      }
+    },
+    {
+      "input": "bad slug",
+      "oracle": {
+        "branch": "invalid_slug",
+        "normalized_name": null
+      }
+    },
+    {
+      "input": "-inventory",
+      "oracle": {
+        "branch": "invalid_slug",
+        "normalized_name": null
+      }
+    },
+    {
+      "input": "unknown-service",
+      "oracle": {
+        "branch": "missing_service",
+        "normalized_name": "unknown-service"
+      }
+    }
+  ],
+  "finite_world_count": 28,
+  "fragment_oracle_complete_for_declared_28_inputs": true,
+  "full_task_oracle_complete": false,
+  "business_state_unchanged": true,
+  "grounded_read_then_terminal_then_answer_observed": true,
+  "semantic_gold_validated_by_humans": false,
+  "qualified_confirmatory_tasks": 0,
+  "new_application_runtime_calls": 0,
+  "new_provider_calls": 0,
+  "source_sql_executed_only_in_owned_memory": true,
+  "limits": [
+    "Complete only for the enumerated static read-state projection, not all arbitrary original application actions or opaque model continuations.",
+    "Free-text relevance, incidental note policy, allowed alternative trajectories and private gold still need human judgment.",
+    "A retained deterministic fixture is not a fresh original application trial, untouched holdout, runtime authentication, qualified bridge or study episode.",
+    "No gate receives private evaluator material and no admission/efficiency advantage is inferred."
+  ],
+  "oracle_source_sha256": "03f68b70e8185f57926a08a2cc5269b37bcb05302538d022673a2843b3fc6793"
+}

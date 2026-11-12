@@ -1,0 +1,263 @@
+{
+  "appName": "ap2_original_native_shopper",
+  "events": [
+    {
+      "actions": {
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {},
+        "stateDelta": {}
+      },
+      "author": "user",
+      "content": {
+        "parts": [
+          {
+            "text": "I want to buy comfortable unbranded walking shoes. My maximum budget is USD 100, with no brand or color preference and no other requirements. Please show the available options."
+          }
+        ],
+        "role": "user"
+      },
+      "id": "40db397a-72f1-416f-9500-3750f14287c7",
+      "invocationId": "e-c1887284-95d2-4d11-99b7-e655e775522c",
+      "timestamp": 1794461434.508083
+    },
+    {
+      "actions": {
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {},
+        "stateDelta": {}
+      },
+      "author": "root_agent",
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "args": {
+                "agent_name": "shopper"
+              },
+              "id": "call_10207951814354165046",
+              "name": "transfer_to_agent"
+            },
+            "thoughtSignature": "EnMKcQFpFH0T-LSbw9O07U0yCsYU3V6b46aWKfomFuL3M2pE8gbbaIEGGyoa5Um5HN9J4mXahO-cN8C7k3Q0exCWg4RrSIzRkZykHcaXwLxARkx3VrwcGeGDAc4taNys6Wygnmas_zhL-O9PFoVW0LWcDr5y"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "id": "975ea5d1-eb54-4449-9acd-a191a2fc6034",
+      "invocationId": "e-c1887284-95d2-4d11-99b7-e655e775522c",
+      "longRunningToolIds": [],
+      "modelVersion": "gemini-3.1-flash-lite",
+      "timestamp": 1794461434.5206633,
+      "usageMetadata": {
+        "candidatesTokenCount": 21,
+        "promptTokenCount": 1724,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1724
+          }
+        ],
+        "totalTokenCount": 1745
+      }
+    },
+    {
+      "actions": {
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {},
+        "stateDelta": {},
+        "transferToAgent": "shopper"
+      },
+      "author": "root_agent",
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "call_10207951814354165046",
+              "name": "transfer_to_agent",
+              "response": {
+                "result": null
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "id": "26b26dd8-95aa-4516-a9cf-5e4833c9a192",
+      "invocationId": "e-c1887284-95d2-4d11-99b7-e655e775522c",
+      "timestamp": 1794461438.0029051
+    },
+    {
+      "actions": {
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {},
+        "stateDelta": {}
+      },
+      "author": "shopper",
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "args": {
+                "catalog_search": "comfortable unbranded walking shoes under 100 USD"
+              },
+              "id": "call_6415487148067243733",
+              "name": "find_products"
+            },
+            "thoughtSignature": "EnMKcQFpFH0Tmz0rUIwx60zJXMPJluAWKKh-Ft165bA8inAx8ryPnR8Im0qADeJ3OHE8pbc9SgaY7KRqgXtJ6vkZgGkT0lM-k7umG6jqgFFHP09qAozyQHXKNx3_kqKf0K82VAsHLpbxre7t2CYJUkbj9lF5"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "id": "d061f78a-c915-4aa8-955a-c3cacabbc78b",
+      "invocationId": "e-c1887284-95d2-4d11-99b7-e655e775522c",
+      "longRunningToolIds": [],
+      "modelVersion": "gemini-3.1-flash-lite",
+      "timestamp": 1794461438.0049987,
+      "usageMetadata": {
+        "candidatesTokenCount": 28,
+        "promptTokenCount": 1094,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1094
+          }
+        ],
+        "totalTokenCount": 1122
+      }
+    },
+    {
+      "actions": {
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {},
+        "stateDelta": {
+          "available_carts": [
+            {
+              "amount": 45.99,
+              "cart_id": "cart_1",
+              "currency": "USD",
+              "item_label": "Lightweight breathable mesh walking sneakers with memory foam insoles"
+            },
+            {
+              "amount": 62.5,
+              "cart_id": "cart_2",
+              "currency": "USD",
+              "item_label": "Ergonomic arch support casual slip-on trainers"
+            },
+            {
+              "amount": 89.0,
+              "cart_id": "cart_3",
+              "currency": "USD",
+              "item_label": "All-terrain durable cushion walking shoes for daily use"
+            }
+          ],
+          "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data",
+          "shopping_context_id": "a9dc6208-6aae-45e7-85d0-ecbfaa9b3d18"
+        }
+      },
+      "author": "shopper",
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "call_6415487148067243733",
+              "name": "find_products",
+              "response": {
+                "result": [
+                  {
+                    "amount": 45.99,
+                    "cart_id": "cart_1",
+                    "currency": "USD",
+                    "item_label": "Lightweight breathable mesh walking sneakers with memory foam insoles"
+                  },
+                  {
+                    "amount": 62.5,
+                    "cart_id": "cart_2",
+                    "currency": "USD",
+                    "item_label": "Ergonomic arch support casual slip-on trainers"
+                  },
+                  {
+                    "amount": 89.0,
+                    "cart_id": "cart_3",
+                    "currency": "USD",
+                    "item_label": "All-terrain durable cushion walking shoes for daily use"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "id": "610d60fb-cdde-432c-af34-a43e361a9a24",
+      "invocationId": "e-c1887284-95d2-4d11-99b7-e655e775522c",
+      "timestamp": 1794461454.0645995
+    },
+    {
+      "actions": {
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {},
+        "stateDelta": {}
+      },
+      "author": "shopper",
+      "content": {
+        "parts": [
+          {
+            "text": "I have found some comfortable walking shoes that fit your budget. Here are the available options:\n\n*   **Lightweight breathable mesh walking sneakers with memory foam insoles** - $45.99 (Cart ID: cart_1)\n*   **Ergonomic arch support casual slip-on trainers** - $62.50 (Cart ID: cart_2)\n*   **All-terrain durable cushion walking shoes for daily use** - $89.00 (Cart ID: cart_3)\n\nI recommend the **Lightweight breathable mesh walking sneakers with memory foam insoles** because they provide a great balance of comfort with the memory foam insoles at a very budget-friendly price.\n\nWhich item would you like to purchase?",
+            "thoughtSignature": "EnMKcQFpFH0TT5phuSBuLtkSdAo5KSL7N_s5aIr8IFRka72jPsUfmVUyS04HTWMQVOF12rf1j6IXKOYXjaZDcD-zrjN82pDOJx5NVGYZz6THAIcIAu6Qtg5mdCVr4WF1IPhUt1phXrl4ujCkJXHi-lBWcx24"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "id": "2d178677-53e5-49ac-8c73-c498814cf4cb",
+      "invocationId": "e-c1887284-95d2-4d11-99b7-e655e775522c",
+      "modelVersion": "gemini-3.1-flash-lite",
+      "timestamp": 1794461454.0667663,
+      "usageMetadata": {
+        "candidatesTokenCount": 157,
+        "promptTokenCount": 1253,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1253
+          }
+        ],
+        "totalTokenCount": 1410
+      }
+    }
+  ],
+  "id": "71e5b5a3-4ddd-4e42-91ba-4967ced18014",
+  "lastUpdateTime": 1794461454.0667663,
+  "state": {
+    "available_carts": [
+      {
+        "amount": 45.99,
+        "cart_id": "cart_1",
+        "currency": "USD",
+        "item_label": "Lightweight breathable mesh walking sneakers with memory foam insoles"
+      },
+      {
+        "amount": 62.5,
+        "cart_id": "cart_2",
+        "currency": "USD",
+        "item_label": "Ergonomic arch support casual slip-on trainers"
+      },
+      {
+        "amount": 89.0,
+        "cart_id": "cart_3",
+        "currency": "USD",
+        "item_label": "All-terrain durable cushion walking shoes for daily use"
+      }
+    ],
+    "risk_data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data",
+    "shopping_context_id": "a9dc6208-6aae-45e7-85d0-ecbfaa9b3d18"
+  },
+  "userId": "prospective_demo_user"
+}

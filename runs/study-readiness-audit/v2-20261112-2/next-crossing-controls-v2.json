@@ -1,0 +1,283 @@
+{
+  "schema_version": "original-crossing-readiness-controls/2",
+  "status": "source_bound_prospective_controls_not_executable_study",
+  "prepared_at_utc": "2026-11-11T21:39:57.044941+00:00",
+  "new_original_runtime_calls": 0,
+  "new_provider_calls": 0,
+  "qualified_original_crossing_cells": 0,
+  "source_bindings_from_retained_original421_file_manifest": [
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/mcp_client.py",
+      "bytes": 3002,
+      "sha256": "b34ba776caaccbf2f77ce7e030a3fbbce95fa8df4e03e48b6d32cd3b0443e19a"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/composition.py",
+      "bytes": 7282,
+      "sha256": "d1ad9f887328345f6edda5ef7d412c48938e62d708e39c645a479e1d5c166ad8"
+    },
+    {
+      "path": "external/agentops-c806b7f1/agents/python/src/agent/server.py",
+      "bytes": 27389,
+      "sha256": "578bd65522c3edcfd49d831b96b42a4990e1aaa4f39c0e52612e1dbe667680d8"
+    }
+  ],
+  "source_observations": {
+    "original_A2A_requires_agent_entrypoint": true,
+    "original_MCP_read_tool_allowlist": [
+      "list_incidents",
+      "get_incident",
+      "get_service_status",
+      "search_service_logs",
+      "get_runbook",
+      "search_runbooks"
+    ],
+    "original_agent_sender_generic_bridge_tools_not_in_allowlist": true,
+    "scope_limit": "This is a blocker for original-AgentOps-agent sender constructions. Owned scripted SDK callers are a disclosed different construction requiring fresh source/task/stage qualification."
+  },
+  "prospective_controls": [
+    {
+      "prospective_placement_grammar": {
+        "execution_allowed": false,
+        "original_stage_surfaces_qualified": false,
+        "task_id": "future_development_topology_only_not_allocated",
+        "initial_state_sha256": "5defe6a9f7dcf19ff04b08fcc52236a6e2131db294d5b530f586c4037627df75",
+        "horizon": 4,
+        "stage_ids": [
+          "owned_scripted_observe",
+          "owned_scripted_investigate",
+          "owned_scripted_review",
+          "owned_scripted_report"
+        ],
+        "profile_id": "agentops_amir_B1_B2_B3",
+        "variants": [
+          {
+            "crossing_count": 1,
+            "edges": [
+              {
+                "from_stage": "owned_scripted_observe",
+                "to_stage": "owned_scripted_investigate",
+                "delivery": "bridge",
+                "profile_id": "agentops_amir_B1_B2_B3",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              },
+              {
+                "from_stage": "owned_scripted_investigate",
+                "to_stage": "owned_scripted_review",
+                "delivery": "reference",
+                "profile_id": null
+              },
+              {
+                "from_stage": "owned_scripted_review",
+                "to_stage": "owned_scripted_report",
+                "delivery": "reference",
+                "profile_id": null
+              }
+            ]
+          },
+          {
+            "crossing_count": 2,
+            "edges": [
+              {
+                "from_stage": "owned_scripted_observe",
+                "to_stage": "owned_scripted_investigate",
+                "delivery": "bridge",
+                "profile_id": "agentops_amir_B1_B2_B3",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              },
+              {
+                "from_stage": "owned_scripted_investigate",
+                "to_stage": "owned_scripted_review",
+                "delivery": "bridge",
+                "profile_id": "agentops_amir_B1_B2_B3",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              },
+              {
+                "from_stage": "owned_scripted_review",
+                "to_stage": "owned_scripted_report",
+                "delivery": "reference",
+                "profile_id": null
+              }
+            ]
+          },
+          {
+            "crossing_count": 3,
+            "edges": [
+              {
+                "from_stage": "owned_scripted_observe",
+                "to_stage": "owned_scripted_investigate",
+                "delivery": "bridge",
+                "profile_id": "agentops_amir_B1_B2_B3",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              },
+              {
+                "from_stage": "owned_scripted_investigate",
+                "to_stage": "owned_scripted_review",
+                "delivery": "bridge",
+                "profile_id": "agentops_amir_B1_B2_B3",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              },
+              {
+                "from_stage": "owned_scripted_review",
+                "to_stage": "owned_scripted_report",
+                "delivery": "bridge",
+                "profile_id": "agentops_amir_B1_B2_B3",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              }
+            ]
+          }
+        ]
+      },
+      "grammar_check": {
+        "placement_grammar_valid": true,
+        "original_route_qualified": false,
+        "execution_allowed": false,
+        "qualified_crossing_cells": 0
+      },
+      "required_before_original_execution": [
+        "Freeze actual source-bound stages, actions, state, output packet, task identity and same horizon; these stage labels are authored illustrative actors, not original Workflow nodes.",
+        "Bind original receiving and sending public surfaces and reachable bridge tool schemas; generic a2a tools are excluded by original AgentOps MCP read allowlist.",
+        "Freeze actual supported profile/API/negotiated transport and source/native positive before any route effects; Amir text profiles and configured mgcreaB7 are different treatments.",
+        "Both converters must use independently implemented original mapping code; mgcreaB4-B7 are one implementation.",
+        "Specify complete reference plus1/2/3 crossing counts on the same task/state and remaining reference edges, without inverse conversion.",
+        "Prespecify24 crossing tasks before confirmation outcomes; retain all stops/refusals/failures/effects in fresh exclusive allocations."
+      ],
+      "initial_state_binding": {
+        "path": "runs/ci-agentops-governed-app-reference-v4/retained-42887519756-1/extracted/agentops-d01-health-active/state-before.json",
+        "bytes": 6044,
+        "sha256": "5defe6a9f7dcf19ff04b08fcc52236a6e2131db294d5b530f586c4037627df75"
+      }
+    },
+    {
+      "prospective_placement_grammar": {
+        "execution_allowed": false,
+        "original_stage_surfaces_qualified": false,
+        "task_id": "future_development_topology_only_not_allocated",
+        "initial_state_sha256": "5defe6a9f7dcf19ff04b08fcc52236a6e2131db294d5b530f586c4037627df75",
+        "horizon": 4,
+        "stage_ids": [
+          "owned_scripted_observe",
+          "owned_scripted_investigate",
+          "owned_scripted_review",
+          "owned_scripted_report"
+        ],
+        "profile_id": "agentops_mg_B7_configured",
+        "variants": [
+          {
+            "crossing_count": 1,
+            "edges": [
+              {
+                "from_stage": "owned_scripted_observe",
+                "to_stage": "owned_scripted_investigate",
+                "delivery": "bridge",
+                "profile_id": "agentops_mg_B7_configured",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              },
+              {
+                "from_stage": "owned_scripted_investigate",
+                "to_stage": "owned_scripted_review",
+                "delivery": "reference",
+                "profile_id": null
+              },
+              {
+                "from_stage": "owned_scripted_review",
+                "to_stage": "owned_scripted_report",
+                "delivery": "reference",
+                "profile_id": null
+              }
+            ]
+          },
+          {
+            "crossing_count": 2,
+            "edges": [
+              {
+                "from_stage": "owned_scripted_observe",
+                "to_stage": "owned_scripted_investigate",
+                "delivery": "bridge",
+                "profile_id": "agentops_mg_B7_configured",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              },
+              {
+                "from_stage": "owned_scripted_investigate",
+                "to_stage": "owned_scripted_review",
+                "delivery": "bridge",
+                "profile_id": "agentops_mg_B7_configured",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              },
+              {
+                "from_stage": "owned_scripted_review",
+                "to_stage": "owned_scripted_report",
+                "delivery": "reference",
+                "profile_id": null
+              }
+            ]
+          },
+          {
+            "crossing_count": 3,
+            "edges": [
+              {
+                "from_stage": "owned_scripted_observe",
+                "to_stage": "owned_scripted_investigate",
+                "delivery": "bridge",
+                "profile_id": "agentops_mg_B7_configured",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              },
+              {
+                "from_stage": "owned_scripted_investigate",
+                "to_stage": "owned_scripted_review",
+                "delivery": "bridge",
+                "profile_id": "agentops_mg_B7_configured",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              },
+              {
+                "from_stage": "owned_scripted_review",
+                "to_stage": "owned_scripted_report",
+                "delivery": "bridge",
+                "profile_id": "agentops_mg_B7_configured",
+                "from_surface": "mcp_client",
+                "to_surface": "a2a_agent"
+              }
+            ]
+          }
+        ]
+      },
+      "grammar_check": {
+        "placement_grammar_valid": true,
+        "original_route_qualified": false,
+        "execution_allowed": false,
+        "qualified_crossing_cells": 0
+      },
+      "required_before_original_execution": [
+        "Freeze actual source-bound stages, actions, state, output packet, task identity and same horizon; these stage labels are authored illustrative actors, not original Workflow nodes.",
+        "Bind original receiving and sending public surfaces and reachable bridge tool schemas; generic a2a tools are excluded by original AgentOps MCP read allowlist.",
+        "Freeze actual supported profile/API/negotiated transport and source/native positive before any route effects; Amir text profiles and configured mgcreaB7 are different treatments.",
+        "Both converters must use independently implemented original mapping code; mgcreaB4-B7 are one implementation.",
+        "Specify complete reference plus1/2/3 crossing counts on the same task/state and remaining reference edges, without inverse conversion.",
+        "Prespecify24 crossing tasks before confirmation outcomes; retain all stops/refusals/failures/effects in fresh exclusive allocations."
+      ],
+      "initial_state_binding": {
+        "path": "runs/ci-agentops-governed-app-reference-v4/retained-42887519756-1/extracted/agentops-d01-health-active/state-before.json",
+        "bytes": 6044,
+        "sha256": "5defe6a9f7dcf19ff04b08fcc52236a6e2131db294d5b530f586c4037627df75"
+      }
+    }
+  ],
+  "AP2_original_profile_gate": "No eligible two-independent-converter original0.3 AP2 pair is established. Obtain original compatible public card/method/header/directDataPart/context APIs; do not unwrap nested payloads, rewrite cards or invent inverse conversions as unchanged profiles.",
+  "runtime_gold_requirement": "Ordinary runtime contract C_runtime is separate from private evaluator C_gold. Read-fragment oracle uses development evidence and is not a practical admission extraction pipeline.",
+  "historical_draft_binding": {
+    "path": "runs/study-readiness-audit/v2-20261112-2/next-crossing-controls.json",
+    "sha256": "d9ee9134f1ff8897994bd296216703007908a7270741cd8b74a1ce8c470d23b6"
+  },
+  "correction": "Bind initial_state_sha256 to actual retained initial-state bytes, rather than the reference qualification receipt. The prior authored draft remains retained. No original execution or eligibility changed."
+}

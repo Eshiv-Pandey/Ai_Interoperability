@@ -1,0 +1,804 @@
+{
+  "actor_network_diagnostics": {
+    "all_denied_network_arguments_retained": true,
+    "consistency_questions": [],
+    "counters": {
+      "descendants": 0,
+      "diagnostic_write_failures": 0,
+      "external_network": 0,
+      "network_diagnostic_bytes": 0,
+      "network_diagnostics_dropped": 0,
+      "network_diagnostics_logged": 0,
+      "private_reads": 0
+    },
+    "diagnostic_bytes": 0,
+    "diagnostic_records": [],
+    "historical_V4_denial_cause_inferred": false,
+    "record_present": true,
+    "unrecorded_denial_count": 0
+  },
+  "actor_separation": {
+    "denials": {
+      "descendants": 0,
+      "diagnostic_write_failures": 0,
+      "external_network": 0,
+      "network_diagnostic_bytes": 0,
+      "network_diagnostics_dropped": 0,
+      "network_diagnostics_logged": 0,
+      "private_reads": 0
+    },
+    "network_classifier_schema": "ap2-native-shopper-network-classification/5",
+    "network_diagnostic_bounds": {
+      "records": 160,
+      "single_record_bytes": 4096,
+      "total_bytes": 262144
+    },
+    "network_diagnostic_schema": "ap2-native-shopper-network-denial/5",
+    "network_diagnostic_stream": "actor-network-denials.jsonl",
+    "provider_credential_is_synthetic_downstream_only": true,
+    "public_user_replies_use_visible_final_text_only": true,
+    "schema_version": "ap2-native-shopper-actor-separation/5",
+    "scope": "Python audit controls, not an OS hostile-code sandbox"
+  },
+  "actual_provider_requests_by_analyzer": 0,
+  "analysis_dependencies": {
+    "scripts/analyze_ap2_native_shopper_provider_v1.py": "fd07c3609400f951d8500ce97f1cc655fc4ed654b7836597c30d26262ef930ab",
+    "scripts/analyze_ap2_native_shopper_provider_v2.py": "c1211733a21dd8bc8ea1aee5135b471c43f53fe7459eb998daf678160375e07d"
+  },
+  "archive_bytes": 1271535,
+  "archive_sha256": "5c133aebfa5bddbf23c38ce782c6eaa5b3d3674ccf04015521d99a51b0b51e58",
+  "call_response_outcomes": {
+    "business_call_attempts": 1,
+    "business_terminal_responses": 1,
+    "calls": [
+      {
+        "args": {
+          "agent_name": "shopper"
+        },
+        "author": "root_agent",
+        "event_index": 0,
+        "id": "call_10207951814354165046",
+        "name": "transfer_to_agent"
+      },
+      {
+        "args": {
+          "catalog_search": "comfortable unbranded walking shoes under 100 USD"
+        },
+        "author": "shopper",
+        "event_index": 2,
+        "id": "call_6415487148067243733",
+        "name": "find_products"
+      }
+    ],
+    "consistency_questions": [],
+    "responses": [
+      {
+        "author": "root_agent",
+        "event_index": 1,
+        "id": "call_10207951814354165046",
+        "name": "transfer_to_agent",
+        "response": {
+          "result": null
+        }
+      },
+      {
+        "author": "shopper",
+        "event_index": 3,
+        "id": "call_6415487148067243733",
+        "name": "find_products",
+        "response": {
+          "result": [
+            {
+              "amount": 45.99,
+              "cart_id": "cart_1",
+              "currency": "USD",
+              "item_label": "Lightweight breathable mesh walking sneakers with memory foam insoles"
+            },
+            {
+              "amount": 62.5,
+              "cart_id": "cart_2",
+              "currency": "USD",
+              "item_label": "Ergonomic arch support casual slip-on trainers"
+            },
+            {
+              "amount": 89.0,
+              "cart_id": "cart_3",
+              "currency": "USD",
+              "item_label": "All-terrain durable cushion walking shoes for daily use"
+            }
+          ]
+        }
+      }
+    ],
+    "unmatched_calls": []
+  },
+  "case_denominator": 1,
+  "case_id": "ap2-native-shopper-provider-v5-correct-human",
+  "consistency_questions": [],
+  "frozen_plan_sha256": "3bee8a4653206a425d9b8a26c59f566023bb0ff19258fadfbddca358e5452ac7",
+  "head_sha": "b7bbe86f00a6c590f56bf7d9bb994756b1a07bf7",
+  "hidden_effect_or_real_settlement_proven": false,
+  "human_gold_qualified": false,
+  "limits": [
+    "One adaptive development case; all prior attempts retain separate denominators.",
+    "Retained source and event consistency does not authenticate hidden effects or full runtime files.",
+    "A demo Success receipt is reported only as a sample receipt shape, never a human whole-task grade.",
+    "Provider usage with absent metadata remains unknown rather than zero."
+  ],
+  "parent_case_status": "executed_returned",
+  "parent_process_cleanup": [
+    {
+      "cleanup_error_type": null,
+      "pid": 2541,
+      "reaped": true,
+      "returncode": 0
+    },
+    {
+      "cleanup_error_type": null,
+      "pid": 2540,
+      "reaped": true,
+      "returncode": -15
+    },
+    {
+      "cleanup_error_type": null,
+      "pid": 2539,
+      "reaped": true,
+      "returncode": -15
+    },
+    {
+      "cleanup_error_type": null,
+      "pid": 2538,
+      "reaped": true,
+      "returncode": -15
+    }
+  ],
+  "provider": {
+    "HTTP_status_census": {
+      "200": 6
+    },
+    "actual_network_send_timestamps_captured": false,
+    "allocations_with_unmeasured_usage": 0,
+    "consistency_questions": [],
+    "failed_responses_missing_or_invalid_usage": 0,
+    "fully_measured": true,
+    "known_reported_tokens": 5612,
+    "local_proxy_refusals": [],
+    "minimum_recorded_allocation_timestamp_gap_seconds": 6.000043,
+    "recorded_allocation_to_terminal_durations": [
+      {
+        "allocation": 0,
+        "seconds": 1.88279
+      },
+      {
+        "allocation": 1,
+        "seconds": 2.860254
+      },
+      {
+        "allocation": 2,
+        "seconds": 0.467293
+      },
+      {
+        "allocation": 3,
+        "seconds": 3.98065
+      },
+      {
+        "allocation": 4,
+        "seconds": 0.916341
+      },
+      {
+        "allocation": 5,
+        "seconds": 2.174712
+      }
+    ],
+    "recorded_cumulative_request_bytes": 24465,
+    "recorded_provider_path_census": {
+      "/v1beta/models/gemini-3.1-flash-lite-preview:generateContent": 6
+    },
+    "responses": [
+      {
+        "allocation": 0,
+        "http_status": 200,
+        "known_reported_tokens": 45,
+        "model_version": "gemini-3.1-flash-lite",
+        "transport_or_parse_error_type": null
+      },
+      {
+        "allocation": 1,
+        "http_status": 200,
+        "known_reported_tokens": 1745,
+        "model_version": "gemini-3.1-flash-lite",
+        "transport_or_parse_error_type": null
+      },
+      {
+        "allocation": 2,
+        "http_status": 200,
+        "known_reported_tokens": 1122,
+        "model_version": "gemini-3.1-flash-lite",
+        "transport_or_parse_error_type": null
+      },
+      {
+        "allocation": 3,
+        "http_status": 200,
+        "known_reported_tokens": 794,
+        "model_version": "gemini-3.1-flash-lite",
+        "transport_or_parse_error_type": null
+      },
+      {
+        "allocation": 4,
+        "http_status": 200,
+        "known_reported_tokens": 496,
+        "model_version": "gemini-3.1-flash-lite",
+        "transport_or_parse_error_type": null
+      },
+      {
+        "allocation": 5,
+        "http_status": 200,
+        "known_reported_tokens": 1410,
+        "model_version": "gemini-3.1-flash-lite",
+        "transport_or_parse_error_type": null
+      }
+    ],
+    "responses_missing_or_invalid_usage": 0,
+    "successful_responses_missing_or_invalid_usage": 0,
+    "terminal_responses": 6,
+    "unclosed_allocation_ids": [],
+    "unknown_usage_is_zero": false,
+    "upstream_allocations": 6
+  },
+  "provider_ADK_joins": {
+    "consistency_questions": [],
+    "matches": [
+      {
+        "call_id": "call_10207951814354165046",
+        "event_index": 0,
+        "name": "transfer_to_agent",
+        "provider_member": "execution/provider/001.response.json"
+      },
+      {
+        "call_id": "call_6415487148067243733",
+        "event_index": 2,
+        "name": "find_products",
+        "provider_member": "execution/provider/002.response.json"
+      }
+    ]
+  },
+  "provider_drain": {
+    "all_response_allocations_with_unmeasured_usage": 0,
+    "consistency_questions": [],
+    "elapsed_drain_exceeds_requested_wait": false,
+    "elapsed_wait_is_not_an_independently_proven_socket_wall_cap": true,
+    "freeze_enforcement_scope": "Raw retained ledger/payload joins and frozen owned source policy; actual late upstream completion after capture freeze is not observed.",
+    "fully_measured_provider_consumption_claimed": true,
+    "handler_census_is_distinct_from_consumed_allocation_count": true,
+    "handlers_can_finish_without_late_captured_terminal_observations": true,
+    "parent_summary_active_handlers": 0,
+    "record_present": true,
+    "standalone_drain_record": {
+      "active_handlers_at_capture_freeze": 0,
+      "admission_closed": true,
+      "all_handlers_completed": true,
+      "allocated_upstream_calls_at_capture_freeze": 6,
+      "allocations_with_unmeasured_usage": 0,
+      "capture_frozen": true,
+      "elapsed_drain_seconds": 2.0488999979306755e-05,
+      "late_sender_outcomes_retained": false,
+      "maximum_drain_seconds": 150,
+      "request_bytes_at_capture_freeze": 24465,
+      "schema_version": "ap2-provider-drain/2",
+      "time": "2026-11-12T05:31:02.019371+00:00",
+      "unclosed_allocation_ids": [],
+      "unfinished_allocations_require_unknown_usage": true
+    },
+    "status": "frozen_handler_census_and_raw_ledger_consistent",
+    "unclosed_allocations_with_unmeasured_usage": 0,
+    "unclosed_consumed_allocations": []
+  },
+  "public_and_ADK": {
+    "actor_delivered_replies": [],
+    "actor_proposed_replies": [],
+    "behavior_observations": [],
+    "business_call_count": 1,
+    "cart_selection_corroboration": {
+      "delivered_cart_selections": 0,
+      "evidence_scope": "Visible first ordinal selection joined to preceding raw original ADK tool return, later original select_cart and retained session state; full A2A wire and semantic human gold are absent.",
+      "records": []
+    },
+    "consistency_questions": [],
+    "function_call_IDs_present": true,
+    "function_calls": [
+      {
+        "args": {
+          "agent_name": "shopper"
+        },
+        "author": "root_agent",
+        "id": "call_10207951814354165046",
+        "name": "transfer_to_agent",
+        "turn": 0
+      },
+      {
+        "args": {
+          "catalog_search": "comfortable unbranded walking shoes under 100 USD"
+        },
+        "author": "shopper",
+        "id": "call_6415487148067243733",
+        "name": "find_products",
+        "turn": 0
+      }
+    ],
+    "function_responses": [
+      {
+        "author": "root_agent",
+        "id": "call_10207951814354165046",
+        "name": "transfer_to_agent",
+        "response": {
+          "result": null
+        },
+        "turn": 0
+      },
+      {
+        "author": "shopper",
+        "id": "call_6415487148067243733",
+        "name": "find_products",
+        "response": {
+          "result": [
+            {
+              "amount": 45.99,
+              "cart_id": "cart_1",
+              "currency": "USD",
+              "item_label": "Lightweight breathable mesh walking sneakers with memory foam insoles"
+            },
+            {
+              "amount": 62.5,
+              "cart_id": "cart_2",
+              "currency": "USD",
+              "item_label": "Ergonomic arch support casual slip-on trainers"
+            },
+            {
+              "amount": 89.0,
+              "cart_id": "cart_3",
+              "currency": "USD",
+              "item_label": "All-terrain durable cushion walking shoes for daily use"
+            }
+          ]
+        },
+        "turn": 0
+      }
+    ],
+    "human_gold": false,
+    "incomplete_tool_observations": [],
+    "milestones": {
+      "create_checkout": {
+        "requested": 0,
+        "returned": 0
+      },
+      "create_checkout_mandate": {
+        "requested": 0,
+        "returned": 0
+      },
+      "create_payment_mandate": {
+        "requested": 0,
+        "returned": 0
+      },
+      "find_products": {
+        "requested": 1,
+        "returned": 1
+      },
+      "get_payment_credential_token": {
+        "requested": 0,
+        "returned": 0
+      },
+      "get_payment_methods": {
+        "requested": 0,
+        "returned": 0
+      },
+      "get_shipping_address": {
+        "requested": 0,
+        "returned": 0
+      },
+      "initiate_payment": {
+        "requested": 0,
+        "returned": 0
+      },
+      "initiate_payment_with_otp": {
+        "requested": 0,
+        "returned": 0
+      },
+      "select_cart": {
+        "requested": 0,
+        "returned": 0
+      },
+      "send_signed_mandates_to_credentials_provider": {
+        "requested": 0,
+        "returned": 0
+      }
+    },
+    "official_authors": [
+      "root_agent",
+      "shopper"
+    ],
+    "public_user_messages": 1,
+    "raw_ADK_error_events": [],
+    "raw_ADK_events": 5,
+    "retained_receipts": [],
+    "session_snapshot_ids": [
+      "71e5b5a3-4ddd-4e42-91ba-4967ced18014"
+    ],
+    "unique_success_receipt_records": 0,
+    "unrequested_later_business_tools": [
+      "create_checkout",
+      "create_checkout_mandate",
+      "create_payment_mandate",
+      "send_signed_mandates_to_credentials_provider",
+      "initiate_payment",
+      "initiate_payment_with_otp",
+      "select_cart",
+      "get_shipping_address",
+      "get_payment_methods",
+      "get_payment_credential_token"
+    ],
+    "visible_model_messages": [
+      {
+        "author": "shopper",
+        "text": "I have found some comfortable walking shoes that fit your budget. Here are the available options:\n\n*   **Lightweight breathable mesh walking sneakers with memory foam insoles** - $45.99 (Cart ID: cart_1)\n*   **Ergonomic arch support casual slip-on trainers** - $62.50 (Cart ID: cart_2)\n*   **All-terrain durable cushion walking shoes for daily use** - $89.00 (Cart ID: cart_3)\n\nI recommend the **Lightweight breathable mesh walking sneakers with memory foam insoles** because they provide a great balance of comfort with the memory foam insoles at a very budget-friendly price.\n\nWhich item would you like to purchase?",
+        "turn": 0
+      }
+    ],
+    "whole_task_grade": null
+  },
+  "reviewed_at_utc": "2026-11-12T05:38:45.223716+00:00",
+  "run_id": 43161674908,
+  "runtime_manifest": {
+    "consistency_questions": [],
+    "manifested_runtime_files": 14728,
+    "python_version": "3.13.1",
+    "record_present": true,
+    "required_original_versions": {
+      "a2a-sdk": "0.3.24",
+      "absl-py": "2.4.0",
+      "aiofile": "3.12.3",
+      "aiohappyeyeballs": "2.7.1",
+      "aiohttp": "3.14.5",
+      "aiosignal": "1.4.0",
+      "aiosqlite": "0.22.1",
+      "alembic": "1.20.1",
+      "annotated-doc": "0.0.5",
+      "annotated-types": "0.8.0",
+      "anyio": "4.15.1",
+      "attrs": "26.1.0",
+      "authlib": "1.9.1",
+      "beartype": "0.23.1",
+      "bitarray": "3.12.3",
+      "blinker": "1.9.0",
+      "cachetools": "7.2.7",
+      "caio": "0.12.10",
+      "certifi": "2026.10.23",
+      "cffi": "2.1.1",
+      "charset-normalizer": "3.5.2",
+      "ckzg": "2.1.8",
+      "click": "8.5.0",
+      "cloudpickle": "3.1.2",
+      "colorama": "0.4.6",
+      "cryptography": "46.0.5",
+      "cyclopts": "5.3.2",
+      "cytoolz": "1.2.0",
+      "distro": "1.9.0",
+      "dnspython": "2.9.1",
+      "docstring-parser": "0.18.0",
+      "email-validator": "2.3.0",
+      "eth-abi": "6.0.0",
+      "eth-account": "0.14.0",
+      "eth-hash": "0.8.0",
+      "eth-keyfile": "0.10.0",
+      "eth-keys": "0.8.0",
+      "eth-rlp": "3.0.0",
+      "eth-typing": "6.0.0",
+      "eth-utils": "6.0.0",
+      "exceptiongroup": "1.3.1",
+      "fastapi": "0.141.1",
+      "fastmcp": "3.1.0",
+      "flask": "3.1.3",
+      "flask-cors": "6.0.2",
+      "frozenlist": "1.8.0",
+      "google-adk": "1.28.0",
+      "google-api-core": "2.30.3",
+      "google-api-python-client": "2.201.0",
+      "google-auth": "2.62.0",
+      "google-auth-httplib2": "0.4.4",
+      "google-cloud-aiplatform": "1.165.1",
+      "google-cloud-appengine-logging": "1.11.0",
+      "google-cloud-audit-log": "0.6.3",
+      "google-cloud-bigquery": "3.47.0",
+      "google-cloud-bigquery-storage": "2.43.0",
+      "google-cloud-bigtable": "2.50.2",
+      "google-cloud-core": "2.8.0",
+      "google-cloud-dataplex": "2.21.0",
+      "google-cloud-discoveryengine": "0.13.12",
+      "google-cloud-logging": "3.17.0",
+      "google-cloud-monitoring": "2.32.0",
+      "google-cloud-pubsub": "2.43.0",
+      "google-cloud-resource-manager": "1.19.0",
+      "google-cloud-secret-manager": "2.31.0",
+      "google-cloud-spanner": "3.71.0",
+      "google-cloud-speech": "2.41.0",
+      "google-cloud-storage": "3.17.1",
+      "google-cloud-trace": "1.21.0",
+      "google-crc32c": "1.9.0",
+      "google-genai": "1.66.0",
+      "google-resumable-media": "2.11.0",
+      "googleapis-common-protos": "1.76.0",
+      "graphviz": "0.21",
+      "grpc-google-iam-v1": "0.14.6",
+      "grpc-interceptor": "0.15.4",
+      "grpcio": "1.85.0",
+      "grpcio-status": "1.85.0",
+      "h11": "0.16.0",
+      "hexbytes": "2.0.0",
+      "httpcore": "1.0.9",
+      "httplib2": "0.32.1",
+      "httpx": "0.28.1",
+      "httpx-sse": "0.4.3",
+      "idna": "3.20",
+      "importlib-metadata": "8.7.1",
+      "iniconfig": "2.3.1",
+      "itsdangerous": "2.2.0",
+      "jaraco-classes": "3.4.0",
+      "jaraco-context": "6.1.2",
+      "jaraco-functools": "4.6.0",
+      "jinja2": "3.1.6",
+      "joserfc": "1.7.7",
+      "jsonref": "1.1.0",
+      "jsonschema": "4.26.0",
+      "jsonschema-path": "0.5.0",
+      "jsonschema-specifications": "2025.9.1",
+      "jwcrypto": "1.5.6",
+      "keyring": "25.7.0",
+      "mako": "1.4.3",
+      "markdown-it-py": "4.2.0",
+      "markupsafe": "3.0.4",
+      "mcp": "1.26.0",
+      "mdurl": "0.1.2",
+      "mmh3": "5.3.1",
+      "more-itertools": "11.2.1",
+      "multidict": "7.2.1",
+      "nest-asyncio": "1.6.0",
+      "openapi-pydantic": "0.6.0",
+      "opentelemetry-api": "1.38.0",
+      "opentelemetry-exporter-gcp-logging": "1.11.0a0",
+      "opentelemetry-exporter-gcp-monitoring": "1.15.0a0",
+      "opentelemetry-exporter-gcp-trace": "1.15.0",
+      "opentelemetry-exporter-otlp-proto-common": "1.38.0",
+      "opentelemetry-exporter-otlp-proto-http": "1.38.0",
+      "opentelemetry-proto": "1.38.0",
+      "opentelemetry-resourcedetector-gcp": "1.14.0",
+      "opentelemetry-sdk": "1.38.0",
+      "opentelemetry-semantic-conventions": "0.59b0",
+      "packaging": "26.3",
+      "parsimonious": "0.10.0",
+      "pathable": "0.6.0",
+      "platformdirs": "4.14.0",
+      "pluggy": "1.7.0",
+      "propcache": "0.5.4",
+      "proto-plus": "1.29.0",
+      "protobuf": "6.33.6",
+      "py": "1.11.0",
+      "py-ecc": "8.0.0",
+      "py-key-value-aio": "0.4.6",
+      "pyarrow": "26.0.0",
+      "pyasn1": "0.6.5",
+      "pyasn1-modules": "0.4.2",
+      "pycparser": "3.12",
+      "pycryptodome": "3.24.1",
+      "pydantic": "2.12.5",
+      "pydantic-core": "2.41.5",
+      "pydantic-settings": "2.16.2",
+      "pygments": "2.21.0",
+      "pyjwt": "2.15.1",
+      "pyparsing": "3.3.3",
+      "pyperclip": "1.11.0",
+      "pytest": "9.0.2",
+      "python-dateutil": "2.9.0.post0",
+      "python-dotenv": "1.2.2",
+      "python-multipart": "0.0.32",
+      "pyunormalize": "18.0.0",
+      "pyyaml": "6.0.3",
+      "referencing": "0.37.0",
+      "regex": "2026.9.29",
+      "requests": "2.32.5",
+      "rich": "15.0.0",
+      "rich-rst": "2.2.0",
+      "rlp": "5.0.0",
+      "rpds-py": "2026.9.1",
+      "sd-jwt": "0.10.4",
+      "six": "1.17.0",
+      "sniffio": "1.3.1",
+      "sqlalchemy": "2.1.6",
+      "sqlalchemy-spanner": "1.20.1",
+      "sqlparse": "0.6.0",
+      "sse-starlette": "3.6.0",
+      "starlette": "0.52.1",
+      "tenacity": "9.1.4",
+      "toolz": "1.2.0",
+      "types-requests": "2.33.0.20261030",
+      "typing-extensions": "4.16.0",
+      "typing-inspection": "0.4.4",
+      "tzdata": "2026.6",
+      "tzlocal": "5.4.5",
+      "uncalled-for": "0.4.1",
+      "uritemplate": "4.2.0",
+      "urllib3": "2.8.0",
+      "uvicorn": "0.54.0",
+      "watchdog": "6.0.0",
+      "watchfiles": "1.3.0",
+      "web3": "7.15.0",
+      "websockets": "15.0.1",
+      "werkzeug": "3.1.9",
+      "x402": "2.26.0",
+      "yarl": "1.25.1",
+      "zipp": "4.1.2"
+    },
+    "runtime_package_bytes_independently_retained": false,
+    "sha256": "49e94c580be23cece939a2dd3ec50bc87436b3dfb2538d4a826994c574fb0b8d"
+  },
+  "schema_version": "ap2-native-shopper-provider-offline-analysis/5",
+  "status": "retained_V5_observations_consistent",
+  "untouched_holdout_qualified": false,
+  "validated_read_members": {
+    "execution/cases/ap2-native-shopper-provider-v5-correct-human/public-human-facts.json": {
+      "bytes": 555,
+      "sha256": "80d8c9776991bb218233b63f46adc25811cf8dac114a7ff211401ba5f11088da"
+    },
+    "execution/cases/ap2-native-shopper-provider-v5-correct-human/shopper/ADK-events.jsonl": {
+      "bytes": 5312,
+      "sha256": "ad558aee8a45874466ed9e57396416d1e809025561f825bb856364e68f3a9763"
+    },
+    "execution/cases/ap2-native-shopper-provider-v5-correct-human/shopper/actor-input-separation.json": {
+      "bytes": 816,
+      "sha256": "07dafd7bb9093355574d5709a9c567f3b0b3c9db5763ac00dafda184b09639d4"
+    },
+    "execution/cases/ap2-native-shopper-provider-v5-correct-human/shopper/actor-network-denials.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "execution/cases/ap2-native-shopper-provider-v5-correct-human/shopper/original-root-binding.json": {
+      "bytes": 1543,
+      "sha256": "23038aabe98ae16436094484df6b00d3f298ad3d8d07aaf84a34987ae20be846"
+    },
+    "execution/cases/ap2-native-shopper-provider-v5-correct-human/shopper/public-actor-decisions.jsonl": {
+      "bytes": 201,
+      "sha256": "ad738839c0e9c8294ec2dd6ccb94b5ccb6c0fac6deb708b143018323cc66c4e6"
+    },
+    "execution/cases/ap2-native-shopper-provider-v5-correct-human/shopper/public-conversation.jsonl": {
+      "bytes": 1056,
+      "sha256": "e127e48d7c3e9c3fd3c11d2adea8015c91ecaacf4140eef063ee3972981ebbf7"
+    },
+    "execution/cases/ap2-native-shopper-provider-v5-correct-human/shopper/turn-00-session.json": {
+      "bytes": 8747,
+      "sha256": "b4e87ce52c6b2c4904133c224dd485d8937fd96694624a9ad753052e23882d7e"
+    },
+    "execution/cases/ap2-native-shopper-provider-v5-correct-human/shopper/worker-result.json": {
+      "bytes": 520,
+      "sha256": "299834b7c09101c3acd8471e10a1c704bb1f7ebc5633139dd56ca2e46de5326a"
+    },
+    "execution/portable-runtime.json": {
+      "bytes": 2846966,
+      "sha256": "49e94c580be23cece939a2dd3ec50bc87436b3dfb2538d4a826994c574fb0b8d"
+    },
+    "execution/provider-drain.json": {
+      "bytes": 574,
+      "sha256": "747cb9b21c7fe5b5f16dd687576ab84e6c94998b10ee74afa48cb61c0b72012c"
+    },
+    "execution/provider/000.request.json": {
+      "bytes": 356,
+      "sha256": "8646045bca0a31708021fde3c24c1905be36a0b5f2f9c29cadf100bf3cbe5993"
+    },
+    "execution/provider/000.response.json": {
+      "bytes": 932,
+      "sha256": "8c45bbb5b29d34b5edd17d45cc8c4404d70a95fec6a49f74ee00a9c397323318"
+    },
+    "execution/provider/001.request.json": {
+      "bytes": 7557,
+      "sha256": "240b5f00c98eb66e0381a926d5e848af30935c14ea05cb90514b3ea117f0e49c"
+    },
+    "execution/provider/001.response.json": {
+      "bytes": 999,
+      "sha256": "95d514771538c2cb2d63048dd60ab1894475b1d96799d36d7fb7b073da94f60d"
+    },
+    "execution/provider/002.request.json": {
+      "bytes": 4824,
+      "sha256": "42e7f72563420288e58b1545742b58f6cc4259b1114aacf99486790aea061cb2"
+    },
+    "execution/provider/002.response.json": {
+      "bytes": 1040,
+      "sha256": "f2ab1401aa097e06ea0d410bb120e48dd5d7ac37e7a6478a217407fcadefbf69"
+    },
+    "execution/provider/003.request.json": {
+      "bytes": 3413,
+      "sha256": "f783070330ed44db7779be392558646f45d6752960f24cc4d13e1577787aa4d1"
+    },
+    "execution/provider/003.response.json": {
+      "bytes": 942,
+      "sha256": "8032f36cd1d3cfbcb69f680bacbfebfe9bda481c306c150ebc2f670b510381d6"
+    },
+    "execution/provider/004.request.json": {
+      "bytes": 2584,
+      "sha256": "ac51222b0dbb4d4f05d904b7527e8a31f941d41dbdf050a6be698824517e9b5f"
+    },
+    "execution/provider/004.response.json": {
+      "bytes": 1414,
+      "sha256": "2ec97e4651d549606224b7d1c410620bdcd004928317191f4cfbbfe338b0ef25"
+    },
+    "execution/provider/005.request.json": {
+      "bytes": 5731,
+      "sha256": "5fa3cc66a7220250d1f99b56ac112df3b0f7db9cb5bba97c35d0dd1134b02f68"
+    },
+    "execution/provider/005.response.json": {
+      "bytes": 1372,
+      "sha256": "af40c99a6eb3d0804f0f19aea3da3bc51a52b314352f2263e2c4e771f206d34e"
+    },
+    "execution/provider/ledger.jsonl": {
+      "bytes": 3876,
+      "sha256": "40c731389c92a0a9fe823355869183459cf301945fd0f3d2ed45a4004c58d080"
+    },
+    "execution/result.json": {
+      "bytes": 4845,
+      "sha256": "5b8df10cad112ac03e9d1abc6a71a4f18fb34d5ebc367d2e318100f48e764578"
+    },
+    "plan/owned-source/scripts/ap2_native_shopper_actor_guard_v5.py": {
+      "bytes": 8999,
+      "sha256": "25ec5869de958a6c20ada1d07a2c5333a2fdde25a9a60a55935e693d05a046fc"
+    },
+    "plan/owned-source/scripts/ap2_native_shopper_provider_boundary_v2.py": {
+      "bytes": 9319,
+      "sha256": "95bd0ccb0513cce59cb3c94724658f1943806588283e989002626deb3545e52f"
+    },
+    "plan/owned-source/scripts/ap2_native_shopper_provider_worker_v1.py": {
+      "bytes": 18818,
+      "sha256": "f7c0e3d79582e9bfbc49123fe7fd16791c3651f9c58dab7b70a69658a548b765"
+    },
+    "plan/owned-source/scripts/ap2_native_shopper_provider_worker_v2.py": {
+      "bytes": 18818,
+      "sha256": "382a7601d6929946c35d090d8bedf6d2a65a7b111b645b5fb1177cba6250c2e0"
+    },
+    "plan/owned-source/scripts/ap2_native_shopper_provider_worker_v3.py": {
+      "bytes": 18192,
+      "sha256": "58d0db0494eda5b74ce006a717719a70965a49fbe553b00ff0ec83e9ab503a9a"
+    },
+    "plan/owned-source/scripts/run_ap2_native_shopper_provider_v1.py": {
+      "bytes": 19597,
+      "sha256": "8c99e95fc686da0d8b15ac1c930a50a39a06d0c0e48722f7e15c2495a4dea358"
+    },
+    "plan/owned-source/scripts/run_ap2_native_shopper_provider_v4.py": {
+      "bytes": 14590,
+      "sha256": "1ff3cb5a423b1b3503025aa16e0f0aa946ad1659e498b57472d389db0909683a"
+    },
+    "plan/owned-source/scripts/run_ap2_native_shopper_provider_v5.py": {
+      "bytes": 15884,
+      "sha256": "2e21f3749eae1cb55086940a1fa3353861b6ed709eab55a03cb24452fdb0d2bd"
+    },
+    "plan/owned-source/scripts/run_ap2_original_native_repeat_v3.py": {
+      "bytes": 35459,
+      "sha256": "ef750dfa58a49e083ceb6ac84471372aa0945ddf7b96289c1020388180c3d1fb"
+    },
+    "plan/plan.json": {
+      "bytes": 38948,
+      "sha256": "26d100ce60bce0d2cc6906daa86bda18c0199e8b535e5f30e1501c8cd3221122"
+    }
+  },
+  "whole_task_grade": null,
+  "worker_result": {
+    "ADK_event_count": 5,
+    "case_id": "ap2-native-shopper-provider-v5-correct-human",
+    "failure": null,
+    "human_gold_qualified": false,
+    "native_source_and_model_observation_requires_separate_analysis": true,
+    "original_remote_http_clients_closed": [
+      true,
+      true
+    ],
+    "public_reply_categories": [],
+    "schema_version": "ap2-native-shopper-provider-worker/3",
+    "status": "public_actor_stopped_without_unambiguous_unseen_question",
+    "time": "2026-11-12T05:31:01.321730+00:00",
+    "whole_task_grade": null
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "deterministic_BaseLlm_replacement": false,
+  "genai_Client_replaced": false,
+  "official_ADK_runner": true,
+  "original_native_remote_clients": [
+    "http://localhost:8001/a2a/merchant_agent",
+    "http://localhost:8002/a2a/credentials_provider"
+  ],
+  "original_root_import_file": "/tmp/ap2-native-shopper-v5-private-1a95lz23/original-ap2/code/samples/python/src/roles/shopping_agent/agent.py",
+  "original_root_source_sha256": "a1ad77fc4d17cfa2fcef5904cab00a9833395e4a4e8b60948d767d52640ec6a3",
+  "original_root_tool_names": [
+    "create_checkout",
+    "create_checkout_mandate",
+    "create_payment_mandate",
+    "send_signed_mandates_to_credentials_provider",
+    "initiate_payment",
+    "initiate_payment_with_otp"
+  ],
+  "original_tools_instructions_models_unchanged": true,
+  "owned_public_user_actor": true,
+  "root_class": "common.retrying_llm_agent.RetryingLlmAgent",
+  "root_model": "gemini-3.1-flash-lite-preview",
+  "root_name": "root_agent",
+  "session_id": "71e5b5a3-4ddd-4e42-91ba-4967ced18014",
+  "streaming_mode": "NONE",
+  "subagents": [
+    {
+      "class": "common.retrying_llm_agent.RetryingLlmAgent",
+      "model": "gemini-3.1-flash-lite-preview",
+      "name": "shopper"
+    },
+    {
+      "class": "common.retrying_llm_agent.RetryingLlmAgent",
+      "model": "gemini-3.1-flash-lite-preview",
+      "name": "shipping_address_collector"
+    },
+    {
+      "class": "common.retrying_llm_agent.RetryingLlmAgent",
+      "model": "gemini-3.1-flash-lite-preview",
+      "name": "payment_method_collector"
+    }
+  ]
+}

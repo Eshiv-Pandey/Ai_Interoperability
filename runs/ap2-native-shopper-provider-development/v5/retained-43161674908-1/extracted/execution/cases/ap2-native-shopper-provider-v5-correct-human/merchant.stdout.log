@@ -1,0 +1,81 @@
+I1112 05:30:32.940733 140683965320064 server.py:90] MerchantAgent listening on http://localhost:8001
+INFO:     Started server process [2538]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+I1112 05:30:33.093848 140683965320064 server.py:121] 
+
+
+
+I1112 05:30:33.093992 140683965320064 server.py:122] ---------- New Agent Request Received---------
+I1112 05:30:33.094028 140683965320064 server.py:125] GET http://127.0.0.1:8001/a2a/merchant_agent/.well-known/agent-card.json
+I1112 05:30:33.094088 140683965320064 server.py:134] 
+
+I1112 05:30:33.094106 140683965320064 server.py:135] [Request Body]
+I1112 05:30:33.094121 140683965320064 server.py:136] <empty>
+I1112 05:30:33.094468 140683965320064 server.py:162] 
+
+I1112 05:30:33.094497 140683965320064 server.py:163] [Response Body]
+I1112 05:30:33.094516 140683965320064 server.py:164] {"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["json"],"defaultOutputModes":["json"],"description":"A sales assistant agent for a merchant.","name":"MerchantAgent","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Searches the merchant's catalog based on a catalog search query & returns a cart containing the top results.","id":"search_catalog","name":"Search Catalog","tags":["merchant","search","catalog"]}],"url":"http://localhost:8001/a2a/merchant_agent","version":"1.0.0"}
+INFO:     127.0.0.1:58358 - "GET /a2a/merchant_agent/.well-known/agent-card.json HTTP/1.1" 200 OK
+I1112 05:30:41.619254 140683965320064 server.py:121] 
+
+
+
+I1112 05:30:41.619370 140683965320064 server.py:122] ---------- New Agent Request Received---------
+I1112 05:30:41.619400 140683965320064 server.py:125] GET http://localhost:8001/a2a/merchant_agent/.well-known/agent-card.json
+I1112 05:30:41.619429 140683965320064 server.py:134] 
+
+I1112 05:30:41.619447 140683965320064 server.py:135] [Request Body]
+I1112 05:30:41.619462 140683965320064 server.py:136] <empty>
+I1112 05:30:41.619803 140683965320064 server.py:162] 
+
+I1112 05:30:41.619830 140683965320064 server.py:163] [Response Body]
+I1112 05:30:41.619848 140683965320064 server.py:164] {"capabilities":{"extensions":[{"description":"Supports the Agent Payments Protocol.","required":true,"uri":"https://github.com/google-agentic-commerce/ap2/v1"},{"description":"Supports the Sample Card Network payment method extension","required":true,"uri":"https://sample-card-network.github.io/paymentmethod/types/v1"}]},"defaultInputModes":["json"],"defaultOutputModes":["json"],"description":"A sales assistant agent for a merchant.","name":"MerchantAgent","preferredTransport":"JSONRPC","protocolVersion":"0.3.0","skills":[{"description":"Searches the merchant's catalog based on a catalog search query & returns a cart containing the top results.","id":"search_catalog","name":"Search Catalog","tags":["merchant","search","catalog"]}],"url":"http://localhost:8001/a2a/merchant_agent","version":"1.0.0"}
+INFO:     127.0.0.1:58694 - "GET /a2a/merchant_agent/.well-known/agent-card.json HTTP/1.1" 200 OK
+I1112 05:30:41.621659 140683965320064 server.py:121] 
+
+
+
+I1112 05:30:41.621702 140683965320064 server.py:122] ---------- New Agent Request Received---------
+I1112 05:30:41.621723 140683965320064 server.py:125] POST http://localhost:8001/a2a/merchant_agent
+I1112 05:30:41.621830 140683965320064 server.py:134] 
+
+I1112 05:30:41.621852 140683965320064 server.py:135] [Request Body]
+I1112 05:30:41.621868 140683965320064 server.py:136] {'id': 'fde9830c-15a1-4d57-9e2b-992df5aac2f6', 'jsonrpc': '2.0', 'method': 'message/send', 'params': {'configuration': {'acceptedOutputModes': [], 'blocking': True}, 'message': {'kind': 'message', 'messageId': '97dd392988a0412a8744dcf898029b81', 'parts': [{'kind': 'text', 'text': "Find products that match the user's request."}, {'data': {'catalog_search': 'comfortable unbranded walking shoes under 100 USD'}, 'kind': 'data'}, {'data': {'risk_data': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data'}, 'kind': 'data'}, {'data': {'shopping_agent_id': 'trusted_shopping_agent'}, 'kind': 'data'}], 'role': 'agent'}}}
+I1112 05:30:41.621911 140683965320064 server.py:141] 
+[Extension Header]
+X-A2A-Extensions: https://github.com/google-agentic-commerce/ap2/v1
+I1112 05:30:41.622712 140683965320064 watch_log.py:87] 
+
+I1112 05:30:41.622753 140683965320064 watch_log.py:88] [Request Instructions]
+I1112 05:30:41.622771 140683965320064 watch_log.py:89] ["Find products that match the user's request."]
+I1112 05:30:41.622793 140683965320064 watch_log.py:117] 
+
+I1112 05:30:41.622808 140683965320064 watch_log.py:118] [Data Part: catalog_search] 
+I1112 05:30:41.622824 140683965320064 watch_log.py:119] comfortable unbranded walking shoes under 100 USD
+I1112 05:30:41.622838 140683965320064 watch_log.py:117] 
+
+I1112 05:30:41.622850 140683965320064 watch_log.py:118] [Data Part: risk_data] 
+I1112 05:30:41.622864 140683965320064 watch_log.py:119] eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data
+I1112 05:30:41.622876 140683965320064 watch_log.py:117] 
+
+I1112 05:30:41.622889 140683965320064 watch_log.py:118] [Data Part: shopping_agent_id] 
+I1112 05:30:41.622901 140683965320064 watch_log.py:119] trusted_shopping_agent
+I1112 05:30:41.622938 140683965320064 base_server_executor.py:104] Server working on (context_id, task_id): (a9dc6208-6aae-45e7-85d0-ecbfaa9b3d18, f69f5183-bc87-4cf5-95f9-b9a6efb80604)
+I1112 05:30:41.622961 140683965320064 agent_executor.py:114] Received request from shopping_agent_id: trusted_shopping_agent
+I1112 05:30:41.622975 140683965320064 agent_executor.py:132] Authorized request from shopping_agent_id: trusted_shopping_agent
+I1112 05:30:51.125714 140683965320064 _client.py:1025] HTTP Request: POST http://127.0.0.1:38229/v1beta/models/gemini-3.1-flash-lite-preview:generateContent "HTTP/1.0 200 OK"
+I1112 05:30:51.126724 140683965320064 base_server_executor.py:137] Using tool: find_items_workflow
+I1112 05:30:51.168437 140683965320064 models.py:5701] AFC is enabled with max remote calls: 10.
+I1112 05:30:54.058183 140683965320064 _client.py:1025] HTTP Request: POST http://127.0.0.1:38229/v1beta/models/gemini-3.1-flash-lite-preview:generateContent "HTTP/1.0 200 OK"
+I1112 05:30:54.060475 140683965320064 task_manager.py:179] Task not found or task_id not set. Creating new task for event (task_id: f69f5183-bc87-4cf5-95f9-b9a6efb80604, context_id: a9dc6208-6aae-45e7-85d0-ecbfaa9b3d18).
+I1112 05:30:54.063222 140683965320064 server.py:162] 
+
+I1112 05:30:54.063308 140683965320064 server.py:163] [Response Body]
+I1112 05:30:54.063331 140683965320064 server.py:164] {"id":"fde9830c-15a1-4d57-9e2b-992df5aac2f6","jsonrpc":"2.0","result":{"artifacts":[{"artifactId":"096f5d57-a893-4612-b157-ad6abec57119","parts":[{"data":{"ap2.cart":{"cart_id":"cart_1","item_label":"Lightweight breathable mesh walking sneakers with memory foam insoles","amount":45.99,"currency":"USD"}},"kind":"data"}]},{"artifactId":"5997ef53-69e5-49c4-a702-6fadf0b5b560","parts":[{"data":{"ap2.cart":{"cart_id":"cart_2","item_label":"Ergonomic arch support casual slip-on trainers","amount":62.5,"currency":"USD"}},"kind":"data"}]},{"artifactId":"b1e206b8-5e70-4504-969c-cf407826f151","parts":[{"data":{"ap2.cart":{"cart_id":"cart_3","item_label":"All-terrain durable cushion walking shoes for daily use","amount":89.0,"currency":"USD"}},"kind":"data"}]},{"artifactId":"dfc64241-44a1-47a9-91ef-d1bca0bfe886","parts":[{"data":{"risk_data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"},"kind":"data"}]}],"contextId":"a9dc6208-6aae-45e7-85d0-ecbfaa9b3d18","history":[{"contextId":"a9dc6208-6aae-45e7-85d0-ecbfaa9b3d18","kind":"message","messageId":"97dd392988a0412a8744dcf898029b81","parts":[{"kind":"text","text":"Find products that match the user's request."},{"data":{"catalog_search":"comfortable unbranded walking shoes under 100 USD"},"kind":"data"},{"data":{"risk_data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...fake_risk_data"},"kind":"data"},{"data":{"shopping_agent_id":"trusted_shopping_agent"},"kind":"data"}],"role":"agent","taskId":"f69f5183-bc87-4cf5-95f9-b9a6efb80604"}],"id":"f69f5183-bc87-4cf5-95f9-b9a6efb80604","kind":"task","status":{"state":"completed","timestamp":"2026-11-12T05:30:54.060268+00:00"}}}
+INFO:     127.0.0.1:58694 - "POST /a2a/merchant_agent HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2538]
