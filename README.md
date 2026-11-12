@@ -1,5 +1,14 @@
 # Agent interoperability research
 
+**Current direction 12 November 2026: benchmark-only work.** Start with the
+[six-area benchmark release](benchmark/loss-v1/README.md) and
+[supervisor report](docs/research/loss-benchmark-supervisor-report-v1.md).
+The final development allocation contains 80 fresh controlled Python episodes
+and 13 separately labelled retained observations. Verification passes 68 tests
+with one platform-specific skip. This is a development benchmark, with human
+review, fresh real-route qualification and held-out evaluation still open.
+The percentages and algorithm/paper packages below preserve earlier scope.
+
 **Completed V1 implementation and development-paper package (12 November 2026).** [Eight of eight fixed delivery criteria are accepted](docs/research/v1-release-status-20261112.md). Start with the [runnable release entrypoint](docs/research/v1-release-entrypoint-20261112.md), [manuscript V15](paper/working-draft-v15.md), [current claim ledger](paper/claim-ledger-v15.json) and [independent acceptance](docs/research/v1-release-independent-acceptance-v2-20261112.md). Fresh Linux checks pass 167 core tests, 57 additional controls and five timeout controls; independent review verifies 1,056 algorithm outputs and 855 certificates. A clean checkout restores 3,005 required paper inputs, verifies all 3,468 input hashes and passes 19 paper checks. V1 is complete for this declared prototype and development-paper scope. The original full research study remains open. Shared lifting adds no certified case beyond goal-pruned direct in the finite suite. The [additional native shopper V4 report](docs/research/ap2-native-shopper-provider-development-results-v4.md) preserves two business attempts with zero returns or receipts.
 
 Whole-project work is approximately **80%**, rounded from 77.5 under the unchanged weights and original scope in [estimate v8](docs/research/whole-project-progress-estimate-v8.json), with about 10 percentage points uncertainty. [The independent estimate review](docs/research/whole-project-v8-independent-estimate-review.md) credits two completed development experiments. The [common-cost results](docs/research/common-cost-results-v1.md) retain all 1,650 capped allocations: each method has 270 certified and 60 unknown outcomes, with 54 eligible profiles in all ten paired comparisons. Shared lifting has higher observed CPU, wall and RSS medians than goal-pruned direct on every eligible profile. [The project register](docs/research/project-completion-status-v1.json) preserves the remaining native-launcher/provider, human gold/holdout, full application study, contribution and final scientific-review work. This percentage estimates work completed; it does not certify scientific gates or publication readiness. Historical V11 and V12 failures remain unchanged.
